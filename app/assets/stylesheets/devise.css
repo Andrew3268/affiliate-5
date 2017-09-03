@@ -1,0 +1,12 @@
+.devise_wrapper {
+    width:50% ;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.devise_wrapper h2 {
+    border-bottom: solid 3px #f56a6a;
+    display: inline-block;
+    padding: 0 0.75em 0.3em 0;
+    padding: 0 0.75em 0.5em 0;
+}

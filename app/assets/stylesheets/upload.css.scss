@@ -1,0 +1,50 @@
+/**** Upload Section ****/
+
+.upload_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.upload_wrapper .upload_section {
+   
+}
+
+.upload_wrapper .upload_section .form input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.upload_wrapper .upload_section .form textarea {
+    padding: 25px 20px;
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.upload_wrapper .upload_section .form a {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+    background: #444444;
+}
+
+.upload_wrapper .upload_section button[type="submit"] {
+     border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	background: #262626;
+	cursor: pointer;
+	margin-bottom: 20px;
+	width: 100%;
+}

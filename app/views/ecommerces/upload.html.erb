@@ -1,0 +1,62 @@
+<div class="upload_wrapper">
+  <h1>Upload New Product</h1>
+  <div class="upload_section">
+    <%= form_tag "/ecommerces/create", method: "post" do %>
+      <div class="form">
+        <input type="text" class="input-form" name="new_title" placeholder="Product Title">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_image_01" placeholder="Image_01 url">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_image_02" placeholder="Image_02 url">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_image_03" placeholder="Image_03 url">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url">
+        <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url">
+        <a href="https://www.youtube.com" target="_black">Get Link</a>
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_price" placeholder="How much is it?">
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"></textarea>
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"></textarea>
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"></textarea>
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"></textarea>
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"></textarea>
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"></textarea>
+      </div>
+      <div class="form">
+        <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
+      </div>
+      <button class="button" type="submit">Upload</button>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %>
+    <% end %>
+  </div>
+</div>

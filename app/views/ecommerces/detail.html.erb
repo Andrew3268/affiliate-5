@@ -1,0 +1,200 @@
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
+						<ul class="icons"></h1> 
+						  <li><button class="call_sidebar" onclick="myFunction()">Menu</button></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+						</ul>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="content">
+							
+							<header>
+								<h1><%= @details.title %></h1>
+								<p><%= @details.intro %></p>
+							</header> 
+							<p><%= @details.description %></p>
+							<h3>Price: $<%= @details.price %></h3>
+							<ul class="actions">
+								<li><a href="<%= @details.site_link %>" class="button big" target="_blank">Buy Now</a></li>
+								<li><%= link_to '', add_wishlist_path(@details), class: "fa fa-cart-arrow-down cart-size", method: :post %></li>
+							</ul>
+						</div>
+						<span class="image object">
+							<img src="<%= @details.image_main %>" alt="" />
+						</span>
+					</section>
+
+				 <!--Section -->
+					<section>
+						<header class="major">
+							<h2>Photo & Video</h2>
+						</header>
+						<h1 class="related_text"> -Related Photos-</h1>
+						<div class="features">
+							<article>
+                <img src="<%= @details.image_01 %>">
+							</article>
+							<article>
+                <img src="<%= @details.image_02 %>">
+							</article>
+							<article>
+                <img src="<%= @details.image_03 %>">
+							</article>
+							<article>
+                <img src="<%= @details.image_04 %>">
+							</article>
+						</div>
+					</section>
+					
+					<div class="video_container">
+						<h1 class="related_text"> -Related Videos-</h1>
+						<div class="video-wrapper_left">
+							<iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video-wrapper_right">
+							<iframe src="<%= @details.youtube_link_02 %>" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div><br/><br/>
+					
+					<h1 class="related_text"> -Descriptions-</h1>
+					<ul>
+						<li><%= @details.description_01 %></li>
+						<li><%= @details.description_02 %></li>
+						<li><%= @details.description_03 %></li>
+						<li><%= @details.description_04 %></li>
+						<li><%= @details.description_05 %></li>
+					</ul>
+
+			</div>
+		</div>
+
+	<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+          <section id="search" class="alt">
+            <%= form_tag(search_ecommerce_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", class: "search_search" %>
+            <% end %>
+          </section>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul class="icons">
+						  <% if user_signed_in? %>
+						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br />
+						    <li class="logout"><%= link_to "Log out", destroy_user_session_path,  method: :delete %></li>  
+						  <% else %>
+						  	<li class="login"><%= link_to "Log in", new_user_session_path %></li>
+					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li>
+						  <% end %>
+					  </ul>
+						<ul>
+							<li>
+							  <% if user_signed_in? %>
+								<span class="opener"><%= current_user.name %>`s Account</span>
+								<% end %>
+								<ul>
+									<li><%= link_to "Edit Account", edit_user_registration_path %></li>
+									<li><%= link_to "Wish List", wishlist_show_path %></li>
+									<li><a href="#">submenu 1</a></li>
+									<li><a href="#">submenu 2</a></li>
+								</ul>
+							</li>
+							<li><a href="/">Home</a></li>
+							<li><a href="#">menu1</a></li>
+							<li><a href="#">menu2</a></li>
+							<li><a href="#">menu3</a></li>
+							<li><a href="#">menu4</a></li>
+							<li>
+								<span class="opener">Another Submenu</span>
+								<ul>
+									<li><a href="#">submenu 1</a></li>
+									<li><a href="#">submenu 2</a></li>
+									<li><a href="#">submenu 3</a></li>
+									<li><a href="#">submenu 4</a></li>
+								</ul>
+							</li>
+							<% if user_signed_in? and current_user.admin == true %> 
+  							<li><a href="/ecommerces/upload">Upload</a></li>
+  							<li><a href="/rails/db">Management</a></li>
+							<% end %>
+						</ul>
+					</nav>
+
+				<!-- Section -->
+					<section>
+						<header class="major">
+							<h2>Ante interdum</h2>
+						</header>
+						<div class="mini-posts">
+							<article>
+								<a href="/ecommerces/detail/<%= @detail_sidebar_01.id %>" class="image"><img src="<%= @detail_sidebar_01.image_main %>" alt="" /></a>
+								<h3><%= @detail_sidebar_01.title %></h3>
+								<p><%= @detail_sidebar_01.intro %></p>
+								<h3>Price: $<%= @detail_sidebar_01.price %></h3>
+								<a href="/ecommerces/detail/<%= @detail_sidebar_01.id %>" class="button">View Detail</a>
+							</article>
+							<article>
+								<a href="/ecommerces/detail/<%= @detail_sidebar_02.id %>" class="image"><img src="<%= @detail_sidebar_02.image_main %>" alt="" /></a>
+								<h3><%= @detail_sidebar_02.title %></h3>
+								<p><%= @detail_sidebar_02.intro %></p>
+								<h3>Price: $<%= @detail_sidebar_02.price %></h3>
+								<a href="/ecommerces/detail/<%= @detail_sidebar_02.id %>" class="button">View Detail</a>
+							</article>
+							<article>
+								<a href="/ecommerces/detail/<%= @detail_sidebar_03.id %>" class="image"><img src="<%= @detail_sidebar_03.image_main %>" alt="" /></a>
+								<h3><%= @detail_sidebar_03.title %></h3>
+								<p><%= @detail_sidebar_03.intro %></p>
+								<h3>Price: $<%= @detail_sidebar_03.price %></h3>
+								<a href="/ecommerces/detail/<%= @detail_sidebar_03.id %>" class="button">View Detail</a>
+							</article>
+						</div>
+						<!--<ul class="actions">-->
+						<!--	<li><a href="#" class="button">More</a></li>-->
+						<!--</ul>-->
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header class="major">
+							<h2>Get in touch</h2>
+						</header>
+						<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+						<ul class="contact">
+							<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+							<li class="fa-phone">(000) 000-0000</li>
+							<li class="fa-home">1234 Somewhere Road #8254<br />
+							Nashville, TN 00000-0000</li>
+						</ul>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+		</div>
+
+</div>
+
+
