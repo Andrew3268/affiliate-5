@@ -17,14 +17,22 @@ class EcommercesController < ApplicationController
   end
   
   def index
-    @ecommerces = Ecommerce.all
-    @banner = @ecommerces.sample
-    @sidebanner_01 = @ecommerces.sample
-    @sidebanner_02 = @ecommerces.sample
-    @sidebanner_03 = @ecommerces.sample
+    if params[:category].blank?
+     @ecommerces = Ecommerce.all
+    else
+     @category_id = Category.find_by(name: params[:category]).id
+     @ecommerces = Ecommerce.where(:category_id => @category_id).order("created_at DESC")
+    end
+    
+     @ecommerces_sample = Ecommerce.all    
+     @banner = @ecommerces_sample.sample
+     @sidebanner_01 = @ecommerces_sample.sample
+     @sidebanner_02 = @ecommerces_sample.sample
+     @sidebanner_03 =@ecommerces_sample.sample
   end
   
   def upload
+    @categories = Category.all.map{ |c| [c.name, c.id] }
     if user_signed_in? and current_user.admin == false
       flash[:warning] = 'Only admin can access.'
       redirect_to '/'
@@ -50,6 +58,7 @@ class EcommercesController < ApplicationController
         uptodate.site_link = params[:new_site_link]
         uptodate.youtube_link_01 = params[:new_youtube_link_01]
         uptodate.youtube_link_02 = params[:new_youtube_link_02]
+        uptodate.category_id = params[:category_id]
         uptodate.save
         
         redirect_to '/'
@@ -64,3 +73,6 @@ class EcommercesController < ApplicationController
   end
   
 end
+
+
+   

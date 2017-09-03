@@ -112,12 +112,11 @@
 							<li><a href="#">menu3</a></li>
 							<li><a href="#">menu4</a></li>
 							<li>
-								<span class="opener">Another Submenu</span>
+								<span class="opener">Price Range</span>
 								<ul>
-									<li><a href="#">submenu 1</a></li>
-									<li><a href="#">submenu 2</a></li>
-									<li><a href="#">submenu 3</a></li>
-									<li><a href="#">submenu 4</a></li>
+									<% Category.all.each do |category| %>
+										<li><%= link_to category.name, root_path(category: category.name) %></li>
+									<% end %>
 								</ul>
 							</li>
 							<% if user_signed_in? and current_user.admin == true %> 

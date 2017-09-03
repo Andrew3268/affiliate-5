@@ -5,4 +5,7 @@ class Ecommerce < ActiveRecord::Base
     def self.search(search)
       where("title LIKE ?", "%#{search}%") 
     end
+    
+  belongs_to :user
+  belongs_to :category
 end

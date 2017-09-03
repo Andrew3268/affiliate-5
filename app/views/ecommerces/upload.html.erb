@@ -2,6 +2,7 @@
   <h1>Upload New Product</h1>
   <div class="upload_section">
     <%= form_tag "/ecommerces/create", method: "post" do %>
+      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
       <div class="form">
         <input type="text" class="input-form" name="new_title" placeholder="Product Title">
       </div>
