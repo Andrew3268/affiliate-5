@@ -17,7 +17,9 @@
 							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 						</ul>
 					</header>
-
+					<div class="check_page">
+					  <h2> Detail For <span><%= @details.title %></span></h2>
+					</div>
 				<!-- Banner -->
 					<section id="banner">
 						<div class="content">
@@ -78,7 +80,14 @@
 						<li><%= @details.description_04 %></li>
 						<li><%= @details.description_05 %></li>
 					</ul>
-
+					
+					<!--css file is in the devise.css-->
+					<div class="amazon_banner"> 
+						<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=amazon_tablet_fallback&banner=0XBJ546QFFGG772XZGG2&f=ifr&linkID=427935c598c391583c9950ec0cad16c6&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+            <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&f=ifr&linkID=2cde31fa1af6c932c852ea8bb31d4266&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+		        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primegift&banner=10BSGCHPCJG0HZN45H82&f=ifr&linkID=2959f635aa97cb7428221fb9cb048d03&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+		    	</div>
+		    	
 			</div>
 		</div>
 
@@ -93,7 +102,7 @@
             <% end %>
           </section>
 
-				<!-- Menu -->
+								<!-- Menu -->
 					<nav id="menu">
 						<header class="major">
 							<h2>Menu</h2>
@@ -101,7 +110,6 @@
 						<ul class="icons">
 						  <% if user_signed_in? %>
 						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br />
-						    <li class="logout"><%= link_to "Log out", destroy_user_session_path,  method: :delete %></li>  
 						  <% else %>
 						  	<li class="login"><%= link_to "Log in", new_user_session_path %></li>
 					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li>
@@ -109,29 +117,27 @@
 					  </ul>
 						<ul>
 							<li>
-							  <% if user_signed_in? %>
-								<span class="opener"><%= current_user.name %>`s Account</span>
-								<% end %>
+								<span class="opener">Account&Wish List</span>
 								<ul>
 									<li><%= link_to "Edit Account", edit_user_registration_path %></li>
 									<li><%= link_to "Wish List", wishlist_show_path %></li>
-									<li><a href="#">submenu 1</a></li>
+									<% if user_signed_in? %>
+									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
+									<% end %>
 									<li><a href="#">submenu 2</a></li>
 								</ul>
 							</li>
-							<li><a href="/">Home</a></li>
-							<li><a href="#">menu1</a></li>
-							<li><a href="#">menu2</a></li>
-							<li><a href="#">menu3</a></li>
-							<li><a href="#">menu4</a></li>
 							<li>
-								<span class="opener">Price Range</span>
-								<ul>
-									<% Category.all.each do |category| %>
-										<li><%= link_to category.name, root_path(category: category.name) %></li>
-									<% end %>
-								</ul>
-							</li>
+  							<span class="opener">Price Range</span>
+  							<ul>
+  								<% Category.all.each do |category| %>
+  									<li><%= link_to category.name, root_path(category: category.name) %></li>
+  								<% end %>
+  							</ul>
+					  	</li>
+							<li><a href="#">Newset</a></li>
+							<li><a href="#">Popular</a></li>
+							<li><a href="#">Amazon Popular</a></li>
 							<% if user_signed_in? and current_user.admin == true %> 
   							<li><a href="/ecommerces/upload">Upload</a></li>
   							<li><a href="/rails/db">Management</a></li>

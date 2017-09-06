@@ -55,7 +55,6 @@
             <%= submit_tag "Search", class: "search_search" %>
             <% end %>
           </section>
-
 				<!-- Menu -->
 					<nav id="menu">
 						<header class="major">
@@ -64,7 +63,6 @@
 						<ul class="icons">
 						  <% if user_signed_in? %>
 						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br />
-						    <li class="logout"><%= link_to "Log out", destroy_user_session_path,  method: :delete %></li>  
 						  <% else %>
 						  	<li class="login"><%= link_to "Log in", new_user_session_path %></li>
 					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li>
@@ -72,29 +70,27 @@
 					  </ul>
 						<ul>
 							<li>
-							  <% if user_signed_in? %>
-								<span class="opener"><%= current_user.name %>`s Account</span>
-								<% end %>
+								<span class="opener">Account&Wish List</span>
 								<ul>
 									<li><%= link_to "Edit Account", edit_user_registration_path %></li>
 									<li><%= link_to "Wish List", wishlist_show_path %></li>
-									<li><a href="#">submenu 1</a></li>
+									<% if user_signed_in? %>
+									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
+									<% end %>
 									<li><a href="#">submenu 2</a></li>
 								</ul>
 							</li>
-							<li><a href="/">Home</a></li>
-							<li><a href="#">menu1</a></li>
-							<li><a href="#">menu2</a></li>
-							<li><a href="#">menu3</a></li>
-							<li><a href="#">menu4</a></li>
 							<li>
-								<span class="opener">Price Range</span>
-								<ul>
-									<% Category.all.each do |category| %>
-										<li><%= link_to category.name, root_path(category: category.name) %></li>
-									<% end %>
-								</ul>
-							</li>
+  							<span class="opener">Price Range</span>
+  							<ul>
+  								<% Category.all.each do |category| %>
+  									<li><%= link_to category.name, root_path(category: category.name) %></li>
+  								<% end %>
+  							</ul>
+					  	</li>
+							<li><a href="#">Newset</a></li>
+							<li><a href="#">Popular</a></li>
+							<li><a href="#">Amazon Popular</a></li>
 							<% if user_signed_in? and current_user.admin == true %> 
   							<li><a href="/ecommerces/upload">Upload</a></li>
   							<li><a href="/rails/db">Management</a></li>

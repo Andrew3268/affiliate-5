@@ -1,5 +1,5 @@
 class WishlistsController < ApplicationController
-  before_action :authenticate_user!, only:[:add] 
+  before_action :authenticate_user!, only:[:add, :show] 
     
     
     def add

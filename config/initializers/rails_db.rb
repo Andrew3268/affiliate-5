@@ -23,6 +23,7 @@ if Object.const_defined?('RailsDb')
 
     # # Enable http basic authentication
     # config.verify_access_proc = proc { |controller| true }
+    
     config.verify_access_proc = proc { |controller| 
       if controller.user_signed_in?
          controller.current_user.admin? 

@@ -3120,7 +3120,7 @@
 			margin: 0 0 3em 3em;
 			position: relative;
 			width: calc(50% - 3em);
-			height: 25em;
+			height: 20em;
 		}
 		
 		.features article img {
@@ -3660,7 +3660,7 @@
 
 		#sidebar h2 {
 			font-size: 1.38889em;
-			margin-bottom: -0.2em;
+			margin-bottom: 0.5em;
 		}
 
 		#sidebar > .inner {
@@ -3881,6 +3881,14 @@
 		#header .icons {
 			text-align: right;
 			padding: 1em 0;
+		}
+		
+		.check_page {
+		  margin-bottom: -4em;
+		}
+		
+		.check_page span {
+			color: #f56a6a;
 		}
 
 		@media screen and (max-width: 1680px) {
