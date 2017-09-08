@@ -34,8 +34,8 @@
                  <iframe src="<%= @banner.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
                </div>
               </div>
-              
-							<h3 class="banner_price">Price : $<%= @banner.price %></h3>
+              <h3 class="banner_price_before"><%= @banner.price_before %></h3>
+							<h3 class="banner_price">Price : $<%= @banner.price_after %></h3>
 							<ul class="actions">
 								<li><a href="<%= @banner.site_link %>" class="button big" target="_blank">Buy Now</a></li>
 								<li><a href="/ecommerces/detail/<%= @banner.id %>" class="button big">View Detail</a></li>
@@ -57,20 +57,25 @@
 								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
 								<h3><%= ecommerce.title %></h3>
 								<p><%= ecommerce.intro %></p>
-								<p><%= ecommerce.description %></p>
-								<h3>Price: $<%= ecommerce.price %></h3>
+								<h3 class="price_before"><%= ecommerce.price_before %></h3>
+								<h3>Price: $<%= ecommerce.price_after %></h3>
 								<ul class="actions">
 									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
 									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
+									<% if user_signed_in? and current_user.admin == true %> 
+									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
+									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
+									<% end %>
 								</ul>
 							</article>
 						 <% end %>
 						</div>
 					</section>
-			</div>
-		</div>
-
-	<!-- Sidebar -->
+					
+			</div><!-- End class="inner" -->
+		</div><!-- End id="main" -->
+		
+	  <!-- Sidebar -->
 		<div id="sidebar">
 			<div class="inner">
 
@@ -103,7 +108,6 @@
 									<% if user_signed_in? %>
 									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
 									<% end %>
-									<li><a href="#">submenu 2</a></li>
 								</ul>
 							</li>
 							<li>
@@ -134,27 +138,27 @@
 								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="image"><img src="<%= @sidebanner_01.image_main %>" alt="" /></a>
 								<h3><%= @sidebanner_01.title %></h3>
 								<p><%= @sidebanner_01.intro %></p>
-								<h3>Price: $<%= @sidebanner_01.price %></h3>
+								<h3 class="price_before"><%= @sidebanner_01.price_before %></h3>
+								<h3>Price: $<%= @sidebanner_01.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
 							</article>
 							<article>
 								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="image"><img src="<%= @sidebanner_02.image_main %>" alt="" /></a>
 								<h3><%= @sidebanner_02.title %></h3>
 								<p><%= @sidebanner_02.intro %></p>
-								<h3>Price: $<%= @sidebanner_02.price %></h3>
+								<h3 class="price_before"><%= @sidebanner_02.price_before %></h3>
+								<h3>Price: $<%= @sidebanner_02.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="button">View Detail</a>
 							</article>
 							<article>
 								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="image"><img src="<%= @sidebanner_03.image_main %>" alt="" /></a>
 								<h3><%= @sidebanner_03.title %></h3>
 								<p><%= @sidebanner_03.intro %></p>
-								<h3>Price: $<%= @sidebanner_03.price %></h3>
+								<h3 class="price_before"><%= @sidebanner_03.price_before %></h3>
+								<h3>Price: $<%= @sidebanner_03.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="button">View Detail</a>
 							</article>
 						</div>
-						<!--<ul class="actions">-->
-						<!--	<li><a href="#" class="button">More</a></li>-->
-						<!--</ul>-->
 					</section>
 
 				<!-- Section -->
@@ -176,9 +180,27 @@
 						   We do not sell anything ourselves, and we do not ship anything ourselves. We cannot assist you with your purchase orders, 
 						   and we do not know if a product can be shipped internationally.
 					  </p>
+					  
+				<!--Sending Email  -->
+					  <div class="form">
+              <input type="text" class="input-form" name="new_title" placeholder="Your Name">
+            </div>
+            <div class="form">
+              <input type="text" class="input-form" name="new_title" placeholder="Your Email">
+            </div>
+            <div class="form">
+              <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Your Message"></textarea>
+            </div><br />
+            <button class="button" type="submit"> Send Email</button>
 						<ul class="contact">
 							<li class="fa-envelope-o"><a href="#">ohigottabuythis@gmail.com</a></li>
 						</ul>
+				<!--Sending Email  -->
+				
+				<!--Facebook Like & Share Button-->
+				<!--		<div class="fb-like" data-href="https://affiliate-5-andrew3628.c9users.io" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br /><br />-->
+				<!--	  <div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>-->
+				<!--Facebook Like & Share Button-->	
 					</section>
 
 				<!-- Footer -->
@@ -186,10 +208,10 @@
 						<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>
 					</footer>
 
-			</div>
-		</div>
+			</div><!-- class="inner" -->
+		</div><!-- id="sidebar" -->
 
-</div>
+</div><!-- End id="wrapper" -->
 
 <script>
 function myFunction() {

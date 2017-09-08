@@ -14,14 +14,14 @@ class WishlistsController < ApplicationController
       
       ecommerce_ids = wishlist.ecommerces.map(&:id)
       if ecommerce_ids.include? ecommerce.id
-        flash[:message] = 'Alread exist on the Wish-List!!'
+        flash[:message] = 'alread exist on your Wish List'
         redirect_to "/ecommerces/detail/#{ecommerce.id}" and return
       end
       
       WishlistEcommerce.create(wishlist_id: wishlist.id,
                                ecommerce_id: ecommerce.id)
       
-      flash[:message] = 'Added to Wish-List!!'
+      flash[:message] = 'has been added to your Wish List'
       redirect_to "/ecommerces/detail/#{ecommerce.id}"
     end
     

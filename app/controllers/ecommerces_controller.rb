@@ -41,6 +41,7 @@ class EcommercesController < ApplicationController
   
   def create
         uptodate = Ecommerce.new
+        uptodate.user_id = current_user.id
         uptodate.title = params[:new_title]
         uptodate.image_main = params[:new_image_main]
         uptodate.image_01 = params[:new_image_01]
@@ -63,6 +64,41 @@ class EcommercesController < ApplicationController
         
         redirect_to '/'
   end
+  
+  def edit
+    @adjust = Ecommerce.find(params[:id])
+  end
+  
+  def update
+    adjust = Ecommerce.find(params[:id])
+    adjust.title = params[:new_title]
+    adjust.image_main = params[:new_image_main]
+    adjust.image_01 = params[:new_image_01]
+    adjust.image_02 = params[:new_image_02]
+    adjust.image_03 = params[:new_image_03]
+    adjust.image_04 = params[:new_image_04]
+    adjust.intro = params[:new_intro]
+    adjust.price_before = params[:new_price_before]
+    adjust.price_after = params[:new_price_after]
+    adjust.description = params[:new_description]
+    adjust.description_01 = params[:new_description_01]
+    adjust.description_02 = params[:new_description_02]
+    adjust.description_03 = params[:new_description_03]
+    adjust.description_04 = params[:new_description_04]
+    adjust.description_05 = params[:new_description_05]
+    adjust.site_link = params[:new_site_link]
+    adjust.youtube_link_01 = params[:new_youtube_link_01]
+    adjust.youtube_link_02 = params[:new_youtube_link_02]
+    adjust.category_id = params[:category_id]
+    adjust.save
+    
+    redirect_to '/'
+  end
+  
+  # def destroy
+  #   Ecommece.destroy(params[:ecommerce_id])
+  #   redirect_to :back
+  # end
   
   def detail
     @details = Ecommerce.find(params[:id])

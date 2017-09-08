@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/wishlist/:ecommerce_id/destroy', to: 'wishlists#destroy', as: 'destroy_wishlist'
   
   
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

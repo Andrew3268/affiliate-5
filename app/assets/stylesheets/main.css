@@ -3092,6 +3092,17 @@
 			margin-top: 0;
 			padding-top: 0;
 		}
+		
+	.mini-posts .price_before {	
+		text-decoration: line-through;
+  	font-size: 2em;
+  	font-weight: bold;
+  	color: #f56a6a;
+    margin-bottom: -0.2em;
+	}
+		
+		
+
 
 /* Features */
 
@@ -3144,7 +3155,8 @@
 			margin-bottom: 0;
 		}
 	
-	
+
+/* Youtube Video Section */	
 	 	.video_container {
 			width: 100%;
 			margin: auto;
@@ -3176,7 +3188,8 @@
 		  width: 100%;
 		  height: 100%;
 		}	
-			
+
+/***************************************/			
 			
 
 			/*.features article .icon {*/
@@ -3397,6 +3410,14 @@
 					display: block;
 					width: 100%;
 				}
+	
+	.posts .price_before {		
+		text-decoration: line-through;
+  	font-size: 2em;
+  	font-weight: bold;
+  	color: #f56a6a;
+    margin-bottom: -0.2em;
+	}
 
 		@media screen and (min-width: 1681px) {
 
@@ -3919,6 +3940,34 @@
 				}
 
 		}
+		
+/* Flash Message */
+
+.flash_message {
+   margin-top: 1em;
+}
+
+.flash_message a {
+	 border-bottom: none;
+}
+
+.flash_message button {
+    margin-top: -1em;
+}
+
+@media screen and (max-width: 480px) {
+	.flash_message h2 {
+			float: none;
+	    text-align:center;
+	    width: 100%;
+	}
+	.flash_message button {
+		  display: block;
+      width: 100%;
+	}
+}
+
+
 
 /* Banner */
 
@@ -3986,6 +4035,7 @@
   #banner .content .container_video .video-wrapper_sample {
 	  width: 31.5em;
 	  height :25.9em;
+	  margin-bottom: -6em;
 	  padding-bottom: 25.25%;
   }
 
@@ -3997,7 +4047,15 @@
   #banner .content .banner_price {
   	font-size: 1.25em;
   	margin-top: -3em;
-  	}
+  }
+  	
+  #banner .content .banner_price_before {
+  	text-decoration: line-through;
+  	font-size: 2em;
+  	font-weight: bold;
+  	color: #f56a6a;
+    margin-bottom: 1.6em;
+  }
 			
 			
 			

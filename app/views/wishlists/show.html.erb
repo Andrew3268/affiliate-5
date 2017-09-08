@@ -21,7 +21,7 @@
 				<!-- Section -->
 					<section>
 						<header class="major">
-							<h2><%= current_user.name %>'s WishList (<%= @ecommerces.length %>)</h2>
+							<h2>Your WishList (<%= @ecommerces.length %>)</h2>
 							<% if @ecommerces.length == 0 %>
 							  <h1>There are no any your Wishlists</h1>
 							<% end %>
@@ -33,7 +33,8 @@
 								<h3><%= ecommerce.title %></h3>
 								<%= link_to 'Delete', destroy_wishlist_path(ecommerce), class: "button", method: :delete %>
 								<p><%= ecommerce.intro %></p>
-								<h3>Price: $<%= ecommerce.price %></h3>
+								<h3 class="price_before"><%= ecommerce.price_before %></h3>
+								<h3>Price: $<%= ecommerce.price_after %></h3>
 								<ul class="actions">
 									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
 									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
@@ -109,21 +110,24 @@
 								<a href="/ecommerces/detail/<%= @show_sidebar_01.id %>" class="image"><img src="<%= @show_sidebar_01.image_main %>" alt="" /></a>
 								<h3><%= @show_sidebar_01.title %></h3>
 								<p><%= @show_sidebar_01.intro %></p>
-								<h3>Price: $<%= @show_sidebar_01.price %></h3>
+								<h3 class="price_before"><%= @show_sidebar_01.price_before %></h3>
+								<h3>Price: $<%= @show_sidebar_01.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @show_sidebar_01.id %>" class="button">View Detail</a>
 							</article>
 							<article>
 								<a href="/ecommerces/detail/<%= @show_sidebar_02.id %>" class="image"><img src="<%= @show_sidebar_02.image_main %>" alt="" /></a>
 								<h3><%= @show_sidebar_02.title %></h3>
 								<p><%= @show_sidebar_02.intro %></p>
-								<h3>Price: $<%= @show_sidebar_02.price %></h3>
+								<h3 class="price_before"><%= @show_sidebar_02.price_before %></h3>
+								<h3>Price: $<%= @show_sidebar_02.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @show_sidebar_02.id %>" class="button">View Detail</a>
 							</article>
 							<article>
 								<a href="/ecommerces/detail/<%= @show_sidebar_03.id %>" class="image"><img src="<%= @show_sidebar_03.image_main %>" alt="" /></a>
 								<h3><%= @show_sidebar_03.title %></h3>
 								<p><%= @show_sidebar_03.intro %></p>
-								<h3>Price: $<%= @show_sidebar_03.price %></h3>
+								<h3 class="price_before"><%= @show_sidebar_03.price_before %></h3>
+								<h3>Price: $<%= @show_sidebar_03.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @show_sidebar_03.id %>" class="button">View Detail</a>
 							</article>
 						</div>

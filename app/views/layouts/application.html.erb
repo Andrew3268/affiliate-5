@@ -19,18 +19,32 @@
 <%= yield %>
 <%= javascript_include_tag 'application' %>
 
-	
+
+<!--For Facebook Like&Share Button-->
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+<!--End Facebook Like&Share Button-->
+
+
 </body>
 
 <!--For Amazon -->
-<script type="text/javascript">
-    amzn_assoc_ad_type = "link_enhancement_widget";
-    amzn_assoc_tracking_id = "scarlet3628-20";
-    amzn_assoc_linkid = "42a822b2d2d63295b8cd3efd84c72542";
-    amzn_assoc_placement = "";
-    amzn_assoc_marketplace = "amazon";
-    amzn_assoc_region = "US";
-</script>
-<script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
-
+  <script type="text/javascript">
+      amzn_assoc_ad_type = "link_enhancement_widget";
+      amzn_assoc_tracking_id = "scarlet3628-20";
+      amzn_assoc_linkid = "42a822b2d2d63295b8cd3efd84c72542";
+      amzn_assoc_placement = "";
+      amzn_assoc_marketplace = "amazon";
+      amzn_assoc_region = "US";
+  </script>
+  <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+<!--End Amazon -->
 </html>

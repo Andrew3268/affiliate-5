@@ -17,6 +17,12 @@
 							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 						</ul>
 					</header>
+				  <% if flash[:message] %>	
+					   <div class="flash_message">
+		          <h2>"<%= @details.title %>"  <%=flash[:message] %></h2>
+		          <button><%= link_to "View Your WishList", wishlist_show_path, class: "flash_message_button" %></button>
+		         </div>
+	        <% end %>
 					<div class="check_page">
 					  <h2> Detail For <span><%= @details.title %></span></h2>
 					</div>
@@ -29,7 +35,8 @@
 								<p><%= @details.intro %></p>
 							</header> 
 							<p><%= @details.description %></p>
-							<h3>Price: $<%= @details.price %></h3>
+							<h3 class="banner_price_before"><%= @details.price_before %></h3>
+							<h3 class="banner_price">Price: $<%= @details.price_after %></h3>
 							<ul class="actions">
 								<li><a href="<%= @details.site_link %>" class="button big" target="_blank">Buy Now</a></li>
 								<li><%= link_to '', add_wishlist_path(@details), class: "fa fa-cart-arrow-down cart-size", method: :post %></li>
@@ -82,11 +89,11 @@
 					</ul>
 					
 					<!--css file is in the devise.css-->
-					<div class="amazon_banner"> 
-						<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=amazon_tablet_fallback&banner=0XBJ546QFFGG772XZGG2&f=ifr&linkID=427935c598c391583c9950ec0cad16c6&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-            <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&f=ifr&linkID=2cde31fa1af6c932c852ea8bb31d4266&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-		        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primegift&banner=10BSGCHPCJG0HZN45H82&f=ifr&linkID=2959f635aa97cb7428221fb9cb048d03&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-		    	</div>
+					<!--<div class="amazon_banner"> -->
+					<!--	<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=amazon_tablet_fallback&banner=0XBJ546QFFGG772XZGG2&f=ifr&linkID=427935c598c391583c9950ec0cad16c6&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>-->
+          <!--  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&f=ifr&linkID=2cde31fa1af6c932c852ea8bb31d4266&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>-->
+		      <!--  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primegift&banner=10BSGCHPCJG0HZN45H82&f=ifr&linkID=2959f635aa97cb7428221fb9cb048d03&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>-->
+		      <!--</div>-->
 		    	
 			</div>
 		</div>
@@ -155,27 +162,27 @@
 								<a href="/ecommerces/detail/<%= @detail_sidebar_01.id %>" class="image"><img src="<%= @detail_sidebar_01.image_main %>" alt="" /></a>
 								<h3><%= @detail_sidebar_01.title %></h3>
 								<p><%= @detail_sidebar_01.intro %></p>
-								<h3>Price: $<%= @detail_sidebar_01.price %></h3>
+								<h3 class="price_before"><%= @detail_sidebar_01.price_before %></h3>
+								<h3>Price: $<%= @detail_sidebar_01.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @detail_sidebar_01.id %>" class="button">View Detail</a>
 							</article>
 							<article>
 								<a href="/ecommerces/detail/<%= @detail_sidebar_02.id %>" class="image"><img src="<%= @detail_sidebar_02.image_main %>" alt="" /></a>
 								<h3><%= @detail_sidebar_02.title %></h3>
 								<p><%= @detail_sidebar_02.intro %></p>
-								<h3>Price: $<%= @detail_sidebar_02.price %></h3>
+								<h3 class="price_before"><%= @detail_sidebar_02.price_before %></h3>
+								<h3>Price: $<%= @detail_sidebar_02.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @detail_sidebar_02.id %>" class="button">View Detail</a>
 							</article>
 							<article>
 								<a href="/ecommerces/detail/<%= @detail_sidebar_03.id %>" class="image"><img src="<%= @detail_sidebar_03.image_main %>" alt="" /></a>
 								<h3><%= @detail_sidebar_03.title %></h3>
 								<p><%= @detail_sidebar_03.intro %></p>
-								<h3>Price: $<%= @detail_sidebar_03.price %></h3>
+								<h3 class="price_before"><%= @detail_sidebar_03.price_before %></h3>
+								<h3>Price: $<%= @detail_sidebar_03.price_after %></h3>
 								<a href="/ecommerces/detail/<%= @detail_sidebar_03.id %>" class="button">View Detail</a>
 							</article>
 						</div>
-						<!--<ul class="actions">-->
-						<!--	<li><a href="#" class="button">More</a></li>-->
-						<!--</ul>-->
 					</section>
 
 				<!-- Section -->
