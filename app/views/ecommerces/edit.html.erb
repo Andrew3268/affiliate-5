@@ -4,77 +4,77 @@
     <%= form_tag "/ecommerces/update", method: "post" do %>
       <div class="form">
         <label>Product Title</label>
-        <input type="text" class="input-form" name="new_title" placeholder="Product Title">
+        <input type="text" class="input-form" name="new_title" placeholder="Product Title" value="<%= @adjust.title %>">
       </div>
       <div class="form">
         <label>Image_main</label>
-        <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url">
+        <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url" value="<%= @adjust.image_main %>">
       </div>
       <div class="form">
         <label>Image_01</label>
-        <input type="text" class="input-form" name="new_image_01" placeholder="Image_01 url">
+        <input type="text" class="input-form" name="new_image_01" placeholder="Image_01 url" value="<%= @adjust.image_01 %>">
       </div>
       <div class="form">
         <label>Image_02</label>
-        <input type="text" class="input-form" name="new_image_02" placeholder="Image_02 url">
+        <input type="text" class="input-form" name="new_image_02" placeholder="Image_02 url" value="<%= @adjust.image_02 %>">
       </div>
       <div class="form">
         <label>Image_03</label>
-        <input type="text" class="input-form" name="new_image_03" placeholder="Image_03 url">
+        <input type="text" class="input-form" name="new_image_03" placeholder="Image_03 url" value="<%= @adjust.image_03 %>">
       </div>
       <div class="form">
         <label>Image_04</label>
-        <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url">
+        <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url" value="<%= @adjust.image_04 %>">
       </div>
       <div class="form">
         <label>Site Link</label>
-        <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url">
+        <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url" value="<%= @adjust.site_link %>">
         <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
       </div>
       <div class="form">
         <label>Youtube_01</label>
-        <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url">
+        <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url" value="<%= @adjust.youtube_link_01 %>">
       </div>
       <div class="form">
         <label>Youtube_02</label>
-        <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url">
+        <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url" value="<%= @adjust.youtube_link_02 %>">
         <a href="https://www.youtube.com" target="_black">Get Link</a>
       </div>
       <div class="form">
         <label>Price_before</label>
-        <input type="text" class="input-form" name="new_price_before" placeholder="How much was it?">
+        <input type="text" class="input-form" name="new_price_before" placeholder="How much was it?" value="<%= @adjust.price_before %>">
       </div>
       <div class="form">
         <label>Price_after</label>
-        <input type="text" class="input-form" name="new_price_after" placeholder="How much is it?">
+        <input type="text" class="input-form" name="new_price_after" placeholder="How much is it?" value="<%= @adjust.price_after %>">
       </div>
       <div class="form">
         <label>Intro</label>
-        <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"></textarea>
+        <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"><%= @adjust.intro %></textarea>
       </div>
       <div class="form">
         <label>Description</label>
-        <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"></textarea>
+        <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"><%= @adjust.description %></textarea>
       </div>
       <div class="form">
         <label>Description_01</label>
-        <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"></textarea>
+        <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"><%= @adjust.description_01 %></textarea>
       </div>
       <div class="form">
         <label>Description_02</label>
-        <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"></textarea>
+        <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"><%= @adjust.description_02 %></textarea>
       </div>
       <div class="form">
         <label>Description_03</label>
-        <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"></textarea>
+        <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"><%= @adjust.description_03 %></textarea>
       </div>
       <div class="form">
         <label>Description_04</label>
-        <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"></textarea>
+        <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"><%= @adjust.description_04 %></textarea>
       </div>
       <div class="form">
         <label>Description_05</label>
-        <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
+        <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"><%= @adjust.description_05 %></textarea>
       </div>
       <button class="button" type="submit">Update</button>
       <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %>

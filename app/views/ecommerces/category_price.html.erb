@@ -17,61 +17,40 @@
 							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 						</ul>
 					</header>
-					<div class="check_page">
-					  <h2> - <span>T</span>oday's <span>R</span>ecommendations - </h2>
+				
+			  <% if @ecommerces.count == 0 %>
+			    <h1>There are no products <br />
+			        currently in this category :(</h1>
+			  <% else %>
+			  	<div class="check_page">
+					  <h2> - <span>Here </span>are <span>What</span> are you looking for - </h2>
 					</div>
-				<!-- Banner -->
-					<section id="banner">
-						<div class="content">
-							<header>
-								<h1><%= @banner.title %></h1>
-								<p><%= @banner.intro %></p>
-								<p><%= @banner.description %></p>
-							</header>
-							
-							<div class="container_video">
-               <div class="video-wrapper_sample">
-                 <iframe src="<%= @banner.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
-               </div>
-              </div>
-              <h3 class="banner_price_before"><%= @banner.price_before %></h3>
-							<h3 class="banner_price">Price : $<%= @banner.price_after %></h3>
-							<ul class="actions">
-								<li><a href="<%= @banner.site_link %>" class="button big" target="_blank">Buy Now</a></li>
-								<li><a href="/ecommerces/detail/<%= @banner.id %>" class="button big">View Detail</a></li>
-							</ul>
-						</div>
-						<span class="image object">
-							<img src="<%= @banner.image_main %>" alt="" />
-						</span>
-					</section>
-
-				<!-- Section -->
-					<section>
-						<header class="major">
-							<h2>- All Products -</h2>
-						</header>
-						<div class="posts">
-						 <% @ecommerces.reverse.each do |ecommerce| %>  
-							<article>
-								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
-								<h3><%= ecommerce.title %></h3>
-								<p><%= ecommerce.intro %></p>
-								<h3 class="price_before"><%= ecommerce.price_before %></h3>
-								<h3>Price: $<%= ecommerce.price_after %></h3>
-								<ul class="actions">
-									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
-									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
-									<% if user_signed_in? and current_user.admin == true %> 
-  									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
-  									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
-									<% end %>
-								</ul>
-							</article>
-						 <% end %>
-						</div>
-					</section>
-					
+  				<!-- Section -->
+  					<section>
+  						<header class="major">
+  							<h2><%= params[:category] %></h2>
+  						</header>
+  						<div class="posts">
+  						 <% @ecommerces.reverse.each do |ecommerce| %>  
+  							<article>
+  								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
+  								<h3><%= ecommerce.title %></h3>
+  								<p><%= ecommerce.intro %></p>
+  								<h3 class="price_before"><%= ecommerce.price_before %></h3>
+  								<h3>Price: $<%= ecommerce.price_after %></h3>
+  								<ul class="actions">
+  									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
+  									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
+  									<% if user_signed_in? and current_user.admin == true %> 
+    									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
+    									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
+  									<% end %>
+  								</ul>
+  							</article>
+  						 <% end %>
+  						</div>
+  					</section>
+					<% end %>
 			</div><!-- End class="inner" -->
 		</div><!-- End id="main" -->
 		

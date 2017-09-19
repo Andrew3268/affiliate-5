@@ -16,7 +16,8 @@ class EcommercesController < ApplicationController
     @searchbanner_03 = @searchbanner.sample
   end
   
-  def index
+  
+  def category_price
     if params[:category].blank?
      @ecommerces = Ecommerce.all
     else
@@ -24,11 +25,28 @@ class EcommercesController < ApplicationController
      @ecommerces = Ecommerce.where(:category_id => @category_id).order("created_at DESC")
     end
     
+     @category_price_sidebanner = Ecommerce.all
+     @sidebanner_01 = @category_price_sidebanner.sample
+     @sidebanner_02 = @category_price_sidebanner.sample
+     @sidebanner_03 = @category_price_sidebanner.sample
+     @sidebanner_04 = @category_price_sidebanner.sample
+     @sidebanner_05 = @category_price_sidebanner.sample
+     @sidebanner_06 = @category_price_sidebanner.sample
+  end
+  
+
+
+  def index
+     @ecommerces = Ecommerce.all
+
      @ecommerces_sample = Ecommerce.all    
      @banner = @ecommerces_sample.sample
      @sidebanner_01 = @ecommerces_sample.sample
      @sidebanner_02 = @ecommerces_sample.sample
-     @sidebanner_03 =@ecommerces_sample.sample
+     @sidebanner_03 = @ecommerces_sample.sample
+     @sidebanner_04 = @ecommerces_sample.sample
+     @sidebanner_05 = @ecommerces_sample.sample
+     @sidebanner_06 = @ecommerces_sample.sample
   end
   
   def upload
@@ -49,7 +67,8 @@ class EcommercesController < ApplicationController
         uptodate.image_03 = params[:new_image_03]
         uptodate.image_04 = params[:new_image_04]
         uptodate.intro = params[:new_intro]
-        uptodate.price = params[:new_price]
+        uptodate.price_before = params[:new_price_before]
+        uptodate.price_after = params[:new_price_after]
         uptodate.description = params[:new_description]
         uptodate.description_01 = params[:new_description_01]
         uptodate.description_02 = params[:new_description_02]
@@ -70,35 +89,37 @@ class EcommercesController < ApplicationController
   end
   
   def update
-    adjust = Ecommerce.find(params[:id])
-    adjust.title = params[:new_title]
-    adjust.image_main = params[:new_image_main]
-    adjust.image_01 = params[:new_image_01]
-    adjust.image_02 = params[:new_image_02]
-    adjust.image_03 = params[:new_image_03]
-    adjust.image_04 = params[:new_image_04]
-    adjust.intro = params[:new_intro]
-    adjust.price_before = params[:new_price_before]
-    adjust.price_after = params[:new_price_after]
-    adjust.description = params[:new_description]
-    adjust.description_01 = params[:new_description_01]
-    adjust.description_02 = params[:new_description_02]
-    adjust.description_03 = params[:new_description_03]
-    adjust.description_04 = params[:new_description_04]
-    adjust.description_05 = params[:new_description_05]
-    adjust.site_link = params[:new_site_link]
-    adjust.youtube_link_01 = params[:new_youtube_link_01]
-    adjust.youtube_link_02 = params[:new_youtube_link_02]
-    adjust.category_id = params[:category_id]
-    adjust.save
+    up = Ecommerce.find(params[:id])
+    up.title = params[:new_title]
+    up.image_main = params[:new_image_main]
+    up.image_01 = params[:new_image_01]
+    up.image_02 = params[:new_image_02]
+    up.image_03 = params[:new_image_03]
+    up.image_04 = params[:new_image_04]
+    up.intro = params[:new_intro]
+    up.price_before = params[:new_price_before]
+    up.price_after = params[:new_price_after]
+    up.description = params[:new_description]
+    up.description_01 = params[:new_description_01]
+    up.description_02 = params[:new_description_02]
+    up.description_03 = params[:new_description_03]
+    up.description_04 = params[:new_description_04]
+    up.description_05 = params[:new_description_05]
+    up.site_link = params[:new_site_link]
+    up.youtube_link_01 = params[:new_youtube_link_01]
+    up.youtube_link_02 = params[:new_youtube_link_02]
+    up.category_id = params[:category_id]
+    up.save
     
     redirect_to '/'
   end
   
-  # def destroy
-  #   Ecommece.destroy(params[:ecommerce_id])
-  #   redirect_to :back
-  # end
+  def destroy
+    ecommerce = Ecommerce.find(params[:ecommerce_id])
+    ecommerce.destroy
+
+    redirect_to '/'
+  end
   
   def detail
     @details = Ecommerce.find(params[:id])

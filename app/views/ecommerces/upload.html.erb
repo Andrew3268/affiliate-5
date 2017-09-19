@@ -1,7 +1,7 @@
 <div class="upload_wrapper">
   <h1>Upload New Product</h1>
   <div class="upload_section">
-    <%= form_tag "/ecommerces/create", method: "post" do %>
+    <%= form_tag "/ecommerces/create", method: "POST" do %>
       <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
       <div class="form">
         <label>Product Title</label>

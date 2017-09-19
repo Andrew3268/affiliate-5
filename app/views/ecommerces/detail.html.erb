@@ -94,6 +94,29 @@
           <!--  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&f=ifr&linkID=2cde31fa1af6c932c852ea8bb31d4266&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>-->
 		      <!--  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primegift&banner=10BSGCHPCJG0HZN45H82&f=ifr&linkID=2959f635aa97cb7428221fb9cb048d03&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>-->
 		      <!--</div>-->
+		      
+		      
+		   <!-- Section -->
+					<section>
+						<header class="major">
+							<h2>- You might like -</h2>
+						</header>
+						<div class="posts">
+						 <% @detail_sidebar.each do |detail_bottom| %>  
+							<article>
+								<a href="/ecommerces/detail/<%= detail_bottom.id %>" class="image"><img src="<%= detail_bottom.image_main %>" alt="" /></a>
+								<h3><%= detail_bottom.title %></h3>
+								<p><%= detail_bottom.intro %></p>
+								<h3 class="price_before"><%= detail_bottom.price_before %></h3>
+								<h3>Price: $<%= detail_bottom.price_after %></h3>
+								<ul class="actions">
+									<li><a href="<%= detail_bottom.site_link %>" target="_blank", class="button">Buy Now</a></li>
+									<li><a href="/ecommerces/detail/<%= detail_bottom.id %>" class="button">View Detail</a></li>
+								</ul>
+							</article>
+						 <% end %>
+						</div>
+					</section>
 		    	
 			</div>
 		</div>
@@ -208,5 +231,16 @@
 		</div>
 
 </div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById('sidebar');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
 
 

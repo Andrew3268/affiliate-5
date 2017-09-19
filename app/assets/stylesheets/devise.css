@@ -11,6 +11,15 @@
     padding: 0 0.75em 0.5em 0;
 }
 
-/*.amazon_banner iframe {*/
-/*    margin-right: 3.3em;*/
-/*}*/
+@media screen and (max-width: 1280px) {
+    .devise_wrapper {
+        margin-top: 10%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .devise_wrapper {
+        margin-top: 20%;
+    }
+}

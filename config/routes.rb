@@ -1,15 +1,25 @@
 Rails.application.routes.draw do
   
+  root 'ecommerces#index'
   devise_for :users
+  
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
-  root 'ecommerces#index'
+ 
   
   get '/ecommerces/search', to: 'ecommerces#search', as: 'search_ecommerce'
   
   post '/wishlist/:ecommerce_id', to: 'wishlists#add', as: 'add_wishlist'
   get '/wishlist/show', to: 'wishlists#show'
   delete '/wishlist/:ecommerce_id/destroy', to: 'wishlists#destroy', as: 'destroy_wishlist'
+  
+  post '/ecommerces/category_price', to: 'ecommerces#category_price', as: 'category_price'
+  
+  
+  # get '/ecommerces/:ecommerce_id/destroy' => 'ecommerecs#destroy'
+  # get 'ecommerces/:ecommerce_id/edit' => 'ecommerces#edit'
+  # post 'ecommerces/:ecommerce_id/update' => 'ecommerce#update'
+
   
   
   

@@ -14,24 +14,45 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
 <body>
-
-
+  
+<% if notice %>
+  <div id="notice_wrapper">
+    <p class="notice"><%= notice %></p>
+  </div>
+<% else alert %>
+  <div id="notice_wrapper">
+   <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
+   
 <%= yield %>
 <%= javascript_include_tag 'application' %>
 
 
 <!--For Facebook Like&Share Button-->
-
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 <!--End Facebook Like&Share Button-->
+
+<!--For Notice & Alert Message-->
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('#notice_wrapper').fadeOut("slow", function(){
+        $(this).remove();
+      });
+    }, 3000);
+  });
+</script>
+<!--End Notice & Alert Message-->
 
 
 </body>
