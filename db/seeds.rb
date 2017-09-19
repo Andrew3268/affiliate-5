@@ -29,7 +29,7 @@
 #                  description_05: "")   
 
 ########### For Account of Admin ##############
-User.create(name: "Andrew", email: "scarlet3628@gmail.com", password: "wjdgns1213@!", admin: true)
+
 ########### End Account of Admin ##############
 
 
