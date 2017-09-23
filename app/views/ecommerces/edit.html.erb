@@ -1,7 +1,8 @@
 <div class="upload_wrapper">
   <h1>Edit Product</h1>
   <div class="upload_section">
-    <%= form_tag "/ecommerces/update", method: "post" do %>
+    <%= form_tag "/ecommerces/update/", method: "post" do %>
+    <input type="hidden" name="id" value="<%= @adjust.id %>">
       <div class="form">
         <label>Product Title</label>
         <input type="text" class="input-form" name="new_title" placeholder="Product Title" value="<%= @adjust.title %>">

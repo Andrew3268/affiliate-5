@@ -11,9 +11,12 @@ class EcommercesController < ApplicationController
     end
     
     @searchbanner = Ecommerce.all
-    @searchbanner_01 = @searchbanner.sample
-    @searchbanner_02 = @searchbanner.sample
-    @searchbanner_03 = @searchbanner.sample
+    @sidebanner_01 = @searchbanner.sample
+    @sidebanner_02 = @searchbanner.sample
+    @sidebanner_03 = @searchbanner.sample
+    @sidebanner_04 = @searchbanner.sample
+    @sidebanner_05 = @searchbanner.sample
+    @sidebanner_06 = @searchbanner.sample
   end
   
   
@@ -115,7 +118,7 @@ class EcommercesController < ApplicationController
   end
   
   def destroy
-    ecommerce = Ecommerce.find(params[:ecommerce_id])
+    ecommerce = Ecommerce.find(params[:id])
     ecommerce.destroy
 
     redirect_to '/'
@@ -124,9 +127,12 @@ class EcommercesController < ApplicationController
   def detail
     @details = Ecommerce.find(params[:id])
     @detail_sidebar = Ecommerce.all
-    @detail_sidebar_01 = @detail_sidebar.sample
-    @detail_sidebar_02 = @detail_sidebar.sample
-    @detail_sidebar_03 = @detail_sidebar.sample
+    @sidebanner_01 = @detail_sidebar.sample
+    @sidebanner_02 = @detail_sidebar.sample
+    @sidebanner_03 = @detail_sidebar.sample
+    @sidebanner_04 = @detail_sidebar.sample
+    @sidebanner_05 = @detail_sidebar.sample
+    @sidebanner_06 = @detail_sidebar.sample
   end
   
 end

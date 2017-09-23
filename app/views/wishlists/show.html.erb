@@ -33,8 +33,15 @@
 								<h3><%= ecommerce.title %></h3>
 								<%= link_to 'Delete', destroy_wishlist_path(ecommerce), class: "button", method: :delete %>
 								<p><%= ecommerce.intro %></p>
-								<h3 class="price_before"><%= ecommerce.price_before %></h3>
-								<h3>Price: $<%= ecommerce.price_after %></h3>
+								
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency ecommerce.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency ecommerce.price_after, :placeholder => '' %></h3>
+                <% total += ecommerce.price_before - ecommerce.price_after %>
+                <% if ecommerce.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+								
 								<ul class="actions">
 									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
 									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
@@ -56,6 +63,7 @@
             <%= submit_tag "Search", class: "search_search" %>
             <% end %>
           </section>
+
 				<!-- Menu -->
 					<nav id="menu">
 						<header class="major">
@@ -78,84 +86,186 @@
 									<% if user_signed_in? %>
 									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
 									<% end %>
-									<li><a href="#">submenu 2</a></li>
 								</ul>
 							</li>
 							<li>
   							<span class="opener">Price Range</span>
   							<ul>
   								<% Category.all.each do |category| %>
-  									<li><%= link_to category.name, root_path(category: category.name) %></li>
+  									<li><%= link_to category.name, category_price_path(category: category.name) %></li>
   								<% end %>
   							</ul>
 					  	</li>
 							<li><a href="#">Newset</a></li>
 							<li><a href="#">Popular</a></li>
 							<li><a href="#">Amazon Popular</a></li>
+							<li>
+  							<span class="opener">More Category</span>
+  							<ul>
+  								<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
+  							</ul>
+					  	</li>
 							<% if user_signed_in? and current_user.admin == true %> 
   							<li><a href="/ecommerces/upload">Upload</a></li>
   							<li><a href="/rails/db">Management</a></li>
 							<% end %>
 						</ul>
 					</nav>
-					
-					
-				<!-- Section -->
-					<section>
-						<header class="major">
-							<h2>Ante interdum</h2>
-						</header>
-						<div class="mini-posts">
-							<article>
-								<a href="/ecommerces/detail/<%= @show_sidebar_01.id %>" class="image"><img src="<%= @show_sidebar_01.image_main %>" alt="" /></a>
-								<h3><%= @show_sidebar_01.title %></h3>
-								<p><%= @show_sidebar_01.intro %></p>
-								<h3 class="price_before"><%= @show_sidebar_01.price_before %></h3>
-								<h3>Price: $<%= @show_sidebar_01.price_after %></h3>
-								<a href="/ecommerces/detail/<%= @show_sidebar_01.id %>" class="button">View Detail</a>
-							</article>
-							<article>
-								<a href="/ecommerces/detail/<%= @show_sidebar_02.id %>" class="image"><img src="<%= @show_sidebar_02.image_main %>" alt="" /></a>
-								<h3><%= @show_sidebar_02.title %></h3>
-								<p><%= @show_sidebar_02.intro %></p>
-								<h3 class="price_before"><%= @show_sidebar_02.price_before %></h3>
-								<h3>Price: $<%= @show_sidebar_02.price_after %></h3>
-								<a href="/ecommerces/detail/<%= @show_sidebar_02.id %>" class="button">View Detail</a>
-							</article>
-							<article>
-								<a href="/ecommerces/detail/<%= @show_sidebar_03.id %>" class="image"><img src="<%= @show_sidebar_03.image_main %>" alt="" /></a>
-								<h3><%= @show_sidebar_03.title %></h3>
-								<p><%= @show_sidebar_03.intro %></p>
-								<h3 class="price_before"><%= @show_sidebar_03.price_before %></h3>
-								<h3>Price: $<%= @show_sidebar_03.price_after %></h3>
-								<a href="/ecommerces/detail/<%= @show_sidebar_03.id %>" class="button">View Detail</a>
-							</article>
-						</div>
-						<!--<ul class="actions">-->
-						<!--	<li><a href="#" class="button">More</a></li>-->
-						<!--</ul>-->
-					</section>
 
 				<!-- Section -->
 					<section>
 						<header class="major">
-							<h2>Get in touch</h2>
+							<h2>HOW ABOUT THIS??</h2>
 						</header>
-						<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+						<div class="mini-posts">
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="image"><img src="<%= @sidebanner_01.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_01.title %></h3>
+								<p><%= @sidebanner_01.intro %></p>
+					 
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_01.price_after, :placeholder => '' %></h3>
+								<% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
+                <% if @sidebanner_01.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="image"><img src="<%= @sidebanner_02.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_02.title %></h3>
+								<p><%= @sidebanner_02.intro %></p>
+								
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_02.price_after, :placeholder => '' %></h3>
+								<% total += @sidebanner_02.price_before - @sidebanner_02.price_after %>
+                <% if @sidebanner_02.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="image"><img src="<%= @sidebanner_03.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_03.title %></h3>
+								<p><%= @sidebanner_03.intro %></p>
+								
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_03.price_after, :placeholder => '' %></h3>
+								<% total += @sidebanner_03.price_before - @sidebanner_03.price_after %>
+                <% if @sidebanner_03.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_04.id %>" class="image"><img src="<%= @sidebanner_04.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_04.title %></h3>
+								<p><%= @sidebanner_04.intro %></p>
+								
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_04.price_after, :placeholder => '' %></h3>
+								<% total += @sidebanner_04.price_before - @sidebanner_04.price_after %>
+                <% if @sidebanner_04.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+							
+								<a href="/ecommerces/detail/<%= @sidebanner_04.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_05.id %>" class="image"><img src="<%= @sidebanner_05.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_05.title %></h3>
+								<p><%= @sidebanner_05.intro %></p>
+								
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_05.price_after, :placeholder => '' %></h3>
+								<% total += @sidebanner_05.price_before - @sidebanner_05.price_after %>
+                <% if @sidebanner_05.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_05.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_06.id %>" class="image"><img src="<%= @sidebanner_06.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_06.title %></h3>
+								<p><%= @sidebanner_06.intro %></p>
+								
+								<% total = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, :placeholder => '' %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_06.price_after, :placeholder => '' %></h3>
+								<% total += @sidebanner_06.price_before - @sidebanner_06.price_after %>
+                <% if @sidebanner_06.price_before? %>
+                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_06.id %>" class="button">View Detail</a>
+							</article>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+					  <header class="major">
+							<h2>About Us(have to change)</h2>
+						</header>
+						<p>Oh,Igottabuythis is a free online magazine run by a bunch of geeks who partake in way too much online window shopping.
+               Our philosophy is simple: we only want to display the coolest stuff you can find and buy on the web. We are not interested in 
+               spamming any boring or lame products at you – when you visit Oh,Igottabuythis you’ll only see interesting, innovative, and often times very odd products.
+               Many items listed on this site do return a small commission for product referral, however this is not the sole motivation for featuring an item. 
+               Our staff regularly lists products that we receive absolutely no compensation for.
+               We do not carry any of the products listed on the site, nor do we directly sell anything.
+            </p>
+						<header class="major">
+							<h2>Get in touch(have to change)</h2>
+						</header>
+						<p>Please remember that we are not an actual webstore. 
+						   We do not sell anything ourselves, and we do not ship anything ourselves. We cannot assist you with your purchase orders, 
+						   and we do not know if a product can be shipped internationally.
+					  </p>
+					  
+				<!--Sending Email  -->
+					  <div class="form">
+              <input type="text" class="input-form" name="new_title" placeholder="Your Name">
+            </div>
+            <div class="form">
+              <input type="text" class="input-form" name="new_title" placeholder="Your Email">
+            </div>
+            <div class="form">
+              <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Your Message"></textarea>
+            </div><br />
+            <button class="button" type="submit"> Send Email</button>
 						<ul class="contact">
-							<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-							<li class="fa-phone">(000) 000-0000</li>
-							<li class="fa-home">1234 Somewhere Road #8254<br />
-							Nashville, TN 00000-0000</li>
+							<li class="fa-envelope-o"><a href="#">ohigottabuythis@gmail.com</a></li>
 						</ul>
+				<!--Sending Email  -->
+				
+				<!--Facebook Like & Share Button-->
+				<!--		<div class="fb-like" data-href="https://affiliate-5-andrew3628.c9users.io" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br /><br />-->
+				<!--	  <div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>-->
+				<!--Facebook Like & Share Button-->	
 					</section>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>
 					</footer>
 
-			</div>
-		</div>
+			</div><!-- class="inner" -->
+		</div><!-- id="sidebar" -->
+
 
 </div>
