@@ -10,8 +10,8 @@ class CreateEcommerces < ActiveRecord::Migration
       t.string :image_03
       t.string :image_04
       t.string :intro
-      t.integer :price_before
-      t.integer :price_after
+      t.float :price_before
+      t.float :price_after
       t.string :site_link  
       t.string :youtube_link_01
       t.string :youtube_link_02

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903163606) do
+ActiveRecord::Schema.define(version: 20170928094110) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20170903163606) do
     t.string   "image_03"
     t.string   "image_04"
     t.string   "intro"
-    t.integer  "price_before"
-    t.integer  "price_after"
+    t.float    "price_before"
+    t.float    "price_after"
     t.string   "site_link"
     t.string   "youtube_link_01"
     t.string   "youtube_link_02"
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(version: 20170903163606) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "category_id"
+    t.integer  "pcategory_id"
+  end
+
+  create_table "pcategories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

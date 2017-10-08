@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete '/wishlist/:ecommerce_id/destroy', to: 'wishlists#destroy', as: 'destroy_wishlist'
   
   post '/ecommerces/category_price', to: 'ecommerces#category_price', as: 'category_price'
+  post '/ecommerces/pcategory_product', to: 'ecommerces#pcategory_product', as: 'pcategory_product'
   
   
   # get '/ecommerces/:ecommerce_id/destroy' => 'ecommerecs#destroy'

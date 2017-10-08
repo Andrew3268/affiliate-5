@@ -37,8 +37,24 @@ class EcommercesController < ApplicationController
      @sidebanner_06 = @category_price_sidebanner.sample
   end
   
-
-
+  def pcategory_product
+    if params[:pcategory].blank?
+     @ecommerces = Ecommerce.all
+    else
+     @pcategory_id = Pcategory.find_by(name: params[:pcategory]).id
+     @ecommerces = Ecommerce.where(:pcategory_id => @pcategory_id).order("created_at DESC")
+    end
+    
+     @pcategory_price_sidebanner = Ecommerce.all
+     @sidebanner_01 = @pcategory_price_sidebanner.sample
+     @sidebanner_02 = @pcategory_price_sidebanner.sample
+     @sidebanner_03 = @pcategory_price_sidebanner.sample
+     @sidebanner_04 = @pcategory_price_sidebanner.sample
+     @sidebanner_05 = @pcategory_price_sidebanner.sample
+     @sidebanner_06 = @pcategory_price_sidebanner.sample
+  end
+  
+  
   def index
      @ecommerces = Ecommerce.all
 
@@ -54,6 +70,7 @@ class EcommercesController < ApplicationController
   
   def upload
     @categories = Category.all.map{ |c| [c.name, c.id] }
+    @pcategories = Pcategory.all.map{ |pc| [pc.name, pc.id] }
     if user_signed_in? and current_user.admin == false
       flash[:warning] = 'Only admin can access.'
       redirect_to '/'
@@ -134,6 +151,8 @@ class EcommercesController < ApplicationController
     @sidebanner_05 = @detail_sidebar.sample
     @sidebanner_06 = @detail_sidebar.sample
   end
+  
+  
   
 end
 

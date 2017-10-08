@@ -3128,15 +3128,14 @@
 		
 	.mini-posts .price_before {	
 		text-decoration: line-through;
-  	font-size: 2em;
-  	font-weight: bold;
-  	color: #f56a6a;
+  	font-size: 1.25em;
+  	color: #919193;
     margin-bottom: -0.2em;
 	}
 	
 	.mini-posts .yousave {
-		font-size: 1em;
-    margin-top: -1.5em;
+		font-size: 2em;
+    margin-top: -0.8em;
     color: #f56a6a;
 	}
 	
@@ -3228,8 +3227,6 @@
 		}	
 
 /***************************************/			
-			
-
 			/*.features article .icon {*/
 			/*	-moz-flex-grow: 0;*/
 			/*	-webkit-flex-grow: 0;*/
@@ -3465,16 +3462,26 @@
 	
 	.posts .price_before {		
 		text-decoration: line-through;
-  	font-size: 2em;
-  	font-weight: bold;
-  	color: #f56a6a;
+  	font-size: 1.25em;
+  	color: #919193;
     margin-bottom: -0.2em;
 	}
 	
 	.posts .yousave {
-		font-size: 1em;
-    margin-top: -1.5em;
+		font-size: 2em;
+    margin-top: -0.8em;
     color: #f56a6a;
+	}
+	
+	.posts .amazon_logo {
+		float: right;
+		margin-top: -4.8em;
+
+	}
+	
+	.posts .amazon_logo img {
+	  width: 2.7em;
+	  height: 2.7em;
 	}
 	
 
@@ -3717,6 +3724,7 @@
 		
 	#search .search_search {
 	    margin-top: 0.1em;
+	    /*padding: 0 10.65em;*/
 	}
 
 	#sidebar {
@@ -3928,6 +3936,7 @@
 					top: 1em;
 					width: 5em;
 				}
+				
 
 		}
 
@@ -4082,6 +4091,19 @@
 				width: 100%;
 			}
 			
+	#banner p {
+			overflow: hidden; 
+	    text-overflow: ellipsis; 
+	    display: -webkit-box;
+	    -moz-line-clamp: 4; 
+	    -webkit-line-clamp: 4; /* number of line */	
+	    -ms-line-clamp: 4;
+	    -moz-box-orient: vertical;
+	    -webkit-box-orient: vertical;
+	    -ms-box-orient: vertical;
+	    word-wrap:break-word;
+	}		
+			
 	#banner .content .actions .cart-size {
 		font-size: 4em;
 		border-bottom: none;
@@ -4110,21 +4132,18 @@
   	
   #banner .content .banner_price_before {
   	text-decoration: line-through;
-  	font-size: 2em;
-  	font-weight: bold;
-  	color: #f56a6a;
+  	font-size: 1.7em;
+  	color: #919193;
     margin-bottom: 1.6em;
   }
   
   #banner .content .yousave {
-  	font-size: 1em;
-    margin-top: -1.5em;
+  	font-size: 2em;
+    margin-top: -1.1em;
     color: #f56a6a;
   }
-			
-			
-			
-
+  
+  
 		@media screen and (orientation: portrait) {
 
 			#banner {
@@ -4307,13 +4326,76 @@
 		border-top: none;
 	}
 	
-	#menu .icons .login {
+	#menu .icons .login  {
 	  margin-right: 1em;
 	  border-top: none;
+	  -moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		background-color: transparent;
+		border-radius: 0.375em;
+		border: 0;
+		box-shadow: inset 0 0 0 2px #f56a6a;
+		color: #f56a6a !important;
+		cursor: pointer;
+		display: inline-block;
+		font-family: "Roboto Slab", serif;
+		font-size: 1em;
+		font-weight: 700;
+		height: 3em;
+		letter-spacing: 0.075em;
+		line-height: 2em;
+		padding: 0 2.25em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
 	}
 	
 	#menu .icons .signup {
 		border-top: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		background-color: transparent;
+		border-radius: 0.375em;
+		border: 0;
+		box-shadow: inset 0 0 0 2px #f56a6a;
+		color: #f56a6a !important;
+		cursor: pointer;
+		display: inline-block;
+		font-family: "Roboto Slab", serif;
+		font-size: 1em;
+		font-weight: 700;
+		height: 3em;
+		letter-spacing: 0.075em;
+		line-height: 2em;
+		padding: 0 2.25em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
 	}
+	
+		#menu .icons .login:hover {
+			background-color: rgba(245, 106, 106, 0.05);
+		}
+		
+				#menu .icons .signup:hover {
+			background-color: rgba(245, 106, 106, 0.05);
+		}
+	
+	
+	
 	
 /********************************/

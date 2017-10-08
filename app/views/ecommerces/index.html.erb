@@ -10,10 +10,10 @@
 					  <a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
 						<ul class="icons">
 						  <li><button class="call_sidebar" onclick="myFunction()">Menu</button></li>
+						  <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>						
 							<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 						</ul>
 					</header>
@@ -35,17 +35,19 @@
                </div>
               </div>
               
+           
               <% total = 0 %>
               <% discount = 0 %>
-              <h3 class="banner_price_before"> <%= number_to_currency @banner.price_before, :placeholder => '' %></h3>
-						  <h3 class="banner_price">Price : <%= number_to_currency @banner.price_after, :placeholder => '' %></h3>
+              <h3 class="banner_price_before"><%= number_to_currency @banner.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+						  <h3 class="banner_price"><%= number_to_currency @banner.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
 						 	<% total += @banner.price_before - @banner.price_after %>
 						 	<% discount += total.to_f / @banner.price_before * 100  %>
   						<% if @banner.price_before? %>
-  							<h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+  							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
   					  <% end %>
 
-				
+    
+              
 							<ul class="actions">
 								<li><a href="<%= @banner.site_link %>" class="button big" target="_blank">Buy Now</a></li>
 								<li><a href="/ecommerces/detail/<%= @banner.id %>" class="button big">View Detail</a></li>
@@ -61,6 +63,7 @@
 						<header class="major">
 							<h2>- All Products -</h2>
 						</header>
+						
 						<div class="posts">
 						 
 						 <% @ecommerces.reverse.each do |ecommerce| %>  
@@ -73,13 +76,14 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
-								<h3>Price: <%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += ecommerce.price_before - ecommerce.price_after %>
                 <% discount += total.to_f / ecommerce.price_before * 100  %>
                 <% if ecommerce.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
                 
+              
 								<ul class="actions">
 									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
 									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
@@ -88,6 +92,9 @@
   									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
 									<% end %>
 								</ul>
+								<div class="amazon_logo">
+						  	 <img src="https://s3.amazonaws.com/BURC_Pages/downloads/a-smile_color_btn.png">
+					      </div>
 								
 							</article>
 						 <% end %>
@@ -115,10 +122,10 @@
 						</header>
 						<ul class="icons">
 						  <% if user_signed_in? %>
-						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br />
+						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
 						  <% else %>
 						  	<li class="login"><%= link_to "Log in", new_user_session_path %></li>
-					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li>
+					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
 						  <% end %>
 					  </ul>
 						<ul>
@@ -127,19 +134,36 @@
 								<ul>
 									<li><%= link_to "Edit Account", edit_user_registration_path %></li>
 									<li><%= link_to "Wish List", wishlist_show_path %></li>
+									<li><a href="ecommerces/message">Contect Us</a></li> 
 									<% if user_signed_in? %>
 									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
 									<% end %>
 								</ul>
 							</li>
 							<li>
-  							<span class="opener">Price Range</span>
+  							<span class="opener">Shop by Price</span>
   							<ul>
   								<% Category.all.each do |category| %>
   									<li><%= link_to category.name, category_price_path(category: category.name) %></li>
   								<% end %>
   							</ul>
 					  	</li>
+					  		<li>
+  							<span class="opener">Shop by Category</span>
+  							<ul>
+  								<% Pcategory.all.each do |pcategory| %>
+  									<li><%= link_to pcategory.name, pcategory_product_path(pcategory: pcategory.name) %></li>
+  								<% end %>
+  							</ul>
+					  	</li>
+					  	
+					  	<li>
+  							<span class="opener">Today`s Hotdeal</span>
+  							<ul>
+  							  <li><a href="#">Amazon Devices & Kindle Store</a></li>
+  							</ul>
+					  	</li>
+					  	
 							<li><a href="#">Newset</a></li>
 							<li><a href="#">Popular</a></li>
 							<li><a href="#">Amazon Popular</a></li>
@@ -155,6 +179,11 @@
 							<% end %>
 						</ul>
 					</nav>
+					
+				<!-- Start Facebook -->	
+					<div class="fb-page" data-href="https://www.facebook.com/Ohigottabuythis/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+					  <blockquote cite="https://www.facebook.com/Ohigottabuythis/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Ohigottabuythis/">Oh, I Gotta Buy This</a></blockquote>
+					</div>
 
 				<!-- Section -->
 					<section>
@@ -170,12 +199,12 @@
 					 
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_01.price_after, :placeholder => '' %></h3>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
                 <% discount += total.to_f / @sidebanner_01.price_before * 100  %>
                 <% if @sidebanner_01.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
@@ -188,12 +217,12 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_02.price_after, :placeholder => '' %></h3>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_02.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_02.price_before - @sidebanner_02.price_after %>
                 <% discount += total.to_f / @sidebanner_02.price_before * 100  %>
                 <% if @sidebanner_02.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="button">View Detail</a>
@@ -206,12 +235,12 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_03.price_after, :placeholder => '' %></h3>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_03.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_03.price_before - @sidebanner_03.price_after %>
                 <% discount += total.to_f / @sidebanner_03.price_before * 100  %>
                 <% if @sidebanner_03.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="button">View Detail</a>
@@ -224,12 +253,12 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_04.price_after, :placeholder => '' %></h3>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_04.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_04.price_before - @sidebanner_04.price_after %>
                 <% discount += total.to_f / @sidebanner_04.price_before * 100  %>
                 <% if @sidebanner_04.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 							
 								<a href="/ecommerces/detail/<%= @sidebanner_04.id %>" class="button">View Detail</a>
@@ -242,12 +271,12 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_05.price_after, :placeholder => '' %></h3>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_05.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_05.price_before - @sidebanner_05.price_after %>
                 <% discount += total.to_f / @sidebanner_05.price_before * 100  %>
                 <% if @sidebanner_05.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_05.id %>" class="button">View Detail</a>
@@ -260,65 +289,23 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_06.price_after, :placeholder => '' %></h3>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_06.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_06.price_before - @sidebanner_06.price_after %>
                 <% discount += total.to_f / @sidebanner_06.price_before * 100  %>
                 <% if @sidebanner_06.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_06.id %>" class="button">View Detail</a>
 							</article>
-						</div>
-					</section>
-
-				<!-- Section -->
-					<section>
-					  <header class="major">
-							<h2>About Us(have to change)</h2>
-						</header>
-						<p>Oh,Igottabuythis is a free online magazine run by a bunch of geeks who partake in way too much online window shopping.
-               Our philosophy is simple: we only want to display the coolest stuff you can find and buy on the web. We are not interested in 
-               spamming any boring or lame products at you – when you visit Oh,Igottabuythis you’ll only see interesting, innovative, and often times very odd products.
-               Many items listed on this site do return a small commission for product referral, however this is not the sole motivation for featuring an item. 
-               Our staff regularly lists products that we receive absolutely no compensation for.
-               We do not carry any of the products listed on the site, nor do we directly sell anything.
-            </p>
-						<header class="major">
-							<h2>Get in touch(have to change)</h2>
-						</header>
-						<p>Please remember that we are not an actual webstore. 
-						   We do not sell anything ourselves, and we do not ship anything ourselves. We cannot assist you with your purchase orders, 
-						   and we do not know if a product can be shipped internationally.
-					  </p>
-					  
-				<!--Sending Email  -->
-					  <div class="form">
-              <input type="text" class="input-form" name="new_title" placeholder="Your Name">
-            </div>
-            <div class="form">
-              <input type="text" class="input-form" name="new_title" placeholder="Your Email">
-            </div>
-            <div class="form">
-              <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Your Message"></textarea>
-            </div><br />
-            <button class="button" type="submit"> Send Email</button>
-						<ul class="contact">
-							<li class="fa-envelope-o"><a href="#">ohigottabuythis@gmail.com</a></li>
-						</ul>
-				<!--Sending Email  -->
-				
-				<!--Facebook Like & Share Button-->
-						<div class="fb-like" data-href="https://affiliate-5-andrew3628.c9users.io" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br /><br />
-					  <div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
-				<!--Facebook Like & Share Button-->	
-					</section>
-
+									
 				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>
-					</footer>
+				<!--	<footer id="footer">-->
+				<!--		<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>-->
+				<!--	</footer>-->
+					
+
 
 			</div><!-- class="inner" -->
 		</div><!-- id="sidebar" -->

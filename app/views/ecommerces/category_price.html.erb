@@ -97,10 +97,18 @@
 								</ul>
 							</li>
 							<li>
-  							<span class="opener">Price Range</span>
+  							<span class="opener">Shop by Price</span>
   							<ul>
   								<% Category.all.each do |category| %>
   									<li><%= link_to category.name, category_price_path(category: category.name) %></li>
+  								<% end %>
+  							</ul>
+					  	</li>
+					  		<li>
+  							<span class="opener">Shop by Category</span>
+  							<ul>
+  								<% Pcategory.all.each do |pcategory| %>
+  									<li><%= link_to pcategory.name, pcategory_product_path(pcategory: pcategory.name) %></li>
   								<% end %>
   							</ul>
 					  	</li>
@@ -119,7 +127,13 @@
 							<% end %>
 						</ul>
 					</nav>
-
+					
+				<!-- Start Facebook -->	
+					<div class="fb-page" data-href="https://www.facebook.com/Ohigottabuythis/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+					  <blockquote cite="https://www.facebook.com/Ohigottabuythis/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Ohigottabuythis/">Oh, I Gotta Buy This</a></blockquote>
+					</div>
+				<!-- End Facebook -->	
+				
 				<!-- Section -->
 					<section>
 						<header class="major">
@@ -133,11 +147,13 @@
 								<p><%= @sidebanner_01.intro %></p>
 					 
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_01.price_after, :placeholder => '' %></h3>
-								<% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
+								<% discount  = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                <% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
+                <% discount += total.to_f / @sidebanner_01.price_before * 100  %>
                 <% if @sidebanner_01.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %> Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
@@ -149,11 +165,13 @@
 								<p><%= @sidebanner_02.intro %></p>
 								
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_02.price_after, :placeholder => '' %></h3>
-								<% total += @sidebanner_02.price_before - @sidebanner_02.price_after %>
+								<% discount  = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_02.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                <% total += @sidebanner_02.price_before - @sidebanner_02.price_after %>
+                <% discount += total.to_f / @sidebanner_02.price_before * 100  %>
                 <% if @sidebanner_02.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %> Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="button">View Detail</a>
@@ -165,11 +183,13 @@
 								<p><%= @sidebanner_03.intro %></p>
 								
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_03.price_after, :placeholder => '' %></h3>
-								<% total += @sidebanner_03.price_before - @sidebanner_03.price_after %>
+								<% discount  = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_03.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                <% total += @sidebanner_03.price_before - @sidebanner_03.price_after %>
+                <% discount += total.to_f / @sidebanner_03.price_before * 100  %>
                 <% if @sidebanner_03.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %> Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="button">View Detail</a>
@@ -181,11 +201,13 @@
 								<p><%= @sidebanner_04.intro %></p>
 								
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_04.price_after, :placeholder => '' %></h3>
-								<% total += @sidebanner_04.price_before - @sidebanner_04.price_after %>
+								<% discount  = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_04.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                <% total += @sidebanner_04.price_before - @sidebanner_04.price_after %>
+                <% discount += total.to_f / @sidebanner_04.price_before * 100  %>
                 <% if @sidebanner_04.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %> Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
                 <% end %>
 							
 								<a href="/ecommerces/detail/<%= @sidebanner_04.id %>" class="button">View Detail</a>
@@ -197,11 +219,13 @@
 								<p><%= @sidebanner_05.intro %></p>
 								
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_05.price_after, :placeholder => '' %></h3>
-								<% total += @sidebanner_05.price_before - @sidebanner_05.price_after %>
+								<% discount  = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_05.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                <% total += @sidebanner_05.price_before - @sidebanner_05.price_after %>
+                <% discount += total.to_f / @sidebanner_05.price_before * 100  %>
                 <% if @sidebanner_05.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %> Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_05.id %>" class="button">View Detail</a>
@@ -213,18 +237,18 @@
 								<p><%= @sidebanner_06.intro %></p>
 								
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_06.price_after, :placeholder => '' %></h3>
-								<% total += @sidebanner_06.price_before - @sidebanner_06.price_after %>
+								<% discount  = 0 %>
+								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3>Price: <%= number_to_currency @sidebanner_06.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                <% total += @sidebanner_06.price_before - @sidebanner_06.price_after %>
+                <% discount += total.to_f / @sidebanner_06.price_before * 100  %>
                 <% if @sidebanner_06.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, :placeholder => '' %> Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_06.id %>" class="button">View Detail</a>
 							</article>
-						</div>
-					</section>
-
+									
 				<!-- Section -->
 					<section>
 					  <header class="major">
@@ -260,20 +284,17 @@
 							<li class="fa-envelope-o"><a href="#">ohigottabuythis@gmail.com</a></li>
 						</ul>
 				<!--Sending Email  -->
-				
-				<!--Facebook Like & Share Button-->
-				<!--		<div class="fb-like" data-href="https://affiliate-5-andrew3628.c9users.io" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br /><br />-->
-				<!--	  <div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>-->
-				<!--Facebook Like & Share Button-->	
+
 					</section>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>
 					</footer>
-
+					
 			</div><!-- class="inner" -->
 		</div><!-- id="sidebar" -->
+		
 </div><!-- End id="wrapper" -->
 
 <script>

@@ -7,7 +7,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
+					  <a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
 						<ul class="icons">
 						  <li><button class="call_sidebar" onclick="myFunction()">Menu</button></li>
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -17,43 +17,51 @@
 							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 						</ul>
 					</header>
-
-				<!-- Section -->
-					<section>
-						<header class="major">
-							<h2>Your WishList (<%= @ecommerces.length %>)</h2>
-							<% if @ecommerces.length == 0 %>
-							  <h1>There are no any your Wishlists</h1>
-							<% end %>
-						</header>
-						<div class="posts">
-						 <% @ecommerces.reverse.each do |ecommerce| %>  
-							<article>
-								<a href="#" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
-								<h3><%= ecommerce.title %></h3>
-								<%= link_to 'Delete', destroy_wishlist_path(ecommerce), class: "button", method: :delete %>
-								<p><%= ecommerce.intro %></p>
-								
-								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency ecommerce.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency ecommerce.price_after, :placeholder => '' %></h3>
-                <% total += ecommerce.price_before - ecommerce.price_after %>
-                <% if ecommerce.price_before? %>
-                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
-                <% end %>
-								
-								<ul class="actions">
-									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
-									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
-								</ul>
-							</article>
-						 <% end %>
-						</div>
-					</section>
-			</div>
-		</div>
-
-	<!-- Sidebar -->
+				
+			  <% if @ecommerces.count == 0 %>
+			    <h1>There are no products <br />
+			        currently in this category :(</h1>
+			  <% else %>
+			  	<div class="check_page">
+					  <h2> - <span>Here </span>are <span>What</span> are you looking for - </h2>
+					</div>
+  				<!-- Section -->
+  					<section>
+  						<header class="major">
+  							<h2><%= params[:pcategory] %></h2>
+  						</header>
+  						<div class="posts">
+  						 	<% @ecommerces.reverse.each do |ecommerce| %>  
+    							<article>
+    								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
+    								<h3><%= ecommerce.title %></h3>
+    								<p><%= ecommerce.intro %></p>
+    								
+    								<% total = 0 %>
+    								<h3 class="price_before"><%= number_to_currency ecommerce.price_before, :placeholder => '' %></h3>
+    								<h3>Price: <%= number_to_currency ecommerce.price_after, :placeholder => '' %></h3>
+                    <% total += ecommerce.price_before - ecommerce.price_after %>
+                    <% if ecommerce.price_before? %>
+                     <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                    <% end %>
+                    
+    								<ul class="actions">
+    									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
+    									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
+    									<% if user_signed_in? and current_user.admin == true %> 
+      									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
+      									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
+    									<% end %>
+    								</ul>
+    						  </article>
+						    <% end %>
+  						</div>
+  					</section>
+					<% end %>
+			</div><!-- End class="inner" -->
+		</div><!-- End id="main" -->
+		
+	  <!-- Sidebar -->
 		<div id="sidebar">
 			<div class="inner">
 
@@ -286,6 +294,16 @@
 					
 			</div><!-- class="inner" -->
 		</div><!-- id="sidebar" -->
+		
+</div><!-- End id="wrapper" -->
 
-
-</div><!-- id="wrapper" -->
+<script>
+function myFunction() {
+    var x = document.getElementById('sidebar');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
