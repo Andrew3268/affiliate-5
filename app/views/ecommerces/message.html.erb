@@ -24,8 +24,9 @@
 					
 				<!-- Sending Message -->
 					<section id="banner">
+					  
 						<div class="content">
-							<header>
+							<div class="message_header">
 							  <h2>About Us</h2>
 								<h4>Oh,Igottabuythis is a free online magazine run by a bunch of geeks who partake in way too much online window shopping.
                    Our philosophy is simple: we only want to display the coolest stuff you can find and buy on the web. We are not interested in 
@@ -38,23 +39,28 @@
 						       We do not sell anything ourselves, and we do not ship anything ourselves. We cannot assist you with your purchase orders, 
 						       and we do not know if a product can be shipped internationally.
 						   </h4>
-							</header>
+							</div>
+							<a class="button big" href="/">Back To home</a>
 						</div>
+						
 					 <!--Sending Email  -->
 						<span class="image object">
 						  <h2>Get in touch</h2>
-  					  <div class="form">
-                <input type="text" class="input-form" name="new_title" placeholder="Your Name">
-              </div>
-              <div class="form">
-                <input type="text" class="input-form" name="new_title" placeholder="Your Email">
-              </div>
-              <div class="form">
-                <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Your Message"></textarea>
-              </div><br />
-              <button class="button" type="submit"> Send Message</button>
+						   <form action="/ecommerces/message" method="POST">
+    					  <div class="form">
+                  <input type="text" class="input-form" name="new_title" placeholder="Your Name">
+                </div>
+                <div class="form">
+                  <input type="text" class="input-form" name="new_email" placeholder="Your Email">
+                </div>
+                <div class="form">
+                  <textarea type="text" class="input-form" name="new_message" rows="5" placeholder="Your Message"></textarea>
+                </div><br />
+               </form>
+              <button class="button big" type="submit"> Send Message</button>
 						</span>
 				  <!--Sending Email  -->
+				  
 				 </section>
 
 </div><!-- End id="wrapper" -->

@@ -17,109 +17,56 @@
 							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 						</ul>
 					</header>
-				  <% if flash[:message] %>	
-					   <div class="flash_message">
-		          <h2>"<%= @details.title %>"  <%=flash[:message] %></h2>
-		          <button><%= link_to "View Your WishList", wishlist_show_path, class: "flash_message_button" %></button>
-		         </div>
-	        <% end %>
+
 					<div class="check_page">
-					  <h2> Detail For <span><%= @details.title %></span></h2>
+					  <h2> Today`s Deal <span>Cell Phones & Computer Accessories</span></h2>
 					</div>
+					
 				<!-- Banner -->
 					<section id="banner">
 						<div class="content">
 							
 							<header>
-								<h1><%= @details.title %></h1>
+								<h1>Cell Phones & Computer Accessories</h1>
+								<p>New deals. Every day. Shop our Deal of the Day, Lightning Deals and more daily deals and limited-time sales. See deals you're watching here :)</p>
 							</header> 
-							
-							<h2 class="detail_intription">What`s this?</h2>
-							<p><%= @details.intro %></p>
-							<h2 class="detail_intription">Overview</h2>
-							<p class="details_p"><%= @details.description %></p>
-							
-	            <% total = 0 %>
-              <% discount = 0 %>
-              <div class="price">
-                <div class="price_h3">
-                 <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-                </div>
-                <div class="price_p">
-                  <p>Original Price</p>
-                </div>
-              </div>
-              <div class="price">
-                <div class="price_h3">
-						     <h3 class="banner_price"><%= number_to_currency @details.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
-						    </div>
-						    <div class="price_p2">
-						      <p>Current Price</p>
-						    </div>
-						 	</div>
-						 	<% total += @details.price_before - @details.price_after %>
-						 	<% discount += total.to_f / @details.price_before * 100  %>
-  						<% if @details.price_before? %>
-  							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
-  					  <% end %>
 
-							
 							<ul class="actions">
-								<li><a href="<%= @details.site_link %>" class="button big" target="_blank">Buy Now</a></li>
-								<li><%= link_to '', add_wishlist_path(@details), class: "fa fa-cart-arrow-down cart-size", method: :post %></li>
-								<li><h3><a href="/wishlists/show">Check WishList</a></h3></li>
+								<li><a class="button big" target="_blank" href="https://www.amazon.com/gp/goldbox/ref=gbps_ftr_s-3_af4e_wht_23357520?gb_f_GB-SUPPLE=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CEXPIRED%252CSOLDOUT,sortOrder:BY_SCORE,enforcedCategories:541966%252C2335752011&amp;pf_rd_p=f113943e-1d84-4883-b871-13290264af4e&amp;pf_rd_s=slot-3&amp;pf_rd_t=701&amp;pf_rd_i=gb_main&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=VSHD0MQ2PRJ4E2FHH2M5&amp;_encoding=UTF8&amp;tag=scarlet3628-20&amp;linkCode=ur2&amp;linkId=e62b42847c0b9fedfcc9edd471b415ef&amp;camp=1789&amp;creative=9325&amp;ie=UTF8&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=1d7063d7f657e890ce7ab9dbd53f08bd&camp=1789&creative=9325">View Detail</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
 							</ul>
 						</div>
 						<span class="image object">
-							<img src="<%= @details.image_main %>" alt="" />
+             <a target="_blank" href="https://www.amazon.com/gp/goldbox/ref=gbps_ftr_s-3_af4e_dct_10-?gb_f_GB-SUPPLE=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CEXPIRED%252CSOLDOUT,sortOrder:BY_SCORE,enforcedCategories:541966%252C2335752011&amp;pf_rd_p=f113943e-1d84-4883-b871-13290264af4e&amp;pf_rd_s=slot-3&amp;pf_rd_t=701&amp;pf_rd_i=gb_main&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=VSHD0MQ2PRJ4E2FHH2M5&amp;_encoding=UTF8&amp;tag=scarlet3628-20&amp;linkCode=ur2&amp;linkId=e62b42847c0b9fedfcc9edd471b415ef&amp;camp=1789&amp;creative=9325&amp;ie=UTF8&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=9894dacddf71faa13c3b7a5b2eee39ba&camp=1789&creative=9325"><%= image_tag("deal_03") %></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 						</span>
 					</section>
 
 				 <!--Section -->
 					<section>
 						<header class="major">
-							<h2>Photo & Video</h2>
+							<h2>On sale</h2>
 						</header>
-						
-					<div class="video_container">
-						<h1 class="related_text"> -Related Videos-</h1>
-						<div class="video-wrapper_left">
-							<iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
-						</div>
-						<div class="video-wrapper_right">
-							<iframe src="<%= @details.youtube_link_02 %>" frameborder="0" allowfullscreen></iframe>
-						</div>
-					</div><br/><br/>
-						
-						<h1 class="related_text"> -Related Photos-</h1>
+
 						<div class="features">
-							<article>
-                <img src="<%= @details.image_01 %>">
+							<article class="off_image">
+                <a target="_blank" href="https://www.amazon.com/gp/goldbox/ref=gbps_ftr_s-3_af4e_dct_70-?gb_f_GB-SUPPLE=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CEXPIRED%252CSOLDOUT,sortOrder:BY_SCORE,enforcedCategories:541966%252C2335752011,discountRanges:70-&amp;pf_rd_p=f113943e-1d84-4883-b871-13290264af4e&amp;pf_rd_s=slot-3&amp;pf_rd_t=701&amp;pf_rd_i=gb_main&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=VSHD0MQ2PRJ4E2FHH2M5&amp;_encoding=UTF8&amp;tag=scarlet3628-20&amp;linkCode=ur2&amp;linkId=e62b42847c0b9fedfcc9edd471b415ef&amp;camp=1789&amp;creative=9325&amp;ie=UTF8&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=a034e4f9e38eb0d444ec575c25d36429&camp=1789&creative=9325"><%= image_tag("70off") %></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 							</article>
-							<article>
-                <img src="<%= @details.image_02 %>">
+							
+							<article class="off_image">
+                <a target="_blank" href="https://www.amazon.com/gp/goldbox/ref=gbps_ftr_s-3_af4e_dct_50-?gb_f_GB-SUPPLE=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CEXPIRED%252CSOLDOUT,sortOrder:BY_SCORE,enforcedCategories:541966%252C2335752011,discountRanges:50-70%252C70-&amp;pf_rd_p=f113943e-1d84-4883-b871-13290264af4e&amp;pf_rd_s=slot-3&amp;pf_rd_t=701&amp;pf_rd_i=gb_main&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=VSHD0MQ2PRJ4E2FHH2M5&amp;_encoding=UTF8&amp;tag=scarlet3628-20&amp;linkCode=ur2&amp;linkId=e62b42847c0b9fedfcc9edd471b415ef&amp;camp=1789&amp;creative=9325&amp;ie=UTF8&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=ab3d948728b7d7256b7c1d739553fe4d&camp=1789&creative=9325"><%= image_tag("50off") %></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+              </article>
+							
+							<article class="off_image">
+                <a target="_blank" href="https://www.amazon.com/gp/goldbox/ref=gbps_ftr_s-3_af4e_prc_200-?gb_f_GB-SUPPLE=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CEXPIRED%252CSOLDOUT,sortOrder:BY_SCORE,enforcedCategories:541966%252C2335752011,discountRanges:25-50%252C50-70%252C70-&amp;pf_rd_p=f113943e-1d84-4883-b871-13290264af4e&amp;pf_rd_s=slot-3&amp;pf_rd_t=701&amp;pf_rd_i=gb_main&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=VSHD0MQ2PRJ4E2FHH2M5&amp;_encoding=UTF8&amp;tag=scarlet3628-20&amp;linkCode=ur2&amp;linkId=e62b42847c0b9fedfcc9edd471b415ef&amp;camp=1789&amp;creative=9325&amp;ie=UTF8&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=e082afb73f58191e454701fd8b72aabd&camp=1789&creative=9325"><%= image_tag("25off") %></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 							</article>
-							<article>
-                <img src="<%= @details.image_03 %>">
+							
+							<article class="off_image">
+                <a target="_blank" href="https://www.amazon.com/gp/goldbox/ref=gbps_ftr_s-3_af4e_dct_10-?gb_f_GB-SUPPLE=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CEXPIRED%252CSOLDOUT,sortOrder:BY_SCORE,enforcedCategories:541966%252C2335752011,discountRanges:10-25%252C25-50%252C50-70%252C70-&amp;pf_rd_p=f113943e-1d84-4883-b871-13290264af4e&amp;pf_rd_s=slot-3&amp;pf_rd_t=701&amp;pf_rd_i=gb_main&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=VSHD0MQ2PRJ4E2FHH2M5&amp;_encoding=UTF8&amp;tag=scarlet3628-20&amp;linkCode=ur2&amp;linkId=e62b42847c0b9fedfcc9edd471b415ef&amp;camp=1789&amp;creative=9325&amp;ie=UTF8&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=55e2bb861db8e5da8b27cbb9ac6c3ced&camp=1789&creative=9325"><%= image_tag("10off") %></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 							</article>
-							<article>
-                <img src="<%= @details.image_04 %>">
-							</article>
+							
 						</div>
 					</section>
-					
-					<h1 class="related_text"> -Descriptions-</h1>
-					<ul>
-						<li><%= @details.description_01 %></li>
-						<li><%= @details.description_02 %></li>
-						<li><%= @details.description_03 %></li>
-						<li><%= @details.description_04 %></li>
-						<li><%= @details.description_05 %></li>
-					</ul>
-					
-		      
-			</div>
-		</div>
+			</div><!-- id="main" -->
+		</div><!-- class="inner" -->
 
 	<!-- Sidebar -->
 		<div id="sidebar">
@@ -139,10 +86,10 @@
 						</header>
 						<ul class="icons">
 						  <% if user_signed_in? %>
-						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br />
+						    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
 						  <% else %>
 						  	<li class="login"><%= link_to "Log in", new_user_session_path %></li>
-					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li>
+					      <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
 						  <% end %>
 					  </ul>
 						<ul>
@@ -151,6 +98,7 @@
 								<ul>
 									<li><%= link_to "Edit Account", edit_user_registration_path %></li>
 									<li><%= link_to "Wish List", wishlist_show_path %></li>
+									<li><a href="ecommerces/message">Contect Us</a></li> 
 									<% if user_signed_in? %>
 									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
 									<% end %>
@@ -172,6 +120,15 @@
   								<% end %>
   							</ul>
 					  	</li>
+					  	
+					  	<li>
+  							<span class="opener">Today`s Hotdeal</span>
+  							<ul>
+  							  <li><a href="hotdeal/deal_01">Amazon Devices & Kindle Store</a></li>
+  							  <li><a href="hotdeal/deal_01">Electronics</a></li>
+  							</ul>
+					  	</li>
+					  	
 							<li><a href="#">Newset</a></li>
 							<li><a href="#">Popular</a></li>
 							<li><a href="#">Amazon Popular</a></li>
@@ -192,8 +149,7 @@
 					<div class="fb-page" data-href="https://www.facebook.com/Ohigottabuythis/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
 					  <blockquote cite="https://www.facebook.com/Ohigottabuythis/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Ohigottabuythis/">Oh, I Gotta Buy This</a></blockquote>
 					</div>
-				<!-- End Facebook -->	
-				
+
 				<!-- Section -->
 					<section>
 						<header class="major">
@@ -209,11 +165,11 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
                 <% discount += total.to_f / @sidebanner_01.price_before * 100  %>
                 <% if @sidebanner_01.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
@@ -227,11 +183,11 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_02.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_02.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_02.price_before - @sidebanner_02.price_after %>
                 <% discount += total.to_f / @sidebanner_02.price_before * 100  %>
                 <% if @sidebanner_02.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="button">View Detail</a>
@@ -245,11 +201,11 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_03.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_03.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_03.price_before - @sidebanner_03.price_after %>
                 <% discount += total.to_f / @sidebanner_03.price_before * 100  %>
                 <% if @sidebanner_03.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_03.id %>" class="button">View Detail</a>
@@ -263,11 +219,11 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_04.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_04.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_04.price_before - @sidebanner_04.price_after %>
                 <% discount += total.to_f / @sidebanner_04.price_before * 100  %>
                 <% if @sidebanner_04.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 							
 								<a href="/ecommerces/detail/<%= @sidebanner_04.id %>" class="button">View Detail</a>
@@ -281,11 +237,11 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_05.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_05.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_05.price_before - @sidebanner_05.price_after %>
                 <% discount += total.to_f / @sidebanner_05.price_before * 100  %>
                 <% if @sidebanner_05.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_05.id %>" class="button">View Detail</a>
@@ -299,64 +255,28 @@
 								<% total = 0 %>
 								<% discount  = 0 %>
 								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3>Price: <%= number_to_currency @sidebanner_06.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<h3><%= number_to_currency @sidebanner_06.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 <% total += @sidebanner_06.price_before - @sidebanner_06.price_after %>
                 <% discount += total.to_f / @sidebanner_06.price_before * 100  %>
                 <% if @sidebanner_06.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %> %) Savings</h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_06.id %>" class="button">View Detail</a>
 							</article>
 									
-				<!-- Section -->
-					<section>
-					  <header class="major">
-							<h2>About Us(have to change)</h2>
-						</header>
-						<p>Oh,Igottabuythis is a free online magazine run by a bunch of geeks who partake in way too much online window shopping.
-               Our philosophy is simple: we only want to display the coolest stuff you can find and buy on the web. We are not interested in 
-               spamming any boring or lame products at you – when you visit Oh,Igottabuythis you’ll only see interesting, innovative, and often times very odd products.
-               Many items listed on this site do return a small commission for product referral, however this is not the sole motivation for featuring an item. 
-               Our staff regularly lists products that we receive absolutely no compensation for.
-               We do not carry any of the products listed on the site, nor do we directly sell anything.
-            </p>
-						<header class="major">
-							<h2>Get in touch(have to change)</h2>
-						</header>
-						<p>Please remember that we are not an actual webstore. 
-						   We do not sell anything ourselves, and we do not ship anything ourselves. We cannot assist you with your purchase orders, 
-						   and we do not know if a product can be shipped internationally.
-					  </p>
-					  
-				<!--Sending Email  -->
-					  <div class="form">
-              <input type="text" class="input-form" name="new_title" placeholder="Your Name">
-            </div>
-            <div class="form">
-              <input type="text" class="input-form" name="new_title" placeholder="Your Email">
-            </div>
-            <div class="form">
-              <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Your Message"></textarea>
-            </div><br />
-            <button class="button" type="submit"> Send Email</button>
-						<ul class="contact">
-							<li class="fa-envelope-o"><a href="#">ohigottabuythis@gmail.com</a></li>
-						</ul>
-				<!--Sending Email  -->
-
-					</section>
-
 				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>
-					</footer>
+				<!--	<footer id="footer">-->
+				<!--		<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>-->
+				<!--	</footer>-->
 					
+
+
 			</div><!-- class="inner" -->
 		</div><!-- id="sidebar" -->
 
+</div><!-- End id="wrapper" -->
 
-</div><!-- id="wrapper" -->
 
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
 

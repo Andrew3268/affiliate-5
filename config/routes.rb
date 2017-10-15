@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'hotdeals/hotdeal'
+
   root 'ecommerces#index'
   devise_for :users
   

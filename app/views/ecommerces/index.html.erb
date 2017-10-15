@@ -25,21 +25,36 @@
 						<div class="content">
 							<header>
 								<h1><%= @banner.title %></h1>
-								<p><%= @banner.intro %></p>
-								<p><%= @banner.description %></p>
 							</header>
+							<p class="banner_intro"><%= @banner.intro %></p>
 							
 							<div class="container_video">
                <div class="video-wrapper_sample">
                  <iframe src="<%= @banner.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
                </div>
+               <p class="banner_description"><%= @banner.description %></p>
               </div>
+              
               
            
               <% total = 0 %>
               <% discount = 0 %>
-              <h3 class="banner_price_before"><%= number_to_currency @banner.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-						  <h3 class="banner_price"><%= number_to_currency @banner.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+              <div class="price">
+                <div class="price_h3">
+                 <h3 class="banner_price_before"><%= number_to_currency @banner.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+                </div>
+                <div class="price_p">
+                  <p>Original Price</p>
+                </div>
+              </div>
+              <div class="price">
+                <div class="price_h3">
+						     <h3 class="banner_price"><%= number_to_currency @banner.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+						    </div>
+						    <div class="price_p2">
+						      <p>Current Price</p>
+						    </div>
+						 	</div>
 						 	<% total += @banner.price_before - @banner.price_after %>
 						 	<% discount += total.to_f / @banner.price_before * 100  %>
   						<% if @banner.price_before? %>
@@ -75,8 +90,23 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
-								<h3><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<div class="price">
+  								<div class="price_h3">
+  								 <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
+  							  </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>
+  							  </div>
+  							<div class="price">
+  							  <div class="price_h3">
+  							   <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+  						    </div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
+							  
                 <% total += ecommerce.price_before - ecommerce.price_after %>
                 <% discount += total.to_f / ecommerce.price_before * 100  %>
                 <% if ecommerce.price_before? %>
@@ -92,9 +122,9 @@
   									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
 									<% end %>
 								</ul>
-								<div class="amazon_logo">
-						  	 <img src="https://s3.amazonaws.com/BURC_Pages/downloads/a-smile_color_btn.png">
-					      </div>
+								<!--<div class="amazon_logo">-->
+						  <!--	 <img src="https://s3.amazonaws.com/BURC_Pages/downloads/a-smile_color_btn.png">-->
+					   <!--   </div>-->
 								
 							</article>
 						 <% end %>
@@ -160,7 +190,9 @@
 					  	<li>
   							<span class="opener">Today`s Hotdeal</span>
   							<ul>
-  							  <li><a href="#">Amazon Devices & Kindle Store</a></li>
+  							  <li><a href="hotdeals/deal_01">Amazon Devices & Kindle Store</a></li>
+  							  <li><a href="hotdeals/deal_02">Electronics</a></li>
+  							  <li><a href="hotdeals/deal_03">Cell Phones & Computer</a></li>
   							</ul>
 					  	</li>
 					  	
