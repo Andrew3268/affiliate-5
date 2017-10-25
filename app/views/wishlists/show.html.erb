@@ -31,20 +31,37 @@
 							<article>
 								<a href="#" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
 								<h3><%= ecommerce.title %></h3>
-								<%= link_to 'Delete', destroy_wishlist_path(ecommerce), class: "button", method: :delete %>
 								<p><%= ecommerce.intro %></p>
 								
 								<% total = 0 %>
-								<h3 class="price_before"><%= number_to_currency ecommerce.price_before, :placeholder => '' %></h3>
-								<h3>Price: <%= number_to_currency ecommerce.price_after, :placeholder => '' %></h3>
+								<% discount  = 0 %>
+								<div class="price">
+  								<div class="price_h3">
+  								 <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
+  							  </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>
+  							  </div>
+  							<div class="price">
+  							  <div class="price_h3">
+  							   <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+  						    </div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
+							  
                 <% total += ecommerce.price_before - ecommerce.price_after %>
+                <% discount += total.to_f / ecommerce.price_before * 100  %>
                 <% if ecommerce.price_before? %>
-                 <h3 class="yousave">You save <%= number_to_currency total, :placeholder => '' %></h3>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
                 <% end %>
 								
 								<ul class="actions">
 									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
 									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
+									<li><%= link_to '', destroy_wishlist_path(ecommerce), class: "fa fa-trash-o fa-2x", method: :delete %></li>
 								</ul>
 							</article>
 						 <% end %>

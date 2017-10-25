@@ -3140,6 +3140,37 @@
 	}
 	
 	
+	.mini-posts .price_before {		
+		text-decoration: line-through;
+  	font-size: 1.25em;
+  	color: #919193;
+    margin-bottom: -0.2em;
+	}
+	
+	.mini-posts .price_after {
+		margin-top: -1.7em;
+	}
+	
+	.mini-posts .yousave {
+		font-size: 2em;
+    margin-top: -0.8em;
+    color: #f56a6a;
+	}
+	
+	.mini-posts .price {
+  	display: flex;
+  }
+  
+  .mini-posts .price .price_p {
+  	margin-top: -0.2em;
+  }
+  
+  .mini-posts .price .price_p2 {
+   	margin-top: -2.5em;
+ 	  color: #3d4449;
+  }
+	
+	
 
 /* Features */
 
@@ -3210,6 +3241,9 @@
 		  text-align: center;
 		  font-weight: bold;
 		  font-size: 2em;
+		  color: #f56a6a;
+		  border: 1px solid #f56a6a;
+		  background-color: black;
 		}
 		
 		.video-wrapper_left {
@@ -3327,7 +3361,7 @@
 					}
 
 					.features article:last-child {
-						margin-bottom: 0;
+						margin-bottom: -5em;
 					}
 					
 
@@ -3478,6 +3512,10 @@
 			    word-wrap:break-word;
 			}	
 	
+	
+	.posts .sources {
+		margin-top: -2em;
+	}
 	
 	.posts .price_before {		
 		text-decoration: line-through;

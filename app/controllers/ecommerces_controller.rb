@@ -17,6 +17,10 @@ class EcommercesController < ApplicationController
     @sidebanner_04 = @searchbanner.sample
     @sidebanner_05 = @searchbanner.sample
     @sidebanner_06 = @searchbanner.sample
+    @sidebanner_07 = @searchbanner.sample
+    @sidebanner_08 = @searchbanner.sample
+    @sidebanner_09 = @searchbanner.sample
+    @sidebanner_10 = @searchbanner.sample
   end
   
   
@@ -35,6 +39,10 @@ class EcommercesController < ApplicationController
      @sidebanner_04 = @category_price_sidebanner.sample
      @sidebanner_05 = @category_price_sidebanner.sample
      @sidebanner_06 = @category_price_sidebanner.sample
+     @sidebanner_07 = @category_price_sidebanner.sample
+     @sidebanner_08 = @category_price_sidebanner.sample
+     @sidebanner_09 = @category_price_sidebanner.sample
+     @sidebanner_10 = @category_price_sidebanner.sample
   end
   
   def pcategory_product
@@ -52,6 +60,10 @@ class EcommercesController < ApplicationController
      @sidebanner_04 = @pcategory_price_sidebanner.sample
      @sidebanner_05 = @pcategory_price_sidebanner.sample
      @sidebanner_06 = @pcategory_price_sidebanner.sample
+     @sidebanner_07 = @pcategory_price_sidebanner.sample
+     @sidebanner_08 = @pcategory_price_sidebanner.sample
+     @sidebanner_09 = @pcategory_price_sidebanner.sample
+     @sidebanner_10 = @pcategory_price_sidebanner.sample
   end
   
   
@@ -66,6 +78,10 @@ class EcommercesController < ApplicationController
      @sidebanner_04 = @ecommerces_sample.sample
      @sidebanner_05 = @ecommerces_sample.sample
      @sidebanner_06 = @ecommerces_sample.sample
+     @sidebanner_07 = @ecommerces_sample.sample
+     @sidebanner_08 = @ecommerces_sample.sample
+     @sidebanner_09 = @ecommerces_sample.sample
+     @sidebanner_10 = @ecommerces_sample.sample
   end
   
   def upload
@@ -86,6 +102,7 @@ class EcommercesController < ApplicationController
         uptodate.image_02 = params[:new_image_02]
         uptodate.image_03 = params[:new_image_03]
         uptodate.image_04 = params[:new_image_04]
+        uptodate.sources = params[:new_sources]
         uptodate.intro = params[:new_intro]
         uptodate.price_before = params[:new_price_before]
         uptodate.price_after = params[:new_price_after]
@@ -117,6 +134,7 @@ class EcommercesController < ApplicationController
     up.image_03 = params[:new_image_03]
     up.image_04 = params[:new_image_04]
     up.intro = params[:new_intro]
+    up.sources = params[:new_sources]
     up.price_before = params[:new_price_before]
     up.price_after = params[:new_price_after]
     up.description = params[:new_description]
@@ -150,6 +168,10 @@ class EcommercesController < ApplicationController
     @sidebanner_04 = @detail_sidebar.sample
     @sidebanner_05 = @detail_sidebar.sample
     @sidebanner_06 = @detail_sidebar.sample
+    @sidebanner_07 = @detail_sidebar.sample
+    @sidebanner_08 = @detail_sidebar.sample
+    @sidebanner_09 = @detail_sidebar.sample
+    @sidebanner_10 = @detail_sidebar.sample
   end
   
   

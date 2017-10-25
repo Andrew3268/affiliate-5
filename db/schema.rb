@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170928094110) do
     t.string   "image_03"
     t.string   "image_04"
     t.string   "intro"
+    t.string   "sources"
     t.float    "price_before"
     t.float    "price_after"
     t.string   "site_link"
