@@ -7,14 +7,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
-						<ul class="icons"></h1> 
+					  <a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
+						<ul class="icons">
 						  <li><button class="call_sidebar" onclick="myFunction()">Menu</button></li>
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+						  <li><a href="https://www.facebook.com/Ohigottabuythis" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://twitter.com/OhIgottabuythis" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.instagram.com/oh_igottabuythis" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>						
+							<li><a href="https://www.pinterest.com/ohigottabuythis/" target="_blank" class="icon fa fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="https://www.youtube.com/channel/UCPtAAP5zlHCRYdCDqGR_jeA" target="_blank" class="icon fa fa-youtube-play"><span class="label">Youtube</span></a></li>
 						</ul>
 					</header>
 
@@ -68,7 +68,7 @@
 			</div><!-- id="main" -->
 		</div><!-- class="inner" -->
 
-	<!-- Sidebar -->
+	  <!-- Sidebar -->
 		<div id="sidebar">
 			<div class="inner">
 
@@ -94,13 +94,13 @@
 					  </ul>
 						<ul>
 							<li>
-								<span class="opener">Account&Wish List</span>
+								<span class="opener">Account & Lists</span>
 								<ul>
-									<li><%= link_to "Edit Account", edit_user_registration_path %></li>
+									<li><%= link_to "Setting", edit_user_registration_path %></li>
 									<li><%= link_to "Wish List", wishlist_show_path %></li>
-									<li><a href="ecommerces/message">Contect Us</a></li> 
+<!--Contact Us-->	<!--<li><a href="ecommerces/message">Contact Us</a></li> -->
 									<% if user_signed_in? %>
-									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,  method: :delete %></li>
+									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
 									<% end %>
 								</ul>
 							</li>
@@ -120,24 +120,23 @@
   								<% end %>
   							</ul>
 					  	</li>
+		<!-- Add Hotdeal & More Category Menu -->			  	
+					  <!--	<li>-->
+  					<!--		<span class="opener">Today`s Hotdeal</span>-->
+  					<!--		<ul>-->
+  					<!--		  <li><a href="hotdeals/deal_01">Amazon Devices & Kindle Store</a></li>-->
+  					<!--		  <li><a href="hotdeals/deal_02">Electronics</a></li>-->
+  					<!--		  <li><a href="hotdeals/deal_03">Cell Phones & Computer</a></li>-->
+  					<!--		</ul>-->
+					  <!--	</li>-->
+							
+							<!--<li>-->
+  					<!--		<span class="opener">More Category</span>-->
+  					<!--		<ul>-->
+  					<!--			<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>-->
+  					<!--		</ul>-->
+					  <!--	</li>-->
 					  	
-					  	<li>
-  							<span class="opener">Today`s Hotdeal</span>
-  							<ul>
-  							  <li><a href="hotdeal/deal_01">Amazon Devices & Kindle Store</a></li>
-  							  <li><a href="hotdeal/deal_01">Electronics</a></li>
-  							</ul>
-					  	</li>
-					  	
-							<li><a href="#">Newset</a></li>
-							<li><a href="#">Popular</a></li>
-							<li><a href="#">Amazon Popular</a></li>
-							<li>
-  							<span class="opener">More Category</span>
-  							<ul>
-  								<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
-  							</ul>
-					  	</li>
 							<% if user_signed_in? and current_user.admin == true %> 
   							<li><a href="/ecommerces/upload">Upload</a></li>
   							<li><a href="/rails/db">Management</a></li>
@@ -164,8 +163,22 @@
 					 
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3><%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
                 <% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
                 <% discount += total.to_f / @sidebanner_01.price_before * 100  %>
                 <% if @sidebanner_01.price_before? %>
@@ -182,8 +195,22 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3><%= number_to_currency @sidebanner_02.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_02.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_02.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
                 <% total += @sidebanner_02.price_before - @sidebanner_02.price_after %>
                 <% discount += total.to_f / @sidebanner_02.price_before * 100  %>
                 <% if @sidebanner_02.price_before? %>
@@ -200,8 +227,22 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3><%= number_to_currency @sidebanner_03.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_03.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_03.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
                 <% total += @sidebanner_03.price_before - @sidebanner_03.price_after %>
                 <% discount += total.to_f / @sidebanner_03.price_before * 100  %>
                 <% if @sidebanner_03.price_before? %>
@@ -218,8 +259,22 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3><%= number_to_currency @sidebanner_04.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+							<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_04.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_04.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
                 <% total += @sidebanner_04.price_before - @sidebanner_04.price_after %>
                 <% discount += total.to_f / @sidebanner_04.price_before * 100  %>
                 <% if @sidebanner_04.price_before? %>
@@ -236,8 +291,22 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3><%= number_to_currency @sidebanner_05.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_05.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_05.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
                 <% total += @sidebanner_05.price_before - @sidebanner_05.price_after %>
                 <% discount += total.to_f / @sidebanner_05.price_before * 100  %>
                 <% if @sidebanner_05.price_before? %>
@@ -254,8 +323,22 @@
 								
 								<% total = 0 %>
 								<% discount  = 0 %>
-								<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-								<h3><%= number_to_currency @sidebanner_06.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_06.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_06.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
                 <% total += @sidebanner_06.price_before - @sidebanner_06.price_after %>
                 <% discount += total.to_f / @sidebanner_06.price_before * 100  %>
                 <% if @sidebanner_06.price_before? %>
@@ -264,14 +347,140 @@
 								
 								<a href="/ecommerces/detail/<%= @sidebanner_06.id %>" class="button">View Detail</a>
 							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_07.id %>" class="image"><img src="<%= @sidebanner_07.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_07.title %></h3>
+								<p><%= @sidebanner_07.intro %></p>
+								
+								<% total = 0 %>
+								<% discount  = 0 %>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_07.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_07.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
+                <% total += @sidebanner_07.price_before - @sidebanner_07.price_after %>
+                <% discount += total.to_f / @sidebanner_07.price_before * 100  %>
+                <% if @sidebanner_07.price_before? %>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_07.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_08.id %>" class="image"><img src="<%= @sidebanner_08.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_08.title %></h3>
+								<p><%= @sidebanner_08.intro %></p>
+								
+								<% total = 0 %>
+								<% discount  = 0 %>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_08.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_08.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
+                <% total += @sidebanner_08.price_before - @sidebanner_08.price_after %>
+                <% discount += total.to_f / @sidebanner_08.price_before * 100  %>
+                <% if @sidebanner_08.price_before? %>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_08.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_09.id %>" class="image"><img src="<%= @sidebanner_09.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_09.title %></h3>
+								<p><%= @sidebanner_09.intro %></p>
+								
+								<% total = 0 %>
+								<% discount  = 0 %>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_09.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_09.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
+                <% total += @sidebanner_09.price_before - @sidebanner_09.price_after %>
+                <% discount += total.to_f / @sidebanner_09.price_before * 100  %>
+                <% if @sidebanner_09.price_before? %>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_09.id %>" class="button">View Detail</a>
+							</article>
+							
+							<article>
+								<a href="/ecommerces/detail/<%= @sidebanner_10.id %>" class="image"><img src="<%= @sidebanner_10.image_main %>" alt="" /></a>
+								<h3><%= @sidebanner_10.title %></h3>
+								<p><%= @sidebanner_10.intro %></p>
+								
+								<% total = 0 %>
+								<% discount  = 0 %>
+								<div class="price">
+  								<div class="price_h3">
+										<h3 class="price_before"><%= number_to_currency @sidebanner_10.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+									 </div>
+  				        <div class="price_p">
+						       <p>Original Price</p>
+						      </div>	
+								</div>	
+								<div class="price">
+  							  <div class="price_h3">
+										<h3 class="price_after"><%= number_to_currency @sidebanner_10.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+									</div>
+  						    <div class="price_p2">
+						       <p>Current Price</p>
+						      </div>
+  							</div>
+                <% total += @sidebanner_10.price_before - @sidebanner_10.price_after %>
+                <% discount += total.to_f / @sidebanner_10.price_before * 100  %>
+                <% if @sidebanner_10.price_before? %>
+                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
+                <% end %>
+								
+								<a href="/ecommerces/detail/<%= @sidebanner_10.id %>" class="button">View Detail</a>
+							</article>
 									
 				<!-- Footer -->
 				<!--	<footer id="footer">-->
 				<!--		<p class="copyright">&copy; Oh,I Gotta Buy This. All rights reserved.</p>-->
 				<!--	</footer>-->
 					
-
-
 			</div><!-- class="inner" -->
 		</div><!-- id="sidebar" -->
 

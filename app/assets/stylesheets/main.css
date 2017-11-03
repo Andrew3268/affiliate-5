@@ -3431,6 +3431,10 @@
 			.features article .icon:before {
 				font-size: 1.25rem;
 			}
+			
+			.fb-size {
+				width: 100%;
+			}
 
 		}
 
@@ -4088,6 +4092,7 @@
 
 .flash_message {
    margin-top: 1em;
+   margin-bottom: 1em;
 }
 
 .flash_message a {
@@ -4096,6 +4101,10 @@
 
 .flash_message button {
     margin-top: -1em;
+}
+
+.flash_message_h2 {
+	margin-bottom: 0.2em;
 }
 
 @media screen and (max-width: 480px) {
@@ -4504,3 +4513,8 @@
 	
 	
 /********************************/
+
+/***Facebook***/
+.fb-size {
+	width: 100%;
+}

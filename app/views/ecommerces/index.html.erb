@@ -10,11 +10,11 @@
 					  <a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
 						<ul class="icons">
 						  <li><button class="call_sidebar" onclick="myFunction()">Menu</button></li>
-						  <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>						
-							<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-							<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+						  <li><a href="https://www.facebook.com/Ohigottabuythis" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://twitter.com/OhIgottabuythis" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.instagram.com/oh_igottabuythis" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>						
+							<li><a href="https://www.pinterest.com/ohigottabuythis/" target="_blank" class="icon fa fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="https://www.youtube.com/channel/UCPtAAP5zlHCRYdCDqGR_jeA" target="_blank" class="icon fa fa-youtube-play"><span class="label">Youtube</span></a></li>
 						</ul>
 					</header>
 					<div class="check_page">
@@ -35,8 +35,6 @@
                <p class="banner_description"><%= @banner.description %></p>
               </div>
               
-              
-           
               <% total = 0 %>
               <% discount = 0 %>
               <div class="price">
@@ -61,8 +59,6 @@
   							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
   					  <% end %>
 
-    
-              
 							<ul class="actions">
 								<li><a href="<%= @banner.site_link %>" class="button big" target="_blank">Buy Now</a></li>
 								<li><a href="/ecommerces/detail/<%= @banner.id %>" class="button big">View Detail</a></li>
@@ -86,7 +82,7 @@
 								
 								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
 								<p class="sources"><%= ecommerce.sources %></p>
-								<h3><%= ecommerce.title %></h3>
+                <h3><%= ecommerce.title %></h3>
 								<p><%= ecommerce.intro %></p>
 								
 								<% total = 0 %>
@@ -163,11 +159,11 @@
 							<li>
 								<span class="opener">Account & Lists</span>
 								<ul>
-									<li><%= link_to "Setting", edit_user_registration_path, class: "fa fa-cog" %></li>
-									<li><%= link_to "Wish List", wishlist_show_path, class: "fa fa-shopping-cart" %></li>
-									<li><a href="ecommerces/message", class="fa fa-commenting">Contect Us</a></li> 
+									<li><%= link_to "Setting", edit_user_registration_path %></li>
+									<li><%= link_to "Wish List", wishlist_show_path %></li>
+<!--Contact Us-->	<!--<li><a href="ecommerces/message">Contact Us</a></li> -->
 									<% if user_signed_in? %>
-									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path,class: "fa fa-sign-out", method: :delete %></li>
+									 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
 									<% end %>
 								</ul>
 							</li>
@@ -187,25 +183,23 @@
   								<% end %>
   							</ul>
 					  	</li>
+		<!-- Add Hotdeal & More Category Menu -->			  	
+					  <!--	<li>-->
+  					<!--		<span class="opener">Today`s Hotdeal</span>-->
+  					<!--		<ul>-->
+  					<!--		  <li><a href="hotdeals/deal_01">Amazon Devices & Kindle Store</a></li>-->
+  					<!--		  <li><a href="hotdeals/deal_02">Electronics</a></li>-->
+  					<!--		  <li><a href="hotdeals/deal_03">Cell Phones & Computer</a></li>-->
+  					<!--		</ul>-->
+					  <!--	</li>-->
+							
+							<!--<li>-->
+  					<!--		<span class="opener">More Category</span>-->
+  					<!--		<ul>-->
+  					<!--			<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>-->
+  					<!--		</ul>-->
+					  <!--	</li>-->
 					  	
-					  	<li>
-  							<span class="opener">Today`s Hotdeal</span>
-  							<ul>
-  							  <li><a href="hotdeals/deal_01">Amazon Devices & Kindle Store</a></li>
-  							  <li><a href="hotdeals/deal_02">Electronics</a></li>
-  							  <li><a href="hotdeals/deal_03">Cell Phones & Computer</a></li>
-  							</ul>
-					  	</li>
-					  	
-							<li><a href="#">Newset</a></li>
-							<li><a href="#">Popular</a></li>
-							<li><a href="#">Amazon Popular</a></li>
-							<li>
-  							<span class="opener">More Category</span>
-  							<ul>
-  								<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
-  							</ul>
-					  	</li>
 							<% if user_signed_in? and current_user.admin == true %> 
   							<li><a href="/ecommerces/upload">Upload</a></li>
   							<li><a href="/rails/db">Management</a></li>

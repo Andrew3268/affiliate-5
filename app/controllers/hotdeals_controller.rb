@@ -10,6 +10,10 @@ class HotdealsController < ApplicationController
       @sidebanner_04 = @searchbanner.sample
       @sidebanner_05 = @searchbanner.sample
       @sidebanner_06 = @searchbanner.sample
+      @sidebanner_07 = @searchbanner.sample
+      @sidebanner_08 = @searchbanner.sample
+      @sidebanner_09 = @searchbanner.sample
+      @sidebanner_10 = @searchbanner.sample
     end
     
     def deal_02
@@ -20,6 +24,10 @@ class HotdealsController < ApplicationController
       @sidebanner_04 = @searchbanner.sample
       @sidebanner_05 = @searchbanner.sample
       @sidebanner_06 = @searchbanner.sample
+      @sidebanner_07 = @searchbanner.sample
+      @sidebanner_08 = @searchbanner.sample
+      @sidebanner_09 = @searchbanner.sample
+      @sidebanner_10 = @searchbanner.sample
     end
     
     def deal_03
@@ -30,5 +38,9 @@ class HotdealsController < ApplicationController
       @sidebanner_04 = @searchbanner.sample
       @sidebanner_05 = @searchbanner.sample
       @sidebanner_06 = @searchbanner.sample
+      @sidebanner_07 = @searchbanner.sample
+      @sidebanner_08 = @searchbanner.sample
+      @sidebanner_09 = @searchbanner.sample
+      @sidebanner_10 = @searchbanner.sample
     end
 end
