@@ -84,7 +84,11 @@
 					<div class="video_container">
 						<h1 class="related_text"> Related Videos</h1>
 						<div class="video-wrapper_left">
-							<iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
+							  <% if @details.youtube_link_01.present? %>
+                  <iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
+                <% else %>                 
+                  <p>There is no any "Related Videos" :(</p>
+                <% end %>
 						</div>
 						<div class="video-wrapper_right">
 							<iframe src="<%= @details.youtube_link_02 %>" frameborder="0" allowfullscreen></iframe>
