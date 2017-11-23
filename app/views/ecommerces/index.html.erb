@@ -30,7 +30,13 @@
 							
 							<div class="container_video">
                <div class="video-wrapper_sample">
+               	<% if @banner.youtube_link_01.present? %>
                  <iframe src="<%= @banner.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
+                <% else %>
+                 <div class="index-image_01">
+                  <img src="<%= @banner.image_01 %>">
+                 </div>
+                <% end %>
                </div>
                <p class="banner_description"><%= @banner.description %></p>
               </div>
