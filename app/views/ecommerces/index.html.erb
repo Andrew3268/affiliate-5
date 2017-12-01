@@ -34,7 +34,7 @@
                  <iframe src="<%= @banner.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
                 <% else %>
                  <div class="index-image_01">
-                  <img src="<%= @banner.image_01 %>">
+                  <img src="<%= @banner.image_01 %>"
                  </div>
                 <% end %>
                </div>
@@ -72,6 +72,9 @@
 						</div>
 						<span class="image object">
 							<img src="<%= @banner.image_main %>" alt="" /><br/ >
+							<div class="amazon-banner">
+							 <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&f=ifr&linkID=fa8dcf8c5614a73be816bc80d5fc0cac&t=scarlet3628-20&tracking_id=scarlet3628-20" width="500" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+						  </div>
 						</span>
 					</section>
 
@@ -224,7 +227,6 @@
 							<h2>HOW ABOUT THIS??</h2>
 						</header>
 						<div class="mini-posts">
-							
 							<article>
 								<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="image"><img src="<%= @sidebanner_01.image_main %>" alt="" /></a>
 								<h3><%= @sidebanner_01.title %></h3>

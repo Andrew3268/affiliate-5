@@ -4246,6 +4246,9 @@
    	margin-top: -3.4em;
  	  color: #3d4449;
   }
+
+   
+  
   
   /* For Message Section */
   #banner .content .message_header h2 {
@@ -4299,6 +4302,11 @@
 					min-height: 18em;
 					width: 100%;
 				}
+				
+		    #banner .image .amazon-banner {
+	        visibility: hidden;
+	        display: none;
+		   	}
 
 		}
 
@@ -4316,8 +4324,9 @@
 			#banner .content .message_header {
 				margin-top: 5em;
 			}
-
+			
 		}
+		
 
 /* Footer */
 
