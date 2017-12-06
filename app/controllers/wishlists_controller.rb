@@ -34,6 +34,10 @@ class WishlistsController < ApplicationController
       @sidebanner_04 = @show.sample
       @sidebanner_05 = @show.sample
       @sidebanner_06 = @show.sample
+      @sidebanner_07 = @show.sample
+      @sidebanner_08 = @show.sample
+      @sidebanner_09 = @show.sample
+      @sidebanner_10 = @show.sample
     end
     
     def destroy
