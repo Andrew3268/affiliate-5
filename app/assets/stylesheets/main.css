@@ -3231,6 +3231,15 @@
 	
 
 /* Youtube Video Section */	
+    .detail_border {
+    	border: 1px solid black;
+    }
+
+    .detail_body {
+    	width:80%;
+    	margin: 0 auto;
+    }
+
 	 	.video_container {
 			width: 100%;
 			margin: auto;
@@ -4210,7 +4219,7 @@
   #banner .content .container_video .video-wrapper_sample {
 	  width: 31.5em;
 	  height :25.9em;
-	  margin-bottom: -6em;
+	  margin-bottom: -8em;
 	  padding-bottom: 25.25%;
   }
 
@@ -4246,8 +4255,72 @@
    	margin-top: -3.4em;
  	  color: #3d4449;
   }
+  
+  /* blog_left span highlight */
+  #banner .content .blog_left .title_highlight {
+  	color: #f56a6a;
+  }
+  #banner .blog_image .title_highlight {
+  	color: #f56a6a;
+  }
 
-   
+/********* MainPage (new)Index Section ********/
+
+
+#banner .content .blog_samll_01 img {
+  width: 100%;
+  height: 20em;
+  border-radius: 5px; 
+	
+}
+
+#banner .blog_intro {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -moz-line-clamp: 3;
+  -webkit-line-clamp: 3;
+  /* number of line */
+  -ms-line-clamp: 3;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap: break-word; 
+	
+}
+
+/****** Image Section ******/
+#banner .blog_image {
+	-moz-flex-grow: 0;
+	-webkit-flex-grow: 0;
+	-ms-flex-grow: 0;
+	flex-grow: 0;
+	-moz-flex-shrink: 0;
+	-webkit-flex-shrink: 0;
+	-ms-flex-shrink: 0;
+	flex-shrink: 0;
+	display: block;
+	margin: 0 0 2em 4em;
+	width: 50%;
+	height: 30em;
+}
+
+ #banner .blog_image img {
+	height: 100%;
+	-moz-object-fit: cover;
+	-webkit-object-fit: cover;
+	-ms-object-fit: cover;
+	/*object-fit: cover;*/
+	-moz-object-position: center;
+	-webkit-object-position: center;
+	-ms-object-position: center;
+	object-position: center;
+	width: 100%;
+  border-radius: 0.5em;
+}
+
+
   
   
   /* For Message Section */
@@ -4303,11 +4376,35 @@
 					width: 100%;
 				}
 				
-		    #banner .image .amazon-banner {
+				#banner .blog_image {
+					-moz-flex-grow: 0;
+					-webkit-flex-grow: 0;
+					-ms-flex-grow: 0;
+					flex-grow: 0;
+					-moz-flex-shrink: 0;
+					-webkit-flex-shrink: 0;
+					-ms-flex-shrink: 0;
+					flex-shrink: 0;
+					margin: 0 0 4em 0;
+					height: 25em;
+					max-height: 50vh;
+					min-height: 18em;
+					width: 100%;
+				}
+				
+		    #banner .blog_image, .image .amazon-banner {
 	        visibility: hidden;
 	        display: none;
 		   	}
-
+		   	
+		   	#main .inner .detail_border {
+		   		margin-top: -6em;
+		   	}
+		   
+		   	#main .inner .detail_body {
+		   		width: 100%;
+		   	}
+		   	
 		}
 
 		@media screen and (orientation: portrait) and (max-width: 480px) {
@@ -4315,6 +4412,14 @@
 			#banner .image {
 				max-height: 35vh;
 			}
+			
+			#banner .blog_image {
+				max-height: 35vh;
+			}
+			
+			#banner .content .blog_left {
+      	margin-top: 14em;
+      }
 			
 			#banner .content .container_video .video-wrapper_sample {
 				width: 100%;

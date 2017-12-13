@@ -6,20 +6,10 @@
 			<div class="inner">
 
 				<!-- Header -->
-					<header id="header">
-					  <a href="/" class="logo"><strong>Oh,</strong>   I Gotta Buy This</a>
-						<ul class="icons">
-						  <li><button class="call_sidebar" onclick="myFunction()">Menu</button></li>
-						  <li><a href="https://www.facebook.com/Ohigottabuythis" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="https://twitter.com/OhIgottabuythis" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.instagram.com/oh_igottabuythis" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>						
-							<li><a href="https://www.pinterest.com/ohigottabuythis/" target="_blank" class="icon fa fa-pinterest-p"><span class="label">Pinterest</span></a></li>
-							<li><a href="https://www.youtube.com/channel/UCPtAAP5zlHCRYdCDqGR_jeA" target="_blank" class="icon fa fa-youtube-play"><span class="label">Youtube</span></a></li>
-						</ul>
-					</header>
+					<%= render 'shared/header' %>
 					
 					<div class="check_page">
-					  <h2> Send Me Message </h2>
+					  <h2> Contact Us </h2>
 					</div>
 					
 				<!-- Sending Message -->
@@ -28,19 +18,15 @@
 						<div class="content">
 							<div class="message_header">
 							  <h2>About Us</h2>
-								<h4>Oh,Igottabuythis is a free online magazine run by a bunch of geeks who partake in way too much online window shopping.
-                   Our philosophy is simple: we only want to display the coolest stuff you can find and buy on the web. We are not interested in 
-                   spamming any boring or lame products at you – when you visit Oh,Igottabuythis you’ll only see interesting, innovative, and often times very odd products.
-                   Many items listed on this site do return a small commission for product referral, however this is not the sole motivation for featuring an item. 
-                   Our staff regularly lists products that we receive absolutely no compensation for.
-                   We do not carry any of the products listed on the site, nor do we directly sell anything.
-               </h4><br />
-								<h4>Please remember that we are not an actual webstore. 
+                <p>- "Oh, i gotta buy this" only want to show the coolest gadgets and best inventions you can find and buy on the website. We`re not interested in spamming any boring or lame products at you. All you need to know is in our website, you are going to find a lot of coolest & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet. Enjoy!</p>
+                <p>- "Oh,i gotta buy this" acknowledge some content in this process, the aim is to provide for the convenience to the user. By specifying the source, we respect other people`s rights, as well as to provide support for those who own the contents. Please let me know if your writing has been copied in a way that infringes on copyright infringement, and I will try to work hard to resolve this issue.</p>
+                <p>- Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to make good website like this. Thanks
+								<p>- All These products in our website belong to the website owner and the product owner.</p>
+								<p>-Please remember that we are not an actual webstore. 
 						       We do not sell anything ourselves, and we do not ship anything ourselves. We cannot assist you with your purchase orders, 
 						       and we do not know if a product can be shipped internationally.
-						   </h4>
+						   </p>
 							</div>
-							<a class="button big" href="/">Back To home</a>
 						</div>
 						
 					 <!--Sending Email  -->
@@ -57,10 +43,12 @@
                   <textarea type="text" class="input-form" name="new_message" rows="5" placeholder="Your Message"></textarea>
                 </div><br />
                </form>
-              <button class="button big" type="submit"> Send Message</button>
+               <ul class="actions">
+                <li><button class="button big" type="submit"> Send Message</button></li>
+                <li><a href="/" class="button big">Back To Home</a></li>
+               </ul>
 						</span>
 				  <!--Sending Email  -->
-				  
 				 </section>
 
 </div><!-- End id="wrapper" -->

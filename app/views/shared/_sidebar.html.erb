@@ -27,21 +27,13 @@
 						<ul>
 							<li><%= link_to "Setting", edit_user_registration_path %></li>
 							<li><%= link_to "Wish List", wishlist_show_path %></li>
-<!--Contact Us-->	<!--<li><a href="ecommerces/message">Contact Us</a></li> -->
+<!--Contact Us--><li><a href="ecommerces/message">Contact Us</a></li>
 							<% if user_signed_in? %>
 							 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
 							<% end %>
 						</ul>
 					</li>
-					<li>
-						<span class="opener">Shop by Price</span>
-						<ul>
-							<% Category.all.each do |category| %>
-								<li><%= link_to category.name, category_price_path(category: category.name) %></li>
-							<% end %>
-						</ul>
-			  	</li>
-			  		<li>
+			  	<li>
 						<span class="opener">Shop by Category</span>
 						<ul>
 							<% Pcategory.all.each do |pcategory| %>
@@ -49,17 +41,17 @@
 							<% end %>
 						</ul>
 			  	</li>
-<!-- Add Hotdeal & More Category Menu -->			  	
-			  <!--	<li>-->
-				<!--		<span class="opener">Today`s Hotdeal</span>-->
-				<!--		<ul>-->
-				<!--		  <li><a href="hotdeals/deal_01">Amazon Devices & Kindle Store</a></li>-->
-				<!--		  <li><a href="hotdeals/deal_02">Electronics</a></li>-->
-				<!--		  <li><a href="hotdeals/deal_03">Cell Phones & Computer</a></li>-->
-				<!--		</ul>-->
-			  <!--	</li>-->
+			  	<li>
+						<span class="opener">Shop by Price</span>
+						<ul>
+							<% Category.all.each do |category| %>
+								<li><%= link_to category.name, category_price_path(category: category.name) %></li>
+							<% end %>
+						</ul>
+			  	</li>
+
 					
-					<!--<li>-->
+				  <!--<li>-->
 				<!--		<span class="opener">More Category</span>-->
 				<!--		<ul>-->
 				<!--			<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>-->
