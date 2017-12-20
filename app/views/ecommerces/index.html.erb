@@ -27,7 +27,7 @@
 		               <div class="video-wrapper_sample">
 		                 <iframe src="https://www.youtube.com/embed/j-JGoA4u_s8" frameborder="0" allowfullscreen></iframe>
 		               </div>
-		               <p class="blog_intro">This is a collection that features all kinds of random items that really cannot be classified in a single category. All you need to know is in this video, you are going to find a lot of cool & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet. Enjoy!</p>
+		               <p class="video_intro">This is a collection that features all kinds of random items that really cannot be classified in a single category. All you need to know is in this video, you are going to find a lot of cool & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet. Enjoy!</p>
 		              </div>
 		            </div>
 	              
@@ -35,7 +35,8 @@
 									<li><a href="https://www.youtube.com/channel/UCPtAAP5zlHCRYdCDqGR_jeA" class="button big" target="_blank">Watch More Videos</a></li>
 								</ul>
 							</div>
-						
+						  
+						  
 							<div class="blog_image object">
 								<a href="/blogs/blog_01"><h2>10 Awesome <span class="title_highlight">Smart Home Gadgets</span> You Need To See :D</h2></a>
 								<a href="/blogs/blog_01"><img src="https://3.bp.blogspot.com/-0Ov80MwVP0Q/WijjYA_NgdI/AAAAAAAACCM/OJpvy91JjoIa5AZirVuElHocK2lsxPYBwCLcBGAs/s1600/five%2B%25281%2529.png" alt="" /><br/ ></a>
@@ -58,7 +59,7 @@
 						
 						<div class="posts">
 						 
-						 <% @ecommerces.reverse.each do |ecommerce| %>  
+						 <% @ecommerces.each do |ecommerce| %>  
 							<article>
 								
 								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
@@ -104,6 +105,7 @@
 							</article>
 						 <% end %>
 						</div>
+						<%= paginate @ecommerces %>
 					</section>
 					
 			</div><!-- End class="inner" -->

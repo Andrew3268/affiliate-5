@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928094110) do
+ActiveRecord::Schema.define(version: 20171214032910) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 20170928094110) do
     t.datetime "updated_at",      null: false
     t.integer  "category_id"
     t.integer  "pcategory_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "name"
+    t.text     "email"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pcategories", force: :cascade do |t|

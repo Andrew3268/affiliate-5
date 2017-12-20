@@ -27,7 +27,7 @@
 						<ul>
 							<li><%= link_to "Setting", edit_user_registration_path %></li>
 							<li><%= link_to "Wish List", wishlist_show_path %></li>
-<!--Contact Us--><li><a href="ecommerces/message">Contact Us</a></li>
+              <li><a href="message/contact_us">Contact Us</a></li>
 							<% if user_signed_in? %>
 							 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
 							<% end %>
@@ -61,6 +61,7 @@
 					<% if user_signed_in? and current_user.admin == true %> 
 						<li><a href="/ecommerces/upload">Upload</a></li>
 						<li><a href="/rails/db">Management</a></li>
+						<li><a href="/message/message_board">Message Board</a></li>
 					<% end %>
 				</ul>
 			</nav>

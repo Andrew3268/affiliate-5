@@ -69,6 +69,7 @@ class EcommercesController < ApplicationController
   
   def index
      @ecommerces = Ecommerce.all
+     @ecommerces = Ecommerce.order("created_at DESC").page params[:page]
 
      @ecommerces_sample = Ecommerce.all    
      @banner = @ecommerces_sample.sample
@@ -116,6 +117,7 @@ class EcommercesController < ApplicationController
         uptodate.youtube_link_01 = params[:new_youtube_link_01]
         uptodate.youtube_link_02 = params[:new_youtube_link_02]
         uptodate.category_id = params[:category_id]
+        uptodate.pcategory_id = params[:pcategory_id]
         uptodate.save
         
         redirect_to '/'
@@ -147,6 +149,7 @@ class EcommercesController < ApplicationController
     up.youtube_link_01 = params[:new_youtube_link_01]
     up.youtube_link_02 = params[:new_youtube_link_02]
     up.category_id = params[:category_id]
+    up.pcategory_id = params[:pcategory_id]
     up.save
     
     redirect_to '/'

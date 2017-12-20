@@ -5,8 +5,9 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 	
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<!--<link rel="stylesheet" href="assets/css/main.css" />-->
@@ -27,6 +28,7 @@
    
 <%= yield %>
 <%= javascript_include_tag 'application' %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
 <!--For Facebook Like&Share Button-->
@@ -55,7 +57,8 @@
 <!--End Notice & Alert Message-->
 
 
-</body>
+<!-- For OneLink -->
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=26e5dfe3-7961-49ce-84c1-b184cbfea094"></script>
 
 <!--For Amazon -->
   <script type="text/javascript">
@@ -68,4 +71,11 @@
   </script>
   <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
 <!--End Amazon -->
+
+
+
+</body>
+
 </html>
+
+

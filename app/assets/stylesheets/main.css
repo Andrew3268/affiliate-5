@@ -2209,7 +2209,7 @@
 	}
 
 	@media screen and (max-width: 736px) {
-
+    
 		h1 {
 			font-size: 2em;
 			line-height: 1.4;
@@ -4274,7 +4274,7 @@
 	
 }
 
-#banner .blog_intro {
+#banner .blog_intro, .video_intro {
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4287,7 +4287,10 @@
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
   word-wrap: break-word; 
-	
+}
+
+#banner .video_intro {
+	margin-top: 1.5em;
 }
 
 /****** Image Section ******/
@@ -4392,7 +4395,12 @@
 					width: 100%;
 				}
 				
-		    #banner .blog_image, .image .amazon-banner {
+		    #banner .image .amazon-banner {
+	        visibility: hidden;
+	        display: none;
+		   	}
+		   	
+		   	#banner .blog_image .amazon-banner {
 	        visibility: hidden;
 	        display: none;
 		   	}
@@ -4405,7 +4413,8 @@
 		   		width: 100%;
 		   	}
 		   	
-		}
+
+}
 
 		@media screen and (orientation: portrait) and (max-width: 480px) {
 
@@ -4430,6 +4439,12 @@
 				margin-top: 5em;
 			}
 			
+		}
+		
+		@media all and (min-width:481px) and (max-width:768px) {
+			#banner .blog_image {
+				margin-bottom: 16em;
+			}
 		}
 		
 
@@ -4637,3 +4652,4 @@
 .fb-size {
 	width: 100%;
 }
+
