@@ -1,0 +1,130 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.quicksearch_title {
+    font-size: 3.3em;
+}
+
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab .discount {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab .discount:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab .discount .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#main .inner .quicksearch_warpper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+.discount {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 0.375em;
+    border: 0;
+    /* box-shadow: inset 0 0 0 2px #f56a6a; */
+    /* color: #f56a6a !important; */
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Roboto Slab", serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    height: 3.5em;
+    letter-spacing: 0.075em;
+    /* line-height: 3.5em; */
+    padding: 0 2.25em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+/****** Table Section *******/
+.tg  {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color:#ccc;
+
+}
+.tg td {
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    padding:10px 5px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:#ccc;
+    color:#333;
+    background-color:#fff;
+    
+}
+.tg th {
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    padding:10px 5px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:#ccc;
+    color:#333;
+    background-color:#f0f0f0;
+    
+}
+.tg .tg-s6z2 {
+    text-align:center
+    
+}
+.tg .tg-spn1 {
+    background-color:#f9f9f9;
+    text-align:center
+    
+}
+.tg .tg-4eph {
+    background-color:#f9f9f9
+    
+}

@@ -1,0 +1,124 @@
+<!-- Wrapper -->
+<div id="wrapper">
+  <!-- Main -->
+	<div id="main">
+		<div class="inner">
+
+			<!-- Header -->
+        <%= render 'shared/header' %>
+        <div class="quicksearch_warpper">
+          <h1 class="quicksearch_title">Amazon Discount & Deals Qucik Search</h1>
+          
+          
+         <script type="text/javascript">
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_search_bar = "true";
+          amzn_assoc_tracking_id = "scarlet3628-20";
+          amzn_assoc_search_bar_position = "top";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_ad_type = "smart";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+          amzn_assoc_title = "Search Everything";
+          amzn_assoc_default_search_phrase = "gadgets";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_linkid = "2a7ed4aa888f9ca495b934b8407e9e4d";
+          amzn_assoc_rows = "2";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+          
+          
+          <h2>Hot Deal Discount</h2>
+          
+          <div class="tab">
+            <div class="tablinks discount" onclick="openCity(event, 'USA')">USA</div>
+            <div class="tablinks discount" onclick="openCity(event, 'CANADA')">CANADA</div>
+            <div class="tablinks discount" onclick="openCity(event, 'UK')">UK</div>
+            <div class="tablinks discount" onclick="openCity(event, 'JAPAN')">JAPAN</div>
+          </div>
+          
+          <div id="USA" class="tabcontent">
+            <h3>USA</h3>
+            <%= render 'shared/usa_discount' %>
+          </div>
+          
+          <div id="CANADA" class="tabcontent">
+            <h3>CANADA</h3>
+          </div>
+          
+          <div id="UK" class="tabcontent">
+            <h3>UK</h3>
+          </div>
+          
+          <div id="JAPAN" class="tabcontent">
+            <h3>JAPAN</h3>
+          </div>
+          </br>
+          </br>
+          
+          <h2>Hot Deal Price</h2>
+          
+          <div class="tab">
+            <div class="tablinks discount" onclick="openCity(event, 'usa_01')">USA</div>
+            <div class="tablinks discount" onclick="openCity(event, 'canada_01')">CANADA</div>
+            <div class="tablinks discount" onclick="openCity(event, 'uk_01')">UK</div>
+            <div class="tablinks discount" onclick="openCity(event, 'japan_01')">JAPAN</div>
+          </div>
+          
+          <div id="usa_01" class="tabcontent">
+            <h3>USA</h3>
+            <%= render 'shared/usa_price' %>
+          </div>
+          
+          <div id="canada_01" class="tabcontent">
+            <h3>CANADA</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          
+          <div id="uk_01" class="tabcontent">
+            <h3>UK</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          
+          <div id="japan_01" class="tabcontent">
+            <h3>JAPAN</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          
+        </div></br></br>
+          
+        
+  </div>
+ </div>
+ <%= render 'shared/sidebar' %>	
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById('sidebar');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
+                 
+<script>
+  function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+</script>
+            
+            
+            
