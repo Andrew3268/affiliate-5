@@ -1,5 +1,5 @@
 class Ecommerce < ActiveRecord::Base
-  paginates_per 12
+  paginates_per 20
   has_many :wishlist_ecommerces
   has_many :wishlists, through: :wishlist_ecommerces
     
