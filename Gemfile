@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 gem 'figaro'
 
-# group :production do
-#   gem 'mysql2'
-# end
+group :production do
+  gem 'mysql2'
+end
 
 gem 'kaminari'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
