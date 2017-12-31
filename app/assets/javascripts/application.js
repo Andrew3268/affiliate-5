@@ -16,7 +16,6 @@
 //= require util
 //= require skel.min
 //= require main
-//= require turbolinks
 //= require_tree .
 
 
