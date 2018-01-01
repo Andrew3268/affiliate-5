@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/ecommerces/category_price', to: 'ecommerces#category_price', as: 'category_price'
   post '/ecommerces/pcategory_product', to: 'ecommerces#pcategory_product', as: 'pcategory_product'
   
+  post '/message/contact_us', to: 'message#contact_us', as: 'contact_us'
   
   # get '/ecommerces/:ecommerce_id/destroy' => 'ecommerecs#destroy'
   # get 'ecommerces/:ecommerce_id/edit' => 'ecommerces#edit'
