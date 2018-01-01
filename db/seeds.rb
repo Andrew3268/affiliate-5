@@ -31,7 +31,7 @@
 #                  description_05: "")   
 
 ########### For Account of Admin ##############
-# User.create(name: "Admin", email: "ENV[email]", password: "ENV[password]", admin: true)
+# User.create(name: "Admin", email: "ENV[ADMIN_EMAIL]", password: "ENV[ADMIN_PASSWORD]", admin: true)
 ########### End Account of Admin ##############
 
 
