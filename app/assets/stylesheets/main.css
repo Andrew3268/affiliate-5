@@ -3236,6 +3236,11 @@
     	margin-top: 7em;
     }
 
+    .detail_border_down {
+    	border: 1px solid black;
+    	margin-top: 3em;
+    }
+
     .detail_body {
     	width:80%;
     	margin: 0 auto;
@@ -4684,6 +4689,13 @@
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.detail_body .detail_footer {
+  margin: 0 auto; 
+  border: 1px solid black;
+  border-radius: 0.5em;
+  padding: 1em;
 }
 
 
