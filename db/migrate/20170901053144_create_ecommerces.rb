@@ -14,6 +14,9 @@ class CreateEcommerces < ActiveRecord::Migration
       t.float :price_before
       t.float :price_after
       t.string :site_link  
+      t.string :site_link_uk
+      t.string :site_link_ca
+      t.string :site_link_jp
       t.string :youtube_link_01
       t.string :youtube_link_02
       t.text :description

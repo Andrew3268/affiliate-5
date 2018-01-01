@@ -48,12 +48,12 @@
 						      </div>
   							</div>
 							  
-                <% total += ecommerce.price_before - ecommerce.price_after %>
-                <% discount += total.to_f / ecommerce.price_before * 100  %>
-                <% if ecommerce.price_before? %>
-                 <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
-                <% end %>
-                
+          <% total += ecommerce.price_before - ecommerce.price_after %>
+          <% discount += total.to_f / ecommerce.price_before * 100  %>
+          <% if ecommerce.price_before? %>
+           <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
+          <% end %>
+          
               
 								<ul class="actions">
 									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>

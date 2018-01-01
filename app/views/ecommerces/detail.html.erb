@@ -57,8 +57,23 @@
 							<ul class="actions">
 								<li><a href="<%= @details.site_link %>" class="button big" target="_blank">Buy Now</a></li>
 								<li><%= link_to '', add_wishlist_path(@details), class: "fa fa-cart-arrow-down cart-size", method: :post %></li>
-								<li><h3><a href="/wishlists/show">Check WishList</a></h3></li>
+								<li><a href="/wishlists/show" class="button big">Check WishList</a></li>
+							</ul>
+
+              <h2>You can also buy in this country</h2>
+							<ul class="actions">
+								<% if @details.site_link_uk.present? %>
+								<li><a href="<%= @details.site_link_uk %>" class="button_sitelink" target="_blank">UK</a></li>
+								<% end %>
+								<% if @details.site_link_ca.present? %>
+								<li><a href="<%= @details.site_link_ca %>" class="button_sitelink" target="_blank">CANADA</a></li>
+								<% end %>
+								<% if @details.site_link_jp.present? %>
+								<li><a href="<%= @details.site_link_jp %>" class="button_sitelink" target="_blank">JAPAN</a></li>
+							  <% end %>
 							</ul></br></br></br>
+
+
 						</div>
 						<span class="image object">
 							<img src="<%= @details.image_main %>" alt="" /></br>
@@ -109,22 +124,34 @@
 						
 						<h1 class="related_text"> Descriptions</h1>
 						<ul>
-							<li><%= @details.description_01 %></li>
-							<li><%= @details.description_02 %></li>
-							<li><%= @details.description_03 %></li>
-							<li><%= @details.description_04 %></li>
-							<li><%= @details.description_05 %></li>
+							<% if @details.description_01.present? %>
+							 <li><%= @details.description_01 %></li>
+						  <% end %>
+							<% if @details.description_02.present? %>
+							 <li><%= @details.description_02 %></li>
+						  <% end %>
+						  <% if @details.description_03.present? %>
+							 <li><%= @details.description_03 %></li>
+						  <% end %>
+						  <% if @details.description_04.present? %>
+							 <li><%= @details.description_04 %></li>
+						  <% end %>
+						  <% if @details.description_05.present? %>
+							 <li><%= @details.description_05 %></li>
+						  <% end %>
 						</ul>
+						
+						<div class="detail_border"></div></br>
 						
 						<div class="related_prodcut">
 					  	<script type="text/javascript">
 								amzn_assoc_placement = "adunit0";
-								amzn_assoc_tracking_id = "scarlet3628-20";
+								amzn_assoc_tracking_id = "3628-20";
 								amzn_assoc_ad_mode = "search";
 								amzn_assoc_ad_type = "smart";
 								amzn_assoc_marketplace = "amazon";
 								amzn_assoc_region = "US";
-								amzn_assoc_default_search_phrase = " ";
+								amzn_assoc_default_search_phrase = "gadgets";
 								amzn_assoc_default_category = "All";
 								amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
 								amzn_assoc_search_bar = "true";
