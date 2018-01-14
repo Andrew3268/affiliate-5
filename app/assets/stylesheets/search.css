@@ -128,3 +128,42 @@ div.tab .discount .active {
     background-color:#f9f9f9
     
 }
+
+
+
+@media screen and (orientation: portrait) {
+
+    .quicksearch_warpper {
+       width: 100%;
+    }
+    
+    .quicksearch_title { 
+       font-size : 2em;
+       margin-top: 0.5em;
+    }
+
+}
+
+@media screen and (orientation: portrait) and (max-width: 480px) {
+      
+    .quicksearch_warpper {
+       width: 100%;
+    }
+   
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

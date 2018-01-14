@@ -35,7 +35,7 @@
 #main .inner .blog .blog_body img {
   width: 100%;
   height: 30em;
-  }
+ }
   
   
 	@media screen and (orientation: portrait) {
@@ -95,14 +95,14 @@
 			}
 			
 			#main .inner .blog .blog_body .blog_body_text {
-        font-size: 1.1em;
-        margin-bottom: 1em;
-      }
-      
-      #main .inner .blog .blog_body p {
-        text-align: left; 
-        margin-bottom: 1em;
-      }
+	          font-size: 1.1em;
+	          margin-bottom: 1em;
+	       }
+	      
+	       #main .inner .blog .blog_body p {
+	          text-align: left; 
+	          margin-bottom: 1em;
+	       }
 			
 		}
 		

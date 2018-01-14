@@ -4196,7 +4196,7 @@
 			}
 			
 	#banner .content .container_video .banner_description, .banner_intro {
-			overflow: hidden; 
+		overflow: hidden; 
 	    text-overflow: ellipsis; 
 	    display: -webkit-box;
 	    -moz-line-clamp: 3; 
