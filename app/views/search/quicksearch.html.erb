@@ -7,10 +7,39 @@
 			<!-- Header -->
         <%= render 'shared/header' %>
         <div class="quicksearch_warpper">
-          
+
           <h1 class="quicksearch_title">Amazon Discount & Deals Qucik Search</h1>
+
+
+          <h2>Hot Deal Discount</h2>
           
+          <div class="tab">
+            <div class="tablinks discount" onclick="openCity(event, 'USA')">USA</div>
+            <div class="tablinks discount" onclick="openCity(event, 'CANADA')">CANADA</div>
+            <div class="tablinks discount" onclick="openCity(event, 'UK')">UK</div>
+            <div class="tablinks discount" onclick="openCity(event, 'JAPAN')">JAPAN</div>
+          </div>
           
+          <div id="USA" class="tabcontent">
+            <h3>USA</h3>
+            <%= render 'shared/usa_discount' %>
+          </div>
+          
+          <div id="CANADA" class="tabcontent">
+            <h3>CANADA</h3>
+            <%= render 'shared/canada_discount' %>
+          </div>
+          
+          <div id="UK" class="tabcontent">
+            <h3>UK</h3>
+            <%= render 'shared/uk_discount' %>
+          </div>
+          
+          <div id="JAPAN" class="tabcontent">
+            <h3>JAPAN</h3>
+          </div>
+          </br>
+
           <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
             amzn_assoc_search_bar = "true";
@@ -28,36 +57,9 @@
           </script>
           <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
           
-          
-          <h2>Hot Deal Discount</h2>
-          
-          <div class="tab">
-            <div class="tablinks discount" onclick="openCity(event, 'USA')">USA</div>
-            <div class="tablinks discount" onclick="openCity(event, 'CANADA')">CANADA</div>
-            <div class="tablinks discount" onclick="openCity(event, 'UK')">UK</div>
-            <div class="tablinks discount" onclick="openCity(event, 'JAPAN')">JAPAN</div>
-          </div>
-          
-          <div id="USA" class="tabcontent">
-            <h3>USA</h3>
-            <%= render 'shared/usa_discount' %>
-          </div>
-          
-          <div id="CANADA" class="tabcontent">
-            <h3>CANADA</h3>
-          </div>
-          
-          <div id="UK" class="tabcontent">
-            <h3>UK</h3>
-          </div>
-          
-          <div id="JAPAN" class="tabcontent">
-            <h3>JAPAN</h3>
-          </div>
-          </br>
-          </br>
-          
-          <h2>Hot Deal Price</h2>
+
+
+          <!-- <h2>Hot Deal Price</h2>
           
           <div class="tab">
             <div class="tablinks discount" onclick="openCity(event, 'usa_01')">USA</div>
@@ -68,7 +70,7 @@
           
           <div id="usa_01" class="tabcontent">
             <h3>USA</h3>
-            <%= render 'shared/usa_price' %>
+            <p>Lorem ipsum dolor sit amet.</p>
           </div>
           
           <div id="canada_01" class="tabcontent">
@@ -84,7 +86,7 @@
           <div id="japan_01" class="tabcontent">
             <h3>JAPAN</h3>
             <p>Lorem ipsum dolor sit amet.</p>
-          </div>
+          </div> -->
           
         </div></br></br><!--<class="quicksearch_warpper">-->
           

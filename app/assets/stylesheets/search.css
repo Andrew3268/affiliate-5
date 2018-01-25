@@ -133,7 +133,15 @@ div.tab .discount .active {
 
 @media screen and (orientation: portrait) {
 
-    .quicksearch_warpper {
+    #main .inner .quicksearch_warpper {
+       width: 100%;
+    }
+
+    #main .inner .quicksearch_warpper .tg .tg-spn1, .tg-s6z2 {
+       font-size: 1em;
+    }
+
+    #main .inner .quicksearch_warpper th.tg-s6z2 {
        width: 100%;
     }
     
@@ -146,10 +154,6 @@ div.tab .discount .active {
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
       
-    .quicksearch_warpper {
-       width: 100%;
-    }
-   
     
 
 }

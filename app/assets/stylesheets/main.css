@@ -4479,7 +4479,7 @@
 		list-style: none;
 		margin-bottom: 0;
 		padding: 0;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 	}
 
 		#menu ul a, #menu ul span {
