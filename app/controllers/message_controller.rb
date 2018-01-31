@@ -15,8 +15,11 @@ class MessageController < ApplicationController
        message.name = params[:new_name]
        message.email = params[:new_email]
        message.content = params[:new_content]
-       message.save
-       redirect_to '/message/contact_us'
+       
+       if message.save
+        flash[:message_board] = 'Thank you!! :) for your message. Your Message has been sent'
+        redirect_to '/message/contact_us'
+       end
     end
     
     def destory

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/ecommerces/pcategory_product', to: 'ecommerces#pcategory_product', as: 'pcategory_product'
   
   post '/message/contact_us', to: 'message#contact_us', as: 'contact_us'
+  post '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
   
   # get '/ecommerces/:ecommerce_id/destroy' => 'ecommerecs#destroy'
   # get 'ecommerces/:ecommerce_id/edit' => 'ecommerces#edit'

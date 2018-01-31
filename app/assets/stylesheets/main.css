@@ -4129,13 +4129,13 @@
 
 @media screen and (max-width: 480px) {
 	.flash_message h2 {
-			float: none;
+		float: none;
 	    text-align:center;
 	    width: 100%;
 	}
 	.flash_message button {
-		  display: block;
-      width: 100%;
+		display: block;
+        width: 100%;
 	}
 }
 

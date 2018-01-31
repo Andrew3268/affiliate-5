@@ -50,6 +50,13 @@ div.tab .discount .active {
   margin: 0 auto;
 }
 
+#main .inner .quicksearch_warpper .search_footer {
+  margin: 0 auto; 
+  border: 1px solid black;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
 
 .discount {
     -moz-appearance: none;

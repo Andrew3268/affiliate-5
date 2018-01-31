@@ -11,6 +11,13 @@
 					<div class="check_page">
 					  <h2> Contact Us </h2>
 					</div>
+
+			    <% if flash[:message_board] %> 	
+			     <div id="notice_wrapper">		    
+		         <h2><%=flash[:message_board]%></h2>		
+		       </div>
+		      <% end %>
+
 					
 				<!-- Sending Message -->
 					<section id="banner">
@@ -47,16 +54,14 @@
                 <li><a href="/" class="button big">Back To Home</a></li>
                </ul>
                </form>
-               
-               
-               
+                            
 						</span>
 				  <!--Sending Email  -->
 				 </section>
 
 </div><!-- End id="wrapper" -->
 
-<script>
+<!-- <script>
 function myFunction() {
     var x = document.getElementById('sidebar');
     if (x.style.display === 'none') {
@@ -66,3 +71,4 @@ function myFunction() {
     }
 }
 </script>
+ -->
