@@ -3781,6 +3781,72 @@
 
 		}
 
+/* QuickSearch Section */
+
+#main {
+		-moz-flex-grow: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow: 1;
+		-moz-flex-shrink: 1;
+		-webkit-flex-shrink: 1;
+		-ms-flex-shrink: 1;
+		flex-shrink: 1;
+		width: 100%;
+	}
+
+		#main > .inner_quicksearch {
+			padding: 0 6em 0.1em 6em ;
+			margin: 0 auto;
+			max-width: 110em;
+		}
+
+			#main > .inner_quicksearch > section {
+				padding: 6em 0 4em 0 ;
+				border-top: solid 2px rgba(210, 215, 217, 0.75);
+			}
+
+				#main > .inner_quicksearch > section:first-of-type {
+					border-top: 0 !important;
+				}
+
+		@media screen and (max-width: 1680px) {
+
+			#main > .inner_quicksearch {
+				padding: 0 5em 0.1em 5em ;
+			}
+
+				#main > .inner_quicksearch > section {
+					padding: 5em 0 3em 0 ;
+				}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			#main > .inner_quicksearch {
+				padding: 0 4em 0.1em 4em ;
+			}
+
+				#main > .inner_quicksearch > section {
+					padding: 4em 0 2em 0 ;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#main > .inner_quicksearch {
+				padding: 0 0em 0em 1.1em ;
+			}
+
+				#main > .inner_quicksearch > section {
+					padding: 3em 0 1em 0 ;
+				}
+
+		}
+
+
 /* Sidebar */
 
 	#search form {
@@ -4094,7 +4160,7 @@
 			}
 
 				#header .logo {
-					font-size: 1.25em;
+					font-size: 2em;
 					margin: 0;
 				}
 
@@ -4130,8 +4196,9 @@
 @media screen and (max-width: 480px) {
 	.flash_message h2 {
 		float: none;
-	    text-align:center;
-	    width: 100%;
+	  text-align:center;
+	  width: 100%;
+	  margin-bottom: 1em;
 	}
 	.flash_message button {
 		display: block;
@@ -4296,7 +4363,7 @@
 }
 
 #banner .video_intro {
-	margin-top: 1.5em;
+	margin-top: 0em;
 }
 
 /****** Image Section ******/
@@ -4328,6 +4395,12 @@
 	width: 100%;
   border-radius: 0.5em;
 }
+
+@media screen and (orientation: portrait) and (max-width: 480px) {
+    #banner .video_intro {
+    	margin-top: 2.5em;
+    }
+	}
 
 
   
@@ -4433,7 +4506,7 @@
 			}
 			
 			#banner .content .blog_left {
-      	margin-top: 14em;
+      	margin-top: 16em;
       }
 			
 			#banner .content .container_video .video-wrapper_sample {

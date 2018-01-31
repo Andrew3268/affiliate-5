@@ -7,18 +7,17 @@
 
 				<!-- Header -->
 					<%= render 'shared/header' %>
-					
-					<div class="check_page">
-					  <h2> Contact Us </h2>
-					</div>
-
-			    <% if flash[:message_board] %> 	
+					<% if flash[:message_board] %> 	
 			     <div id="notice_wrapper">		    
 		         <h2><%=flash[:message_board]%></h2>		
 		       </div>
 		      <% end %>
 
-					
+					<div class="check_page">
+					  <h2> Contact Us </h2>
+					</div>
+
+			
 				<!-- Sending Message -->
 					<section id="banner">
 					  
@@ -50,8 +49,8 @@
                   <textarea type="text" class="input-form" name="new_content" rows="5" placeholder="Your Message"></textarea>
                 </div><br />
                 <ul class="actions">
-                <li><button class="button big" type="submit"> Send Message</button></li>
-                <li><a href="/" class="button big">Back To Home</a></li>
+                <li><button class="button" type="submit"> Send Message</button></li>
+                <li><a href="/" class="button">Back To Home</a></li>
                </ul>
                </form>
                             
