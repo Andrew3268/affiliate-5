@@ -1,6 +1,6 @@
 class MessageController < ApplicationController
     
-    before_action :authenticate_user!, only:[:message_board]
+    before_action :authenticate_user!, only:[:message_board, :create]
     
     def contact_us
        
