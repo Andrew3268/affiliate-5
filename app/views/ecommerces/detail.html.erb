@@ -60,16 +60,14 @@
 								<!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
 							</ul>
 
-              <h2>You can also buy in this country</h2>
+              <h2>Available Country</h2>
 							<ul class="actions">
-								<% if @details.site_link.present? %>
-								 <li><a href="<%= @details.site_link %>" class="button_sitelink" target="_blank">US</li>
-								<% end %>
+								<li><a href="<%= @details.site_link %>" target="_blank"><img src="https://goo.gl/CQTYis" width="80" height="50"></a></li>
 								<% if @details.site_link_uk.present? %>
-								 <li><a href="<%= @details.site_link_uk %>" class="button_sitelink" target="_blank">UK</a></li>
+								 <li><a href="<%= @details.site_link_uk %>" target="_blank"><img src="https://goo.gl/sSXwyF" width="80" height="50"></a></li>
 								<% end %>
 								<% if @details.site_link_ca.present? %>
-								 <li><a href="<%= @details.site_link_ca %>" class="button_sitelink" target="_blank">CANADA</a></li>
+								 <li><a href="<%= @details.site_link_ca %>" target="_blank"><img src="https://goo.gl/sA1vtg" width="80" height="50"></a></li>
 								<% end %>
 								<% if @details.site_link_jp.present? %>
 								 <li><a href="<%= @details.site_link_jp %>" class="button_sitelink" target="_blank">JAPAN</a></li>
@@ -163,6 +161,7 @@
 							</script>
 							<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 						</div>
+
 
 						<div class="detail_footer">
               <h2>Thanks to all my visitor :D</h2>
