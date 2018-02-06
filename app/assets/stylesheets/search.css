@@ -45,12 +45,12 @@ div.tab .discount .active {
     border-top: none;
 }
 
-#main .inner .quicksearch_warpper {
+#main .inner_quicksearch .quicksearch_warpper {
   width: 70%;
   margin: 0 auto;
 }
 
-#main .inner .quicksearch_warpper .search_footer {
+#main .inner_quicksearch .quicksearch_warpper .search_footer {
   margin: 0 auto; 
   border: 1px solid black;
   border-radius: 0.5em;
@@ -140,15 +140,15 @@ div.tab .discount .active {
 
 @media screen and (orientation: portrait) {
 
-    #main .inner .quicksearch_warpper {
+    #main .inner_quicksearch .quicksearch_warpper {
        width: 100%;
     }
 
-    #main .inner .quicksearch_warpper .tg .tg-spn1, .tg-s6z2 {
+    #main .inner_quicksearch .quicksearch_warpper .tg .tg-spn1, .tg-s6z2 {
        font-size: 1em;
     }
 
-    #main .inner .quicksearch_warpper th.tg-s6z2 {
+    #main .inner_quicksearch .quicksearch_warpper th.tg-s6z2 {
        width: 100%;
     }
     
