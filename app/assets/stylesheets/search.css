@@ -161,8 +161,13 @@ div.tab .discount .active {
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
       
-    
+      #main > .inner_quicksearch {
+                padding: 0em 0em 0em 0em ;
+            }
 
+       #main > .inner_quicksearch > section {
+                padding: 3em 0 1em 0 ;
+            }
 }
 
 
