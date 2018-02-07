@@ -13,7 +13,7 @@
 						<header class="major">
 							<h2>Your WishList (<%= @ecommerces.length %>)</h2>
 							<% if @ecommerces.length == 0 %>
-							  <h1>There are no any your Wishlists</h1>
+							  <h1>There is no your Wish List now.</h1>
 							<% end %>
 						</header>
 						<div class="posts">
@@ -41,7 +41,7 @@
   							   <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
   						    </div>
   						    <div class="price_p2">
-						       <p>Current Price</p>
+						       <p>Offer Price</p>
 						      </div>
   							</div>
 							  

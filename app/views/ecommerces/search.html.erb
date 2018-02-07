@@ -12,7 +12,7 @@
   				<!-- Section -->
   					<section>
   						<header class="major">
-  							<h2>Is this what are you looking for??</h2>
+  							<h2>Are these the ones you're looking for??</h2>
   						</header>
   						<div class="posts">
   						 <% @search.each do |search| %>  
@@ -38,7 +38,7 @@
 	  							   <h3 class="price_after"><%= number_to_currency search.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
 	  						    </div>
 	  						    <div class="price_p2">
-							       <p>Current Price</p>
+							       <p>Offer Price</p>
 							      </div>
 	  							</div>
 								  
@@ -77,7 +77,7 @@
   
 					<%= render 'shared/header' %><br /><br />
 					
-  					<h2>There are no products containing the term(s) "<%= params[:search] %>."</h2>
+  					<h2>There are no products containing the term(s)  "<%= params[:search] %>."</h2>
   			</div>
   		</div>
     	</div> <!-- End class="inner" -->
