@@ -182,6 +182,20 @@ class EcommercesController < ApplicationController
     @sidebanner_09 = @detail_sidebar.sample
     @sidebanner_10 = @detail_sidebar.sample
   end
+
+  def coupons
+    @coupon_sidebar = Ecommerce.all
+    @sidebanner_01 = @coupon_sidebar.sample
+    @sidebanner_02 = @coupon_sidebar.sample
+    @sidebanner_03 = @coupon_sidebar.sample
+    @sidebanner_04 = @coupon_sidebar.sample
+    @sidebanner_05 = @coupon_sidebar.sample
+    @sidebanner_06 = @coupon_sidebar.sample
+    @sidebanner_07 = @coupon_sidebar.sample
+    @sidebanner_08 = @coupon_sidebar.sample
+    @sidebanner_09 = @coupon_sidebar.sample
+    @sidebanner_10 = @coupon_sidebar.sample
+  end
   
   
   

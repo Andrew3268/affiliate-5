@@ -39,10 +39,17 @@ div.tab .discount .active {
 
 /* Style the tab content */
 .tabcontent {
-    display: none;
+    /*display: none;*/
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+.tabcontent_coupon {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;  
+    padding-right: 2em; 
 }
 
 #main .inner_quicksearch .quicksearch_warpper {

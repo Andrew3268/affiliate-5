@@ -1,0 +1,143 @@
+
+<div id="wrapper"><!-- Wrapper -->
+    <div id="main">  <!-- Main -->
+      <div class="inner">
+        <!-- Header -->
+          <%= render 'shared/header' %>
+
+             <div id="wrap">
+               
+              <div class="featured">
+                
+                <div class="full">
+                  <div class="banner">
+                    <h1>Featured</h1>
+                  </div>
+                  <div class="product_desc">
+                    <h2>Green Bikini</h2>
+                    <div class="description">
+                    <p>Um, well it's a delorean, right? Yeah okay. Wow, ah Red, you look great. Everything looks great. 1:24, I still got time. Oh my god. No, no not again...</p>
+                  </div>
+                  <div class="call_to_action">
+                    <a class="button_coupon" href="#">Read More</a>
+                  </div>
+                </div>
+                
+              </div><!-- id="wrap" -->
+                
+              <div class="small">
+                
+                <div class="tab">
+                  <div class="tablinks discount" onclick="openCity(event, 'Amazon')">Amazon</div>
+                  <div class="tablinks discount" onclick="openCity(event, 'Coupon_1')">Coupon_1</div>
+                  <div class="tablinks discount" onclick="openCity(event, 'Coupon_2')">Coupon_2</div>
+                  <!--  <div class="tablinks discount" onclick="openCity(event, 'JAPAN')">JAPAN</div> -->
+                </div>
+                                
+                 <div id="Amazon" class="tabcontent_coupon">
+                    <h2>Amazon Coupons & Coupon Codes</h2>
+                    
+                    <div class="three">
+                     <div class="featured_small">
+                       <div class="prod_img">
+                        <img src="https://i.imgur.com/qyk1gD3.jpg"/>
+                       </div>
+                       <div class="small_desc"><h3>Flower Dress</h3><p>Why that's me, look at me, I'm an old man. Oh, you    make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
+                       </div>
+                       <div class="action">
+                         <a class="button_coupon" href="#"> Read More</a>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="three">
+                    <div class="featured_small">
+                      <div class="prod_img">
+                      <img src="https://i.imgur.com/Bt4ypgM.jpg"/>
+                      </div>
+                      <div class="small_desc"><h3>USA Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
+                      </div>
+                      <div class="action">
+                        <a class="button_coupon" href="#"> Read More</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="three">
+                    <div class="featured_small">
+                      <div class="prod_img">
+                      <img src="https://i.imgur.com/nhODrN6.jpg"/>
+                      </div>
+                      <div class="small_desc"><h3>Skull Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
+                      </div>
+                      <div class="action">
+                        <a class="button_coupon" href="#"> Read More</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="three">
+                    <div class="featured_small">
+                      <div class="prod_img">
+                      <img src="https://i.imgur.com/nhODrN6.jpg"/>
+                      </div>
+                      <div class="small_desc"><h3>Skull Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
+                      </div>
+                      <div class="action">
+                        <a class="button_coupon" href="#"> Read More</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="three">
+                    <div class="featured_small">
+                      <div class="prod_img">
+                      <img src="https://i.imgur.com/nhODrN6.jpg"/>
+                      </div>
+                      <div class="small_desc"><h3>Skull Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
+                      </div>
+                      <div class="action">
+                        <a class="button_coupon" href="#"> Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                 </div><!-- <div id="Amazon" class="tabcontent"> -->
+                  
+
+                 <div id="Coupon_1" class="tabcontent_coupon" style="display:none">
+                  <h3></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim obcaecati aut dignissimos unde sapiente ab deleniti, iure reiciendis inventore nisi eaque, assumenda voluptas fugit commodi cumque laboriosam, vitae delectus voluptates!</p>
+                 </div>
+                
+                 <div id="Coupon_2" class="tabcontent_coupon" style="display:none">
+                   <h3>UK</h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis commodi, optio deleniti ratione,  est accusamus et eum placeat explicabo vero.</p>
+                 </div>
+                                
+              </div><!-- class="small" -->
+              
+            </div><!-- id="wrap" -->
+
+      </div><!-- End class="inner" -->
+    </div><!-- End id="main" -->
+  <%= render 'shared/sidebar' %>  
+</div><!-- End id="wrapper" -->
+
+<script>
+  function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_coupon");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+</script>
+
+

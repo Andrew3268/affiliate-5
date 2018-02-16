@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
   post '/message/contact_us', to: 'message#contact_us', as: 'contact_us'
   post '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
+  post '/ecommerces/coupons', to: 'ecommerces#coupons', as: 'coupons'
   
   # get '/ecommerces/:ecommerce_id/destroy' => 'ecommerecs#destroy'
   # get 'ecommerces/:ecommerce_id/edit' => 'ecommerces#edit'

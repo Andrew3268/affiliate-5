@@ -24,17 +24,17 @@
           </div>
           
           <div id="USA" class="tabcontent">
-            <h3>USA</h3>
+            <h3>Amazon.com (USA)</h3>
             <%= render 'shared/usa_discount' %>
           </div>
           
-          <div id="CANADA" class="tabcontent">
-            <h3>CANADA</h3>
+          <div id="CANADA" class="tabcontent" style="display:none">
+            <h3>Amazon.ca (CANADA)</h3>
             <%= render 'shared/canada_discount' %>
           </div>
           
-          <div id="UK" class="tabcontent">
-            <h3>UK</h3>
+          <div id="UK" class="tabcontent" style="display:none">
+            <h3>Amazon.co.uk (UK)</h3>
             <%= render 'shared/uk_discount' %>
           </div>
           
@@ -116,17 +116,7 @@
  <%= render 'shared/sidebar' %>	
 </div>
 
-<script>
-function myFunction() {
-    var x = document.getElementById('sidebar');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</script>
-                 
+   
 <script>
   function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
@@ -142,6 +132,18 @@ function myFunction() {
       evt.currentTarget.className += " active";
   }
 </script>
+
+<!-- <script>
+function myFunction() {
+    var x = document.getElementById('sidebar');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script> -->
+
             
             
             

@@ -8,6 +8,12 @@
         <% end %>
       </section>
 
+      <section>
+      	<article>
+      		<a href="/" class="image"><img src="https://pbs.twimg.com/profile_images/908082833964462081/kgXBThxL_400x400.jpg" alt="" /></a>
+      	</article>
+      </section>
+
 		<!-- Menu -->
 			<nav id="menu">
 				<header class="major">
@@ -51,19 +57,12 @@
 						</ul>
 			  	</li>
 			  	<li>
-						<span><%= link_to "HotDeal Quick Search", quicksearch_path %></span>
+			  		<span class="opener">HotDeals & Coupons</span>
+			  		<ul>
+							<li><%= link_to "HotDeal Quick Search", quicksearch_path %></li>
+							<!-- <li><%= link_to "Coupons", coupons_path %></li> -->
+						</ul>
 			  	</li>
-			  	<!--<li>-->
-			  	<!--  <a href="search/quicksearch">Deals & QucikSearch</a>-->
-			  	<!--</li>-->
-
-					
-				  <!--<li>-->
-				<!--		<span class="opener">More Category</span>-->
-				<!--		<ul>-->
-				<!--			<li><a target="_blank" href="https://www.amazon.com/stream/80edd9ee-ae64-4dfe-8db8-eb3d745f2094/ref=as_li_ss_tl?asCursor=WyIxLjgiLCJ0czEiLCIxNTA1Mjk5MjAwMDAwIiwiIiwiUzAwMTU6MDpudWxsIiwiUzAwMTU6MjoxIiwiUzAwMTU6MDotMSIsIiIsIiIsIjAiLCJzdWIyIiwiMTUwNTMwOTI3ODcyOSIsImhmMS1zYXZlcyIsIjE1MDUzMDEzMDAwMDAiLCJ2MSIsIjE1MDUzMDY1NDQ1MTIiLCJ2MSIsIjE1MDEwMTYzNDk2NTgiLCIiLCIwIl0%3D&amp;asCacheIndex=0&amp;asYOffset=-370.8000183105469&amp;linkCode=sl2&amp;tag=prophack-20&amp;linkId=d76dde8442fa84584d046b4f248b0d9a&_encoding=UTF8&tag=scarlet3628-20&linkCode=ur2&linkId=fd6607690384668b605f1f9b40153100&camp=1789&creative=9325">INTERESTING FINDS UPDATED DAILY</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scarlet3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>-->
-				<!--		</ul>-->
-			  <!--	</li>-->
 			  	
 					<% if user_signed_in? and current_user.admin == true %> 
 						<li><a href="/ecommerces/upload">Upload</a></li>
