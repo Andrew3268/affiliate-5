@@ -133,6 +133,8 @@ img{max-width:100%;}
   float:left;
   margin-left:2%;
 }
+
+
 .featured .three .featured_small .action .button_coupon{
   position: absolute;
   background: #f56a6a;
@@ -144,6 +146,8 @@ img{max-width:100%;}
   text-decoration: none;
   font-size: 18px;
 }
+
+
 .featured .three .featured_small .action .button_coupon:after{
   content: "";
   position: absolute;

@@ -90,7 +90,7 @@ div.tab .discount .active {
     padding: 0 2.25em;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     white-space: nowrap;
 }
 
