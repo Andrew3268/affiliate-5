@@ -4,7 +4,7 @@
 }
 
 .inner_hotdeals {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -171,7 +171,7 @@ a.button_prodcuts:hover{
 
 @media screen and (orientation: portrait) {
 
-  #main .inner_hotdeals #warp {
+  #main .inner_hotdeals .warp {
        width: 95%;
     }
 }
@@ -181,5 +181,9 @@ a.button_prodcuts:hover{
   
   /*div#columns figure img { height: 27em; }*/
   .columns_4 { margin-right: 0em; }
+
+   #main .inner_hotdeals .warp {
+       width: 95%;
+    }
   
 }
