@@ -1,0 +1,74 @@
+<div id="wrapper">
+  <!-- Main -->
+    <div id="main">
+      <div class="inner_hotdeals">
+      <%= render 'shared/header' %>
+      
+      <ul class="icons">
+       <li><h1>HotDeals For <span class="hotdeals_title">Men</span><h1></li>
+       <li><a href="/hotdeals/hotdeals_women">Women</a></li>
+      </ul>
+
+      <!-- <p>We offer the best deals and you'll find what you're looking for at a great price. You will be redirected to a new window containing your Amazon.com / Amazon.co.uk / Amazon.ca search results.</p>
+
+      <p></p>
+
+      <p>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to make good website like this. Thanks :)</p>
+ -->
+       <div id="wrap">
+
+        <div class="tab">
+          <div class="tablinks discount" onclick="openCity(event, 'Clothing')">Clothing</div>
+          <div class="tablinks discount" onclick="openCity(event, 'Bags')">Bags</div>
+          <div class="tablinks discount" onclick="openCity(event, 'Shoes')">Shoes</div>
+          <div class="tablinks discount" onclick="openCity(event, 'Accessories')">Accessories</div>
+          <div class="tablinks discount" onclick="openCity(event, 'Grooming')">Grooming</div>
+        </div>
+    
+        <div id="Clothing" class="tabcontent">
+          <h3>Clothing</h3>
+          <%= render 'shared/men_clothing' %>       
+        </div>
+  
+        <div id="Bags" class="tabcontent" style="display:none">
+          <h3>Bags</h3>
+          <%= render 'shared/men_bags' %>
+        </div>
+        
+        <div id="Shoes" class="tabcontent" style="display:none">
+          <h3>Shoes</h3>
+          <%= render 'shared/men_shoes' %>
+        </div>
+
+        <div id="Accessories" class="tabcontent" style="display:none">
+          <h3>Accessories</h3>
+          <%= render 'shared/men_accessories' %>
+        </div>
+
+        <div id="Grooming" class="tabcontent" style="display:none">
+          <h3>Grooming</h3>
+          <%= render 'shared/men_grooming' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'shared/sidebar' %>  
+</div>
+
+
+<script>
+  function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+</script>
+

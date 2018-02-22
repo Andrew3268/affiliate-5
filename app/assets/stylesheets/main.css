@@ -2126,7 +2126,7 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
+		/*border-bottom: dotted 1px;*/
 		color: #f56a6a;
 		text-decoration: none;
 	}
@@ -3114,7 +3114,7 @@
 		}
 		
 		.mini-posts article p {
-			overflow: hidden; 
+		overflow: hidden; 
 	    text-overflow: ellipsis; 
 	    display: -webkit-box;
 	    -moz-line-clamp: 3; 
@@ -3207,8 +3207,8 @@
 			height: 100%;
 			border-radius: 1em;
 			background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+            background-repeat: no-repeat;
+            background-size: cover;
 		}
 		
 		.features .off_image img {
@@ -4735,7 +4735,7 @@
 /************ Detail section ************/
 
 .button_sitelink {
-	-moz-appearance: none;
+  -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;

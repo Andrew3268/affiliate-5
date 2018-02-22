@@ -1,0 +1,70 @@
+<div id="wrapper">
+	<!-- Main -->
+		<div id="main">
+			<div class="inner_hotdeals">
+
+        <%= render 'shared/header' %>
+
+        <ul class="icons">
+       <li><h1>HotDeals For <span class="hotdeals_title">Women</span><h1></li>
+       <li><a href="/hotdeals/hotdeals_men">Men</a></li>
+      </ul>
+  	  
+  	    <div id="wrap">
+
+      	  <div class="tab">
+            <div class="tablinks discount active" onclick="openCity(event, 'Clothing')">Clothing</div>
+            <div class="tablinks discount" onclick="openCity(event, 'Bags')">Bags</div>
+            <div class="tablinks discount" onclick="openCity(event, 'Shoes')">Shoes</div>
+            <div class="tablinks discount" onclick="openCity(event, 'Accessories')">Accessories</div>
+            <div class="tablinks discount" onclick="openCity(event, 'Beauty')">Beauty</div>
+          </div>
+      
+          <div id="Clothing" class="tabcontent">
+            <h3>Clothing</h3>
+            <%= render 'shared/women_clothing' %>       
+          </div>
+    
+          <div id="Bags" class="tabcontent" style="display:none">
+            <h3>Bags</h3>
+            <%= render 'shared/women_bags' %>
+          </div>
+          
+          <div id="Shoes" class="tabcontent" style="display:none">
+            <h3>Shoes</h3>
+            <%= render 'shared/women_shoes' %>
+          </div>
+
+          <div id="Accessories" class="tabcontent" style="display:none">
+            <h3>Accessories</h3>
+            <%= render 'shared/women_accessories' %>
+          </div>
+
+          <div id="Beauty" class="tabcontent" style="display:none">
+            <h3>Beauty</h3>
+            <%= render 'shared/women_beauty' %>
+          </div>
+
+        </div>
+    </div>
+  </div>
+  <%= render 'shared/sidebar' %>	
+</div>
+
+
+<script>
+  function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+</script>
+

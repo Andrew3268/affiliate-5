@@ -1,6 +1,9 @@
 /*// body{background:#f1f2f3;font-family:'Arial',sans-serif;}*/
 #wrap{width:95%;margin:20px auto;}
-img{max-width:100%;}
+img { 
+  max-width:100%;
+  margin-top: 0.7em;
+}
 
 .featured{
   width:100%
@@ -127,6 +130,12 @@ img{max-width:100%;}
 .featured .three .featured_small .small_desc p{
   font-size: 1em;
 }
+
+.featured .three .featured_small .coupon_title {
+  font-size: 2em;
+  margin-top: 0.5em;
+}
+
 .featured .three .featured_small .action{
   display:block;
   width:20%;
@@ -139,7 +148,7 @@ img{max-width:100%;}
   position: absolute;
   background: #f56a6a;
   padding: 10px 35px;
-  width: 9em;
+  width: 10em;
   top: 32%;
   right: -20px;
   color: #FFF;
@@ -160,6 +169,7 @@ img{max-width:100%;}
   border-left: 2em solid #ff511d;
   z-index:-3;
 }
+
 
 @media (max-width:600px){
   .featured .full,
