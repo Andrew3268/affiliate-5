@@ -78,7 +78,7 @@
 			min-height: 18em;
 			width: 100%;
 		}
-		
+
 		#main .inner .blog .blog_header, .blog_body, {
 			width: 100%;
 		}
@@ -87,7 +87,6 @@
 			width: 100%;
 		}
 		
-
 		
 }
 
@@ -106,6 +105,10 @@
    #main .inner .blog .blog_body p {
       text-align: left; 
       margin-bottom: 1em;
+   }
+
+   #main .inner .blog_title {
+      font-size: 2em;
    }
 	
 }
