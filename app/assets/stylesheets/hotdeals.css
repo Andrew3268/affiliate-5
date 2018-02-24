@@ -8,6 +8,11 @@
   margin: 0 auto;
 }
 
+#wrap .hotdeals_dis {
+  color: #f56a6a;
+  font-size: 2em;
+}
+
 #wrap{
 	width: 80%;
 	max-width: 1100px;

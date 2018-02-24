@@ -31,13 +31,13 @@ div.tab .discount {
 
 /* Change background color of buttons on hover */
 div.tab .discount:hover {
-    background-color: #6EB590;
+    background-color: #f56a6a;
     color: white;
 }
 
 /* Create an active/current tablink class */
 div.tab .discount .active {
-    background-color: #6EB590;
+    background-color: #f56a6a;
 }
 
 /* Style the tab content */
