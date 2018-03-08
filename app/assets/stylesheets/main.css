@@ -3524,7 +3524,7 @@
 				}
 			
 			.posts article p {
-				  overflow: hidden; 
+				overflow: hidden; 
 			    text-overflow: ellipsis; 
 			    display: -webkit-box;
 			    -moz-line-clamp: 3; 

@@ -3,11 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.hotdeals_title {
-  color: #f56a6a;
-}
 
-.tab_title {
+.hotdeals_title {
   color: #f56a6a;
 }
 
@@ -16,25 +13,29 @@
   margin: 0 auto;
 }
 
-#wrap{
-	width: 80%;
-	max-width: 1100px;
-	margin: 50px auto;
+#wrap .hotdeals_dis {
+  color: #f56a6a;
+  font-size: 2em;
 }
 
+#wrap{
+  width: 80%;
+  max-width: 1100px;
+  margin: 50px auto;
+}
 .columns_2 figure{
    width:49%;
    margin-right:1%;
 }
 .columns_2 figure:nth-child(2){
-	margin-right: 0;
+  margin-right: 0;
 }
 .columns_3 figure{
    width:32%;
    margin-right:1%;
 }
 .columns_3 figure:nth-child(3){
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .columns_4 {
@@ -46,46 +47,64 @@
    margin-right:1%;
 }
 
+.columns_4_men_shoes figure {
+   width:33%;
+   margin-right:1%;
+}
+
+/*.active, .discount:hover {
+    background-color: #6EB590;
+    color: #6EB590;
+}*/
+
+
+.hotdeals_menu {
+  display: inline;
+}
+
+
 .columns_4 figure:nth-child(4){
-	margin-right: 0;
+  margin-right: 0;
 }
 .columns_5 figure{
    width:19%;
    margin-right:1%;
 }
 .columns_5 figure:nth-child(5){
-	margin-right: 0;
+  margin-right: 0;
 }
 #columns figure:hover{
-	-webkit-transform: scale(1.1);
-	-moz-transform:scale(1.1);
-	transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform:scale(1.1);
+  transform: scale(1.1);
 
 }
 #columns:hover figure:not(:hover) {
-	opacity: 0.4;
+  opacity: 0.4;
 }
 div#columns figure {
-	display: inline-block;
-	background: #FEFEFE;
-	margin: 0 0px 15px;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;
-	padding: 15px;
-	padding-bottom: 5px;
-	opacity: 1;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
+  display: inline-block;
+  background: #FEFEFE;
+  margin: 0 0px 15px;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  padding: 15px;
+  padding-bottom: 5px;
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 div#columns figure img {
-	width: 100%;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  background-size: cover;
+  background-position: center;
 
 }
 
@@ -157,10 +176,21 @@ a.button_prodcuts:hover{
   .columns_4 { margin-right: 0em;} 
 }
 
+@media screen and (orientation: portrait) {
+
+  #main .inner_hotdeals .warp {
+       width: 95%;
+    }
+}
+
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
   
-  
+  /*div#columns figure img { height: 27em; }*/
   .columns_4 { margin-right: 0em; }
+
+   #main .inner_hotdeals .warp {
+       width: 95%;
+    }
   
 }
