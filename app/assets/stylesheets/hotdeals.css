@@ -53,9 +53,9 @@
 }*/
 
 
-.hotdeals_menu {
+/*.hotdeals_menu {
   display: inline;
-}
+}*/
 
 
 .columns_4 figure:nth-child(4){
@@ -111,46 +111,6 @@ div#columns figure .hotdeal_source {
   font-size: 0.8em;
 }
 
-.new_neon {
-  float: right;
-  font: 1em arial;
-  text-shadow: 
-    0px 0px 3px #fff, 
-    0px 0px 7px #fff, 
-    0px 0px 10px #fff, 
-    0px 0px 16px #f56a6a, 
-    0px 0px 25px #f56a6a, 
-    0px 0px 40px #f56a6a;
-  animation: blink 1s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0% { text-shadow: 
-    0px 0px 3px #fff, 
-    0px 0px 7px #fff, 
-    0px 0px 10px #fff, 
-    0px 0px 16px #f56a6a, 
-    0px 0px 25px #f56a6a, 
-    0px 0px 40px #f56a6a; }
-  50% {
-    text-shadow: 
-    0px 0px 1px #fff, 
-    0px 0px 3px #fff, 
-    0px 0px 5px #fff, 
-    0px 0px 10px #f56a6a, 
-    0px 0px 20px #f56a6a, 
-    0px 0px 30px #f56a6a;
-  }
-  100% {
-    text-shadow: 
-    0px 0px 3px #fff, 
-    0px 0px 7px #fff, 
-    0px 0px 10px #fff, 
-    0px 0px 16px #f56a6a, 
-    0px 0px 25px #f56a6a, 
-    0px 0px 40px #f56a6a;
-  }
-}
 
 div#columns figure figcaption {
   font-size: .9rem;
@@ -196,6 +156,62 @@ a.button_prodcuts:hover{
   border-bottom:3px solid salmon;
   color:#fff;
 }
+
+
+.new_neon {
+  float: right;
+  font: 1em arial;
+  text-shadow: 
+    0px 0px 3px #fff, 
+    0px 0px 7px #fff, 
+    0px 0px 10px #fff, 
+    0px 0px 16px #f56a6a, 
+    0px 0px 25px #f56a6a, 
+    0px 0px 40px #f56a6a;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% { text-shadow: 
+    0px 0px 3px #fff, 
+    0px 0px 7px #fff, 
+    0px 0px 10px #fff, 
+    0px 0px 16px #f56a6a, 
+    0px 0px 25px #f56a6a, 
+    0px 0px 40px #f56a6a; }
+  50% {
+    text-shadow: 
+    0px 0px 1px #fff, 
+    0px 0px 3px #fff, 
+    0px 0px 5px #fff, 
+    0px 0px 10px #f56a6a, 
+    0px 0px 20px #f56a6a, 
+    0px 0px 30px #f56a6a;
+  }
+  100% {
+    text-shadow: 
+    0px 0px 3px #fff, 
+    0px 0px 7px #fff, 
+    0px 0px 10px #fff, 
+    0px 0px 16px #f56a6a, 
+    0px 0px 25px #f56a6a, 
+    0px 0px 40px #f56a6a;
+  }
+}
+
+
+.to_other_menu:hover {
+  color: white;
+}
+
+.notice_01 {
+  margin-bottom: -1em;
+}
+
+
+
+
+
 
 
 @media screen and (max-width: 960px) { 

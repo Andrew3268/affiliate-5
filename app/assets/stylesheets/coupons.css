@@ -100,6 +100,7 @@ img {
   box-sizing:content-box;
   height: 9em;
 }
+
 .featured .three .featured_small{
   height: 7em;
   max-height: 7em;
@@ -205,5 +206,15 @@ img {
   .featured .small .three .small_desc p{
     display:none;
   }
+
+  .featured .three .featured_small .action .button_coupon{
+    margin-top: 4.7em;
+    right: -0.4em;
+    width: 15.16em;
+  }
+
+  .featured .three{
+    margin-bottom: 2em;
+ } 
     
 }
