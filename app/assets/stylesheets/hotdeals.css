@@ -47,17 +47,6 @@
    margin-right:1%;
 }
 
-/*.active, .discount:hover {
-    background-color: #6EB590;
-    color: #6EB590;
-}*/
-
-
-/*.hotdeals_menu {
-  display: inline;
-}*/
-
-
 .columns_4 figure:nth-child(4){
 	margin-right: 0;
 }
@@ -97,12 +86,14 @@ div#columns figure {
 }
 
 div#columns figure img {
+  object-fit: contain;
 	width: 100%;
+  height: 24em;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 15px;
 	margin-bottom: 5px;
-  background-size: cover;
-  background-position: center;
+  /*background-size: cover;*/
+  /*background-position: center;*/
 
 }
 
@@ -217,25 +208,28 @@ a.button_prodcuts:hover{
 @media screen and (max-width: 960px) { 
   #columns figure { width: 24%; }
   .columns_4 { margin-right: 0em; }
+  div#columns figure img { object-fit: contain; }
 }
 @media screen and (max-width: 767px) {
   #columns figure { width:32%; }
   .columns_4 { margin-right: 0em; }
+  div#columns figure img { object-fit: contain; }
 }
 @media screen and (max-width: 600px) {
   #columns figure { width: 49%; }
   .columns_4 { margin-right: 0em; }
+  div#columns figure img { object-fit: contain; }
 }
 @media screen and (max-width: 500px) {
   #columns figure { width: 100%; } 
   .columns_4 { margin-right: 0em;} 
+  div#columns figure img { object-fit: contain; }
 }
 
 @media screen and (orientation: portrait) {
 
-  #main .inner_hotdeals .warp {
-       width: 95%;
-    }
+  #main .inner_hotdeals .warp { width: 95%; }
+  div#columns figure img { object-fit: contain; }
 }
 
 
@@ -244,8 +238,13 @@ a.button_prodcuts:hover{
   /*div#columns figure img { height: 27em; }*/
   .columns_4 { margin-right: 0em; }
 
-   #main .inner_hotdeals .warp {
-       width: 95%;
-    }
+   #main .inner_hotdeals .warp { width: 95%; }
   
+  div#columns figure img { object-fit: contain; }
+}
+
+
+
+@media screen and (max-width: 1280px) {
+  div#columns figure img { object-fit: contain; }
 }
