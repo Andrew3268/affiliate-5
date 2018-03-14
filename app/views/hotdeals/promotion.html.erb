@@ -1,0 +1,59 @@
+<div id="wrapper">
+  <!-- Main -->
+    <div id="main">
+      <div class="inner_hotdeals">
+
+        <%= render 'shared/header' %>
+
+        <ul class="icons">
+         <li><h1><span class="hotdeals_title">Promotions</span> & Coupons</h1></li>
+         <li><a href="#"><h3>:Coupons here...</h3></a>  
+         <!--<li><a href="/hotdeals/promotion">Promotion</a></li>-->
+         <!--<li><a href="/ecommerces/coupons">Coupons</a></li>-->
+        </ul>
+        
+        <h1 class="fancy-heading">Promotions & Deals</h1>
+      
+        <div class="wrap">
+            
+          <div class="tab">
+            <div class="tablinks discount active" onclick="openCity(event, 'Amazon')">Amazon</div>
+            <!--<div class="tablinks discount" onclick="openCity(event, 'ebay')">ebay</div>-->
+            <!--<div class="tablinks discount" onclick="openCity(event, 'Shoes')">Shoes</div>-->
+            <!--<div class="tablinks discount" onclick="openCity(event, 'Accessories')">Accessories</div>-->
+            <!--<div class="tablinks discount" onclick="openCity(event, 'Beauty')">Beauty</div>-->
+          </div>
+      
+          <div id="Amazon" class="tabcontent">
+            <h3 class="hotdeals_title">Amazon Promote</h3>
+            <%= render 'shared/amazon_promotion' %>       
+          </div>
+    
+          <!--<div id="ebay" class="tabcontent" style="display:none">-->
+          <!--  <h3 class="hotdeals_title">Title</h3>-->
+            
+          <!--</div>-->
+    
+        </div>
+    </div>
+  </div>
+  <%= render 'shared/sidebar' %>  
+</div>
+
+
+<script>
+  function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+</script>
+
