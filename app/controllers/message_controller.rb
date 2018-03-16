@@ -3,7 +3,17 @@ class MessageController < ApplicationController
     before_action :authenticate_user!, only:[:message_board, :create]
     
     def contact_us
-       
+      @contact_us = Ecommerce.all
+      @sidebanner_01 = @contact_us.sample
+      @sidebanner_02 = @contact_us.sample
+      @sidebanner_03 = @contact_us.sample
+      @sidebanner_04 = @contact_us.sample
+      @sidebanner_05 = @contact_us.sample
+      @sidebanner_06 = @contact_us.sample
+      @sidebanner_07 = @contact_us.sample
+      @sidebanner_08 = @contact_us.sample
+      @sidebanner_09 = @contact_us.sample
+      @sidebanner_10 = @contact_us.sample     
     end
     
     def message_board
