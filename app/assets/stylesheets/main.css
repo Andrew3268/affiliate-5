@@ -2447,7 +2447,7 @@
 			display: inline-block;
 			font-size: 1em;
 			font-weight: 400;
-			padding-left: 2.4em;
+			padding-left: 1em; /*(before 2.4em)*/
 			padding-right: 0.75em;
 			position: relative;
 		}
@@ -2498,6 +2498,7 @@
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
+    visibility:hidden;
 	}
 
 	::-webkit-input-placeholder {

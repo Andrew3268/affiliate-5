@@ -1,59 +1,45 @@
 <div id="wrapper">
-  <!-- Main -->
-    <div id="main">
-      <div class="inner_hotdeals">
+  <div id="main">
+    <div class="inner_hotdeals">
 
-        <%= render 'shared/header' %>
+      <%= render 'shared/header' %>
 
-        <ul class="icons">
-         <li><h1><span class="hotdeals_title">Promotions</span> & Coupons</h1></li>
-         <li><a href="#"><h3>:Coupons here...</h3></a>  
-         <!--<li><a href="/hotdeals/promotion">Promotion</a></li>-->
-         <!--<li><a href="/ecommerces/coupons">Coupons</a></li>-->
-        </ul>
+      <ul class="icons">
+       <li><h1 class="hotdeals_h1"><span class="hotdeals_title">Promotions</span> & Events</h1></li>
+      </ul>
+
+      <div class="topnav" id="myTopnav">
+        <!-- <a href ="/hotdeals/promotion">promotions & Events</a> -->
+        <a href="/hotdeals/coupons">Coupons</a>
+        <a href="/search/quicksearch">QuickSearch</a>
+        <a href="/hotdeals/hotdeals_women">Hotdeals_Ladies</a>
+        <a href="/hotdeals/hotdeals_men">Hotdeals_Men</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+      <div class="wrap">
+
+          <h2>Hi, Everyone :D</h2>
+          <p class="notice_01">*We have just made your life easier. We offer a quick way to find the best deals. You'll find what you're looking for at a great price.</p>
+          <p>* We've put together a list of events and special offers to give you a simple way to take advantage of promotions across our website.</p>
+          
+          <!-- <h1 class="fancy-heading">Promotions & Deals</h1> -->
+          <h2>Featured Promotions & Events</h2>
+
+          <div class="tabs">
+            <input type="radio" name="tab" id="tab1" checked="checked">
+            <label for="tab1">Amazon</label>
+
+            <div class="tab-content-wrapper">
+              <div id="tab-content-1" class="tab-content">
+               <%= render 'shared/amazon_promotion' %>
+              </div>
+            </div>
+          </div><!-- tabs -->
         
-        <h1 class="fancy-heading">Promotions & Deals</h1>
-      
-        <div class="wrap">
-            
-          <div class="tab">
-            <div class="tablinks discount active" onclick="openCity(event, 'Amazon')">Amazon</div>
-            <!--<div class="tablinks discount" onclick="openCity(event, 'ebay')">ebay</div>-->
-            <!--<div class="tablinks discount" onclick="openCity(event, 'Shoes')">Shoes</div>-->
-            <!--<div class="tablinks discount" onclick="openCity(event, 'Accessories')">Accessories</div>-->
-            <!--<div class="tablinks discount" onclick="openCity(event, 'Beauty')">Beauty</div>-->
-          </div>
-      
-          <div id="Amazon" class="tabcontent">
-            <h3 class="hotdeals_title">Amazon Promote</h3>
-            <%= render 'shared/amazon_promotion' %>       
-          </div>
-    
-          <!--<div id="ebay" class="tabcontent" style="display:none">-->
-          <!--  <h3 class="hotdeals_title">Title</h3>-->
-            
-          <!--</div>-->
-    
-        </div>
-    </div>
-  </div>
+      </div><!-- wrap -->
+    </div><!-- inner_hotdeals -->
+  </div><!-- main -->
   <%= render 'shared/sidebar' %>  
-</div>
-
-
-<script>
-  function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-  }
-</script>
+</div><!-- wrapper -->
 

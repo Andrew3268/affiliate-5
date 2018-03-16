@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   
   post '/message/contact_us', to: 'message#contact_us', as: 'contact_us'
   post '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
-  post '/ecommerces/coupons', to: 'ecommerces#coupons', as: 'coupons'
+  post '/hotdeals/promotion', to: 'hotdeals#promotion', as: 'promotion'
+  post '/hotdeals/coupons', to: 'hotdeals#coupons', as: 'coupons'
   post '/hotdeals/hotdeals_men', to: 'hotdeals#hotdeals_men', as: 'hotdeals_men'
   post '/hotdeals/hotdeals_women', to: 'hotdeals#hotdeals_women', as: 'hotdeals_women'
   

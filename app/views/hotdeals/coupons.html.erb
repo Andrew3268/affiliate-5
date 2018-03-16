@@ -1,133 +1,35 @@
+<div id="wrapper">
+  <!-- Main -->
+    <div id="main">
+      <div class="inner_hotdeals">
 
-<div id="wrapper"><!-- Wrapper -->
-    <div id="main">  <!-- Main -->
-      <div class="inner">
-        <!-- Header -->
-          <%= render 'shared/header' %>
+        <%= render 'shared/header' %>
 
-            <div id="wrap">
-               
-              <div class="featured">
-                
-                <div class="full">
-                  <div class="banner">
-                    <h1>Featured</h1>
-                  </div>
-                  <div class="product_desc">
-                    <h2>Green Bikini</h2>
-                    <div class="description">
-                    <p>Um, well it's a delorean, right? Yeah okay. Wow, ah Red, you look great. Everything looks great. 1:24, I still got time. Oh my god. No, no not again...</p>
-                  </div>
-                  <div class="call_to_action">
-                    <a class="button_coupon" href="#">Read More</a>
-                  </div>
-                </div>
-                
-             </div><!-- class="featured" -->
-                
-              <div class="small">
-                
-                <div class="tab">
-                  <div class="tablinks discount" onclick="openCity(event, 'Amazon')">Amazon</div>
-                  <div class="tablinks discount" onclick="openCity(event, 'Coupon_1')">Coupon_1</div>
-                  <div class="tablinks discount" onclick="openCity(event, 'Coupon_2')">Coupon_2</div>
-                  <!--  <div class="tablinks discount" onclick="openCity(event, 'JAPAN')">JAPAN</div> -->
-                </div>
-                                
-                 <div id="Amazon" class="tabcontent_coupon">
-                    <h2>Amazon Coupons & Hot Deals</h2>
-                    
-                    <div class="three">
-                     <div class="featured_small">
-                       <div class="prod_img">
-                        <img src="https://i.imgur.com/qyk1gD3.jpg"/>
-                       </div>
-                       <div class="small_desc"><h2 class="coupon_title">Up to 75% Off Amazon Items</h2>
-                       </div>
-                       <div class="action">
-                         <a target="_blank" class="button_coupon" href="https://www.amazon.com/Coupons/?&amp;_encoding=UTF8&amp;tag=groupfreeb-20&amp;linkCode=ur2&amp;linkId=4cf1c34c0bf859777b1019049895c5ae&amp;camp=1789&amp;creative=9325&_encoding=UTF8&tag=3628-20&linkCode=ur2&linkId=4b96062b781b47ab1f86ccdb98835321&camp=1789&creative=9325">Get Coupon</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=3628-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-                       </div>
-                     </div>
-                   </div>
+        <ul class="icons">
+         <li><h1 class="hotdeals_h1"><span class="hotdeals_title">Coupons</span> & Deals</h1></li>
+        </ul>
 
-                   <div class="three">
-                    <div class="featured_small">
-                      <div class="prod_img">
-                      <img src="https://i.imgur.com/Bt4ypgM.jpg"/>
-                      </div>
-                      <div class="small_desc"><h3>USA Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
-                      </div>
-                      <div class="action">
-                        <a class="button_coupon" href="#"> Read More</a>
-                      </div>
-                    </div>
-                  </div>
+        <div class="topnav" id="myTopnav">
+          <a href ="/hotdeals/promotion">Promotions & Events</a>
+          <a href="/search/quicksearch">QuickSearch</a>
+          <a href="/hotdeals/hotdeals_women">Hotdeals_Ladies</a>  
+          <a href="/hotdeals/hotdeals_men">Hotdeals_Men</a>
+          <!-- <a href="/hotdeals/coupons">Coupons</a>   -->      
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
 
-                  <div class="three">
-                    <div class="featured_small">
-                      <div class="prod_img">
-                      <img src="https://i.imgur.com/nhODrN6.jpg"/>
-                      </div>
-                      <div class="small_desc"><h3>Skull Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
-                      </div>
-                      <div class="action">
-                        <a class="button_coupon" href="#"> Read More</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="three">
-                    <div class="featured_small">
-                      <div class="prod_img">
-                      <img src="https://i.imgur.com/nhODrN6.jpg"/>
-                      </div>
-                      <div class="small_desc"><h3>Skull Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
-                      </div>
-                      <div class="action">
-                        <a class="button_coupon" href="#"> Read More</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="three">
-                    <div class="featured_small">
-                      <div class="prod_img">
-                      <img src="https://i.imgur.com/nhODrN6.jpg"/>
-                      </div>
-                      <div class="small_desc"><h3>Skull Shirt</h3><p>Why that's me, look at me, I'm an old man. Oh, you make it sound so easy. I just, I wish I wasn't so scared. What were you doing in the middle of the street, a kid your age. Doc? Wrecked?</p>
-                      </div>
-                      <div class="action">
-                        <a class="button_coupon" href="#"> Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                 </div><!-- <div id="Amazon" class="tabcontent"> -->
-                  
-
-                 <div id="Coupon_1" class="tabcontent_coupon" style="display:none">
-                  <h3></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim obcaecati aut dignissimos unde sapiente ab deleniti, iure reiciendis inventore nisi eaque, assumenda voluptas fugit commodi cumque laboriosam, vitae delectus voluptates!</p>
-                 </div>
-                
-                 <div id="Coupon_2" class="tabcontent_coupon" style="display:none">
-                   <h3>UK</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis commodi, optio deleniti ratione,  est accusamus et eum placeat explicabo vero.</p>
-                 </div>
-                                
-              </div><!-- class="small" -->
-              
-            </div><!-- id="wrap" -->
-
-      </div><!-- End class="inner" -->
-    </div><!-- End id="main" -->
+        <%= render 'shared/error_message' %>
+        
+    </div>
+  </div>
   <%= render 'shared/sidebar' %>  
-</div><!-- End id="wrapper" -->
+</div>
+
 
 <script>
   function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent_coupon");
+      tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
       }
@@ -139,5 +41,4 @@
       evt.currentTarget.className += " active";
   }
 </script>
-
 

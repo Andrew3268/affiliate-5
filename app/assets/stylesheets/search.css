@@ -1,12 +1,8 @@
-// Place all the styles related to the search controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 
 .quicksearch_title {
-    font-size: 3.3em;
+    font-size: 3.5em;
+    margin-bottom: 1em
 }
-
 
 /* Style the tab */
 div.tab {
@@ -165,6 +161,7 @@ div.tab .discount .active {
     .quicksearch_title { 
        font-size : 2em;
        margin-top: 0.5em;
+       margin-bottom: 2em;
     }
 
 }
@@ -180,6 +177,91 @@ div.tab .discount .active {
             }
 }
 
+
+
+
+/*** New Tab ***/
+.tabs {
+  margin-bottom: 2em;
+}
+.tabs input[type=radio] {
+  display: none; 
+  visibility:hidden;
+}
+.tabs label {
+  transition: background 0.4s ease-in-out, height 0.2s linear;
+  display: inline-block;
+  cursor: pointer;
+  color: #2EBEB9;
+  width: 20%;
+  height: 3em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: #FCFCFC;
+  text-align: center;
+  line-height: 3em;
+  margin-bottom: 0em;
+}
+.tabs label:last-of-type {
+  border-bottom: none; 
+}
+.tabs label:hover {
+  background: #f78282;
+  color:#ffffff;
+}
+@media screen and (max-width: 1600px) {
+.tabs label {
+  width: 15%; } 
+}
+@media screen and (max-width: 900px) {
+.tabs label {
+  width: 20%; 
+  } 
+}
+@media screen and (max-width: 600px) {
+.tabs label {
+  width: 100%;
+  display: block;
+  /*border-bottom: 1px solid #f78282;*/
+  border-radius: 0; 
+} 
+}
+@media screen and (max-width: 600px) {
+.tabs {
+  margin: 0; 
+  /*border: 1px solid #f56a6a;*/
+} 
+}
+
+#tab1:checked + label, #tab2:checked + label, #tab3:checked + label, #tab4:checked + label, #tab5:checked + label {
+  background: #f56a6a;
+  color: #FFFFFF; }
+
+.tab-content {
+  position: absolute;
+  top: -9999px;
+  padding: 10px; 
+}
+
+.tab-content-wrapper{
+  background: #FCFCFC;
+  border-top: #f56a6a 5px solid;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
+  
+}
+@media screen and (max-width: 600px) {
+.tab-content-wrapper, .tab1-content-wrapper {
+  border: none;
+  border-radius: 0; 
+} 
+}
+
+#tab1:checked ~ .tab-content-wrapper #tab-content-1, #tab2:checked ~ .tab-content-wrapper #tab-content-2, #tab3:checked ~ .tab-content-wrapper #tab-content-3, #tab4:checked ~ .tab-content-wrapper #tab-content-4, #tab5:checked ~ .tab-content-wrapper #tab-content-5 {
+  position: relative;
+  top: 0px;
+ }
 
 
 

@@ -2,17 +2,14 @@
 .hotdeals_title {
   color: #f56a6a;
 }
-
 .inner_hotdeals {
   width: 85%;
   margin: 0 auto;
 }
-
 #wrap .hotdeals_dis {
   color: #f56a6a;
   font-size: 2em;
 }
-
 #wrap{
 	width: 80%;
 	max-width: 1100px;
@@ -32,21 +29,17 @@
 .columns_3 figure:nth-child(3){
 	margin-right: 0;
 }
-
 .columns_4 {
   margin-right: -2em;
 }
-
 .columns_4 figure{
    width:24%;
    margin-right:1%;
 }
-
 .columns_4_men_shoes figure {
    width:33%;
    margin-right:1%;
 }
-
 .columns_4 figure:nth-child(4){
 	margin-right: 0;
 }
@@ -65,6 +58,7 @@
 }
 #columns:hover figure:not(:hover) {
 	opacity: 0.4;
+
 }
 div#columns figure {
 	display: inline-block;
@@ -94,14 +88,11 @@ div#columns figure img {
 	margin-bottom: 5px;
   /*background-size: cover;*/
   /*background-position: center;*/
-
 }
-
 
 div#columns figure .hotdeal_source {
   font-size: 0.8em;
 }
-
 
 div#columns figure figcaption {
   font-size: .9rem;
@@ -141,14 +132,88 @@ a.button_prodcuts{
   box-shadow:1px 1px 3px rgba(0,0,0,0.3);
 }
 
-
 a.button_prodcuts:hover{
   background:#f56a6a;
   border-bottom:3px solid salmon;
   color:#fff;
 }
 
+.hotdeal_hover:hover {
+  color: #f56a6a;
+}
 
+.to_other_menu:hover {
+  color: white;
+}
+
+.notice_01 {
+  margin-bottom: -1em;
+}
+
+/**** QuickMenu Section ****/
+.topnav {
+  overflow: hidden;
+  background-color: #eee;
+  margin-top: -3em;
+  margin-bottom: 2em;
+  border-radius: 0.5em;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.topnav a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.active_quickmenu {
+  background-color: #f56a6a;
+}
+
+.active_quickmenu:hover {
+  background-color: #f56a6a;
+  color: black;
+}
+
+.quickmenu_title {
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* New Sign Section */
 .new_neon {
   float: right;
   font: 1em arial;
@@ -161,7 +226,6 @@ a.button_prodcuts:hover{
     0px 0px 40px #f56a6a;
   animation: blink 1s ease-in-out infinite;
 }
-
 @keyframes blink {
   0% { text-shadow: 
     0px 0px 3px #fff, 
@@ -190,21 +254,7 @@ a.button_prodcuts:hover{
   }
 }
 
-
-.to_other_menu:hover {
-  color: white;
-}
-
-.notice_01 {
-  margin-bottom: -1em;
-}
-
-
-
-
-
-
-
+/* Media Query Section*/
 @media screen and (max-width: 960px) { 
   #columns figure { width: 24%; }
   .columns_4 { margin-right: 0em; }
@@ -230,8 +280,8 @@ a.button_prodcuts:hover{
 
   #main .inner_hotdeals .warp { width: 95%; }
   div#columns figure img { object-fit: contain; }
+  .hotdeals_h1 { margin-bottom: 1em; }
 }
-
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
   
@@ -242,8 +292,6 @@ a.button_prodcuts:hover{
   
   div#columns figure img { object-fit: contain; }
 }
-
-
 
 @media screen and (max-width: 1280px) {
   div#columns figure img { object-fit: contain; }

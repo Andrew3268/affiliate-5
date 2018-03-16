@@ -1,13 +1,21 @@
 <div id="wrapper">
-    <div id="main">
-      <div class="inner_hotdeals">
+  <div id="main">
+    <div class="inner_hotdeals">
 
         <%= render 'shared/header' %>
 
         <ul class="icons">
-         <li><h1>HotDeals For <span class="hotdeals_title">Women</span><h1></li>
-         <li><a href="/hotdeals/hotdeals_men">:Men here..</a></li>
+         <li><h1 class="hotdeals_h1">HotDeals For <span class="hotdeals_title">Ladies</span><h1></li>
         </ul>
+
+        <div class="topnav" id="myTopnav">
+          <a href="/hotdeals/hotdeals_men">Hotdeals_Men</a>
+          <a href="/search/quicksearch">QuickSearch</a>
+          <a href ="/hotdeals/promotion">Promotions & Events</a>
+          <a href="/hotdeals/coupons">Coupons</a>
+          <!-- <a href="/hotdeals/hotdeals_women">Hotdeals_Women</a> -->  
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
       
         <div class="wrap">
 
@@ -15,64 +23,45 @@
           <p>We have just made your life easier.</br> 
              We offer a quick way to find the best deals. You'll find what you're looking for at a great price <span class="hotdeals_title">"Up to 80% off"</span></p>
           
-            <p class="notice_01">** Price may be changed after post published date.</p>
-            <p>** Products may be sold out earlier after post published date.</p>
-           
+          <p class="notice_01">** Price may be changed after post published date.</p>
+          <p>** Products may be sold out earlier after post published date.</p>
 
-          <div class="tab">
-            <div class="tablinks discount" onclick="openCity(event, 'Clothing')">Clothing</div>
-            <div class="tablinks discount" onclick="openCity(event, 'Bags')">Bags</div>
-            <div class="tablinks discount" onclick="openCity(event, 'Shoes')">Shoes</div>
-            <div class="tablinks discount" onclick="openCity(event, 'Accessories')">Accessories</div>
-            <div class="tablinks discount" onclick="openCity(event, 'Beauty')">Beauty</div>
-            <a href="/search/quicksearch" target="_blank"><div class="tablinks discount"><span class="to_other_menu">Amazon Quick Search</span></div></a>
-          </div>
-      
-          <div id="Clothing" class="tabcontent">
-            <h3 class="hotdeals_title">Clothing</h3>
-            <%= render 'shared/women_clothing' %>       
-          </div>
-    
-          <div id="Bags" class="tabcontent" style="display:none">
-            <h3 class="hotdeals_title">Bags</h3>
-            <%= render 'shared/women_bags' %>
-          </div>
-          
-          <div id="Shoes" class="tabcontent" style="display:none">
-            <h3 class="hotdeals_title">Shoes</h3>
-            <%= render 'shared/women_shoes' %>
-          </div>
+          <div class="tabs">
+            <input type="radio" name="tab" id="tab1" checked="checked">
+            <label for="tab1">Clothing</label>
+            <input type="radio" name="tab" id="tab2">
+            <label for="tab2">Bags</label>
+            <input type="radio" name="tab" id="tab3">
+            <label for="tab3">Shoes</label>
+            <input type="radio" name="tab" id="tab4">
+            <label for="tab4">Accessories</label>
+            <input type="radio" name="tab" id="tab5">
+            <label for="tab5">Beauty</label>
 
-          <div id="Accessories" class="tabcontent" style="display:none">
-            <h3 class="hotdeals_title">Accessories</h3>
-            <%= render 'shared/women_accessories' %>
-          </div>
+            <div class="tab-content-wrapper">
+              <div id="tab-content-1" class="tab-content">
+               <%= render 'shared/women_clothing' %>
+              </div>
+              <div id="tab-content-2" class="tab-content">
+                <%= render 'shared/women_bags' %>
+              </div>
+              <div id="tab-content-3" class="tab-content">
+                <%= render 'shared/women_shoes' %>
+              </div>
+              <div id="tab-content-4" class="tab-content">
+                <%= render 'shared/women_accessories' %>
+              </div>
+              <div id="tab-content-5" class="tab-content">
+                <%= render 'shared/women_beauty' %>
+              </div>
+            </div>
+          </div><!-- tabs -->
 
-          <div id="Beauty" class="tabcontent" style="display:none">
-            <h3 class="hotdeals_title">Beauty</h3>
-            <%= render 'shared/women_beauty' %>
-          </div>
-
-        </div>
-        
-    </div>
-  </div>
+      </div><!-- wrap -->
+    </div><!-- inner_hotdeals -->
+  </div><!-- main -->
   <%= render 'shared/sidebar' %>  
-</div>
+</div><!-- wrapper -->
 
 
-<script>
-  function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-  }
-</script>
+
