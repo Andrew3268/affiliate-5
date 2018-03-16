@@ -81,6 +81,7 @@
 .product__title {
   margin-bottom: 0;
   margin-top: 0.8em;
+  font-size: 1em;
 }
 .product__title-link {
   color: #000;
