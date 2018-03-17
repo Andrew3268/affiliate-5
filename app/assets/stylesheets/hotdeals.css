@@ -98,14 +98,13 @@ div#columns figure figcaption {
   font-size: .9rem;
   color: #444;
   line-height: 1.5;
-  height:60px;
-  font-weight:600;
+  height: 3.2em;
   overflow: hidden; 
   text-overflow: ellipsis; 
   display: -webkit-box;
-  -moz-line-clamp: 3; 
-  -webkit-line-clamp: 3; /* number of line */ 
-  -ms-line-clamp: 3;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
   -moz-box-orient: vertical;
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
