@@ -1,8 +1,21 @@
 
 .quicksearch_title {
     font-size: 3.5em;
-    margin-bottom: 1em
+    margin-bottom: 0.5em;
 }
+
+#main .inner_quicksearch .quicksearch_warpper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#main .inner_quicksearch .quicksearch_warpper .search_footer {
+  margin: 0 auto; 
+  border: 1px solid black;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
 
 /* Style the tab */
 div.tab {
@@ -49,18 +62,6 @@ div.tab .discount .active {
     border: 1px solid #ccc;
     border-top: none;  
     padding-right: 2em; 
-}
-
-#main .inner_quicksearch .quicksearch_warpper {
-  width: 70%;
-  margin: 0 auto;
-}
-
-#main .inner_quicksearch .quicksearch_warpper .search_footer {
-  margin: 0 auto; 
-  border: 1px solid black;
-  border-radius: 0.5em;
-  padding: 1em;
 }
 
 
@@ -161,7 +162,7 @@ div.tab .discount .active {
     .quicksearch_title { 
        font-size : 2em;
        margin-top: 0.5em;
-       margin-bottom: 2em;
+       margin-bottom: 0.5em;
     }
 
 }
@@ -176,9 +177,6 @@ div.tab .discount .active {
                 padding: 3em 0 1em 0 ;
             }
 }
-
-
-
 
 /*** New Tab ***/
 .tabs {
