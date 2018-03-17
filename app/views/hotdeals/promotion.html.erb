@@ -32,7 +32,8 @@
             <label for="tab1">Amazon</label>
             <input type="radio" name="tab" id="tab2">
 
-            <div class="tab-content-wrapper">
+            <div class="tab-content-wrapper"></br>
+              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for promotions.." title="Type in a name">
               <div id="tab-content-1" class="tab-content">
                <%= render 'shared/amazon_promotion' %>
               </div>
@@ -44,6 +45,7 @@
   </div><!-- main -->
   <%= render 'shared/sidebar' %>  
 </div><!-- wrapper -->
+
 
 
 

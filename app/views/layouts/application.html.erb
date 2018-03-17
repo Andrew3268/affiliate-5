@@ -32,7 +32,6 @@
   <script>window._epn = {campaign:5338273158};</script>
   <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 
-   
 </head>
 
 <body>
@@ -93,7 +92,6 @@
   <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
 <!--End Amazon -->
 
-
 <!-- For Viglink -->
 <script type="text/javascript">
   var vglnk = { key: '9f8b8215c45eaf9e20303d2bf9cb410c' };
@@ -134,6 +132,26 @@ function scrollFunction() {
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+</script>
+
+<!-- For Angular Search -->
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
 }
 </script>
 
