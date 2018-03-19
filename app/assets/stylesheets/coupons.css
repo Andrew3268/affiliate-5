@@ -51,7 +51,7 @@
     /*transform: translate(0, 0);*/
     max-width: 100%;
     min-height: 100%;
-    margin: 1em;
+    margin: 1em 0 0 0;
     /*left: 0;*/
   }
 }
@@ -196,7 +196,7 @@
     width: 95%;
     padding: 30px 5px 30px 5px;
   }
-  .coupon_wrapper .coupon_box h1, h2 {
+  .coupon_wrapper .coupon_box h2 {
     font-size: 1.3em;
   }
   .coupon_wrapper .coupon_box p {
@@ -235,14 +235,15 @@
  * Open modal button (trigger)
  * *************** */
 .md-btn {
-  border: 1px solid #7a7a7a;
-  /*color: ;*/
+  /*border: 1px solid #7a7a7a;*/
   padding: 10px;
   margin: 5px;
   border-radius: 3px;
   cursor: pointer;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 0 1px #222;
+  -webkit-box-shadow: 0 0 0 1px #f56a6a;
+  color: #fa6971;
+  padding: 0.4em;
 }
 .md-btn:hover {
   background-color: #f56a6a;
