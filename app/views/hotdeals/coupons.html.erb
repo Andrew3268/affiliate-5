@@ -6,39 +6,25 @@
         <%= render 'shared/header' %>
 
         <ul class="icons">
-         <li><h1 class="hotdeals_h1"><span class="hotdeals_title">Coupons</span> & Deals</h1></li>
+         <li><h1 class="hotdeals_h1"><span class="hotdeals_title">Coupons</span> & Promo Code</h1></li>
         </ul>
 
-        <div class="topnav" id="myTopnav">
-          <a href ="/hotdeals/promotion">Promotions & Events</a>
-          <a href="/search/quicksearch">QuickSearch</a>
-          <a href="/hotdeals/hotdeals_women">Hotdeals_Ladies</a>  
-          <a href="/hotdeals/hotdeals_men">Hotdeals_Men</a>
-          <!-- <a href="/hotdeals/coupons">Coupons</a>   -->      
-          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        <div class="topnav" id="myMenu">
+          <a href="/search/quicksearch">Hotdeals Quick Search</a>
+          <a href="/hotdeals/promotion">Promotions & Events</a>
+          <a href="/hotdeals/hotdeals_women">Hotdeals Ladies</a>
+          <a href="/hotdeals/hotdeals_men">Hotdeals Men</a>
+          <a href="javascript:void(0);" style="font-size:16px;" class="icon" onclick="myQuickmenu()">&#9776;</a>
         </div>
 
-        <%= render 'shared/error_message' %>
-        
+        <%= render 'shared/amazon_coupons' %>
+
     </div>
   </div>
   <%= render 'shared/sidebar' %>  
 </div>
 
 
-<script>
-  function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-  }
-</script>
 
