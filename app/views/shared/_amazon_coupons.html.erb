@@ -1,8 +1,28 @@
 <div class="coupon_wrapper">
  <div class="coupon_box">
   <h1>Amazon.com Promo Code</h1>
-  <ul>
+  <select id="filter">
+    <option value="all">All</option>
+    <option value="automotive">Automotive</option>
+    <option value="baby">Baby</option>
+    <!-- <option value="beauty">Beauty</option> -->
+    <!-- <option value="books">Books</option>
+    <option value="business">Business, Industrial & Scientific</option>
+    <option value="electronics">Electronics</option>
+    <option value="fashion">Fashion</option> -->
+    <option value="grocery">Grocery</option>
+    <!-- <option value="computer">Computer</option>
+    <option value="health">Health & Personal Care</option>
+    <option value="home">Home</option>
+    <option value="kitchen">Kitchen</option>
+    <option value="office">Office</option>
+    <option value="pets">Pets</option>
+    <option value="sports">Sports</option>
+    <option value="Tools">Tools & Home Improvement</option>
+    <option value="toy">Toys & Games</option> -->
+  </select>
 
+  <ul class="items">
     <!-- <li>
       <input type="checkbox" checked>
       <i></i>
@@ -59,7 +79,7 @@
         </section>
       </li> -->
 
-    <li>
+    <li rel="grocery"> 
       <input type="checkbox" checked>
       <i></i>
       <h2><span class="department">Department: Grocery</span></br>Save 25% on select goodnessknows grocery products while supplies last.</h2>
@@ -71,7 +91,7 @@
         
       <section class="modal-area">
         <div class="modal 03">
-          <h2>25GKSNACK</br>This promo code can be used on the products below.</h2>
+          <h3>25GKSNACK</br>This promo code can be used on the products below.</h3>
 
             <div>
               <div class="modal_img"><img src="https://images-na.ssl-images-amazon.com/images/I/714ElCsiWNL._SX522_.jpg">
@@ -128,7 +148,7 @@
       </section>
     </li>
 
-    <li>
+    <li rel="baby">
       <input type="checkbox" checked>
       <i></i>
       <h2><span class="department">Department: Baby</span></br>Save 25% on select LectroFan sleep sound machine & night light products, through 3/31 while supplies last.</h2>
@@ -139,7 +159,7 @@
         
       <section class="modal-area">
         <div class="modal 02">
-          <h2>25OFFKINDER</br>This promo code can be used on the products below.</h2>
+          <h3>25OFFKINDER</br>This promo code can be used on the products below.</h3>
 
             <div>
               <div class="modal_img"><img src="https://images-na.ssl-images-amazon.com/images/I/613uJSGqWhL._SX522_.jpg">
@@ -156,7 +176,7 @@
       </section>
     </li>
 
-    <li>
+    <li rel="automotive">
       <input type="checkbox" checked>
       <i></i>
       <h2><span class="department">Department: Automative</span></br>Save 15% on select Chemical Guys car wash products, through 3/31 while supplies last.</h2>
@@ -168,7 +188,7 @@
         <section class="modal-area">
           <!-- First modal named "one" -->
           <div class="modal 01">
-            <h2>15PIZZA</br>This promo code can be used on the products below.</h2>
+            <h3>15PIZZA</br>This promo code can be used on the products below.</h3>
 
               <div>
                 <div class="modal_img"><img src="https://images-na.ssl-images-amazon.com/images/I/61cJY1sZgdL._SL1000_.jpg">

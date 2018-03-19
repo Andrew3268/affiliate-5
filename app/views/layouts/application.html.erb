@@ -196,6 +196,30 @@ function myQuickmenu() {
 </script>
 
 
+<!-- Angular Filler for PromoCode -->
+<script>
+$(function() {
+  FilterItems();
+});
+
+function FilterItems(){
+  CatType=$('#filter');
+  CatType.change(function(){
+    selectValue=$(this).val();
+    previewSelected(selectValue); 
+  });
+}
+
+function previewSelected(x){
+  $('.items li').fadeOut();
+  $('li[rel='+x+']').delay(400).fadeIn();
+  if(x=="all"){
+    $('.items li').fadeIn();
+  }
+  return false;
+}
+</script>
+
 
 </body>
 
