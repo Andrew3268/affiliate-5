@@ -236,15 +236,13 @@
  * *************** */
 .md-btn {
   border: 1px solid #7a7a7a;
-  color: ;
+  /*color: ;*/
   padding: 10px;
   margin: 5px;
   border-radius: 3px;
   cursor: pointer;
   background-color: #fff;
-  /*text-shadow: 0 -1px 0 #000;*/
   -webkit-box-shadow: 0 0 0 1px #222;
-  /*box-shadow: 0 0 0 1px #222;*/
 }
 .md-btn:hover {
   background-color: #f56a6a;
@@ -368,7 +366,7 @@
   .modal .modal_title .modal_p {
     width: 100%;
     font-size: 0.7em;
-    font-weight: 500
+    font-weight: 500;
    }
 
   .modal .modal_title .modal_price {
