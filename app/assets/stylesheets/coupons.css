@@ -5,12 +5,13 @@
   transition: all 0.25s ease-in-out;
 }*/
 
-./*flipIn, 
+/*.flipIn, 
 .coupon_wrapper .coupon_box h1, 
 .coupon_wrapper .coupon_box ul li {
   animation: flipdown 0.5s ease both;
 }
 */
+
 .no-select, 
 .coupon_wrapper .coupon_box h2 {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
