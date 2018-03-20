@@ -10,7 +10,7 @@
 
       <div class="topnav" id="myMenu">
         <a href="/search/quicksearch">Hotdeals Quick Search</a>
-        <a href="/hotdeals/coupons">Promo Code & Coupons</a>
+        <a href="/hotdeals/coupons">Coupons & Prom Codes</a>
         <a href="/hotdeals/hotdeals_women">Hotdeals Women</a>
         <a href="/hotdeals/hotdeals_men">Hotdeals Men</a>
         <a href="javascript:void(0);" style="font-size:16px;" class="icon" onclick="myQuickmenu()">&#9776;</a>
@@ -28,13 +28,18 @@
 
           <div class="tabs">
             <input type="radio" name="tab" id="tab1" checked="checked">
-            <label for="tab1">Amazon</label>
+            <label for="tab1">Amazon(USA)</label>
             <input type="radio" name="tab" id="tab2">
+            <label for="tab2">Amazon(CANADA)</label>
+
 
             <div class="tab-content-wrapper"></br>
               <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for promotions.." title="Type in a name">
               <div id="tab-content-1" class="tab-content">
-               <%= render 'shared/amazon_promotion' %>
+               <%= render 'shared/amazon_promotion_usa' %>
+              </div>
+              <div id="tab-content-2" class="tab-content">
+               <%= render 'shared/amazon_promotion_ca' %>
               </div>
             </div>
           </div><!-- tabs -->

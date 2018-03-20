@@ -1,3 +1,23 @@
+/* For desktop: */
+/*.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}*/
+
+
 /*.transition, 
 .coupon_wrapper .coupon_box p, 
 .coupon_wrapper .coupon_box ul li i:before, 
@@ -67,9 +87,11 @@
 
 .coupon_wrapper .coupon_box .coupon_dis{
   margin-bottom: -0.7em;
+  text-align: center;
 }
 .coupon_wrapper .coupon_box .coupon_gap{
   margin-top: -1em;
+  text-align: center;
 }
 
 .coupon_wrapper .coupon_box h1 {
@@ -92,6 +114,14 @@
   color: #006700;
   font-size: 0.8em;
 }
+
+.coupon_wrapper .coupon_box .coupon_code {
+  color: #006700;
+  border: 1px dotted;
+  padding: 0.3em;
+  text-align: center;
+  font-weight: bold;
+ }
 
 .coupon_wrapper .coupon_box h1 {
   /*text-transform: uppercase;*/
@@ -123,6 +153,12 @@
   transform: translate(0, 0);
   margin-top: 1em;
   z-index: 2;
+}
+
+.coupon_wrapper .coupon_box a:hover {
+  background-color: #f56a6a;
+  color: white !important;
+  padding: 1em;
 }
 
 .coupon_wrapper .coupon_box ul {
@@ -230,13 +266,10 @@
 }
 
 
-
-
 /* ****************
  * Open modal button (trigger)
  * *************** */
-.md-btn {
-  /*border: 1px solid #7a7a7a;*/
+/*.md-btn {
   padding: 10px;
   margin: 5px;
   border-radius: 3px;
@@ -249,12 +282,12 @@
 .md-btn:hover {
   background-color: #f56a6a;
   color: #fff;
-}
+}*/
 
 /* ****************
  * Modal window
  * *************** */
-.modal {
+/*.modal {
   display: none;
   position: fixed;
   top: 3%;
@@ -269,10 +302,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 30px;
   background-color: white;
-  /*background-color: rgba(29, 48, 68, 0.53);*/
-  /*text-shadow:0 1px 0 #333;*/
   color: #fff;
-  /*text-align: center;*/
   font-size: 20px;
   z-index: 100
 }
@@ -292,7 +322,6 @@
 
 .modal .modal_title {
   margin: 1.5em 0 4em 14em;
-  /*border-bottom: 1px dotted #dce7eb;*/
 }
 
 .modal .modal_title .modal_p {
@@ -305,19 +334,36 @@
   padding:0.5em;
 }
 
+.modal_view_more {
+  font-size: 2em;
+  text-align: center;
+  color: #006700;
+}
+
+.modal_view_more a {
+  color: #006700;
+  border: 1px dotted;
+  padding: 0.3em;
+}
+
+.coupon_code {color: #006700;
+  border: 1px dotted;
+  padding: 0.3em;
+ }
+
 .modal h3 {
   border-bottom:1px solid;
   padding-bottom:20px;
   font-size: 1em;
-}
+}*/
 
 /* Second modal window */
-.modal.two {
+/*.modal.two {
   color:lightblue;
-}
+}*/
 
 /* Close button */
-.modal .close {
+/*.modal .close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -348,12 +394,12 @@
 }
 .modal .close span {
   display:none;
-}
+}*/
 
 /* ****************
  * Background filter (blur)
  * *************** */
-.bg-blur {
+/*.bg-blur {
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
@@ -385,4 +431,7 @@
   .modal .modal_title .modal_price {
     font-size: 0.7em;
   }
-}
+  .modal_view_more a {
+    font-size: 0.7em;
+  }
+}*/
