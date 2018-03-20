@@ -39,6 +39,16 @@
 							<% end %>
 						</ul>
 					</li>
+          <li>
+            <span class="opener">HotDeals & Coupons</span>
+            <ul>
+              <li><%= link_to "HotDeal Quick Search", quicksearch_path %></li>
+              <li><%= link_to "Promotions & Events", promotion_path %></li>
+              <li><%= link_to "Coupons & Promo Code", coupons_path %></li>
+              <li><%= link_to "HotDeal For Women", hotdeals_women_path %></li>
+              <li><%= link_to "HotDeal For Men", hotdeals_men_path %></li>
+            </ul>
+          </li>
 			  	<li>
 						<span class="opener">Shop by Category</span>
 						<ul>
@@ -53,16 +63,6 @@
 							<% Category.all.each do |category| %>
 								<li><%= link_to category.name, category_price_path(category: category.name) %></li>
 							<% end %>
-						</ul>
-			  	</li>
-			  	<li>
-			  		<span class="opener">HotDeals & Coupons</span>
-			  		<ul>
-							<li><%= link_to "HotDeal Quick Search For Amazon", quicksearch_path %></li>
-              <li><%= link_to "Promotions & Events", promotion_path %></li>
-              <li><%= link_to "Coupons", coupons_path %></li>
-							<li><%= link_to "HotDeal For Women", hotdeals_women_path %></li>
-							<li><%= link_to "HotDeal For Men", hotdeals_men_path %></li>
 						</ul>
 			  	</li>
 			  	

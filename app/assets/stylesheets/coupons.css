@@ -90,6 +90,7 @@
 
 .coupon_wrapper .coupon_box .department {
   color: #006700;
+  font-size: 0.8em;
 }
 
 .coupon_wrapper .coupon_box h1 {
@@ -103,7 +104,7 @@
 .coupon_wrapper .coupon_box h2 {
   font-size: 1.8em;
   line-height: 34px;
-  /*font-weight: 300;*/
+  font-weight: 300;
   letter-spacing: 1px;
   display: block;
   margin: 0;
@@ -277,21 +278,31 @@
 }
 
 .modal .modal_img {
-  width: 8em;
+  width: 250px;
+  height: 200px;
   float: left;
 }
 
 .modal .modal_img img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 
 }
 
 .modal .modal_title {
-  margin: 1.5em 0 2em 9em;
+  margin: 1.5em 0 4em 14em;
+  /*border-bottom: 1px dotted #dce7eb;*/
 }
 
 .modal .modal_title .modal_p {
-  margin-bottom: 0.8em;
+  margin-bottom: -0.5em;
+}
+
+.modal .modal_title a:hover {
+  background-color: #f56a6a;
+  color: white !important;
+  padding:0.5em;
 }
 
 .modal h3 {
