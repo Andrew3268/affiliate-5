@@ -30,10 +30,9 @@
 					<li>
 						<span class="opener">Account & Lists</span>
 						<ul>
+              <li><%= link_to "About_us", contact_us_path %></li>
 							<li><%= link_to "Setting", edit_user_registration_path %></li>
-							<li><%= link_to "Wish List", wishlist_show_path %></li>
-							<li><%= link_to "Contact_us", contact_us_path %></li>
-              <!-- <li><a href="message/contact_us">Contact Us</a></li> -->
+							<li><%= link_to "Wish List", wishlist_show_path %></li>	
 							<% if user_signed_in? %>
 							 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
 							<% end %>
