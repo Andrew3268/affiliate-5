@@ -1,17 +1,9 @@
-<!-- Wrapper -->
 <div id="wrapper">
-
-	<!-- Main -->
 		<div id="main">
 			<div class="inner">
-
-				<!-- Header -->
           <%= render 'shared/header' %>
-					<!-- <div class="check_page">
-					  <h2> - <span>T</span>oday's <span>R</span>ecommendations - </h2>
-					</div> -->
-				<!-- Banner -->
-						<section id="banner">
+						
+            <section id="banner">
               <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 							
 							<div class="content">
@@ -50,9 +42,8 @@
 						    </div>
 							</div>
 						
-					</section>
+					</section><!--/#banner-->
 
-				<!-- Section -->
 					<section>
 						<header class="major">
 							<h2>- All products That We Highly Recommend - </h2>
@@ -95,7 +86,7 @@
                 
               
 								<ul class="actions">
-									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
+									<li><a href="<%= ecommerce.site_link %>" target="_blank" class="button">Buy Now</a></li>
 									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
 									<% if user_signed_in? and current_user.admin == true %> 
   									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
@@ -113,14 +104,3 @@
 		</div><!-- End id="main" -->
 	<%= render 'shared/sidebar' %>	
 </div><!-- End id="wrapper" -->
-
-<script>
-function myFunction() {
-    var x = document.getElementById('sidebar');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</script>
