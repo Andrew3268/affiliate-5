@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   post '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
   post '/hotdeals/promotion', to: 'hotdeals#promotion', as: 'promotion'
   post '/hotdeals/coupons', to: 'hotdeals#coupons', as: 'coupons'
+  post '/hotdeals/discount_codes', to: 'hotdeals#discount_codes', as: 'discount_codes'
+  post '/ecommerces/gadgets', to: 'ecommerces#gadgets', as: 'gadgets'
+  post '/blogs/blogs_home', to: 'blogs#blogs_home', as: 'blogs_home'
   post '/hotdeals/hotdeals_men', to: 'hotdeals#hotdeals_men', as: 'hotdeals_men'
   post '/hotdeals/hotdeals_women', to: 'hotdeals#hotdeals_women', as: 'hotdeals_women'
   

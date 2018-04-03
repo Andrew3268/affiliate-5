@@ -65,11 +65,29 @@ class EcommercesController < ApplicationController
      @sidebanner_09 = @pcategory_price_sidebanner.sample
      @sidebanner_10 = @pcategory_price_sidebanner.sample
   end
+
+  def gadgets
+    @ecommerces = Ecommerce.all
+    @ecommerces = Ecommerce.order("created_at DESC").page params[:page]
+
+    @ecommerces_sample = Ecommerce.all    
+    @banner = @ecommerces_sample.sample
+    @sidebanner_01 = @ecommerces_sample.sample
+    @sidebanner_02 = @ecommerces_sample.sample
+    @sidebanner_03 = @ecommerces_sample.sample
+    @sidebanner_04 = @ecommerces_sample.sample
+    @sidebanner_05 = @ecommerces_sample.sample
+    @sidebanner_06 = @ecommerces_sample.sample
+    @sidebanner_07 = @ecommerces_sample.sample
+    @sidebanner_08 = @ecommerces_sample.sample
+    @sidebanner_09 = @ecommerces_sample.sample
+    @sidebanner_10 = @ecommerces_sample.sample
+  end
   
   
   def index
      @ecommerces = Ecommerce.all
-     @ecommerces = Ecommerce.order("created_at DESC").page params[:page]
+     @ecommerces = Ecommerce.order("created_at DESC").limit(6)
 
      @ecommerces_sample = Ecommerce.all    
      @banner = @ecommerces_sample.sample

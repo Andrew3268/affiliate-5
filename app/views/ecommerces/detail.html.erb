@@ -1,7 +1,4 @@
-<!-- Wrapper -->
 <div id="wrapper">
-
-	<!-- Main -->
 		<div id="main">
 			<div class="inner">
 
@@ -51,10 +48,9 @@
 						 	<% total += @details.price_before - @details.price_after %>
 						 	<% discount += total.to_f / @details.price_before * 100  %>
   						<% if @details.price_before? %>
-  							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
+  							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
   					  <% end %>
-
-							
+			
 							<ul class="actions">
 								<li><a href="<%= @details.site_link %>" class="button big" target="_blank">Buy Now</a></li>
 								<li><%= link_to '', add_wishlist_path(@details), class: "fa fa-cart-arrow-down cart-size", method: :post %></li>

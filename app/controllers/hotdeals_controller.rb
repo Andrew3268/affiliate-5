@@ -55,4 +55,18 @@ class HotdealsController < ApplicationController
     @sidebanner_09 = @promotion_sidebar.sample
     @sidebanner_10 = @promotion_sidebar.sample
   end
+
+  def discount_codes
+    @promotion_sidebar = Ecommerce.all
+    @sidebanner_01 = @promotion_sidebar.sample
+    @sidebanner_02 = @promotion_sidebar.sample
+    @sidebanner_03 = @promotion_sidebar.sample
+    @sidebanner_04 = @promotion_sidebar.sample
+    @sidebanner_05 = @promotion_sidebar.sample
+    @sidebanner_06 = @promotion_sidebar.sample
+    @sidebanner_07 = @promotion_sidebar.sample
+    @sidebanner_08 = @promotion_sidebar.sample
+    @sidebanner_09 = @promotion_sidebar.sample
+    @sidebanner_10 = @promotion_sidebar.sample
+  end
 end

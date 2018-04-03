@@ -1,0 +1,274 @@
+/*------------------------------
+For Gird
+--------------------------------*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+/*------------------------------
+Discount Code Part
+--------------------------------*/
+.discount_container {
+  width: 100%;
+  max-width: 75.125rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.discount_container.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+@media screen and (min-width: 46.25rem) {
+  .discount_container.grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+.discount_container .item {
+  background-color: white;
+  border: 2px solid #e8e7e8;
+  min-height: 150px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: "subtitle" "title" "description" "link";
+  font-size: .875rem;
+}
+.discount_container .item.has-notice {
+  grid-template-columns: 1fr 80px;
+  grid-template-areas: "subtitle notice" "title notice" "description notice" "link link";
+  grid-gap: 0 16px;
+}
+@media screen and (min-width: 28rem) {
+  .discount_container .item.has-notice {
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: "notice subtitle" "notice title" "notice description" "notice link";
+  }
+}
+@media screen and (min-width: 46.25rem) {
+  .discount_container .item.has-notice {
+    grid-template-columns: 1fr 80px;
+    grid-template-areas: "subtitle notice" "title notice" "description notice" "link link";
+  }
+}
+@media screen and (min-width: 53.75rem) {
+  .discount_container .item.has-notice {
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: "notice subtitle" "notice title" "notice description" "notice link";
+  }
+}
+.discount_container .item-title {
+  grid-area: title;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #333131;
+  line-height: 1.1;
+}
+.discount_container .item-subtitle {
+  grid-area: subtitle;
+  color: #30a2c0;
+  text-transform: uppercase;
+}
+.discount_container .item-description {
+  text-align: center;
+  grid-area: description;
+  max-width: 56ch;
+  border: 3px dotted;
+  padding: 0.3em;
+}
+.discount_container .item-link {
+  grid-area: link;
+  text-align: right;
+  color: #30a2c0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.discount_container .item-link:hover, .discount_container .item-link:active, .discount_container .item-link:focus {
+  text-decoration: underline;
+}
+.discount_container .item-notice {
+  grid-area: notice;
+  position: relative;
+}
+.discount_container .item-notice span {
+  position: absolute;
+  right: -2rem;
+  top: 0;
+  display: block;
+  padding: .5rem;
+  background-color: #30a2c0;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.code_vaild {
+  color: #006700;
+}
+
+.discount_category {
+  margin-bottom: 0em;
+}
+
+@media screen and (min-width: 28rem) {
+  .discount_container .item-notice span {
+    right: 0;
+    left: -2rem;
+  }
+}
+@media screen and (min-width: 46.25rem) {
+  .discount_container .item-notice span {
+    left: 0;
+    right: -2rem;
+  }
+}
+@media screen and (min-width: 53.75rem) {
+  .discount_container .item-notice span {
+    right: 0;
+    left: -2rem;
+  }
+}
+
+
+
+
+/***************************************** Coupons & Deals Part *****************************************/
+/*------------------------------
+split styles
+-------------------------------*/
+.split {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+.split > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.split-right {
+  text-align: right;
+  width: 9em;
+  height: 7em;
+}
+
+/*------------------------------
+box styles as a container item
+-------------------------------*/
+.box {
+  padding: 10px;
+  border: 3px dotted #d9d9d9;
+  margin: 20px 1px;
+  background: #ffffff;
+  /* position for box-shadow */
+  position: relative;
+  margin-bottom: -1.5em;
+}
+
+.box_bowShadow:before,
+.box_bowShadow:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 12px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #808080;
+  box-shadow: 0 15px 5px #808080;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+.box_bowShadow:after {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+/*------------------------------
+ totem styles
+-------------------------------*/
+.totem {
+  padding: 0 5px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.totem > * {
+  margin-bottom: 10px;
+}
+
+.totem-hd {
+  color: #ea0f6b;
+  font-weight: bold;
+  margin: 0 0 -0.8em 0;
+}
+
+.totem-bd {
+  width: 15em;
+  color: #000000;
+  font-weight: bold;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+
+.totem-ft {
+  margin-bottom: -0.5em;
+}
+
+/*------------------------------
+ media query for larger screens
+--------------------------------*/
+@media screen and (min-width: 600px) {
+  .block {
+    width: calc(50% - 5px);
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 850px) {
+  .block {
+    width: calc(33% - 5px);
+    display: inline-block;
+  }
+}

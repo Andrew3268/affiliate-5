@@ -9,3 +9,31 @@
 		<li><a href="https://www.youtube.com/channel/UCPtAAP5zlHCRYdCDqGR_jeA" target="_blank" class="icon fa fa-youtube-play"><span class="label">Youtube</span></a></li>
   </ul>
 </header>
+
+<div class="container">
+  <div class="navbar">
+    <a href="#" class="navbar-menu"><i class="fa fa-bars open" aria-hidden="true"></i></a>
+      <ul class="navbar-links">
+        <li class="navbar-links-link"><%= link_to "Home", root_path %></li>
+        <li class="navbar-links-link"><%= link_to "HotDeal Quick Search", quicksearch_path %></li>
+        <li class="navbar-links-link"><%= link_to "Promotions", promotion_path %></li>
+        <li class="navbar-links-link"><%= link_to "Coupons", coupons_path %></li>
+        <li class="navbar-links-link"><%= link_to "Discount Codes", discount_codes_path %></li>
+        <li class="navbar-links-link"><%= link_to "Shopping", gadgets_path %></li>
+      </ul>
+  </div>
+</div>
+
+<div class="navbar-collapsed">
+  <a href="#" class="navbar-collapsed-close"><i class="fa fa-times close" aria-hidden="true"></i></a>
+  <div class="container">
+    <ul class="navbar-collapsed-links">
+      <li class="navbar-collapsed-links-link"><%= link_to "Home", root_path %></li>
+      <li class="navbar-collapsed-links-link"><%= link_to "HotDeal Quick Search", quicksearch_path %></li>
+      <li class="navbar-collapsed-links-link"><%= link_to "Promotions", promotion_path %></li>
+      <li class="navbar-collapsed-links-link"><%= link_to "Coupons", coupons_path %></li>
+      <li class="navbar-collapsed-links-link"><%= link_to "Discount Codes", discount_codes_path %></li>
+      <li class="navbar-collapsed-links-link"><%= link_to "Shopping", gadgets_path %></li>
+    </ul>
+  </div>
+</div>

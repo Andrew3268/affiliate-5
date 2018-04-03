@@ -1,0 +1,80 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner">
+    <%= render 'shared/header' %>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        
+<!--       <div class="flex main">
+        <div class="flex-container">
+          <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/dd/12/e5/dd12e5539f4b1455a554c256c6be4eae.jpg" class="flex-container-images" alt="Find Deals">
+          <p class="flex-container-heading">Quick Way To Find The Best Deals</p></a>
+        </div>
+        <div class="flex-container">
+          <a href="/blogs/blogs_home"><img src="https://i.pinimg.com/564x/22/a1/fc/22a1fcb216d5e4292d8b3388ba5e4a99.jpg" class="flex-container-images" alt="Awesome Blogs">
+          <p  class="flex-container-heading">Blogs</p></a>
+        </div>
+        <div class="flex-container">
+          <a href="#"><img src="https://i.pinimg.com/564x/25/99/84/2599841f7d0ff185f851f811c727d8ed.jpg" class="flex-container-images" alt="Save your money">
+          <p class="flex-container-heading">Saving Your Money</p></a>
+        </div>
+        <div class="flex-container">
+          <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/ff/6a/ca/ff6aca78182d5ff9c00eb9efeb04e71c.jpg" class="flex-container-images" alt="Awesome Gadgets">
+          <p class="flex-container-heading">Awesome Gadgets</p></a>
+        </div>
+      </div> -->
+
+        
+      <section>
+        <header class="major">
+          <h2>- Find Your Special Gadgets - </h2>
+        </header>
+        
+        <div class="posts">
+         
+         <% @ecommerces.each do |ecommerce| %>  
+          <article>
+            
+            <a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
+            <p class="sources"><%= ecommerce.sources %></p>
+            <h3><%= ecommerce.title %></h3>
+            <p><%= ecommerce.intro %></p>
+            
+            <% total = 0 %>
+            <% discount  = 0 %>
+            <div class="price">
+              <div class="price_h3">
+               <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
+              </div>
+            </div>&emsp;
+            <div class="price">
+              <div class="price_h3">
+               <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+              </div>
+            </div>
+            
+            <% total += ecommerce.price_before - ecommerce.price_after %>
+            <% discount += total.to_f / ecommerce.price_before * 100  %>
+            <% if ecommerce.price_before? %>
+             <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
+            <% end %>
+            
+          
+            <ul class="actions">
+              <li><a href="<%= ecommerce.site_link %>" target="_blank" class="button">Buy Now</a></li>
+              <li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
+              <% if user_signed_in? and current_user.admin == true %> 
+                <li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
+                <li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
+              <% end %>
+            </ul>
+            
+          </article>
+         <% end %>
+        </div><!--/.post-->
+        <%= paginate @ecommerces %><!-- For Product Page -->
+      </section>
+        
+    </div>
+  </div>
+  <%= render 'shared/sidebar' %>  
+</div>

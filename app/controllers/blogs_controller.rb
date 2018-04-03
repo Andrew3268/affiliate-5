@@ -26,4 +26,10 @@ class BlogsController < ApplicationController
       @sidebanner_09 = @blog_sidebar.sample
       @sidebanner_10 = @blog_sidebar.sample
     end
+
+    def blogs_home
+    end
+
+    def blogs_show
+    end
 end

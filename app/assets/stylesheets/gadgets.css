@@ -1,0 +1,16 @@
+.shopping_right {
+  /*border: 1px solid #eee;*/
+  background-color: #ffea92;
+  padding: 0.5em;
+  margin-top: 8.2em;
+  border-radius: 0.5em;
+}
+
+.widget_container_shopping {
+  max-width: 280px;
+  margin: 12% auto;
+  padding: 0;
+  box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', sans-serif;
+}
+
