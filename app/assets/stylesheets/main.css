@@ -2133,11 +2133,11 @@
 		text-decoration: none;
 	}
 
-		a:hover {
+/*		a:hover {
 			border-bottom-color: #f56a6a;
 			color: #f56a6a !important;
 		}
-
+*/
 			a:hover strong {
 				color: inherit;
 			}
@@ -4103,6 +4103,10 @@
 			font-size: 3.125em;
 		}
 
+    #header a:hover {
+      color: #f56a6a;
+    }
+
 		#header .icons {
 			text-align: right;
 			padding: 1em 0;
@@ -4711,15 +4715,7 @@
 			background-color: rgba(245, 106, 106, 0.05);
 		}
 	
-	
-	
-	
-/********************************/
 
-/***Facebook***/
-.fb-size {
-	width: 100%;
-}
 
 /************ Detail section ************/
 

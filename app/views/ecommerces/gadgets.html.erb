@@ -25,16 +25,17 @@
 
         
       <section>
-        <header class="major">
-          <h2>- Find Your Special Gadgets - </h2>
-        </header>
+        <div class="gadgets_header">
+          <h2>Awesome Gadgets That Will Blow Your Mind.</h2>
+        </div>
+        <div class="gadgets_underline"></div>
         
         <div class="posts">
          
          <% @ecommerces.each do |ecommerce| %>  
           <article>
             
-            <a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
+            <a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="<%= ecommerce.title %>"/></a>
             <p class="sources"><%= ecommerce.sources %></p>
             <h3><%= ecommerce.title %></h3>
             <p><%= ecommerce.intro %></p>

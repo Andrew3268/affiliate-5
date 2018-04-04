@@ -47,9 +47,11 @@
         </div>
       </div> -->
 
-      <div class="description">
-        <h1>Awesome Gadgets That Will Blow Your Mind.</h1>
-      </div>
+        <ul class="description">
+          <li class="description_li"><h2>Awesome Gadgets That Will Blow Your Mind.</h2></li>
+          <li class="description_li"><%= link_to "Show more gadgets...", gadgets_path %></li>
+        </ul>
+        <div class="description_underline"></div>
       
       <ul class="cards">
         <% @ecommerces.each do |gadgets| %>
@@ -61,8 +63,7 @@
               <div class="card__title"><%= gadgets.title %></div>
               <p class="gadgets_intro"><%= gadgets.intro %></p>
               <h3 class="gadgets_price_after">$<%= gadgets.price_after %></h3>
-              <!-- <p class="card__text"><%= gadgets.intro %></p> -->
-              <p><a href="/ecommerces/gadgets">Show more...</a></p>
+              <!-- <p><a href="/ecommerces/gadgets">Show more...</a></p> -->
             </div>
           </div>
           <!-- </a> -->
@@ -70,12 +71,13 @@
         <% end %>
       </ul>
 
-      <div class="description">
-        <h1>Don`t Miss Today`s Best Deals</h1>
-      </div>
+      <ul class="description">
+        <li class="description_li"><h2>Saving your money!! EveryDay Best Deals :D</h2></li>
+      </ul>
+      <div class="description_underline"></div>
 
       
-     <div class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225ac3871de7055a64fbc43eb7%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A5%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A1135%7D"> <h2>Women`s Shoes Up to 70% Off</h2> 
+     <div class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225ac3871de7055a64fbc43eb7%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A5%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A1135%7D"> <h2 class="collective">Women`s Shoes Up to 70% Off</h2> 
       <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1522762654598?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225ac3871de7055a64fbc43eb7%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A5%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A1135%7D"
       height="275px"
       width="1135px"

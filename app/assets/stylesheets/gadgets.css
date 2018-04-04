@@ -1,3 +1,8 @@
+.gadgets_underline {
+  border-bottom: 0.4em solid #eee;
+  margin: -2em 0 2em 0;
+}
+
 .shopping_right {
   /*border: 1px solid #eee;*/
   background-color: #ffea92;
@@ -14,3 +19,11 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+@media screen and (max-width: 800px) {
+  .gadgets_header {
+    margin-top: -3em;
+  }
+  .gadgets_underline {
+    margin-top: -1.2em;
+  }
+}
