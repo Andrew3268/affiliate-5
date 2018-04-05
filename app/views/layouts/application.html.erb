@@ -1,238 +1,204 @@
 <!DOCTYPE html> 
 <html lang="en">
-<head>
-  <title>Oh, I Gotta Buy This</title>
-  <link rel="shortcut icon" type="image/jpg" href="https://goo.gl/qBPfBM">
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+  <head>
+    <title>Oh, I Gotta Buy This</title>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> -->
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/jpg" href="https://goo.gl/qBPfBM">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
+    
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  	
+  	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  	<!--<link rel="stylesheet" href="assets/css/main.css" />-->
+  	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113637704-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113637704-1');
+    </script>
+
+    <!-- For eBay Affiliate Program -->
+    <script>window._epn = {campaign:5338273158};</script>
+    <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+
+  </head>
+
+ <body>
   
-  <meta charset="utf-8"/>
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> -->
-  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <% if notice %>
+      <div id="notice_wrapper">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% else alert %>
+      <div id="notice_wrapper">
+       <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+     
+    <%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application' %>
+    <!-- for Isotope -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
-  
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-	
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<!--<link rel="stylesheet" href="assets/css/main.css" />-->
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--For Facebook Like&Share Button-->
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!--End Facebook Like&Share Button-->
 
- 
- <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113637704-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-113637704-1');
-  </script>
-
-  <!-- For eBay Affiliate Program -->
-  <script>window._epn = {campaign:5338273158};</script>
-  <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
-
-</head>
-
-<body>
-  
-<% if notice %>
-  <div id="notice_wrapper">
-    <p class="notice"><%= notice %></p>
-  </div>
-<% else alert %>
-  <div id="notice_wrapper">
-   <p class="alert"><%= alert %></p>
-  </div>
-<% end %>
-   
-<%= yield %>
-<%= javascript_include_tag 'application' %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
-<!--For Facebook Like&Share Button-->
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-<!--End Facebook Like&Share Button-->
-
-<!--For Notice & Alert Message-->
-<script>
-  $(document).ready(function(){
-    setTimeout(function(){
-      $('#notice_wrapper').fadeOut("slow", function(){
-        $(this).remove();
+    <!--For Notice & Alert Message-->
+    <script>
+      $(document).ready(function(){
+        setTimeout(function(){
+          $('#notice_wrapper').fadeOut("slow", function(){
+            $(this).remove();
+          });
+        }, 3000);
       });
-    }, 3000);
-  });
-</script>
-<!--End Notice & Alert Message-->
+    </script>
+    <!--End Notice & Alert Message-->
 
 
-<!-- For OneLink -->
-<div id="amzn-assoc-ad-9964b306-5e55-4810-adb9-cb2e4b817f96"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=9964b306-5e55-4810-adb9-cb2e4b817f96"></script>
+    <!-- For OneLink -->
+    <div id="amzn-assoc-ad-9964b306-5e55-4810-adb9-cb2e4b817f96"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=9964b306-5e55-4810-adb9-cb2e4b817f96"></script>
 
-<!--For Amazon -->
-  <script>
-      amzn_assoc_ad_type = "link_enhancement_widget";
-      amzn_assoc_tracking_id = "scarlet3628-20";
-      amzn_assoc_linkid = "42a822b2d2d63295b8cd3efd84c72542";
-      amzn_assoc_placement = "";
-      amzn_assoc_marketplace = "amazon";
-      amzn_assoc_region = "US";
-  </script>
-  <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
-<!--End Amazon -->
+    <!--For Amazon -->
+      <script>
+          amzn_assoc_ad_type = "link_enhancement_widget";
+          amzn_assoc_tracking_id = "scarlet3628-20";
+          amzn_assoc_linkid = "42a822b2d2d63295b8cd3efd84c72542";
+          amzn_assoc_placement = "";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+      </script>
+      <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+    <!--End Amazon -->
 
-<!-- For Viglink -->
-<script>
-  var vglnk = { key: '9f8b8215c45eaf9e20303d2bf9cb410c' };
+    <!-- For Viglink -->
+    <script>
+      var vglnk = { key: '9f8b8215c45eaf9e20303d2bf9cb410c' };
 
-  (function(d, t) {
-    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
-    s.src = '//cdn.viglink.com/api/vglnk.js';
-    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
-  }(document, 'script'));
-</script>
+      (function(d, t) {
+        var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+        s.src = '//cdn.viglink.com/api/vglnk.js';
+        var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+      }(document, 'script'));
+    </script>
 
 
-<!-- Go-Up Button -->
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+    <!-- Go-Up Button -->
+    <script>
+    window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-</script>
-
-<!-- For Angular Search -->
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
         } else {
-            li[i].style.display = "none";
-
+            document.getElementById("myBtn").style.display = "none";
         }
     }
-}
-</script>
 
-<!-- For QuickMenu -->
-<script>
-function myQuickmenu() {
-    var x = document.getElementById("myMenu");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
-}
-</script>
+    </script>
 
+    <!-- For Angular Search -->
+    <script>
+    function myFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
 
-
-<!-- Discount Filler  -->
-<script>
-$(function() {
-  FilterItems();
-});
-
-function FilterItems(){
-  CatType=$('#discount_filter');
-  CatType.change(function(){
-    selectValue=$(this).val();
-    previewSelected(selectValue); 
-  });
-}
-
-function previewSelected(x){
-  $('.discount_items article').fadeOut();
-  $('article[rel='+x+']').delay(200).fadeIn();
-  if(x=="all"){
-    $('.discount_items article').fadeIn();
-  }
-  return false;
-}
-</script>
-
-
-
-<!-- 네비 메뉴 스크립트 -->
-<script>
-  $(".open").click(function(){
-  $(".navbar-collapsed").css("width", "290px");
-  
-  });
-
-  $(".close").click(function(){
-    $(".navbar-collapsed").css("width", "0");
-    
-  });
-</script>
-
-<!-- 왼쪽 사이드 탭 위젯-->
-<script>
-jQuery(document).ready(function($){ $(".multitab-widget-content-widget-id").hide(); $("ul.multitab-widget-content-tabs-id li:first a").addClass("multitab-widget-current").show(); $(".multitab-widget-content-widget-id:first").show(); $("ul.multitab-widget-content-tabs-id li a").click(function() { $("ul.multitab-widget-content-tabs-id li a").removeClass("multitab-widget-current a"); $(this).addClass("multitab-widget-current"); $(".multitab-widget-content-widget-id").hide(); var activeTab = $(this).attr("href"); $(activeTab).fadeIn(); return false; }); });
-</script>
-
-<!-- For Coupon Modal -->
-<!-- <script>
-  $(function(){
-  var target = '';
-  $(".md-btn").click(function(){
-    target = $(this).get(0).className.split(" ")[1];
-    target = $(".modal." + target);
-    if ( target.is(":hidden") ) {
-      target.fadeIn(600);
-      $(".container").addClass("bg-blur");
-    } else {
-      target.hide();
-      $(".container").removeClass("bg-blur");
+            }
+        }
     }
-  });
-  
-  $(".close, .modal").click(function(){
-    $(".modal").hide();
-    $(".container").removeClass("bg-blur");
-  });
-});
-</script> -->
+    </script>
+
+    <!-- For QuickMenu -->
+    <script>
+    function myQuickmenu() {
+        var x = document.getElementById("myMenu");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+    <!-- Discount Filler  -->
+    <script>
+    $(function() {
+      FilterItems();
+    });
+
+    function FilterItems(){
+      CatType=$('#discount_filter');
+      CatType.change(function(){
+        selectValue=$(this).val();
+        previewSelected(selectValue); 
+      });
+    }
+
+    function previewSelected(x){
+      $('.discount_items article').fadeOut();
+      $('article[rel='+x+']').delay(200).fadeIn();
+      if(x=="all"){
+        $('.discount_items article').fadeIn();
+      }
+      return false;
+    }
+    </script>
 
 
 
+    <!-- 네비 메뉴 스크립트 -->
+    <script>
+      $(".open").click(function(){
+      $(".navbar-collapsed").css("width", "290px");
+      
+      });
 
-</body>
+      $(".close").click(function(){
+        $(".navbar-collapsed").css("width", "0");
+        
+      });
+    </script>
 
+    <!-- 왼쪽 사이드 탭 위젯-->
+    <script>
+    jQuery(document).ready(function($){ $(".multitab-widget-content-widget-id").hide(); $("ul.multitab-widget-content-tabs-id li:first a").addClass("multitab-widget-current").show(); $(".multitab-widget-content-widget-id:first").show(); $("ul.multitab-widget-content-tabs-id li a").click(function() { $("ul.multitab-widget-content-tabs-id li a").removeClass("multitab-widget-current a"); $(this).addClass("multitab-widget-current"); $(".multitab-widget-content-widget-id").hide(); var activeTab = $(this).attr("href"); $(activeTab).fadeIn(); return false; }); });
+    </script>
+
+ </body>
 </html>
 
 

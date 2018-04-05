@@ -3,6 +3,10 @@
   margin: -2em 0 2em 0;
 }
 
+.gadgets_header h2{
+  margin-bottom: 0em;
+}
+
 .shopping_right {
   /*border: 1px solid #eee;*/
   background-color: #ffea92;
@@ -23,6 +27,11 @@
   .gadgets_header {
     margin-top: -3em;
   }
+
+  .gadgets_header h2 {
+    margin-top: 2.5em;
+  }
+
   .gadgets_underline {
     margin-top: -1.2em;
   }

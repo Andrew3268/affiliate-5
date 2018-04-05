@@ -11,7 +11,11 @@ My Custom
 }
 
 .description h2 {
-  margin: 1em 21em 0 0;
+  margin: 1em 0.5em 0 0;
+}
+
+.des_font_size {
+  font-size: 3em;
 }
 
 .description_underline {
@@ -27,8 +31,35 @@ My Custom
     .description h2 {
       margin: 0;
     }
+
+    .des_font_size {
+      font-size: 1.5em;
+    }
 }
 
+
+/*------------------------------
+Go Up Button
+--------------------------------*/
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 0 1em 0 1em;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #fff;
+}
 
 /*------------------------------
 Main Menu of Header
@@ -124,8 +155,8 @@ Main Menu of Header
 
 .flex {
   display:flex;
-  padding-bottom:50px;
-  border-bottom:3px solid black;
+  padding-bottom: 1em;
+  border-bottom:3px solid #f06b67;
   
   &-container {
       flex-grow:1;
@@ -144,10 +175,8 @@ Main Menu of Header
         &:hover {
         transform:scale(1.1,1.1);
         transition:.8s all ease;
-          }
-      
-      
-    }
+        }
+     }
     
     &-heading {
       text-align:center;
@@ -159,108 +188,9 @@ Main Menu of Header
    }
 }
 
-.blog {
-  display:flex;
-  
-  
-  &-content {
-    display:flex;
-    flex-wrap:wrap;
-    margin:0 auto;
-    
-    
-    &-1 {
-      background:#E9EBEE;
-      flex:0 1 40%;
-      margin:10px auto;
-      border-radius:.5%;
-      padding-bottom:10px;
-      
-      img {
-        width:100%;
-      }
-      
-      h3 {
-        text-align:center;
-      }
-      
-      p {
-        text-align:center;
-        
-      }
-    }
-    
-    &-2 {
-      background:#E9EBEE;
-      flex:0 1 90%;
-      margin:10px auto;
-      text-align:center;
-      padding-bottom:5px;
-            
-      img {
-        width:100%;
-      }         
-    }
-  }
-  
-  &-footer {
-    margin:10px 0;
-    display:flex;
-    background:#E9EBEE;
-    width:100%;
-    padding-left:10px;
-    padding-right:10px;
-    flex-direction:column;
-    
-    &-content {
-      text-align:center;
-      
-      h3 {
-        padding-top:50px;
-        font-size:30px;          
-      }
-      
-      ul {
-        padding-bottom:20px;
-        line-height:30px;
-        li {
-          list-style-type:none;
-          font-size:20px;
-        }
-      }
-    }
-     &-content-1 {
-        text-align:center;
-        background:black;
-        color:white;
-        padding:20px;
-
-        img {
-          width:90%;      
-        }
-        
-       button {
-         background:#fed136;
-         border:none;
-         color:black;
-         padding:5px 20px;
-       }        
-    }    
-  }
-}
-
-footer {
-  background:black;
-  text-align:center;
-  padding:10px 0;
-  color:white;
-}
-
-
-
 @media screen and ("max-width:800px") {
   .navbar {
-    background-color: #5bc995;
+    background-color: #f56a6a;
     height:7vh;
     margin: 1em 0 2em 0;
 
@@ -288,62 +218,7 @@ footer {
     width: 100%;
     
     &-container {
-      flex:1 1;
-    }
-  }
-  
-  .blog {
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:column;
-    
-    &-content {
-      display:flex;
-      flex-direction:column;
-    &-1 {
-      margin:10px;
-      background:#E9EBEE;
-      
-       img {
-        width:100%;
-        }
-      
-       h3 {
-        text-align:center;
-        }
-      
-      p {
-        text-align:center;
-      }
-    }
-      
-      &-2 {
-        margin:10px;
-       
-      }
-    }
-    &-footer {
-      display:flex;
-      flex-direction:row;
-      justify-content:space-around;
-      background:black;
-      margin:0;
-      
-      &-content {
-        color:white;
-        text-align:center;
-        ul {
-          li {
-            list-style-type:none;
-          }
-        }
-        
-      }
-      
-      &-content-1 {
-        display:none;
-      }
- 
+      flex:1 1 34%;
     }
   }
 }
@@ -357,7 +232,7 @@ footer {
     
     &-container {
       float: left;
-      flex:1 1 50%;
+      flex: 1 1 50%;
      }
     .flex-container-heading {
       // font-size: 15px;
@@ -512,6 +387,7 @@ img {
   flex: 1 1 auto;
   flex-direction: column;
   padding: 15px;
+  text-align: center;
 }
 
 .card__image {

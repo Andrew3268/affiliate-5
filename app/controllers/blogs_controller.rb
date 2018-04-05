@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-    def blog_01
+    def blogs_01
       @blog_sidebar = Ecommerce.all
       @sidebanner_01 = @blog_sidebar.sample
       @sidebanner_02 = @blog_sidebar.sample
@@ -29,7 +29,5 @@ class BlogsController < ApplicationController
 
     def blogs_home
     end
-
-    def blogs_show
-    end
+    
 end

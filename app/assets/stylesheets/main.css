@@ -2657,7 +2657,7 @@
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
-		padding-left: 1em;
+		/*padding-left: 1em;*/
 	}
 
 		ul li {
@@ -3702,9 +3702,9 @@
 	}
 
 		#main > .inner {
-			padding: 0 6em 0.1em 6em ;
+			/*padding: 0 6em 0.1em 6em ;*/
 			margin: 0 auto;
-			max-width: 110em;
+			max-width: 93%;
 		}
 
 			#main > .inner > section {
@@ -3769,7 +3769,7 @@
 		#main > .inner_quicksearch {
 			padding: 0 6em 0.1em 6em ;
 			margin: 0 auto;
-			max-width: 110em;
+			max-width: 93%;
 		}
 
 			#main > .inner_quicksearch > section {
