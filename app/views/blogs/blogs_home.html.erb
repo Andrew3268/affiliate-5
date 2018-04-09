@@ -4,11 +4,26 @@
       <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
               
-      <div id="description">
+      <!-- <div id="description">
         <h1>Responsive Image Gallery with Hover Effect</h1>
+      </div> -->
+
+      <div class="flex main">
+        <div class="flex-container">
+          <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">
+        </div>
+        <div class="flex-container">
+          <a href="/blogs/blogs_home"><img src="https://i.pinimg.com/564x/55/8c/37/558c378809d166b7cdc87ebd4e39610d.jpg" class="flex-container-images" alt="Awesome Blogs">
+        </div>
+        <div class="flex-container">
+          <a href="/hotdeals/savings_percentage_70"><img src="https://i.pinimg.com/564x/5c/24/0e/5c240e075214c717a119f75f11722529.jpg" class="flex-container-images" alt="Save your money">         
+        </div>
+        <div class="flex-container">
+          <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/d4/56/e8/d456e85b0a8c8e4ffdf3103e473256dd.jpg" class="flex-container-images" alt="Awesome Gadgets">
+        </div>
       </div>
   
-      <div class="main_wrapper">
+      <!-- <div class="main_wrapper">
         <div class="settings">
           <div class="square square--purple">
             <h2>Purple square</h2>
@@ -26,7 +41,7 @@
           </div>
         </div>
       </div>
-      
+       -->
       <div class="blogs_wrapper">
 <!-- 
         <main class="main">
@@ -43,29 +58,55 @@
 
         <main class="main">
 
+          <!-- <div class="blog-card">
+            <div class="photo photo1" style="background: url(ImageURL) center no-repeat; background-size: cover;" ></div>
+            <ul class="details">
+              <li class="author"><a href="#">Oh,i gotta buy this</a></li>
+              <li class="date">Month. Date, 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">Main_Title</h1>
+              <p class="summary">Main_intro</p>
+              <a href="Blog_URL">Read More</a>
+            </div>
+          </div> -->
+
+          <div class="blog-card">
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/4c/14/ae/4c14ae6547540a6dc4d51d5061c4d731.jpg) center no-repeat; background-size: cover;" ></div>
+            <ul class="details">
+              <li class="author"><a href="/blogs/blog_03">Oh,i gotta buy this</a></li>
+              <li class="date">April. 07, 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">10 Comfortable Travel Pillow you can deep sleep.</h1>
+              <p class="summary">I`d like to share 10 Comfortable “Travel Pillow” that will make you have a sweet dream while you traveling today. Have you ever sat in an economy class seat, tossing and turning, deliriously trying to get to sleep? Knowing you need to be feeling rested when you arrive? Say goodbye to long restless airplane flights, train rides, car rides and bus rides. Now you can sleep as comfortably as you sleep in your own bed. It allows you to get deep sleep while traveling. And These are the first travel pillows that allow you to make sure you find the most comfortable position during your travels.</p>
+              <a href="/blogs/blog_03">Read More</a>
+            </div>
+          </div>
+
           <div class="blog-card">
             <div class="photo photo1" style="background: url(https://3.bp.blogspot.com/-0Ov80MwVP0Q/WijjYA_NgdI/AAAAAAAACCM/OJpvy91JjoIa5AZirVuElHocK2lsxPYBwCLcBGAs/s1600/five%2B%25281%2529.png) center no-repeat; background-size: cover;" ></div>
             <ul class="details">
-              <li class="author"><a href="#">Oh,i gotta buy this</a></li>
+              <li class="author"><a href="/blogs/blog_01">Oh,i gotta buy this</a></li>
               <li class="date">Apr. 04, 2018</li>
             </ul>
             <div class="description">
               <h1 class="blog_home_post_h1">10 Awesome Smart Home Gadgets You Need To See</h1>
               <p class="summary">Looking to make your home just a little smarter? While still in its infancy, the number of smart home products—devices that let you control your lighting, thermostat, or even your crock pot from your smartphone—is rapidly growing. You can pick and choose your favorite gadgets to assemble an affordable intelligent abode on your own terms, or opt for an entire smart home system that does all the work for you. Here are some of smart home systems and individual gadgets.</p>
-              <a href="/blogs/blogs_01">Read More</a>
+              <a href="/blogs/blog_01">Read More</a>
             </div>
           </div>
 
           <div class="blog-card">
             <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/d7/b5/33/d7b5337801205257c9737143afab4197.jpg) center no-repeat; background-size: cover;" ></div>
             <ul class="details">
-              <li class="author"><a href="#">Oh,i gotta buy this</a></li>
+              <li class="author"><a href="/blogs/blog_02">Oh,i gotta buy this</a></li>
               <li class="date">Apr. 03, 2018</li>
             </ul>
             <div class="description">
-              <h1 class="blog_home_post_h1">5 Awesome &amp; Useful &quot;BackPack&quot;</h1>
+              <h1 class="blog_home_post_h1">5 Awesome &amp; Useful BackPack</h1>
               <p class="summary">Travel is a part of our daily life. We’ve lugged a lot of stuff, camera or something around with us, whether it’s just for the day, a weekend trip, or a weeklong vacation. And you may concern yourself with someone stealing your belongings, your phone running out of juice, or forgetting where you put certain must-have items within your bag.  If you’re the same way, you know how hard it is to find a practical bag to haul your gear when you’re on the go. This collection has found a way to solve that with these awesome & useful backpacks that will accompany you on your everyday adventures.</p>
-              <a href="/blogs/blogs_02">Read More</a>
+              <a href="/blogs/blog_02">Read More</a>
             </div>
           </div>
 
@@ -86,10 +127,36 @@
         </main>
       
         <aside class="aside">
-          <h2>Recent Blog Posts</h2>
           <div class="blog-container">
-            
-            <div class="widget_container"> <!-- 왼쪽 사이드 탭 -->
+
+            <div class="bsd-container">
+              <div class="sidebar_about_author">
+                <div class='inner_wrapper'>
+                  <div class='bsdbox-img'>
+                    <img alt='Bloggersstand' class='img-responsive' height='auto' src='https://3.bp.blogspot.com/-7wKGgvEtb18/Vv__yOuo8cI/AAAAAAAAF0Q/o4Ve_2_7YkYeGBOqe-ZvR0cOwG-YVEbeg/s1600/subscribe%2Bto%2Bbloggersstand%2Bfeed.jpg' title='Bloggersstand' width='300' ></img>
+                    <div class='joinfloat-img'><span class='bsdbox-float'><a href='/search/quicksearch' rel='nofollow' target='_blank' title='Join Our Site'><i class='fa fa-laptop'></i> See more deals</a></span></div>
+                  </div>
+                </div>
+                <div class='bsdbox-info'>
+                  <h4><span>Electronics</span></h4>
+                  <p>Amazon Quick HotDeals Search</p>
+                </div>
+                <div class='bsdbox-wrap'>
+                <ul class='bsdextend'>
+                  <li class='bsdbox-icon aside_qucik'><a target="_black" href="https://amzn.to/2IzIRYK">70%</a></li>
+                  <li class='bsdbox-icon aside_qucik'><a target="_black" href="https://amzn.to/2IxycOk">50%</a></li>
+                  <li class='bsdbox-icon aside_qucik'><a target="_black" href="https://amzn.to/2HheoyZ">20%</a></li>
+                  <li class='bsdbox-icon aside_qucik'><a target="_black" href="https://amzn.to/2EsK1CE">10%</a></li>
+                  <li class='bsdbox-icon aside_qucik'><a target="_black" href="https://amzn.to/2JuwVc8">New</a></li>
+                  <li class='bsdbox-icon aside_qucik'><a target="_black" href="https://amzn.to/2HgErqj">Best</a></li>
+                </ul>
+                </div>
+              </div>
+            </div>
+
+
+<!--             
+            <div class="widget_container"> 
               <div class='multitab-section'>
                 <ul class='multitab-widget multitab-widget-content-tabs-id'>
                   <li class='multitab-tab'><a href='#multicolumn-widget-id1'>Popular</a></li>
@@ -114,8 +181,10 @@
                   </p>
                   </span>
                 </div>
-              </div><!--/.multitab-section-->
-            </div><!--/.widget_container-->
+              </div>
+            </div> -->
+
+            
             
             <figure class="blog-post blog-post-1">
               <h3 class="blog-titles">Blog Title 1</h3>

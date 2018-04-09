@@ -3,27 +3,22 @@
     <div class="inner">
       <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-        
+      
+      <div class="flex main">
+        <div class="flex-container">
+          <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">
+        </div>
+        <div class="flex-container">
+          <a href="/blogs/blogs_home"><img src="https://i.pinimg.com/564x/55/8c/37/558c378809d166b7cdc87ebd4e39610d.jpg" class="flex-container-images" alt="Awesome Blogs">
+        </div>
+        <div class="flex-container">
+          <a href="/hotdeals/savings_percentage_70"><img src="https://i.pinimg.com/564x/5c/24/0e/5c240e075214c717a119f75f11722529.jpg" class="flex-container-images" alt="Save your money">         
+        </div>
+        <div class="flex-container">
+          <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/d4/56/e8/d456e85b0a8c8e4ffdf3103e473256dd.jpg" class="flex-container-images" alt="Awesome Gadgets">
+        </div>
+      </div>
 
-      <!-- <div class="flex main">
-        <div class="flex-container">
-          <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/dd/12/e5/dd12e5539f4b1455a554c256c6be4eae.jpg" class="flex-container-images" alt="Find Deals">
-          <p class="flex-container-heading">Quick Way To Find The Best Deals</p></a>
-        </div>
-        <div class="flex-container">
-          <a href="blogs/blogs_home"><img src="https://i.pinimg.com/564x/22/a1/fc/22a1fcb216d5e4292d8b3388ba5e4a99.jpg" class="flex-container-images" alt="Awesome Blogs">
-          <p  class="flex-container-heading">Blogs</p></a>
-        </div>
-        <div class="flex-container">
-          <a href="#"><img src="https://i.pinimg.com/564x/25/99/84/2599841f7d0ff185f851f811c727d8ed.jpg" class="flex-container-images" alt="Save your money">
-          <p class="flex-container-heading">Saving Your Money</p></a>
-        </div>
-        <div class="flex-container">
-          <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/ff/6a/ca/ff6aca78182d5ff9c00eb9efeb04e71c.jpg" class="flex-container-images" alt="Awesome Gadgets">
-          <p class="flex-container-heading">Awesome Gadgets</p></a>
-        </div>
-      </div> -->
-        
       <!-- <div class="description">
         <h1>Share Everything With You.</h1>
       </div>
@@ -48,8 +43,8 @@
       </div> -->
 
         <ul class="description">
-          <li class="description_li"><h2 class="des_font_size">Gadgets You Don’t Need But Still Want To Have.</h2></li>
-          <li class="description_li"><%= link_to "Show more gadgets...", gadgets_path %></li>
+          <li class="description_li"><h2 class="des_font_size">Shut up and take my money!!</h2><h3>Awesome gadgets that will blow your mind.</h3></li>
+          <li class="description_li"><%= link_to "See more gadgets...", gadgets_path %></li>
         </ul>
         <div class="description_underline"></div>
       
@@ -73,6 +68,7 @@
 
       <ul class="description">
         <li class="description_li"><h2 class="des_font_size">Everyday Savings!!</h2><h3>Save as much as 70% on select items</h3></li>
+        <li class="description_li"><p><a href="hotdeals/savings_percentage_70">See more super discount...<p></li>
       </ul>
       <div class="description_underline"></div>
 

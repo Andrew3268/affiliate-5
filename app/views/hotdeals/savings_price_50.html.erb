@@ -1,0 +1,69 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="savings_wrapper">
+      <label for="shark">
+        <input id="shark" type="radio" name="tab" value="shark">
+        <div class="label left-label"><a href="/hotdeals/savings_percentage_70" class="train">% Percentage Deals</a></div>
+      </label>
+
+        <label for="train">
+          <input id="shark" type="radio" name="tab" value="shark" checked>
+          <div class="label right-label"><a href="/hotdeals/savings_price_25" class="shark">$ Price Deals</a></div>
+
+          <div class="content">
+
+          <div class="savings_tabs">
+            <nav role='navigation' class="responsive-tab">
+              <ul>
+                <li><a href="/hotdeals/savings_price_25">$25</a></li>
+                <li><a href="/hotdeals/savings_price_50" class="active">$50</a></li>
+                <li><a href="/hotdeals/savings_price_100">$100</a></li>
+                <li><a href="/hotdeals/savings_price_200">$200</a></li>
+              </ul>
+            </nav>
+            <h2 class="savings_sub">Everyday Savings Your Money</h2>
+            <h1 class="savings_title">$50 to $100</h1>
+            <h2 class="savings_sub">Quick way to find the best deals</h2>
+
+            <!-- <h3 class="discount_category">Category</h3>
+            <select id="percentage70_filter">
+              <option value="all">All Departments</option>
+              <option value="women">Women</option>
+              <option value="men">Men</option>
+              <option value="kids">Kids</option>
+              <option value="home">Home</option>
+            </select> -->
+
+            <div class="active percentage70_items" >
+             
+             
+            </div><!--/.active-->      
+          </div><!--/.savings_tabs-->
+         </div><!--/.content-->
+        </label>
+
+      </div><!--/.savings_wrapper-->
+
+      <div class="about">
+      <h1>
+        CSS Only - Material Design Tabs
+      </h1>
+        <p>
+        The trick is to use radio inputs to give a state to the elements, which can be used to hide or show siblings via the '~' sibling selector.
+        </p>
+        <p>
+          One quick drawback is a lack of keyboard accessibility.  Currently a user can focus on the label but pressing enter or space bar won't activate the radio button and fire off the change. To see for yourself add "tabindex='0'" to the .label div.
+        </p>
+        <p>
+          Want to make it for 3 tabs? Just duplicate the label block and add / rewrite a few of the left-label / right-label styles.  Probably will need to add your own center style, etc.
+        </p>
+      </div>
+
+
+    </div><!--/.inner_hotdeals-->
+  </div><!--/#main-->
+</div><!--/#wrapper-->

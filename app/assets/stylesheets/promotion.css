@@ -20,7 +20,7 @@
   width: 100%;
 }
 .product__title {
-  margin-bottom: -0.8em;
+  margin-bottom: 0.2em;
   margin-top: 0.8em;
   font-size: 1em;
 }
@@ -60,6 +60,7 @@
 .product__info a:hover {
   color: #f56a6a;
 }
+
 
 @media screen and (max-width: 500px) {
   .product {

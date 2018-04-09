@@ -11,11 +11,15 @@ My Custom
 }
 
 .description h2 {
-  margin: 1em 0.5em 0 0;
+  margin: 1em 14em 0 0;
+}
+
+.description p {
+  margin: 1em 5.5em 0 4em;
 }
 
 .des_font_size {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 .description_underline {
@@ -117,7 +121,7 @@ Main Menu of Header
    left:0;
    overflow-x: hidden;
    transition:.6s all;
-   z-index: 2;
+   z-index: 15;
   
   &-close {
     color:white;

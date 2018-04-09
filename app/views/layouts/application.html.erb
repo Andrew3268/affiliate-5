@@ -8,7 +8,7 @@
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="shortcut icon" type="image/jpg" href="https://goo.gl/qBPfBM">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   	
@@ -46,7 +46,6 @@
     <% end %>
      
     <%= yield %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <%= javascript_include_tag 'application' %>
     <!-- for Isotope -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
@@ -180,6 +179,31 @@
 
 
 
+      <!-- Saving_Percentage_70 Filler  -->
+    <script>
+    $(function() {
+      FilterItems();
+    });
+
+    function FilterItems(){
+      CatType=$('#shop_filter');
+      CatType.change(function(){
+        selectValue=$(this).val();
+        previewSelected(selectValue); 
+      });
+    }
+
+    function previewSelected(x){
+      $('.shop_items div').fadeOut();
+      $('div[rel='+x+']').delay(200).fadeIn();
+      if(x=="all"){
+        $('.shop_items div').fadeIn();
+      }
+      return false;
+    }
+    </script>
+
+
     <!-- 네비 메뉴 스크립트 -->
     <script>
       $(".open").click(function(){
@@ -196,6 +220,40 @@
     <!-- 왼쪽 사이드 탭 위젯-->
     <script>
     jQuery(document).ready(function($){ $(".multitab-widget-content-widget-id").hide(); $("ul.multitab-widget-content-tabs-id li:first a").addClass("multitab-widget-current").show(); $(".multitab-widget-content-widget-id:first").show(); $("ul.multitab-widget-content-tabs-id li a").click(function() { $("ul.multitab-widget-content-tabs-id li a").removeClass("multitab-widget-current a"); $(this).addClass("multitab-widget-current"); $(".multitab-widget-content-widget-id").hide(); var activeTab = $(this).attr("href"); $(activeTab).fadeIn(); return false; }); });
+    </script>
+
+    <!-- for youtubu -->
+    <script>
+        // video overlayer: start
+      $(".js-overlay-start").unbind("click").bind("click", function(e) {
+        e.preventDefault();
+        var src = $(this).attr("data-url");
+        $(".overlay-video").show();
+        setTimeout(function() {
+          $(".overlay-video").addClass("o1");
+          $("#player").attr("src", src);
+        }, 100);
+      });
+      // video overlayer: close it if you click outside of the modal
+      $(".overlay-video").click(function(event) {
+        if (!$(event.target).closest(".videoWrapperExt").length) {
+          var PlayingVideoSrc = $("#player").attr("src").replace("&autoplay=1", "");
+          $("#player").attr("src", PlayingVideoSrc);
+          $(".overlay-video").removeClass("o1");
+          setTimeout(function() {
+            $(".overlay-video").hide();
+          }, 600);
+        }
+      });
+      // video overlayer: close it via the X icon
+      $(".video_close").click(function(event) {
+          var PlayingVideoSrc = $("#player").attr("src").replace("&autoplay=1", "");
+          $("#player").attr("src", PlayingVideoSrc);
+          $(".overlay-video").removeClass("o1");
+          setTimeout(function() {
+            $(".overlay-video").hide();
+          }, 600);
+      });
     </script>
 
  </body>

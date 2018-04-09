@@ -3,8 +3,206 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*********************************** 왼쪽 사이드바 (공용<blogs_home & blogs_show) *******************************/
 
-/*********************************** 블로그 메인(blog_home.html.erb) ****************************************/
+.bsd-container {
+  position: relative;
+  display: block;
+  background: #fff;
+  width: 320px;
+  margin: 5% auto;
+  margin-top: -1em;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+/* Sosial Media Widget */
+.bsdbox-info h4 {
+  background: transparent;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-align: center;
+  font-size: 110%
+}
+
+.bsdbox-img {
+  position: relative;
+  max-height: 135px;
+  overflow: hidden
+}
+
+.bsdbox-img img {
+  max-width: 100%;
+  width: 100%;
+  transition: all .6s;
+}
+
+.bsdbox-img:hover img {
+  transform: scale(1.2) rotate(-9deg)
+}
+
+.bsdbox-img:before {
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transition: all .3s
+}
+
+.bsdbox-img:hover:before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.joinfloat-img {
+  width: 56%;
+  position: absolute;
+  top: 36%;
+  bottom: 36%;
+  left: 22.6%;
+  z-index: 4
+}
+
+.bsdbox-float {
+  text-align: center;
+  display: table;
+  width: 100%;
+  height: 100%
+}
+
+.bsdbox-float a {
+  background: transparent;
+  color: #37B185;
+  padding: 8px 10px;
+  z-index: 2;
+  display: table-cell;
+  width: 100%;
+  font-size: 90%;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border: 1px solid #37B185;
+  border-radius: 4px;
+  transition: all .3s
+}
+
+.bsdbox-float:hover a {
+  background: #37B185;
+  color: #fefefe;
+  border-color: transparent;
+}
+
+.bsdbox-float a i {
+  font-weight: normal;
+  margin: 0 6px 0 0
+}
+
+.bsdbox-wrap {
+  display: block;
+  margin: 14px auto;
+  position: relative;
+}
+
+.bsdbox-wrap .bsdextend {
+  width: 100%;
+  display: block;
+}
+
+.bsdextend {
+  text-align: center;
+  font-size: 17px
+}
+
+.bsdextend .bsdbox-icon {
+  display: inline-block;
+  border: 0;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  width: 32%;
+}
+
+.bsdextend .bsdbox-icon a {
+  background: #768187;
+  display: inline-block;
+  font-weight: 410;
+  color: #fefefe;
+  padding: 0 12px;
+  line-height: 32px;
+  border-radius: 4px;
+  font-size: 11px;
+  width: 100%;
+}
+
+.bsdextend .bsdbox-icon i {
+  font-family: fontawesome;
+  margin: 0 4px 0 0
+}
+
+.bsdbox-icon.aside_qucik a {
+  background: #3b5998
+}
+
+.bsdbox-icon.aside_qucik a:hover,
+.bsdbox-icon.twitter a:hover,
+.bsdbox-icon.circle a:hover {
+  background: #415471
+}
+
+.extender .bsdbox-icon:hover a,
+.extender .bsdbox-icon a:hover {
+  color: #fefefe;
+}
+
+.bsdbox-info {
+  margin: 11px 0 0 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.bsdbox-info p {
+  margin: 6px 0
+}
+
+.bsdbox-info h4 {
+  position: relative;
+  margin-bottom: 11px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #37B185;
+  font-weight: 600
+}
+
+.bsdbox-info h4 span {
+  position: relative;
+  display: inline-block;
+  padding: 0 11px;
+  margin: 0 auto;
+}
+
+.bsdbox-info h4:before,
+.bsdbox-info h4:after {
+  position: absolute;
+  top: 52%;
+  overflow: hidden;
+  width: 50%;
+  height: 1px;
+  content: '\a0';
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.bsdbox-info h4:before {
+  margin-left: -50%;
+  text-align: right;
+}
+
+
+/*********************************** 블로그 메인(blogs_home.html.erb) ****************************************/
 
 .blog_home_post { 
   display: flex; 
@@ -138,7 +336,7 @@ aside h2 {
 }
 
 
-/*********** 포스트 디스플레이 **************/
+/*********** 포스트 디스플레이 in Main **************/
 
 .blog_home_post_h1 {
   font-size: 2em;
@@ -431,7 +629,7 @@ aside h2 {
 
 .blog_post_date {
   list-style: none;
-  margin: -0.5em 0 -2em -1.5em;
+  margin: -0.5em 0 -2em -0.5em;
 }
 
 .posted {
@@ -440,6 +638,11 @@ aside h2 {
 
 .posted_date {
   display: inline-block;
+}
+
+.blog_icon {
+  display: inline-block;
+  width: 20px;
 }
 
 .show_main_title {
@@ -454,7 +657,11 @@ aside h2 {
   margin-top: -0.5em;
 }
 
-.show_review {
+.show_review_title {
+  margin-bottom: 0em;
+}
+
+.show_review_content {
   margin-top: -1.5em;
 }
 
@@ -465,13 +672,94 @@ aside h2 {
 
 .show_body { 
   margin-bottom: 2em;
-  border-radius: 0.5em;
   padding: 0.5em;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
+}
+
+.main_intro {
+  margin-top: 1em;
+}
+
+.blog_bottomline {
+  border-bottom: 0.5em solid #f56a6a;
+  margin-top: 2.5em;
+  margin-bottom: 3em;
+}
+
+.show_special_offer {
+  color: #30a2c0;
 }
 
 
+/*------------------------------
+ For Play Youtube Video
+--------------------------------*/
+.overlay-video {
+  display: none;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0;
+  -webkit-transition: opacity 600ms ease-in;
+  transition: opacity 600ms ease-in;
+  -webkit-transition: opacity .6s;
+  transition: opacity .6s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999999;
+}
 
+.o1 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  opacity: 1;
+  -webkit-transition: opacity 600ms ease-out;
+  transition: opacity 600ms ease-out;
+  -webkit-transition: opacity .6s;
+  transition: opacity .6s;
+}
+
+.videoWrapperExt {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 982px;
+  padding: 0 20px;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video_close {
+  background-image: url(http://djit.ac/assets/images/news/mark.png);
+  position: absolute;
+  top: -50px;
+  right: 0px;
+  cursor: pointer;
+  z-index: 9999;
+  height: 40px;
+  width: 40px;
+  background-size: 40px;
+}
+@media (max-width: 767px) and (orientation: landscape) {
+  .video_close {
+    display: none;
+  }
+}
 
 
 
