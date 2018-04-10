@@ -4,31 +4,131 @@
     <%= render 'shared/header' %>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-      <div class="savings_wrapper">
-        <label for="shark">
-          <input id="shark" type="radio" name="tab" value="shark" checked>
-          <div class="label left-label"><a href="/hotdeals/savings_percentage_50" class="shark">% Percentage Deals</a></div>
-          <div class="content">
+    <div class="savings_wrapper">
+      <label for="shark">
+        <input id="shark" type="radio" name="tab" value="shark" checked>
+        <div class="label left-label"><a href="/hotdeals/savings_percentage_70" class="shark">% Percentage Deals</a></div>
+        <div class="content">
 
-            <div class="savings_tabs">
-              <nav role='navigation' class="responsive-tab">
-                <ul>
-                  <li><a href="/hotdeals/savings_percentage_70">70%</a></li>
-                  <li><a href="/hotdeals/savings_percentage_50" class="active">50%</a></li>
-                  <li><a href="/hotdeals/savings_percentage_20">20%</a></li>
-                  <li><a href="/hotdeals/savings_percentage_10">10%</a></li>
-                </ul>
-              </nav>
+          <div class="savings_tabs">
+            <nav role='navigation' class="responsive-tab">
+              <ul>
+                <li><a href="/hotdeals/savings_percentage_70">70%</a></li>
+                <li><a href="/hotdeals/savings_percentage_50" class="active">50%</a></li>
+                <!-- <li><a href="/hotdeals/savings_percentage_20">20%</a></li>
+                <li><a href="/hotdeals/savings_percentage_10">10%</a></li> -->
+              </ul>
+            </nav>
+            <h2 class="savings_sub">Everyday Savings Your Money</h2>
+            <h1 class="savings_title">50% Off or more</h1>
+            <h2 class="savings_sub">Quick way to find the best deals</h2>
 
-              <div class="active">
-                <h1>50%</h1>
-               <h2 class="tabs_tag">Women __Clothing(Top)</h2>
-               <div class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225aca200e4df128fea192a1b9%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523190813837?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225aca200e4df128fea192a1b9%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;"></iframe> 
-               </div>
-              </div>      
-            </div><!--/.savings_tabs-->
+            <h3 class="discount_category">Category</h3>
+            <select id="shop_filter">
+              <option value="all">All Departments</option>
+              <option value="women">Women</option>
+              <option value="men">Men</option>
+              <option value="kids">Kids</option>
+              <option value="home">Home</option>
+            </select>
 
-          </div><!--/.content-->
+            <div class="active shop_items" >
+
+                <div rel="women" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acb9584e7055a0e8102c452%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                   <div class="savings_subtitle"><h2 class="tabs_tag">Women __Clothing(Top)</h2></div>
+                   <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acb9584e7055a0e8102c452%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"  height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                   </iframe> 
+                </div> 
+
+                <div rel="women" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acb987f4df128fea1176b29%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                   <div class="savings_subtitle"><h2 class="tabs_tag">Women __Clothing(Pants)</h2></div>
+                   <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acb987f4df128fea1176b29%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                   </iframe> 
+                </div> 
+
+                <div rel="women" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acb9adcdd4edb3aaab6e0c4%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D">
+                   <div class="savings_subtitle"><h2 class="tabs_tag">Women __Shoes</h2></div> 
+                   <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acb9adcdd4edb3aaab6e0c4%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                   </iframe>
+                 </div> 
+
+                 <div rel="women" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acb9c0e2391f3c3579ec73b%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D">
+                   <div class="savings_subtitle"><h2 class="tabs_tag">Women __Bags</h2></div> 
+                   <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acb9c0e2391f3c3579ec73b%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                   </iframe> 
+                 </div> 
+
+                 <div rel="women" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acb9d992391f3c3579f6c41%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> <div class="savings_subtitle"><h2 class="tabs_tag">Women __Accessories</h2></div> 
+                  <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acb9d992391f3c3579f6c41%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                  </iframe> 
+                 </div> 
+
+                 <div rel="men" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acb9fbf4df128fea11a2780%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                   <div class="savings_subtitle"><h2 class="tabs_tag">Men __Clothing(Top)</h2></div> 
+                   <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acb9fbf4df128fea11a2780%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;"> 
+                   </iframe> 
+                 </div> 
+
+                 <div rel="men" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba15561d1dda207fd12e5%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                   <div class="savings_subtitle"><h2 class="tabs_tag">Men __Clothing(Pants)</h2></div> 
+                   <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script');  </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba15561d1dda207fd12e5%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                   </iframe> 
+                 </div> 
+
+                 <div rel="men" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba2c761d1dda207fd9ef5%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                  <div class="savings_subtitle"><h2 class="tabs_tag">Men __Shoes</h2></div> 
+                  <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba2c761d1dda207fd9ef5%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                  </iframe> 
+                 </div> 
+
+                 <div rel="men" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba3e5be7a44eb4a66a69f%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                  <div class="savings_subtitle"><h2 class="tabs_tag">Men __Bags</h2></div> 
+                  <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba3e5be7a44eb4a66a69f%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                  </iframe> 
+                </div>
+
+                <div rel="men" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba523dd4edb3aaaba9bbe%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D">
+                 <div class="savings_subtitle"><h2 class="tabs_tag">Men __Accessories</h2></div> 
+                 <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba523dd4edb3aaaba9bbe%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                 </iframe> 
+                </div> 
+
+                <div rel="home" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba685be7a44eb4a6798b0%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D">
+                  <div class="savings_subtitle"><h2 class="tabs_tag">Home __Kitchen</h2></div>  
+                  <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba685be7a44eb4a6798b0%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                  </iframe> 
+                </div> 
+
+                <div rel="home" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba7624df128fea11ce691%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                  <div class="savings_subtitle"><h2 class="tabs_tag">Home __Bath</h2></div> 
+                  <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba7624df128fea11ce691%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                  </iframe> 
+                </div> 
+
+                <div rel="home" class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225acba812be7a44eb4a6827ae%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D"> 
+                  <div class="savings_subtitle"><h2 class="tabs_tag">Home __Bedding</h2></div>
+                  <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1523290412155?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225acba812be7a44eb4a6827ae%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A4%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A920%7D" height="275px" width="920px" frameborder="0" seamless style="border: 0;">
+                  </iframe> 
+                </div> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+             
+
+  
+            </div><!--/.active-->      
+          </div><!--/.savings_tabs-->
+         </div><!--/.content-->
         </label>
 
         <label for="train">
