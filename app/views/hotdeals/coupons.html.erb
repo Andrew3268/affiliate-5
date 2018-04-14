@@ -25,19 +25,20 @@
           <h2 class="hotdeals_h2">Hi, Everyone :D</h2>
           <p>We have just made your life easier. We offer a quick way to find the best deals.</p>
 
-          <p>Oh,igottabuythis is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to <a href="http://amzn.to/2G5rCxK">Amazon.com,<a/> <a href="http://amzn.to/2pwYBEN">Amazon.ca,</a> <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> and affiliated sites.</p>
-
         
           <div class="tabs">
             <input type="radio" name="tab" id="tab1" checked="checked">
             <label for="tab1">Amazon</label>
-            <!-- <input type="radio" name="tab" id="tab2">
-            <label for="tab2">None</label> -->
+            <input type="radio" name="tab" id="tab2">
+            <label for="tab2">eBay</label>
             
             <div class="tab-content-wrapper">
               
               <div id="tab-content-1" class="tab-content">
                 <%= render 'shared/amazon_coupons' %>
+              </div>
+              <div id="tab-content-2" class="tab-content">
+                <%= render 'shared/ebay_coupons' %>
               </div>
         
             </div>

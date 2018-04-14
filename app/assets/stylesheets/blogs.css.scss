@@ -410,6 +410,7 @@ aside h2 {
   line-height: 1.45em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 3em;
 }
 .blog-card:hover .details {
   left: 0;
@@ -729,7 +730,9 @@ aside h2 {
   color: #30a2c0;
 }
 
-
+.show_amazon_card {
+  color: red;
+}
 /*------------------------------
  For Play Youtube Video
 --------------------------------*/
