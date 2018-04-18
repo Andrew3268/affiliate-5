@@ -1,0 +1,290 @@
+<div id="wrapper">
+    <div id="main">
+      <div class="inner_hotdeals">
+      <%= render 'shared/header' %>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+        <div class="large-6 medium-24 small-24 columns filter-wrap" id="sidebar" data-equalizer-watch>
+          <div class="inner">
+          <div id="filters" class="combo-filters">
+
+            <div class="ui-group">
+              <h3>Category:</h3>
+              <div class="button-group filter option-set" data-filter-group="category">
+                <button class="button is-checked allfilter" data-filter="">All</button>
+                <button class="button" data-filter=".Biography">Biography</button>
+                <button class="button" data-filter=".Cooking">Cooking</button>
+                <button class="button" data-filter=".Fiction">Fiction</button>
+                <button class="button" data-filter=".Kids">Kids</button>
+                <button class="button" data-filter=".Travel">Travel</button>
+              </div>
+            </div>
+            <div class="ui-group">
+              <h3>Language:</h3>
+              <div class="button-group filter option-set" data-filter-group="language">
+                <button class="button is-checked allfilter" data-filter="">All</button>
+                <button class="button" data-filter=".English" title="English">English</button>
+                <button class="button" data-filter=".German" title="German">German</button>
+                <button class="button" data-filter=".Spanish" title="Spanish">Spanish</button>
+                <button class="button" data-filter=".French" title="French">French</button>
+              </div>
+            </div>
+            <div class="ui-group">
+              <h3>Price Range:</h3>
+              <div class="button-group filter option-set" data-filter-group="pricerange">
+                <button class="button is-checked allfilter" data-filter="">All</button>
+                <button class="button" data-filter=".zeroten" title="0-10">Under &pound;10</button>
+                <button class="button" data-filter=".tentwenty" title="10-20">&pound;10 to &pound;20</button>
+                <button class="button" data-filter=".moretwenty" title="20 plus">&pound;20 +</button>
+              </div>
+            </div>
+            <!--end option-combo-->
+          </div>
+          <!--end filters-->
+          </div><!--end inner-->
+        </div>
+        <!--end col-->
+        
+      
+      <div class="large-18" data-equalizer-watch>
+        <div class="grids">
+        
+          <div class="grid-item Biography French moretwenty">
+            <img src="http://pds1.ngoods.com/goods_img_new/nike/shoes/72/631635-102_01.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Travel English zeroten">
+            <img src="http://image.hnsmall.com/images/goods/315/12089315_g.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Cooking Spanish tentwenty">
+              <img src="https://png.pngtree.com/element_origin_min_pic/16/10/02/1257f09215e3930.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Fiction German moretwenty">
+              <img src="http://image.musinsa.com/mfile_s01/2017/10/08/cbc1ef111ad1844b8eb5fa53c3529662195847.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+
+          <div class="grid-item Biography French moretwenty">
+              <img src="https://img.shopstyle-cdn.com/pim/9f/ad/9fadc8100899205818143cd64bb12f46_best.jpg">
+            <p class="title">Title book 1</p>
+            <p class="category">Biography</p>
+            <p class="language">English</p>
+            <p class="price">&pound;45</p>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Travel English zeroten">
+              <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">
+            <p class="title">Title book 1</p>
+            <p class="category">Biography</p>
+            <p class="language">English</p>
+            <p class="price">&pound;45</p>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Cooking Spanish tentwenty">
+              <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">
+            <p class="title">Title book 1</p>
+            <p class="category">Biography</p>
+            <p class="language">English</p>
+            <p class="price">&pound;45</p>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Fiction German moretwenty">
+              <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">
+            <p class="title">Title book 1</p>
+            <p class="category">Biography</p>
+            <p class="language">English</p>
+            <p class="price">&pound;45</p>
+          </div>
+          <!--end grid-item-->
+
+          <div class="grid-item Biography French moretwenty">
+            <img src="http://pds1.ngoods.com/goods_img_new/nike/shoes/72/631635-102_01.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Travel English zeroten">
+            <img src="http://image.hnsmall.com/images/goods/315/12089315_g.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Cooking Spanish tentwenty">
+              <img src="https://png.pngtree.com/element_origin_min_pic/16/10/02/1257f09215e3930.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          <div class="grid-item Fiction German moretwenty">
+              <img src="http://image.musinsa.com/mfile_s01/2017/10/08/cbc1ef111ad1844b8eb5fa53c3529662195847.jpg">
+            <p class="shop_product_title">Title book 1 Title book 1 Title book 1 Title book 1</p>
+            <p class="shop_brand">Brand via Seller</p>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$50.00</p></li>
+              <li><p class="shop_sale_price">$100.00</p></li>
+              <li><p class="shop_sale_percentage">50% off</p></li>
+            </ul>
+            <a class="shop_link" href="#"><p>Check it Out</p></a>
+          </div>
+          <!--end grid-item-->
+          
+          
+        <!--  <div class="grid-item Fiction English moretwenty">-->
+        <!--    <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Cooking English tentwenty">-->
+        <!--  <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Biography German tentwenty">-->
+        <!--    <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Travel English moretwenty">-->
+        <!--  <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Cooking Spanish tentweny">-->
+        <!--    <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Kids German zeroten">-->
+        <!--    <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Travel English tentwenty">-->
+        <!--<div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Biography Spanish moretwenty">-->
+        <!--  <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+        <!--  <div class="grid-item Kids French zeroten">-->
+        <!--    <div class="img_wrapper">-->
+        <!--      <img src="http://cfile22.uf.tistory.com/image/1127CB3B512F35A93E1577">-->
+        <!--    </div>-->
+        <!--    <p class="title">Title book 1</p>-->
+        <!--    <p class="category">Biography</p>-->
+        <!--    <p class="language">English</p>-->
+        <!--    <p class="price">&pound;45</p>-->
+        <!--  </div>-->
+          <!--end grid-item-->
+                  
+        </div><!-- end grid-->
+       </div><!--end col-->
+      </div><!--end row-->
+
+    </div><!-- inner_hotdeals -->
+  </div><!-- main -->
+</div><!-- wrapper -->

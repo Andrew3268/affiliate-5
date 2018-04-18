@@ -2965,7 +2965,7 @@
 
 /* Button */
 
-	input[type="submit"],
+	/*input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
 	button,
@@ -2996,7 +2996,7 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
-	}
+	}*/
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,

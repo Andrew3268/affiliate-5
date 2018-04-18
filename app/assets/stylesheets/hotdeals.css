@@ -591,3 +591,254 @@ input[type=radio] + .left-label:hover {
         background: #fff;
     }
 }
+
+
+/********************************************** Shop Section **********************************************/
+/*.grid {*/
+/*    margin-top: 5em;*/
+/*    position: absolute;*/
+/*    left: 50px;*/
+/*    width: calc(100% - 100px);*/
+/*}*/
+
+.shop_product_title {
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 1; 
+  -webkit-line-clamp: 1; /* number of line */ 
+  -ms-line-clamp: 1;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+  margin-bottom: 0em;
+}
+
+.shop_original_price {
+  border: 2px solid #f56a6a;
+  color: #f56a6a;
+  border-radius: 0.5em;
+  width: 4em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.shop_sale_price {
+  text-decoration: line-through;
+}
+
+.shop_price_wrapper {
+  margin-bottom: -2em;
+}
+
+ul.shop_price_wrapper li {
+  display: inline-block;
+  padding: 0 0.3em 0 0;
+}
+
+.shop_brand {
+  margin-bottom: 0.5em;
+}
+
+.shop_retail {
+  margin-bottom: 0.5em;
+}
+
+
+.expanded {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3em;
+}
+
+.large-6 {
+  width:25%;
+  float:left;
+  margin:0;
+}
+.filter-wrap {
+  background-color:#666;
+  height:1000px;
+  padding:60px 80px;
+  color:#fff;
+}
+
+.large-18 {
+  /*position: absolute;*/
+  /*left: 50px;*/
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+    
+}
+
+.fliter-results {
+  padding: 1em;
+}
+
+.grid-item {
+  /*width:25%;*/
+  /*float:left;*/
+  margin-bottom:20px;
+  /*padding:0 30px;*/
+  padding: 0 0.5em;
+}
+
+/*.img_wrapper {*/
+/*    width: 300px;*/
+/*    height: 250px;*/
+/*    padding-right: 4em;*/
+/*}*/
+
+/*.img_wrapper img {*/
+/*  height:250px;*/
+/*  width:100%;*/
+/*  display:inline-block;*/
+/*  margin-bottom:15px;*/
+/*}*/
+
+/*.grid-item p {
+  font-size:14px;
+  margin:0 0 4px 0;
+}*/
+
+.grid-item p.title {
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+.ui-group button {
+  /*width:100%;*/
+  text-align:center;
+  position:relative;
+  outline:none !important;
+  margin-bottom:10px;
+}
+/*button {*/
+/*  -webkit-appearance:none;*/
+/*  -moz-appearance:none;*/
+/*  background:transparent;*/
+/*  padding:0;*/
+/*  border:0;*/
+/*  border-radius:0;*/
+/*  line-height:1;*/
+/*  cursor:pointer;*/
+/*  color:#fff;*/
+/*  font-size:18px*/
+/*}*/
+
+
+.ui-group .is-checked {
+  border-radius: 1em;
+  background-color: #f56a6a;
+  border:3px solid #f56a6a;
+  color: white;
+}
+/*.ui-group button::after {*/
+  /*content:'';*/
+/*  display:block;*/
+/*  background-color:white;*/
+/*  width:14px;*/
+/*  height:14px;*/
+/*  position:absolute;*/
+/*  right:0;*/
+/*  top:1px;*/
+/*}*/
+
+.ui-group h3 {
+  position:relative;
+  display:table;
+}
+.ui-group h3::after {
+  height:2px;
+  width:100%;
+  background:#fff;
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  content: '';
+}
+
+
+
+/*GRID GALLERY START HERE*/
+.grids
+{
+  overflow:hidden;
+  width:100%;
+}
+
+.grids > *
+{
+  float:left;
+  /* Callback width*/
+  width:25%;
+  width:calc(100%/4);
+  width:-webkit-calc(100%/4);
+  box-sizing:border-box;
+}
+
+.grids > .grid-item > img
+{
+  /*width:100%;*/
+  width: 300px;
+  height: 250px;
+  display:block;
+  object-fit: contain;
+}
+
+
+/* MEDIA QUERY */
+@media(max-width:1200px)
+{
+  .grids > *{
+    width:calc(100%/4);
+    width:-webkit-calc(100%/4);
+  }
+  .shop_original_price {
+    margin-bottom: 0em;
+  }
+  .shop_link p{
+    margin-top: 1em;
+  }
+  ul.shop_price_wrapper li {
+    display: block;
+    padding: 0em;
+  }
+  .shop_original_price, .shop_sale_price {
+    margin-bottom: 0em;
+  }
+  .shop_sale_percentage {
+    margin-right: 0em;
+    margin-left: 4.5em;
+    margin-top: -1.52em;
+  }
+}
+
+@media(max-width:640px)
+{
+  .grids > *{
+    width:calc(100%/2);
+    width:-webkit-calc(100%/2);
+  }
+  ul.shop_price_wrapper li {
+    display: block;
+    padding: 0em;
+  }
+  .shop_original_price, .shop_sale_price {
+    margin-bottom: 0em;
+  }
+  .shop_sale_percentage {
+    margin-right: 0em;
+    margin-left: 4.5em;
+    margin-top: -1.52em;
+  }
+}
+
+@media(max-width:320px)
+{
+  .grids > *{
+    width:100%;
+  }
+}
