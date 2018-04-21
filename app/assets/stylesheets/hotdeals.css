@@ -593,7 +593,7 @@ input[type=radio] + .left-label:hover {
 }
 
 
-/********************************************** Shop Section **********************************************/
+/********************************************** Shop Section *********************************************/
 /*.grid {*/
 /*    margin-top: 5em;*/
 /*    position: absolute;*/
@@ -653,14 +653,14 @@ ul.shop_price_wrapper li {
 }
 
 .large-6 {
-  width:25%;
+  /*width:25%;*/
   float:left;
   margin:0;
 }
 .filter-wrap {
-  background-color:#666;
+  /*background-color:#666;*/
   height:1000px;
-  padding:60px 80px;
+  /*padding:60px 80px;*/
   color:#fff;
 }
 

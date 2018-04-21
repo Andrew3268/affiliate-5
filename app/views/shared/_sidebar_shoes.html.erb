@@ -1,0 +1,67 @@
+<div id="sidebar">
+  <div class="inner">
+
+    <!-- Menu -->
+      <nav id="menu">
+        <header class="major">
+          <h2>Menu</h2>
+        </header>
+        <ul class="icons">
+          <% if user_signed_in? %>
+            <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
+          <% else %>
+            <li class="login"><%= link_to "Log in", new_user_session_path %></li>
+            <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
+          <% end %>
+        </ul>
+
+        <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+          <div class="large-6 medium-24 small-24 columns filter-wrap" data-equalizer-watch>
+            <div id="filters" class="combo-filters">
+
+              <div class="ui-group">
+                <h3>Category:</h3>
+                <div class="button-group filter option-set" data-filter-group="category">
+                  <button class="button is-checked allfilter" data-filter="">All</button>
+                  <button class="button" data-filter=".Biography">Biography</button>
+                  <button class="button" data-filter=".Cooking">Cooking</button>
+                  <button class="button" data-filter=".Fiction">Fiction</button>
+                  <button class="button" data-filter=".Kids">Kids</button>
+                  <button class="button" data-filter=".Travel">Travel</button>
+                </div>
+              </div>
+              <div class="ui-group">
+                <h3>Brand:</h3>
+                <div class="button-group filter option-set" data-filter-group="brand">
+                  <button class="button is-checked allfilter" data-filter="">All</button>
+                  <button class="button" data-filter=".English" title="English">English</button>
+                  <button class="button" data-filter=".German" title="German">German</button>
+                  <button class="button" data-filter=".Spanish" title="Spanish">Spanish</button>
+                  <button class="button" data-filter=".French" title="French">French</button>
+                </div>
+              </div>
+              <div class="ui-group">
+                <h3>seller:</h3>
+                <div class="button-group filter option-set" data-filter-group="seller">
+                  <button class="button is-checked allfilter" data-filter="">All</button>
+                  <button class="button" data-filter=".zeroten" title="0-10">Under &pound;10</button>
+                  <button class="button" data-filter=".tentwenty" title="10-20">&pound;10 to &pound;20</button>
+                  <button class="button" data-filter=".moretwenty" title="20 plus">&pound;20 +</button>
+                </div>
+              </div><!--end option-combo-->
+              <div class="ui-group">
+                <h3>price:</h3>
+                <div class="button-group filter option-set" data-filter-group="price">
+                  <button class="button is-checked allfilter" data-filter="">All</button>
+                  <button class="button" data-filter=".ten" title="0-10">Under 10</button>
+                  <button class="button" data-filter=".tenten" title="10-20">20</button>
+                  <button class="button" data-filter=".tententen" title="20 plus">30</button>
+                </div>
+              </div><!--end option-combo-->
+
+            </div><!--end filters-->
+          </div><!--end col-->
+        </div><!--row-->
+
+  </div><!-- class="inner" -->
+</div><!-- id="sidebar" -->
