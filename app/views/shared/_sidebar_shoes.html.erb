@@ -9,10 +9,14 @@
         <ul class="icons">
           <% if user_signed_in? %>
             <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
+            <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
           <% else %>
             <li class="login"><%= link_to "Log in", new_user_session_path %></li>
             <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
           <% end %>
+          <% if can? :create, @shoe %>
+             <li><%= link_to "Add New Shoes", new_shoe_path(@shoe) %></li>
+            <% end %>
         </ul>
 
         <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
@@ -53,11 +57,11 @@
                 <h3>price:</h3>
                 <div class="button-group filter option-set" data-filter-group="price">
                   <button class="button is-checked allfilter" data-filter="">All</button>
-                  <button class="button" data-filter=".twenty" title="0-10">Less than $25</button>
-                  <button class="button" data-filter=".fifty" title="10-20">$25 to $50 </button>
-                  <button class="button" data-filter=".hundred" title="20 plus">$50 to $100</button>
-                  <button class="button" data-filter=".hundred-fifty" title="20 plus">$100 to $150</button>
-                  <button class="button" data-filter=".above" title="20 plus">Above $150</button>
+                  <button class="button" data-filter=".twenty" title="Less than $25">Less than $25</button>
+                  <button class="button" data-filter=".fifty" title="$25 to $50">$25 to $50 </button>
+                  <button class="button" data-filter=".hundred" title="$50 to $100">$50 to $100</button>
+                  <button class="button" data-filter=".hundred-fifty" title="$100 to $150">$100 to $150</button>
+                  <button class="button" data-filter=".above" title="Above $150">Above $150</button>
                 </div>
               </div><!--end option-combo-->
 

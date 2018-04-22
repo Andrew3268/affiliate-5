@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  link: MyString
+  description: MyText
+  main_img: MyString
+  sub_img_01: MyString
+  brand: MyString
+  offer_price: 1.5
+  befer_price: 1.5
+  sale: MyString
+  option_01: MyString
+
+two:
+  title: MyString
+  link: MyString
+  description: MyText
+  main_img: MyString
+  sub_img_01: MyString
+  brand: MyString
+  offer_price: 1.5
+  befer_price: 1.5
+  sale: MyString
+  option_01: MyString

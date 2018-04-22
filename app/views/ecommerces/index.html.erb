@@ -68,11 +68,30 @@
 
       <ul class="description">
         <li class="description_li"><h2 class="des_font_size">Everyday Savings!!</h2><h3>Save as much as 70% on select items</h3></li>
-        <li class="description_li"><p><a href="hotdeals/savings_percentage_70">See more super discount...<p></li>
+        <li class="description_li"><p><a href="/hotdeals/savings_percentage_70">See more super discount...<p></li>
       </ul>
       <div class="description_underline"></div>
 
-      
+       <!-- <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+        <div class="large-18" data-equalizer-watch>
+          <div class="grids">
+            <% @shoes.each do |shoe| %>
+              <div class="grid-item <%= shoe.option_01 %> <%= shoe.option_02 %> <%= shoe.option_03 %> <%= shoe.option_04 %>">
+                <%= link_to (image_tag shoe.main_img), shoe, {:class =>"main_img"} %>
+                <p class="shop_product_title"><%= link_to shoe.title, shoe %></p>
+                <p class="shop_brand"><%= shoe.brand %></p>
+                <ul class="shop_price_wrapper">
+                  <li><p class="shop_original_price">$<%= shoe.offer_price %></p></li>
+                  <li><p class="shop_sale_price">$<%= shoe.before_price %></p></li>
+                  <li><p class="shop_sale_percentage"><%= shoe.sale %>% off</p></li>
+                </ul>
+                <a target="_blank" href="<%= shoe.link %>"><p class="shop_link" >Check it Out</p></a>
+              </div>
+            <% end %>               
+          </div>
+        </div>
+      </div> -->
+
      <div class="shopsense-widget" style="text-align:center" data-mobile-optimize="true" data-options="%7B%22widgetId%22%3A%225ac3871de7055a64fbc43eb7%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A5%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A1135%7D"> <h2 class="collective">Women`s Shoes Up to 70% Off</h2> 
       <script> !function(doc,s,id){ var e, p, cb; if(!doc.getElementById(id)) { e = doc.createElement(s); e.id = id; cb = new Date().getTime().toString(); p = '//shopsensewidget.shopstyle.com/widget-script.js?cb=1522762654598?cb=' + cb; e.src = p; doc.body.appendChild(e); } if(typeof window.ss_shopsense === 'object'){ if(doc.readyState === 'complete'){ window.ss_shopsense.init(); } } }(document, 'script', 'shopsensewidget-script'); </script> <iframe src="//shopsensewidget.shopstyle.com/#/?options=%7B%22widgetId%22%3A%225ac3871de7055a64fbc43eb7%22%2C%22version%22%3A1%2C%22pid%22%3A%22uid8649-40531157-73%22%2C%22size%22%3A200%2C%22columns%22%3A5%2C%22rows%22%3A1%2C%22url%22%3A%22https%3A%2F%2Fapi.shopstyle.com%2Fapi%2Fv2%22%2C%22iframeHeight%22%3A275%2C%22iframeWidth%22%3A1135%7D"
       height="275px"

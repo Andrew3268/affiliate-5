@@ -88,6 +88,7 @@ class EcommercesController < ApplicationController
   def index
      @ecommerces = Ecommerce.all
      @ecommerces = Ecommerce.order("created_at DESC").limit(6)
+     @shoes = Shoe.order("created_at DESC").limit(5)
 
      @ecommerces_sample = Ecommerce.all    
      @banner = @ecommerces_sample.sample

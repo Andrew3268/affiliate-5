@@ -1,0 +1,23 @@
+<%= simple_form_for @shoe do |f| %>
+ <%= f.select :option_01, options_for_select([["Category", ""], "Men", "Women"])%></br>
+ <%= f.select :option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%></br>
+ <%= f.select :option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%></br>
+ <%= f.select :option_04, options_for_select([["Price", ""], "twenty", "fifty", "hundred", "hundred-fifty", "above"])%></br>
+ <%= f.input :title %>
+ <%= f.input :link %>
+ <%= f.input :description %>
+ <%= f.input :main_img %>
+ <%= f.input :sub_img_01 %>
+ <%= f.input :sub_img_02 %>
+ <%= f.input :sub_img_03 %>
+ <%= f.input :sub_img_04 %>
+ <%= f.input :sub_img_05 %>
+ <%= f.input :sub_img_06 %>
+ <%= f.input :brand %>
+ <%= f.input :offer_price %>
+ <%= f.input :before_price %>
+ <%= f.input :sale %>
+ </br>
+ <%= f.button :submit %>
+ <%= link_to "Back", root_path %>
+<% end %>

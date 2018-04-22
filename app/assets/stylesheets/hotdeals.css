@@ -645,6 +645,10 @@ ul.shop_price_wrapper li {
   margin-bottom: 0.5em;
 }
 
+.shop_link {
+  color: #f56a6a;
+}
+
 
 .expanded {
     width: 100%;
@@ -683,6 +687,10 @@ ul.shop_price_wrapper li {
   margin-bottom:20px;
   /*padding:0 30px;*/
   padding: 0 0.5em;
+}
+
+.grid-item a {
+  color: black;
 }
 
 /*.img_wrapper {*/
@@ -762,7 +770,9 @@ ul.shop_price_wrapper li {
 
 
 
-/*GRID GALLERY START HERE*/
+/*------------------------------
+ GRID GALLERY START HERE
+--------------------------------*/
 .grids
 {
   overflow:hidden;
@@ -779,9 +789,15 @@ ul.shop_price_wrapper li {
   box-sizing:border-box;
 }
 
-.grids > .grid-item > img
-{
-  /*width:100%;*/
+
+.grids > .grid-item > img {
+  width: 300px;
+  height: 250px;
+  display:block;
+  object-fit: contain;
+}
+
+.grids > .grid-item > .main_img img {
   width: 300px;
   height: 250px;
   display:block;
@@ -799,7 +815,7 @@ ul.shop_price_wrapper li {
   .shop_original_price {
     margin-bottom: 0em;
   }
-  .shop_link p{
+  .shop_link {
     margin-top: 1em;
   }
   ul.shop_price_wrapper li {
@@ -831,10 +847,9 @@ ul.shop_price_wrapper li {
   }
   .shop_sale_percentage {
     margin-right: 0em;
-    margin-left: 4.5em;
-    margin-top: -1.52em;
+    margin-left: 4em;
+    margin-top: -1.6em;
   }
-
   .grids > .grid-item > img {
     margin-bottom: -3em;
   }
@@ -844,5 +859,111 @@ ul.shop_price_wrapper li {
 {
   .grids > *{
     width:100%;
+  }
+}
+
+
+
+/*------------------------------
+ Shoes Show Page
+--------------------------------*/
+.product_show img {
+  max-width: 100%;
+  height: auto;
+}
+
+.icon-images {
+  margin-top: 1em;
+}
+
+.product--title {
+  color: #008080;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: serif;
+  padding: 20px 0;
+  margin-bottom: -2em;
+  /*text-align: center;*/
+}
+.product--title h2 {
+  display: inline-block;
+  border-bottom: 2px dashed;
+}
+
+.product--image {
+  float: left;
+  width: 40%;
+}
+
+.product--details {
+  float: left;
+  width: 35%;
+  padding-right: 2em;
+}
+
+.product_right {
+  float: left;
+  width: 25%;
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.product_right p {
+  margin-top: 0.3em;
+  text-align: center;
+}
+.product_right a {
+  color: #000;
+}
+
+
+.product--image {
+  padding-right: 3%;
+}
+.product--image .icon-images img {
+  height: 100px;
+  margin: 0 2px;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 0.3em;
+}
+
+.product--price .product--price_price {
+  color: rgba(20, 180, 180, 0.9);
+  font-size: 1.2em;
+  padding-right: 10px;
+}
+.product--price .product--price_offer {
+  color: indianred;
+  border: 1px solid #952e2e;
+  border-radius: 5px 5px;
+  padding: 1px 3px;
+  font-size: .7em;
+}
+
+.product--desc {
+  font-family: sans;
+}
+.product--desc p {
+  margin: 20px 0px;
+}
+
+.show_home {
+  margin-left: 1em;
+}
+
+
+@media screen and (max-width: 500px) {
+  .product--image, .product--details {
+    float: none;
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 10px;
+  }
+  
+  .product_right {
+    float: none;
+    width: 100%;
   }
 }

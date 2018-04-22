@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  
+
+  resources :shoes
+  # root 'shoes#index'
+
   get 'hotdeals/hotdeal'
 
   root 'ecommerces#index'

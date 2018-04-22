@@ -1,0 +1,37 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      
+      <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+        <div class="large-18" data-equalizer-watch>
+          <div class="grids">
+
+            
+            <% @shoes.each do |shoe| %>
+              <div class="grid-item <%= shoe.option_01 %> <%= shoe.option_02 %> <%= shoe.option_03 %> <%= shoe.option_04 %>">
+                <%= link_to (image_tag shoe.main_img), shoe, {:class =>"main_img"} %>
+                <!-- <img src="<%= shoe.main_img %>"> -->
+                <p class="shop_product_title"><%= link_to shoe.title, shoe %></p>
+                <p class="shop_brand"><%= shoe.brand %></p>
+                <ul class="shop_price_wrapper">
+                  <li><p class="shop_original_price">$<%= shoe.offer_price %></p></li>
+                  <li><p class="shop_sale_price">$<%= shoe.before_price %></p></li>
+                  <li><p class="shop_sale_percentage"><%= shoe.sale %>% off</p></li>
+                </ul>
+                <a target="_blank" href="<%= shoe.link %>"><p class="shop_link" >Check it Out</p></a>
+              </div>
+            <% end %>
+            <!--end grid-item-->
+                            
+          </div><!-- end grid-->
+        </div><!--end col-->
+      </div><!--end row-->
+
+     
+        
+    </div><!--/.inner_hotdeals-->
+  </div><!--/#main-->
+  <%= render 'shared/sidebar_shoes' %>  
+</div><!--/#wrapper-->

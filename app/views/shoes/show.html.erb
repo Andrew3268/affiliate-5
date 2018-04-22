@@ -1,0 +1,59 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+      <div class="product_show">
+        <div class="product--body">
+          <div class="product--image">
+            <img src="<%= @shoe.main_img %>" class="display-img">
+            <div class="icon-images">
+              <img src="<%= @shoe.sub_img_01 %>"/>
+              <img src="<%= @shoe.sub_img_02 %>"/>
+              <img src="<%= @shoe.sub_img_03 %>"/>
+              <img src="<%= @shoe.sub_img_04 %>"/>
+              <img src="<%= @shoe.sub_img_05 %>"/>
+              <img src="<%= @shoe.sub_img_06 %>"/>
+            </div>
+          </div>
+          <div class="product--details">
+            <div class="product--title"><%= @shoe.title %></div>
+            <div class="product--desc"><p><%= @shoe.description %></p></div>
+            <ul class="shop_price_wrapper">
+              <li><p class="shop_original_price">$<%= @shoe.offer_price %></p></li>
+              <li><p class="shop_sale_price">$<%= @shoe.before_price %></p></li>
+              <li><p class="shop_sale_percentage"><%= @shoe.sale %>% off</p></li>
+            </ul>
+            <ul class="shop_price_wrapper">
+             <li><a target="_blank" class="shop_link" href="<%= @shoe.link %>"><p>Check it Out</p></a></li>
+             <li class="show_home"><%= link_to "See More >>", root_path %></li>
+            </ul>
+          </div>
+          <!--Random post-->
+          <div class="product_right">
+            <h3>How about this?</h3>
+            <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
+            <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
+            <!-- <img src="https://images.nike.com/is/image/DotCom/PDP_HERO_M/AJ1445_200_A_PREM/sb-dunk-mid-pro-skateboarding-shoe.jpg"/> -->
+          </div>
+          
+        </div>
+      </div>
+     
+      <% if can? :update, @shoe %>
+      <ul class="shop_price_wrapper">
+        <li><p><%= @shoe.option_01 %></p></li>
+        <li><p><%= @shoe.option_02 %></p></li>
+        <li><p><%= @shoe.option_03 %></p></li>
+        <li><p><%= @shoe.option_04 %></p></li>
+      </ul>
+         
+        <%= link_to "Edit", edit_shoe_path(@shoe) %>
+        <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
