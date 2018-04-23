@@ -27,9 +27,8 @@ class MessageController < ApplicationController
        message.content = params[:new_content]
        
        if message.save
-        flash[:message_board] = 'Thank you!! :) for your message. 
-                                 Your Message has been sent'
-        redirect_to '/message/contact_us'
+        flash[:message_board] = 'Thank you!! :) for your message. Your Message has been sent'
+        redirect_to :back
        end
     end
     

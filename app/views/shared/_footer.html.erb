@@ -1,0 +1,57 @@
+ <footer class="flex-rw">
+
+  <ul class="footer-list-top">
+    <li><h4 class="footer-list-header">Title</h4></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Subtitle</a></li>
+    <li><a href='#' itemprop="significantLink" class="generic-anchor footer-list-anchor">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Subtitle</a></li>
+  </ul>
+  
+  <ul class="footer-list-top">
+    <li><h4 class="footer-list-header">Title</h4></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor">Subtitle</a></li>
+    <li><a href='#' class="generic-anchor footer-list-anchor" target="_blank">Subtitle</a></li>
+  </ul>
+  
+  <ul class="footer_message">
+    <% if flash[:message_board] %>  
+       <h2 class="footer_flash"><%=flash[:message_board]%></h2>   
+    <% end %>
+    
+    <h4 class="footer-list-header">Get in touch</h4>
+     <form action="/message/create" method="POST">
+      <div class="form">
+        <input type="text" class="input-form" name="new_name" placeholder="Your Name">
+      </div>
+      <div class="form">
+        <input type="text" class="input-form" name="new_email" placeholder="Your Email">
+      </div>
+      <div class="form">
+       <textarea type="text" class="input-form" name="new_content" rows="5" placeholder="Your Message"></textarea>
+      </div><br />
+      <ul class="actions footer_btn">
+        <li><button class="button message_btn" type="submit"> Send Message</button></li>
+        <li><a href="/" class="button">Back To Home</a></li>
+      </ul>
+     </form>             
+  </ul>
+
+  <section class="footer-social-section flex-rw">
+    <span class="footer-social-overlap footer-social-connect">
+      CONNECT <span class="footer-social-small">with</span> US
+    </span>
+    <span class="footer-social-overlap footer-social-icons-wrapper">
+      <a href="#" class="generic-anchor" target="_blank" title="Pinterest" itemprop="significantLink"><i class="fa fa-pinterest"></i></a>
+      <a href="#" class="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i class="fa fa-facebook"></i></a>
+      <a href="#" class="generic-anchor" target="_blank" title="Twitter" itemprop="significantLink"><i class="fa fa-twitter"></i></a>
+      <a href="#" class="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i class="fa fa-instagram"></i></a>
+      <a href="#" class="generic-anchor" target="_blank" title="Youtube" itemprop="significantLink"><i class="fa fa-youtube"></i></a>
+      <a href="#" class="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i class="fa fa-google-plus"></i></a>
+    </span>
+  </section>
+</footer>

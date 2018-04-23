@@ -8,6 +8,7 @@
         <div class="product--body">
           <div class="product--image">
             <img src="<%= @shoe.main_img %>" class="display-img">
+            <p>Source : <%= @shoe.option_03 %></p>
             <div class="icon-images">
               <img src="<%= @shoe.sub_img_01 %>"/>
               <img src="<%= @shoe.sub_img_02 %>"/>
@@ -26,12 +27,12 @@
               <li><p class="shop_sale_percentage"><%= @shoe.sale %>% off</p></li>
             </ul>
             <ul class="shop_price_wrapper">
-             <li><a target="_blank" class="shop_link" href="<%= @shoe.link %>"><p>Check it Out</p></a></li>
-             <li class="show_home"><%= link_to "See More >>", root_path %></li>
+             <li><a target="_blank" class="shop_link" href="<%= @shoe.link %>"><p>Check it Out via <%= @shoe.option_03 %></p></a></li>
+             <li class="show_home"><%= link_to "See More >>", shoes_path %></li>
             </ul>
           </div>
           <!--Random post-->
-          <div class="product_right">
+          <div class="random_shoe">
             <h3>How about this?</h3>
             <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
             <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
@@ -42,18 +43,23 @@
       </div>
      
       <% if can? :update, @shoe %>
-      <ul class="shop_price_wrapper">
-        <li><p><%= @shoe.option_01 %></p></li>
-        <li><p><%= @shoe.option_02 %></p></li>
-        <li><p><%= @shoe.option_03 %></p></li>
-        <li><p><%= @shoe.option_04 %></p></li>
-      </ul>
-         
+        <ul class="shop_price_wrapper">
+          <li><p><%= @shoe.option_01 %></p></li>
+          <li><p><%= @shoe.option_02 %></p></li>
+          <li><p><%= @shoe.option_03 %></p></li>
+          <li><p><%= @shoe.option_04 %></p></li>
+        </ul>
         <%= link_to "Edit", edit_shoe_path(@shoe) %>
         <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
 
-    </div>
-  </div>
-</div>
+<!--  <% @random.each do |random| %>
+       <%= link_to (image_tag random.main_img), shoe_path(random) %>
+       <p><%= link_to random.title, shoe_path(random)%></p>
+      <% end %> -->
+
+    </div><!--/.inner_hotdeals-->
+     <%= render 'shared/footer' %>
+  </div><!--/#main-->
+</div><!--/#wrapper-->
 

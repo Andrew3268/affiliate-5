@@ -396,7 +396,7 @@ a.button_prodcuts:hover{
 form {
   position: relative;
   max-width: 100%;
-  background: #fff;
+  /*background: #fff;*/
   margin: 0 auto 60px;
 }
 .label {
@@ -629,7 +629,7 @@ input[type=radio] + .left-label:hover {
 }
 
 .shop_price_wrapper {
-  margin-bottom: -2em;
+  margin-bottom: -1em;
 }
 
 ul.shop_price_wrapper li {
@@ -816,10 +816,10 @@ ul.shop_price_wrapper li {
     margin-bottom: 0em;
   }
   .shop_link {
-    margin-top: 1em;
+    margin-top: -1em;
   }
   ul.shop_price_wrapper li {
-    display: block;
+    display: inline-block;
     padding: 0em;
   }
   .shop_original_price, .shop_sale_price {
@@ -839,7 +839,7 @@ ul.shop_price_wrapper li {
     width:-webkit-calc(100%/2);
   }
   ul.shop_price_wrapper li {
-    display: block;
+    display: inline-block;
     padding: 0em;
   }
   .shop_original_price, .shop_sale_price {
@@ -847,11 +847,18 @@ ul.shop_price_wrapper li {
   }
   .shop_sale_percentage {
     margin-right: 0em;
-    margin-left: 4em;
+    margin-left: 0.5em;
     margin-top: -1.6em;
   }
   .grids > .grid-item > img {
     margin-bottom: -3em;
+  }
+  .show_home {
+    margin-top: -3.6em;
+    margin-bottom: 3em;
+  }
+  .show_home a {
+    margin-left: 5em;
   }
 }
 
@@ -873,7 +880,7 @@ ul.shop_price_wrapper li {
 }
 
 .icon-images {
-  margin-top: 1em;
+  margin: 1em 0 3em 0;
 }
 
 .product--title {
@@ -901,7 +908,7 @@ ul.shop_price_wrapper li {
   padding-right: 2em;
 }
 
-.product_right {
+.random_shoe {
   float: left;
   width: 25%;
   border: 1px solid #eee;
@@ -909,11 +916,11 @@ ul.shop_price_wrapper li {
   padding: 0.5em;
 }
 
-.product_right p {
+.random_shoe p {
   margin-top: 0.3em;
   text-align: center;
 }
-.product_right a {
+.random_shoe a {
   color: #000;
 }
 
@@ -922,7 +929,7 @@ ul.shop_price_wrapper li {
   padding-right: 3%;
 }
 .product--image .icon-images img {
-  height: 100px;
+  height: 6.5em;
   margin: 0 2px;
   cursor: pointer;
   border: 1px solid #e5e5e5;
@@ -962,8 +969,48 @@ ul.shop_price_wrapper li {
     margin: 5px 10px;
   }
   
-  .product_right {
+  .random_shoe {
     float: none;
     width: 100%;
+    margin-bottom: 5em;
+  }
+
+  .product--image .icon-images img {
+    height: 5em;
+    width: 7em;
+    margin: 0% 0%;
+  }
+  .grids > .grid-item > .main_img img {
+    height: 8em;
+  }
+}
+
+@media only screen
+and (min-width : 501px)  
+and (max-width : 1024px) {
+  .product--image, .product--details {
+    width: 50%;
+    margin-bottom: 2em;
+  }
+  .product--image .icon-images img {
+    height: 4.5em;
+    width: 6em;
+  }
+  .grids > .grid-item > .main_img img {
+    height: 8em;
+  }
+  .random_shoe {
+    float: none;
+    border: none;
+  }
+  .show_home {
+    margin-top: -3.6em;
+    margin-bottom: 3em;
+  }
+  .show_home a {
+    margin-left: 12em;
+  }
+  .shop_sale_percentage {
+    margin-left: 4em;
   }
 }

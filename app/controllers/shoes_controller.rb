@@ -10,6 +10,7 @@ class ShoesController < ApplicationController
 
   def show
     @random_shoe = Shoe.where.not(id: @shoe).order("RANDOM()").first
+    @random = Shoe.all.sample(2)
   end
 
   def new
@@ -38,7 +39,7 @@ class ShoesController < ApplicationController
 
   def destroy
     @shoe.destroy
-    redirect_to root_path
+    redirect_to shoe_path
   end
 
   private
