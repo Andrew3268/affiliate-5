@@ -37,29 +37,77 @@
             <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
             <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
             <!-- <img src="https://images.nike.com/is/image/DotCom/PDP_HERO_M/AJ1445_200_A_PREM/sb-dunk-mid-pro-skateboarding-shoe.jpg"/> -->
-          </div>
+
+            <!-- <div class="flex main">
+              <div class="flex-container">
+                <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">
+              </div>
+            </div> -->
           
         </div>
       </div>
      
-      <% if can? :update, @shoe %>
-        <ul class="shop_price_wrapper">
-          <li><p><%= @shoe.option_01 %></p></li>
-          <li><p><%= @shoe.option_02 %></p></li>
-          <li><p><%= @shoe.option_03 %></p></li>
-          <li><p><%= @shoe.option_04 %></p></li>
-        </ul>
-        <%= link_to "Edit", edit_shoe_path(@shoe) %>
-        <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
+      <div clsaa="show_admin">
+        <% if can? :update, @shoe %>
+          <ul class="shop_price_wrapper">
+            <li><p><%= @shoe.option_01 %></p></li>
+            <li><p><%= @shoe.option_02 %></p></li>
+            <li><p><%= @shoe.option_03 %></p></li>
+            <li><p><%= @shoe.option_04 %></p></li>
+            <li><p><%= @shoe.option_05 %></p></li>
+          </ul>
+          <%= link_to "Edit", edit_shoe_path(@shoe) %>
+          <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </div>
+      
+      <!-- Related Shoes -->
+      <div class="expanded row">
+        <div class="large-18">
+          <h2>Realated Shoes</h2>
+          <div class="grids">
+            <% @random.each do |random| %>
+              <div class="grid-item">
+                <%= link_to (image_tag random.main_img), random, {:class =>"main_img"} %>
+                <p class="shop_product_title"><%= link_to random.title, random %></p>
+              </div>
+            <% end %>        
+          </div><!-- end grid-->
+        </div><!--end col-->
+      </div><!--end row-->
 
-<!--  <% @random.each do |random| %>
-       <%= link_to (image_tag random.main_img), shoe_path(random) %>
-       <p><%= link_to random.title, shoe_path(random)%></p>
-      <% end %> -->
+      <!-- Random gadgets posts -->
+      <div class="expanded row">
+        <div class="large-18">
+          <h2>Shut up and take my money!!</h2>
+          <div class="grids">
+            <% @ecommerces.each do |ecommerces| %>
+              <div class="grid-item show_gadgets">
+                <a href="/ecommerces/detail/<%= ecommerces.id %>"><div class="show_gadgets_img"><img src="<%= ecommerces.image_main %>"></div></a>
+              </div>
+            <% end %>        
+          </div><!-- end grid-->
+        </div><!--end col-->
+      </div><!--end row-->
+
+      <div class="flex main">
+        <div class="flex-container">
+          <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">
+        </div>
+        <div class="flex-container">
+          <a href="/blogs/blogs_home"><img src="https://i.pinimg.com/564x/55/8c/37/558c378809d166b7cdc87ebd4e39610d.jpg" class="flex-container-images" alt="Awesome Blogs">
+        </div>
+        <div class="flex-container">
+          <a href="/hotdeals/savings_percentage_70"><img src="https://i.pinimg.com/564x/5c/24/0e/5c240e075214c717a119f75f11722529.jpg" class="flex-container-images" alt="Save your money">         
+        </div>
+        <div class="flex-container">
+          <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/d4/56/e8/d456e85b0a8c8e4ffdf3103e473256dd.jpg" class="flex-container-images" alt="Awesome Gadgets">
+        </div>
+      </div>
+
 
     </div><!--/.inner_hotdeals-->
-     <%= render 'shared/footer' %>
   </div><!--/#main-->
+  <%= render 'shared/footer' %>
 </div><!--/#wrapper-->
 

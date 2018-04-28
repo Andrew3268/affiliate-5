@@ -593,13 +593,7 @@ input[type=radio] + .left-label:hover {
 }
 
 
-/********************************************** Shop Section *********************************************/
-/*.grid {*/
-/*    margin-top: 5em;*/
-/*    position: absolute;*/
-/*    left: 50px;*/
-/*    width: calc(100% - 100px);*/
-/*}*/
+/********************************************** Shoes Section *********************************************/
 
 .shop_product_title {
   overflow: hidden; 
@@ -657,24 +651,18 @@ ul.shop_price_wrapper li {
 }
 
 .large-6 {
-  /*width:25%;*/
   float:left;
   margin:0;
 }
 .filter-wrap {
-  /*background-color:#666;*/
   height:1000px;
-  /*padding:60px 80px;*/
   color:#fff;
 }
 
 .large-18 {
-  /*position: absolute;*/
-  /*left: 50px;*/
   width: 100%;
   padding-left: 5px;
-  padding-right: 5px;
-    
+  padding-right: 5px;  
 }
 
 .fliter-results {
@@ -682,10 +670,7 @@ ul.shop_price_wrapper li {
 }
 
 .grid-item {
-  /*width:25%;*/
-  /*float:left;*/
   margin-bottom:20px;
-  /*padding:0 30px;*/
   padding: 0 0.5em;
 }
 
@@ -693,49 +678,17 @@ ul.shop_price_wrapper li {
   color: black;
 }
 
-/*.img_wrapper {*/
-/*    width: 300px;*/
-/*    height: 250px;*/
-/*    padding-right: 4em;*/
-/*}*/
-
-/*.img_wrapper img {*/
-/*  height:250px;*/
-/*  width:100%;*/
-/*  display:inline-block;*/
-/*  margin-bottom:15px;*/
-/*}*/
-
-/*.grid-item p {
-  font-size:14px;
-  margin:0 0 4px 0;
-}*/
-
 .grid-item p.title {
   font-size:18px;
   font-weight:bold;
   margin-bottom:5px;
 }
 .ui-group button {
-  /*width:100%;*/
   text-align:center;
   position:relative;
   outline:none !important;
   margin-bottom:10px;
 }
-/*button {*/
-/*  -webkit-appearance:none;*/
-/*  -moz-appearance:none;*/
-/*  background:transparent;*/
-/*  padding:0;*/
-/*  border:0;*/
-/*  border-radius:0;*/
-/*  line-height:1;*/
-/*  cursor:pointer;*/
-/*  color:#fff;*/
-/*  font-size:18px*/
-/*}*/
-
 
 .ui-group .is-checked {
   border-radius: 1em;
@@ -743,16 +696,6 @@ ul.shop_price_wrapper li {
   border:3px solid #f56a6a;
   color: white;
 }
-/*.ui-group button::after {*/
-  /*content:'';*/
-/*  display:block;*/
-/*  background-color:white;*/
-/*  width:14px;*/
-/*  height:14px;*/
-/*  position:absolute;*/
-/*  right:0;*/
-/*  top:1px;*/
-/*}*/
 
 .ui-group h3 {
   position:relative;
@@ -768,21 +711,16 @@ ul.shop_price_wrapper li {
   content: '';
 }
 
-
-
 /*------------------------------
  GRID GALLERY START HERE
 --------------------------------*/
-.grids
-{
+.grids {
   overflow:hidden;
   width:100%;
 }
 
-.grids > *
-{
+.grids > * {
   float:left;
-  /* Callback width*/
   width:25%;
   width:calc(100%/4);
   width:-webkit-calc(100%/4);
@@ -798,6 +736,13 @@ ul.shop_price_wrapper li {
 }
 
 .grids > .grid-item > .main_img img {
+  width: 300px;
+  height: 250px;
+  display:block;
+  object-fit: contain;
+}
+
+.grids > .show_gadgets > a > .show_gadgets_img > img {
   width: 300px;
   height: 250px;
   display:block;
@@ -824,6 +769,7 @@ ul.shop_price_wrapper li {
   }
   .shop_original_price, .shop_sale_price {
     margin-bottom: 0em;
+    margin-right: 0.3em;
   }
   .shop_sale_percentage {
     margin-right: 0em;
@@ -858,7 +804,7 @@ ul.shop_price_wrapper li {
     margin-bottom: 3em;
   }
   .show_home a {
-    margin-left: 5em;
+    margin-left: 3em;
   }
 }
 
@@ -869,11 +815,10 @@ ul.shop_price_wrapper li {
   }
 }
 
-
-
 /*------------------------------
  Shoes Show Page
 --------------------------------*/
+
 .product_show img {
   max-width: 100%;
   height: auto;
@@ -914,6 +859,7 @@ ul.shop_price_wrapper li {
   border: 1px solid #eee;
   border-radius: 0.5em;
   padding: 0.5em;
+  margin-top: 2em;
 }
 
 .random_shoe p {
@@ -959,7 +905,6 @@ ul.shop_price_wrapper li {
 .show_home {
   margin-left: 1em;
 }
-
 
 @media screen and (max-width: 500px) {
   .product--image, .product--details {
@@ -1008,9 +953,9 @@ and (max-width : 1024px) {
     margin-bottom: 3em;
   }
   .show_home a {
-    margin-left: 12em;
+    margin-left: 0em;
   }
   .shop_sale_percentage {
-    margin-left: 4em;
+    margin-left: 0.3em;
   }
 }

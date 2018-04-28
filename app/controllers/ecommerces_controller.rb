@@ -69,8 +69,8 @@ class EcommercesController < ApplicationController
   def gadgets
     @ecommerces = Ecommerce.all
     @ecommerces = Ecommerce.order("created_at DESC").page(params[:page]).per(20)
-
-    @ecommerces_sample = Ecommerce.all    
+    
+    @ecommerces_sample = Ecommerce.all
     @banner = @ecommerces_sample.sample
     @sidebanner_01 = @ecommerces_sample.sample
     @sidebanner_02 = @ecommerces_sample.sample

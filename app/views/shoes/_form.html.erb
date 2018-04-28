@@ -2,7 +2,8 @@
  <%= f.select :option_01, options_for_select([["Category", ""], "Men", "Women"])%></br>
  <%= f.select :option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%></br>
  <%= f.select :option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%></br>
- <%= f.select :option_04, options_for_select([["Price", ""], "twenty", "fifty", "hundred", "hundred-fifty", "above"])%></br>
+ <%= f.select :option_04, options_for_select([["Price", ""], "lee_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%></br>
+ <%= f.select :option_05, options_for_select([["Sale", ""], "sale_20", "sale_50", "sale_70","sale_80","sale_90"])%></br>
  <%= f.input :title %>
  <%= f.input :link %>
  <%= f.input :description %>

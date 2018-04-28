@@ -87,33 +87,34 @@
 					<h2>Random posts</h2>
 				</header>
 				<div class="mini-posts">
-					<article>
-						<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="image"><img src="<%= @sidebanner_01.image_main %>" alt="" /></a>
-						<h3><%= @sidebanner_01.title %></h3>
-						<p><%= @sidebanner_01.intro %></p>
-			 
-						<% total = 0 %>
-						<% discount  = 0 %>
-						<div class="price">
-							<div class="price_h3">
-								<h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-							 </div>
-						</div>&emsp;
-						<div class="price">
-						  <div class="price_h3">
-								<h3 class="price_after"><%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
-							</div>
-						</div>
+
+          <article>
+            <a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="image"><img src="<%= @sidebanner_01.image_main %>" alt="" /></a>
+            <h3><%= @sidebanner_01.title %></h3>
+            <p><%= @sidebanner_01.intro %></p>
+       
+            <% total = 0 %>
+            <% discount  = 0 %>
+            <div class="price">
+              <div class="price_h3">
+                <h3 class="price_before"><%= number_to_currency @sidebanner_01.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+               </div>
+            </div>&emsp;
+            <div class="price">
+              <div class="price_h3">
+                <h3 class="price_after"><%= number_to_currency @sidebanner_01.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+              </div>
+            </div>
             <% total += @sidebanner_01.price_before - @sidebanner_01.price_after %>
             <% discount += total.to_f / @sidebanner_01.price_before * 100  %>
             <% if @sidebanner_01.price_before? %>
              <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%= discount.round(0) %>%) Savings</h3>
             <% end %>
-						</br>
-						<a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
-					</article>
+            </br>
+            <a href="/ecommerces/detail/<%= @sidebanner_01.id %>" class="button">View Detail</a>
+          </article>
 					
-					<article>
+				  <article>
 						<a href="/ecommerces/detail/<%= @sidebanner_02.id %>" class="image"><img src="<%= @sidebanner_02.image_main %>" alt="" /></a>
 						<h3><%= @sidebanner_02.title %></h3>
 						<p><%= @sidebanner_02.intro %></p>
