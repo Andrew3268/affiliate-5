@@ -14,8 +14,6 @@
   color: #8DB9ED;
 }
 
-
-
 ul {
   list-style: none;
 }
@@ -65,6 +63,7 @@ footer {
   color: #fff;
   font: 2.3vw "Oswald", sans-serif;
   margin-bottom: 0em;
+  text-align: center;
 }
 
 .footer-list-anchor {

@@ -6,6 +6,7 @@
 
       <div class="product_show">
         <div class="product--body">
+
           <div class="product--image">
             <img src="<%= @shoe.main_img %>" class="display-img">
             <p>Source : <%= @shoe.option_03 %></p>
@@ -18,6 +19,7 @@
               <img src="<%= @shoe.sub_img_06 %>"/>
             </div>
           </div>
+
           <div class="product--details">
             <div class="product--title"><%= @shoe.title %></div>
             <div class="product--desc"><p><%= @shoe.description %></p></div>
@@ -27,27 +29,21 @@
               <li><p class="shop_sale_percentage"><%= @shoe.sale %>% off</p></li>
             </ul>
             <ul class="shop_price_wrapper">
-             <li><a target="_blank" class="shop_link" href="<%= @shoe.link %>"><p>Check it Out via <%= @shoe.option_03 %></p></a></li>
+             <li><a target="_blank" class="shop_link" href="<%= @shoe.link %>"><p class="shop_check">Check it Out via <%= @shoe.option_03 %></p></a></li>
              <li class="show_home"><%= link_to "See More >>", shoes_path %></li>
             </ul>
           </div>
+
           <!--Random post-->
           <div class="random_shoe">
             <h3>How about this?</h3>
             <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
             <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
-            <!-- <img src="https://images.nike.com/is/image/DotCom/PDP_HERO_M/AJ1445_200_A_PREM/sb-dunk-mid-pro-skateboarding-shoe.jpg"/> -->
-
-            <!-- <div class="flex main">
-              <div class="flex-container">
-                <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">
-              </div>
-            </div> -->
+          </div>
           
-        </div>
-      </div>
+      </div><!--/.product_show-->
      
-      <div clsaa="show_admin">
+      <div class="show_admin">
         <% if can? :update, @shoe %>
           <ul class="shop_price_wrapper">
             <li><p><%= @shoe.option_01 %></p></li>
@@ -104,7 +100,6 @@
           <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/d4/56/e8/d456e85b0a8c8e4ffdf3103e473256dd.jpg" class="flex-container-images" alt="Awesome Gadgets">
         </div>
       </div>
-
 
     </div><!--/.inner_hotdeals-->
   </div><!--/#main-->
