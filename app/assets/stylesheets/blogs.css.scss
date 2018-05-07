@@ -232,12 +232,11 @@
   }
 @media screen and (min-width: 1100px) {
   main {
-    width: 80%;
+    width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     margin-left: 0.4em;
-    padding-right: 2em;
   }
 }
 @media screen and (min-width: 700px) {
@@ -254,7 +253,7 @@
 }
 
 
-/************ 왼쪽 사이드 바 ***************/
+/************ 오른쪽 사이드 바 ***************/
 
 aside {
   padding: 1em;
@@ -267,7 +266,7 @@ aside {
     padding: 3.5em 0;
     margin-top: 3.6em;
     border-radius: 0.3em;
-    height: 110em;
+    height: 200em;
   }
 }
 aside h2 {
@@ -591,7 +590,7 @@ aside h2 {
 
 
 
-/*********** 오른쪽 사이드 **************/
+/*********** 오른쪽 사이드 (지워도 될꺼 같은데?)**************/
 
 .widget_container {
   max-width: 310px;
@@ -673,6 +672,25 @@ aside h2 {
   margin: -0.5em 0 -2em -0.5em;
 }
 
+.blog_post_date a {
+  border: 1px solid #f56a6a;
+  border-radius: 0.5em;
+  background-color: #f56a6a;
+  color: white;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+}
+
+.blog_post_date button {
+  border: 1px solid #f56a6a;
+  border-radius: 0.5em;
+  background-color: #f56a6a;
+  color: white;
+  padding: 0.47em 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .posted {
   display: inline-block;
 }
@@ -711,9 +729,18 @@ aside h2 {
   border-radius: 0.5em;
 }
 
+.show_header img {
+  border-radius: 0.5em;
+}
+
 .show_body { 
   margin-bottom: 2em;
   padding: 0.5em;
+}
+
+.show_body img {
+  width: 100%;
+  border-radius: 0.5em;
 }
 
 .main_intro {
@@ -808,9 +835,90 @@ aside h2 {
 
 
 
+/******************* 오른쪽 사이드바 랜덤 포스트 css *******************/
 
+.blog_left_main {
+  float: left;
+  width: 70%;
+  padding-right: 2.5em;
+}
 
+.blog_right_side {
+  float: left;
+  width: 30%;
+  padding: 1em;
+}
 
+.blog_right_side img {
+  margin-bottom: 0.3em;
+}
+
+.blog_show_shoe_title {
+  text-align: center;
+}
+
+.blog_show_shoes img, .blog_show_promotion img {
+  width: 100%;
+}
+
+.see_more {
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) { 
+
+  main {
+    padding: 0em;
+  }
+
+  .blog_left_main {
+   float: none;
+   width: 100%;
+   padding-right: 0em;
+  }
+
+  .blog_right_side {
+   float: none;
+   border: none;
+   width: 100%;
+  }
+
+  .blog_right_side img {
+   width: 100%;
+  }
+}
+
+@media only screen
+and (min-width : 501px)  
+and (max-width : 1024px) {
+ .blog_left_main {
+   float: none;
+   width: 100%;
+   padding-right: 0em;
+  }
+
+ .blog_right_side {
+   float: none;
+   border: none;
+   width: 100%;
+ }
+
+ .blog_right_side img {
+  width: 150px;
+  height:270px;
+  object-fit: cover;
+  float: left;
+  width: 50%;
+ }
+
+ .blog_show_shoes img{
+  width: 100%;
+  height: 100%;
+ }
+}
 
 
 

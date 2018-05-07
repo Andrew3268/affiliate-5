@@ -1,11 +1,9 @@
 .hotdeals_h1 {
   margin-bottom: -1.5em;
 }
-
 .hotdeals_h2 {
   margin-top: 1em;
 }
-
 .hotdeals_title {
   color: #f56a6a;
 }
@@ -607,6 +605,7 @@ input[type=radio] + .left-label:hover {
   -ms-box-orient: vertical;
   word-wrap:break-word;
   margin-bottom: 0em;
+  text-align: center;
 }
 
 .shop_original_price {
@@ -623,7 +622,7 @@ input[type=radio] + .left-label:hover {
 }
 
 .shop_price_wrapper {
-  margin-bottom: -1em;
+  margin-bottom: -2em;
 }
 
 ul.shop_price_wrapper li {
@@ -644,7 +643,7 @@ ul.shop_price_wrapper li {
 }
 
 .shop_check {
-  border: 1px solid;
+  border: 1px solid #f56a6a;
   border-radius: 0.5em;
   padding: 0.5em;
   background-color: #f56a6a;
@@ -653,9 +652,9 @@ ul.shop_price_wrapper li {
 }
 
 .expanded {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 3em;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3em;
 }
 
 .large-6 {
@@ -751,10 +750,26 @@ ul.shop_price_wrapper li {
 }
 
 .grids > .show_gadgets > a > .show_gadgets_img > img {
-  width: 300px;
+  width: 250px;
   height: 250px;
   display:block;
   object-fit: contain;
+}
+
+.grids > .grid-item > .shop_sale_percentage {
+  position: absolute;
+  border: 1px solid #f56a6a;
+  border-radius: 0.5em;
+  background-color: #f56a6a;
+  color: white;
+  width: 65px;
+  height: 20px;
+  top: 2em;
+  text-align: center;
+}
+.grids > .grid-item > .shop_sale_percentage > .percentage_p {
+  font-size: 12px;
+  cursor: pointer;
 }
 
 
@@ -776,13 +791,16 @@ ul.shop_price_wrapper li {
     padding: 0em;
   }
   .shop_original_price, .shop_sale_price {
-    margin-bottom: 0em;
-    margin-right: 0.3em;
+    margin-bottom: 1em;
   }
-  .shop_sale_percentage {
-    margin-right: 0em;
-    margin-left: 4.5em;
-    margin-top: -1.52em;
+  .grids > .grid-item > .shop_sale_percentage {
+    width: 65px;
+    height: 20px;
+    top: 2em;
+  }
+  .grids > .grid-item > .shop_sale_percentage > .percentage_p {
+    padding-top: 0em;
+    font-size: 12px;
   }
 }
 
@@ -797,12 +815,10 @@ ul.shop_price_wrapper li {
     padding: 0em;
   }
   .shop_original_price, .shop_sale_price {
-    margin-bottom: 0em;
+    margin-bottom: 1em;
   }
   .shop_sale_percentage {
-    margin-right: 0em;
-    margin-left: 0.5em;
-    margin-top: -1.6em;
+    margin: -1.6em 0 3em 0.5em;
   }
   .grids > .grid-item > img {
     margin-bottom: -3em;
@@ -919,7 +935,7 @@ ul.shop_price_wrapper li {
     float: none;
     width: 100%;
     padding: 10px 5px;
-    margin: 5px 10px;
+    /*margin: 5px 10px;*/
   }
   
   .random_shoe {
@@ -927,14 +943,30 @@ ul.shop_price_wrapper li {
     width: 100%;
     margin-bottom: 5em;
   }
-
   .product--image .icon-images img {
-    height: 5em;
-    width: 7em;
-    margin: 0% 0%;
+    height: 6em;
+    width: 7.5em;
+    margin: 0 0 0.2em 0;
   }
   .grids > .grid-item > .main_img img {
     height: 8em;
+    margin-top: 2em;
+  }
+  .grids > .grid-item > .shop_sale_percentage {
+    width: 65px;
+    height: 20px;
+    top: 3em;
+    margin-top: -1em;
+  }
+  .grids > .grid-item > .shop_sale_percentage > .percentage_p {
+    padding-top: 0em;
+    font-size: 12px;
+  }
+  .shop_check {
+    margin-top: 1em;
+  }
+  .grids > .show_gadgets > a > .show_gadgets_img > img {
+    object-fit: fill;
   }
 }
 
@@ -951,6 +983,7 @@ and (max-width : 1024px) {
   }
   .grids > .grid-item > .main_img img {
     height: 8em;
+    margin-top: 2em;
   }
   .random_shoe {
     float: none;
@@ -963,7 +996,7 @@ and (max-width : 1024px) {
   .show_home a {
     margin-left: 0em;
   }
-  .shop_sale_percentage {
-    margin-left: 0.3em;
+  .shop_check {
+    margin-top: 1em;
   }
 }

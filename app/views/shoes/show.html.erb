@@ -40,11 +40,12 @@
             <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
             <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
           </div>
-          
+
       </div><!--/.product_show-->
-     
+
       <div class="show_admin">
         <% if can? :update, @shoe %>
+          <h2>For Admin</h2>
           <ul class="shop_price_wrapper">
             <li><p><%= @shoe.option_01 %></p></li>
             <li><p><%= @shoe.option_02 %></p></li>
@@ -86,6 +87,7 @@
         </div><!--end col-->
       </div><!--end row-->
 
+       
       <div class="flex main">
         <div class="flex-container">
           <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">

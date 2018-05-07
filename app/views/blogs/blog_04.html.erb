@@ -236,7 +236,10 @@
              <a target="_blank" href="Site_Link"><img src="Image_URL" alt="ImageTitle"></a>
              <h5>Source</h5>
              <p class="show_p">Sub_Intro</p>
-             <h3 class="show_review_title">Promising Review</h3>
+             <h3 class="show_review_title">Top positive review</h3>
+             <p>(as much as over "HowMany_People" people found this helpful)</p>
+             <p class="show_review_content">Review &nbsp;<a target="_blank" href="Review_Link">By Reviwer</a></p>
+             <h3 class="show_review_title">Top critical review</h3>
              <p>(as much as over "HowMany_People" people found this helpful)</p>
              <p class="show_review_content">Review &nbsp;<a target="_blank" href="Review_Link">By Reviwer</a></p>
              <ul class="blog_post_date">
@@ -250,9 +253,6 @@
              <div class="blog_bottomline"></div>
           </div> -->
 
-
-          
-
         </main>
      
          <!-- 왼쪽 사이드바 -->
@@ -261,6 +261,24 @@
     <!-- <h2>Recent Blog Posts</h2> -->
 
       <div class="blog-container">
+        <h2>Amazon Promotion</h2>
+         <div class="blog_display_sample"></div></br>
+
+        <h2>Random Blog Posts</h2>
+        <div class="blog_display_sample"></div></br>
+
+        <h2>Shoes</h2>
+        <% @random.each do |random| %>  
+          <%= link_to (image_tag random.main_img), random, {:class =>"blog_side"} %>
+          <p class="blog_side_shoe_title"><%= link_to random.title, random %></p>
+        <% end %></br>      
+
+        <h2>Gadgets</h2>  
+        <% @ecommerces.each do |gadget| %>
+          <a href="/ecommerces/detail/<%= gadget.id %>"><div class="blog_side_img"><img src="<%= gadget.image_main %>"></div></a>
+        <% end %>
+
+      
 
         <figure class="blog-post blog-post-1">
           <!-- <h3 class="blog-titles">Blog Title 1</h3> -->
