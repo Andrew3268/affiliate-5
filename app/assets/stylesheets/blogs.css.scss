@@ -669,7 +669,7 @@ aside h2 {
 
 .blog_post_date {
   list-style: none;
-  margin: -0.5em 0 -2em -0.5em;
+  margin: 1em 0 -2em -0.5em;
 }
 
 .blog_post_date a {
@@ -753,13 +753,22 @@ aside h2 {
   margin-bottom: 3em;
 }
 
+.blog_special_offer h3 {
+  margin-bottom: 0.3em;
+}
+
 .show_special_offer {
+  margin-bottom: 0em;
+}
+
+.show_special_offer a {
   color: #30a2c0;
 }
 
 .show_amazon_card {
   color: red;
 }
+
 /*------------------------------
  For Play Youtube Video
 --------------------------------*/
@@ -830,8 +839,6 @@ aside h2 {
     display: none;
   }
 }
-
-
 
 
 

@@ -154,7 +154,7 @@
     </script>
 
     <!-- Discount Filler  -->
-    <!-- <script>
+    <script>
     $(function() {
       FilterItems();
     });
@@ -175,34 +175,7 @@
       }
       return false;
     }
-    </script> -->
-
-
-
- <!-- Saving Filler  -->
-    <script>
-    $(function() {
-      FilterItems();
-    });
-
-    function FilterItems(){
-      CatType=$('#shop_filter');
-      CatType.change(function(){
-        selectValue=$(this).val();
-        previewSelected(selectValue); 
-      });
-    }
-
-    function previewSelected(x){
-      $('.shop_items div').fadeOut();
-      $('div[rel='+x+']').delay(200).fadeIn();
-      if(x=="all"){
-        $('.shop_items div').fadeIn();
-      }
-      return false;
-    }
     </script>
-
 
     <!-- 네비 메뉴 스크립트 -->
     <script>
@@ -255,8 +228,6 @@
           }, 600);
       });
     </script>
-
-
 
    <!-- For Shoes_Shop -->
     <script>
