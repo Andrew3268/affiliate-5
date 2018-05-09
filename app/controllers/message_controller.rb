@@ -4,16 +4,8 @@ class MessageController < ApplicationController
     
     def contact_us
       @contact_us = Ecommerce.all
-      @sidebanner_01 = @contact_us.sample
-      @sidebanner_02 = @contact_us.sample
-      @sidebanner_03 = @contact_us.sample
-      @sidebanner_04 = @contact_us.sample
-      @sidebanner_05 = @contact_us.sample
-      @sidebanner_06 = @contact_us.sample
-      @sidebanner_07 = @contact_us.sample
-      @sidebanner_08 = @contact_us.sample
-      @sidebanner_09 = @contact_us.sample
-      @sidebanner_10 = @contact_us.sample     
+      @random_gadgets = Ecommerce.all.sample(4)
+      @random_shoes = Shoe.all.sample(4)
     end
     
     def message_board

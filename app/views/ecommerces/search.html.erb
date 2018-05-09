@@ -26,23 +26,17 @@
 									
 									<% total = 0 %>
 									<% discount  = 0 %>
+                  <div class="price">
+                    <div class="price_h3">
+                     <h3 class="price_after"><%= number_to_currency search.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                    </div>
+                  </div>
 									<div class="price">
 	  								<div class="price_h3">
 	  								 <h3 class="price_before"><%= number_to_currency search.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
 	  							  </div>
-	  				        <div class="price_p">
-							       <p>Original Price</p>
-							      </div>
 	  							</div>
-	  							<div class="price">
-	  							  <div class="price_h3">
-	  							   <h3 class="price_after"><%= number_to_currency search.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
-	  						    </div>
-	  						    <div class="price_p2">
-							       <p>Offer Price</p>
-							      </div>
-	  							</div>
-								  
+	  							
 	                <% total += search.price_before - search.price_after %>
 	                <% discount += total.to_f / search.price_before * 100  %>
 	                <% if search.price_before? %>
@@ -65,7 +59,7 @@
   					</section>
 	       </div><!-- End class="inner" -->
 	 	</div><!-- End id="main" -->
-	<%= render 'shared/sidebar' %>	
+	<%= render 'shared/sidebar_gadgets' %>	
 </div><!-- End id="wrapper" -->
 
 <% else %>
@@ -83,6 +77,6 @@
   		</div>
     	</div> <!-- End class="inner" -->
 		</div> <!-- End id="main" -->
-	<%= render 'shared/sidebar' %>	
+	<%= render 'shared/sidebar_gadgets' %>	
 </div><!-- End id="wrapper" -->
 <% end %>

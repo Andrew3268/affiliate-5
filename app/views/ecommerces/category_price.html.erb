@@ -6,7 +6,7 @@
 			<div class="inner">
 				
 				<%= render 'shared/header' %>
-				
+				<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 			  <% if @ecommerces.count == 0 %>
 			    <h1>There are no products <br />
 			        currently in this category :(</h1>
@@ -14,77 +14,61 @@
 			  	<div class="check_page">
 					  <h2> - <span>Here </span>are <span>What</span> are you looking for - </h2>
 					</div>
+
   				<!-- Section -->
   					<section>
-              <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+             
   						<header class="major">
   							<h2><%= params[:category] %></h2>
   						</header>
-  							<div class="posts">
+
+  						<div class="posts">
 						 
-						 <% @ecommerces.reverse.each do |ecommerce| %>  
-							<article>
-								
-								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
-								<p class="sources"><%= ecommerce.sources %></p>
-								<h3><%= ecommerce.title %></h3>
-								<p><%= ecommerce.intro %></p>
-								
-								<% total = 0 %>
-								<% discount  = 0 %>
-								<div class="price">
-  								<div class="price_h3">
-  								 <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
-  							  </div>
-  				        <div class="price_p">
-						       <p>Original Price</p>
-						      </div>
-  							</div>
-  							<div class="price">
-  							  <div class="price_h3">
-  							   <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
-  						    </div>
-  						    <div class="price_p2">
-						       <p>Offer Price</p>
-						      </div>
-  							</div>
-							  
-          <% total += ecommerce.price_before - ecommerce.price_after %>
-          <% discount += total.to_f / ecommerce.price_before * 100  %>
-          <% if ecommerce.price_before? %>
-           <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
-          <% end %>
-          
-              
-								<ul class="actions">
-									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
-									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
-									<% if user_signed_in? and current_user.admin == true %> 
-  									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
-  									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
-									<% end %>
-								</ul>
-								<!--<div class="amazon_logo">-->
-						  <!--	 <img src="https://s3.amazonaws.com/BURC_Pages/downloads/a-smile_color_btn.png">-->
-					   <!--   </div>-->
-								
-							</article>
-						 <% end %>
-						</div>
+  						 <% @ecommerces.reverse.each do |ecommerce| %>  
+  							<article>
+  								<a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="" /></a>
+  								<p class="sources"><%= ecommerce.sources %></p>
+  								<h3><%= ecommerce.title %></h3>
+  								<p><%= ecommerce.intro %></p>
+  								
+  								<% total = 0 %>
+  								<% discount  = 0 %>
+                  <div class="price">
+                    <div class="price_h3">
+                     <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+                    </div>
+                  </div>
+  								<div class="price">
+    								<div class="price_h3">
+    								 <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
+    							  </div>
+    							</div>
+    							
+                  <% total += ecommerce.price_before - ecommerce.price_after %>
+                  <% discount += total.to_f / ecommerce.price_before * 100  %>
+                  <% if ecommerce.price_before? %>
+                   <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
+                  <% end %>
+            
+                
+  								<ul class="actions">
+  									<li><a href="<%= ecommerce.site_link %>" target="_blank", class="button">Buy Now</a></li>
+  									<li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
+  									<% if user_signed_in? and current_user.admin == true %> 
+    									<li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
+    									<li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
+  									<% end %>
+  								</ul>
+  								<!--<div class="amazon_logo">-->
+  						  <!--	 <img src="https://s3.amazonaws.com/BURC_Pages/downloads/a-smile_color_btn.png">-->
+  					   <!--   </div>-->
+  								
+  							</article>
+  						 <% end %>
+					  	</div>
   					</section>
 					<% end %>
 			</div><!-- End class="inner" -->
 		</div><!-- End id="main" -->
-	<%= render 'shared/sidebar' %>	
+	<%= render 'shared/sidebar_gadgets' %>	
 </div><!-- End id="wrapper" -->
-
-<script>
-function myFunction() {
-    var x = document.getElementById('sidebar');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</script>

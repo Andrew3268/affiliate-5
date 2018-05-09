@@ -113,8 +113,8 @@ Main Menu of Header
 
 
 .navbar-collapsed {
-  background:linear-gradient(rgba(0,0,0,0.4),#f56a6a),url(https://pbs.twimg.com/profile_images/908082833964462081/kgXBThxL_400x400.jpg) no-repeat;
-  background-size:cover;
+   background:linear-gradient(rgba(0,0,0,0.4),white),url(https://pbs.twimg.com/profile_images/908082833964462081/kgXBThxL_400x400.jpg) no-repeat;
+   background-size:cover;
    width:0;
    height:100vh;
    position:fixed;
@@ -195,7 +195,7 @@ Main Menu of Header
 
 @media screen and ("max-width:800px") {
   .navbar {
-    background-color: #f56a6a;
+    background-color: white;
     height: 3.5em;
     margin: 1em 0 2em 0;
 
@@ -208,7 +208,7 @@ Main Menu of Header
     &-menu {
       margin-left:10px;
       font-size:30px;
-      color:white;
+      color:black;
       float:left;
       margin-top: -1px;
       display:inline-block;
@@ -470,63 +470,5 @@ img {
   word-wrap:break-word;
 }
 
-
-
-
-/**************************************** 네번쨰 (그냥 사진만) ****************************************/
-
-
-.photo_section {
-  font-size: 0;
-  width: 80%;
-  margin: 30px auto;
-}
-
-.photo_section a {
-  font-size: 16px;
-  overflow: hidden;
-  display: inline-block;
-  margin-bottom: 8px;
-  width: calc(50% - 4px);
-  margin-right: 8px;
-}
-
-.photo_section a:nth-of-type(2n) {
-  margin-right: 0;
-}
-
-@media screen and (min-width: 50em) {
-  .photo_section{ 
-    width: 95%;
-  }
-  .photo_section a {
-    width: calc(25% - 6px);
-  }
-  
-  .photo_section a:nth-of-type(2n) {
-    margin-right: 8px;
-  }
-  
-  .photo_section a:nth-of-type(4n) {
-    margin-right: 0;
-  }
-}
-
-.photo_section a:hover img {
-  transform: scale(1.15);
-}
-
-.photo_section figure {
-  margin: 0;
-}
-
-.photo_section figure img {
-  border: none;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  background: #ccc;
-  transition: transform .2s ease-in-out;
-}
 
 

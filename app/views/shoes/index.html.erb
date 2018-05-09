@@ -11,11 +11,11 @@
             
             <% @shoes.each do |shoe| %>
               <div class="grid-item <%= shoe.option_01 %> <%= shoe.option_02 %> <%= shoe.option_03 %> <%= shoe.option_04 %> <%= shoe.option_05 %>">
-                <p class="shop_product_title"><%= link_to shoe.title, shoe %></p>
                 <%= link_to (image_tag shoe.main_img), shoe, {:class =>"main_img"} %>
                 <div class="shop_sale_percentage">
                  <p class="percentage_p"><%= shoe.sale %>% Off</p>
                 </div>
+                <p class="shop_product_title"><%= link_to shoe.title, shoe %></p>
                 <p class="shop_brand">via <%= shoe.option_03 %></p>
                 <ul class="shop_price_wrapper">
                   <li><p class="shop_original_price">$<%= shoe.offer_price %></p></li>

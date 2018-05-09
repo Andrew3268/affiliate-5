@@ -66,7 +66,7 @@
             <% @random.each do |random| %>
               <div class="grid-item">
                 <%= link_to (image_tag random.main_img), random, {:class =>"main_img"} %>
-                <p class="shop_product_title"><%= link_to random.title, random %></p>
+                <!-- <p class="shop_product_title"><%= link_to random.title, random %></p> -->
               </div>
             <% end %>        
           </div><!-- end grid-->
@@ -74,18 +74,18 @@
       </div><!--end row-->
 
       <!-- Random gadgets posts -->
-      <div class="expanded row">
-        <div class="large-18">
-          <h2>Shut up and take my money!!</h2>
-          <div class="grids">
-            <% @ecommerces.each do |ecommerces| %>
-              <div class="grid-item show_gadgets">
-                <a href="/ecommerces/detail/<%= ecommerces.id %>"><div class="show_gadgets_img"><img src="<%= ecommerces.image_main %>"></div></a>
+      <h2>Randdom Gadgets</h2>
+      <ul class="cards">
+        <% @ecommerces.each do |gadgets| %>
+          <li class="cards__item">
+            <div class="card">
+              <div class="card__image">
+                <a href="/ecommerces/detail/<%= gadgets.id %>"><img src="<%= gadgets.image_main %>"></a>
               </div>
-            <% end %>        
-          </div><!-- end grid-->
-        </div><!--end col-->
-      </div><!--end row-->
+            </div>
+          </li>
+        <% end %>
+      </ul>
 
        
       <div class="flex main">

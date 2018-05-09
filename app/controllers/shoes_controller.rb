@@ -11,7 +11,7 @@ class ShoesController < ApplicationController
   def show
     @random_shoe = Shoe.where.not(id: @shoe).order("RANDOM()").first
     @random = Shoe.all.sample(4)
-    @ecommerces = Ecommerce.all.sample(4)
+    @ecommerces = Ecommerce.all.sample(3)
   end
 
   def new

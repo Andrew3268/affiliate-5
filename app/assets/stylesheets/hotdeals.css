@@ -605,12 +605,12 @@ input[type=radio] + .left-label:hover {
   -ms-box-orient: vertical;
   word-wrap:break-word;
   margin-bottom: 0em;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .shop_original_price {
-  border: 2px solid #f56a6a;
-  color: #f56a6a;
+  border: 2px solid #5bc995;
+  color: #5bc995;
   border-radius: 0.5em;
   width: 4em;
   text-align: center;
@@ -643,10 +643,10 @@ ul.shop_price_wrapper li {
 }
 
 .shop_check {
-  border: 1px solid #f56a6a;
+  border: 1px solid #5bc995;
   border-radius: 0.5em;
   padding: 0.5em;
-  background-color: #f56a6a;
+  background-color: #5bc995;
   color: white;
   text-align: center;
 }
@@ -690,17 +690,27 @@ ul.shop_price_wrapper li {
   font-weight:bold;
   margin-bottom:5px;
 }
+
+.ui-group{
+  border-bottom: 2px solid #5bc995;
+  margin-bottom: 2em;
+}
 .ui-group button {
   text-align:center;
   position:relative;
   outline:none !important;
   margin-bottom:10px;
+  background-color: white;
+  padding: 0.5em;
+  border: 2px solid #5bc995;
+  border-radius: 0.5em;
+  color: #252525;
 }
 
 .ui-group .is-checked {
   border-radius: 1em;
-  background-color: #f56a6a;
-  border:3px solid #f56a6a;
+  background-color: #5bc995;
+  border:3px solid #5bc995;
   color: white;
 }
 
@@ -716,6 +726,10 @@ ul.shop_price_wrapper li {
   bottom:-2px;
   left:0;
   content: '';
+}
+
+.shoes_icons {
+  margin-left: 1.2em;
 }
 
 /*------------------------------
@@ -758,13 +772,13 @@ ul.shop_price_wrapper li {
 
 .grids > .grid-item > .shop_sale_percentage {
   position: absolute;
-  border: 1px solid #f56a6a;
+  border: 1px solid #5bc995;
   border-radius: 0.5em;
-  background-color: #f56a6a;
+  background-color: #5bc995;
   color: white;
   width: 65px;
   height: 20px;
-  top: 2em;
+  top: 0em;
   text-align: center;
 }
 .grids > .grid-item > .shop_sale_percentage > .percentage_p {
@@ -796,7 +810,7 @@ ul.shop_price_wrapper li {
   .grids > .grid-item > .shop_sale_percentage {
     width: 65px;
     height: 20px;
-    top: 2em;
+    top: 0em;
   }
   .grids > .grid-item > .shop_sale_percentage > .percentage_p {
     padding-top: 0em;
@@ -853,7 +867,7 @@ ul.shop_price_wrapper li {
 }
 
 .product--title {
-  color: #008080;
+  color: #5bc995;
   font-weight: bold;
   font-size: 1.5em;
   font-family: serif;
@@ -929,6 +943,9 @@ ul.shop_price_wrapper li {
 .show_home {
   margin-left: 1em;
 }
+.show_home a {
+  color: #5bc995;
+}
 
 @media screen and (max-width: 500px) {
   .product--image, .product--details {
@@ -937,7 +954,6 @@ ul.shop_price_wrapper li {
     padding: 10px 5px;
     /*margin: 5px 10px;*/
   }
-  
   .random_shoe {
     float: none;
     width: 100%;
@@ -956,7 +972,7 @@ ul.shop_price_wrapper li {
     width: 65px;
     height: 20px;
     top: 3em;
-    margin-top: -1em;
+    margin-top: -3em;
   }
   .grids > .grid-item > .shop_sale_percentage > .percentage_p {
     padding-top: 0em;
@@ -1000,3 +1016,11 @@ and (max-width : 1024px) {
     margin-top: 1em;
   }
 }
+
+
+.shoes_sidebar {
+  background-color: #5bc995;
+}
+
+
+

@@ -4,11 +4,8 @@
     <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-      <h2 class="hotdeals_h2">Hi, Everyone :D</h2>
-      <p>We have just made your life easier. We offer a quick way to find the best deals.</p>
-
-      <p>Oh,igottabuythis is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to <a href="http://amzn.to/2G5rCxK">Amazon.com,<a/> <a href="http://amzn.to/2pwYBEN">Amazon.ca,</a> 
-      <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> and affiliated sites.</p>
+<!--       <h2 class="hotdeals_h2">Hi, Everyone :D</h2>
+      <p>We have just made your life easier. We offer a quick way to find the best deals.</p> -->
     
       <section>
         
@@ -25,22 +22,22 @@
             
             <a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="<%= ecommerce.title %>"/></a>
             <p class="sources"><%= ecommerce.sources %></p>
-            <h3><%= ecommerce.title %></h3>
+            <h3 class="gadgets_title"><%= ecommerce.title %></h3>
             <p><%= ecommerce.intro %></p>
             
             <% total = 0 %>
             <% discount  = 0 %>
             <div class="price">
               <div class="price_h3">
-               <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
+               <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
               </div>
             </div>&emsp;
             <div class="price">
               <div class="price_h3">
-               <h3 class="price_after"><%= number_to_currency ecommerce.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+               <h3 class="price_before"><%= number_to_currency ecommerce.price_before, unit: "$", seperator: "", delimiter: "" %></h3>
               </div>
             </div>
-            
+
             <% total += ecommerce.price_before - ecommerce.price_after %>
             <% discount += total.to_f / ecommerce.price_before * 100  %>
             <% if ecommerce.price_before? %>
@@ -66,5 +63,5 @@
     </div>
     <%= render 'shared/footer' %>
   </div>
-  <%= render 'shared/sidebar' %>  
+  <%= render 'shared/sidebar_gadgets' %>  
 </div>
