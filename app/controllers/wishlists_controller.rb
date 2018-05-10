@@ -27,17 +27,7 @@ class WishlistsController < ApplicationController
     
     def show
       @ecommerces = current_user.wishlist.ecommerces
-      @show = Ecommerce.all
-      @sidebanner_01 = @show.sample
-      @sidebanner_02 = @show.sample
-      @sidebanner_03 = @show.sample
-      @sidebanner_04 = @show.sample
-      @sidebanner_05 = @show.sample
-      @sidebanner_06 = @show.sample
-      @sidebanner_07 = @show.sample
-      @sidebanner_08 = @show.sample
-      @sidebanner_09 = @show.sample
-      @sidebanner_10 = @show.sample
+      @random_gadgets = Ecommerce.all.sample(9)
     end
     
     def destroy

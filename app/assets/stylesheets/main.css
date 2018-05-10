@@ -3225,7 +3225,7 @@
 /* Youtube Video Section */	
     .detail_border {
     	border: 1px solid black;
-    	margin-top: 7em;
+    	margin-top: 0em;
     }
 
     .detail_border_down {
@@ -3250,7 +3250,7 @@
 		  font-size: 2em;
 		  color: #f56a6a;
 		  border: 1px solid #f56a6a;
-		  background-color: black;
+      border-radius: 0.5em;
 		}
 		
 		.video-wrapper_left {
@@ -4293,7 +4293,7 @@
   
   #banner .content .yousave {
   	font-size: 2em;
-    margin-top: -1.1em;
+    margin: -1.5em 0 1.5em 0;
     color: #f56a6a;
   }
   
@@ -4779,6 +4779,16 @@
 .back_gadgets {
   border: none;
   font-size: 1em;
+}
+
+.detail_title {
+  font-size: 2.5em;
+}
+
+@media screen and (min-width: 1024px) {
+  .actions_country {
+    margin-bottom: 6em;
+  }
 }
 
 

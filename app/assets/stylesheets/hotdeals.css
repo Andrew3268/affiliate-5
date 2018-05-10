@@ -692,7 +692,7 @@ ul.shop_price_wrapper li {
 }
 
 .ui-group{
-  border-bottom: 2px solid #5bc995;
+  /*border-bottom: 2px solid #5bc995;*/
   margin-bottom: 2em;
 }
 .ui-group button {
@@ -702,7 +702,7 @@ ul.shop_price_wrapper li {
   margin-bottom:10px;
   background-color: white;
   padding: 0.5em;
-  border: 2px solid #5bc995;
+  /*border: 2px solid #5bc995;*/
   border-radius: 0.5em;
   color: #252525;
 }
@@ -947,6 +947,10 @@ ul.shop_price_wrapper li {
   color: #5bc995;
 }
 
+.shoes_sidebar {
+  background-color: #5bc995;
+}
+
 @media screen and (max-width: 500px) {
   .product--image, .product--details {
     float: none;
@@ -1018,9 +1022,7 @@ and (max-width : 1024px) {
 }
 
 
-.shoes_sidebar {
-  background-color: #5bc995;
-}
+
 
 
 

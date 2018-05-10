@@ -11,12 +11,24 @@
             <img src="<%= @shoe.main_img %>" class="display-img">
             <p>Source : <%= @shoe.option_03 %></p>
             <div class="icon-images">
-              <img src="<%= @shoe.sub_img_01 %>"/>
-              <img src="<%= @shoe.sub_img_02 %>"/>
-              <img src="<%= @shoe.sub_img_03 %>"/>
-              <img src="<%= @shoe.sub_img_04 %>"/>
-              <img src="<%= @shoe.sub_img_05 %>"/>
+              <% if @shoe.sub_img_01.present? %>
+               <img src="<%= @shoe.sub_img_01 %>"/>
+              <% end %>
+              <% if @shoe.sub_img_02.present? %>
+               <img src="<%= @shoe.sub_img_02 %>"/>
+              <% end %>
+              <% if @shoe.sub_img_03.present? %>
+               <img src="<%= @shoe.sub_img_03 %>"/>
+              <% end %>
+              <% if @shoe.sub_img_04.present? %>
+               <img src="<%= @shoe.sub_img_04 %>"/>
+              <% end %>
+              <% if @shoe.sub_img_05.present? %>
+               <img src="<%= @shoe.sub_img_05 %>"/>
+              <% end %>
+             <% if @shoe.sub_img_06.present? %>
               <img src="<%= @shoe.sub_img_06 %>"/>
+             <% end %>
             </div>
           </div>
 
