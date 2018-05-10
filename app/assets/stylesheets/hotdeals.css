@@ -993,6 +993,9 @@ ul.shop_price_wrapper li {
 @media only screen
 and (min-width : 501px)  
 and (max-width : 1024px) {
+  .content {
+    top: -1em;
+  }
   .product--image, .product--details {
     width: 50%;
     margin-bottom: 2em;
