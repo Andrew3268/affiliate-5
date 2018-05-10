@@ -4262,11 +4262,6 @@
 		margin-bottom: -0.1em;
 	}
 
-	#banner .content .actions .cart-size {
-		font-size: 4em;
-		border-bottom: none;
-	}	
-			
 	#banner .content .container_video	{
 		margin-top: 2em;
 	}	
@@ -4284,8 +4279,9 @@
   }	
   
   #banner .content .banner_price {
-  	font-size: 1.7em;
+  	font-size: 3em;
   	margin-top: -2em;
+    margin-bottom: -1em;
   }
   	
   #banner .content .banner_price_before {
@@ -4301,9 +4297,9 @@
     color: #f56a6a;
   }
   
-  
   #banner .content .price {
-  	display: flex;
+  	display: inline-block;
+
   }
   
   #banner .content .price .price_p2 {
@@ -4388,9 +4384,6 @@
     }
 }
 
-
-  
-  
   /* For Message Section */
   #banner .content .message_header h2 {
   	color: #f56a6a;
@@ -4400,9 +4393,7 @@
    	color: #f56a6a;
    }
    /* End Message Section */
-  	
   
-
 		@media screen and (orientation: portrait) {
 
 			#banner {
@@ -4477,8 +4468,6 @@
 		   	#main .inner .detail_body {
 		   		width: 100%;
 		   	}
-		   	
-
 }
 
 		@media screen and (orientation: portrait) and (max-width: 480px) {
@@ -4763,7 +4752,34 @@
   padding: 1em;
 }
 
+.actions_detail {
+  margin-top: -2em;
+  margin-left: -0.5em;
+}
 
+.actions_detail li {
+  display: inline-block;
+}
+
+.actions_country li {
+  display: inline-block;
+}
+
+.actions_detail a {
+  font-size: 1.5em;
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+}
+
+.actions_detail .cart-size {
+   font-size: 1.5em;
+}
+
+.back_gadgets {
+  border: none;
+  font-size: 1em;
+}
 
 
 

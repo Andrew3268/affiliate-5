@@ -5,10 +5,10 @@
 				<!-- Header -->
 					<%= render 'shared/header' %>
 				  <% if flash[:message] %>	
-					   <div class="flash_message">
-		          <h2 class="flash_message_h2">"<%= @details.title %>"  <%=flash[:message] %></h2>
-		          <button><%= link_to "View Your WishList", wishlist_show_path, class: "flash_message_button" %></button>
-		         </div>
+				   <div class="flash_message">
+	          <h2 class="flash_message_h2">"<%= @details.title %>"  <%=flash[:message] %></h2>
+	          <button><%= link_to "View Your WishList", wishlist_show_path, class: "flash_message_button" %></button>
+	         </div>
 	        <% end %>
 					<div class="check_page">
 					  <h2> Detail For <span><%= @details.title %></span></h2>
@@ -16,6 +16,7 @@
 				<!-- Banner -->
 					<section id="banner">
             <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 						<div class="content">
 							
 							<header>
@@ -31,34 +32,30 @@
               <% discount = 0 %>
               <div class="price">
                 <div class="price_h3">
-                 <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-                </div>
-                <div class="price_p">
-                  <p>Original Price</p>
+                 <h3 class="banner_price"><%= number_to_currency @details.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
                 </div>
               </div>
               <div class="price">
                 <div class="price_h3">
-						     <h3 class="banner_price"><%= number_to_currency @details.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
-						    </div>
-						    <div class="price_p2">
-						      <p>Offer Price</p>
-						    </div>
-						 	</div>
+                 <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+                </div>
+              </div>
+            
 						 	<% total += @details.price_before - @details.price_after %>
 						 	<% discount += total.to_f / @details.price_before * 100  %>
   						<% if @details.price_before? %>
   							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
   					  <% end %>
 			
-							<ul class="actions">
-								<li><a href="<%= @details.site_link %>" class="button big" target="_blank">Buy Now</a></li>
-								<li><%= link_to '', add_wishlist_path(@details), class: "fa fa-cart-arrow-down cart-size", method: :post %></li>
+							<ul class="actions_detail">
+								<li><a href="<%= @details.site_link %>" target="_blank">Buy Now</a></li>
+								<li><%= link_to 'Save', add_wishlist_path(@details), method: :post %></li>
 								<!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
+                <!-- <li class="back_gadgets"><%= link_to 'See more...', gadgets_path %></li> -->
 							</ul>
 
               <h2>Available Country</h2>
-							<ul class="actions">
+							<ul class="actions_country">
 								<li><a href="<%= @details.site_link %>" target="_blank"><img src="https://i.pinimg.com/564x/52/79/ff/5279ff45deede033323f5af4d8a9a722.jpg" width="80" height="50"></a></li>
 								<% if @details.site_link_uk.present? %>
 								 <li><a href="<%= @details.site_link_uk %>" target="_blank"><img src="https://i.pinimg.com/564x/13/b9/23/13b9230dff6ecd482d238f31454680f8.jpg" width="80" height="50"></a></li>
@@ -69,7 +66,7 @@
 								<% if @details.site_link_jp.present? %>
 								 <li><a href="<%= @details.site_link_jp %>" class="button_sitelink" target="_blank">JAPAN<img src="https://i.pinimg.com/236x/c1/4c/74/c14c7494e445daa8dd19b42db616083a.jpg" width="80" height="50"></a></li>
 							  <% end %>
-							</ul></br></br></br>
+							</ul>
 
 
 						</div>
