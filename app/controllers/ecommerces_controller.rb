@@ -1,6 +1,7 @@
 class EcommercesController < ApplicationController
   
   before_action :authenticate_user!, only:[:create, :upload]
+  load_and_authorize_resource
 
   def gadgets
     @ecommerces = Ecommerce.all
@@ -52,10 +53,10 @@ class EcommercesController < ApplicationController
   def upload
     @categories = Category.all.map{ |c| [c.name, c.id] }
     @pcategories = Pcategory.all.map{ |pc| [pc.name, pc.id] }
-    if user_signed_in? and current_user.admin == false
-      flash[:warning] = 'Only admin can access.'
-      redirect_to '/'
-    end
+    # if user_signed_in? and current_user.admin == false
+    #   flash[:warning] = 'Only admin can access.'
+    #   redirect_to '/'
+    # end
   end
 
   def edit
@@ -126,7 +127,7 @@ class EcommercesController < ApplicationController
     up.category_id = params[:category_id]
     up.pcategory_id = params[:pcategory_id]
     up.save    
-    redirect_to '/'
+    redirect_to '/ecommerces/gadgets'
   end
   
 end

@@ -1,8 +1,13 @@
 <%= simple_form_for @shoe do |f| %>
+ <p class="form_p">Option_01</p>
  <%= f.select :option_01, options_for_select([["Category", ""], "Men", "Women"])%></br>
+ <p class="form_p">Option_02</p>
  <%= f.select :option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%></br>
+ <p class="form_p">Option_03</p>
  <%= f.select :option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%></br>
+ <p class="form_p">Option_04</p>
  <%= f.select :option_04, options_for_select([["Price", ""], "lee_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%></br>
+ <p class="form_p">Option_05</p>
  <%= f.select :option_05, options_for_select([["Sale", ""], "sale_20", "sale_50", "sale_70","sale_80","sale_90"])%></br>
  <%= f.input :title %>
  <%= f.input :link %>
@@ -20,5 +25,5 @@
  <%= f.input :sale %>
  </br>
  <%= f.button :submit %>
- <%= link_to "Back", root_path %>
+ <%= link_to "Back", shoes_path(@shoe) %>
 <% end %>

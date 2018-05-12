@@ -48,10 +48,6 @@
             <ul class="actions">
               <li><a href="<%= ecommerce.site_link %>" target="_blank" class="button">Buy Now</a></li>
               <li><a href="/ecommerces/detail/<%= ecommerce.id %>" class="button">View Detail</a></li>
-              <% if user_signed_in? and current_user.admin == true %> 
-                <li><a href="/ecommerces/edit/<%= ecommerce.id %>">Edit</a></li>
-                <li><a href="/ecommerces/destroy/<%= ecommerce.id %>">Delete</a></li>
-              <% end %>
             </ul>
             
           </article>

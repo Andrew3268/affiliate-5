@@ -20,16 +20,19 @@ Rails.application.routes.draw do
   
   post '/ecommerces/category_price', to: 'ecommerces#category_price', as: 'category_price'
   post '/ecommerces/pcategory_product', to: 'ecommerces#pcategory_product', as: 'pcategory_product'
-  
+  post '/ecommerces/gadgets', to: 'ecommerces#gadgets', as: 'gadgets'
+  post '/ecommerces/upload', to: 'ecommerecs#upload', as: 'upload'
+
   post '/message/contact_us', to: 'message#contact_us', as: 'contact_us'
   post '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
+  
   post '/hotdeals/promotion', to: 'hotdeals#promotion', as: 'promotion'
   post '/hotdeals/coupons', to: 'hotdeals#coupons', as: 'coupons'
   post '/hotdeals/discount_codes', to: 'hotdeals#discount_codes', as: 'discount_codes'
-  post '/ecommerces/gadgets', to: 'ecommerces#gadgets', as: 'gadgets'
-  post '/blogs/blogs_home', to: 'blogs#blogs_home', as: 'blogs_home'
   post '/hotdeals/hotdeals_men', to: 'hotdeals#hotdeals_men', as: 'hotdeals_men'
   post '/hotdeals/hotdeals_women', to: 'hotdeals#hotdeals_women', as: 'hotdeals_women'
+
+  post '/blogs/blogs_home', to: 'blogs#blogs_home', as: 'blogs_home'
   
   # get '/ecommerces/:ecommerce_id/destroy' => 'ecommerecs#destroy'
   # get 'ecommerces/:ecommerce_id/edit' => 'ecommerces#edit'

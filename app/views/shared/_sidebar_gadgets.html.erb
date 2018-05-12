@@ -66,7 +66,7 @@
     			</ul>
       	</li>
       	
-    		<% if user_signed_in? and current_user.admin == true %> 
+    		<% if can? :manage, @ecommerces %>
     			<li><a href="/ecommerces/upload">Upload</a></li>
     			<li><a href="/rails/db">Management</a></li>
     			<li><a href="/message/message_board">Message Board</a></li>

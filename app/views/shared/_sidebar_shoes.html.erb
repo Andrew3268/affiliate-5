@@ -11,9 +11,9 @@
             <li class="login"><%= link_to "Log in", new_user_session_path %></li>
             <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
           <% end %>
-          <% if can? :create, @shoe %>
+          <% if can? :manage, @shoe %>
              <li><%= link_to "Add New Shoes", new_shoe_path(@shoe) %></li>
-            <% end %>
+          <% end %>
         </ul>
 
         <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">

@@ -54,6 +54,7 @@ Go Up Button
   z-index: 99;
   font-size: 1em;
   border: 1px solid #f56a6a;
+  background-color: white;
   outline: none;
   color: #f56a6a;
   cursor: pointer;
@@ -394,9 +395,6 @@ img {
 }
 
 .card__image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-top-left-radius: 0.1em;
   border-top-right-radius: 0.1em;
   overflow: hidden;
@@ -405,9 +403,32 @@ img {
   max-height: 15em;
 }
 
+.card__image_code {
+  border-top-left-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+  overflow: hidden;
+  position: relative;
+  max-width: 28em;
+  max-height: 20em;
+}
+
 .card__image img {
   width:100%;
   height:100%;
+}
+
+.code_sale {
+  position: absolute;
+  border: 1px solid #b299e5;
+  background-color: #b299e5;
+  border-radius: 0.5em;
+  padding: 0.3em 0.5em;
+  margin: 0.6em;
+}
+
+.code_p {
+  margin-bottom: 0em;
+  color: white;
 }
 
 .card__image::before {
@@ -455,7 +476,7 @@ img {
   margin-bottom: -0.4em;
 }
 
-.gadgets_intro {
+.gadgets_intro, .card__title {
   overflow: hidden; 
   text-overflow: ellipsis; 
   display: -webkit-box;
@@ -466,6 +487,30 @@ img {
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
   word-wrap:break-word;
+}
+
+.discount_codes {
+  margin-top: 1em;
+  border: 3px dotted #b299e5;
+  border-radius: 0.5em;
+  padding: 0.7em;
+  font-size: 1.5em;
+  color: #b299e5;
+}
+
+.code_date {
+  margin: 0 0 0 0.5em;
+}
+
+.discount_botton a {
+  color: white;
+}
+
+.use_code {
+ margin-bottom: 0.5em; 
+ border-radius: 0.3em;
+ padding: 0.5em 0;
+ background-color: #b299e5;
 }
 
 
