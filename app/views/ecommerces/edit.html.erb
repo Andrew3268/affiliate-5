@@ -7,58 +7,65 @@
         <label>Product Title</label>
         <input type="text" class="input-form" name="new_title" placeholder="Product Title" value="<%= @adjust.title %>">
       </div>
-      <div class="form">
-        <label>Image_main</label>
-        <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url" value="<%= @adjust.image_main %>">
+      <div class="upload_image">
+        <div class="form">
+          <label>Image_main</label>
+          <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url" value="<%= @adjust.image_main %>">
+        </div>
+        <div class="form">
+          <label>Image_01</label>
+          <input type="text" class="input-form" name="new_image_01" placeholder="Image_01 url" value="<%= @adjust.image_01 %>">
+        </div>
+        <div class="form">
+          <label>Image_02</label>
+          <input type="text" class="input-form" name="new_image_02" placeholder="Image_02 url" value="<%= @adjust.image_02 %>">
+        </div>
+        <div class="form">
+          <label>Image_03</label>
+          <input type="text" class="input-form" name="new_image_03" placeholder="Image_03 url" value="<%= @adjust.image_03 %>">
+        </div>
+        <div class="form">
+          <label>Image_04</label>
+          <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url" value="<%= @adjust.image_04 %>">
+        </div>
+        <div class="form">
+          <label>Image_05</label>
+          <input type="text" class="input-form" name="new_image_05" placeholder="Image_05 url" value="<%= @adjust.image_05 %>">
+        </div>
+        <div class="form">
+          <label>Image_06</label>
+          <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url" value="<%= @adjust.image_06 %>">
+        </div>
       </div>
-      <div class="form">
-        <label>Image_01</label>
-        <input type="text" class="input-form" name="new_image_01" placeholder="Image_01 url" value="<%= @adjust.image_01 %>">
-      </div>
-      <div class="form">
-        <label>Image_02</label>
-        <input type="text" class="input-form" name="new_image_02" placeholder="Image_02 url" value="<%= @adjust.image_02 %>">
-      </div>
-      <div class="form">
-        <label>Image_03</label>
-        <input type="text" class="input-form" name="new_image_03" placeholder="Image_03 url" value="<%= @adjust.image_03 %>">
-      </div>
-      <div class="form">
-        <label>Image_04</label>
-        <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url" value="<%= @adjust.image_04 %>">
-      </div>
-      <div class="form">
-        <label>Image_05</label>
-        <input type="text" class="input-form" name="new_image_05" placeholder="Image_05 url" value="<%= @adjust.image_05 %>">
-      </div>
-      <div class="form">
-        <label>Image_06</label>
-        <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url" value="<%= @adjust.image_06 %>">
-      </div>
+
       <div class="form">
         <label>Sources</label>
         <input type="text" class="input-form" name="new_sources" placeholder="Source Site" value="<%= @adjust.sources %>">
       </div>
-      <div class="form">
-        <label>Site Link</label>
-        <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url" value="<%= @adjust.site_link %>">
-        <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+
+      <div class="upload_links">
+        <div class="form">
+          <label>Site Link</label>
+          <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url" value="<%= @adjust.site_link %>">
+          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+        </div>
+        <div class="form">
+          <label>Site Link_UK</label>
+          <input type="text" class="input-form" name="new_site_link_uk" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_uk %>">
+          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+        </div>
+        <div class="form">
+          <label>Site Link_CANADA</label>
+          <input type="text" class="input-form" name="new_site_link_ca" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_ca %>">
+          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+        </div>
+        <div class="form">
+          <label>Site Link_JAPAN</label>
+          <input type="text" class="input-form" name="new_site_link_jp" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_jp %>">
+          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+        </div>
       </div>
-      <div class="form">
-        <label>Site Link_UK</label>
-        <input type="text" class="input-form" name="new_site_link_uk" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_uk %>">
-        <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
-      </div>
-      <div class="form">
-        <label>Site Link_CANADA</label>
-        <input type="text" class="input-form" name="new_site_link_ca" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_ca %>">
-        <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
-      </div>
-      <div class="form">
-        <label>Site Link_JAPAN</label>
-        <input type="text" class="input-form" name="new_site_link_jp" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_jp %>">
-        <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
-      </div>
+
       <div class="form">
         <label>Youtube_01</label>
         <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url" value="<%= @adjust.youtube_link_01 %>">
@@ -66,7 +73,6 @@
       <div class="form">
         <label>Youtube_02</label>
         <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url" value="<%= @adjust.youtube_link_02 %>">
-        <a href="https://www.youtube.com" target="_black">Get Link</a>
       </div>
       <div class="form">
         <label>Price_before</label>
@@ -104,46 +110,49 @@
         <label>Description_05</label>
         <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"><%= @adjust.description_05 %></textarea>
       </div>
-
-     
-     <div class="form"></br>
-        <label>Postive How_Mnay People</label>
-        <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?" value="<%= @adjust.postive_howmany %>">
+ 
+     <div class="postive_review">    
+       <div class="form"></br>
+          <label>Postive How_Mnay People</label>
+          <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?" value="<%= @adjust.postive_howmany %>">
+        </div>
+        <div class="form">
+          <label>Postive Review</label>
+          <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"><%= @adjust.postive_review %></textarea>
+        </div>
+        <div class="form"></br>
+          <label>Postive Review_by</label>
+          <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by" value="<%= @adjust.postive_review_link %>">
+        </div>
+        <div class="form"></br>
+          <label>Postive Review_link</label>
+          <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link"  value="<%= @adjust.postive_review_by %>">
+        </div>
       </div>
-      <div class="form">
-        <label>Postive Review</label>
-        <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"><%= @adjust.postive_review %></textarea>
-      </div>
-      <div class="form"></br>
-        <label>Postive Review_by</label>
-        <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by" value="<%= @adjust.postive_review_link %>">
-      </div>
-      <div class="form"></br>
-        <label>Postive Review_link</label>
-        <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link"  value="<%= @adjust.postive_review_by %>">
-      </div>
-
-      <div class="form"></br>
-        <label>Critical How_Mnay People</label>
-        <input type="text" class="input-form" name="new_critical_howmany" placeholder="Critical How Many People?" value="<%= @adjust.critical_howmany %>">
-      </div>
-      <div class="form">
-        <label>Critical Review</label>
-        <textarea type="text" class="input-form" name="new_critical_review" rows="5" placeholder="Critical Review"><%= @adjust.critical_review %></textarea>
-      </div>
-      <div class="form"></br>
-        <label>Critical Review_by</label>
-        <input type="text" class="input-form" name="new_critical_review_by" placeholder="Critical Review_by" value="<%= @adjust.critical_review_by %>">
-      </div>
-      <div class="form"></br>
-        <label>Critical Review_link</label>
-        <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link" value="<%= @adjust.critical_review_link %>">
+      
+      <div class="postive_review">
+        <div class="form"></br>
+          <label>Critical How_Mnay People</label>
+          <input type="text" class="input-form" name="new_critical_howmany" placeholder="Critical How Many People?" value="<%= @adjust.critical_howmany %>">
+        </div>
+        <div class="form">
+          <label>Critical Review</label>
+          <textarea type="text" class="input-form" name="new_critical_review" rows="5" placeholder="Critical Review"><%= @adjust.critical_review %></textarea>
+        </div>
+        <div class="form"></br>
+          <label>Critical Review_by</label>
+          <input type="text" class="input-form" name="new_critical_review_by" placeholder="Critical Review_by" value="<%= @adjust.critical_review_by %>">
+        </div>
+        <div class="form"></br>
+          <label>Critical Review_link</label>
+          <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link" value="<%= @adjust.critical_review_link %>">
+        </div>
       </div>
 
 
 
       <button class="button" type="submit">Update</button>
-      <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", gadgets_path %>
     <% end %>
   </div>
 </div>

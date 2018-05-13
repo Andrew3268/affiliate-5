@@ -5,10 +5,6 @@
     margin: 0 auto;
 }
 
-.upload_wrapper .upload_section {
-   
-}
-
 .upload_wrapper .upload_section .form input[type=text] {
     width: 100%;
     padding: 12px 20px;
@@ -51,4 +47,10 @@
 
 .upload_wrapper .upload_section label {
     margin-bottom: -0.5em;
+}
+
+.upload_image, .postive_review, .critical_review, .upload_links {
+  border: 2px solid;
+  padding: 1em;
+  margin: 1em 0;
 }
