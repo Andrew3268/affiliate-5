@@ -1,11 +1,11 @@
 class EcommercesController < ApplicationController
   
   before_action :authenticate_user!, only:[:create, :upload]
-  load_and_authorize_resource
+
 
   def gadgets
     @ecommerces = Ecommerce.all
-    @ecommerces = Ecommerce.order("created_at DESC").page(params[:page]).per(20)
+    @ecommerces = Ecommerce.order("created_at DESC").page(params[:page]).per(21)
     @random_gadgets = Ecommerce.all.sample(9)
   end
   
@@ -23,7 +23,7 @@ class EcommercesController < ApplicationController
   def search
     @search = Ecommerce.all
     if params[:search]
-      @search = Ecommerce.search(params[:search]).order("created_at DESC")
+      @search = Ecommerce.search(params[:search]).order("created_at DESC").page(params[:page]).per(21)
     else
       @search = Ecommerce.all.order('created_at DESC')
     end
@@ -35,7 +35,7 @@ class EcommercesController < ApplicationController
      @ecommerces = Ecommerce.all
     else
      @category_id = Category.find_by(name: params[:category]).id
-     @ecommerces = Ecommerce.where(:category_id => @category_id).order("created_at DESC")
+     @ecommerces = Ecommerce.where(:category_id => @category_id).order("created_at DESC").page(params[:page]).per(21)
     end
      @random_gadgets = Ecommerce.all.sample(9)
   end
@@ -45,7 +45,7 @@ class EcommercesController < ApplicationController
      @ecommerces = Ecommerce.all
     else
      @pcategory_id = Pcategory.find_by(name: params[:pcategory]).id
-     @ecommerces = Ecommerce.where(:pcategory_id => @pcategory_id).order("created_at DESC")
+     @ecommerces = Ecommerce.where(:pcategory_id => @pcategory_id).order("created_at DESC").page(params[:page]).per(21)
     end
      @random_gadgets = Ecommerce.all.sample(9)
   end
@@ -78,6 +78,8 @@ class EcommercesController < ApplicationController
     uptodate.image_02 = params[:new_image_02]
     uptodate.image_03 = params[:new_image_03]
     uptodate.image_04 = params[:new_image_04]
+    uptodate.image_05 = params[:new_image_05]
+    uptodate.image_06 = params[:new_image_06]
     uptodate.sources = params[:new_sources]
     uptodate.intro = params[:new_intro]
     uptodate.price_before = params[:new_price_before]
@@ -96,6 +98,14 @@ class EcommercesController < ApplicationController
     uptodate.youtube_link_02 = params[:new_youtube_link_02]
     uptodate.category_id = params[:category_id]
     uptodate.pcategory_id = params[:pcategory_id]
+    uptodate.postive_review = params[:new_postive_review]
+    uptodate.critical_review = params[:new_critical_review]
+    uptodate.postive_howmany = params[:new_postive_howmany]
+    uptodate.critical_howmany = params[:new_critical_howmany]
+    uptodate.postive_review_link = params[:new_postive_review_link]
+    uptodate.critical_review_link = params[:new_critical_review_link]
+    uptodate.postive_review_by = params[:new_postive_review_by]
+    uptodate.critical_review_by = params[:new_critical_review_by]
     uptodate.save   
     redirect_to '/'
   end
@@ -108,6 +118,8 @@ class EcommercesController < ApplicationController
     up.image_02 = params[:new_image_02]
     up.image_03 = params[:new_image_03]
     up.image_04 = params[:new_image_04]
+    up.image_05 = params[:new_image_05]
+    up.image_06 = params[:new_image_06]
     up.intro = params[:new_intro]
     up.sources = params[:new_sources]
     up.price_before = params[:new_price_before]

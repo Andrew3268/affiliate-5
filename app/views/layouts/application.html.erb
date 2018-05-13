@@ -190,11 +190,6 @@
       });
     </script>
 
-    <!-- 왼쪽 사이드 탭 위젯-->
-   <!--  <script>
-    jQuery(document).ready(function($){ $(".multitab-widget-content-widget-id").hide(); $("ul.multitab-widget-content-tabs-id li:first a").addClass("multitab-widget-current").show(); $(".multitab-widget-content-widget-id:first").show(); $("ul.multitab-widget-content-tabs-id li a").click(function() { $("ul.multitab-widget-content-tabs-id li a").removeClass("multitab-widget-current a"); $(this).addClass("multitab-widget-current"); $(".multitab-widget-content-widget-id").hide(); var activeTab = $(this).attr("href"); $(activeTab).fadeIn(); return false; }); });
-    </script> -->
-
     <!-- for youtubu -->
     <script>
         // video overlayer: start
@@ -298,35 +293,52 @@
     });
    </script>
 
-  <!-- For Details Image-->
+  
+<!-- For Detail images -->
   <script>
-    function handler(e) {
-      e.preventDefault();
-      largeimage.setAttribute("src", this.getAttribute("href"));
-      largeimage.setAttribute("alt", this.querySelector("img").getAttribute("alt"));
-      largeimage.animate([
-        { opacity: '0'},
-        { opacity: '1'}
-      ], {
-        duration: 500
-      });
-    }
+    $(function() {
 
-    var jgallery = document.getElementById("javascript-gallery"),
-    largeimagecontainer = document.getElementById("fullimagecontainer"),
-    links = jgallery.getElementsByTagName('a'),
-    largeimage = document.createElement("img");
+      var img_bg_overlay   = $('#img_bg_overlay'),
+          img_close_cta    = $('#img_close_cta'),
+          modal_image      = $('#modal_image'),
+          previous_img_cta = $('#previous_img_cta'),
+          next_img_cta     = $('#next_img_cta')
 
-    largeimage.setAttribute("id", "fullimage");
-    largeimagecontainer.appendChild(largeimage);
+      function open_img_modal() {
+        let img_src = $(this).attr('src')
+        img_bg_overlay.fadeIn(250)
+        modal_image.attr('src', img_src).addClass('is_visible')
+        img_close_cta.addClass('is_visible')
+        previous_img_cta.addClass('is_visible')
+        next_img_cta.addClass('is_visible')
+      }
 
-    for (var i=0; i<links.length; i++) {
-      links[i].onclick = handler;
-    }
+      function close_img_modal() {
+        img_bg_overlay.fadeOut(250)
+        modal_image.removeClass('is_visible')
+        img_close_cta.removeClass('is_visible')
+        previous_img_cta.removeClass('is_visible')
+        next_img_cta.removeClass('is_visible')
+      }
 
-    links[0].focus();
-    links[0].click();
+      function previous_gallery_img() {
+        let current_img = $('img[src="'+ modal_image.attr('src') +'"]')
+        if (current_img != undefined)
+          modal_image.attr('src', current_img.prev().attr('src'))
+      }
 
+      function next_gallery_img() {
+        let current_img = $('img[src="'+ modal_image.attr('src') +'"]')
+        if (current_img != undefined)
+          modal_image.attr('src', current_img.next().attr('src'))
+      }
+
+      $('.css_grid_gallery img').click(open_img_modal)
+      img_bg_overlay.click(close_img_modal)
+      img_close_cta.click(close_img_modal)
+      previous_img_cta.click(previous_gallery_img)      
+      next_img_cta.click(next_gallery_img)
+    })
   </script>
 
  </body>

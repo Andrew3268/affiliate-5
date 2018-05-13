@@ -28,6 +28,14 @@
         <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url" value="<%= @adjust.image_04 %>">
       </div>
       <div class="form">
+        <label>Image_05</label>
+        <input type="text" class="input-form" name="new_image_05" placeholder="Image_05 url" value="<%= @adjust.image_05 %>">
+      </div>
+      <div class="form">
+        <label>Image_06</label>
+        <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url" value="<%= @adjust.image_06 %>">
+      </div>
+      <div class="form">
         <label>Sources</label>
         <input type="text" class="input-form" name="new_sources" placeholder="Source Site" value="<%= @adjust.sources %>">
       </div>
@@ -96,6 +104,44 @@
         <label>Description_05</label>
         <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"><%= @adjust.description_05 %></textarea>
       </div>
+
+     
+     <div class="form"></br>
+        <label>Postive How_Mnay People</label>
+        <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?" value="<%= @adjust.postive_howmany %>">
+      </div>
+      <div class="form">
+        <label>Postive Review</label>
+        <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"><%= @adjust.postive_review %></textarea>
+      </div>
+      <div class="form"></br>
+        <label>Postive Review_by</label>
+        <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by" value="<%= @adjust.postive_review_link %>">
+      </div>
+      <div class="form"></br>
+        <label>Postive Review_link</label>
+        <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link"  value="<%= @adjust.postive_review_by %>">
+      </div>
+
+      <div class="form"></br>
+        <label>Critical How_Mnay People</label>
+        <input type="text" class="input-form" name="new_critical_howmany" placeholder="Critical How Many People?" value="<%= @adjust.critical_howmany %>">
+      </div>
+      <div class="form">
+        <label>Critical Review</label>
+        <textarea type="text" class="input-form" name="new_critical_review" rows="5" placeholder="Critical Review"><%= @adjust.critical_review %></textarea>
+      </div>
+      <div class="form"></br>
+        <label>Critical Review_by</label>
+        <input type="text" class="input-form" name="new_critical_review_by" placeholder="Critical Review_by" value="<%= @adjust.critical_review_by %>">
+      </div>
+      <div class="form"></br>
+        <label>Critical Review_link</label>
+        <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link" value="<%= @adjust.critical_review_link %>">
+      </div>
+
+
+
       <button class="button" type="submit">Update</button>
       <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %>
     <% end %>

@@ -8,7 +8,7 @@
       <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Category") %><br />
       <label>Select Product</label></br >
       <%= select_tag(:pcategory_id, options_for_select(@pcategories), :prompt => "Select Product") %>
-      <div class="form">
+      <div class="form"></br>
         <label>Product Title</label>
         <input type="text" class="input-form" name="new_title" placeholder="Product Title">
       </div>
@@ -33,11 +33,19 @@
         <input type="text" class="input-form" name="new_image_04" placeholder="Image_04 url">
       </div>
       <div class="form">
+        <label>Image_05</label>
+        <input type="text" class="input-form" name="new_image_05" placeholder="Image_05 url">
+      </div>
+      <div class="form">
+        <label>Image_06</label>
+        <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url">
+      </div>
+      <div class="form">
         <label>Sources</label>
         <input type="text" class="input-form" name="new_sources" placeholder="Source Site">
       </div>
       <div class="form">
-        <label>Site Link</label>
+        <label>Site Link_USA</label>
         <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url">
         <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
       </div>
@@ -101,6 +109,43 @@
         <label>Description_05</label>
         <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
       </div>
+
+
+      <div class="form"></br>
+        <label>Postive How_Mnay People</label>
+        <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?">
+      </div>
+      <div class="form">
+        <label>Postive Review</label>
+        <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"></textarea>
+      </div>
+      <div class="form"></br>
+        <label>Postive Review_by</label>
+        <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by">
+      </div>
+      <div class="form"></br>
+        <label>Postive Review_link</label>
+        <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link">
+      </div>
+
+      <div class="form"></br>
+        <label>Critical How_Mnay People</label>
+        <input type="text" class="input-form" name="new_critical_howmany" placeholder="Critical How Many People?">
+      </div>
+      <div class="form">
+        <label>Critical Review</label>
+        <textarea type="text" class="input-form" name="new_critical_review" rows="5" placeholder="Critical Review"></textarea>
+      </div>
+      <div class="form"></br>
+        <label>Critical Review_by</label>
+        <input type="text" class="input-form" name="new_critical_review_by" placeholder="Critical Review_by">
+      </div>
+      <div class="form"></br>
+        <label>Critical Review_link</label>
+        <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link">
+      </div>
+
+
       <button class="button" type="submit">Upload</button>
       <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %>
     <% end %>
