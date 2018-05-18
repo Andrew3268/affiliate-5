@@ -48,8 +48,9 @@
 							<ul class="actions_detail">
 								<li><a href="<%= @details.site_link %>" target="_blank">Buy Now</a></li>
 								<li><%= link_to 'Save', add_wishlist_path(@details), method: :post %></li>
-								<!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
+                <!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
                 <!-- <li class="back_gadgets"><%= link_to 'See more...', gadgets_path %></li> -->
+
                 <div class="gadgets_edit">
                   <% if can? :manage, @details %>
                     <li><a href="/ecommerces/edit/<%= @details.id %>">Edit</a></li>
@@ -71,7 +72,8 @@
 								 <li><a href="<%= @details.site_link_jp %>" target="_blank">JAPAN<img src="https://i.pinimg.com/236x/c1/4c/74/c14c7494e445daa8dd19b42db616083a.jpg" width="80" height="50"></a></li>
 							  <% end %>
 							</ul>
-						</div>
+
+						</div><!--/.content-->
 
 						<span class="image object">
 							<img src="<%= @details.image_main %>" alt="" /></br>
@@ -84,11 +86,11 @@
 					<div class="detail_border"></div></br>
 
 	<!--Section -->
-				 <div class="detail_body">
+				<div class="detail_body">
 					<section>
 
 						<div class="video_container">
-							<h1 class="related_text"> Related Videos</h1>
+							<h2 class="related_text"> Related Videos & Images</h2>
 							<div class="video-wrapper_left">
 							  <% if @details.youtube_link_01.present? %>
                  <iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
@@ -105,7 +107,7 @@
 							</div>
 						</div><br/><br/>
 
-            <h1 class="related_text"> Related Images</h1>
+           <div class="detail_gallery">
             <div id="img_bg_overlay"></div>
             <div id="img_close_cta">&times;</div>
             <div id="previous_img_cta"></div>
@@ -122,12 +124,43 @@
               <% if @details.image_04.present? %>
               <img src="<%= @details.image_04 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
               <% end %>
+              <% if @details.image_05.present? %>
+              <img src="<%= @details.image_05 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+              <% end %>
+              <% if @details.image_06.present? %>
+              <img src="<%= @details.image_06 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+              <% end %>
             </div>
             <img id="modal_image" src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
             <div id="next_img_cta"></div>
-					</section>
-						
-						<h1 class="related_text">Descriptions</h1>
+           </div>
+
+					</section></br></br>
+
+            <% if @details.postive_howmany.present? %>
+             <div class="details_review_wrapper">
+              <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
+              <div class="detail_postive_review">
+                <h2>Top Postive Review</h2>        
+                 <p>(as much as over "<%= @details.postive_howmany %>" people found this helpful)</p>
+                 <p class="show_review_content"><%= @details.postive_review %> &nbsp;</br>
+                 <a target="_blank" href="<%= @details.postive_review_link %>">          
+                 By <%= @details.postive_review_by %></a></p>
+              </div>
+            
+              <div class="detail_critical_review">
+                <h2>Top Critical Review</h2>        
+                 <p>(as much as over "<%= @details.critical_howmany %>" people found this helpful)</p>
+                 <p class="show_review_content"><%= @details.critical_review %> &nbsp;</br>
+                 <a target="_blank" href="<%= @details.critical_review_link %>">          
+                 By <%= @details.critical_review_by %></a></p>
+              </div>
+
+              <a href="#"><p>See More Reviews</p></a>
+             </div>
+            <% end %>
+
+						<h2 class="related_text">Descriptions</h2>
 						<ul>
 							<% if @details.description_01.present? %>
 							 <li><%= @details.description_01 %></li>
@@ -165,10 +198,11 @@
 							</script>
 							<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 						</div>
-		      
+
+		    </div>
 			</div>
 		</div>
-<!--     <%= render 'shared/footer' %> -->
+<!-- <%= render 'shared/footer' %> -->
 </div><!-- id="wrapper" -->
 
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>

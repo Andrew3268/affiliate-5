@@ -1,7 +1,7 @@
 <div class="upload_wrapper">
   <h1>Upload New Product</h1>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-  <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %><br/><br/>
+  <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", gadgets_path %><br/><br/>
   <div class="upload_section">
     <%= form_tag "/ecommerces/create", method: "POST" do %>
       <label>Select a Category</label><br/>
@@ -160,7 +160,7 @@
 
 
       <button class="button" type="submit">Upload</button>
-      <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", root_path %>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", gadgets_path %>
     <% end %>
   </div>
 </div>

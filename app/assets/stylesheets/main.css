@@ -3244,14 +3244,14 @@
 			overflow: hidden;
 	  }
 	
-		.related_text{
+/*		.related_text{
 		  text-align: center;
 		  font-weight: bold;
 		  font-size: 2em;
 		  color: #f56a6a;
 		  border: 1px solid #f56a6a;
       border-radius: 0.5em;
-		}
+		}*/
 		
 		.video-wrapper_left {
 		  position: relative;
@@ -4795,6 +4795,37 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
   width: 10em;
   height: 10em;
 }
+
+.detail_postive_review {
+  float: left;
+  width: 50%;
+  border-right: 2px solid;
+  padding-right: 1em;
+}
+
+.detail_critical_review {
+  float: left;
+  width: 50%;
+  padding-left: 1em;
+}
+
+.detail_postive_review h2, .detail_critical_review h2 {
+  text-align: center;
+}
+
+.details_review_else {
+  text-align: center;
+}
+
+.related_text_01 {
+  border: 1px solid #f56a6a;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  background-color: #f56a6a;
+  color: white;
+}
+
+
 @media screen and (max-width: 500px) {
   #main .inner .detail_border {
     margin-top: -1em;
@@ -4804,6 +4835,12 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
   }
   .gadgets_edit {
     display: none;
+  }
+  .detail_postive_review, .detail_critical_review {
+    float: none;
+    width: 100%;
+    border-right: none;
+    padding: 0em;
   }
 }
 
@@ -4819,6 +4856,12 @@ and (max-width : 1023px) {
   .gadgets_edit {
     margin-top: 2em;
   }
+  .detail_postive_review, .detail_critical_review {
+    float: none;
+    width: 100%;
+    border-right: none;
+    padding: 0em;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -4831,7 +4874,7 @@ and (max-width : 1023px) {
 }
 
 
-
+/** For Detail Image **/
 .css_grid_gallery {
   display: grid;
   padding: 1rem;
