@@ -35,19 +35,59 @@
               </div>
               <div class="price">
                 <div class="price_h3">
-                 <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+                 <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3> 
                 </div>
               </div>
-            
+               <div class="amazon_prime">
+               <img src="https://s2.wp.com/wp-content/themes/vip/bgr/assets/images/amazon-prime_h375.png" width="100px" height="50px">
+              </div>
+
+
+              
 						 	<% total += @details.price_before - @details.price_after %>
-						 	<% discount += total.to_f / @details.price_before * 100  %>
+						 	<% discount += total.to_f / @details.price_before * 100 %>
   						<% if @details.price_before? %>
   							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
   					  <% end %>
+
+  
+
+              <div class="free_shpping"><p>& Free Shpping (<a href="#">Learn more</a>)</p></div>
+
+              <div class = "accordion">
+                <input type = "checkbox" id = "item1" name = "accordion1">
+                <label for = "item1"><i class = "fa fa-check"></i>What is the Amazon Prime?<i class = "fa fa-chevron-down"></i></label>
+                <div id = "content1" class ="item">
+                  <h4>About Amazon Prime</h4>
+                  <p>Amazon Prime members enjoy:</p>
+                  <ul>
+                    <li><span>FREE Two-Day shipping</span> on millions of items</li>
+                    <li>Thousands of movies and TV shows with Prime Video</li>
+                    <li>Over one million ad-free songs on Prime Music</li>
+                    <li>Unlimited photo storage with Prime Photos</li>
+                    <li>Able to access to <a href="https://amzn.to/2wPUEky">Lightning Deals</a> 30-minute early</li>
+                  </ul>
+                  <a href="https://amzn.to/2LeRD0z"><p class="try_prime">Try Prime</p></a>
+                  </p>
+                </div>
+              </div>
+    
+              <div class="details_special_offer">
+                <h3>Special offers and product promotions</h3>
+                <ul>
+                  <li><a href="#">Get $50 off instantly</a>: Pay $0.00 upon approval for the Amazon Rewards Visa Card.</li>
+                  <li>Buy Used and Save: Buy a Used "Rachio WiFi Smart Lawn Sprinkler Controller, Works..." and save 32% off the $199.99 list price.</br> <a href="#">See all Used offers.</a></li>
+                  <li>You can clip this coupon. Your 20% discount will be applied at checkout.<a target="_blank" href="https://goo.gl/YEQwVD">(How to use)</a></br>
+                  <a href="https://amzn.to/2IyVx2r">See more Coupons</a></li>
+                  <li>Save 10% each on Aberg Best 21 Mega Pixels 2.7" LCD Digital Camera(Silver) offered by AbergBestDirect when you purchase 6 or more. Enter code TK94YDL2 at checkout.<a target="_blank" href="https://goo.gl/CWeA5n">(How to use)</a></br>
+                  <a href="/hotdeals/discount_codes">See more discount codes</a></li>
+                </ul>
+              </div>
+
 			
 							<ul class="actions_detail">
-								<li><a href="<%= @details.site_link %>" target="_blank">Buy Now</a></li>
-								<li><%= link_to 'Save', add_wishlist_path(@details), method: :post %></li>
+								<li><a href="<%= @details.site_link %>" target="_blank">Buy Now <%= @details.sources %></a></li>
+								<!-- <li><%= link_to 'Save', add_wishlist_path(@details), method: :post %></li> -->
                 <!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
                 <!-- <li class="back_gadgets"><%= link_to 'See more...', gadgets_path %></li> -->
 

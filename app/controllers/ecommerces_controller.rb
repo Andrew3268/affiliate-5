@@ -106,6 +106,8 @@ class EcommercesController < ApplicationController
     uptodate.critical_review_link = params[:new_critical_review_link]
     uptodate.postive_review_by = params[:new_postive_review_by]
     uptodate.critical_review_by = params[:new_critical_review_by]
+    uptodate.see_more_review = params[:new_see_more_review]
+
     uptodate.save   
     redirect_to '/'
   end
@@ -138,6 +140,15 @@ class EcommercesController < ApplicationController
     up.youtube_link_02 = params[:new_youtube_link_02]
     up.category_id = params[:category_id]
     up.pcategory_id = params[:pcategory_id]
+    up.postive_review = params[:new_postive_review]
+    up.critical_review = params[:new_critical_review]
+    up.postive_howmany = params[:new_postive_howmany]
+    up.critical_howmany = params[:new_critical_howmany]
+    up.postive_review_link = params[:new_postive_review_link]
+    up.critical_review_link = params[:new_critical_review_link]
+    up.postive_review_by = params[:new_postive_review_by]
+    up.critical_review_by = params[:new_critical_review_by]
+    up.see_more_review = params[:new_see_more_review]
     up.save    
     redirect_to '/ecommerces/gadgets'
   end

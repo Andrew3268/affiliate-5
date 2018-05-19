@@ -237,47 +237,6 @@ a.button_prodcuts:hover{
 }
 
 
-/* New Sign Section */
-.new_neon {
-  float: right;
-  font: 1em arial;
-  text-shadow: 
-    0px 0px 3px #fff, 
-    0px 0px 7px #fff, 
-    0px 0px 10px #fff, 
-    0px 0px 16px #f56a6a, 
-    0px 0px 25px #f56a6a, 
-    0px 0px 40px #f56a6a;
-  animation: blink 1s ease-in-out infinite;
-}
-@keyframes blink {
-  0% { text-shadow: 
-    0px 0px 3px #fff, 
-    0px 0px 7px #fff, 
-    0px 0px 10px #fff, 
-    0px 0px 16px #f56a6a, 
-    0px 0px 25px #f56a6a, 
-    0px 0px 40px #f56a6a; }
-  50% {
-    text-shadow: 
-    0px 0px 1px #fff, 
-    0px 0px 3px #fff, 
-    0px 0px 5px #fff, 
-    0px 0px 10px #f56a6a, 
-    0px 0px 20px #f56a6a, 
-    0px 0px 30px #f56a6a;
-  }
-  100% {
-    text-shadow: 
-    0px 0px 3px #fff, 
-    0px 0px 7px #fff, 
-    0px 0px 10px #fff, 
-    0px 0px 16px #f56a6a, 
-    0px 0px 25px #f56a6a, 
-    0px 0px 40px #f56a6a;
-  }
-}
-
 /* Media Query Section*/
 @media screen and (max-width: 960px) { 
   #columns figure { width: 24%; }
@@ -956,6 +915,9 @@ ul.shop_price_wrapper li {
 }
 
 @media screen and (max-width: 500px) {
+  .random_shoe {
+    display: none;
+  }
   .product--image, .product--details {
     float: none;
     width: 100%;
@@ -997,6 +959,9 @@ ul.shop_price_wrapper li {
 @media only screen
 and (min-width : 501px)  
 and (max-width : 1024px) {
+  .random_shoe {
+    display: none;
+  }
   .content {
     top: -1em;
   }

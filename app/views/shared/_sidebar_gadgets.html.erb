@@ -20,14 +20,16 @@
     	</header>
     	<ul class="icons">
     	  <% if user_signed_in? %>
-    	    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
+    	    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li></br>
+          <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
+          <br/><br />
     	  <% else %>
-    	  	<li class="login"><%= link_to "Log in", new_user_session_path %></li>
-          <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
+     <!-- <li class="login"><%= link_to "Log in", new_user_session_path %></li>
+          <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br /> -->
     	  <% end %>
       </ul>
     	<ul>
-    		<li>
+    		<!-- <li>
     			<span class="opener">Account & Lists</span>
     			<ul>
             <li><%= link_to "About_us", contact_us_path %></li>
@@ -37,7 +39,7 @@
     				 <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li>
     				<% end %>
     			</ul>
-    		</li>
+    		</li> -->
         <li>
           <span class="opener">HotDeals & Coupons</span>
           <ul>

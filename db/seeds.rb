@@ -31,7 +31,16 @@
 #                  description_02: "",
 #                  description_03: "",
 #                  description_04: "",
-#                  description_05: "")   
+#                  description_05: "",
+                   # postive_review_link: "",
+                   # critical_review_link: "",
+                   # see_more_review: "",
+                   # postive_review_by: "",
+                   # critical_review_by: "",
+                   # postive_howmany: "",
+                   # critical_howmany: "",
+                   # postive_review: "",
+                   # critical_review: "" )   
 
 ########### For Account of Admin ##############
 # User.create(name: "Admin", email: "ENV[ADMIN_EMAIL]", password: "ENV[ADMIN_PASSWORD]", admin: true)

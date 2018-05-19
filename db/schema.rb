@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180422094133) do
     t.string   "youtube_link_02"
     t.string   "postive_review_link"
     t.string   "critical_review_link"
+    t.string   "see_more_review"
     t.string   "postive_review_by"
     t.string   "critical_review_by"
     t.string   "postive_howmany"

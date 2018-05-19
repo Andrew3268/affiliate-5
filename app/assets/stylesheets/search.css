@@ -1,4 +1,3 @@
-
 .quicksearch_title {
     font-size: 3.5em;
     margin-bottom: 0.5em;
@@ -100,7 +99,6 @@ div.tab .discount .active {
     border-collapse: collapse;
     border-spacing: 0;
     border-color:#ccc;
-
 }
 .tg td {
     font-family:Arial, sans-serif;
@@ -113,7 +111,6 @@ div.tab .discount .active {
     border-color:#ccc;
     color:#333;
     background-color:#fff;
-    
 }
 .tg th {
     font-family:Arial, sans-serif;
@@ -126,21 +123,17 @@ div.tab .discount .active {
     word-break:normal;
     border-color:#ccc;
     color:#333;
-    background-color:#f0f0f0;
-    
+    background-color:#f0f0f0;    
 }
 .tg .tg-s6z2 {
     text-align:center
-    
 }
 .tg .tg-spn1 {
     background-color:#f9f9f9;
-    text-align:center
-    
+    text-align:center 
 }
 .tg .tg-4eph {
     background-color:#f9f9f9
-    
 }
 
 
@@ -169,14 +162,16 @@ div.tab .discount .active {
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
       
-      #main > .inner_quicksearch {
-                padding: 0em 0em 0em 0em ;
-            }
-
-       #main > .inner_quicksearch > section {
-                padding: 3em 0 1em 0 ;
-            }
+  #main > .inner_quicksearch {
+            padding: 0em 0em 0em 0em ;
+  }
+  #main > .inner_quicksearch > section {
+            padding: 3em 0 1em 0 ;
+  }
 }
+
+
+
 
 /*** New Tab ***/
 .tabs {

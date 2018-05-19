@@ -3,13 +3,14 @@
 
     <!-- Menu -->
       <nav id="menu">
+        <img src="https://i.pinimg.com/originals/f4/9b/f7/f49bf74bbca57f7565e3c9865f8e2ea3.jpg">
         <ul class="icons shoes_icons">
           <% if user_signed_in? %>
             <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
             <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
           <% else %>
-            <li class="login"><%= link_to "Log in", new_user_session_path %></li>
-            <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br />
+            <!-- <li class="login"><%= link_to "Log in", new_user_session_path %></li>
+            <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br /> -->
           <% end %>
           <% if can? :manage, @shoe %>
              <li><%= link_to "Add New Shoes", new_shoe_path(@shoe) %></li>
