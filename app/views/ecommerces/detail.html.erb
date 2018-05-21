@@ -38,21 +38,18 @@
                  <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3> 
                 </div>
               </div>
-               <div class="amazon_prime">
+              <div class="amazon_prime">
                <img src="https://s2.wp.com/wp-content/themes/vip/bgr/assets/images/amazon-prime_h375.png" width="100px" height="50px">
               </div>
 
-
-              
-						 	<% total += @details.price_before - @details.price_after %>
+              <% total += @details.price_before - @details.price_after %>
 						 	<% discount += total.to_f / @details.price_before * 100 %>
   						<% if @details.price_before? %>
   							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
   					  <% end %>
 
-  
 
-              <div class="free_shpping"><p>& Free Shpping (<a href="#">Learn more</a>)</p></div>
+              <div class="free_shpping"><p>& Free Shpping</p></div>
 
               <div class = "accordion">
                 <input type = "checkbox" id = "item1" name = "accordion1">
@@ -177,29 +174,31 @@
 
 					</section></br></br>
 
-            <% if @details.postive_howmany.present? %>
-             <div class="details_review_wrapper">
-              <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
+          <% if @details.postive_howmany.present? %>
+           <div class="details_review_wrapper">
+            <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
+            
               <div class="detail_postive_review">
-                <h2>Top Postive Review</h2>        
+                <h2>Top Postive Review</h2>
                  <p>(as much as over "<%= @details.postive_howmany %>" people found this helpful)</p>
                  <p class="show_review_content"><%= @details.postive_review %> &nbsp;</br>
                  <a target="_blank" href="<%= @details.postive_review_link %>">          
                  By <%= @details.postive_review_by %></a></p>
-              </div>
-            
+              </div></>
+             
               <div class="detail_critical_review">
-                <h2>Top Critical Review</h2>        
+                <h2>Top Critical Review</h2>            
                  <p>(as much as over "<%= @details.critical_howmany %>" people found this helpful)</p>
                  <p class="show_review_content"><%= @details.critical_review %> &nbsp;</br>
                  <a target="_blank" href="<%= @details.critical_review_link %>">          
                  By <%= @details.critical_review_by %></a></p>
               </div>
 
-              <a href="#"><p>See More Reviews</p></a>
-             </div>
-            <% end %>
-
+           </div>
+           <a href="<%= @details.see_more_review %>"><p>See More Reviews</p></a>
+          <% end %>
+          
+          <div class="detail_discription">
 						<h2 class="related_text">Descriptions</h2>
 						<ul>
 							<% if @details.description_01.present? %>
@@ -218,6 +217,7 @@
 							 <li><%= @details.description_05 %></li>
 						  <% end %>
 						</ul>
+          </div>
 						
 						<div class="detail_border_down"></div></br>
 						
@@ -237,7 +237,9 @@
 								amzn_assoc_title = "Shop Related Products";
 							</script>
 							<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-						</div>
+						</div></br>
+
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
 
 		    </div>
 			</div>
@@ -245,5 +247,5 @@
 <!-- <%= render 'shared/footer' %> -->
 </div><!-- id="wrapper" -->
 
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
+
 

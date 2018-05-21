@@ -51,17 +51,18 @@
       <ul class="cards">
         <% @ecommerces.each do |gadgets| %>
         <li class="cards__item">
-          <!-- <a href="/ecommerces/detail/<%= gadgets.id %>"> -->
           <div class="card">
             <div class="card__image"><a href="/ecommerces/detail/<%= gadgets.id %>"><img src="<%= gadgets.image_main %>"></a></div>
             <div class="card__content">
               <div class="card__title"><%= gadgets.title %></div>
               <p class="gadgets_intro"><%= gadgets.intro %></p>
               <h3 class="gadgets_price_after">$<%= gadgets.price_after %></h3>
-              <!-- <p><a href="/ecommerces/gadgets">Show more...</a></p> -->
+              <% if can? :manage, @details %>
+                <a href="/ecommerces/edit/<%= gadgets.id %>">Edit</a>
+                <a href="/ecommerces/destroy/<%= gadgets.id %>">Delete</a>
+              <% end %>
             </div>
           </div>
-          <!-- </a> -->
         </li>
         <% end %>
       </ul>
