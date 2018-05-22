@@ -1,13 +1,20 @@
 <div class="upload_wrapper">
   <h1>Edit Product</h1>
   <div class="upload_section">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <%= form_tag "/ecommerces/update/", method: "post" do %>
     <input type="hidden" name="id" value="<%= @adjust.id %>">
+
+     <div class="upload_links">
+      <h2>Input product title</h2>
       <div class="form">
-        <label>Product Title</label>
-        <input type="text" class="input-form" name="new_title" placeholder="Product Title" value="<%= @adjust.title %>">
+       <label>Product Title</label>
+       <input type="text" class="input-form" name="new_title" placeholder="Product Title" value="<%= @adjust.title %>">
       </div>
+     </div>
+
       <div class="upload_image">
+        <h2>Paste address of image(Don`t use "Google URL Shoter")</h2>
         <div class="form">
           <label>Image_main</label>
           <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url" value="<%= @adjust.image_main %>">
@@ -37,35 +44,39 @@
           <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url" value="<%= @adjust.image_06 %>">
         </div>
       </div>
-
-      <div class="form">
-        <label>Sources</label>
-        <input type="text" class="input-form" name="new_sources" placeholder="Source Site" value="<%= @adjust.sources %>">
+      
+      <div class="upload_links">
+       <h2>Input where did you get this source of product</h2>
+       <div class="form">
+       <label>Sources (ex: via_Amazon.com)</label>
+       <input type="text" class="input-form" name="new_sources" placeholder="Source Site" value="<%= @adjust.sources %>">
+       </div>
       </div>
 
       <div class="upload_links">
+        <h2>Input product URL</h2>
+        <li class="upload_li">Site Link_UK, Site Link_CANADA, Site Link_JAPAN are only for Amazon.</li>
         <div class="form">
           <label>Site Link</label>
           <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url" value="<%= @adjust.site_link %>">
-          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
         </div>
         <div class="form">
           <label>Site Link_UK</label>
           <input type="text" class="input-form" name="new_site_link_uk" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_uk %>">
-          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
         </div>
         <div class="form">
           <label>Site Link_CANADA</label>
           <input type="text" class="input-form" name="new_site_link_ca" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_ca %>">
-          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
         </div>
         <div class="form">
           <label>Site Link_JAPAN</label>
           <input type="text" class="input-form" name="new_site_link_jp" placeholder="Amazon Product Link url" value="<%= @adjust.site_link_jp %>">
-          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
         </div>
       </div>
-
+     
+     <div class="upload_links">
+      <h2>Paste Youtube address for related video</h2>
+      <li class="upload_li">How to find adress: Click "Share" -> Click "Source Code" -> Copy (* only copy this part("https://www.youtube.com/embed/***********")</li>
       <div class="form">
         <label>Youtube_01</label>
         <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url" value="<%= @adjust.youtube_link_01 %>">
@@ -74,6 +85,12 @@
         <label>Youtube_02</label>
         <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url" value="<%= @adjust.youtube_link_02 %>">
       </div>
+     </div>
+
+     <div class="upload_links">
+      <h2>Input Before Pirce & After Price</h2>
+      <li class="upload_li">**Don`t skip this section. (If you don`t input anything in here, you would get an error.)</li>
+      <li class="upload_li">Please input price(number) in here like this ( ex. 15.00 ), if you have to input price ZERO you shoud input like this (ex. 0.0)</li>
       <div class="form">
         <label>Price_before</label>
         <input type="text" class="input-form" name="new_price_before" placeholder="How much was it?" value="<%= @adjust.price_before %>">
@@ -82,10 +99,18 @@
         <label>Price_after</label>
         <input type="text" class="input-form" name="new_price_after" placeholder="How much is it?" value="<%= @adjust.price_after %>">
       </div>
+     </div>
+
+     <div class="upload_links">
+      <h2>Input intro</h2>
       <div class="form">
         <label>Intro</label>
         <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"><%= @adjust.intro %></textarea>
       </div>
+     </div>
+
+     <div class="upload_links">
+      <h2>Input Descriptions</h2>
       <div class="form">
         <label>Description</label>
         <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"><%= @adjust.description %></textarea>
@@ -110,9 +135,11 @@
         <label>Description_05</label>
         <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"><%= @adjust.description_05 %></textarea>
       </div>
+     </div>
  
-     <div class="postive_review">    
-       <div class="form"></br>
+     <div class="postive_review">
+       <h2>Input Postive Rivew</h2>    
+       <div class="form">
           <label>Postive How_Mnay People</label>
           <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?" value="<%= @adjust.postive_howmany %>">
         </div>
@@ -120,18 +147,19 @@
           <label>Postive Review</label>
           <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"><%= @adjust.postive_review %></textarea>
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Postive Review_by</label>
           <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by" value="<%= @adjust.postive_review_link %>">
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Postive Review_link</label>
           <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link"  value="<%= @adjust.postive_review_by %>">
         </div>
       </div>
       
       <div class="postive_review">
-        <div class="form"></br>
+         <h2>Input Critical Rivew</h2>
+        <div class="form">
           <label>Critical How_Mnay People</label>
           <input type="text" class="input-form" name="new_critical_howmany" placeholder="Critical How Many People?" value="<%= @adjust.critical_howmany %>">
         </div>
@@ -139,19 +167,72 @@
           <label>Critical Review</label>
           <textarea type="text" class="input-form" name="new_critical_review" rows="5" placeholder="Critical Review"><%= @adjust.critical_review %></textarea>
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Critical Review_by</label>
           <input type="text" class="input-form" name="new_critical_review_by" placeholder="Critical Review_by" value="<%= @adjust.critical_review_by %>">
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Critical Review_link</label>
           <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link" value="<%= @adjust.critical_review_link %>">
         </div>
       </div>
+     
+     <div class="upload_links">
+      <h2>Paste link of full review</h2>
+      <div class="form">
+        <label>See more reviews link</label>
+        <input type="text" class="input-form" name="new_see_more_review" placeholder="See More_Review_Link" value="<%= @adjust.see_more_review %>">
+      </div>
+     </div>
 
-      <div class="form"></br>
-          <label>See more reviews link</label>
-          <input type="text" class="input-form" name="new_see_more_review" placeholder="See More_Review_Link" value="<%= @adjust.see_more_review %>">
+      <div class="upload_links">
+        <h2>Input "YES" where applicable.</h2>
+        <li class="upload_li">Prime is only for Amazom</li>
+        <div class="form">
+          <label>Is this Amazon Prime?</label>
+          <input type="text" class="input-form" name="new_amazon_prime" placeholder="Is this amazon prime? (if it is an amazon prime product, you could just input 'YES')" value="<%= @adjust.amazon_prime %>">
+        </div>
+        <div class="form">
+          <label>Is this Free Shipping?</label>
+          <input type="text" class="input-form" name="new_free_shipping" placeholder="Is this free shipping? (if it is a free shipping prodcut, you could just input 'YES')" value="<%= @adjust.free_shipping %>">
+        </div>
+      </div>
+
+      <div class="upload_links">
+       <h2>Special offers and product promotions</h2>
+       <li class="upload_li">Amazon Visa Card Sale is only for Amazom</li>
+       <div class="form">
+        <label>Amazon Visa Card Sale</label>
+        <input type="text" class="input-form" name="new_amazon_visa_card" placeholder="Amazon Visa Card Sale Content" value="<%= @adjust.amazon_visa_card %>">
+       </div>
+       <div class="form">
+        <label>Amazon Visa Card Sale Link</label>
+        <input type="text" class="input-form" name="new_amazon_visa_card_link" placeholder="Amazon Visa Card Sale Link" value="<%= @adjust.amazon_visa_card_link %>">
+       </div>
+       <div class="form">
+        <label>Buy Used and Save</label>
+        <input type="text" class="input-form" name="new_buy_used" placeholder="Buy Used and Save Content" value="<%= @adjust.buy_used %>">
+       </div>
+       <div class="form">
+        <label>Buy Used and Save Link</label>
+        <input type="text" class="input-form" name="new_buy_used_link" placeholder="Buy Used and Save Link" value="<%= @adjust.buy_used_link %>">
+       </div>
+       <div class="form">
+        <label>Coupon</label>
+        <input type="text" class="input-form" name="new_coupon" placeholder="Coupon Content" value="<%= @adjust.coupon %>">
+       </div>
+<!--        <div class="form">
+        <label>Coupon Link</label>
+        <input type="text" class="input-form" name="new_coupon_link" placeholder="Coupon Link" value="<%= @adjust.coupon_link %>">
+       </div> -->
+       <div class="form">
+        <label>Discount Code</label>
+        <input type="text" class="input-form" name="new_discount_code" placeholder="Discount Code Content" value="<%= @adjust.discount_code %>">
+       </div>
+<!--        <div class="form">
+        <label>Discount Code Link</label>
+        <input type="text" class="input-form" name="new_discount_code_link" placeholder="Discount Code Link" value="<%= @adjust.discount_code_link %>">
+       </div> -->
       </div>
 
       <button class="button" type="submit">Update</button>

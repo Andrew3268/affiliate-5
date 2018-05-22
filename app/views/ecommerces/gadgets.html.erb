@@ -41,7 +41,7 @@
             <% total += ecommerce.price_before - ecommerce.price_after %>
             <% discount += total.to_f / ecommerce.price_before * 100  %>
             <% if ecommerce.price_before? %>
-             <h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
+             <h3 class="yousave_gadgets"><%= number_to_currency total, unit: "$", seperator: ",", delimiter: "" %>(<%= discount.round(0) %>%) Savings</h3>
             <% end %>
             
           

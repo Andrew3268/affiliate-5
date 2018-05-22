@@ -1,249 +1,271 @@
 <div id="wrapper">
-		<div id="main">
-			<div class="inner">
+ <div id="main">
+	<div class="inner">
 
-				<!-- Header -->
-					<%= render 'shared/header' %>
-				  <% if flash[:message] %>	
-				   <div class="flash_message">
-	          <h2 class="flash_message_h2">"<%= @details.title %>"  <%=flash[:message] %></h2>
-	          <button><%= link_to "View Your WishList", wishlist_show_path, class: "flash_message_button" %></button>
-	         </div>
-	        <% end %>
+		<%= render 'shared/header' %>
+	  <% if flash[:message] %>	
+	   <div class="flash_message">
+      <h2 class="flash_message_h2">"<%= @details.title %>"  <%=flash[:message] %></h2>
+      <button><%= link_to "View Your WishList", wishlist_show_path, class: "flash_message_button" %></button>
+     </div>
+    <% end %>
 
-				<!-- Banner -->
-					<section id="banner">
-            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- Banner -->
+		<section id="banner">
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-						<div class="content">
-							
-							<header>
-								<h1 class="detail_title"><%= @details.title %></h1>
-							</header> 
-							
-							<h2 class="detail_intription">What`s this?</h2>
-							<p><%= @details.intro %></p>
-							<h2 class="detail_intription">Overview</h2>
-							<p class="details_p"><%= @details.description %></p>
-							
-	            <% total = 0 %>
-              <% discount = 0 %>
-              <div class="price">
-                <div class="price_h3">
-                 <h3 class="banner_price"><%= number_to_currency @details.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
-                </div>
-              </div>
-              <div class="price">
-                <div class="price_h3">
-                 <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3> 
-                </div>
-              </div>
-              <div class="amazon_prime">
-               <img src="https://s2.wp.com/wp-content/themes/vip/bgr/assets/images/amazon-prime_h375.png" width="100px" height="50px">
-              </div>
+			<div class="content">
+				
+				<header>
+					<h1 class="detail_title"><%= @details.title %></h1>
+				</header> 
+				
+				<h2 class="detail_intription">What`s this?</h2>
+				<p><%= @details.intro %></p>
+				<h2 class="detail_intription">Overview</h2>
+				<p class="details_p"><%= @details.description %></p>
 
-              <% total += @details.price_before - @details.price_after %>
-						 	<% discount += total.to_f / @details.price_before * 100 %>
-  						<% if @details.price_before? %>
-  							<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
-  					  <% end %>
+				<div class="details_price">
+          <% total = 0 %>
+          <% discount = 0 %>
+          <div class="price">
+            <div class="price_h3">
+             <h3 class="banner_price"><%= number_to_currency @details.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
+            </div>
+          </div>
+          <div class="price">
+            <div class="price_h3">
+             <h3 class="banner_price_before"><%= number_to_currency @details.price_before, unit: "$", seperator: "", delimiter: ""  %></h3> 
+            </div>
+          </div>
+        </div>
+        <div class="price">
+          <% total += @details.price_before - @details.price_after %>
+  			 	<% discount += total.to_f / @details.price_before * 100 %>
+  				<% if @details.price_before? %>
+  					<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
+  			  <% end %>
+        </div>
 
+        <% if @details.amazon_prime.present? %>
+          <div class="amazon_prime">
+           <p class="primenfree"><%= @details.amazon_prime %></p><img src="http://www.news-tech.it/wp-content/uploads/2018/03/amazon-prime-aumenta-il-prezzo.jpg">
+          </div>
+        <% end %>
 
-              <div class="free_shpping"><p>& Free Shpping</p></div>
+        <% if @details.free_shipping.present? %>
+         <p class="primenfree"><%= @details.free_shipping %></p><div class="free_shpping"><p>& Free Shpping</p></div>
+        <% end %>
 
-              <div class = "accordion">
-                <input type = "checkbox" id = "item1" name = "accordion1">
-                <label for = "item1"><i class = "fa fa-check"></i>What is the Amazon Prime?<i class = "fa fa-chevron-down"></i></label>
-                <div id = "content1" class ="item">
-                  <h4>About Amazon Prime</h4>
-                  <p>Amazon Prime members enjoy:</p>
-                  <ul>
-                    <li><span>FREE Two-Day shipping</span> on millions of items</li>
-                    <li>Thousands of movies and TV shows with Prime Video</li>
-                    <li>Over one million ad-free songs on Prime Music</li>
-                    <li>Unlimited photo storage with Prime Photos</li>
-                    <li>Able to access to <a href="https://amzn.to/2wPUEky">Lightning Deals</a> 30-minute early</li>
-                  </ul>
-                  <a href="https://amzn.to/2LeRD0z"><p class="try_prime">Try Prime</p></a>
-                  </p>
-                </div>
-              </div>
-    
-              <div class="details_special_offer">
-                <h3>Special offers and product promotions</h3>
-                <ul>
-                  <li><a href="#">Get $50 off instantly</a>: Pay $0.00 upon approval for the Amazon Rewards Visa Card.</li>
-                  <li>Buy Used and Save: Buy a Used "Rachio WiFi Smart Lawn Sprinkler Controller, Works..." and save 32% off the $199.99 list price.</br> <a href="#">See all Used offers.</a></li>
-                  <li>You can clip this coupon. Your 20% discount will be applied at checkout.<a target="_blank" href="https://goo.gl/YEQwVD">(How to use)</a></br>
-                  <a href="https://amzn.to/2IyVx2r">See more Coupons</a></li>
-                  <li>Save 10% each on Aberg Best 21 Mega Pixels 2.7" LCD Digital Camera(Silver) offered by AbergBestDirect when you purchase 6 or more. Enter code TK94YDL2 at checkout.<a target="_blank" href="https://goo.gl/CWeA5n">(How to use)</a></br>
-                  <a href="/hotdeals/discount_codes">See more discount codes</a></li>
-                </ul>
-              </div>
+        
 
-			
-							<ul class="actions_detail">
-								<li><a href="<%= @details.site_link %>" target="_blank">Buy Now <%= @details.sources %></a></li>
-								<!-- <li><%= link_to 'Save', add_wishlist_path(@details), method: :post %></li> -->
-                <!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
-                <!-- <li class="back_gadgets"><%= link_to 'See more...', gadgets_path %></li> -->
+        <% if @details.amazon_prime.present? %>
+          <div class = "accordion">
+            <input type = "checkbox" id = "item1" name = "accordion1">
+            <label for = "item1"><i class = "fa fa-check"></i>What is the Amazon Prime?<i class = "fa fa-chevron-down"></i></label>
+            <div id = "content1" class ="item">
+              <h4>About Amazon Prime</h4>
+              <p>Amazon Prime members enjoy:</p>
+              <ul>
+                <li><span>FREE Two-Day shipping</span> on millions of items</li>
+                <li>Thousands of movies and TV shows with Prime Video</li>
+                <li>Over one million ad-free songs on Prime Music</li>
+                <li>Unlimited photo storage with Prime Photos</li>
+                <li>Able to access to <a href="https://amzn.to/2wPUEky">Lightning Deals</a> 30-minute early</li>
+              </ul>
+              <a href="https://amzn.to/2LeRD0z"><p class="try_prime">Try Prime</p></a>
+              </p>
+            </div>
+          </div>
+        <% end %>
 
-                <div class="gadgets_edit">
-                  <% if can? :manage, @details %>
-                    <li><a href="/ecommerces/edit/<%= @details.id %>">Edit</a></li>
-                    <li><a href="/ecommerces/destroy/<%= @details.id %>">Delete</a></li>
-                  <% end %>
-                </div>
-							</ul>
+        <div class="details_special_offer">
+         <h3>Special offers and product promotions</h3>
+         <ul>
+          <% if @details.amazon_visa_card.present? %>
+           <li><a href="<%= @details.amazon_visa_card_link %>">Get $50 off instantly:</a> <%= @details.amazon_visa_card %></li>
+          <% end %>
+          <% if @details.buy_used.present? %>
+           <li>Buy Used and Save: <%= @details.buy_used %></br><a href="<%= @details.buy_used_link %>">See all Used offers.</a></li>
+          <% end %>
+          <% if @details.coupon.present? %>
+           <li><%= @details.coupon %><a target="_blank" href="https://goo.gl/YEQwVD">(How to use)</a></br>
+            <a href="https://amzn.to/2IyVx2r">See more "Coupons"</a></li>
+          <% else %>
+           <li><p class="no_code_coupon">There is no Coupon for <%= @details.title %></p>
+           <a href="/hotdeals/coupons">Find more "Coupons"</a></li>
+          <% end %>
+          <% if @details.discount_code.present? %>
+           <li><%= @details.discount_code %><a target="_blank" href="https://goo.gl/CWeA5n">(How to use)</a></br>
+           <a href="/hotdeals/discount_codes">See more "Discount Codes"</a></li>
+          <% else %>
+           <li><p class="no_code_coupon">There is no Discount Code for <%= @details.title %></p>
+           <a href="/hotdeals/discount_codes">Find more "Discount Codes"</a></li>
+          <% end %>
+        
+        </ul>
+        </div>
 
-              <h2>Available Country</h2>
-							<ul class="actions_country">
-								<li><a href="<%= @details.site_link %>" target="_blank"><img src="https://i.pinimg.com/564x/52/79/ff/5279ff45deede033323f5af4d8a9a722.jpg" width="80" height="50"></a></li>
-								<% if @details.site_link_uk.present? %>
-								 <li><a href="<%= @details.site_link_uk %>" target="_blank"><img src="https://i.pinimg.com/564x/13/b9/23/13b9230dff6ecd482d238f31454680f8.jpg" width="80" height="50"></a></li>
-								<% end %>
-								<% if @details.site_link_ca.present? %>
-								 <li><a href="<%= @details.site_link_ca %>" target="_blank"><img src="https://i.pinimg.com/564x/a9/29/3a/a9293a66c611c5c897c52411632799b9.jpg" width="80" height="50"></a></li>
-								<% end %>
-								<% if @details.site_link_jp.present? %>
-								 <li><a href="<%= @details.site_link_jp %>" target="_blank">JAPAN<img src="https://i.pinimg.com/236x/c1/4c/74/c14c7494e445daa8dd19b42db616083a.jpg" width="80" height="50"></a></li>
-							  <% end %>
-							</ul>
+         <div class="control_box">
+  				<ul class="actions_detail">
+  					<li><a href="<%= @details.site_link %>" target="_blank">Buy Now <%= @details.sources %></a></li>
+  					<!-- <li><%= link_to 'Save', add_wishlist_path(@details), method: :post %></li> -->
+            <!-- <li><a href="/wishlists/show" class="button big">Check WishList</a></li> -->
+            <!-- <li class="back_gadgets"><%= link_to 'See more...', gadgets_path %></li> -->
 
-						</div><!--/.content-->
-
-						<span class="image object">
-							<img src="<%= @details.image_main %>" alt="" /></br>
-							<div class="amazon-banner">
-								<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kindle&banner=1Y73E3KVWCWRGDBQ5ER2&f=ifr&linkID=d0f690bec12d182a3752ff2e983e490a&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-					    </div>
-						</span>
-
-					</section></br>
-					<div class="detail_border"></div></br>
-
-	<!--Section -->
-				<div class="detail_body">
-					<section>
-
-						<div class="video_container">
-							<h2 class="related_text"> Related Videos & Images</h2>
-							<div class="video-wrapper_left">
-							  <% if @details.youtube_link_01.present? %>
-                 <iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
-                <% else %>                 
-                 <p>There is no "Related Videos" :(</p>
-                <% end %>
-							</div>
-							<div class="video-wrapper_right">
-                <% if @details.youtube_link_02.present? %>
-								 <iframe src="<%= @details.youtube_link_02 %>" frameborder="0" allowfullscreen></iframe>
-                <% else %>
-                 <p>There is no "Related Videos" :(</p>
-                <% end %>
-							</div>
-						</div><br/><br/>
-
-           <div class="detail_gallery">
-            <div id="img_bg_overlay"></div>
-            <div id="img_close_cta">&times;</div>
-            <div id="previous_img_cta"></div>
-            <div class="css_grid_gallery">
-              <% if @details.image_01.present? %>
-              <img src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-              <% end %>
-              <% if @details.image_02.present? %>
-              <img src="<%= @details.image_02 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-              <% end %>
-              <% if @details.image_03.present? %>
-              <img src="<%= @details.image_03 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-              <% end %>
-              <% if @details.image_04.present? %>
-              <img src="<%= @details.image_04 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-              <% end %>
-              <% if @details.image_05.present? %>
-              <img src="<%= @details.image_05 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-              <% end %>
-              <% if @details.image_06.present? %>
-              <img src="<%= @details.image_06 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+            <div class="gadgets_edit">
+              <% if can? :manage, @details %>
+                <li><a href="/ecommerces/edit/<%= @details.id %>">Edit</a></li>
+                <li><a href="/ecommerces/destroy/<%= @details.id %>">Delete</a></li>
               <% end %>
             </div>
-            <img id="modal_image" src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-            <div id="next_img_cta"></div>
-           </div>
+  				</ul>
+         </div>
 
-					</section></br></br>
+         <h2>Available Country</h2>
+  			 <ul class="actions_country">
+  				<li><a href="<%= @details.site_link %>" target="_blank"><img src="https://i.pinimg.com/564x/52/79/ff/5279ff45deede033323f5af4d8a9a722.jpg" width="80" height="50"></a></li>
+  				<% if @details.site_link_uk.present? %>
+  				 <li><a href="<%= @details.site_link_uk %>" target="_blank"><img src="https://i.pinimg.com/564x/13/b9/23/13b9230dff6ecd482d238f31454680f8.jpg" width="80" height="50"></a></li>
+  				<% end %>
+  				<% if @details.site_link_ca.present? %>
+  				 <li><a href="<%= @details.site_link_ca %>" target="_blank"><img src="https://i.pinimg.com/564x/a9/29/3a/a9293a66c611c5c897c52411632799b9.jpg" width="80" height="50"></a></li>
+  				<% end %>
+  				<% if @details.site_link_jp.present? %>
+  				 <li><a href="<%= @details.site_link_jp %>" target="_blank">JAPAN<img src="https://i.pinimg.com/236x/c1/4c/74/c14c7494e445daa8dd19b42db616083a.jpg" width="80" height="50"></a></li>
+  			  <% end %>
+  			 </ul>
 
-          <% if @details.postive_howmany.present? %>
-           <div class="details_review_wrapper">
-            <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
-            
-              <div class="detail_postive_review">
-                <h2>Top Postive Review</h2>
-                 <p>(as much as over "<%= @details.postive_howmany %>" people found this helpful)</p>
-                 <p class="show_review_content"><%= @details.postive_review %> &nbsp;</br>
-                 <a target="_blank" href="<%= @details.postive_review_link %>">          
-                 By <%= @details.postive_review_by %></a></p>
-              </div></>
-             
-              <div class="detail_critical_review">
-                <h2>Top Critical Review</h2>            
-                 <p>(as much as over "<%= @details.critical_howmany %>" people found this helpful)</p>
-                 <p class="show_review_content"><%= @details.critical_review %> &nbsp;</br>
-                 <a target="_blank" href="<%= @details.critical_review_link %>">          
-                 By <%= @details.critical_review_by %></a></p>
-              </div>
+	   	</div><!--/.content-->
 
-           </div>
-           <a href="<%= @details.see_more_review %>"><p>See More Reviews</p></a>
-          <% end %>
-          
-          <div class="detail_discription">
-						<h2 class="related_text">Descriptions</h2>
-						<ul>
-							<% if @details.description_01.present? %>
-							 <li><%= @details.description_01 %></li>
-						  <% end %>
-							<% if @details.description_02.present? %>
-							 <li><%= @details.description_02 %></li>
-						  <% end %>
-						  <% if @details.description_03.present? %>
-							 <li><%= @details.description_03 %></li>
-						  <% end %>
-						  <% if @details.description_04.present? %>
-							 <li><%= @details.description_04 %></li>
-						  <% end %>
-						  <% if @details.description_05.present? %>
-							 <li><%= @details.description_05 %></li>
-						  <% end %>
-						</ul>
-          </div>
-						
-						<div class="detail_border_down"></div></br>
-						
-						<div class="related_prodcut">
-					  	<script type="text/javascript">
-								amzn_assoc_placement = "adunit0";
-								amzn_assoc_tracking_id = "3628-20";
-								amzn_assoc_ad_mode = "search";
-								amzn_assoc_ad_type = "smart";
-								amzn_assoc_marketplace = "amazon";
-								amzn_assoc_region = "US";
-								amzn_assoc_default_search_phrase = "<%= @details.title %>";
-								amzn_assoc_default_category = "All";
-								amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
-								amzn_assoc_search_bar = "true";
-								amzn_assoc_search_bar_position = "top";
-								amzn_assoc_title = "Shop Related Products";
-							</script>
-							<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-						</div></br>
-
-            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
-
+			<span class="image object">
+				<img src="<%= @details.image_main %>" alt="" /></br>
+				<div class="amazon-banner">
+					<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kindle&banner=1Y73E3KVWCWRGDBQ5ER2&f=ifr&linkID=d0f690bec12d182a3752ff2e983e490a&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 		    </div>
-			</div>
-		</div>
+			</span>
+
+		</section></br>
+		<div class="detail_border"></div></br>
+
+	<!--Section -->
+		<div class="detail_body">
+			<section>
+
+			 <div class="video_container">
+				<h2 class="related_text"> Related Videos & Images</h2>
+				<div class="video-wrapper_left">
+				  <% if @details.youtube_link_01.present? %>
+           <iframe src="<%= @details.youtube_link_01 %>" frameborder="0" allowfullscreen></iframe>
+          <% end %>
+				</div>
+				<div class="video-wrapper_right">
+          <% if @details.youtube_link_02.present? %>
+					 <iframe src="<%= @details.youtube_link_02 %>" frameborder="0" allowfullscreen></iframe>
+          <% end %>
+				</div>
+		   </div><br/><br/>
+
+       <div class="detail_gallery">
+        <div id="img_bg_overlay"></div>
+        <div id="img_close_cta">&times;</div>
+        <div id="previous_img_cta"></div>
+        <div class="css_grid_gallery">
+          <% if @details.image_01.present? %>
+          <img src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+          <% end %>
+          <% if @details.image_02.present? %>
+          <img src="<%= @details.image_02 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+          <% end %>
+          <% if @details.image_03.present? %>
+          <img src="<%= @details.image_03 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+          <% end %>
+          <% if @details.image_04.present? %>
+          <img src="<%= @details.image_04 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+          <% end %>
+          <% if @details.image_05.present? %>
+          <img src="<%= @details.image_05 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+          <% end %>
+          <% if @details.image_06.present? %>
+          <img src="<%= @details.image_06 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+          <% end %>
+        </div>
+        <img id="modal_image" src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
+        <div id="next_img_cta"></div>
+       </div>
+
+			</section></br></br>
+
+      <% if @details.postive_howmany.present? %>
+       <div class="details_review_wrapper">
+        <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
+        
+          <div class="detail_postive_review">
+            <h2>Top Postive Review</h2>
+             <p>(as much as over "<%= @details.postive_howmany %>" people found this helpful)</p>
+             <p class="show_review_content"><%= @details.postive_review %> &nbsp;</br>
+             <a target="_blank" href="<%= @details.postive_review_link %>">          
+             By <%= @details.postive_review_by %></a></p>
+          </div></>
+         
+          <div class="detail_critical_review">
+            <h2>Top Critical Review</h2>            
+             <p>(as much as over "<%= @details.critical_howmany %>" people found this helpful)</p>
+             <p class="show_review_content"><%= @details.critical_review %> &nbsp;</br>
+             <a target="_blank" href="<%= @details.critical_review_link %>">          
+             By <%= @details.critical_review_by %></a></p>
+          </div>
+
+       </div>
+       <a href="<%= @details.see_more_review %>"><p>See More Reviews</p></a>
+      <% end %>
+      
+      <div class="detail_discription">
+				<h2 class="related_text">Descriptions</h2>
+				<ul>
+					<% if @details.description_01.present? %>
+					 <li><%= @details.description_01 %></li>
+				  <% end %>
+					<% if @details.description_02.present? %>
+					 <li><%= @details.description_02 %></li>
+				  <% end %>
+				  <% if @details.description_03.present? %>
+					 <li><%= @details.description_03 %></li>
+				  <% end %>
+				  <% if @details.description_04.present? %>
+					 <li><%= @details.description_04 %></li>
+				  <% end %>
+				  <% if @details.description_05.present? %>
+					 <li><%= @details.description_05 %></li>
+				  <% end %>
+				</ul>
+      </div>
+				
+				<div class="detail_border_down"></div></br>
+				
+				<div class="related_prodcut">
+			  	<script type="text/javascript">
+						amzn_assoc_placement = "adunit0";
+						amzn_assoc_tracking_id = "3628-20";
+						amzn_assoc_ad_mode = "search";
+						amzn_assoc_ad_type = "smart";
+						amzn_assoc_marketplace = "amazon";
+						amzn_assoc_region = "US";
+						amzn_assoc_default_search_phrase = "<%= @details.title %>";
+						amzn_assoc_default_category = "All";
+						amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+						amzn_assoc_search_bar = "true";
+						amzn_assoc_search_bar_position = "top";
+						amzn_assoc_title = "Shop Related Products";
+					</script>
+					<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+				</div></br>
+
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
+
+    </div><!--/.detail_body-->
+  </div>
+ </div>
 <!-- <%= render 'shared/footer' %> -->
 </div><!-- id="wrapper" -->
 

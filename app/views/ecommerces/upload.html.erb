@@ -6,18 +6,23 @@
     <%= form_tag "/ecommerces/create", method: "POST" do %>
 
       <div class="upload_image">
+        <h2>Input product title</h2>
+        <div class="form">
+          <label>Product Title</label>
+          <input type="text" class="input-form" name="new_title" placeholder="Product Title">
+        </div>
+      </div>
+
+      <div class="upload_image">
+        <h2>Select Categries(shop by products & shop by price)</h2>
         <label>Select a Price</label><br/>
         <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Price") %><br />
         <label>Select Product</label></br >
         <%= select_tag(:pcategory_id, options_for_select(@pcategories), :prompt => "Select Product") %>
       </div>
-
-      <div class="form"></br>
-        <label>Product Title</label>
-        <input type="text" class="input-form" name="new_title" placeholder="Product Title">
-      </div>
-
+     
       <div class="upload_image">
+        <h2>Paste address of image(Don`t use "Google URL Shoter")</h2>
         <div class="form">
           <label>Image_main</label>
           <input type="text" class="input-form" name="new_image_main" placeholder="Main Image url">
@@ -47,36 +52,43 @@
           <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url">
         </div>
       </div>
-
-      <div class="form">
-        <label>Sources (ex: via_Amazon.com)</label>
-        <input type="text" class="input-form" name="new_sources" placeholder="Source Site">
+      
+      <div class="upload_links">
+        <h2>Input where did you get this source of product</h2>
+        <div class="form">
+          <label>Sources (ex: via_Amazon.com)</label>
+          <input type="text" class="input-form" name="new_sources" placeholder="Source Site">
+        </div>
       </div>
       
       <div class="upload_links">
+        <h2>Input product URL</h2>
+        <li class="upload_li">Site Link_UK, Site Link_CANADA, Site Link_JAPAN are only for Amazon.</li>
         <div class="form">
-          <label>Site Link_USA</label>
-          <input type="text" class="input-form" name="new_site_link" placeholder="Amazon Product Link url">
-          <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a>
+          <label>Site Link</label>
+          <input type="text" class="input-form" name="new_site_link" placeholder="Product Link url">
+          <!-- <a href="https://affiliate-program.amazon.com/home/productlinks/search?ac-ms-src=ac-nav" target="_black">Get Link</a> -->
         </div>
         <div class="form">
           <label>Site Link_UK</label>
-          <input type="text" class="input-form" name="new_site_link_uk" placeholder="Amazon Product Link url">
-          <a href="https://affiliate-program.amazon.co.uk/" target="_black">Get Link</a>
+          <input type="text" class="input-form" name="new_site_link_uk" placeholder="Only for Amazon.co.uk Product Link url">
+          <!-- <a href="https://affiliate-program.amazon.co.uk/" target="_black">Get Link</a> -->
         </div>
         <div class="form">
           <label>Site Link_CANADA</label>
-          <input type="text" class="input-form" name="new_site_link_ca" placeholder="Amazon Product Link url">
-          <a href="https://associates.amazon.ca/" target="_black">Get Link</a>
+          <input type="text" class="input-form" name="new_site_link_ca" placeholder="Only for Amazon.ca Product Link url">
+          <!-- <a href="https://associates.amazon.ca/" target="_black">Get Link</a> -->
         </div>
         <div class="form">
           <label>Site Link_JAPAN</label>
-          <input type="text" class="input-form" name="new_site_link_jp" placeholder="Amazon Product Link url">
-          <a href="https://affiliate.amazon.co.jp/" target="_black">Get Link</a>
+          <input type="text" class="input-form" name="new_site_link_jp" placeholder="Only for Amazon.jp Product Link url">
+          <!-- <a href="https://affiliate.amazon.co.jp/" target="_black">Get Link</a> -->
         </div>
       </div>
 
       <div class="upload_links">
+        <h2>Paste Youtube address for related video</h2>
+        <li class="upload_li">How to find adress: Click "Share" -> Click "Source Code" -> Copy (* only copy this part("https://www.youtube.com/embed/***********")</li>
         <div class="form">
           <label>Youtube_01</label>
           <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url">
@@ -88,48 +100,58 @@
       </div>
       
       <div class="upload_links">
+        <h2>Input Before Pirce & After Price</h2>
+        <li class="upload_li">**Don`t skip this section. (If you don`t input anything in here, you would get an error.)</li>
+        <li class="upload_li">Please input price(number) in here like this ( ex. 15.00 ), if you have to input price ZERO you shoud input like this (ex. 0.0)</li>
         <div class="form">
-          <label>**Price_before</label>
+          <label>Price_before</label>
           <input type="text" class="input-form" name="new_price_before" placeholder="How much was it?">
         </div>
         <div class="form">
-          <label>**Price_after</label>
+          <label>Price_after</label>
           <input type="text" class="input-form" name="new_price_after" placeholder="How much is it?">
         </div>
       </div>
 
-      <div class="form">
-        <label>Intro</label>
-        <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"></textarea>
+      <div class="upload_links">
+        <h2>Input intro</h2>
+        <div class="form">
+          <label>Intro</label>
+          <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"></textarea>
+        </div>
       </div>
-
-      <div class="form">
-        <label>Description</label>
-        <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"></textarea>
-      </div>
-      <div class="form">
-        <label>Description_01</label>
-        <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"></textarea>
-      </div>
-      <div class="form">
-        <label>Description_02</label>
-        <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"></textarea>
-      </div>
-      <div class="form">
-        <label>Description_03</label>
-        <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"></textarea>
-      </div>
-      <div class="form">
-        <label>Description_04</label>
-        <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"></textarea>
-      </div>
-      <div class="form">
-        <label>Description_05</label>
-        <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
+      
+      <div class="upload_links">
+        <h2>Input Descriptions</h2>
+        <div class="form">
+          <label>Description</label>
+          <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"></textarea>
+        </div>
+        <div class="form">
+          <label>Description_01</label>
+          <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"></textarea>
+        </div>
+        <div class="form">
+          <label>Description_02</label>
+          <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"></textarea>
+        </div>
+        <div class="form">
+          <label>Description_03</label>
+          <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"></textarea>
+        </div>
+        <div class="form">
+          <label>Description_04</label>
+          <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"></textarea>
+        </div>
+        <div class="form">
+          <label>Description_05</label>
+          <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
+        </div>
       </div>
 
       <div class="postive_review">
-        <div class="form"></br>
+        <h2>Input Postive Rivew</h2>
+        <div class="form">
           <label>Postive How_Mnay People</label>
           <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?">
         </div>
@@ -137,18 +159,19 @@
           <label>Postive Review</label>
           <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"></textarea>
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Postive Review_by</label>
           <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by">
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Postive Review_link</label>
           <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link">
         </div>
       </div>
 
       <div class="critical_review">
-        <div class="form"></br>
+        <h2>Input Critical Rivew</h2>
+        <div class="form">
           <label>Critical How_Mnay People</label>
           <input type="text" class="input-form" name="new_critical_howmany" placeholder="Critical How Many People?">
         </div>
@@ -156,20 +179,76 @@
           <label>Critical Review</label>
           <textarea type="text" class="input-form" name="new_critical_review" rows="5" placeholder="Critical Review"></textarea>
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Critical Review_by</label>
           <input type="text" class="input-form" name="new_critical_review_by" placeholder="Critical Review_by">
         </div>
-        <div class="form"></br>
+        <div class="form">
           <label>Critical Review_link</label>
           <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link">
         </div>
       </div>
-
-      <div class="form"></br>
-        <label>See more review_link</label>
-        <input type="text" class="input-form" name="new_see_more_review" placeholder="See more Review_link">
+      
+      <div class="upload_links">
+        <h2>Paste link of full review</h2>
+        <div class="form">
+          <label>See more review_link</label>
+          <input type="text" class="input-form" name="new_see_more_review" placeholder="See more Review_link">
+        </div>
       </div>
+
+      <div class="upload_links">
+        <h2>Input "YES" where applicable.</h2>
+        <li class="upload_li">Prime is only for Amazom</li>
+        <div class="form">
+          <label>Is this Amazon Prime?</label>
+          <input type="text" class="input-form" name="new_amazon_prime" placeholder="Is this amazon prime? (if it is an amazon prime product, you could just input 'YES')">
+        </div>
+        <div class="form">
+          <label>Is this Free Shipping?</label>
+          <input type="text" class="input-form" name="new_free_shipping" placeholder="Is this free shipping? (if it is a free shipping prodcut, you could just input 'YES')">
+        </div>
+      </div>
+
+      <div class="upload_links">
+       <h2>Special offers and product promotions</h2>
+       <li class="upload_li">Amazon Visa Card Sale is only for Amazom</li>
+       <div class="form">
+        <label>Amazon Visa Card Sale</label>
+        <input type="text" class="input-form" name="new_amazon_visa_card" placeholder="Amazon Visa Card Sale Content">
+       </div>
+       <div class="form">
+        <label>Amazon Visa Card Sale Link</label>
+        <input type="text" class="input-form" name="new_amazon_visa_card_link" placeholder="Amazon Visa Card Sale Link">
+       </div>
+       <div class="form">
+        <label>Buy Used and Save</label>
+        <input type="text" class="input-form" name="new_buy_used" placeholder="Buy Used and Save Content">
+       </div>
+       <div class="form">
+        <label>Buy Used and Save Link</label>
+        <input type="text" class="input-form" name="new_buy_used_link" placeholder="Buy Used and Save Link">
+       </div>
+       <div class="form">
+        <label>Coupon</label>
+        <input type="text" class="input-form" name="new_coupon" placeholder="Coupon Content">
+       </div>
+<!--        <div class="form">
+        <label>Coupon Link</label>
+        <input type="text" class="input-form" name="new_coupon_link" placeholder="Coupon Link">
+       </div> -->
+       <div class="form">
+        <label>Discount Code</label>
+        <input type="text" class="input-form" name="new_discount_code" placeholder="Discount Code Content">
+       </div>
+<!--        <div class="form">
+        <label>Discount Code Link</label>
+        <input type="text" class="input-form" name="new_discount_code_link" placeholder="Discount Code Link">
+       </div> -->
+      </div>
+
+
+
 
       <button class="button" type="submit">Upload</button>
       <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", gadgets_path %>

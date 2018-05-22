@@ -69,20 +69,13 @@
       	</li>
       	
     		<% if can? :manage, @ecommerces %>
-    			<li><a href="/ecommerces/upload">Upload</a></li>
+    			<li><a href="/ecommerces/upload">Add New Gadget</a></li>
     			<li><a href="/rails/db">Management</a></li>
     			<li><a href="/message/message_board">Message Board</a></li>
     		<% end %>
     	</ul>
     </nav>
 			
-<!-- Start Facebook -->	
-
-	<!-- <div class="fb-page" data-href="https://www.facebook.com/Ohigottabuythis/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-	  <blockquote cite="https://www.facebook.com/Ohigottabuythis/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Ohigottabuythis/">Oh, I Gotta Buy This</a></blockquote>
-	</div> -->
-
-
 <!-- Section -->
   	<section>
   		<header class="major">
@@ -99,14 +92,15 @@
             <% discount  = 0 %>
             <div class="price">
               <div class="price_h3">
-                <h3 class="price_before"><%= number_to_currency random_gadgets.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
-               </div>
-            </div>&emsp;
-            <div class="price">
-              <div class="price_h3">
                 <h3 class="price_after"><%= number_to_currency random_gadgets.price_after, unit: "$", seperator: "", delimiter: ""  %></h3>
               </div>
             </div>
+            <div class="price">
+              <div class="price_h3">
+                <h3 class="price_before"><%= number_to_currency random_gadgets.price_before, unit: "$", seperator: "", delimiter: ""  %></h3>
+               </div>
+            </div>&emsp;
+
             <% total += random_gadgets.price_before - random_gadgets.price_after %>
             <% discount += total.to_f / random_gadgets.price_before * 100  %>
             <% if random_gadgets.price_before? %>

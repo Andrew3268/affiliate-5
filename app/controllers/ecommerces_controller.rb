@@ -98,6 +98,7 @@ class EcommercesController < ApplicationController
     uptodate.youtube_link_02 = params[:new_youtube_link_02]
     uptodate.category_id = params[:category_id]
     uptodate.pcategory_id = params[:pcategory_id]
+
     uptodate.postive_review = params[:new_postive_review]
     uptodate.critical_review = params[:new_critical_review]
     uptodate.postive_howmany = params[:new_postive_howmany]
@@ -108,10 +109,22 @@ class EcommercesController < ApplicationController
     uptodate.critical_review_by = params[:new_critical_review_by]
     uptodate.see_more_review = params[:new_see_more_review]
 
+    uptodate.amazon_prime = params[:new_amazon_prime]
+    uptodate.free_shipping = params[:new_free_shipping]
+    uptodate.amazon_visa_card = params[:new_amazon_visa_card]
+    uptodate.amazon_visa_card_link = params[:new_amazon_visa_card_link]
+    uptodate.buy_used = params[:new_buy_used]
+    uptodate.buy_used_link = params[:new_buy_used_link]
+    uptodate.coupon = params[:new_coupon]
+    uptodate.coupon_link = params[:new_coupon_link]
+    uptodate.discount_code = params[:new_discount_code]
+    uptodate.discount_code_link = params[:new_discount_code_link]
+
+
     uptodate.save   
     redirect_to '/'
   end
-  
+
   def update
     up = Ecommerce.find(params[:id])
     up.title = params[:new_title]
@@ -140,6 +153,7 @@ class EcommercesController < ApplicationController
     up.youtube_link_02 = params[:new_youtube_link_02]
     up.category_id = params[:category_id]
     up.pcategory_id = params[:pcategory_id]
+
     up.postive_review = params[:new_postive_review]
     up.critical_review = params[:new_critical_review]
     up.postive_howmany = params[:new_postive_howmany]
@@ -149,6 +163,17 @@ class EcommercesController < ApplicationController
     up.postive_review_by = params[:new_postive_review_by]
     up.critical_review_by = params[:new_critical_review_by]
     up.see_more_review = params[:new_see_more_review]
+
+    up.amazon_prime = params[:new_amazon_prime]
+    up.free_shipping = params[:new_free_shipping]
+    up.amazon_visa_card = params[:new_amazon_visa_card]
+    up.amazon_visa_card_link = params[:new_amazon_visa_card_link]
+    up.buy_used = params[:new_buy_used]
+    up.buy_used_link = params[:new_buy_used_link]
+    up.coupon = params[:new_coupon]
+    up.coupon_link = params[:new_coupon_link]
+    up.discount_code = params[:new_discount_code]
+    up.discount_code_link = params[:new_new_discount_code_link]
     up.save    
     redirect_to '/ecommerces/gadgets'
   end

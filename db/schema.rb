@@ -54,8 +54,18 @@ ActiveRecord::Schema.define(version: 20180422094133) do
     t.text     "description_03"
     t.text     "description_04"
     t.text     "description_05"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.text     "amazon_prime"
+    t.text     "free_shipping"
+    t.string   "amazon_visa_card"
+    t.text     "amazon_visa_card_link"
+    t.string   "buy_used"
+    t.text     "buy_used_link"
+    t.string   "coupon"
+    t.text     "coupon_link"
+    t.string   "discount_code"
+    t.text     "discount_code_link"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "category_id"
     t.integer  "pcategory_id"
   end
