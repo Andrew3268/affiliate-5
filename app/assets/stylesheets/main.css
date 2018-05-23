@@ -4136,7 +4136,7 @@
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding-top: 6.5em;
+				padding-top: 1.5em;
 			}
 
 				#header .logo {
@@ -4801,21 +4801,16 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
 }
 
 .detail_postive_review {
-  float: left;
-  width: 50%;
-  border-right: 2px solid;
-  padding-right: 1em;
+  margin-bottom: 2em;
 }
 
 .detail_critical_review {
-  float: left;
-  width: 50%;
-  padding-left: 1em;
+  margin-bottom: 2em;
 }
 
-.detail_postive_review h2, .detail_critical_review h2 {
+/*.detail_postive_review h2, .detail_critical_review h2 {
   text-align: center;
-}
+}*/
 
 .details_review_else {
   text-align: center;
@@ -4856,6 +4851,9 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
 .details_price {
   margin-bottom: -3.5em;
 }
+.reviewer {
+  float: right;
+}
 
 
 @media screen and (max-width: 500px) {
@@ -4879,12 +4877,6 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
    }
   .gadgets_edit {
     display: none;
-  }
-  .detail_postive_review, .detail_critical_review {
-    float: none;
-    width: 100%;
-    border-right: none;
-    padding: 0em;
   }
   .amazon_prime {
     margin-top: -4.7em;
@@ -4938,12 +4930,6 @@ and (max-width : 1023px) {
   }
   .gadgets_edit {
     margin-top: 2em;
-  }
-  .detail_postive_review, .detail_critical_review {
-    float: none;
-    width: 100%;
-    border-right: none;
-    padding: 0em;
   }
   .posts .yousave_gadgets {
     font-size: 1.3em;
@@ -5171,6 +5157,42 @@ and (max-width : 1023px) {
   background-color: #24a4ce;
   color: white;
 }
+
+
+/* For Show more & Show less */
+.dynamic-wrap {
+  transition: max-height 0.25s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.height-active .dynamic-wrap:before{
+    content:'';
+    position:absolute;
+    left: 0px;
+    right:0;
+    bottom:0;
+    height:30px;
+    background: -moz-linear-gradient(top,  rgba(240,249,255,0) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,249,255,0)), color-stop(100%,rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top,  rgba(240,249,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top,  rgba(240,249,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(240,249,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom,  rgba(240,249,255,0) 0%,rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f0f9ff', endColorstr='#ffffff',GradientType=0 );
+    z-index:1;
+  }
+
+.dynamic-max-height.height-active .dynamic-show-more {
+  display: inline-block;
+  text-align: left;
+}
+.dynamic-max-height .dynamic-show-more {
+  display: none;
+  margin-top: 20px;
+}
+
+
 
 
 

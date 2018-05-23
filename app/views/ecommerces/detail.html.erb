@@ -199,26 +199,43 @@
       <% if @details.postive_howmany.present? %>
        <div class="details_review_wrapper">
         <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
-        
+          
           <div class="detail_postive_review">
             <h2>Top Postive Review</h2>
-             <p>(as much as over "<%= @details.postive_howmany %>" people found this helpful)</p>
-             <p class="show_review_content"><%= @details.postive_review %> &nbsp;</br>
-             <a target="_blank" href="<%= @details.postive_review_link %>">          
-             By <%= @details.postive_review_by %></a></p>
-          </div></>
+            <div class="dynamic-max-height" data-maxheight="130">
+             <div class="dynamic-wrap">
+               <p>(as much as over "<%= @details.postive_howmany %>" people found this helpful)</p>
+               <p class="show_review_content"><%= @details.postive_review %> &nbsp;</br>
+               <a target="_blank" href="<%= @details.postive_review_link %>">          
+               <span class="reviewer">By <%= @details.postive_review_by %></span></a></p>
+             </div>
+             <div class="align-left">
+              <a class="dynamic-show-more" href="javascript:void(0);" title="Read more" data-replace-text="Show less">Read more</a>
+             </div>
+            </div>
+          </div>
          
           <div class="detail_critical_review">
-            <h2>Top Critical Review</h2>            
+            <h2>Top Critical Review</h2>  
+            <div class="dynamic-max-height" data-maxheight="130">
+             <div class="dynamic-wrap">          
              <p>(as much as over "<%= @details.critical_howmany %>" people found this helpful)</p>
              <p class="show_review_content"><%= @details.critical_review %> &nbsp;</br>
              <a target="_blank" href="<%= @details.critical_review_link %>">          
-             By <%= @details.critical_review_by %></a></p>
+             <span class="reviewer">By <%= @details.critical_review_by %></span></a></p>
+             </div>
+             <div class="align-left">
+              <a class="dynamic-show-more" href="javascript:void(0);" title="Read more" data-replace-text="Show less">Read more</a>
+             </div>
+            </div>
           </div>
 
        </div>
-       <a href="<%= @details.see_more_review %>"><p>See More Reviews</p></a>
       <% end %>
+      
+      <div class="see_more_review">
+       <a href="<%= @details.see_more_review %>">See more Reviews</a>
+      </div>
       
       <div class="detail_discription">
 				<h2 class="related_text">Descriptions</h2>
@@ -241,27 +258,27 @@
 				</ul>
       </div>
 				
-				<div class="detail_border_down"></div></br>
+				<!-- <div class="detail_border_down"></div></br> -->
 				
-				<div class="related_prodcut">
-			  	<script type="text/javascript">
-						amzn_assoc_placement = "adunit0";
-						amzn_assoc_tracking_id = "3628-20";
-						amzn_assoc_ad_mode = "search";
-						amzn_assoc_ad_type = "smart";
-						amzn_assoc_marketplace = "amazon";
-						amzn_assoc_region = "US";
-						amzn_assoc_default_search_phrase = "<%= @details.title %>";
-						amzn_assoc_default_category = "All";
-						amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
-						amzn_assoc_search_bar = "true";
-						amzn_assoc_search_bar_position = "top";
-						amzn_assoc_title = "Shop Related Products";
-					</script>
-					<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-				</div></br>
+			<div class="related_prodcut">
+		  	<script type="text/javascript">
+					amzn_assoc_placement = "adunit0";
+					amzn_assoc_tracking_id = "3628-20";
+					amzn_assoc_ad_mode = "search";
+					amzn_assoc_ad_type = "smart";
+					amzn_assoc_marketplace = "amazon";
+					amzn_assoc_region = "US";
+					amzn_assoc_default_search_phrase = "<%= @details.title %>";
+					amzn_assoc_default_category = "All";
+					amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+					amzn_assoc_search_bar = "true";
+					amzn_assoc_search_bar_position = "top";
+					amzn_assoc_title = "Shop Related Products";
+				</script>
+				<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+			</div></br>
 
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
+      <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
 
     </div><!--/.detail_body-->
   </div>

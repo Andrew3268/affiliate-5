@@ -195,6 +195,20 @@ div.tab .discount .active {
   line-height: 3em;
   margin-bottom: 0em;
 }
+.discount_tabs label {
+  transition: background 0.4s ease-in-out, height 0.2s linear;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  width: 20%;
+  height: 3em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: #f56a6a;
+  text-align: center;
+  line-height: 3em;
+  margin-bottom: 0em;
+}
 .tabs label:last-of-type {
   border-bottom: none; 
 }
