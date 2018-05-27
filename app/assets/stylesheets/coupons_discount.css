@@ -149,6 +149,48 @@ box styles as a container item
   margin-bottom: -0.5em;
 }
 
+.tab_title_checked {
+  background: #f56a6a;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 1em;
+  padding-right: 0.75em;
+  position: relative;
+  cursor: pointer;
+  width: 20%;
+  height: 3em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  text-align: center;
+  line-height: 3em;
+  margin-bottom: 0em;
+}
+
+.tab_title{
+  background: #FFFFFF;
+  color: #f56a6a;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 1em;
+  padding-right: 0.75em;
+  position: relative;
+  cursor: pointer;
+  width: 20%;
+  height: 3em;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  text-align: center;
+  line-height: 3em;
+  margin-bottom: 0em;
+}
+
+
+
 /*------------------------------
  media query for larger screens
 --------------------------------*/
