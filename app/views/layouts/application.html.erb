@@ -73,23 +73,20 @@
         }, 3000);
       });
     </script>
-    <!--End Notice & Alert Message-->
 
-
-    <!-- For OneLink -->
+    <!-- For OneLink of Amazon-->
     <div id="amzn-assoc-ad-9964b306-5e55-4810-adb9-cb2e4b817f96"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=9964b306-5e55-4810-adb9-cb2e4b817f96"></script>
 
     <!--For Amazon -->
       <script>
-          amzn_assoc_ad_type = "link_enhancement_widget";
-          amzn_assoc_tracking_id = "scarlet3628-20";
-          amzn_assoc_linkid = "42a822b2d2d63295b8cd3efd84c72542";
-          amzn_assoc_placement = "";
-          amzn_assoc_marketplace = "amazon";
-          amzn_assoc_region = "US";
+        amzn_assoc_ad_type = "link_enhancement_widget";
+        amzn_assoc_tracking_id = "scarlet3628-20";
+        amzn_assoc_linkid = "42a822b2d2d63295b8cd3efd84c72542";
+        amzn_assoc_placement = "";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
       </script>
       <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
-    <!--End Amazon -->
 
     <!-- For Viglink -->
     <script>
@@ -103,7 +100,7 @@
     </script>
 
 
-    <!-- Go-Up Button -->
+    <!-- Go-Up Button All page-->
     <script>
     window.onscroll = function() {scrollFunction()};
 
@@ -121,7 +118,7 @@
     }
     </script>
 
-    <!-- For Angular Search -->
+    <!-- For Angular Search on promotion page-->
     <script>
     function myFunction() {
         var input, filter, ul, li, a, i;
@@ -153,7 +150,7 @@
     }
     </script>
 
-    <!-- Discount Filler  -->
+    <!-- Discount Departments Filler  -->
     <script>
     $(function() {
       FilterItems();
@@ -190,7 +187,7 @@
       });
     </script>
 
-    <!-- for youtube -->
+    <!-- for playing Youtube on blog page-->
     <script>
         // video overlayer: start
       $(".js-overlay-start").unbind("click").bind("click", function(e) {
@@ -224,7 +221,7 @@
       });
     </script>
 
-   <!-- For Shoes_Shop -->
+   <!-- For Shoes_Shop sorting using Isotope-->
     <script>
     $( function() {
       // init Isotope
@@ -276,7 +273,7 @@
     </script>
 
     
-    <!-- For shoes show -->
+    <!-- For shoes show image-->
     <script>
     var sizes = jQuery(".product--size").find("span");
     sizes.click(function() {
@@ -399,17 +396,17 @@
       });
     }); 
     return{
-      heightControl: heightControl,
-      showMoreShowLess: showMoreShowLess
-      };
+     heightControl: heightControl,
+     showMoreShowLess: showMoreShowLess
+     };
     };
     
     $.fn.dynamicMaxHeight = function(options) {
       var dynamic = dynamicMaxHeight(options);
 
       return this.each(function() {
-          dynamic.heightControl($(this), options);
-          dynamic.showMoreShowLess(options.trigger, $(this));
+       dynamic.heightControl($(this), options);
+       dynamic.showMoreShowLess(options.trigger, $(this));
           
       });
     };
