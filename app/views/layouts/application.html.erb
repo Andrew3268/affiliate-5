@@ -4,6 +4,7 @@
     <title>Oh, I Gotta Buy This</title>
     <meta charset="utf-8"/>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="shortcut icon" type="image/jpg" href="https://goo.gl/qBPfBM">
@@ -49,6 +50,16 @@
     <%= javascript_include_tag 'application' %>
     <!-- for Isotope -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <!-- Google Translate-->
+<!--     <div id="google_translate_element"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+
 
     <!--For Facebook Like&Share Button-->
     <div id="fb-root"></div>
@@ -419,6 +430,48 @@
       );
     });
   </script>
+  
+  <script>
+        // init Isotope
+    var $card_container = $('.card_container').isotope({
+      // options
+      itemSelector: '.business_card',
+      layoutMode: 'fitRows',
+      transitionDuration: 0
+    });
+
+    // store filter for each group
+    //var filters = {};
+    var buttonSelected = '*';
+
+    // bind filter on select change
+    $('.filters-select').on( 'change', function() {
+      // get filter value from option value
+      var filterValue = this.value;
+      $card_container.isotope({ filter: buttonSelected + filterValue });
+    });
+
+    // filter items on button click
+    $('.filter_nav').on( 'click', 'button', function() {
+      var filterValue = $(this).attr('data-filter');
+      buttonSelected = filterValue;
+      var filterDropdown = $('#selectDropdown option:selected').val();
+      //alert('filterValue: ' + filterValue + filterDropdown);
+      $card_container.isotope({ filter: filterValue + filterDropdown });
+    });
+
+    // change is-checked class on buttons
+    $('.button-group').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+      });
+    });
+  </script>
+
+
+
 
 
 

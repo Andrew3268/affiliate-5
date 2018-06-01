@@ -26,30 +26,30 @@
 }
 
 .upload_wrapper .upload_section .form a {
-    text-decoration: none;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px 15px;
-    color: #ffffff;
-    background: #444444;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: #ffffff;
+  background: #444444;
 }
 
 .upload_wrapper .upload_section button[type="submit"] {
-    border: none;
-  	outline: none;
-  	eight: 40px;
-  	color: #fff;
-  	background: #262626;
-  	cursor: pointer;
-  	margin-bottom: 20px;
-  	width: 100%;
+  border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	background: #262626;
+	cursor: pointer;
+	margin-bottom: 20px;
+	width: 100%;
 }
 
 .upload_wrapper .upload_section label {
-    margin-bottom: -0.5em;
+  margin-bottom: -0.5em;
 }
 
-.upload_image, .postive_review, .critical_review, .upload_links {
+.upload_partition, .postive_review, .critical_review, .upload_links {
   border: 2px solid;
   padding: 1em;
   margin: 1em 0;
@@ -57,4 +57,13 @@
 
 .upload_li {
   margin: -2em 0 2em 0;
+}
+
+.add_nav_wrapper ul li {
+  display: inline-block;
+  line-style: none;
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin-bottom: 0.5em
 }

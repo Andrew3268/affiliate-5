@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+  root 'ecommerces#index'
+
   resources :shoes
   # root 'shoes#index'
 
-  get 'hotdeals/hotdeal'
+  resources :codes
+  # root 'codes#index'
 
-  root 'ecommerces#index'
+
   devise_for :users
   devise_scope :user do  
    get '/users/sign_out' => 'devise/sessions#destroy'     
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
  
-  
+  get 'hotdeals/hotdeal' 
   get '/ecommerces/search', to: 'ecommerces#search', as: 'search_ecommerce'
   
   post '/wishlist/:ecommerce_id', to: 'wishlists#add', as: 'add_wishlist'

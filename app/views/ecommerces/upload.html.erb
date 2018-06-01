@@ -4,8 +4,24 @@
   <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= link_to "Back to Home", gadgets_path %><br/><br/>
   <div class="upload_section">
     <%= form_tag "/ecommerces/create", method: "POST" do %>
-
-      <div class="upload_image">
+  
+     <div class="add_nav_wrapper">
+      <ul class="add_nav">
+        <li><a href="#sectionImage">Image</a></li>
+        <li><a href="#sectionSource">Source</a></li>
+        <li><a href="#sectionProduct_url">Product URL</a></li>
+        <li><a href="#sectionYoutube_url">Youtube URL</a></li>
+        <li><a href="#sectionPrice">Price</a></li>
+        <li><a href="#sectionIntor">Intro & Description</a></li>
+        <li><a href="#sectionPostive">Postive Rivew</a></li>
+        <li><a href="#sectionCritical">Critical Rivew</a></li>
+        <li><a href="#sectionSeemore">See more review</a></li>
+        <li><a href="#sectionYseorNot">Input "YES" where applicable</a></li>
+        <li><a href="#sectionSpecial">Special offers and product promotions</a></li>
+      </ul>
+     </div>
+     
+      <div class="upload_partition">
         <h2>Input product title</h2>
         <div class="form">
           <label>Product Title</label>
@@ -13,7 +29,7 @@
         </div>
       </div>
 
-      <div class="upload_image">
+      <div class="upload_partition">
         <h2>Select Categries(shop by products & shop by price)</h2>
         <label>Select a Price</label><br/>
         <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Price") %><br />
@@ -21,7 +37,8 @@
         <%= select_tag(:pcategory_id, options_for_select(@pcategories), :prompt => "Select Product") %>
       </div>
      
-      <div class="upload_image">
+     <section id="sectionImage">
+      <div class="upload_partition">
         <h2>Paste address of image(Don`t use "Google URL Shoter")</h2>
         <div class="form">
           <label>Image_main</label>
@@ -52,16 +69,20 @@
           <input type="text" class="input-form" name="new_image_06" placeholder="Image_06 url">
         </div>
       </div>
-      
-      <div class="upload_links">
+     </section>
+
+     <section id="sectionSource">
+      <div class="upload_partition">
         <h2>Input where did you get this source of product</h2>
         <div class="form">
           <label>Sources (ex: via_Amazon.com)</label>
           <input type="text" class="input-form" name="new_sources" placeholder="Source Site">
         </div>
       </div>
-      
-      <div class="upload_links">
+     </section> 
+
+     <section id="sectionProduct_url"> 
+      <div class="upload_partition">
         <h2>Input product URL</h2>
         <li class="upload_li">Site Link_UK, Site Link_CANADA, Site Link_JAPAN are only for Amazon.</li>
         <div class="form">
@@ -84,92 +105,101 @@
           <input type="text" class="input-form" name="new_site_link_jp" placeholder="Only for Amazon.jp Product Link url">
           <!-- <a href="https://affiliate.amazon.co.jp/" target="_black">Get Link</a> -->
         </div>
-      </div>
+       </div>
+      </section>
 
-      <div class="upload_links">
-        <h2>Paste Youtube address for related video</h2>
-        <li class="upload_li">How to find adress: Click "Share" -> Click "Source Code" -> Copy (* only copy this part("https://www.youtube.com/embed/***********")</li>
-        <div class="form">
-          <label>Youtube_01</label>
-          <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url">
+      <section id="sectionYoutube_url">
+        <div class="upload_partition">
+          <h2>Paste Youtube address for related video</h2>
+          <li class="upload_li">How to find adress: Click "Share" -> Click "Source Code" -> Copy (* only copy this part("https://www.youtube.com/embed/***********")</li>
+          <div class="form">
+            <label>Youtube_01</label>
+            <input type="text" class="input-form" name="new_youtube_link_01" placeholder="Youtube_01 url">
+          </div>
+          <div class="form">
+            <label>Youtube_02</label>
+            <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url">
+          </div>
         </div>
-        <div class="form">
-          <label>Youtube_02</label>
-          <input type="text" class="input-form" name="new_youtube_link_02" placeholder="Youtube_02 url">
-        </div>
-      </div>
-      
-      <div class="upload_links">
-        <h2>Input Before Pirce & After Price</h2>
-        <li class="upload_li">**Don`t skip this section. (If you don`t input anything in here, you would get an error.)</li>
-        <li class="upload_li">Please input price(number) in here like this ( ex. 15.00 ), if you have to input price ZERO you shoud input like this (ex. 0.0)</li>
-        <div class="form">
-          <label>Price_before</label>
-          <input type="text" class="input-form" name="new_price_before" placeholder="How much was it?">
-        </div>
-        <div class="form">
-          <label>Price_after</label>
-          <input type="text" class="input-form" name="new_price_after" placeholder="How much is it?">
-        </div>
-      </div>
+       </section>
 
-      <div class="upload_links">
-        <h2>Input intro</h2>
-        <div class="form">
-          <label>Intro</label>
-          <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"></textarea>
+       <section id="sectionPrice">
+        <div class="upload_partition">
+          <h2>Input Before Pirce & After Price</h2>
+          <li class="upload_li">**Don`t skip this section. (If you don`t input anything in here, you would get an error.)</li>
+          <li class="upload_li">Please input price(number) in here like this ( ex. 15.00 ), if you have to input price ZERO you shoud input like this (ex. 0.0)</li>
+          <div class="form">
+            <label>Price_before</label>
+            <input type="text" class="input-form" name="new_price_before" placeholder="How much was it?">
+          </div>
+          <div class="form">
+            <label>Price_after</label>
+            <input type="text" class="input-form" name="new_price_after" placeholder="How much is it?">
+          </div>
         </div>
-      </div>
-      
-      <div class="upload_links">
-        <h2>Input Descriptions</h2>
-        <div class="form">
-          <label>Description</label>
-          <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"></textarea>
-        </div>
-        <div class="form">
-          <label>Description_01</label>
-          <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"></textarea>
-        </div>
-        <div class="form">
-          <label>Description_02</label>
-          <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"></textarea>
-        </div>
-        <div class="form">
-          <label>Description_03</label>
-          <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"></textarea>
-        </div>
-        <div class="form">
-          <label>Description_04</label>
-          <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"></textarea>
-        </div>
-        <div class="form">
-          <label>Description_05</label>
-          <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
-        </div>
-      </div>
+       </section>
 
-      <div class="postive_review">
-        <h2>Input Postive Rivew</h2>
-        <div class="form">
-          <label>Postive How_Mnay People</label>
-          <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?">
+       <section id="sectionIntor">
+        <div class="upload_partition">
+          <h2>Input intro</h2>
+          <div class="form">
+            <label>Intro</label>
+            <textarea type="text" class="input-form" name="new_intro" rows="3" placeholder="Intro"></textarea>
+          </div>
+        </div> 
+        <div class="upload_partition">
+          <h2>Input Descriptions</h2>
+          <div class="form">
+            <label>Description</label>
+            <textarea type="text" class="input-form" name="new_description" rows="5" placeholder="Description"></textarea>
+          </div>
+          <div class="form">
+            <label>Description_01</label>
+            <textarea type="text" class="input-form" name="new_description_01" rows="5" placeholder="Description_01"></textarea>
+          </div>
+          <div class="form">
+            <label>Description_02</label>
+            <textarea type="text" class="input-form" name="new_description_02" rows="5" placeholder="Description_02"></textarea>
+          </div>
+          <div class="form">
+            <label>Description_03</label>
+            <textarea type="text" class="input-form" name="new_description_03" rows="5" placeholder="Description_03"></textarea>
+          </div>
+          <div class="form">
+            <label>Description_04</label>
+            <textarea type="text" class="input-form" name="new_description_04" rows="5" placeholder="Description_04"></textarea>
+          </div>
+          <div class="form">
+            <label>Description_05</label>
+            <textarea type="text" class="input-form" name="new_description_05" rows="5" placeholder="Description_05"></textarea>
+          </div>
         </div>
-        <div class="form">
-          <label>Postive Review</label>
-          <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"></textarea>
-        </div>
-        <div class="form">
-          <label>Postive Review_by</label>
-          <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by">
-        </div>
-        <div class="form">
-          <label>Postive Review_link</label>
-          <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link">
-        </div>
-      </div>
+       </section>
 
-      <div class="critical_review">
+      <section id="sectionPostive">
+        <div class="upload_partition">
+          <h2>Input Postive Rivew</h2>
+          <div class="form">
+            <label>Postive How_Mnay People</label>
+            <input type="text" class="input-form" name="new_postive_howmany" placeholder="Postive How Many People?">
+          </div>
+          <div class="form">
+            <label>Postive Review</label>
+            <textarea type="text" class="input-form" name="new_postive_review" rows="5" placeholder="Postive Review"></textarea>
+          </div>
+          <div class="form">
+            <label>Postive Review_by</label>
+            <input type="text" class="input-form" name="new_postive_review_by" placeholder="Postive Review_by">
+          </div>
+          <div class="form">
+            <label>Postive Review_link</label>
+            <input type="text" class="input-form" name="new_postive_review_link" placeholder="Postive Review_link">
+          </div>
+        </div>
+      </section>
+
+      <section id="sectionCritical">
+       <div class="upload_partition">
         <h2>Input Critical Rivew</h2>
         <div class="form">
           <label>Critical How_Mnay People</label>
@@ -187,17 +217,21 @@
           <label>Critical Review_link</label>
           <input type="text" class="input-form" name="new_critical_review_link" placeholder="Critical Review_link">
         </div>
-      </div>
-      
-      <div class="upload_links">
+       </div>
+      </section>
+
+     <section id="sectionSeemore">
+      <div class="upload_partition">
         <h2>Paste link of full review</h2>
         <div class="form">
           <label>See more review_link</label>
           <input type="text" class="input-form" name="new_see_more_review" placeholder="See more Review_link">
         </div>
       </div>
+     </section>
 
-      <div class="upload_links">
+     <section id="sectionYseorNot">
+      <div class="upload_partition">
         <h2>Input "YES" where applicable.</h2>
         <li class="upload_li">Prime is only for Amazom</li>
         <div class="form">
@@ -209,8 +243,10 @@
           <input type="text" class="input-form" name="new_free_shipping" placeholder="Is this free shipping? (if it is a free shipping prodcut, you could just input 'YES')">
         </div>
       </div>
-
-      <div class="upload_links">
+     </section>
+     
+     <section id="sectionSpecial">
+      <div class="upload_partition">
        <h2>Special offers and product promotions</h2>
        <li class="upload_li">Amazon Visa Card Sale is only for Amazom</li>
        <div class="form">
@@ -246,6 +282,7 @@
         <input type="text" class="input-form" name="new_discount_code_link" placeholder="Discount Code Link">
        </div> -->
       </div>
+     </section>
 
 
 

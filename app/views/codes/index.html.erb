@@ -1,0 +1,145 @@
+<div id="wrapper">
+ <div id="main">
+  <div class="inner_hotdeals">
+  <%= render 'shared/header' %>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <h1 class="codes_main_title">Discount Codes 2018</h1>
+   <div class="code_admin_control">
+    <% if user_signed_in? %>
+      <span class="hello">Hello,</span><br /> <%= current_user.name %>
+      <%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %>
+    <% end %></br>
+
+    <% if can? :create, @codes %>
+    <%= link_to "Add New Discount Code", new_code_path %>
+    <% end %>
+   </div>
+          
+   <section class="card_grid">
+  
+    <div class="filter_menu">
+      <div class="select-filter-group" id="selectDropdown">
+        <select class="filters-select">
+          <option value="">All Markets</option>
+          <option value=".amazon">Amazon</option>
+          <option value=".ebay">eBay</option>
+        </select>
+      </div>
+      
+      <div class="select-filter-group_01" id="selectDropdown">
+        <select class="filters-select">
+          <option value="all">All Departments</option>
+          <option value="automotive">Automotive</option>
+          <option value="baby">Baby</option>
+          <option value="beauty">Beauty</option>
+          <option value="books">Books</option>
+          <option value="business">Business, Industrial & Scientific</option>
+          <option value="cellphones">Cell Phones & Accessories</option>
+          <option value="clothing">Clothing & Accessories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="furniture">Furniture</option>
+          <option value="grocery">Grocery</option>
+          <option value="computer">Computer</option>
+          <option value="health">Health & Personal Care</option>
+          <option value="home">Home</option>
+          <option value="kitchen">Kitchen & Housewares</option>
+          <option value="miscellaneous">Miscellaneous</option>
+          <option value="office">Office</option>
+          <option value="pets">Pets</option>
+          <option value="garden">Patio, Lawn & Garden</option>
+          <option value="sports">Sports & Outdoors</option>
+          <option value="tools">Tools & Home Improvement</option>
+          <option value="toy">Toys & Games</option>
+        </select>
+      </div>
+
+      <nav class="filter_nav">
+        <div class="button-group" data-filter-group="categories">
+          <button class=" is-checked" data-filter="*">all categories</button>
+          <button data-filter=".automotive">Automotive</button>
+          <button data-filter=".baby">Baby</button>
+          <button data-filter=".beauty">Beauty</button>
+          <button data-filter=".books">Books</button>
+          <button data-filter=".business">Business, Industrial & Scientific</button>
+          <button data-filter=".cellphones">Cell Phones & Accessories</button>
+          <button data-filter=".clothing">Clothing & Accessories</button>
+          <button data-filter=".electronics">Electronics</button>
+          <button data-filter=".fashion">Fashion</button>
+          <button data-filter=".furniture">Furniture</button>
+          <button data-filter=".grocery">Grocery</button>
+          <button data-filter=".computer">Computer</button>
+          <button data-filter=".health">Health & Personal Care</button>
+          <button data-filter=".kitchen">Kitchen & Housewares</button>
+          <button data-filter=".miscellaneous">Miscellaneous</button>
+          <button data-filter=".office">Office</button>
+          <button data-filter=".garden">Patio, Lawn & Garden</button>
+          <button data-filter=".sports">Sports & Outdoors</button>
+          <button data-filter=".tools">Tools & Home Improvement</button>
+          <button data-filter=".toy">Toys & Games</button>
+        </div>
+      </nav>   
+
+    </div>
+  
+    <div class="card_container">
+
+      <% @codes.each do |code| %>
+      <div class="business_card <%= code.discount_spare_01 %> <%= code.discount_category %> ">
+        <div class="card_image">
+          <%= link_to (image_tag code.discount_image), code %>
+        </div>
+        <div class="masonry_sale">
+          <div class="masonry_sale_wrapper">
+            <div class="masonry_sale_howmuch"><%= code.discount_sale %></div>
+            <div class="masonry_sale_text">SALE</div>
+          </div>
+        </div>
+        <div class="business_info">
+          <h4 class="discount_title_index"><%= code.discount_title %></h4>
+          <p class="discount_get_code"><%= link_to "Get A Code", code %></p>
+          <p><%= code.discount_offer %></p>
+        </div>
+      </div>
+      <% end %>
+  
+      <div class="business_card baby amazon">
+        <div class="card_image">
+          <img src="http://www.gadgetsandtech.net/wp-content/uploads/2015/07/gadgets-in-hand-1000x500.jpg" />
+        </div>
+        <div class="masonry_sale">
+          <div class="masonry_sale_wrapper">
+            <div class="masonry_sale_howmuch">10%</div>
+            <div class="masonry_sale_text">SALE</div>
+          </div>
+        </div>
+        <div class="business_info">
+          <h4 class="discount_title_index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis sit veniam incidunt, ad amet quis.</h4>
+          <a href="#"><p class="discount_get_code">Get A Code</p></a>
+          <p>At Blatt Beer & Table we strive to bring people together. We want to be a hub for those who </p>
+        </div>
+      </div>
+    </div>
+   </section>
+
+  </div>
+ </div>
+</div>
+
+<!--  <div class="business_card [_Departments_] [_Markets_]">
+  <div class="card_image">
+    <img src="Image_URL" />
+  </div>
+  <div class="masonry_sale">
+    <div class="masonry_sale_wrapper">
+      <div class="masonry_sale_howmuch">Howmuch_Save?</div>
+      <div class="masonry_sale_text">SALE</div>
+    </div>
+  </div>
+  <div class="business_info">
+    <h4 class="discount_title_index">Product_Title</h4>
+    <a href="#"><p class="discount_get_code">Get A Code</p></a>
+    <p>Offer</p>
+  </div>
+</div> -->
+

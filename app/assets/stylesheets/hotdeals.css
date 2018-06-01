@@ -733,20 +733,36 @@ ul.shop_price_wrapper li {
   object-fit: contain;
 }
 
-.grids > .grid-item > .shop_sale_percentage {
+.grids > .grid-item > .shop_sale {
+  display: flex;
   position: absolute;
-  border: 1px solid #5bc995;
-  border-radius: 0.5em;
-  background-color: #5bc995;
-  color: white;
-  width: 65px;
-  height: 20px;
-  top: 0em;
+  top: 0;
+  left: 20px;
+  padding: 6px 8px;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
+  background: #5bc995;
+  color: white;
 }
-.grids > .grid-item > .shop_sale_percentage > .percentage_p {
-  font-size: 12px;
-  cursor: pointer;
+
+.grids > .grid-item > .shop_sale > .shop_sale_wrapper {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2em;
+  line-height: 0;
+}
+
+.grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_howmuch {
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_text {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1em;
 }
 
 
@@ -770,15 +786,6 @@ ul.shop_price_wrapper li {
   .shop_original_price, .shop_sale_price {
     margin-bottom: 1em;
   }
-  .grids > .grid-item > .shop_sale_percentage {
-    width: 65px;
-    height: 20px;
-    top: 0em;
-  }
-  .grids > .grid-item > .shop_sale_percentage > .percentage_p {
-    padding-top: 0em;
-    font-size: 12px;
-  }
 }
 
 @media(max-width:640px)
@@ -793,9 +800,6 @@ ul.shop_price_wrapper li {
   }
   .shop_original_price, .shop_sale_price {
     margin-bottom: 1em;
-  }
-  .shop_sale_percentage {
-    margin: -1.6em 0 3em 0.5em;
   }
   .grids > .grid-item > img {
     margin-bottom: -3em;
@@ -937,16 +941,6 @@ ul.shop_price_wrapper li {
   .grids > .grid-item > .main_img img {
     height: 8em;
     margin-top: 2em;
-  }
-  .grids > .grid-item > .shop_sale_percentage {
-    width: 65px;
-    height: 20px;
-    top: 3em;
-    margin-top: -3em;
-  }
-  .grids > .grid-item > .shop_sale_percentage > .percentage_p {
-    padding-top: 0em;
-    font-size: 12px;
   }
   .shop_check {
     margin-top: 1em;

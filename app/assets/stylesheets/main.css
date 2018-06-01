@@ -4800,6 +4800,23 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
   height: 10em;
 }
 
+.details_review_wrapper {
+  border: 2px solid;
+  padding: 2em;
+}
+.reviewer {
+  float: right;
+}
+.see_more_review {
+  margin: -3em 0 2em 0;
+  padding-left: 2em;
+}
+.see_more_review a {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #f56a6a;
+  color: white;
+}
 .detail_postive_review {
   margin-bottom: 2em;
 }
@@ -4807,10 +4824,6 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
 .detail_critical_review {
   margin-bottom: 2em;
 }
-
-/*.detail_postive_review h2, .detail_critical_review h2 {
-  text-align: center;
-}*/
 
 .details_review_else {
   text-align: center;
@@ -4851,9 +4864,7 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
 .details_price {
   margin-bottom: -3.5em;
 }
-.reviewer {
-  float: right;
-}
+
 
 
 @media screen and (max-width: 500px) {
@@ -5062,7 +5073,7 @@ and (max-width : 1023px) {
 }
 
 
-/* Detail`s Accordion */
+/* Detail`s Accordion, Show more & Show less */
 .accordion {
   max-width: 400px;
   margin-top: 1em;
@@ -5186,10 +5197,16 @@ and (max-width : 1023px) {
 .dynamic-max-height.height-active .dynamic-show-more {
   display: inline-block;
   text-align: left;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
 }
 .dynamic-max-height .dynamic-show-more {
   display: none;
   margin-top: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 

@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   
   has_one :wishlist
   has_many :shoes
+  has_many :codes
 end

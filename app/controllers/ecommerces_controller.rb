@@ -60,6 +60,8 @@ class EcommercesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
+    @pcategories = Pcategory.all.map{ |pc| [pc.name, pc.id] }
     @adjust = Ecommerce.find(params[:id])
   end
   
