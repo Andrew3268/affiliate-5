@@ -58,10 +58,6 @@
   padding-right: 0;
 }
 
-.filters-select i {
-  
-}
-
 .select-filter-group select {
   width: 50em;
   text-align-last: center;
@@ -110,6 +106,15 @@
   border-radius: 1em;
   background-color: #fed006;
   border: 3px solid #fed006;
+  color: white;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+.filter_nav .is-checked_promo {
+  border-radius: 1em;
+  background-color: #7acca4;
+  border: 3px solid #7acca4;
   color: white;
   padding: 0.5em;
   font-weight: bold;
@@ -214,8 +219,12 @@
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
   word-wrap:break-word;
+  height: 45px;
+  margin-top: 5px;
+  padding: 1px;
 }
 
+/* === Sale Tag === */
 .masonry_sale {
   display: flex;
   position: absolute;
@@ -244,14 +253,14 @@
   font-size: 14px;
   line-height: 1em;
 }
+/* === Sale Tag === */
 
 .codes_main_title {
   margin-bottom: 1em;
   text-align: center;
 }
 
-/* ========== MEDIA QUERIES =========== */
-
+/* ========== MEDIA QUERIES for main page of code =========== */
 
 @media screen and (max-width: 500px) {
   
@@ -259,7 +268,7 @@
     margin-bottom: 2em;
   }
   .card_container .business_card {
-    width: 100%;
+    width: 98%;
   }
   .filter_nav, .code_admin_control {
     display: none;
@@ -492,9 +501,9 @@ discount_show_details h1 {
     width:100%;
   }
 }
-/********************************************* End show page *********************************************/
+/* ========= for random image  ======== */
 
-
+/* ========== MEDIA QUERIES for show page of code =========== */
 
 @media handheld,only screen and (max-width:360px) { 
   .discount_show_image {

@@ -1,4 +1,5 @@
 
+
 /* Promotion Scetion */
 
 .product-list {
@@ -131,6 +132,68 @@
   .product-list {
     grid-template-columns: repeat(5, 1fr);
   }
+}
+
+
+
+/* ======================================= New Promotion Page ======================================= */
+.promo_learn_more {
+  border: 1px solid #7acca4;
+  border-radius: 5px;
+  padding: 0.3em;
+  background-color: #7acca4;
+  color: white;
+  margin-bottom: 1em;
+}
+
+/* See more css in "codes.css.scss" */
+.promo_sale {
+  background: #7acca4;
+}
+
+.promo_title_index {
+  text-align: center;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+  height: 45px;
+  margin-top: 5px;
+  padding: 1px;
+}
+
+.promo_select {
+  display: none;
+}
+
+
+@media screen and (max-width: 500px) {
+  .promo_title_index {
+    margin-top: -9px;
+    padding: 5px;
+  }
+}
+
+@media only screen
+and (min-width : 501px)  
+and (max-width : 750px) {
+
+}
+
+@media only screen
+and (min-width : 751px)  
+and (max-width : 1023px) {
+
+}
+
+@media screen and (min-width: 1024px) { 
+
 }
 
 

@@ -1,11 +1,25 @@
 <div id="wrapper">
   <div id="main">
     <div class="inner_hotdeals">
-    <%= render 'shared/header' %>
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <header id="header">
+     <a href="/" class="logo main_header" title="ohigottabuythis"><strong>Oh,</strong> I Gotta Buy This </a>
+    </header></br>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-<!--       <h2 class="hotdeals_h2">Hi, Everyone :D</h2>
-      <p>We have just made your life easier. We offer a quick way to find the best deals.</p> -->
+      <div class="flex main">
+        <div class="flex-container">
+          <a href="/search/quicksearch"><img src="<%=asset_path 'quick_search.jpg'%>" class="flex-container-images" alt="Find Deals"></img></a>
+        </div>
+        <div class="flex-container">
+          <a href="/hotdeals/discount_codes"><img src="<%=asset_path 'discount_code.jpg'%>" class="flex-container-images" alt="Find Deals"></img></a>
+        </div>
+        <div class="flex-container">
+          <a href="/hotdeals/promotion"><img src="<%=asset_path 'promotion.jpg'%>" class="flex-container-images" alt="Find Deals"></img></a>
+        </div>
+        <div class="flex-container">
+          <a href="/hotdeals/coupons"><img src="<%=asset_path 'coupon.jpg'%>" class="flex-container-images" alt="Find Deals"></img></a>
+        </div>
+      </div></br></br>
     
       <section>
         

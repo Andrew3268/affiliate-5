@@ -4,7 +4,7 @@
     <title>Oh, I Gotta Buy This</title>
     <meta charset="utf-8"/>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="shortcut icon" type="image/jpg" href="https://goo.gl/qBPfBM">
@@ -284,7 +284,7 @@
     </script>
 
     
-    <!-- For shoes show image-->
+    <!-- For Image Gallery on Shoes_Show Page-->
     <script>
     var sizes = jQuery(".product--size").find("span");
     sizes.click(function() {
@@ -430,7 +430,9 @@
       );
     });
   </script>
-  
+
+
+  <!-- For Discount_codes Page -->
   <script>
         // init Isotope
     var $card_container = $('.card_container').isotope({
@@ -460,7 +462,7 @@
       $card_container.isotope({ filter: filterValue + filterDropdown });
     });
 
-    // change is-checked class on buttons
+    // change is-checked class on buttons for discount_codes
     $('.button-group').each( function( i, buttonGroup ) {
       var $buttonGroup = $( buttonGroup );
       $buttonGroup.on( 'click', 'button', function() {
@@ -468,6 +470,8 @@
         $( this ).addClass('is-checked');
       });
     });
+
+
   </script>
 
 
