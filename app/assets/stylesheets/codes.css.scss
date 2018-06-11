@@ -35,12 +35,15 @@
 .card_container {
   overflow: auto;
   display: flex;
+  height: 100%;
   /*flex-wrap: wrap;*/
 }
 
 /* ============ MENU/NAV ============ */
 
-.select-filter-group, .select-filter-group_01  {
+.select-filter-group, 
+.select-filter-group_01,
+.select-filter-group_02 {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -58,7 +61,8 @@
   padding-right: 0;
 }
 
-.select-filter-group select {
+.select-filter-group select,
+.select-filter-group_02 select {
   width: 50em;
   text-align-last: center;
   line-height: 2.5em;
@@ -154,23 +158,6 @@
   /* max-height: 90%; */
 }
 
-.business_category {
-  background-color: #d2652d;
-  top: 0;
-  color: #fff;
-  left: 0;
-  min-height: 18px;
-  min-width: 48px;
-  position: absolute;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 300;
-  text-transform: uppercase;
-  border-bottom-right-radius: 3px;
-  padding: 5px 10px;
-  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
-}
-
 .business_info {
   width: 100%;
   /*height: 175px;*/
@@ -256,19 +243,14 @@
 /* === Sale Tag === */
 
 .codes_main_title {
-  margin-bottom: 1em;
   text-align: center;
 }
 
 /* ========== MEDIA QUERIES for main page of code =========== */
 
 @media screen and (max-width: 500px) {
-  
-  .codes_main_title {
-    margin-bottom: 2em;
-  }
   .card_container .business_card {
-    width: 98%;
+    width: 48%;
   }
   .filter_nav, .code_admin_control {
     display: none;
@@ -284,9 +266,6 @@
 @media only screen
 and (min-width : 501px)  
 and (max-width : 750px) {
-  .codes_main_title {
-    margin-bottom: 2em;
-  }
   .card_container .business_card {
     width: 48%;
   }
@@ -301,9 +280,6 @@ and (max-width : 750px) {
 @media only screen
 and (min-width : 751px)  
 and (max-width : 1023px) {
-  .codes_main_title {
-    margin-bottom: 2em;
-  }
   .card_container .business_card {
     width: 31%;
   }
@@ -326,6 +302,10 @@ and (max-width : 1023px) {
   float: left;
   width: 40%;
   padding: 1em;
+}
+
+.discount_show_image img {
+  width: 100%;
 }
 
 .discount_show_details {
@@ -387,7 +367,7 @@ discount_show_details h1 {
   border: 1px solid #606060;
   background-color: #606060;
   border-radius: 5px;
-  padding: 5px 13px;
+  padding: 5px 12px;
   color: white;
   font-weight: bold;
 }
@@ -402,13 +382,18 @@ discount_show_details h1 {
   text-align: center;
 }
 
+.discount_show_random img {
+  width: 100%;
+}
+
 .discount_name {
   margin: 0 0 0 0.5em;
 }
 
 .discount_code_info{
   float: left;
-  width: 75%;
+  width: 100%;
+  margin: -1em 0 1em 0;
 }
 
 .discount_amazon {
@@ -418,16 +403,16 @@ discount_show_details h1 {
 .how_to_use p {
   text-align: center;
 }
+
 .info_img {
   text-align: center;
 }
-
 
 .discount_info_accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 8px;
     width: 100%;
     border: none;
     text-align: left;
@@ -519,6 +504,9 @@ discount_show_details h1 {
   .discount_show_random {
     width: 100%;
   }
+  .how_to_use img {
+    width: 100%;
+  }
 }
 
 @media handheld,only screen and (max-width:640px) {
@@ -533,6 +521,9 @@ discount_show_details h1 {
     font-size: 10px;
   }
   .discount_show_random {
+    width: 100%;
+  }
+    .how_to_use img {
     width: 100%;
   }
 }

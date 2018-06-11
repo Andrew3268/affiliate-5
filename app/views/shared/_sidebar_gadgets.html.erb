@@ -9,10 +9,9 @@
 
     <!-- Menu -->
     <nav id="menu">
-<!--     	<header class="major">
-    		<h2>Menu</h2>
-    	</header> -->
-      <img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net"></img></br></br> 
+      <div class="side_logo">
+      <img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net"></img>
+      </div></br></br> 
     	<ul class="icons">
     	  <% if user_signed_in? %>
     	    <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li></br>

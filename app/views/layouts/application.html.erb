@@ -471,16 +471,72 @@
       });
     });
 
+    // change is-checked_promo class on buttons for discount_codes on quickSearch page.
+    $('.button-group_promo').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.is-checked_promo').removeClass('is-checked_promo');
+        $( this ).addClass('is-checked_promo');
+      });
+    });
 
   </script>
 
+  <!-- Show more Discount Code on QuickSearch Page -->
+  <script>
+    $(document).ready(function () {
+      console.clear();
+      var target = '.discount_list li',
+            size = $(target).length,
+               x = 8,  // Show on Start
+           addTo = 4,  // Number to increase by
+      loadButton = $('.load-more');
+      $(target).hide();
+      $(target + ':lt(' + x + ')').show();
+      loadButton.on("click", function () {
+        // if currently showing plus addTo is less than total, increment var x, otherwise set it to the total
+        x = (x + addTo <= size) ? x + addTo : size;
+        // Show the suckers
+        $(target + ':lt('+x+')').show();
+        // if showing is equal to total, hide button
+        if (x == size){
+            $(this).hide();
+        }
+        return false;
+      });
+    });
+  </script>
+
+  <script>
+    //Sticky menu
+    var sticky = document.querySelector('.quick_stiky_menu');
+    var origOffsetY = sticky.offsetTop;
+    function onScroll(e) {
+        window.scrollY >= origOffsetY ? sticky.classList.add('fixed') :
+            sticky.classList.remove('fixed');
+    }
+    document.addEventListener('scroll', onScroll);
+    //Scroll to anchor
+
+    $(function () {
+      $('a[href*="#"]:not([href="#"])').click(function () {
+      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+              $('html, body').animate({
+                  scrollTop: target.offset().top - 50
+              }, 500);
+              return false;
+          }
+        }
+      });
+    });
+  </script>
 
 
+  
 
-
-
-
- 
 
  </body>
 </html>

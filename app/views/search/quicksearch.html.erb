@@ -4,74 +4,124 @@
         <%= render 'shared/header' %>
         <div class="quicksearch_warpper">
 
-          <h1 class="quicksearch_title" title="Amazon Discount & Deals Qucik Search">Amazon Discount & Deals Qucik Search</h1>
-
+         <h1 class="quicksearch_title" title="Amazon shopping">All About The Sale On Amazon 2018</h1>
+         
+         <div class="quick_stiky_menu">
+           <ul>
+            <li><a href="#quickSearch">Quick Search</a></li>
+            <li><a href="#promotion">Promotions</a></li>
+            <li><a href="#discountCode">Discount Codes</a></li>
+            <li><a href="#search">Search</a></li>
+           </ul>
+         </div>
+<!-- 
           <div class="topnav" id="myMenu">
             <a href="/hotdeals/promotion">Promotions & Events</a>
             <a href="/hotdeals/coupons">Coupons & Deals</a>
             <a href="/hotdeals/discount_codes">Discount Codes</a>
-            <!-- <a href="/hotdeals/hotdeals_women">Hotdeals Women</a>
-            <a href="/hotdeals/hotdeals_men">Hotdeals Men</a> -->
+            <a href="/hotdeals/hotdeals_women">Hotdeals Women</a>
+            <a href="/hotdeals/hotdeals_men">Hotdeals Men</a>
             <a href="javascript:void(0);" style="font-size:16px;" class="icon" onclick="myQuickmenu()">&#9776;</a>
-          </div>
+          </div> -->
+        
 
-          <h2 class="hotdeals_h2">Hi, Everyone :D</h2>
-          <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> search results.</p>
-
-          <p>Oh,igottabuythis is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> and affiliated sites.</p>
-
+          <!-- <p>Oh,igottabuythis is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> and affiliated sites.</p>
+ -->
           <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
           
-          <div class="tabs">
-            <input type="radio" name="tab" id="tab1" checked="checked">
-            <label for="tab1">USA</label>
-            <input type="radio" name="tab" id="tab2">
-            <label for="tab2">CANADA</label>
-            <input type="radio" name="tab" id="tab3">
-            <label for="tab3">UK</label>
+         
+            <h1 class="codes_main_title" id="quickSearch">Quick Search</h1>
+            <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> search results.</p>
 
-            <div class="tab-content-wrapper">
-              <div id="tab-content-1" class="tab-content">
-               <%= render 'shared/usa_discount' %>
-              </div>
-              <div id="tab-content-2" class="tab-content">
-                <%= render 'shared/canada_discount' %>
-              </div>
-              <div id="tab-content-3" class="tab-content">
-                <%= render 'shared/uk_discount' %>
+            <div class="tabs">
+              <input type="radio" name="tab" id="tab1" checked="checked">
+              <label for="tab1">USA</label>
+              <input type="radio" name="tab" id="tab2">
+              <label for="tab2">CANADA</label>
+              <input type="radio" name="tab" id="tab3">
+              <label for="tab3">UK</label>
+
+              <div class="tab-content-wrapper">
+                <div id="tab-content-1" class="tab-content">
+                 <%= render 'shared/usa_discount' %>
+                </div>
+                <div id="tab-content-2" class="tab-content">
+                  <%= render 'shared/canada_discount' %>
+                </div>
+                <div id="tab-content-3" class="tab-content">
+                  <%= render 'shared/uk_discount' %>
+                </div>
               </div>
             </div>
-          </div>
-      
-          <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "true";
-            amzn_assoc_tracking_id = "3628-20";
-            amzn_assoc_search_bar_position = "top";
-            amzn_assoc_ad_mode = "search";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_title = "Search Everything";
-            amzn_assoc_default_search_phrase = "todays deals";
-            amzn_assoc_default_category = "All";
-            amzn_assoc_linkid = "2a7ed4aa888f9ca495b934b8407e9e4d";
-            amzn_assoc_rows = "2";
-          </script>
-          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-          
-<!--           <div class="search_footer">
-                <h2>Thanks to all my visitors:D</h2>
-                <p>★ Note ★</p>
-                <p> All These products in this website belong to the website owner and the product owner.</p>
-                <p>- "Oh,i gotta buy this" acknowledge some content in this process, the aim is to provide for the convenience to the user. By specifying the source, we respect other people`s rights, as well as to provide support for those who own the contents. Please let me know if your writing has been copied in a way that infringes on copyright infringement, and I will try to work hard to resolve this issue.</p>
-                <p>- "Oh, i gotta buy this" only want to show the coolest gadgets and best inventions you can find and buy on the website. We`re not interested in spamming any boring or lame products at you. All you need to know is in our website, you are going to find a lot of coolest & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet. Enjoy!</p>
-                <p>- Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to make good website like this. Thanks</p> 
-                <ul class="actions">
-                  <li><a href="/" class="button">Back To Home</a></li>
-                  <li><%= link_to "Contact_us", contact_us_path, class: "button" %></li>
-                </ul>
-             </div> -->
+
+
+
+            <h1 class="codes_main_title" id="promotion">Promotions & Deals 2018</h1>
+            <section class="card_grid">
+              
+              <div class="filter_menu">
+                <div class="select-filter-group promo_select" id="selectDropdown">
+                  <select class="filters-select">
+                    <option value=".amazon_us">Amazon.com</option>
+                    <option value=".amazon_ca">Amazon.ca</option>
+                    <option value=".amazon_uk">amazon.co.uk</option>
+                  </select>
+                </div>
+                  
+                <div class="select-filter-group_01" id="selectDropdown">
+                  <select class="filters-select">
+                    <option value=".amazon_us">amazon.com</option>
+                    <option value=".amazon_ca">amazon.ca</option>
+                    <option value=".amazon_uk">amazon.co.uk</option>
+                  </select>
+                </div>
+
+                <nav class="filter_nav">
+                  <div class="button-group_promo" data-filter-group="categories">
+                    <!-- <button class="is-checked_promo" data-filter="*">all categories</button> -->
+                    <button class="is-checked_promo" data-filter=".amazon_us">amazon.com</button>
+                    <button data-filter=".amazon_ca">amazon.ca</button>
+                    <button data-filter=".amazon_uk">amazon.co.uk</button>
+                  </div>
+                </nav>   
+
+              </div>
+              
+              <div class="card_container">
+               <%= render 'shared/promo_amazon_us' %>  
+              </div>
+
+            </section></br></br>
+
+
+         
+            <h1 class="codes_main_title" id="discountCode">Discount Codes 2018</h1>
+            <div class="discount_shared_box">
+              <%= render 'shared/amazon_discount_codes' %>
+              <a class="load-more" href="#0"><p class="discount_more">Show More<p></a>
+            </div></br></br>
+
+
+
+
+            <div id="search"> 
+              <script type="text/javascript">
+                amzn_assoc_placement = "adunit0";
+                amzn_assoc_search_bar = "true";
+                amzn_assoc_tracking_id = "3628-20";
+                amzn_assoc_search_bar_position = "top";
+                amzn_assoc_ad_mode = "search";
+                amzn_assoc_ad_type = "smart";
+                amzn_assoc_marketplace = "amazon";
+                amzn_assoc_region = "US";
+                amzn_assoc_title = "Search Everything";
+                amzn_assoc_default_search_phrase = "todays deals";
+                amzn_assoc_default_category = "All";
+                amzn_assoc_linkid = "2a7ed4aa888f9ca495b934b8407e9e4d";
+                amzn_assoc_rows = "2";
+              </script>
+              <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+            </div>
           
         </div></br></br><!--<class="quicksearch_warpper">-->
           

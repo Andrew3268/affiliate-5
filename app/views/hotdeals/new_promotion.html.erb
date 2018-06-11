@@ -13,23 +13,23 @@
           <option value="">All Markets</option>
           <option value=".amazon_us">Amazon.com</option>
           <option value=".amazon_ca">Amazon.ca</option>
-          <option value="amazon_uk">amazon.co.uk</option>
+          <option value=".amazon_uk">amazon.co.uk</option>
         </select>
       </div>
       
       <div class="select-filter-group_01" id="selectDropdown">
         <select class="filters-select">
-          <option value="all">All Departments</option>
-          <option value="new">New</option>
-          <option value="amazon_us">amazon.com</option>
-          <option value="amazon_ca">amazon.ca</option>
-          <option value="amazon_uk">amazon.co.uk</option>
+          <option value="">All Departments</option>
+          <option value=".new">New</option>
+          <option value=".amazon_us">amazon.com</option>
+          <option value=".amazon_ca">amazon.ca</option>
+          <option value=".amazon_uk">amazon.co.uk</option>
         </select>
       </div>
 
       <nav class="filter_nav">
         <div class="button-group_promo" data-filter-group="categories">
-          <button class=" is-checked_promo" data-filter="*">all categories</button>
+          <button class="is-checked_promo" data-filter="*">all categories</button>
           <button data-filter=".new">New</button>
           <button data-filter=".amazon_us">amazon.com</button>
           <button data-filter=".amazon_ca">amazon.ca</button>
@@ -40,9 +40,7 @@
     </div>
   
     <div class="card_container">
-     <%= render 'shared/promo_amazon_us' %>  
-
-      
+     <%= render 'shared/promo_amazon_us' %>       
     </div>
    </section>
 

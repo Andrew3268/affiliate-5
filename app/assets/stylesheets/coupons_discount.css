@@ -45,6 +45,212 @@
     width: 100%;
 }
 
+/***************************************** Discount Code Part *****************************************/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 2em;
+  padding: 0;
+}
+
+.cards__item {
+  display: flex;
+  padding: 0.5em;
+}
+.cards__item a {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .cards__item {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .cards__item {
+    width: 25%;
+  }
+}
+@media (max-width: 470px) {
+  .cards__item {
+    width: 100%;
+    padding: 0em;
+  }
+}
+
+.card {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 15px;
+  text-align: center;
+}
+
+.card__image {
+  border-top-left-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+  overflow: hidden;
+  position: relative;
+  max-width: 28em;
+  max-height: 15em;
+}
+
+.card__image_code {
+  border-top-left-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+  overflow: hidden;
+  position: relative;
+  max-width: 28em;
+  max-height: 20em;
+}
+
+.cards__item img {
+  height: 17em;
+  width: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.card__image img {
+  width:100%;
+  height:100%;
+}
+
+.card__image::before {
+  content: "";
+  display: block;
+  padding-top: 0;
+}
+@media (min-width: 40rem) {
+  .card__image::before {
+    padding-top: 0.6%;
+  }
+}
+
+.card__title {
+  font-size: 1em;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #696969;
+}
+
+.card__text {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+  font-weight: 400;
+  text-align: left;
+  line-height: 20px;
+  flex: 1 1 auto;
+  margin-bottom: 1.25rem;
+  color: #4B4F56;
+  height: 3em;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2;  /*number of line*/  
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+
+.gadgets_price_after {
+  margin-bottom: -0.4em;
+}
+
+.gadgets_intro, .card__title {
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2;  /*number of line*/  
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+  height: 3em;
+}
+
+.discount_codes {
+  margin: 1em 0 0 0;
+  border: 3px dotted white;
+  border-radius: 0.5em;
+  padding: 0.2em;
+  font-size: 1.5em;
+  color: white;
+  background-color: #fed006;
+}
+
+.code_date {
+  margin-bottom: 0.5em;
+}
+
+.discount_botton a {
+  color: white;
+}
+
+.use_code {
+ margin-bottom: 0.5em; 
+ border-radius: 0.3em;
+ padding: 0.3em 0;
+ background-color: #606060;
+}
+
+.masonry_sale_discount {
+  display: flex;
+  position: absolute;
+  padding: 6px 8px;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background: #fed006;
+  color: white;
+}
+
+.discount_more {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  width: 30%;
+  margin: 0 auto;
+  background-color: #fed006;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.discount_shared_box a {
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .discount_more {
+    width: 100%;
+  }
+}
+
+
+
 
 
 /***************************************** Coupons & Deals Part *****************************************/
@@ -66,6 +272,10 @@ split styles
   text-align: right;
   width: 9em;
   height: 7em;
+}
+
+.split-right img {
+  width: 100%;
 }
 
 /*------------------------------

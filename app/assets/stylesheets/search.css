@@ -1,6 +1,7 @@
 .quicksearch_title {
     font-size: 3.5em;
     margin-bottom: 0.5em;
+    text-align: center;
 }
 
 #main .inner_quicksearch .quicksearch_warpper {
@@ -13,6 +14,40 @@
   border: 1px solid black;
   border-radius: 0.5em;
   padding: 1em;
+}
+
+.quick_stiky_menu {
+  z-index: 10;
+}
+
+.quick_stiky_menu ul {
+  list-style: none;
+  text-align: center;
+  padding: 0.5em;
+   /* SHADOW */
+  -webkit-box-shadow: 0px 0px 2px 0px #000000;
+  -moz-box-shadow: 0px 0px 2px 0px #000000;
+  box-shadow: 0px 0px 2px 0px #000000;
+  /* TRANSPARENCY */
+  background-color: rgba(1, 1, 1,0.5);
+  color: rgba(1, 1, 1, 0.5);
+}
+
+.quick_stiky_menu ul li {
+  display: inline-block;
+  margin: 0 1em 0 1em;
+}
+
+.quick_stiky_menu ul li a {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 72%;
 }
 
 
@@ -171,9 +206,35 @@ div.tab .discount .active {
 }
 
 
+@media screen and (max-width: 500px) {
+  .quick_stiky_menu ul li a {
+    font-size: 0.8em;
+  }
+  .quick_stiky_menu ul li {
+    margin: 0 0.1em 0 0.1em;
+  }
+  .fixed {
+    width: 88%;
+  }
+}
 
+@media only screen
+and (min-width : 501px)  
+and (max-width : 750px) {
+  .fixed {
+    width: 77%;
+  }
+}
 
-/*** New Tab ***/
+@media only screen
+and (min-width : 751px)  
+and (max-width : 1023px) {
+  .fixed {
+    width: 75%;
+  }
+}  
+
+/*** New(quick) Tab ***/
 .tabs {
   margin-bottom: 2em;
 }
@@ -269,6 +330,19 @@ div.tab .discount .active {
   position: relative;
   top: 0px;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
