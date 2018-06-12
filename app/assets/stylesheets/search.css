@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo');
+
 .quicksearch_title {
-    font-size: 3.5em;
-    margin-bottom: 0.5em;
-    text-align: center;
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-family: 'Archivo', sans-serif;
+}
+
+.promo_main_title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: 'Archivo', sans-serif;
 }
 
 #main .inner_quicksearch .quicksearch_warpper {
@@ -215,6 +224,9 @@ div.tab .discount .active {
   }
   .fixed {
     width: 88%;
+  }
+  .promo_main_title {
+    margin-bottom: 2em;
   }
 }
 

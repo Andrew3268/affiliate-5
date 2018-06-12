@@ -244,7 +244,10 @@
 
 .codes_main_title {
   text-align: center;
+  font-family: 'Archivo', sans-serif;
 }
+
+
 
 /* ========== MEDIA QUERIES for main page of code =========== */
 
@@ -409,38 +412,37 @@ discount_show_details h1 {
 }
 
 .discount_info_accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 8px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-bottom: 0.2em;
 }
 
 .active, .discount_info_accordion:hover {
-    background-color: #ccc; 
+  background-color: #ccc; 
 }
 
 .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
 
 /* ========= for random image  ======== */
-.discount_grids
-{
+.discount_grids {
   overflow:hidden;
   width:100%;
 }
 
-.discount_grids > *
-{
+.discount_grids > * {
   float:left;
   /* Callback width*/
   width:16.666%;
@@ -449,8 +451,7 @@ discount_show_details h1 {
   box-sizing:border-box;
 }
 
-.discount_grids > div > img
-{
+.discount_grids > div > img {
   width:100%;
   display:block;
 }
@@ -464,24 +465,21 @@ discount_show_details h1 {
 
 
 /* MEDIA QUERY */
-@media(max-width:1200px)
-{
+@media(max-width:1200px) {
   .discount_grids > *{
     width:calc(100%/4);
     width:-webkit-calc(100%/4);
   }
 }
 
-@media(max-width:640px)
-{
+@media(max-width:640px) {
   .discount_grids > *{
     width:calc(100%/2);
     width:-webkit-calc(100%/2);
   }
 }
 
-@media(max-width:320px)
-{
+@media(max-width:320px){
   .discount_grids > *{
     width:100%;
   }

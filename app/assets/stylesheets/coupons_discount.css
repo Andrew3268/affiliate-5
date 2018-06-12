@@ -193,12 +193,11 @@
 
 .discount_codes {
   margin: 1em 0 0 0;
-  border: 3px dotted white;
+  border: 3px dotted #fed006;
   border-radius: 0.5em;
   padding: 0.2em;
   font-size: 1.5em;
-  color: white;
-  background-color: #fed006;
+  color: #fed006;
 }
 
 .code_date {
@@ -213,7 +212,7 @@
  margin-bottom: 0.5em; 
  border-radius: 0.3em;
  padding: 0.3em 0;
- background-color: #606060;
+ background-color: #fed006;
 }
 
 .masonry_sale_discount {
@@ -237,6 +236,7 @@
   background-color: #fed006;
   font-weight: bold;
   font-size: 1.5em;
+  color: white;
 }
 
 .discount_shared_box a {
