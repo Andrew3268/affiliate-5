@@ -22,8 +22,10 @@
 				
 				<h2 class="detail_intription">What`s this?</h2>
 				<p><%= @details.intro %></p>
-				<h2 class="detail_intription">Overview</h2>
-				<p class="details_p"><%= @details.description %></p>
+        <% if @details.description.present? %>
+  				<h2 class="detail_intription">Overview</h2>
+  				<p class="details_p"><%= @details.description %></p>
+        <% end %>
 
 				<div class="details_price">
           <% total = 0 %>
@@ -83,7 +85,7 @@
          <h3>Special offers and product promotions</h3>
          <ul>
           <% if @details.amazon_visa_card.present? %>
-           <li><a href="<%= @details.amazon_visa_card_link %>">Get $50 off instantly:</a> <%= @details.amazon_visa_card %></li>
+           <li><a href="<%= @details.amazon_visa_card_link %>"><%= @details.amazon_visa_card %></a></li>
           <% end %>
           <% if @details.buy_used.present? %>
            <li>Buy Used and Save: <%= @details.buy_used %></br><a href="<%= @details.buy_used_link %>">See all Used offers.</a></li>
