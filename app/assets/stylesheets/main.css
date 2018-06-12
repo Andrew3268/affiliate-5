@@ -4843,6 +4843,10 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
   margin-top: -5.7em;
   margin-left: 16em;
 }
+
+.amazon_prime img {
+  width: 100%;
+}
 .details_special_offer h3 {
   margin-bottom: 0.3em;
 }
