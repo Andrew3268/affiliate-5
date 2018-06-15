@@ -317,7 +317,7 @@ a.button_prodcuts:hover{
 
 .shop_price_wrapper {
   margin-bottom: -2em;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 ul.shop_price_wrapper li {
@@ -440,6 +440,30 @@ ul.shop_price_wrapper li {
   margin-left: 1.2em;
 }
 
+.show_admin h2 {
+  font-size: 20px;
+  margin-bottom: -0.5em;  
+}
+
+.show_admin {
+  border: 1px solid #5bc995;
+  padding: 5px;
+}
+.show_admin ul {
+  margin: 0.5em 0 1em 0;
+}
+.show_admin li {
+  font-size: 9px;
+  background-color: #5bc995;
+  color: white;
+}
+.admin_button {
+  margin-top: -1em;
+}
+.show_admin p {
+  margin: 0em;
+  padding: 4px;
+}
 /*------------------------------
  GRID GALLERY START HERE
 --------------------------------*/
@@ -751,7 +775,6 @@ and (max-width : 1024px) {
   }
 }
 
-
 @media screen and (min-width: 1366px) {
   .via_where {
     top: 12.1em;
@@ -762,6 +785,68 @@ and (max-width : 1024px) {
 }
 
 
+
+/*------------------------------
+ Social Sharing
+--------------------------------*/
+.social {
+  position: fixed;
+  top: 25%;
+  list-style-type: none;
+  z-index: 11;
+}
+.social li {
+  width: 65px;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.social li:hover {
+  width: 75px;
+}
+.social li a {
+  display: block;
+  width: 100%;
+  background: #2a2a2a;
+  font-size: 30px;
+  color: #fff;
+  padding: 10px;
+}
+
+.social li a.facebook:hover {
+  background: #3b5997;
+}
+
+.social li a.twitter:hover {
+  background: #2daae1;
+}
+
+.social li a.whatsapp:hover {
+  background: #5abe42;
+}
+
+.social li a.pinterest:hover {
+  background: #ca2026;
+}
+
+.social span {
+  display: none;
+}
+
+.content {
+  font: normal 16px/1.5 "Roboto Condensed";
+  color: #2a2a2a;
+  width: 60%;
+  margin: 15px auto;
+}
+.content p {
+  padding: 10px 0;
+}
+.content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
 
 
 

@@ -1,3 +1,20 @@
+<!-- Social Shring -->
+<ul class="social">
+  <!-- FaceBook -->
+  <a class="facebook" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@bag, { 
+   only_path: false }]) %>&t=<%= @bag.bag_title %>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="fa fa-facebook"></i><span>Share on Facebook</span></a></li></a>
+  <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
+  </script>
+  <!-- Twitter -->
+  <a class="twitter" href="https://twitter.com/share?url=<%= url_for([@bag, { 
+   only_path: false }]) %>&via=ohigottabuythis&text=<%= @bag.bag_title %>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+   target="_blank" title="Share on Twitter">
+   <li><i class="fa fa-twitter"></i><span>Share on Twitter</span></a></li>
+  </a>
+</ul>
+
 <div id="wrapper">
   <div id="main">
     <div class="inner_hotdeals">
@@ -51,26 +68,29 @@
             <h3>How about this?</h3>
             <%= link_to (image_tag @random_bag.bag_main_img), bag_path(@random_bag) %>
             <p><%= link_to @random_bag.bag_title, bag_path(@random_bag) %></p>
+
+            <!-- Admin controll -->
+            <div class="show_admin">
+              <% if can? :update, @bag %>
+                <h2>For Admin</h2>
+                <ul class="shop_price_wrapper">
+                  <li><p><%= @bag.bag_option_01 %></p></li>
+                  <li><p><%= @bag.bag_option_02 %></p></li>
+                  <li><p><%= @bag.bag_option_03 %></p></li>
+                  <li><p><%= @bag.bag_option_04 %></p></li>
+                  <li><p><%= @bag.bag_option_05 %></p></li>
+                </ul>
+                <div class="admin_button">
+                  <%= link_to "Edit", edit_bag_path(@bag) %>
+                  <%= link_to "Delete", bag_path(@bag), method: :delete, data: { confirm: "Are you sure?" } %>
+                </div>
+              <% end %>
+             </div>
           </div>
 
       </div><!--/.product_show-->
-
-      <div class="show_admin">
-        <% if can? :update, @bag %>
-          <h2>For Admin</h2>
-          <ul class="shop_price_wrapper">
-            <li><p><%= @bag.bag_option_01 %></p></li>
-            <li><p><%= @bag.bag_option_02 %></p></li>
-            <li><p><%= @bag.bag_option_03 %></p></li>
-            <li><p><%= @bag.bag_option_04 %></p></li>
-            <li><p><%= @bag.bag_option_05 %></p></li>
-          </ul>
-          <%= link_to "Edit", edit_bag_path(@bag) %>
-          <%= link_to "Delete", bag_path(@bag), method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
-       </div>
       
-      <!-- Related Shoes -->
+<!-- Related Shoes -->
       <div class="expanded row">
         <div class="large-18">
           <h2>Look for similar items in this category</h2>

@@ -1,8 +1,27 @@
+<!-- Social Shring -->
+<ul class="social">
+  <!-- FaceBook -->
+  <a class="facebook" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@shoe, { 
+   only_path: false }]) %>&t=<%= @shoe.title %>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="fa fa-facebook"></i><span>Share on Facebook</span></a></li></a>
+  <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
+  </script>
+  <!-- Twitter -->
+  <a class="twitter" href="https://twitter.com/share?url=<%= url_for([@shoe, { 
+   only_path: false }]) %>&via=ohigottabuythis&text=<%= @shoe.title %>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+   target="_blank" title="Share on Twitter">
+   <li><i class="fa fa-twitter"></i><span>Share on Twitter</span></a></li>
+  </a>
+</ul>
+
 <div id="wrapper">
   <div id="main">
     <div class="inner_hotdeals">
     <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
 
       <div class="product_show">
         <div class="product--body">
@@ -44,33 +63,37 @@
              <li><a target="_blank" class="shop_link" href="<%= @shoe.link %>"><p class="shop_check">Check it Out via <%= @shoe.option_03 %></p></a></li>
              <li class="show_home"><%= link_to "See More >>", shoes_path %></li>
             </ul>
+
           </div>
 
-          <!--Random post-->
-          <div class="random_shoe">
-            <h3>How about this?</h3>
-            <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
-            <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
+<!--Random post of shoes-->
+         <div class="random_shoe">
+          <h3>How about this?</h3>
+          <%= link_to (image_tag @random_shoe.main_img), shoe_path(@random_shoe) %>
+          <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
+
+          <!-- Admin controll -->
+          <div class="show_admin">
+            <% if can? :update, @shoe %>
+              <h2>For Admin</h2>
+              <ul class="shop_price_wrapper">
+                <li><p><%= @shoe.option_01 %></p></li>
+                <li><p><%= @shoe.option_02 %></p></li>
+                <li><p><%= @shoe.option_03 %></p></li>
+                <li><p><%= @shoe.option_04 %></p></li>
+                <li><p><%= @shoe.option_05 %></p></li>
+              </ul>
+              <div class="admin_button">
+                <%= link_to "Edit", edit_shoe_path(@shoe) %>
+                <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
+              </div>
+            <% end %>
+           </div>
           </div>
 
       </div><!--/.product_show-->
-
-      <div class="show_admin">
-        <% if can? :update, @shoe %>
-          <h2>For Admin</h2>
-          <ul class="shop_price_wrapper">
-            <li><p><%= @shoe.option_01 %></p></li>
-            <li><p><%= @shoe.option_02 %></p></li>
-            <li><p><%= @shoe.option_03 %></p></li>
-            <li><p><%= @shoe.option_04 %></p></li>
-            <li><p><%= @shoe.option_05 %></p></li>
-          </ul>
-          <%= link_to "Edit", edit_shoe_path(@shoe) %>
-          <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
-       </div>
       
-      <!-- Related Shoes -->
+<!-- Related Shoes(smaple) -->
       <div class="expanded row">
         <div class="large-18">
           <h2>Look for similar items in this category</h2>
@@ -85,7 +108,7 @@
         </div><!--end col-->
       </div><!--end row-->
 
-      <!-- Random gadgets posts -->
+<!-- Random gadgets posts -->
       <h2>You may also be interested in</h2>
       <ul class="cards">
         <% @ecommerces.each do |gadgets| %>
