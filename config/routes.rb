@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
   # root 'ecommerces#index'
-  root 'ecommerces#gadgets'
+  # root 'ecommerces#gadgets'
 
   resources :shoes
   # root 'shoes#index'
 
   resources :codes
   # root 'codes#index'
+
+  resources :bags
+  root 'bags#index'
 
 
   devise_for :users

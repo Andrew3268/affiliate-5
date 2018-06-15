@@ -1,0 +1,15 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      
+      <ul class="shop_price_wrapper">
+       <li><h1>Add New Bags</h1></li>
+       <li><%= link_to "Back", bags_path %></li>
+      </ul>
+      <%= render 'form' %>
+
+   </div>
+  </div>
+</div>

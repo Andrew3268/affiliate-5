@@ -1,0 +1,29 @@
+<%= simple_form_for @bag do |f| %>
+ <p class="form_p">Option_01(Category)</p>
+ <%= f.select :bag_option_01, options_for_select([["Category", ""], "Men", "Women"])%><br>
+ <p class="form_p">Option_02(Brand)</p>
+ <%= f.select :bag_option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%><br>
+ <p class="form_p">Option_03(Seller)</p>
+ <%= f.select :bag_option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%><br>
+ <p class="form_p">Option_04(Price)</p>
+ <%= f.select :bag_option_04, options_for_select([["Price", ""], "lee_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
+ <p class="form_p">Option_05(Sale)</p>
+ <%= f.select :bag_option_05, options_for_select([["Sale", ""], "sale_20", "sale_50", "sale_70","sale_80","sale_90"])%><br>
+ <%= f.input :bag_title %>
+ <%= f.input :bag_link %>
+ <%= f.input :bag_description %>
+ <%= f.input :bag_main_img %>
+ <%= f.input :bag_sub_img_01 %>
+ <%= f.input :bag_sub_img_02 %>
+ <%= f.input :bag_sub_img_03 %>
+ <%= f.input :bag_sub_img_04 %>
+ <%= f.input :bag_sub_img_05 %>
+ <%= f.input :bag_sub_img_06 %>
+ <%= f.input :bag_brand %>
+ <%= f.input :bag_offer_price %>
+ <%= f.input :bag_before_price %>
+ <%= f.input :bag_sale %>
+ <br>
+ <%= f.button :submit %>
+ <%= link_to "Back", bags_path(@bag) %>
+<% end %>

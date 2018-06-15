@@ -299,7 +299,7 @@ a.button_prodcuts:hover{
   -ms-box-orient: vertical;
   word-wrap:break-word;
   margin-bottom: 0em;
-  /*text-align: center;*/
+  text-align: center;
 }
 
 .shop_original_price {
@@ -317,6 +317,7 @@ a.button_prodcuts:hover{
 
 .shop_price_wrapper {
   margin-bottom: -2em;
+  text-align: center;
 }
 
 ul.shop_price_wrapper li {
@@ -324,8 +325,21 @@ ul.shop_price_wrapper li {
   padding: 0 0.3em 0 0;
 }
 
+.via_where {
+  display: flex;
+  position: absolute;
+  top: 15.6em;
+  left: 20px;
+  padding: 1px 8px;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background: #5bc995;
+  color: white;
+}
+
 .shop_brand {
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
 }
 
 .shop_retail {
@@ -451,10 +465,11 @@ ul.shop_price_wrapper li {
 }
 
 .grids > .grid-item > .main_img img {
-  width: 300px;
-  height: 250px;
+  width: 100%;
+  height: 260px;
   display:block;
   object-fit: contain;
+  margin-top: -2em;
 }
 
 .grids > .show_gadgets > a > .show_gadgets_img > img {
@@ -581,6 +596,7 @@ ul.shop_price_wrapper li {
 .product--image {
   float: left;
   width: 40%;
+  margin-top: 2em;
 }
 
 .product--details {
@@ -659,6 +675,9 @@ ul.shop_price_wrapper li {
     padding: 10px 5px;
     /*margin: 5px 10px;*/
   }
+  .product--title {
+    margin-top: -3em;
+  }
   .random_shoe {
     float: none;
     width: 100%;
@@ -670,14 +689,21 @@ ul.shop_price_wrapper li {
     margin: 0 0 0.2em 0;
   }
   .grids > .grid-item > .main_img img {
-    height: 8em;
-    margin-top: 2em;
+    height: 12em;
   }
   .shop_check {
     margin-top: 1em;
   }
   .grids > .show_gadgets > a > .show_gadgets_img > img {
     object-fit: fill;
+  }
+  .grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_howmuch,
+  .grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_text,
+  .shop_brand {
+    font-size: 10px;
+  }
+  .via_where {
+    top: 8.48em;
   }
 }
 
@@ -699,8 +725,7 @@ and (max-width : 1024px) {
     width: 6em;
   }
   .grids > .grid-item > .main_img img {
-    height: 8em;
-    margin-top: 2em;
+    height: 12em;
   }
   .random_shoe {
     float: none;
@@ -716,7 +741,28 @@ and (max-width : 1024px) {
   .shop_check {
     margin-top: 1em;
   }
+  .grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_howmuch,
+  .grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_text,
+  .shop_brand {
+    font-size: 10px;
+  }
+  .via_where {
+    top: 8.1em;
+  }
 }
+
+
+@media screen and (min-width: 1366px) {
+  .via_where {
+    top: 12.1em;
+    }
+  .shop_product_title {
+    margin-top: -1em;
+  }
+}
+
+
+
 
 
 

@@ -9,26 +9,24 @@
           <div class="grids">
 
             
-            <% @shoes.each do |shoe| %>
-              <div class="grid-item <%= shoe.option_01 %> <%= shoe.option_02 %> <%= shoe.option_03 %> <%= shoe.option_04 %> <%= shoe.option_05 %>">
-     
-                 <%= link_to (image_tag shoe.main_img), shoe, {:class =>"main_img"} %>
-     
+            <% @bags.each do |bag| %>
+              <div class="grid-item <%= bag.bag_option_01 %> <%= bag.bag_option_02 %> <%= bag.bag_option_03 %> <%= bag.bag_option_04 %> <%= bag.bag_option_05 %>">
+                 <%= link_to (image_tag bag.bag_main_img), bag, {:class =>"main_img"} %>
                 <div class="shop_sale">
                   <div class="shop_sale_wrapper">
-                    <div class="shop_sale_howmuch"><%= shoe.sale %>% </div>
+                    <div class="shop_sale_howmuch"><%= bag.bag_sale %>% </div>
                     <div class="shop_sale_text">SALE</div>
                   </div>
                 </div>
-                <p class="shop_product_title"><%= link_to shoe.title, shoe %></p>
+                <p class="shop_product_title"><%= link_to bag.bag_title, bag %></p>
                 <div class="via_where">
-                 <p class="shop_brand">via <%= shoe.option_03 %></p>
+                 <p class="shop_brand">via <%= bag.bag_option_03 %></p>
                 </div>
                 <ul class="shop_price_wrapper">
-                  <li><p class="shop_original_price">$<%= shoe.offer_price %></p></li>
-                  <li><p class="shop_sale_price">$<%= shoe.before_price %></p></li>
+                  <li><p class="shop_original_price">$<%= bag.bag_offer_price %></p></li>
+                  <li><p class="shop_sale_price">$<%= bag.bag_before_price %></p></li>
                 </ul>
-                <a target="_blank" href="<%= shoe.link %>"><p class="shop_check">Check it Out</p></a>
+                <a target="_blank" href="<%= bag.bag_link %>"><p class="shop_check">Check it Out</p></a>
               </div>
             <% end %>
             <!--end grid-item-->
@@ -39,5 +37,5 @@
         
     </div><!--/.inner_hotdeals-->
   </div><!--/#main-->
-  <%= render 'shared/sidebar_shoes' %>  
+  <%= render 'shared/sidebar_bags' %>  
 </div><!--/#wrapper-->

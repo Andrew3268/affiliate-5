@@ -3529,7 +3529,7 @@
 		text-decoration: line-through;
   	font-size: 1.25em;
   	color: #919193;
-    margin-bottom: -0.2em;
+    margin: 0 0 -0.2em -0.7em;
 	}
 	
 	.posts .price_after {
@@ -4910,6 +4910,9 @@ div#javascript-gallery a:hover, div#javascript-gallery a:focus {
   }
   .control_box {
     text-align: center;
+  }
+  .css_grid_gallery {
+    display: block;
   }
 }
 
