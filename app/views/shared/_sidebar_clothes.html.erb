@@ -1,0 +1,94 @@
+<div id="sidebar">
+  <div class="inner">
+
+    <!-- Menu -->
+      <nav id="menu">
+       <div class="side_logo">
+        <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net"></img></a>
+       </div></br></br> 
+        <ul class="icons shoes_icons">
+          <% if user_signed_in? %>
+            <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
+            <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
+          <% else %>
+            <!-- <li class="login"><%= link_to "Log in", new_user_session_path %></li>
+            <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br /> -->
+          <% end %>
+          <% if can? :manage, @clothe %>
+             <li><%= link_to "Add New Clothes", new_clothe_path(@clothe) %></li>
+          <% end %>
+        </ul>
+
+        <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+          <div class="large-6 medium-24 small-24 columns filter-wrap" data-equalizer-watch>
+            <div id="filters" class="combo-filters">
+
+              <div class="ui-group">
+                <h3>CATEGORY</h3>
+                <div class="button-group filter option-set" data-filter-group="category">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".Men">Men</button>
+                  <button class="button" data-filter=".Women">Women</button>
+                  <!-- <button class="button" data-filter=".Fiction">Fiction</button>
+                  <button class="button" data-filter=".Kids">Kids</button>
+                  <button class="button" data-filter=".Travel">Travel</button> -->
+                </div>
+              </div>
+              <div class="ui-group">
+                <h3>BRAND</h3>
+                <div class="button-group filter option-set" data-filter-group="brand">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".Nike" title="Nike">Nike<!-- <img src="https://graphicdesign1aust.files.wordpress.com/2012/03/nikelogo.png" width="50px" hegith="30px"> --></button>
+                  <button class="button" data-filter=".Adidas" title="Adidas">Adidas</button>
+                  <button class="button" data-filter=".New_balance" title="New_balance">New balance</button>
+                  <button class="button" data-filter=".Asics" title="Asics">Asics</button>
+                </div>
+              </div>
+              <div class="ui-group">
+                <h3>SELLER</h3>
+                <div class="button-group filter option-set" data-filter-group="seller">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".Amazon" title="Amazon">Amazon</button>
+                  <button class="button" data-filter=".eBay" title="eBay">eBay</button>
+                  <button class="button" data-filter=".6pm" title="6pm">6pm</button>
+                  <!-- <button class="button" data-filter=".Site_name" title="Site_name">Site_name</button>
+                  <button class="button" data-filter=".Site_name" title="Site_name">Site_name</button>
+                  <button class="button" data-filter=".Site_name" title="Site_name">Site_name</button>
+                  <button class="button" data-filter=".Site_name" title="Site_name">Site_name</button>
+                  <button class="button" data-filter=".Site_name" title="Site_name">Site_name</button>
+                  <button class="button" data-filter=".Site_name" title="Site_name">Site_name</button> -->
+                </div>
+              </div><!--end option-combo-->
+              <div class="ui-group">
+                <h3>PRICE RANGE</h3>
+                <div class="button-group filter option-set" data-filter-group="price">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".lee_than_25" title="Less than $25">Less than $25</button>
+                  <button class="button" data-filter=".25_to_50" title="$25 to $50">$25 to $50 </button>
+                  <button class="button" data-filter=".50_to_100" title="$50 to $100">$50 to $100</button>
+                  <button class="button" data-filter=".100_to_150" title="$100 to $150">$100 to $150</button>
+                  <button class="button" data-filter=".above_150" title="Above $150">Above $150</button>
+                </div>
+              </div><!--end option-combo-->
+              <div class="ui-group">
+                <h3>SALES</h3>
+                <div class="button-group filter option-set" data-filter-group="sale">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".sale_10" title="10%">10%</button>
+                  <button class="button" data-filter=".sale_20" title="20%">20%</button>
+                  <button class="button" data-filter=".sale_30" title="30%">30%</button>
+                  <button class="button" data-filter=".sale_40" title="40%">40%</button>
+                  <button class="button" data-filter=".sale_50" title="50%">50%</button>
+                  <button class="button" data-filter=".sale_60" title="60%">60%</button>
+                  <button class="button" data-filter=".sale_70" title="70%">70%</button>
+                  <button class="button" data-filter=".sale_80" title="80%">80%</button>
+                  <button class="button" data-filter=".sale_90" title="90%">90%</button>
+                </div>
+              </div><!--end option-combo-->
+
+            </div><!--end filters-->
+          </div><!--end col-->
+        </div><!--row-->
+
+  </div><!-- class="inner" -->
+</div><!-- id="sidebar" -->
