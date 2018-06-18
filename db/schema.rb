@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180615152852) do
+ActiveRecord::Schema.define(version: 20180617103115) do
 
   create_table "bags", force: :cascade do |t|
     t.string   "bag_title"
@@ -48,6 +48,25 @@ ActiveRecord::Schema.define(version: 20180615152852) do
     t.text     "bag_spare_08"
     t.text     "bag_spare_09"
     t.text     "bag_spare_10"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.string   "blog_title"
+    t.string   "blog_link"
+    t.string   "blog_main_img"
+    t.string   "blog_date"
+    t.text     "blog_description"
+    t.string   "blog_spare_01"
+    t.string   "blog_spare_02"
+    t.string   "blog_spare_03"
+    t.string   "blog_spare_04"
+    t.string   "blog_spare_05"
+    t.text     "blog_spare_06"
+    t.text     "blog_spare_07"
+    t.text     "blog_spare_08"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"

@@ -6,7 +6,7 @@
         
       <div class="blogs_wrapper">
         
-        <main class="main">
+        <div class="blog_left_main">
         <!-- for play youtube video-->
         <div class="overlay-video">
           <div class="videoWrapperExt">
@@ -226,69 +226,51 @@
              <div class="blog_bottomline"></div>
           </div>
 
-          <!-- <div class="show_body">
-             <h2 class="show_sub_title"><a target="_blank" href="Site_Link">Sub_Title</a></h2>
-             <a target="_blank" href="Site_Link"><img src="Image_URL" alt="ImageTitle"></a>
-             <h5>Source</h5>
-             <p class="show_p">Sub_Intro</p>
-             <h3 class="show_review_title">Promising Review</h3>
-             <p>(as much as over "HowMany_People" people found this helpful)</p>
-             <p class="show_review_content">Review &nbsp;<a target="_blank" href="Review_Link">By Reviwer</a></p>
-             <ul class="blog_post_date">
-               <li class="posted"><button><a target="_blank" href="Site_Link">Learn More</a></button></li>
-               <li class="posted">
-                 <div class="js-overlay-start start" data-url="YouTube_Link?rel=0&amp;showinfo=0&amp;autoplay=1">
-                  <button><i class="fa fa-play"></i>Watch Video</button>
-                 </div>
-              </li>
-             </ul>
-             <div class="blog_bottomline"></div>
-          </div>
- -->
-       </main>
-     
-        <!-- 왼쪽 사이드바 -->
-        <aside class="aside">
-    
-    <!-- <h2>Recent Blog Posts</h2> -->
+           </div><!--/.blog_left_main-->
 
-      <div class="blog-container">
+           <div class="blog_right_side">
 
-        <figure class="blog-post blog-post-1">
-          <!-- <h3 class="blog-titles">Blog Title 1</h3> -->
-          <div>
-            <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals"></a>
-          </div>
-        </figure>
+            <div class="blog_show_promotion">
+              <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/merch/2018/TPR/MarchKnightTPR/VX-1649-TPR_ESH_Associates-300x250-1X.jpg"></a>
+              <img src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/merch/2018/TPR/MarchKnightTPR/VX-1649-TPR_ESH_Associates-300x250-1X.jpg">
+              <a href="#"><p class="see_more">See More Promotions</p></a>
+            </div>  
 
-        <figure class="blog-post blog-post-2">
-         <!--  <h3 class="blog-titles">Blog Title 2</h3> -->
-          <div>
-            <a href="/blogs/blogs_home"><img src="https://i.pinimg.com/564x/55/8c/37/558c378809d166b7cdc87ebd4e39610d.jpg" class="flex-container-images" alt="Awesome Blogs"></a>
-          </div>
-        </figure>
+            <div class="blog_show_shoes">
+              <h2>Shoes</h2>
+              <% @random.each do |random| %>  
+                <%= link_to (image_tag random.main_img), random, {:class =>"blog_side"} %>
+                <p class="blog_show_shoe_title"><%= link_to random.title, random %></p>
+              <% end %>
+              <a href="#"><p class="see_more">See More Shoes</p></a></br>      
+            </div>
 
-        <figure class="blog-post blog-post-3">
-         <!--  <h3 class="blog-titles">Blog Title 3</h3> -->
-          <div>
-            <a href="/hotdeals/savings_percentage_70"><img src="https://i.pinimg.com/564x/5c/24/0e/5c240e075214c717a119f75f11722529.jpg" class="flex-container-images" alt="Save your money"></a>
-          </div>
-        </figure>
+            <h2>Gadgets</h2>  
+            <% @ecommerces.each do |gadget| %>
+             <a href="/ecommerces/detail/<%= gadget.id %>"><div class="blog_side_img"><img src="<%= gadget.image_main%>"></div></a>
+            <% end %>
+            <a href="#"><p class="see_more">See More Gadgets</p></a></br>      
+             
 
-        <figure class="blog-post blog-post-4">
-         <!--  <h3 class="blog-titles">Blog Title 4</h3> -->
-          <div>
-            <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/d4/56/e8/d456e85b0a8c8e4ffdf3103e473256dd.jpg" class="flex-container-images" alt="Awesome Gadgets"></a>
-          </div>
-        </figure>
+            <div>
+              <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" alt="Find Deals">
+            </div>
 
-      </div>
-      <!--end blog-container-->
+             <div>
+              <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" alt="Find Deals">
+            </div>
 
-      </aside>
-      </div><!--/.blogs_wrapper-->
+             <div>
+              <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" alt="Find Deals">
+            </div>
+
+             <div>
+              <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" alt="Find Deals">
+            </div>
+
+         </div><!--/.blog_right_side-->
+        </div><!--/.blog_wrapper-->
             
     </div><!--/.inner-->
   </div><!--/#main-->
 </div><!--/#wrapper-->
-      

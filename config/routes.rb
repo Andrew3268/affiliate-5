@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :bags
   # root 'bags#index'
 
+  resources :blogs
+  # root 'blogs#index'
+
 
   devise_for :users
   devise_scope :user do  

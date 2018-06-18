@@ -21,7 +21,7 @@ class ShoesController < ApplicationController
   def create
     @shoe = current_user.shoes.build(shoe_params)
      if @shoe.save
-       redirect_to @shoe
+       redirect_to shoes_path
      else
        render 'new'
      end
