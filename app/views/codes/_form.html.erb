@@ -1,10 +1,12 @@
 <%= simple_form_for @code do |f| %>
- <h3>Select Market</h3>
- <%= f.select :discount_category, options_for_select([["Market", ""], "amazon", "ebay"])%>
- <h3>Select Department</h3>
- <%= f.select :discount_spare_01, options_for_select([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones", "clothing", "electronics", "fashion", "furniture", "grocery", "computer", "health", "home", "kitchen", "miscellaneous", "office", "pets", "garden", "sports", "tools", "toy"])%>
- <h3>Please check if it is a product of Amazon or not </h3>
- <%= f.select :discount_amazon, options_for_select([["Does it belongs to Amazon?(No)", ""], "Yes"])%>
+<div class="form_border">
+  <h3>Select Market</h3>
+  <%= f.select :discount_category, options_for_select([["Market", ""], "amazon", "ebay"])%>
+  <h3>Select Department</h3>
+  <%= f.select :discount_spare_01, options_for_select([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones", "clothing", "electronics", "fashion", "furniture", "grocery", "computer", "health", "home", "kitchen", "miscellaneous", "office", "pets", "garden", "sports", "tools", "toy"])%>
+  <h3>Please check if it is a product of Amazon or not </h3>
+  <%= f.select :discount_amazon, options_for_select([["Does it belongs to Amazon?(No)", ""], "Yes"])%>
+ </div><br>
  <%= f.input :discount_title %>
  <%= f.input :discount_code %>
  <%= f.input :discount_date %>

@@ -9,24 +9,24 @@
           <div class="grids">
 
             
-            <% @clothes.each do |clothe| %>
-              <div class="grid-item <%= clothe.clothes_option_01 %> <%= clothe.clothes_option_02 %> <%= clothe.clothes_option_03 %> <%= clothe.clothes_option_04 %> <%= clothe.clothes_option_05 %>">     
-                <%= link_to (image_tag clothe.clothes_main_img), clothe, {:class =>"main_img"} %>
+            <% @accessories.each do |acc| %>
+              <div class="grid-item <%= acc.acc_option_01 %> <%= acc.acc_option_02 %> <%= acc.acc_option_03 %> <%= acc.acc_option_04 %> <%= acc.acc_option_05 %>">
+                 <%= link_to (image_tag acc.acc_main_img), acc, {:class =>"main_img"} %>
                 <div class="shop_sale">
                   <div class="shop_sale_wrapper">
-                    <div class="shop_sale_howmuch"><%= clothe.clothes_sale %>% </div>
+                    <div class="shop_sale_howmuch"><%= acc.acc_sale %>% </div>
                     <div class="shop_sale_text">SALE</div>
                   </div>
                 </div>
-                <p class="shop_product_title"><%= link_to clothe.clothes_title, clothe %></p>
+                <p class="shop_product_title"><%= link_to acc.acc_title, acc %></p>
                 <div class="via_where">
-                 <p class="shop_brand">via <%= clothe.clothes_option_04 %></p>
+                 <p class="shop_brand">via <%= acc.acc_option_03 %></p>
                 </div>
                 <ul class="shop_price_wrapper">
-                  <li><p class="shop_original_price">$<%= clothe.clothes_offer_price %></p></li>
-                  <li><p class="shop_sale_price">$<%= clothe.clothes_before_price %></p></li>
+                  <li><p class="shop_original_price">$<%= acc.acc_offer_price %></p></li>
+                  <li><p class="shop_sale_price">$<%= acc.acc_before_price %></p></li>
                 </ul>
-                <a target="_blank" href="<%= clothe.clothes_link %>"><p class="shop_check">Check it Out</p></a>
+                <a target="_blank" href="<%= acc.acc_link %>"><p class="shop_check">Check it Out</p></a>
               </div>
             <% end %>
             <!--end grid-item-->
@@ -37,5 +37,5 @@
         
     </div><!--/.inner_hotdeals-->
   </div><!--/#main-->
-  <%= render 'shared/sidebar_clothes' %>  
+  <%= render 'shared/sidebar_accessories' %>  
 </div><!--/#wrapper-->

@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   has_many :bags
   has_many :blogs
   has_many :clothes
+  has_many :accessories
 end

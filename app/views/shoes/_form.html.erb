@@ -1,17 +1,26 @@
 <%= simple_form_for @shoe do |f| %>
- <p class="form_p">Option_01(Category)</p>
- <%= f.select :option_01, options_for_select([["Category", ""], "Men", "Women"])%><br>
- <p class="form_p">Option_02(Brand)</p>
- <%= f.select :option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%><br>
- <p class="form_p">Option_03(Seller)</p>
- <%= f.select :option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%><br>
- <p class="form_p">Option_04(Price)</p>
- <%= f.select :option_04, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
- <p class="form_p">Option_05(Sale)</p>
- <%= f.select :option_05, options_for_select([["Sale", ""], "sale_20", "sale_50", "sale_70","sale_80","sale_90"])%><br>
- <%= f.input :title %>
- <%= f.input :link %>
- <%= f.input :description %>
+<div class="form_border">
+ <h2>Select Options</h2>
+   <p class="form_p">Option_01(Category)</p>
+   <%= f.select :option_01, options_for_select([["Category", ""], "Men", "Women"])%><br>
+   <p class="form_p">Option_02(Brand)</p>
+   <%= f.select :option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%><br>
+   <p class="form_p">Option_03(Seller)</p>
+   <%= f.select :option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%><br>
+   <p class="form_p">Option_04(Price)</p>
+   <%= f.select :option_04, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
+   <p class="form_p">Option_05(Sale)</p>
+   <%= f.select :option_05, options_for_select([["Sale", ""], "sale_20", "sale_50", "sale_70","sale_80","sale_90"])%>
+</div><br>
+<div class="form_border">
+ <h2>Details(Title/Link/Description/Seller)</h2>
+   <%= f.input :title %>
+   <%= f.input :link %>
+   <%= f.input :description %>
+   <%= f.input :brand %>
+</div><br>
+<div class="form_border">
+ <h2>Images</h2>
  <%= f.input :main_img %>
  <%= f.input :sub_img_01 %>
  <%= f.input :sub_img_02 %>
@@ -19,11 +28,13 @@
  <%= f.input :sub_img_04 %>
  <%= f.input :sub_img_05 %>
  <%= f.input :sub_img_06 %>
- <%= f.input :brand %>
- <%= f.input :offer_price %>
- <%= f.input :before_price %>
- <%= f.input :sale %>
- <br>
+</div><br>
+<div class="form_border">
+ <h2>Price Information</h2>
+   <%= f.input :offer_price %>
+   <%= f.input :before_price %>
+   <%= f.input :sale %>
+</div><br>
  <%= f.button :submit %>
  <%= link_to "Back", shoes_path(@shoe) %>
 <% end %>

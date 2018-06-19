@@ -298,7 +298,7 @@ a.button_prodcuts:hover{
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
   word-wrap:break-word;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
   text-align: center;
 }
 

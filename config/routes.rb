@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   # root 'blogs#index'
 
   resources :clothes
-  root 'clothes#index'
+  # root 'clothes#index'
+
+  resources :accessories
+  root 'accessories#index'
 
 
   devise_for :users

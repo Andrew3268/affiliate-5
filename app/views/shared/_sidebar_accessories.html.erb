@@ -14,8 +14,8 @@
             <!-- <li class="login"><%= link_to "Log in", new_user_session_path %></li>
             <li class="signup"><%= link_to "Sign up", new_user_registration_path %></li><br /><br /> -->
           <% end %>
-          <% if can? :manage, @clothe %>
-             <li><%= link_to "Add New Clothes", new_clothe_path(@clothe) %></li>
+          <% if can? :manage, @accessory %>
+             <li><%= link_to "Add New accessories", new_accessory_path(@accessory) %></li>
           <% end %>
         </ul>
 
@@ -34,19 +34,6 @@
                   <button class="button" data-filter=".Travel">Travel</button> -->
                 </div>
               </div>
-
-              <div class="ui-group">
-                <h3>Top/Pants</h3>
-                <div class="button-group filter option-set" data-filter-group="category">
-                  <button class="button is-checked allfilter" data-filter="">Everything</button>
-                  <button class="button" data-filter=".Top">Top</button>
-                  <button class="button" data-filter=".Pants">Pants</button>
-                  <!-- <button class="button" data-filter=".Fiction">Fiction</button>
-                  <button class="button" data-filter=".Kids">Kids</button>
-                  <button class="button" data-filter=".Travel">Travel</button> -->
-                </div>
-              </div>
-
               <div class="ui-group">
                 <h3>BRAND</h3>
                 <div class="button-group filter option-set" data-filter-group="brand">

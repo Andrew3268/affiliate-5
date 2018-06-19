@@ -1,0 +1,40 @@
+<%= simple_form_for @accessory do |f| %>
+<div class="form_border">
+ <h2>Select Options</h2>
+   <p class="form_p">Option_01(Category)</p>
+   <%= f.select :acc_option_01, options_for_select([["Category", ""], "Men", "Women"])%><br>
+   <p class="form_p">Option_02(Brand)</p>
+   <%= f.select :acc_option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%><br>
+   <p class="form_p">Option_03(Seller)</p>
+   <%= f.select :acc_option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%><br>
+   <p class="form_p">Option_04(Price)</p>
+   <%= f.select :acc_option_04, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
+   <p class="form_p">Option_05(Sale)</p>
+   <%= f.select :acc_option_05, options_for_select([["Sale", ""], "sale_20", "sale_50", "sale_70","sale_80","sale_90"])%>
+ </div><br>
+ <div class="form_border">
+  <h2>Details(Title/Link/Description)</h2>
+   <%= f.input :acc_title %>
+   <%= f.input :acc_link %>
+   <%= f.input :acc_description %>
+   <%= f.input :acc_brand %>
+ </div><br>
+<div class="form_border">
+ <h2>Images</h2>
+ <%= f.input :acc_main_img %>
+ <%= f.input :acc_sub_img_01 %>
+ <%= f.input :acc_sub_img_02 %>
+ <%= f.input :acc_sub_img_03 %>
+ <%= f.input :acc_sub_img_04 %>
+ <%= f.input :acc_sub_img_05 %>
+ <%= f.input :acc_sub_img_06 %>
+</div><br>
+<div class="form_border">
+ <h2>Price Information</h2>
+ <%= f.input :acc_offer_price %>
+ <%= f.input :acc_before_price %>
+ <%= f.input :acc_sale %>
+</div><br>
+ <%= f.button :submit %>
+ <%= link_to "Back", accessories_path(@accessory) %>
+<% end %>
