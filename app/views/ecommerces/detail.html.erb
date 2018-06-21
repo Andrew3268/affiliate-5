@@ -139,10 +139,82 @@
 	   	</div><!--/.content-->
 
 			<span class="image object">
-				<img src="<%= @details.image_main %>" alt="" /><br>
-				<div class="amazon-banner">
-					<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kindle&banner=1Y73E3KVWCWRGDBQ5ER2&f=ifr&linkID=d0f690bec12d182a3752ff2e983e490a&t=scarlet3628-20&tracking_id=scarlet3628-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-		    </div>
+        <div class="de_container">
+          <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="<%= @details.image_main %>">
+          </div>
+          
+          <% if @details.image_01.present? %>
+            <div class="mySlides">
+              <div class="numbertext">2 / 6</div>
+              <img src="<%= @details.image_01 %>">
+            </div>
+          <% end %>
+          <% if @details.image_02.present? %>
+            <div class="mySlides">
+              <div class="numbertext">3 / 6</div>
+              <img src="<%= @details.image_02 %>">
+            </div>
+          <% end %>
+          <% if @details.image_03.present? %>
+            <div class="mySlides">
+              <div class="numbertext">4 / 6</div>
+              <img src="<%= @details.image_03 %>">
+            </div>
+          <% end %>
+          <% if @details.image_04.present? %>
+            <div class="mySlides">
+              <div class="numbertext">5 / 6</div>
+              <img src="<%= @details.image_04 %>">
+            </div>
+          <% end %>
+          <% if @details.image_05.present? %>  
+            <div class="mySlides">
+              <div class="numbertext">6 / 6</div>
+              <img src="<%= @details.image_05 %>">
+            </div>
+          <% end %>
+            
+          <a class="details_prev" onclick="plusSlides(-1)">❮</a>
+          <a class="details_next" onclick="plusSlides(1)">❯</a>
+        
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <div class="details_img_row">
+              <div class="details_img_column">
+                <img class="demo cursor" src="<%= @details.image_main %>" onclick="currentSlide(1)" alt="<%= @details.title %>">
+              </div>
+            <% if @details.image_01.present? %>
+              <div class="details_img_column">
+                <img class="demo cursor" src="<%= @details.image_01 %>" onclick="currentSlide(2)" alt="<%= @details.title %>">
+              </div>
+            <% end %>
+            <% if @details.image_02.present? %>
+              <div class="details_img_column">
+                <img class="demo cursor" src="<%= @details.image_02 %>" onclick="currentSlide(3)" alt="<%= @details.title %>">
+              </div>
+            <% end %>
+            <% if @details.image_03.present? %>
+              <div class="details_img_column">
+                <img class="demo cursor" src="<%= @details.image_03 %>" onclick="currentSlide(4)" aalt="<%= @details.title %>">
+              </div>
+            <% end %>
+            <% if @details.image_04.present? %>
+              <div class="details_img_column">
+                <img class="demo cursor" src="<%= @details.image_04 %>" onclick="currentSlide(5)" alt="<%= @details.title %>">
+              </div> 
+            <% end %>
+            <% if @details.image_05.present? %>   
+              <div class="details_img_column">
+                <img class="demo cursor" src="<%= @details.image_05 %>" onclick="currentSlide(6)" alt="<%= @details.title %>">
+              </div>
+            <% end %>
+          </div>
+        </div>
+
 			</span>
 
 		</section><br>
@@ -164,35 +236,7 @@
 					 <iframe src="<%= @details.youtube_link_02 %>" frameborder="0" allowfullscreen></iframe>
           <% end %>
 				</div>
-		   </div><br/><br/>
-
-       <div class="detail_gallery">
-        <div id="img_bg_overlay"></div>
-        <div id="img_close_cta">&times;</div>
-        <div id="previous_img_cta"></div>
-        <div class="css_grid_gallery">
-          <% if @details.image_01.present? %>
-          <img src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-          <% end %>
-          <% if @details.image_02.present? %>
-          <img src="<%= @details.image_02 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-          <% end %>
-          <% if @details.image_03.present? %>
-          <img src="<%= @details.image_03 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-          <% end %>
-          <% if @details.image_04.present? %>
-          <img src="<%= @details.image_04 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-          <% end %>
-          <% if @details.image_05.present? %>
-          <img src="<%= @details.image_05 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-          <% end %>
-          <% if @details.image_06.present? %>
-          <img src="<%= @details.image_06 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-          <% end %>
-        </div>
-        <img id="modal_image" src="<%= @details.image_01 %>?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;h=650&amp;w=940"/>
-        <div id="next_img_cta"></div>
-       </div>
+		   </div>
 
 			</section><br><br>
 

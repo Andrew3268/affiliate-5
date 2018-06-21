@@ -301,55 +301,6 @@
     });
    </script>
 
-  
-<!-- For click and zoom image effect on detail page -->
-  <script>
-    $(function() {
-
-      var img_bg_overlay   = $('#img_bg_overlay'),
-          img_close_cta    = $('#img_close_cta'),
-          modal_image      = $('#modal_image'),
-          previous_img_cta = $('#previous_img_cta'),
-          next_img_cta     = $('#next_img_cta')
-
-      function open_img_modal() {
-        let img_src = $(this).attr('src')
-        img_bg_overlay.fadeIn(250)
-        modal_image.attr('src', img_src).addClass('is_visible')
-        img_close_cta.addClass('is_visible')
-        previous_img_cta.addClass('is_visible')
-        next_img_cta.addClass('is_visible')
-      }
-
-      function close_img_modal() {
-        img_bg_overlay.fadeOut(250)
-        modal_image.removeClass('is_visible')
-        img_close_cta.removeClass('is_visible')
-        previous_img_cta.removeClass('is_visible')
-        next_img_cta.removeClass('is_visible')
-      }
-
-      function previous_gallery_img() {
-        let current_img = $('img[src="'+ modal_image.attr('src') +'"]')
-        if (current_img != undefined)
-          modal_image.attr('src', current_img.prev().attr('src'))
-      }
-
-      function next_gallery_img() {
-        let current_img = $('img[src="'+ modal_image.attr('src') +'"]')
-        if (current_img != undefined)
-          modal_image.attr('src', current_img.next().attr('src'))
-      }
-
-      $('.css_grid_gallery img').click(open_img_modal)
-      img_bg_overlay.click(close_img_modal)
-      img_close_cta.click(close_img_modal)
-      previous_img_cta.click(previous_gallery_img)      
-      next_img_cta.click(next_gallery_img)
-    })
-  </script>
-
-
   <!-- For Show more & Show less for revies on details page -->
   <script>
     ;(function($) {
@@ -534,6 +485,35 @@
         }
       });
     });
+  </script>
+
+ <!-- Image Gallery on Detail Page -->
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      // var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      // captionText.innerHTML = dots[slideIndex-1].alt;
+    }
   </script>
 
 
