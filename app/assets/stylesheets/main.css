@@ -4845,7 +4845,7 @@
     margin-top: -3em;
   }
   #banner .content {
-    margin-top: 14em;
+    margin-top: 17em;
   }
   .details_img_column img {
     height: 0%;
@@ -5085,13 +5085,8 @@ and (max-width : 1200px) {
   padding: 5px;
 }
 
+/* Image effect on Detail page */
 
-
-
-
-
-
-/* Position the image container (needed to position the left and right arrows) */
 .de_container {
   position: relative;
 }
