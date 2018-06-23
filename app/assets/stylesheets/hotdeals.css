@@ -833,6 +833,56 @@ and (max-width : 1024px) {
 }
 
 
+/* ========= for random image  ======== */
+.discount_grids {
+  overflow:hidden;
+  width:100%;
+}
+
+.discount_grids > * {
+  float:left;
+  /* Callback width*/
+  width:16.666%;
+  width:calc(100%/6);
+  width:-webkit-calc(100%/6);
+  box-sizing:border-box;
+}
+
+.discount_grids > div > img {
+  width:100%;
+  display:block;
+}
+
+.random_images img {
+  height: 150px;
+  width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+
+/* MEDIA QUERY */
+@media(max-width:1200px) {
+  .discount_grids > *{
+    width:calc(100%/4);
+    width:-webkit-calc(100%/4);
+  }
+}
+
+@media(max-width:640px) {
+  .discount_grids > *{
+    width:calc(100%/2);
+    width:-webkit-calc(100%/2);
+  }
+}
+
+@media(max-width:320px){
+  .discount_grids > *{
+    width:100%;
+  }
+}
+/* ========= for random image  ======== */
+
 
 
 

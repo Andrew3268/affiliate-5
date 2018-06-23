@@ -4837,6 +4837,10 @@
   margin-bottom: -3.5em;
 }
 
+.detail_discription {
+  margin-left: 1.5em;
+}
+
 @media screen and (max-width: 500px) {
   .de_container {
     margin-top: 2em;

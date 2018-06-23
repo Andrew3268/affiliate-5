@@ -21,8 +21,6 @@
     <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-
-
       <div class="product_show">
         <div class="product--body">
 
@@ -73,23 +71,23 @@
           <p><%= link_to @random_shoe.title, shoe_path(@random_shoe) %></p>
 
           <!-- Admin controll -->
-          <div class="show_admin">
-            <% if can? :update, @shoe %>
-              <h2>For Admin</h2>
-              <ul class="shop_price_wrapper">
-                <li><p><%= @shoe.option_01 %></p></li>
-                <li><p><%= @shoe.option_02 %></p></li>
-                <li><p><%= @shoe.option_03 %></p></li>
-                <li><p><%= @shoe.option_04 %></p></li>
-                <li><p><%= @shoe.option_05 %></p></li>
-              </ul>
-              <div class="admin_button">
-                <%= link_to "Edit", edit_shoe_path(@shoe) %>
-                <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
-              </div>
-            <% end %>
+          <% if can? :update, @shoe %>
+           <div class="show_admin">
+            <h2>For Admin</h2>
+            <ul class="shop_price_wrapper">
+              <li><p><%= @shoe.option_01 %></p></li>
+              <li><p><%= @shoe.option_02 %></p></li>
+              <li><p><%= @shoe.option_03 %></p></li>
+              <li><p><%= @shoe.option_04 %></p></li>
+              <li><p><%= @shoe.option_05 %></p></li>
+            </ul>
+            <div class="admin_button">
+              <%= link_to "Edit", edit_shoe_path(@shoe) %>
+              <%= link_to "Delete", shoe_path(@shoe), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
            </div>
-          </div>
+          <% end %>
+        </div><!--/.random_shoe -->
 
       </div><!--/.product_show-->
       
@@ -109,34 +107,12 @@
       </div><!--end row-->
 
 <!-- Random gadgets posts -->
-      <h2>You may also be interested in</h2>
-      <ul class="cards">
-        <% @ecommerces.each do |gadgets| %>
-          <li class="cards__item">
-            <div class="card">
-              <div class="card__image">
-                <a href="/ecommerces/detail/<%= gadgets.id %>"><img src="<%= gadgets.image_main %>"></a>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-
-       
-      <div class="flex main">
-        <div class="flex-container">
-          <a href="/search/quicksearch"><img src="https://i.pinimg.com/564x/e8/a6/ce/e8a6ced6c8256ce3664eac7261b0eb21.jpg" class="flex-container-images" alt="Find Deals">
-        </div>
-        <div class="flex-container">
-          <a href="/blogs/blogs_home"><img src="https://i.pinimg.com/564x/55/8c/37/558c378809d166b7cdc87ebd4e39610d.jpg" class="flex-container-images" alt="Awesome Blogs">
-        </div>
-        <div class="flex-container">
-          <a href="/hotdeals/savings_percentage_70"><img src="https://i.pinimg.com/564x/5c/24/0e/5c240e075214c717a119f75f11722529.jpg" class="flex-container-images" alt="Save your money">         
-        </div>
-        <div class="flex-container">
-          <a href="/ecommerces/gadgets"><img src="https://i.pinimg.com/564x/d4/56/e8/d456e85b0a8c8e4ffdf3103e473256dd.jpg" class="flex-container-images" alt="Awesome Gadgets">
-        </div>
-      </div>
+     <h2>Title</h2>
+     <div class="discount_grids">
+      <% @ecommerces.each do |gadget| %>
+      <div class="random_images"><a href="/ecommerces/detail/<%= gadget.id %>"><img src="<%= gadget.image_main %>"></a></div>
+      <% end %>
+     </div><br>
 
     </div><!--/.inner_hotdeals-->
   </div><!--/#main-->
