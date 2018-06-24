@@ -25,6 +25,19 @@
   padding: 1em;
 }
 
+.left_banner_quicksearch {
+  float: left;
+  width: 49%;
+  margin-right: 1em;
+  /*margin-top: 1em;*/
+}
+
+.left_banner_quicksearch img {
+  width: 100%;
+}
+
+
+/* ===== Skituy_menu ===== */
 .quick_stiky_menu {
   z-index: 10;
 }
@@ -184,24 +197,20 @@ div.tab .discount .active {
 
 @media screen and (orientation: portrait) {
 
-    #main .inner_quicksearch .quicksearch_warpper {
-       width: 95%;
-    }
-
-    #main .inner_quicksearch .quicksearch_warpper .tg .tg-spn1, .tg-s6z2 {
-       font-size: 1em;
-    }
-
-    #main .inner_quicksearch .quicksearch_warpper th.tg-s6z2 {
-       width: 100%;
-    }
-    
-    .quicksearch_title { 
-       font-size : 2em;
-       margin-top: 0.5em;
-       margin-bottom: 0.5em;
-    }
-
+  #main .inner_quicksearch .quicksearch_warpper {
+     width: 95%;
+  }
+  #main .inner_quicksearch .quicksearch_warpper .tg .tg-spn1, .tg-s6z2 {
+     font-size: 1em;
+  }
+  #main .inner_quicksearch .quicksearch_warpper th.tg-s6z2 {
+     width: 100%;
+  }
+  .quicksearch_title { 
+     font-size : 2em;
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+  }
 }
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
@@ -227,6 +236,9 @@ div.tab .discount .active {
   }
   .promo_main_title {
     margin-bottom: 2em;
+  }
+  .left_banner_quicksearch {
+    width: 100%;
   }
 }
 

@@ -36,20 +36,20 @@
   border-radius: 0.3em;
   padding: 0.5em 3em;
 }
-
-
+/* ====== main(gadgets) page header ====== */
 .main_header_wrapper {
   width: 100%;
 }
-
+/*
 .left_banner,
 .right_banner {
-  margin-left: 0.4em;
-}
+  margin-left: 0.6em;
+}*/
 
 .left_banner, .right_banner {
   float: left;
   width: 49%;
+  margin-left: 0.6em;
 }
 
 .right_banner img,
@@ -57,11 +57,16 @@
   width: 100%;
 }
 
+.right_text_quicksearch {
+  float: left;
+  width: 49%;
+  margin-left: 0.6em;
+}
+
 @media screen and (max-width: 500px) {
   .left_banner, .right_banner {
     width: 100%;
   }
- 
 }
 
 @media only screen
