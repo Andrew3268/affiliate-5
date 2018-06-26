@@ -22,7 +22,7 @@ class BagsController < ApplicationController
     @bag = current_user.bags.build(bag_params)
 
     if @bag.save
-      redirect_to @bag
+      redirect_to bags_path
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class BagsController < ApplicationController
 
   def update
     if @bag.update(bag_params)
-      redirect_to @bag
+      redirect_to bags_path
     else
       render 'edit'
     end

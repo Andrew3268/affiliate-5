@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
     @blog = current_user.blogs.build(blog_params)
 
       if @blog.save
-        redirect_to root_path
+        redirect_to blogs_path
       else
         render 'new'
       end
@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      redirect_to root_path
+      redirect_to blogs_path
     else
       render 'edit'
     end
@@ -40,7 +40,7 @@ class BlogsController < ApplicationController
 
   def destroy 
     @blog.destroy
-    redirect_to root_path
+    redirect_to blogs_path
   end
 
   private

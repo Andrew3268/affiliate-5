@@ -136,6 +136,11 @@ footer {
   font-style: normal;
 }
 
+.footer-list-top img {
+  width: 200px;
+  height: 200px;
+}
+
 @media only screen and (max-width: 768px) {
   .footer-list-header {
     font-size: 2em;
@@ -182,6 +187,7 @@ footer {
 
   .footer-social-section {
     justify-content: center;
+    margin-top: 1.5em;
   }
 
   .footer-social-section::after {
@@ -249,5 +255,8 @@ footer {
 
   .footer-bottom-wrapper {
     font-size: 1.3em;
+    
   }
 }
+
+

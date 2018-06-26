@@ -12,6 +12,7 @@ class ShoesController < ApplicationController
     @random_shoe = Shoe.where.not(id: @shoe).order("RANDOM()").first
     @random = Shoe.all.sample(4)
     @ecommerces = Ecommerce.all.sample(12)
+    @recent_post = Blog.all.order("created_at DESC").limit(5)
   end
 
   def new

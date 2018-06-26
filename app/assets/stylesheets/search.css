@@ -51,7 +51,7 @@
   -moz-box-shadow: 0px 0px 2px 0px #000000;
   box-shadow: 0px 0px 2px 0px #000000;
   /* TRANSPARENCY */
-  background-color: rgba(1, 1, 1,0.5);
+  background-color: white;
   color: rgba(1, 1, 1, 0.5);
 }
 
@@ -61,7 +61,7 @@
 }
 
 .quick_stiky_menu ul li a {
-  color: white;
+  color: black;
   font-size: 1.2em;
   font-weight: bold;
 }

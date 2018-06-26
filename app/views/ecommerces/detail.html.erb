@@ -47,6 +47,7 @@
   				<% if @details.price_before? %>
   					<h3 class="yousave"><%= number_to_currency total, unit: "$", seperator: "", delimiter: ""  %>(<%=discount.round(0) %>%) Savings</h3>
   			  <% end %>
+          <p class="details_notice">(* Price may be changed after post published date.)</p>
         </div>
 
         <% if @details.amazon_prime.present? %>
@@ -328,8 +329,8 @@
 
     </div><!--/.detail_body-->
   </div>
+  <%= render 'shared/footer' %> 
  </div>
-<!-- <%= render 'shared/footer' %> -->
 </div><!-- id="wrapper" -->
 
 

@@ -88,6 +88,9 @@ and (max-width : 1024px) {
   ul.actions li, ul li {
     padding: 0em;
   }
+  .left_banner, .right_banner {
+    width: 48%;
+  }
 }
 
 

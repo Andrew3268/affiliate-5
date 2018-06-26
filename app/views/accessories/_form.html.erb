@@ -7,6 +7,12 @@
    <%= f.select :acc_option_02, options_for_select([["Brand", ""], "Nike", "Adidas", "New_balance", "Asics"])%><br>
    <p class="form_p">Option_03(Seller)</p>
    <%= f.select :acc_option_03, options_for_select([["Seller", ""], "Amazon", "eBay", "6pm"])%><br>
+   <div class="form_border">
+   <h2>Price Information</h2>
+    <%= f.input :acc_offer_price %>
+    <%= f.input :acc_before_price %>
+    <%= f.input :acc_sale %>
+   </div><br>
    <p class="form_p">Option_04(Price)</p>
    <%= f.select :acc_option_04, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
    <p class="form_p">Option_05(Sale)</p>
@@ -28,12 +34,6 @@
  <%= f.input :acc_sub_img_04 %>
  <%= f.input :acc_sub_img_05 %>
  <%= f.input :acc_sub_img_06 %>
-</div><br>
-<div class="form_border">
- <h2>Price Information</h2>
- <%= f.input :acc_offer_price %>
- <%= f.input :acc_before_price %>
- <%= f.input :acc_sale %>
 </div><br>
  <%= f.button :submit %>
  <%= link_to "Back", accessories_path(@accessory) %>
