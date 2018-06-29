@@ -6,8 +6,9 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order("created_at DESC")
-    @random = Shoe.all.sample(4)
-    @ecommerces = Ecommerce.all.sample(3)
+    @random = Shoe.all.sample(6)
+    @ecommerces = Ecommerce.all.sample(6)
+    @random_bags = Bag.all.sample(6)
   end 
 
   def show

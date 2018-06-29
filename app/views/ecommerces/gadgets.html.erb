@@ -1,20 +1,20 @@
 <div id="wrapper">
   <div id="main">
     <div class="inner_hotdeals">
-    <header id="header">
-     <a href="/" class="logo main_header" title="ohigottabuythis"><strong>Oh,</strong> I Gotta Buy This </a>
-    </header></br>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <header id="header">
+       <a href="/" class="logo main_header" title="ohigottabuythis"><strong>Oh,</strong> I Gotta Buy This </a>
+      </header></br>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    <div class="main_header_wrapper">
-      <div class="left_banner">
-        <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_to.png'%>"></a>
+      <div class="main_header_wrapper">
+        <div class="left_banner">
+          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>"></a>
+        </div>
+        <div class="right_banner">
+          <a href="/blogs"><img src="<%=asset_path 'blog_main.png' %>"></a>
+        </div>
       </div>
-      <div class="right_banner">
-        <a href="/shoes"><img src="<%=asset_path 'shop_by.png'%>"></a>
-      </div>
-    </div>
-    
+      
       <section>
         
         <div class="gadgets_header">
@@ -65,7 +65,7 @@
       </section>
         
     </div>
-    <!-- # <%= render 'shared/footer' %> -->
+     <%= render 'shared/footer' %> 
   </div>
   <%= render 'shared/sidebar_gadgets' %>  
 </div>

@@ -50,12 +50,12 @@ footer {
 }
 .footer_message {
   width: 42%;
-  padding-top: 2em;
+  padding: 2em 0 0 5em;
 }
 
 .footer-list-top > li {
   text-align: center;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
 }
 
 .footer-list-header {
@@ -141,17 +141,32 @@ footer {
   height: 200px;
 }
 
-@media only screen and (max-width: 768px) {
+.footer_menu img {
+  width: 49%;
+  height: 100%;
+  float: left;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.footer_know li:nth-child(2) {
+  margin-bottom: 1em;
+}
+
+
+
+
+@media only screen and (max-width: 320px) {
   .footer-list-header {
-    font-size: 2em;
+    font-size: 2.2em;
   }
 
   .footer-list-anchor {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   .footer-social-connect {
-    font-size: 2.5em;
+    font-size: 2.4em;
   }
 
   .footer-social-overlap > a {
@@ -160,13 +175,28 @@ footer {
 
   .footer-bottom-wrapper {
     font-size: 1.3em;
+    
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .footer-social-overlap > a {
+    margin: auto;
+  }
+
+  .footer-social-overlap > a:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .footer-bottom-rights {
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 568px) {
   main {
     font-size: 5em;
   }
-
   .footer-list-top {
     width: 100%;
   }
@@ -174,6 +204,7 @@ footer {
     width: 95%;
     margin: auto;
     margin-bottom: 3em;
+    padding-left: 0em;
   }
 
   .footer-list-header {
@@ -223,30 +254,18 @@ footer {
     margin-top: 10px;
   }
 }
-@media only screen and (max-width: 480px) {
-  .footer-social-overlap > a {
-    margin: auto;
-  }
 
-  .footer-social-overlap > a:not(:first-child) {
-    margin-left: 0;
-  }
-
-  .footer-bottom-rights {
-    display: block;
-  }
-}
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 768px) {
   .footer-list-header {
-    font-size: 2.2em;
+    font-size: 2em;
   }
 
   .footer-list-anchor {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 
   .footer-social-connect {
-    font-size: 2.4em;
+    font-size: 2.5em;
   }
 
   .footer-social-overlap > a {
@@ -255,7 +274,6 @@ footer {
 
   .footer-bottom-wrapper {
     font-size: 1.3em;
-    
   }
 }
 

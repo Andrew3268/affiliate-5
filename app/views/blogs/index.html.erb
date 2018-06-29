@@ -1,25 +1,20 @@
 <div id="wrapper">
   <div id="main">
     <div class="inner">
-      <%= render 'shared/header' %>
+      <%= render 'shared/header' %><br>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-      <div class="flex main">
-        <div class="flex-container">
-          <a href="/shoes"><img src="<%=asset_path 'shoes.png'%>" class="flex-container-images" alt="shop by shoes"></img></a>
-        </div>
-        <div class="flex-container">
-          <a href="/bags"><img src="<%=asset_path 'bags.png'%>" class="flex-container-images" alt="shop by bags Deals"></img></a>
-        </div>
-        <div class="flex-container">
-          <a href="/clothes"><img src="<%=asset_path 'clothing.png'%>" class="flex-container-images" alt="shop by chothing"></img></a>
-        </div>
-        <div class="flex-container">
-          <a href="/blogs"><img src="<%=asset_path 'blog.png'%>" class="flex-container-images" alt="shop by blog"></img></a>
-        </div>
-      </div></br></br>
       
+      <div class="blog_banner_wrap">
+        <div class="blog_banner_left">
+         <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>"></a>
+        </div>
+        <div class="blog_banner_right">
+         <a href="/ecommerces/gadgets"><img src="<%=asset_path 'gadgets.png'%>"></a>
+        </div>
+      </div>
+
       <div class="blogs_wrapper">    
+
        <div class="blog_left_main">
         
           <% @blogs.each do |blog| %>
@@ -96,35 +91,41 @@
        <div class="blog_right_side">
 
         <div class="blog_logo">
-          <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net"></img></a>
-          <ul class="blog_admin">
+         <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net"></img></a>
+         <ul class="blog_admin">
           <% if user_signed_in? %>
             <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
           <% end %>
           <% if can? :manage, @blog %>
              <li><%= link_to "Add New Blog", new_blog_path(@blog) %></li>
           <% end %>
-        </ul>
+         </ul>
+        </div>
+     
+        <div class="random_post_blog">
+          <h2 class="gadget_title">Gadgets That Will Blow Your Mind</h2> 
+            <% @ecommerces.each do |gadget| %>
+             <a href="/ecommerces/detail/<%= gadget.id %>"><div class="blog_side_img"><img src="<%= gadget.image_main%>"></div></a>
+            <% end %><br><br>
+          <!-- <a href="/"><p class="see_more">See More Gadgets</p></a><br>       -->
         </div>
 
-        <div class="blog_show_shoes">
-          <h2>Shoes</h2>
-          <% @random.each do |random| %>  
-            <%= link_to (image_tag random.main_img), random, {:class =>"blog_side"} %>
-            <p class="blog_show_shoe_title"><%= link_to random.title, random %></p>
-          <% end %>
-          <a href="#"><p class="see_more">See More Shoes</p></a></br>      
+        <div class="twitter-feed">
+         <a class="twitter-timeline" data-height="1000" href="https://twitter.com/OhIgottabuythis?ref_src=twsrc%5Etfw">Tweets by OhIgottabuythis</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
-        <h2>Gadgets</h2>  
-        <% @ecommerces.each do |gadget| %>
-         <a href="/ecommerces/detail/<%= gadget.id %>"><div class="blog_side_img"><img src="<%= gadget.image_main%>"></div></a>
-        <% end %>
-        <a href="#"><p class="see_more">See More Gadgets</p></a></br>      
+        <div class="twitter_bottom"></div>
+        
+        <div class="pinterest_widget">
+         <a data-pin-do="embedUser" data-pin-lang="ko" data-pin-board-width="300" data-pin-scale-height="500" data-pin-scale-width="150" href="https://www.pinterest.com.au/ohigottabuythis/"></a>
+        </div><br>
+
+
+        
          
 
-     </div><!--/.blog_right_side-->
-    </div><!--/.blog_wrapper-->
+      </div><!--/.blog_right_side-->
+     </div><!--/.blog_wrapper-->
 
             
     </div><!--/.inner-->

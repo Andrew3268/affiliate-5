@@ -4842,9 +4842,11 @@
 .details_price {
   margin-bottom: -3.5em;
 }
-
 .detail_discription {
   margin-left: 1.5em;
+}
+.gadgets_edit li {
+  margin-top: 2em;
 }
 
 @media screen and (max-width: 500px) {

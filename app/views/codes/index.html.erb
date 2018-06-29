@@ -6,9 +6,9 @@
   <h1 class="codes_main_title">Discount Codes 2018</h1>
    <div class="code_admin_control">
     <% if user_signed_in? %>
-      <span class="hello">Hello,</span><br /> <%= current_user.name %>
+      <span class="hello">Hello,</span><br> <%= current_user.name %>
       <%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %>
-    <% end %></br>
+    <% end %><br>
 
     <% if can? :create, @codes %>
     <%= link_to "Add New Discount Code", new_code_path %>

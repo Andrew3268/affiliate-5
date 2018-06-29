@@ -8,10 +8,10 @@ class BlogPostsController < ApplicationController
   # 10 Awesome Smart Home Gadgets You Need To See
   def post_02
   end
-  # 
+  # 10 Comfortable Travel Pillow you can deep sleep.
   def post_03
   end
-
+  # 10 Awesome & Portable Coffee Makers
   def post_04
   end
 

@@ -3,233 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.recent_post_wrap {
-  margin: 11em 0 1.5em 0;
-}
 
-.recent_post_wrap h2{
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 5px;
-}
 
-.recent_post {
-  width: 100%;
-  height: 5.5em;
-}
-
-.recent_post_img {
-  float: left;
-  width: 30%;
-  width: 80px;
-  height: 65px;
-  margin-right: 1em;
-}
-
-.recent_post_img img {
-  height: 100%;
-  border-radius: 5px;
-  object-fit: fill;
-}
-
-.recent_post_title {
-  float: left;
-  width: 65%;
-}
-
-.recent_post_title p {
-  color: #7f888f;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  display: -webkit-box;
-  -moz-line-clamp: 2; 
-  -webkit-line-clamp: 2; /* number of line */ 
-  -ms-line-clamp: 2;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  -ms-box-orient: vertical;
-  word-wrap:break-word;
-}
-
-.twitter-feed {
-  margin: 10px;
-}
-
-#prodIframeWrp{
-  display:block;
-  width:100%;
-  height:250px;
-  padding:0px;
-  font-size:12px;
-  box-sizing: border-box;
-  overflow:hidden;
-  list-style:none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-#prodIframeWrp #title{
-  display:block;
-  width:100%;
-  height:40px;
-  margin:0;
-  box-sizing: border-box;
-  padding:5px;
-  background:#61729f;
-}
-
-#prodIframeWrp #title a.logo{
-  display:block;
-  width:173px;
-  height:30px;
-  line-height:30px;
-  color:#FFF;
-  text-transform:uppercase;
-  text-decoration:none;
-  text-shadow:none;
-  font-weight:bold;
-  font-size:18px;
-  float:left;
-  margin:0;
-  padding: 0 8px;
-  background: none;
-}
-
-#prodIframeWrp #title a.logo span{
-  display:none;
-  display:inline;
-  float:none;
-}
-
-#prodIframeWrp #title span{
-  display:none;
-  width:46px;
-  height:20px;
-  float:right;
-  margin:5px 1px 0 0;
-}
-
-#prodIframeWrp #title .up_down {
-  display: inline-block;
-}
-
-#prodIframeWrp ul{
-  display:block;
-  width:100%;
-  height:210px;
-  margin:0px;
-  padding:0px;
-  font-size:12px;
-  box-sizing: border-box;
-  overflow:hidden;
-  list-style:none;
-}
-
-#prodIframeWrp ul li{
-  display:block;
-  width:100%;
-  height:105px;
-  margin:0;
-  box-sizing: border-box;
-  padding:5px;
-  background:#fcfcfc;
-}
-
-#prodIframeWrp ul li:nth-child(odd){
-  background:#f7f7f7;
-}
-
-#prodIframeWrp ul.inv li{
-  background:#f7f7f7;
-}
-
-#prodIframeWrp ul.inv li:nth-child(odd){
-  background:#fcfcfc;
-}
-
-#prodIframeWrp ul li a{
-  text-align:center;
-  text-decoration:none;
-  color:#464646;
-}
-
-#prodIframeWrp ul li .blog_img{
-  display:block;
-  float:left;
-  width:95px;
-  height:95px;
-  line-height:95px;
-  margin:0 10px 0 0;
-  background:#FFF;
-}
-
-#prodIframeWrp ul li .blog_img img{
-  max-width:95px;
-  max-height:95px;
-  display:inline block;
-  vertical-align: middle;
-}
-
-#prodIframeWrp ul li .title,
-#prodIframeWrp ul li .price{
-  width:175px;
-  display:block;
-  float:right;
-  font-weight:bold;
-  font-size:13px;
-  text-align:left;
-  line-height:18px;
-  padding:0 10px 0 0;
-  overflow:hidden;
-}
-
-#prodIframeWrp ul li .title{
-  height:54px;
-  margin:5px 0;
-}
-
-#prodIframeWrp ul li .price{
-  height:30px;
-  font-size:16px;
-  line-height:30px;
-  margin:1px 0 0;
-  text-align:left;
-  color:#0071bc;
-}
-
-#prodIframeWrp ul li .price span{
-    display:none;
-  }
-
-#prodIframeWrp ul li .price.from{
-  text-align:right;
-}
-
-#prodIframeWrp ul li .price.from span{
-  display:inline;
-  font-weight:normal;
-  font-size:14px;
-  float:left;
-  color:#898989;
-}
-
-#prodIframeWrp ul li .price.from span span{
-  text-decoration: line-through;
-  float:none;
-}
-
-#prodIframeWrp ul li:hover{
-  background:#edf0f5;
-}
-
-#prodIframeWrp ul li:hover .title{
-  text-decoration:underline;
-}
 
 
 /*********************************** 왼쪽 사이드바 (공용<blogs_home & blogs_show) *******************************/
-
 .bsd-container {
   position: relative;
   display: block;
@@ -429,13 +207,29 @@
 
 /*********************************** 블로그 메인(blogs_home.html.erb) ****************************************/
 
+/* ====== main(gadgets) page header ====== */
+.blog_banner_wrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.blog_banner_left, 
+.blog_banner_right {
+  width: 49%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.blog_banner_left img, 
+.blog_banner_right img {
+  width: 100%;
+}
+/* ====== main(gadgets) page header ====== */
+
+
 .blog_home_post { 
   display: flex; 
   flex-flow: column nowrap;
 }
 
-
-/*블로그 메인 전체 및 오른쪽 섹션*/
 @media screen and (min-width: 1100px) {
   .blogs_wrapper {
     display: -webkit-box;
@@ -478,129 +272,8 @@
 }
 
 
-/************ 오른쪽 사이드 바 ***************/
 
-aside {
-  padding: 1em;
-  border: 2px solid #eee;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
-}
-
-@media screen and (min-width: 1100px) {
-  aside {
-    padding: 3.5em 0;
-    margin-top: 3.6em;
-    border-radius: 0.3em;
-    height: 200em;
-  }
-}
-aside h2 {
-  text-align: center;
-  margin-bottom: 1.75em;
-}
-
-.blog-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 90%;
-  margin: 0 auto;
-}
-@media screen and (min-width: 1100px) {
-  .blog-container {
-    display: block;
-    padding: 0 .75em 0 .75em;
-  }
-}
-
-.blog-post {
-  width: 100%;
-  padding: .35em;
-  margin-bottom: 1em;
-}
-.blog-post img {
-  border-radius: 1em;
-}
-
-@media screen and (min-width: 600px) {
-  .blog-post {
-    width: 50%;
-    margin: 5% auto;
-  .aside {
-    margin-right: 0em;
-   }
-  }
-}
-@media screen and (min-width: 1100px) {
-  .blog-post {
-    width: 100%;
-    margin-bottom: 2em;
-    padding: 0;
-  }
-}
-.blog-post img {
-  width: 34em;
-}
-
-.aside-title_01{
-  margin-bottom: 1em;
-}
-
-.aside-title_02 {
-  margin-bottom: 0.5em;
-  text-align: center;
-}
-
-.aside-title_p {
-  text-align: center;
-}
-
-.aside_link {
-  text-align: center;
-  margin: -1em 0 3em 0;
-}
-
-.aside_img {
-  width: 100%;
-}
-
-@media only screen and (min-width : 320px) and (max-width : 480px) {
- .aside_link {
-  margin: 0em
- }
- .aside-title_02 {
-  margin: 0 auto;
- }
-
-}
-
-@media only screen and (min-width : 481px) and (max-width : 1024px) {
-  .blog-post {
-   maring: 5% auto;
-  }
-}
-
-@media screen and (orientation: portrait) {
-  .aside {
-    margin: 0 0 0 0;
-  }
-}
-
-@media only screen and (max-width : 320px) {
-  .blog-container {
-      width: 80%;
-      margin-right: 0;
-  }
-}
-
-
-/*********** 포스트 디스플레이 in Main **************/
+/*********** =============== Post on Main Page =============== **************/
 
 .blog_home_post_h1 {
   font-size: 2em;
@@ -817,80 +490,6 @@ aside h2 {
 
 
 
-/*********** 오른쪽 사이드 (지워도 될꺼 같은데?)**************/
-
-.widget_container {
-  max-width: 310px;
-  margin: 12% auto;
-  padding: 0;
-  box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.1);
-  font-family: 'Open Sans', sans-serif;
-}
-/* Multi Tab Sidebar */
-
-.multitab-section {
-  display: inline-block;
-  text-transform: uppercase;
-  width: 126%;
-  margin-left: -3em;
-}
-
-.multitab-section p {
-  display: inline-block;
-  background: #fff;
-  text-transform: lowercase;
-  font-size: 14px;
-  padding: 20px;
-  margin: 0;
-}
-
-.multitab-widget {
-  list-style: none;
-  margin: 0 0 10px;
-  padding: 0
-}
-
-.multitab-widget li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  float: left
-}
-
-.multitab-widget li a {
-  background: #5bc995;
-  color: #fff;
-  display: block;
-  padding: 15px;
-  font-size: 13px;
-  text-decoration: none
-}
-
-.multitab-tab {
-  width: 33.3%;
-  text-align: center
-}
-
-.multitab-section h2,
-.multitab-section h3,
-.multitab-section h4,
-.multitab-section h5,
-.multitab-section h6 {
-  display: none;
-}
-
-.multitab-widget li a.multitab-widget-current {
-  padding-bottom: 20px;
-  margin-top: -10px;
-  background: #fff;
-  color: #444;
-  text-decoration: none;
-  border-top: 5px solid #5bc995;
-  font-size: 14px;
-  text-transform: capitalize
-}
-
-
 /*********************************** 블로그 show(blog_show.html.erb) ****************************************/
 
 
@@ -1070,6 +669,77 @@ aside h2 {
 
 /******************* 오른쪽 사이드바 랜덤 포스트 css *******************/
 
+.recent_post_wrap {
+  margin-bottom: 2em;
+  border-bottom: 3px solid black;
+  padding-bottom: 1em;
+}
+
+.recent_post_wrap h2{
+  border-bottom: 3px solid;
+}
+
+.recent_post {
+  width: 100%;
+  height: 5.5em;
+}
+
+.recent_post_img {
+  float: left;
+  width: 30%;
+  width: 80px;
+  height: 65px;
+  margin-right: 1em;
+}
+
+.recent_post_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: fill;
+}
+
+.recent_post_title {
+  float: left;
+  width: 65%;
+}
+
+.recent_post_title p {
+  color: #7f888f;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+
+.recent_post_date {
+  margin: -1.7em 0 0 0;
+}
+.recent_post_title img{
+  width: 15px;
+}
+
+.twitter-feed {
+  margin: 10px;
+}
+.twitter_bottom {
+  border-bottom: 3px solid black;
+  margin-bottom: 2em;
+}
+.pinterest {
+  width: 100%;
+}
+
+.blog_side_amazon img {
+  width: 100%;
+}
+
 .blog_left_main {
   float: left;
   width: 70%;
@@ -1077,10 +747,21 @@ aside h2 {
   margin-top: 5em;
 }
 
+.blog_left_main_post {
+  float: left;
+  width: 70%;
+  padding-right: 2.5em;
+  margin-top: 1em;
+}
+
 .blog_right_side {
   float: left;
   width: 30%;
   padding: 1em;
+}
+
+.blog_logo img {
+  width: 100%;
 }
 
 .random_post_blog img {
@@ -1112,46 +793,48 @@ aside h2 {
   display: inline-block;
 }
 
-.gadget_title {
+.gadget_title, 
+.shoes_title,
+.bags_title {
   font-size: 1.3em;
+  border-top: 3px solid;
 }
-
 .shoes_title {
   margin-top: 17em;
-  font-size: 1.3em;
 }
-
 .bags_title {
   margin-top:9em;
-  font-size: 1.3em;
 }
 @media screen and (max-width: 500px) { 
 
   main {
     padding: 0em;
   }
-
-  .blog_left_main {
+  .blog_left_main, .blog_left_main_post  {
    float: none;
    width: 100%;
    padding-right: 0em;
   }
-
   .blog_right_side {
    float: none;
    border: none;
    width: 100%;
   }
-  .recent_post_wrap h2 {
-    margin-top: -9em;
+  .recent_post_wrap {
+   margin-top: 12em;
   }
-
+  .recent_post_wrap h2 {
+   margin-top: -9em;
+  }
+  .blog_banner_wrap {
+   margin-bottom: -4em;
+  }
 }
 
 @media only screen
 and (min-width : 501px)  
 and (max-width : 1024px) {
- .blog_left_main {
+ .blog_left_main, .blog_left_main_post  {
    float: left;
    width: 65%;
    padding-right: 0.5em;

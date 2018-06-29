@@ -40,23 +40,15 @@
 .main_header_wrapper {
   width: 100%;
 }
-/*
-.left_banner,
-.right_banner {
-  margin-left: 0.6em;
-}*/
-
 .left_banner, .right_banner {
   float: left;
   width: 49%;
   margin-left: 0.6em;
 }
-
 .right_banner img,
 .left_banner img {
   width: 100%;
 }
-
 .right_text_quicksearch {
   float: left;
   width: 49%;
@@ -66,6 +58,7 @@
 @media screen and (max-width: 500px) {
   .left_banner, .right_banner {
     width: 100%;
+    margin-left: 0em;
   }
 }
 
