@@ -4813,7 +4813,7 @@
 .amazon_prime {
   width: 150px;
   margin-top: -5.7em;
-  margin-left: 16em;
+  margin-left: 25em;
 }
 
 .amazon_prime img {
@@ -4884,8 +4884,9 @@
     display: none;
   }
   .amazon_prime {
-    margin-top: -4.7em;
+    margin-top: -6.7em;
     width: 120px;
+    margin-left: 15em;
   }
   #banner .content .yousave {
     margin-top: -1.5em;
