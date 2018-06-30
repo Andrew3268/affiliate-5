@@ -703,6 +703,9 @@
   float: left;
   width: 65%;
 }
+.recent_post_title a {
+  color: black;
+}
 
 .recent_post_title p {
   color: #7f888f;
@@ -864,6 +867,9 @@ and (max-width : 1024px) {
  }
  .recent_post_wrap h2 {
   font-size: 1.3em;
+ }
+ .show_main_title {
+  font-size: 2.25em;
  }
 }
 
