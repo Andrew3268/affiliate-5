@@ -10,50 +10,60 @@
             <li><a href="#quickSearch">Quick Search</a></li>
             <li><a href="#promotion">Promotions</a></li>
             <li><a href="#discountCode">Discount Codes</a></li>
-            <li><a href="#search">Search</a></li>
+            <!-- <li><a href="#coupon">Coupons</a></li> -->
            </ul>
-         </div>
+          </div>
 
          <div class="left_banner_quicksearch">
-          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_to.png'%>"></a>
+          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>"></a>
          </div>
          
           <h1 class="quicksearch_title" title="Amazon shopping">All About The Sale On Amazon 2018</h1>
           <p>Oh,igottabuythis is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> and affiliated sites.</p><br>    
         
-<!-- 
-          <div class="topnav" id="myMenu">
-            <a href="/hotdeals/promotion">Promotions & Events</a>
-            <a href="/hotdeals/coupons">Coupons & Deals</a>
-            <a href="/hotdeals/discount_codes">Discount Codes</a>
-            <a href="/hotdeals/hotdeals_women">Hotdeals Women</a>
-            <a href="/hotdeals/hotdeals_men">Hotdeals Men</a>
-            <a href="javascript:void(0);" style="font-size:16px;" class="icon" onclick="myQuickmenu()">&#9776;</a>
-          </div> -->
-                  
-            <h1 class="codes_main_title" id="quickSearch">Quick Search</h1>
-            <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> search results.</p>
+          <h1 class="codes_main_title" id="quickSearch">Quick Search</h1>
+          <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> search results.</p>
 
-            <div class="tabs">
-              <input type="radio" name="tab" id="tab1" checked="checked">
-              <label for="tab1">_Amazon.com</label>
-              <input type="radio" name="tab" id="tab2">
-              <label for="tab2">_Amazon.ca</label>
-              <input type="radio" name="tab" id="tab3">
-              <label for="tab3">_Amazon.co.uk</label>
+          <!-- Search on Amazon -->
+          <div> 
+            <script type="text/javascript">
+              amzn_assoc_placement = "adunit0";
+              amzn_assoc_search_bar = "true";
+              amzn_assoc_tracking_id = "3628-20";
+              amzn_assoc_search_bar_position = "top";
+              amzn_assoc_ad_mode = "search";
+              amzn_assoc_ad_type = "smart";
+              amzn_assoc_marketplace = "amazon";
+              amzn_assoc_region = "US";
+              amzn_assoc_title = "";
+              amzn_assoc_default_search_phrase = "";
+              amzn_assoc_default_category = "All";
+              amzn_assoc_linkid = "2a7ed4aa888f9ca495b934b8407e9e4d";
+              amzn_assoc_rows = "2";
+            </script>
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+          </div>
 
-              <div class="tab-content-wrapper">
-                <div id="tab-content-1" class="tab-content">
-                 <%= render 'shared/quicksearch_us' %>
-                </div>
-                <div id="tab-content-2" class="tab-content">
-                  <%= render 'shared/quicksearch_ca' %>
-                </div>
-                <div id="tab-content-3" class="tab-content">
-                  <%= render 'shared/quicksearch_uk' %>
-                </div>
+          <div class="tabs">
+            <input type="radio" name="tab" id="tab1" checked="checked">
+            <label for="tab1">_Amazon.com</label>
+            <input type="radio" name="tab" id="tab2">
+            <label for="tab2">_Amazon.ca</label>
+            <input type="radio" name="tab" id="tab3">
+            <label for="tab3">_Amazon.co.uk</label>
+
+            <div class="tab-content-wrapper">
+              <div id="tab-content-1" class="tab-content">
+               <%= render 'shared/quicksearch_us' %>
+              </div>
+              <div id="tab-content-2" class="tab-content">
+                <%= render 'shared/quicksearch_ca' %>
+              </div>
+              <div id="tab-content-3" class="tab-content">
+                <%= render 'shared/quicksearch_uk' %>
               </div>
             </div>
+          </div>
 <!-- Promotions & Deals -->
             <h1 class="promo_main_title" id="promotion">Promotions & Deals 2018</h1>
             <section class="card_grid">
@@ -131,40 +141,33 @@
                   </label>
                   <div class="answers">
                    <ul>
-                      <li>Check to make sure it hasn’t expired.</li>
-                      <li>Is the item you’ve selected included in the promo code offer?</li>
-                      <li>Is the promo available in your country?</li>
-                      <li>Check the spelling of your code; codes oftentimes are case-sensitive.</li>
+                    <li>Check to make sure it hasn’t expired.</li>
+                    <li>Is the item you’ve selected included in the promo code offer?</li>
+                    <li>Is the promo available in your country?</li>
+                    <li>Check the spelling of your code; codes oftentimes are case-sensitive.</li>
                     </ul>
-                  
                   </div>
                 </div></br>
-
               <%= render 'shared/amazon_discount_codes' %>
               <a class="load-more" href="#0"><p class="discount_more">Show More<p></a>
+     
             </div><br><br>
-<!-- Search on Amazon -->
-            <div id="search"> 
-              <script type="text/javascript">
-                amzn_assoc_placement = "adunit0";
-                amzn_assoc_search_bar = "true";
-                amzn_assoc_tracking_id = "3628-20";
-                amzn_assoc_search_bar_position = "top";
-                amzn_assoc_ad_mode = "search";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_title = "Search Everything";
-                amzn_assoc_default_search_phrase = "todays deals";
-                amzn_assoc_default_category = "All";
-                amzn_assoc_linkid = "2a7ed4aa888f9ca495b934b8407e9e4d";
-                amzn_assoc_rows = "2";
-              </script>
-              <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+
+<!-- Coupons & Deals -->            
+<!--             <div class="quick_coupon_wrap" id="coupon">
+             <h1 class="codes_main_title">Coupons 2018</h1>
+             <p>Enjoy coupon savings without the hassle of clipping. Amazon Coupons showcases coupon discounts from top brands within Grocery, Health and Beauty, Electronics, Home Improvement, Movies, and more.</p>
+             <div class="coupon_left">
+              <img src="<%=asset_path 'coupons.png'%>">
+             </div>
+             <%= render 'shared/amazon_coupon' %>
             </div>
-          
+            <center><a class="load_coupon" href="#0">Show More</a></center> -->
+            
         </div><br><br><!--<class="quicksearch_warpper">-->
-          
+
+       
+       
         
   </div>
  </div>

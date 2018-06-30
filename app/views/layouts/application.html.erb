@@ -372,7 +372,7 @@
   </script>
 
 
-  <!-- For Discount_codes Page -->
+  <!-- Isotope For Discount_codes Page -->
   <script>
         // init Isotope
     var $card_container = $('.card_container').isotope({
@@ -446,6 +446,37 @@
       });
     });
   </script>
+
+
+<!-- Show more Coupon on QuickSearch Page -->
+  <script>
+    $(document).ready(function () {
+      console.clear();
+      var target = '.coupon_list li',
+            size = $(target).length,
+               x = 8,  // Show on Start
+           addTo = 4,  // Number to increase by
+      loadButton = $('.load_coupon');
+      $(target).hide();
+      $(target + ':lt(' + x + ')').show();
+      loadButton.on("click", function () {
+        // if currently showing plus addTo is less than total, increment var x, otherwise set it to the total
+        x = (x + addTo <= size) ? x + addTo : size;
+        // Show the suckers
+        $(target + ':lt('+x+')').show();
+        // if showing is equal to total, hide button
+        if (x == size){
+            $(this).hide();
+        }
+        return false;
+      });
+    });
+  </script>
+
+
+
+
+
 
 
   <!-- Sticky and Up & Donw on QuickSearch page -->
