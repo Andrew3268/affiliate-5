@@ -52,12 +52,16 @@
 
         <% if @details.amazon_prime.present? %>
           <div class="amazon_prime">
-           <p class="primenfree"><%= @details.amazon_prime %></p><img src="http://www.news-tech.it/wp-content/uploads/2018/03/amazon-prime-aumenta-il-prezzo.jpg">
+           <p class="primenfree"><%= @details.amazon_prime %></p>
+           <img src="https://m.media-amazon.com/images/G/01/AmazonServices/Site/US/Product/FBA/small-and-light-prime-logo._V509606070_.png" alt="amazon prime" title="amazon prime">
           </div>
         <% end %>
 
         <% if @details.free_shipping.present? %>
-         <p class="primenfree"><%= @details.free_shipping %></p><div class="free_shpping"><p>& Free Shpping</p></div>
+         <p class="primenfree"><%= @details.free_shipping %></p>
+         <div class="free_shpping">
+          <p>& Free Shpping</p>
+         </div>
         <% end %>
 
         <% if @details.amazon_prime.present? %>
@@ -143,37 +147,37 @@
         <div class="de_container">
           <div class="mySlides">
             <div class="numbertext">1 / 6</div>
-            <img src="<%= @details.image_main %>">
+            <img src="<%= @details.image_main %>" alt="<%= @details.title %>" title="<%= @details.title %>">
           </div>
           
           <% if @details.image_01.present? %>
             <div class="mySlides">
               <div class="numbertext">2 / 6</div>
-              <img src="<%= @details.image_01 %>">
+              <img src="<%= @details.image_01 %>" alt="<%= @details.title %>" title="<%= @details.title %>">
             </div>
           <% end %>
           <% if @details.image_02.present? %>
             <div class="mySlides">
               <div class="numbertext">3 / 6</div>
-              <img src="<%= @details.image_02 %>">
+              <img src="<%= @details.image_02 %>" alt="<%= @details.title %>" title="<%= @details.title %>">
             </div>
           <% end %>
           <% if @details.image_03.present? %>
             <div class="mySlides">
               <div class="numbertext">4 / 6</div>
-              <img src="<%= @details.image_03 %>">
+              <img src="<%= @details.image_03 %>" alt="<%= @details.title %>" title="<%= @details.title %>">
             </div>
           <% end %>
           <% if @details.image_04.present? %>
             <div class="mySlides">
               <div class="numbertext">5 / 6</div>
-              <img src="<%= @details.image_04 %>">
+              <img src="<%= @details.image_04 %>" alt="<%= @details.title %>" title="<%= @details.title %>">
             </div>
           <% end %>
           <% if @details.image_05.present? %>  
             <div class="mySlides">
               <div class="numbertext">6 / 6</div>
-              <img src="<%= @details.image_05 %>">
+              <img src="<%= @details.image_05 %>" alt="<%= @details.title %>" title="<%= @details.title %>">
             </div>
           <% end %>
             
@@ -282,8 +286,6 @@
        </div>
       <% end %>
     
-
-      
       <div class="detail_discription">
 				<h2 class="related_text">Descriptions</h2>
 				<ul>
@@ -305,7 +307,7 @@
 				</ul>
       </div>
 				
-				<!-- <div class="detail_border_down"></div><br> -->
+		  <!-- <div class="detail_border_down"></div><br> -->
 				
 			<div class="related_prodcut">
 		  	<script type="text/javascript">

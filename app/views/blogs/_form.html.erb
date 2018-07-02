@@ -1,10 +1,17 @@
 <%= simple_form_for @blog do |f| %>
+<div class="upload_partition">
  <%= f.input :blog_title %>
  <%= f.input :blog_description %>
- <%= f.input :blog_main_img %>
  <%= f.input :blog_date %>
- <h3 class="blog_input_link">Enter Blog URL(ex /blog_posts/post_01 )</h3>
- <%= f.input :blog_link %>
+</div>
+<div class="upload_partition">
+ <%= f.input :blog_main_img %>
+ <%= f.input :blog_spare_01, :label => "image alt" %>
+ <%= f.input :blog_spare_02, :label => "image title" %>
+</div>
+<div class="upload_partition">
+ <%= f.input :blog_link, :label => "Enter Blog URL(ex /blog_posts/post_01 )"  %>
+</div>
 
  <%= f.button :submit %>
 <% end %>

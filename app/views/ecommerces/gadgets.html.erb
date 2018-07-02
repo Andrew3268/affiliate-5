@@ -8,10 +8,10 @@
 
       <div class="main_header_wrapper">
         <div class="left_banner">
-          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>"></a>
+          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
         </div>
         <div class="right_banner">
-          <a href="/blogs"><img src="<%=asset_path 'blog_main.png' %>"></a>
+          <a href="/blogs"><img src="<%=asset_path 'blog_main.png' %>" alt="the best shopping tip blog" title="the best shopping tip"></a>
         </div>
       </div>
       
@@ -28,7 +28,7 @@
          <% @ecommerces.each do |ecommerce| %>  
           <article>
             
-            <a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="<%= ecommerce.title %>"/></a>
+            <a href="/ecommerces/detail/<%= ecommerce.id %>" class="image"><img src="<%= ecommerce.image_main %>" alt="<%= ecommerce.title %>" title="<%= ecommerce.title %>"/></a>
             <p class="sources"><%= ecommerce.sources %></p>
             <h3 class="gadgets_title"><%= ecommerce.title %></h3>
             <p><%= ecommerce.intro %></p>

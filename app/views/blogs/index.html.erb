@@ -6,10 +6,10 @@
       
       <div class="blog_banner_wrap">
         <div class="blog_banner_left">
-         <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>"></a>
+         <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
         </div>
         <div class="blog_banner_right">
-         <a href="/ecommerces/gadgets"><img src="<%=asset_path 'gadgets.png'%>"></a>
+         <a href="/ecommerces/gadgets"><img src="<%=asset_path 'gadgets.png'%>" alt="Awesome gadgets" title="Awesome gadgets"></a>
         </div>
       </div>
 
@@ -19,7 +19,7 @@
         
           <% @blogs.each do |blog| %>
             <div class="blog-card">
-              <div class="photo photo1" style="background: url(<%= blog.blog_main_img %>) center no-repeat; background-size: cover;" ></div>
+              <div class="photo photo1" style="background: url(<%= blog.blog_main_img %>) center no-repeat; background-size: cover;" title="<%= blog.blog_spare_02 %>"></div>
               <ul class="details">
                 <li class="author"><a href="<%= blog.blog_link %>">Oh,i gotta buy this</a></li>
                 <li class="date"><%= blog.blog_date %></li>
@@ -37,7 +37,7 @@
           <% end %>
 
            <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/eb/19/50/eb19506d43bc49d673d7d14dcdf35513.jpg) center no-repeat; background-size: cover;" ></div>
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/eb/19/50/eb19506d43bc49d673d7d14dcdf35513.jpg) center no-repeat; background-size: cover;" title="10 Awesome & Portable Coffee Makers"></div>
             <ul class="details">
               <li class="author"><a href="/blog_posts/post_04">Oh,i gotta buy this</a></li>
               <li class="date">Jun. 27. 2018</li>
@@ -50,7 +50,7 @@
           </div>
 
           <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/4c/14/ae/4c14ae6547540a6dc4d51d5061c4d731.jpg) center no-repeat; background-size: cover;" ></div>
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/4c/14/ae/4c14ae6547540a6dc4d51d5061c4d731.jpg) center no-repeat; background-size: cover;" title="Comfortable Travel Pillow"></div>
             <ul class="details">
               <li class="author"><a href="/blog_posts/post_03">Oh,i gotta buy this</a></li>
               <li class="date">Jun. 11. 2018</li>
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://3.bp.blogspot.com/-0Ov80MwVP0Q/WijjYA_NgdI/AAAAAAAACCM/OJpvy91JjoIa5AZirVuElHocK2lsxPYBwCLcBGAs/s1600/five%2B%25281%2529.png) center no-repeat; background-size: cover;" ></div>
+            <div class="photo photo1" style="background: url(https://3.bp.blogspot.com/-0Ov80MwVP0Q/WijjYA_NgdI/AAAAAAAACCM/OJpvy91JjoIa5AZirVuElHocK2lsxPYBwCLcBGAs/s1600/five%2B%25281%2529.png) center no-repeat; background-size: cover;" title="Awesome Smart Home Gadgets"></div>
             <ul class="details">
               <li class="author"><a href="/blog_posts/post_02">Oh,i gotta buy this</a></li>
               <li class="date">May. 29. 2018</li>
@@ -74,7 +74,7 @@
             </div>
           </div>
           <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/d7/b5/33/d7b5337801205257c9737143afab4197.jpg) center no-repeat; background-size: cover;" ></div>
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/d7/b5/33/d7b5337801205257c9737143afab4197.jpg) center no-repeat; background-size: cover;" title="Awesome &amp; Useful BackPack"></div>
             <ul class="details">
               <li class="author"><a href="/blog_posts/post_01">Oh,i gotta buy this</a></li>
               <li class="date">Apr. 20, 2018</li>
@@ -91,15 +91,15 @@
        <div class="blog_right_side">
 
         <div class="blog_logo">
-         <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net"></img></a>
-         <ul class="blog_admin">
-          <% if user_signed_in? %>
-            <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
+         <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net" title="awesome gadgets and amazon shopping"></img></a>
+         <% if user_signed_in? %>
+           <ul class="blog_admin">  
+              <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
+            <% if can? :manage, @blog %>
+               <li><%= link_to "Add New Blog", new_blog_path(@blog) %></li>
+            <% end %>
+           </ul>
           <% end %>
-          <% if can? :manage, @blog %>
-             <li><%= link_to "Add New Blog", new_blog_path(@blog) %></li>
-          <% end %>
-         </ul>
         </div>
      
         <div class="random_post_blog">
@@ -119,11 +119,7 @@
         <div class="pinterest_widget">
          <a data-pin-do="embedUser" data-pin-lang="ko" data-pin-board-width="300" data-pin-scale-height="500" data-pin-scale-width="150" href="https://www.pinterest.com.au/ohigottabuythis/"></a>
         </div><br>
-
-
         
-         
-
       </div><!--/.blog_right_side-->
      </div><!--/.blog_wrapper-->
 

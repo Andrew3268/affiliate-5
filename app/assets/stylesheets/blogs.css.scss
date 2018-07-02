@@ -791,9 +791,19 @@
   text-align: center;
 }
 
+.blog_admin {
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
 .blog_admin li {
   list-style: none;
   display: inline-block;
+}
+
+.blog_admin a {
+  color: black;
 }
 
 .gadget_title, 

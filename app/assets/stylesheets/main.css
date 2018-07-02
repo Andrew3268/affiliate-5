@@ -4811,9 +4811,9 @@
   color: white;
 }
 .amazon_prime {
-  width: 150px;
-  margin-top: -5.7em;
-  margin-left: 25em;
+  width: 100px;
+  margin-top: -5em;
+  margin-left: 16em;
 }
 
 .amazon_prime img {
@@ -4828,6 +4828,9 @@
 .details_special_offer a {
   color: #247ace;
   font-weight: bold;
+}
+.free_shpping {
+  margin-top: 1em;
 }
 .free_shpping p {
   margin: -0.2em 0 1em 0;
@@ -4886,16 +4889,16 @@
   .amazon_prime {
     margin-top: -6.7em;
     width: 120px;
-    margin-left: 15em;
+    margin-left: 17em;
   }
   #banner .content .yousave {
-    margin-top: -1.5em;
+    margin-top: -0.5em;
   }
   .details_price {
     margin-bottom: -2.5em;
   }
   .free_shpping p {
-    margin: 0 0 0.5em 0;
+    margin: 1.5em 0 0.5em 0;
   }
   .control_box {
     text-align: center;

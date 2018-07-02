@@ -28,13 +28,19 @@
 .left_banner_quicksearch {
   float: left;
   width: 49%;
-  margin-right: 1em;
-  /*margin-top: 1em;*/
+  margin-right: 1%;
+}
+.right_banner_quicksearch {
+  float: left;
+  width: 50%;
+  margin-bottom: 2em;
 }
 
-.left_banner_quicksearch img {
+.left_banner_quicksearch img, .right_banner_quicksearch img{
   width: 100%;
 }
+
+
 
 
 /* ===== Skituy_menu ===== */
@@ -237,7 +243,7 @@ div.tab .discount .active {
   .promo_main_title {
     margin-bottom: 2em;
   }
-  .left_banner_quicksearch {
+  .left_banner_quicksearch, .right_banner_quicksearch {
     width: 100%;
   }
 }
