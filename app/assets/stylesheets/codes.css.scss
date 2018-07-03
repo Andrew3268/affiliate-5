@@ -152,6 +152,14 @@
   align-items: center;
 }
 
+.new_promotion {
+  margin-bottom: 0em;
+  text-align: center;
+  background-color: #7acca4;
+  color: white;
+  font-weight: bold;
+}
+
 .card_image img {
   width: 100%;
   height: 170px;
@@ -169,6 +177,7 @@
   font-size: .8em;
   margin-left: .5em;
   margin-right: .5em;
+  margin-bottom: 1em;
 }
 
 .discount_get_code {
@@ -224,6 +233,21 @@
   background: #fed006;
   color: white;
 }
+
+.promo_sale {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 6px 8px;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background: #fed006;
+  color: white;
+}
+
+
 .masonry_sale_wrapper {
   text-align: center;
   vertical-align: middle;
