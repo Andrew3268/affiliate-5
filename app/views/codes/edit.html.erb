@@ -6,9 +6,11 @@
       
       <ul class="shop_price_wrapper">
        <li><h1>Edit Discount Code</h1></li>
-       <li><%= link_to "Back", codes_path %></li>
+       <li><%= link_to "Back", '/search/quicksearch#discountCode' %></li>
       </ul></br>
-      <%= simple_form_for @code, :html => { :multipart => true } do |f| %>
+
+      <%= render 'form' %>
+<!--       <%= simple_form_for @code, :html => { :multipart => true } do |f| %>
        <h3>Select Market</h3>
        <%= f.select :discount_category, ([["Market", ""], "amazon", "ebay"])%>
        <h3>Select Department</h3>
@@ -30,7 +32,7 @@
        <%= f.input :discount_coupon %>
        </br>
        <%= f.button :submit %>
-      <% end %>
+      <% end %> -->
 
    </div>
   </div>

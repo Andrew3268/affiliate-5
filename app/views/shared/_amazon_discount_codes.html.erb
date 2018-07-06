@@ -32,6 +32,33 @@
 
   <ul class="cards discount_list">
 
+    <% @discount_codes.each do |code| %>
+      <li class="cards__item" rel="<%= code.discount_spare_01 %>">
+      <div class="card">
+        <div class="card__image_code"><a href="<%= code.discount_link_01 %>"><img src="<%= code.discount_image %>" alt="<%= code.discount_title %>" title="<%= code.discount_title %>"></a></div>          
+        <div class="masonry_sale_discount">
+          <div class="masonry_sale_wrapper">
+            <div class="masonry_sale_howmuch"><%= code.discount_sale %></div>
+            <div class="masonry_sale_text">SALE</div>
+          </div>
+        </div>
+        <div class="card__content">
+          <div class="card__title"><%= code.discount_title %></div>
+          <p class="discount_codes"><%= code.discount_code %></p>
+          <p class="code_date">End Date: <%= code.discount_date %></p>
+          <div class="discount_botton">
+           <a href="<%= code.discount_link_01 %>"><p class="use_code">Use This Code</p></a>
+           <a href="<%= code.discount_link_02 %>"><p class="use_code">More Products</p></a>
+          </div>
+          <% if can? :update, code %>
+           <%= link_to "Edit", edit_code_path(code) %>
+           <%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+    <% end %>
+
     <!-- <li class="cards__item" rel="Category">
       <div class="card">
         <div class="card__image_code"><a href="Products_Link"><img src="Image_link" alt="Image_title" title="Prodcuts_title"></a></div>          

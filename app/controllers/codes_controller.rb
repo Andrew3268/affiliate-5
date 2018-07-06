@@ -22,7 +22,7 @@ class CodesController < ApplicationController
   def create
     @code = current_user.codes.build(code_params)
      if @code.save
-      redirect_to @code
+      redirect_to '/search/quicksearch#discountCode'
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class CodesController < ApplicationController
 
   def update
     if @code.update(code_params)
-      redirect_to @code
+      redirect_to '/search/quicksearch#discountCode'
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class CodesController < ApplicationController
 
   def destroy
     @code.destroy
-     redirect_to root_path
+     redirect_to '/search/quicksearch#discountCode'
   end
 
   private

@@ -118,6 +118,9 @@
             </section><br><br>
 <!-- Discount Codes -->         
             <h1 class="codes_main_title" id="discountCode">Discount Codes July, 2018</h1>
+            <% if can? :create, @codes %>
+             <%= link_to "Add New Discount Code", new_code_path %>
+            <% end %>
             <div class="discount_shared_box">
               <p class="promocode_title">Amazon promotional codes are online coupons that can be used at checkout to save money on your Amazon purchase. Simply enter the alpha-numeric code on the checkout page at Amazon and the corresponding discount will be reflected in your total.</p>
 
@@ -130,7 +133,7 @@
                   </label>
                   <div class="answers">
                     <div class="how_to_use">
-                      <p>1.Copy your desired promotional code from the above list of active offers.</p>
+                      <p>1.Copy your desired promotional code from the below list of active offers.</p>
                       <p class="info_img"><img src="https://i.pinimg.com/564x/5b/cc/d3/5bccd338a30a25bdbb6b139ef2056aa2.jpg"><p>
                       <p>2.Add the items you wish to order into your shopping cart by clicking Add to Cart. Ensure coupon conditions are met, including the types of items and the total price of your selected products.</p>
                       <p class="info_img"><img src="https://i.pinimg.com/564x/5d/13/57/5d1357a4466ecdb98db05985b201a8f9.jpg"></p>
@@ -167,6 +170,7 @@
               <a class="load-more" href="#0"><p class="discount_more">Show More<p></a>
      
             </div><br><br>
+
 
 <!-- Coupons & Deals -->            
 <!--             <div class="quick_coupon_wrap" id="coupon">
