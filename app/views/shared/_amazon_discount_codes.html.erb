@@ -48,7 +48,7 @@
           <p class="code_date">End Date: <%= code.discount_date %></p>
           <div class="discount_botton">
            <a href="<%= code.discount_link_01 %>"><p class="use_code">Use This Code</p></a>
-           <% if code.discount_link_02.presnet? %>
+           <% if code.discount_link_02.present? %>
             <a href="<%= code.discount_link_02 %>"><p class="use_code">More Products</p></a>
            <% end %>
           </div>
