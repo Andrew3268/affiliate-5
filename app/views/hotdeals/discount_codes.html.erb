@@ -1,21 +1,23 @@
 <div id="wrapper">
     <div id="main">
       <div class="inner_hotdeals">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
         <%= render 'shared/header' %>
+        <%= render 'shared/error_message' %>
 
-        <ul class="icons">
+       <!--  <ul class="icons">
          <li title="Coupons & Promo Codes"><h1 class="hotdeals_h1">Amazon Discount Codes 2018</h1></title>
         </ul>
 
-        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        
 
         <div class="topnav" id="myMenu">
           <a href="/search/quicksearch">Hotdeals Quick Search</a>
           <a href="/hotdeals/promotion">Promotions & Events</a>
           <a href="/hotdeals/coupons">Coupons & Deals</a>
-          <!-- <a href="/hotdeals/hotdeals_women">Hotdeals Women</a>
-          <a href="/hotdeals/hotdeals_men">Hotdeals Men</a> -->
+          <a href="/hotdeals/hotdeals_women">Hotdeals Women</a>
+          <a href="/hotdeals/hotdeals_men">Hotdeals Men</a>
           <a href="javascript:void(0);" style="font-size:16px;" class="icon" onclick="myQuickmenu()">&#9776;</a>
         </div></br>
           
@@ -25,17 +27,17 @@
 
             <input type="radio" name="tab" id="tab1" checked="checked">
             <label for="tab1">Amazon</label>
-            <!-- <input type="radio" name="tab" id="tab2">
-            <label for="tab2">ebay</label> -->
+            <input type="radio" name="tab" id="tab2">
+            <label for="tab2">ebay</label>
             
             <div class="tab-content-wrapper">
               <div id="tab-content-1" class="tab-content">
-                <%= render 'shared/amazon_discount_codes' %>
+               # render amazon_discount_codes
                 <a class="load-more" href="#0"><p class="discount_more">Show More<p></a>
               </div>
             </div>
-           </div><!--/.tabs -->
-          </div><!--/.wrap-->
+           </div>
+          </div> -->
 
     </div><!-- inner_hotdeals -->
   </div><!-- main --> 
