@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
 
-  before_action :post_side, only: [:post_01, :post_02, :post_03, :post_04]
+  before_action :post_side, only: [:post_01, :post_02, :post_03, :post_04, :post_05]
 
   # 5 Awesome & Useful "BackPack"
   def post_01
@@ -13,6 +13,9 @@ class BlogPostsController < ApplicationController
   end
   # 10 Awesome & Portable Coffee Makers
   def post_04
+  end
+  # Amazon Prime
+  def post_05
   end
 
   def post_test

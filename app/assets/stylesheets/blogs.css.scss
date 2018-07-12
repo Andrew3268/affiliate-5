@@ -570,8 +570,32 @@
   border-radius: 0.5em;
 }
 
+.show_body li {
+  font-size: 1.2em;
+}
+
+.prime_post {
+  font-size: 1.3em;
+  color: #2da2d5;
+  font-weight: bold;
+}
+.prime_30 {
+  color: #2da2d5;
+  font-weight: bold;
+}
+
+.info_img img {
+  width: 100%;
+}
+
+.show_body a {
+  color: black;
+  font-weight: bold; 
+}
+
 .main_intro {
   margin-top: 1em;
+  font-size: 1.2em;
 }
 
 .blog_bottomline {
@@ -594,6 +618,12 @@
 
 .show_amazon_card {
   color: red;
+}
+
+.answer_in p {
+  text-align: center;
+  font-size: 1.3em;
+  color: black;
 }
 
 /*------------------------------
