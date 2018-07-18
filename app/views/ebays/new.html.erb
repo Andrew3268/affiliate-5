@@ -1,0 +1,32 @@
+<div id="wrapper">
+ <div id="main">
+  <div class="inner_hotdeals">
+  <%= render 'shared/header' %>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <h1>Key Words</h1>
+    <table>
+      <tr>
+        <th>Keywords</th>
+        <th>Min Price</th>
+        <th>Max Price</th>
+        <th>Date</th>
+        <th colspan="2">Manage</th>
+      </tr>
+      <% @ebays.each do |ebay| %>
+      <tr>
+        <td><%= ebay.ebay_title %></td>
+        <td>$<%= ebay.min_price %>.00</td>
+        <td>$<%= ebay.max_price %>.00</td>
+        <td><%= ebay.created_at.strftime("%B %d %Y") %></td>
+        <td><%= link_to "Edit", edit_ebay_path(ebay) %></td>
+        <td><%= link_to "Delete", ebay_path(ebay), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+      <% end %>
+    </table>
+
+    <%= link_to "Home", ebays_path %>
+
+   </div><!--/.inner_hotdeals-->
+  </div><!--/#main-->
+</div><!--/#wrapper-->

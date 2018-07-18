@@ -1,0 +1,8 @@
+<%= simple_form_for @ebay do |f| %>
+ <%= f.input :ebay_title %><br>
+ <%= f.select :shipping_free, options_for_select([["Shipping Condition", ""], "Free International Shpping"])%><br>
+ <%= f.input :min_price, :input_html => { :type => "number" }, label: 'Min Price $' %>
+ <%= f.input :max_price, :input_html => { :type => "number" }, label: 'Max Price $' %>
+ <%= f.button :submit %>
+ 
+<% end %>

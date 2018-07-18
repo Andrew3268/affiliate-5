@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619122748) do
+ActiveRecord::Schema.define(version: 20180718160958) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "acc_title"
@@ -181,6 +181,25 @@ ActiveRecord::Schema.define(version: 20180619122748) do
     t.text     "discount_spare_05"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "user_id"
+  end
+
+  create_table "ebays", force: :cascade do |t|
+    t.string   "ebay_title"
+    t.string   "min_price"
+    t.string   "max_price"
+    t.string   "shipping_free"
+    t.string   "retrun_free"
+    t.string   "both_free"
+    t.string   "ebay_option_01"
+    t.string   "ebay_option_02"
+    t.string   "ebay_option_03"
+    t.string   "ebay_option_04"
+    t.string   "ebay_option_05"
+    t.string   "ebay_option_06"
+    t.string   "ebay_option_07"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "user_id"
   end
 
