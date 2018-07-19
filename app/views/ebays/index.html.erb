@@ -7,35 +7,132 @@
       <div class="ebay_wrap">
         <div class="ebay_search_warp">
           <%= simple_form_for @ebay do |f| %>
-           <%= f.input :ebay_title, placeholder: 'Search on eBay' %><br>
+           <%= f.input :ebay_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
            <%= f.select :shipping_free, options_for_select([["Select Shipping Condition", ""], "Free International Shpping"])%><br>
            <ul>
-             $<li><%= f.input :min_price, :input_html => { :type => "number" }, label: 'Min Price $', placeholder: 'Min' %></li>&nbsp;&nbsp;~ 
-             $<li><%= f.input :max_price, :input_html => { :type => "number" }, label: 'Max Price $', placeholder: 'Max' %></li>
+             <li><%= f.input :min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
+             <li><%= f.input :max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
            </ul>
-           <%= f.button :submit %>         
+           <%= f.button :submit, :input_html => { :class => "ebay_button" } %>         
           <% end %>
         </div>
         
         <div class="ebay_search_result">
           <% @ebays.each do |ebay| %>
-           Result : <%= ebay.ebay_title %> [Min Price: $<%= ebay.min_price %>.00, Max Price: $<%=ebay.max_price %>]
+           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/1280px-EBay_logo.svg.png"><br>
+           <span class="ebay_color_01">Last</span> <span class="ebay_color_02">Search :</span> <span class="ebay_color_03">"<%= ebay.ebay_title %>"</span> 
+           <% if ebay.min_price.present? %>
+            <span class="ebay_color_04"> [$<%= ebay.min_price %>.00 ~ $<%=ebay.max_price %>.00]</span>
+           <% end %>
            <br>
+
            <% if ebay.shipping_free.present? %>
-             <p><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><%= ebay.ebay_title %> with Free International Shipping</a></p>
-             <p><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><%= ebay.ebay_title %> with Free International Shipping + Deals & Savings</a></p>
+
+            <% if ebay.min_price.present? %>
+              <ul class="free_shipping_wrap">
+               <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with Free International Shipping</a></li>
+               <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
+               <span><%= ebay.ebay_title %></span> with Free International Shipping + Deals & Savings</a></li>
+              </ul>
             <% else %>
-             test
+              <ul class="free_shipping_wrap">
+               <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with Free International Shipping</a></li>
+               <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with Free International Shipping + Deals & Savings</a></li>
+              </ul>
             <% end %>
+
+           <% else %>
+
+            <% if ebay.min_price.present? %>
+             <ul class="free_shipping_wrap">
+              <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with no option</a></li>
+              <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with Deals & Savings</a></li>
+             </ul>
+            <% else %>
+             <ul class="free_shipping_wrap">
+              <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with no option</a></li>
+              <li><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= ebay.ebay_title %></span> with Deals & Savings</a></li>
+             </ul>
+            <% end %>
+           <% end %>
           <% end %>
-        </div><!-- /.ebay_search_result -->
-      </div><!-- /.ebay_wrap -->
-      
-      <% if can? :create, @ebays %>
-       <%= link_to "Show KeyWords", new_ebay_path %>
-      <% end %>
+          <% if can? :create, @ebays %>
+           <%= link_to "Show KeyWords", new_ebay_path %>
+          <% end %>
+         </div><!-- /.ebay_search_result -->
+       </div><!-- /.ebay_wrap -->
+
+
+      <div class="ebay_table_wrap"> 
+         <h1>eBay Quick Delivery Option Search</h1>
+         <div class="container_ebay">
+
+         <!-- Tab Markup START -->
+          <div class="cd-tabs" id="mytabdemo">
+           <ul class="cd-nav">
+            <li class="cd-tab">Electronics</li>
+            <li class="cd-tab">Fashion</li>
+            <li class="cd-tab">Home & Garden</li>
+            <li class="cd-tab">Sporting Goods</li>
+            <li class="cd-tab">Toys & Hobbies</li>
+            <li class="cd-tab">Auto Parts and Vehicles</li>
+           </ul>
+              
+            <div class="cd-panes">
+                
+              <div class="pane">
+                <h1>Electronics</h1>
+                <span class="dummy-text">
+                 render #shared/ebay_SE
+                </span>
+              </div>
+                  
+              <div class="pane">
+                <h1>Fashion</h1>
+                <span class="dummy-text"> 
+                  render #shared/ebay_SF
+                </span>
+              </div>
+              
+              <div class="pane">
+                <h1>Home & Garden</h1>
+                <span class="dummy-text"> 
+                   render #shared/ebay_SH
+                </span>
+              </div>
+              
+              <div class="pane">
+                <h1>Sporting Goods</h1>
+                <span class="dummy-text"> 
+                 Home Decor
+                </span>
+              </div>
+              
+              <div class="pane">
+                <h1>Toys & Hobbies</h1>
+                <span class="dummy-text"> 
+                 Home Improvement
+                </span>
+              </div>
+              
+              <div class="pane">
+                <h1>Auto Parts and Vehicles</h1>
+                <span class="dummy-text"> 
+                 Household Supplies & Cleaning
+                </span>
+              </div>
+                  
+             </div><!-- /.cd-panes -->
+           </div><!-- /.cd-tabs -->
+          </div><!-- /.container_ebay -->
+        </div><!-- /.ebay_table_wrap -->
+        
+       
 
    </div><!--/.inner_hotdeals-->
   </div><!--/#main-->
 </div><!--/#wrapper-->
+
+
+
 

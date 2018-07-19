@@ -2,22 +2,297 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Place all the styles related to the Ebays controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 .ebay_wrap {
   margin-top: 3em;
 }
-
-.ebay_search_warp, {
+.ebay_search_warp {
   float: left;
   width: 49%;
-  margin-right: 2%;
+  margin-right: 4%;
 }
-
+.ebay_search_result img {
+  width: 170;
+  height: 70px;
+}
 .ebay_search_result {
   float: left;
-  width: 49%;
+  width: 46%;
+}
+.free_shipping_wrap {
+  margin-top: 1.5em;
+}
+.free_shipping_wrap a {
+  color: black;
+}
+.free_shipping_wrap span {
+  font-size: 1.5em;
+  color:  #f4ae01;
+}
+.ebay_color_01 {
+  color: #e43137;
+  font-weight: bold;
+}
+.ebay_color_02 {
+  color: #0063d1;
+  font-weight: bold;
+}
+.ebay_color_03 {
+  font-size: 1.5em;
+  color:  #f4ae01;
+  font-weight: bold;
+}
+.ebay_color_04 {
+  color: #85b716;
+  font-weight: bold;
+} 
+.ebay_search_warp ul li{
+  display: inline-block;
+}
+
+.ebay_price {
+  border: 1px solid #b3b3b3;
+  border-radius: 0.5em;
+}
+
+.ebay_search_warp .btn {
+  width: 50%;
+  border: 1px solid #b3b3b3;
+  border-radius: 0.5em;
+  padding: 0.3em;
 }
 
 
-.ebay_search_warp ul li{
+/***** ======== eBay Shipping Condition Table  ======== *****/
+
+.ebay_table_wrap {
+  margin-top: 27em;
+}
+.ebay_category {
+  border-right: 3px solid white;
+}
+
+/* Tab in the Sub_Category */ /*메인 메뉴 탭 부분 */
+.cd-tabs
+{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+
+}
+.cd-nav {
+  width: 100%;
+  padding: 0;
+  height: 50px;
+  margin: 0;
+  background: #87e0a2;
+}
+.cd-nav .cd-tab {
+  list-style-type: none;
   display: inline-block;
+  opacity: 0.7;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  color: #ffffff;
+  cursor: pointer;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.cd-tab.selected {
+  border-bottom-color: #f56a6a; 
+//  border-bottom-color: #ffa59c;
+  opacity: 1;
+}
+
+.cd-panes {
+  width: 100%;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.cd-panes .pane {
+  position: absolute;
+  left:0;
+  top:0;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  width: 100%;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transform: scale(0.9) ;
+  -webkit-transform: scale(0.9) ;
+}
+.pane.selected {
+  opacity: 1;
+  transform: scale(1) ;
+  -webkit-transform: scale(1) ;
+}
+
+/*
+  Responsive nav
+*/
+.res-nav {
+  display: none;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: #87e0a2;
+  min-height: 20px;
+  // padding: 15px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-image: url("images/menu-icon.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px);
+}
+
+.container_ebay {
+  margin-top: 40px;
+  width: 100%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+ }
+
+.dummy-text {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #888;
+ }
+
+@media screen and (max-width: 500px) {
+ .ebay_table {
+   display: block;
+   width: 100%;
+ }
+ .container_ebay {
+   width: 99%;
+ }
+ .res-nav {
+   display: block;
+ }
+ .cd-nav {
+   display: none;
+ }
+ .inner_ebay {
+   width: 95%;
+ }
+ .ebay_search_warp,
+ .ebay_search_result {
+   width: 99%;
+ }
+}
+
+@media only screen
+and (min-width : 501px)  
+and (max-width : 1024px) {
+  .ebay_table {
+   display: block;
+   width: 100%;
+ }
+  .container_ebay {
+    width: 99%;
+ }
+  .res-nav {
+    display: block;
+ }
+  .cd-nav {
+    display: none;
+ }
+}
+
+
+/* 탭 안에 테이블 파트 */
+.table_wrap {
+  width: 100%;
+  text-align: center;
+  min-width: 700px;
+}
+
+.table_wrap th, td {
+  // border: solid rgb(200, 200, 200) 1px;
+  padding: .5rem;
+}
+
+.table_wrap th {
+  text-align: center;
+  background-color: #8fe09b;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: white;
+  // text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: white solid 2px;
+  border-top: none;
+}
+
+.table_wrap tr {
+  // border-top: 4px solid #fff;
+  background: #F1F1F0;
+}
+.table_wrap tr:nth-child(even) {
+  background: #f9f9f9;
+}
+.table_wrap thead tr {
+  background: #aaa;
+}
+
+.ebay_table {
+  overflow-x: scroll;
+}
+
+.sub_category {
+  background-color: white;
+  color: #8fe09b;
+  text-align: cetner;
+  font-size: 1.3em;
+}
+
+@media only screen and (max-width: 700px) {
+  section:after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    // background: -webkit-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: -moz-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: -ms-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: -o-linear-gradient(left, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.2));
+  }
+
+  section:before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    // background: -webkit-linear-gradient(right, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: -moz-linear-gradient(right, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: -ms-linear-gradient(right, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: -o-linear-gradient(right, transparent 10%, rgba(0, 0, 0, 0.2));
+    // background: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.2));
+  }
 }

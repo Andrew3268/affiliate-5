@@ -535,6 +535,83 @@
       // captionText.innerHTML = dots[slideIndex-1].alt;
     }
   </script>
+
+  <!-- ============= For eBay Shipping Codition Table ================ -->
+  <script>
+     $(document).ready(function() {
+      $("#mytabdemo").cdtabs({
+          defaultTabIndex: 1
+      });
+   });
+  </script>
+  
+  <script>
+  (function($) {
+    var CDTabs = function(elem, options)
+    {
+      this.elem = elem;
+      this.options = options;
+    };
+    CDTabs.prototype = 
+    {
+      initMarkup: function()
+      {
+       var $select = $("<select/>", {class: "res-nav"});
+       $(".cd-tab" , this.elem).each(function(idx, el) 
+       {
+        $('<option/>', {
+          value: $(el).text(),
+            text: $(el).text(),
+        }).appendTo($select);
+       });
+       $select.insertAfter(".cd-nav" , this.elem);
+
+       // Select default Tab configured by options
+       if(this.options && this.options.defaultTabIndex)
+       {
+        this.selectTab(this.options.defaultTabIndex - 1); // Convert to 0 based index
+       } else
+       {
+        // Select first tab
+        this.selectTab(0);
+       }
+      },
+      registerEvents: function()
+      {
+        var thisCache = this;
+        $(this.elem).on("click", ".cd-tab", function(ev) 
+        {
+          var curIndex = $(this).index();
+          thisCache.selectTab(curIndex);     
+        });
+        $(".res-nav", this.elem).on("change", function(ev) 
+        {          
+          var curIndex = $("option:selected",this).index();
+          thisCache.selectTab(curIndex);
+        });     
+      },
+      selectTab: function(index)
+      {
+        $(".cd-tab" , this.elem).removeClass("selected");
+        $(".pane" , this.elem).removeClass("selected");
+          
+        $(".cd-tab" , this.elem).eq(index).addClass("selected");
+        $(".pane" , this.elem).eq(index).addClass("selected");
+
+        $(".res-nav option" , this.elem).prop("selected", false);
+        $(".res-nav option" , this.elem).eq(index).prop("selected", true);
+      }
+    };
+    $.fn.cdtabs = function(options)
+    {
+      var thistab = new CDTabs(this, options);
+      thistab.initMarkup();
+      thistab.registerEvents();
+      $(this).data("cdtabs", thistab);          
+    };
+  })(jQuery);
+ </script>
+ <!-- ============= For eBay Shipping Codition Table ================ -->
  
 
  </body>
