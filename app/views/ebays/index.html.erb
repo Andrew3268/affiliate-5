@@ -4,26 +4,32 @@
     <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
      
-
-      <%= simple_form_for @ebay do |f| %>
-       <%= f.input :ebay_title %><br>
-       <%= f.select :shipping_free, options_for_select([["Shipping Condition", ""], "Free International Shpping"])%><br>
-       <%= f.input :min_price, :input_html => { :type => "number" }, label: 'Min Price $' %>
-       <%= f.input :max_price, :input_html => { :type => "number" }, label: 'Max Price $' %>
-       <%= f.button :submit %>
-       
-      <% end %>
-
-      <% @ebays.each do |ebay| %>
-       Result : <%= ebay.ebay_title %> [Min Price: $<%= ebay.min_price %>.00, Max Price: $<%=ebay.max_price %>]
-       <br>
-       <% if ebay.shipping_free.present? %>
-         <p><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><%= ebay.ebay_title %> with Free International Shipping</a></p>
-         <p><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><%= ebay.ebay_title %> with Free International Shipping + Deals & Savings</a></p>
-        <% else %>
-         test
-        <% end %>
-      <% end %>
+      <div class="ebay_wrap">
+        <div class="ebay_search_warp">
+          <%= simple_form_for @ebay do |f| %>
+           <%= f.input :ebay_title, placeholder: 'Search on eBay' %><br>
+           <%= f.select :shipping_free, options_for_select([["Select Shipping Condition", ""], "Free International Shpping"])%><br>
+           <ul>
+             $<li><%= f.input :min_price, :input_html => { :type => "number" }, label: 'Min Price $', placeholder: 'Min' %></li>&nbsp;&nbsp;~ 
+             $<li><%= f.input :max_price, :input_html => { :type => "number" }, label: 'Max Price $', placeholder: 'Max' %></li>
+           </ul>
+           <%= f.button :submit %>         
+          <% end %>
+        </div>
+        
+        <div class="ebay_search_result">
+          <% @ebays.each do |ebay| %>
+           Result : <%= ebay.ebay_title %> [Min Price: $<%= ebay.min_price %>.00, Max Price: $<%=ebay.max_price %>]
+           <br>
+           <% if ebay.shipping_free.present? %>
+             <p><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><%= ebay.ebay_title %> with Free International Shipping</a></p>
+             <p><a href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= ebay.ebay_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= ebay.min_price %>%26_udhi%3D<%= ebay.max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><%= ebay.ebay_title %> with Free International Shipping + Deals & Savings</a></p>
+            <% else %>
+             test
+            <% end %>
+          <% end %>
+        </div><!-- /.ebay_search_result -->
+      </div><!-- /.ebay_wrap -->
       
       <% if can? :create, @ebays %>
        <%= link_to "Show KeyWords", new_ebay_path %>
