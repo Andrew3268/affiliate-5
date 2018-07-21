@@ -8,7 +8,8 @@
         <div class="ebay_search_warp">
           <%= simple_form_for @ebay do |f| %>
            <%= f.input :ebay_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
-           <%= f.select :shipping_free, options_for_select([["Select Shipping Condition", ""], "Free International Shpping"])%><br>
+           <h5>Select Shipping Condition</h5>
+           <%= f.select :shipping_free, options_for_select([["Nothing", ""], "Free International Shpping"])%><br>
            <ul>
              <li><%= f.input :min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
              <li><%= f.input :max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
@@ -83,7 +84,7 @@
               <div class="pane">
                 <h1>Electronics</h1>
                 <span class="dummy-text">
-                 render #shared/ebay_SE
+                 <%= render 'shared/ebay_SE' %>
                 </span>
               </div>
                   
@@ -97,7 +98,7 @@
               <div class="pane">
                 <h1>Home & Garden</h1>
                 <span class="dummy-text"> 
-                   render #shared/ebay_SH
+                  <%= render 'shared/ebay_SH' %>
                 </span>
               </div>
               
