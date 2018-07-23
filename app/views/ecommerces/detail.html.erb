@@ -98,14 +98,14 @@
             <a href="https://amzn.to/2IyVx2r">See more "Coupons"</a></li>
           <% else %>
            <li><p class="no_code_coupon">There is no Coupon for <%= @details.title %></p>
-           <a href="/hotdeals/coupons">Find more "Coupons"</a></li>
+           <a href="https://amzn.to/2IyVx2r">Find more "Coupons"</a></li>
           <% end %>
           <% if @details.discount_code.present? %>
            <li><%= @details.discount_code %><a target="_blank" href="https://goo.gl/CWeA5n">(How to use)</a><br>
-           <a href="/hotdeals/discount_codes">See more "Discount Codes"</a></li>
+           <a href="/search/quicksearch#discountCode">See more "Discount Codes"</a></li>
           <% else %>
            <li><p class="no_code_coupon">There is no Discount Code for <%= @details.title %></p>
-           <a href="/hotdeals/discount_codes">Find more "Discount Codes"</a></li>
+           <a href="/search/quicksearch#discountCode">Find more "Discount Codes"</a></li>
           <% end %>
         
         </ul>
@@ -247,7 +247,7 @@
 
       <% if @details.postive_howmany.present? %>
        <div class="details_review_wrapper">
-        <h2><span class="related_text_01">Customer Reviews</span>&nbsp; &nbsp;<%= @details.title %> </h2>
+        <h2><span class="related_text_01">Customer Reviews</span></h2>
           
           <div class="detail_postive_review">
             <h2>Top Postive Review</h2>
