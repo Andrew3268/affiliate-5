@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   has_many :blogs
   has_many :clothes
   has_many :accessories
-  has_many :ebays
+  has_many :discounts
 end

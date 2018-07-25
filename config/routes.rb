@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   resources :accessories
   # root 'accessories#index'
 
-  resources :ebays
-  # root 'ebays#index'
+  resources :discounts
+  # root 'discounts#index'
 
 
   devise_for :users

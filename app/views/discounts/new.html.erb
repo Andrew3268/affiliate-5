@@ -13,19 +13,19 @@
         <th>Date</th>
         <th colspan="2">Manage</th>
       </tr>
-      <% @ebays.each do |ebay| %>
+      <% @discounts.each do |discount| %>
       <tr>
-        <td><%= ebay.ebay_title %></td>
-        <td>$<%= ebay.min_price %>.00</td>
-        <td>$<%= ebay.max_price %>.00</td>
-        <td><%= ebay.created_at.strftime("%B %d %Y") %></td>
-        <td><%= link_to "Edit", edit_ebay_path(ebay) %></td>
-        <td><%= link_to "Delete", ebay_path(ebay), method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= discount.eb_title %></td>
+        <td>$<%= discount.eb_min_price %>.00</td>
+        <td>$<%= discount.eb_max_price %>.00</td>
+        <td><%= discount.created_at.strftime("%B %d %Y") %></td>
+        <td><%= link_to "Edit", edit_discount_path(discount) %></td>
+        <td><%= link_to "Delete", discount_path(discount), method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
       <% end %>
     </table>
 
-    <%= link_to "Home", ebays_path %>
+    <%= link_to "Home", discounts_path %>
 
    </div><!--/.inner_hotdeals-->
   </div><!--/#main-->
