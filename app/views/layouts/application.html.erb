@@ -536,82 +536,56 @@
     }
   </script>
 
-  <!-- ============= For eBay Shipping Codition Table ================ -->
-  <script>
-     $(document).ready(function() {
-      $("#mytabdemo").cdtabs({
-          defaultTabIndex: 1
-      });
-   });
-  </script>
+
+ <!-- ebay shipping condition accordian table -->
+ <script>
+  $(document).ready(function() {
+  $('.menu-trigger').click(function() {
+    $('nav ul').slideToggle(500);
+  });//end slide toggle
   
-  <script>
-  (function($) {
-    var CDTabs = function(elem, options)
-    {
-      this.elem = elem;
-      this.options = options;
-    };
-    CDTabs.prototype = 
-    {
-      initMarkup: function()
-      {
-       var $select = $("<select/>", {class: "res-nav"});
-       $(".cd-tab" , this.elem).each(function(idx, el) 
-       {
-        $('<option/>', {
-          value: $(el).text(),
-            text: $(el).text(),
-        }).appendTo($select);
-       });
-       $select.insertAfter(".cd-nav" , this.elem);
-
-       // Select default Tab configured by options
-       if(this.options && this.options.defaultTabIndex)
-       {
-        this.selectTab(this.options.defaultTabIndex - 1); // Convert to 0 based index
-       } else
-       {
-        // Select first tab
-        this.selectTab(0);
-       }
-      },
-      registerEvents: function()
-      {
-        var thisCache = this;
-        $(this.elem).on("click", ".cd-tab", function(ev) 
-        {
-          var curIndex = $(this).index();
-          thisCache.selectTab(curIndex);     
-        });
-        $(".res-nav", this.elem).on("change", function(ev) 
-        {          
-          var curIndex = $("option:selected",this).index();
-          thisCache.selectTab(curIndex);
-        });     
-      },
-      selectTab: function(index)
-      {
-        $(".cd-tab" , this.elem).removeClass("selected");
-        $(".pane" , this.elem).removeClass("selected");
-          
-        $(".cd-tab" , this.elem).eq(index).addClass("selected");
-        $(".pane" , this.elem).eq(index).addClass("selected");
-
-        $(".res-nav option" , this.elem).prop("selected", false);
-        $(".res-nav option" , this.elem).eq(index).prop("selected", true);
-      }
-    };
-    $.fn.cdtabs = function(options)
-    {
-      var thistab = new CDTabs(this, options);
-      thistab.initMarkup();
-      thistab.registerEvents();
-      $(this).data("cdtabs", thistab);          
-    };
-  })(jQuery);
+  $(window).resize(function() {   
+    if (  $(window).width() > 500 ) {     
+      $('nav ul').removeAttr('style');
+     }
+  });//end resize
+});//end ready
  </script>
- <!-- ============= For eBay Shipping Codition Table ================ -->
+ <!-- ===================== -->
+
+ <script>
+  $.fn.responsiveTable = function () {
+    $(this).find('table').each(function () {
+        var trAcc = $(this).find('tr').not('tr:first-child'),
+            thHead = [];
+        $(this).find('tr:first-child td, tr:first-child th').each(function () {
+            headLines = $(this).text();
+            thHead.push(headLines);
+        });
+        trAcc.each(function () {
+          for (i = 0, l = thHead.length; i < l; i++) {
+              $(this).find('td').eq(i + 1).prepend('<h3>' + thHead[i + 1] + '</h3>');
+          }
+        });
+        trAcc.append('<i class="icon-accordion">+</i>');
+        trAcc.click(function () {
+        if ($(this).hasClass('accordion-opened')) {
+            $(this).animate({
+                maxHeight: '60px'
+            }, 200).removeClass('accordion-opened').find('.icon-accordion').text('+');
+        } else {
+            $(this).animate({
+                maxHeight: '1000px'
+            }, 400).addClass('accordion-opened').find('.icon-accordion').text('-');
+        }
+      });
+    });
+  };
+// Init
+  $(function () {
+      $('.js-responsive-table').responsiveTable();
+  });
+</script>
  
 
  </body>

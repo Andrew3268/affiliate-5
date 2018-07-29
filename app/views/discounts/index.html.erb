@@ -1,133 +1,180 @@
 <div id="wrapper">
- <div id="main">
-  <div class="inner_hotdeals">
-   <%= render 'shared/header' %>
-   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <div id="main">
+    <div class="inner">
+      <%= render 'shared/header' %><br>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-   <div class="ebay_wrap">
-    <div class="ebay_search_warp">
-     <%= simple_form_for @discount do |f| %>
-       <%= f.input :eb_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
-       <h5>Select Shipping Condition</h5>
-       <%= f.select :eb_free_sh, options_for_select([["Nothing", ""], "Free International Shpping"])%><br>
-       <ul>
-         <li><%= f.input :eb_min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
-         <li><%= f.input :eb_max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
-       </ul>
-       <%= f.button :submit, :input_html => { :class => "ebay_button" } %>         
-      <% end %>
-    </div>
-        
-    <div class="ebay_search_result">
-      <% @discounts.each do |discount| %>
-       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/1280px-EBay_logo.svg.png"><br>
-       <span class="ebay_color_01">Last</span> <span class="ebay_color_02">Search :</span> <span class="ebay_color_03">"<%= discount.eb_title %>"</span> 
-       <% if discount.eb_min_price.present? %>
-        <span class="ebay_color_04"> [$<%= discount.eb_min_price %>.00 ~ $<%= discount.eb_max_price %>.00]</span>
-       <% end %>
-       <br>
+       <div class="ebay_wrap">
+        <div class="ebay_search_warp">
+         <%= simple_form_for @discount do |f| %>
+           <%= f.input :eb_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
+           <h5>Select Shipping Condition</h5>
+           <%= f.select :eb_free_sh, options_for_select([["Nothing", ""], "Free International Shpping"])%><br>
+           <ul>
+             <li><%= f.input :eb_min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
+             <li><%= f.input :eb_max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
+           </ul>
+           <%= f.button :submit, :input_html => { :class => "ebay_button" } %>         
+          <% end %>
+        </div>
 
-       <% if discount.eb_free_sh.present? %>
+        <div class="ebay_search_result">
+          <% @discounts.each do |discount| %>
+           <span class="ebay_color_01">Last</span> <span class="ebay_color_02">Search :</span> <span class="ebay_color_03">"<%= discount.eb_title %>"</span> 
+           <% if discount.eb_min_price.present? %>
+            <span class="ebay_color_04"> [$<%= discount.eb_min_price %>.00 ~ $<%= discount.eb_max_price %>.00]</span>
+           <% end %>
+           <br>
+
+          <% if discount.eb_free_sh.present? %>
 <!-- Select Free Shipping Option -->
-        <% if discount.eb_min_price.present? %>
-          <ul class="free_shipping_wrap">
-           <li><a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Free International Shipping</a></li>
-           <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
-           <span><%= discount.eb_title %></span> with Free International Shipping + Deals & Savings</a></li>
-          </ul>
-        <% else %>
-          <ul class="free_shipping_wrap">
-           <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Free International Shipping</a></li>
-           <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Free International Shipping + Deals & Savings</a></li>
-          </ul>
-        <% end %>
+          <% if discount.eb_min_price.present? %>
+            <ul class="free_shipping_wrap">
+             <li><a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Free International Shipping</a></li>
+             <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
+             <span><%= discount.eb_title %></span> with Free International Shipping + Deals & Savings</a></li>
+            </ul>
+          <% else %>
+            <ul class="free_shipping_wrap">
+             <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Free International Shipping</a></li>
+             <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Free International Shipping + Deals & Savings</a></li>
+            </ul>
+         <% end %>
 
-       <% else %>
+         <% else %>
 <!-- Don`t Select Free Shipping Option -->
-        <% if discount.eb_min_price.present? %>
-         <ul class="free_shipping_wrap">
-          <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with no option</a></li>
-          <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Deals & Savings</a></li>
-         </ul>
-        <% else %>
-         <ul class="free_shipping_wrap">
-          <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with no option</a></li>
-          <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Deals & Savings</a></li>
-         </ul>
+          <% if discount.eb_min_price.present? %>
+           <ul class="free_shipping_wrap">
+            <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with no option</a></li>
+            <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Deals & Savings</a></li>
+           </ul>
+          <% else %>
+           <ul class="free_shipping_wrap">
+            <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with no option</a></li>
+            <li><a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><span><%= discount.eb_title %></span> with Deals & Savings</a></li>
+           </ul>
+          <% end %>
+         <% end %>
         <% end %>
-       <% end %>
-      <% end %>
-      <% if can? :create, @discounts %>
-       <%= link_to "Show KeyWords", new_discount_path %>
-      <% end %>
-     </div><!-- /.ebay_search_result -->
-   </div><!-- /.ebay_wrap -->
+        <% if can? :create, @discounts %>
+         <%= link_to "Show KeyWords", new_discount_path %>
+        <% end %>
+       </div><!-- /.ebay_search_result -->
+
+       <div class="goto_shipping">
+        <a href="/dis_category/electronics"><img src="<%=asset_path 'test_01.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
+       </div>
+     </div><!-- /.ebay_wrap -->
+
+      
+      <div class="blog_banner_wrap_eb">
+        <div class="blog_banner_left">
+         <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
+        </div>
+        <div class="blog_banner_right">
+         <a href="/ecommerces/gadgets"><img src="<%=asset_path 'gadgets.png'%>" alt="Awesome gadgets" title="Awesome gadgets"></a>
+        </div>
+      </div>
 
 
-  <div class="ebay_table_wrap"> 
-     <h1>eBay Quick Delivery Option Search</h1>
-     <div class="container_ebay">
 
-     <!-- Tab Markup START -->
-      <div class="cd-tabs" id="mytabdemo">
-       <ul class="cd-nav">
-        <li class="cd-tab">Electronics</li>
-        <li class="cd-tab">Fashion</li>
-        <li class="cd-tab">Home & Garden</li>
-        <li class="cd-tab">Sporting Goods</li>
-        <li class="cd-tab">Toys & Hobbies</li>
-        <li class="cd-tab">Auto Parts and Vehicles</li>
-       </ul>
-          
-        <div class="cd-panes">
+      <div class="blogs_wrapper">    
+
+       <div class="blog_left_main">
+        
+          <div class="blog-card">
+            <div class="photo photo1" style="background: url(https://icdn2.digitaltrends.com/image/amazon-prime-day-packages-3-720x720.jpg) center no-repeat; background-size: cover;" title="Amazon Prime"></div>
+            <ul class="details">
+              <li class="author"><a href="/blog_posts/post_05">Oh,i gotta buy this</a></li>
+              <li class="date">Jul. 10. 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">All About The Amazon prime</h1>
+              <p class="summary">Amazon Prime is a paid subscription service($119 per year currently, plus a free 30-day trial or $12.99 per month) offered by Amazon that gives users access to free two-day delivery (one-day in some areas), streaming video and music, and other benefits for a monthly or yearly fee.</p>
+              <a href="/blog_posts/post_05">Read More</a>
+            </div>
+          </div>
+
+           <div class="blog-card">
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/eb/19/50/eb19506d43bc49d673d7d14dcdf35513.jpg) center no-repeat; background-size: cover;" title="10 Awesome & Portable Coffee Makers"></div>
+            <ul class="details">
+              <li class="author"><a href="/blog_posts/post_04">Oh,i gotta buy this</a></li>
+              <li class="date">Jun. 27. 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">10 Awesome & Portable Coffee Makers</h1>
+              <p class="summary">What if you could wake up each morning, DIY make your favorite coffee anywhere anytime, and could brew you the freshest cup of coffee possible? Now You can. With this awesome & portable coffee makers, you can make fresh coffee for yourself or your families with little effort. Perfect gift for a coffee lover for sure. </p>
+              <a href="/blog_posts/post_04">Read More</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/4c/14/ae/4c14ae6547540a6dc4d51d5061c4d731.jpg) center no-repeat; background-size: cover;" title="Comfortable Travel Pillow"></div>
+            <ul class="details">
+              <li class="author"><a href="/blog_posts/post_03">Oh,i gotta buy this</a></li>
+              <li class="date">Jun. 11. 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">10 Comfortable Travel Pillow you can deep sleep.</h1>
+              <p class="summary">I`d like to share 10 Comfortable “Travel Pillow” that will make you have a sweet dream while you traveling today. Have you ever sat in an economy class seat, tossing and turning, deliriously trying to get to sleep? Knowing you need to be feeling rested when you arrive? Say goodbye to long restless airplane flights, train rides, car rides and bus rides. Now you can sleep as comfortably as you sleep in your own bed. It allows you to get deep sleep while traveling. And These are the first travel pillows that allow you to make sure you find the most comfortable position during your travels.</p>
+              <a href="/blog_posts/post_03">Read More</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="photo photo1" style="background: url(https://3.bp.blogspot.com/-0Ov80MwVP0Q/WijjYA_NgdI/AAAAAAAACCM/OJpvy91JjoIa5AZirVuElHocK2lsxPYBwCLcBGAs/s1600/five%2B%25281%2529.png) center no-repeat; background-size: cover;" title="Awesome Smart Home Gadgets"></div>
+            <ul class="details">
+              <li class="author"><a href="/blog_posts/post_02">Oh,i gotta buy this</a></li>
+              <li class="date">May. 29. 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">10 Awesome Smart Home Gadgets You Need To See</h1>
+              <p class="summary">Looking to make your home just a little smarter? While still in its infancy, the number of smart home products—devices that let you control your lighting, thermostat, or even your crock pot from your smartphone—is rapidly growing. You can pick and choose your favorite gadgets to assemble an affordable intelligent abode on your own terms, or opt for an entire smart home system that does all the work for you. Here are some of smart home systems and individual gadgets.</p>
+              <a href="/blog_posts/post_02">Read More</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/d7/b5/33/d7b5337801205257c9737143afab4197.jpg) center no-repeat; background-size: cover;" title="Awesome &amp; Useful BackPack"></div>
+            <ul class="details">
+              <li class="author"><a href="/blog_posts/post_01">Oh,i gotta buy this</a></li>
+              <li class="date">Apr. 20, 2018</li>
+            </ul>
+            <div class="description">
+              <h1 class="blog_home_post_h1">5 Awesome &amp; Useful BackPack</h1>
+              <p class="summary">Travel is a part of our daily life. We’ve lugged a lot of stuff, camera or something around with us, whether it’s just for the day, a weekend trip, or a weeklong vacation. And you may concern yourself with someone stealing your belongings, your phone running out of juice, or forgetting where you put certain must-have items within your bag.  If you’re the same way, you know how hard it is to find a practical bag to haul your gear when you’re on the go. This collection has found a way to solve that with these awesome & useful backpacks that will accompany you on your everyday adventures.</p>
+              <a href="/blog_posts/post_01">Read More</a>
+            </div>
+          </div>
+
+        </div><!--/.blog_left_main-->
+
+       <div class="blog_right_side">
+
+        <div class="blog_logo">
+         <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net" title="awesome gadgets and amazon shopping"></img></a>
+         <% if user_signed_in? %>
+           <ul class="blog_admin">  
+              <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
+            <% if can? :manage, @blog %>
+               <li><%= link_to "Add New Blog", new_blog_path(@blog) %></li>
+            <% end %>
+           </ul>
+          <% end %>
+        </div>
+
+        <div class="twitter-feed">
+         <a class="twitter-timeline" data-height="1000" href="https://twitter.com/OhIgottabuythis?ref_src=twsrc%5Etfw">Tweets by OhIgottabuythis</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="twitter_bottom"></div>
+        
+        <div class="pinterest_widget">
+         <a data-pin-do="embedUser" data-pin-lang="ko" data-pin-board-width="300" data-pin-scale-height="500" data-pin-scale-width="150" href="https://www.pinterest.com.au/ohigottabuythis/"></a>
+        </div><br>
+        
+      </div><!--/.blog_right_side-->
+     </div><!--/.blog_wrapper-->
+
             
-          <div class="pane">
-            <h1>Electronics</h1>
-            <span class="dummy-text">
-             <%= render 'shared/ebay_SE' %>
-            </span>
-          </div>
-              
-          <div class="pane">
-            <h1>Fashion</h1>
-            <span class="dummy-text">
-             <%= render 'shared/ebay_SF' %> 
-            </span>
-          </div>
-          
-          <div class="pane">
-            <h1>Home & Garden</h1>
-            <span class="dummy-text"> 
-              <%= render 'shared/ebay_SH' %>
-            </span>
-          </div>
-          
-          <div class="pane">
-            <h1>Sporting Goods</h1>
-            <span class="dummy-text"> 
-             <%= render 'shared/ebay_SS' %>
-            </span>
-          </div>
-          
-          <div class="pane">
-            <h1>Toys & Hobbies</h1>
-            <span class="dummy-text"> 
-             Home Improvement
-            </span>
-          </div>
-          
-          <div class="pane">
-            <h1>Auto Parts and Vehicles</h1>
-            <span class="dummy-text"> 
-             Household Supplies & Cleaning
-            </span>
-          </div>
-              
-         </div><!-- /.cd-panes -->
-       </div><!-- /.cd-tabs -->
-      </div><!-- /.container_ebay -->
-    </div><!-- /.ebay_table_wrap -->
-
-  </div><!--/.inner_hotdeals--> 
- </div><!--/#main-->
+    </div><!--/.inner-->
+  </div><!--/#main-->
 </div><!--/#wrapper-->

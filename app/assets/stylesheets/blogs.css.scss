@@ -212,6 +212,11 @@
   display: flex;
   flex-wrap: nowrap;
 }
+.blog_banner_wrap_eb {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
 .blog_banner_left, 
 .blog_banner_right {
   width: 49%;
@@ -873,9 +878,11 @@
   .recent_post_wrap h2 {
    margin-top: -9em;
   }
-  .blog_banner_wrap {
+  .blog_banner_wrap, 
+  .blog_banner_wrap_eb {
    margin-bottom: -4em;
   }
+
 }
 
 @media only screen
