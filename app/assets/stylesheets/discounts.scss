@@ -92,16 +92,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
-nav {
+.eb_nav {
   width: 100%;
   background-color:#65A8A6;
 }
 
-nav ul li {
+.eb_nav ul li {
   display:inline-block;  
 }
 
-nav a {
+.eb_nav a {
   color:#F8ECC2;
   display:block;
   text-decoration: none;
@@ -109,24 +109,24 @@ nav a {
   padding:20px 30px;
  }
 
-nav a:hover {
+.eb_nav a:hover {
   background: #E65540;
 }
 
-.menu-trigger {
+.eb_nav .menu-trigger {
   display:none;
   color:#F8ECC2;
 }
 
 @media screen and (max-width:500px) {
-  .menu-trigger {
+  .eb_nav .menu-trigger {
     display:block;
   }
-  nav ul li {
+  .eb_nav ul li {
     display:block;
     border-top:1px #79896D solid;    
   }
-  nav ul {
+  .eb_nav ul {
     display:none;
   }
 }

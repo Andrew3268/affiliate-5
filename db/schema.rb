@@ -206,24 +206,6 @@ ActiveRecord::Schema.define(version: 20180725125530) do
     t.integer  "user_id"
   end
 
-  create_table "ebays", force: :cascade do |t|
-    t.string   "ebay_title"
-    t.string   "min_price"
-    t.string   "max_price"
-    t.string   "shipping_free"
-    t.string   "retrun_free"
-    t.string   "both_free"
-    t.string   "ebay_option_01"
-    t.string   "ebay_option_02"
-    t.string   "ebay_option_03"
-    t.string   "ebay_option_04"
-    t.string   "ebay_option_05"
-    t.string   "ebay_option_06"
-    t.string   "ebay_option_07"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "ecommerces", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"

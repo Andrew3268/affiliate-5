@@ -537,21 +537,23 @@
   </script>
 
 
- <!-- ebay shipping condition accordian table -->
+ <!-- ebay shipping condition accordian menu -->
  <script>
   $(document).ready(function() {
-  $('.menu-trigger').click(function() {
-    $('nav ul').slideToggle(500);
+  $('.eb_nav .menu-trigger').click(function() {
+    $('.eb_nav ul').slideToggle(500);
   });//end slide toggle
   
   $(window).resize(function() {   
     if (  $(window).width() > 500 ) {     
-      $('nav ul').removeAttr('style');
+      $('.eb_nav ul').removeAttr('style');
      }
   });//end resize
 });//end ready
  </script>
- <!-- ===================== -->
+
+
+ <!-- ebay shipping condition accordian table  -->
 
  <script>
   $.fn.responsiveTable = function () {
