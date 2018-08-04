@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form', '~> 4.0'
 gem 'cancancan', '~> 2.2'
 gem 'rolify', '~> 5.2'
+gem 'impressionist'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

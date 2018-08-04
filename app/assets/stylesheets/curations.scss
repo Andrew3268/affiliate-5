@@ -1,0 +1,77 @@
+// Place all the styles related to the Curations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.curation_wrap {
+  width: 85%;
+  margin: 0 auto;
+}
+.curation_wrap p {
+  font-size: 1.2em;
+}
+.curation_left {
+  float: left;
+  width: 65%;
+  margin-right: 3%
+}
+.curation_right {
+  float: left;
+  width: 32%;
+  margin-top: 3.2em;
+}
+.curation_right a {
+  color: black;
+}
+.cr_details a {
+  border: 1px solid;
+  padding: 0.5em;
+  width: 100%;
+}
+.curation_left img, 
+.curation_right img {
+  width: 100%;
+}
+.admin_cration {
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+.curation_detail {
+  margin-bottom: 1em;
+}
+.curation_detail a {
+  color: white;
+}
+.curation_detail li {
+  display: inline-block;
+}
+.curation_detail span {
+  float: left;
+}
+.detail_01 {
+  float: right;
+}
+.detail_01 button {
+  border: 1px solid #f56a6a;
+  border-radius: 0.5em;
+  background-color: #f56a6a;
+  color: white;
+  padding: 0.47em 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+}
+.cr_buy {
+  border: 1px solid #f56a6a;
+  broder-radius: 0.5em;
+  padding: 0.5em;
+  width: 30%;
+  text-align: center;
+}
+.admin_cration a {
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.3em;
+  margin-left: 0.5em;
+}
+
+

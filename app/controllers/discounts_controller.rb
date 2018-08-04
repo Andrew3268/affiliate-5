@@ -41,6 +41,7 @@ class DiscountsController < ApplicationController
     redirect_to '/discounts/new'
   end
 
+
   private
 
   def find_discount
@@ -53,5 +54,8 @@ class DiscountsController < ApplicationController
                                      :eb_spare_07, :eb_spare_08, :eb_spare_09)
   end
 end
+
+
+
 
    

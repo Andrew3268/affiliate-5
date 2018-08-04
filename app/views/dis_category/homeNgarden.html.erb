@@ -9,7 +9,7 @@
     <ul>
       <li><a href="/discounts">Home</a></li>
       <li><a href="/dis_category/electronics">Electronics</a></li>
-      <li><a href="/dis_category/homeNgarden">Home & Garden</a></li>
+      <li><a href="/dis_category/homeNgarden" class="discount_active">Home & Garden</a></li>
       <li><a href="/dis_category/fashion">Fashion</a></li>
       <li><a href="/dis_category/sportingGoods">Sporting Goods</a></li>
       <li><a href="/dis_category/toyNhobbies">Toy & hobbies</a></li>
@@ -18,6 +18,7 @@
     </ul>
    </div>
    
+   <input type="text" class="discount_input" id="myInput" onkeyup="myFunction()" placeholder="Search for items.." title="Type in a name">
    <%= render 'shared/ebay_SH' %>
 
   </div><!--/.inner_hotdeals--> 

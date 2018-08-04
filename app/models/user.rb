@@ -13,4 +13,5 @@ class User < ActiveRecord::Base
   has_many :clothes
   has_many :accessories
   has_many :discounts
+  has_many :curations
 end

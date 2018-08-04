@@ -1,0 +1,9 @@
+<h1>This is Index</h1>
+
+<% @curations.each do |curation| %>
+ <h2><%= link_to curation.cr_title, curation %></h2>
+ <p><%= "#{curation.unique_impression_count} views" %>
+
+<% end %>
+
+<%= link_to "New Post", new_curation_path %>

@@ -1,0 +1,73 @@
+<!-- Social Shring -->
+<ul class="social">
+  <!-- FaceBook -->
+  <a class="facebook" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@curation, {
+   only_path: false }]) %>&t=<%= @curation.cr_title %>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="fa fa-facebook"></i><span>Share on Facebook</span></a></li></a>
+  <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
+  </script>
+  <!-- Twitter -->
+  <a class="twitter" href="https://twitter.com/share?url=<%= url_for([@curation, { 
+   only_path: false }]) %>&via=ohigottabuythis&text=<%= @curation.cr_title %>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+   target="_blank" title="Share on Twitter">
+   <li><i class="fa fa-twitter"></i><span>Share on Twitter</span></a></li>
+  </a>
+</ul>
+
+<div id="wrapper">
+ <div id="main">
+  <div class="inner_hotdeals">
+   <%= render 'shared/header' %>
+   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      
+    <div class="curation_wrap">
+  <!-- for play youtube video-->
+      <div class="overlay-video">
+       <div class="videoWrapperExt">
+        <div class="videoWrapper">
+          <div class="video_close"></div>
+            <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+       </div>        
+      </div>
+
+      <div class="curation_left">
+       <h1><%= @curation.cr_title %></h1>
+        <img src="<%= @curation.cr_img %>">
+        
+        <ul class="curation_detail">
+          <li><span>via Amazon</span></li>
+          <li class="detail_01"><button><a target="_blank" href="https://goo.gl/S5ypXk">See Reivews</a></button></li>
+          <li class="detail_01">
+           <div class="js-overlay-start start" data-url="https://www.youtube.com/embed/NEdhfdmoPnM?rel=0&amp;showinfo=0&amp;autoplay=1">
+            <button><i class="fa fa-play"></i>Watch Video</button>
+           </div>
+          </li>
+        </ul>
+        <p><%= @curation.cr_intro %></p>
+        <a href="#"><div class="cr_buy">Check it Out</div></a>
+      </div>
+
+      <div class="curation_right">
+        <h3>Random Post</h3>
+        <%= link_to (image_tag @random_curation.cr_img), curation_path(@random_curation) %>
+        <h3><%= link_to @random_curation.cr_title, curation_path(@random_curation) %></h3>
+         
+        <% if can? :update, @curation %>
+         <div class="admin_cration">
+          <h3>Admin Controller</h3>
+          <%= link_to "Home", curation_path %>
+          <%= link_to "Add Gadget", new_curation_path %>
+          <%= link_to "Edit", edit_curation_path(@curation) %>
+          <%= link_to "Delete", curation_path(@curation), method: :delete, data: {confirm: "Are you sure?"} %>
+         </div>
+        <% end %>
+      </div>
+  
+     </div>
+
+       
+  </div><!--/.inner_hotdeals-->
+ </div><!--/#main-->
+</div><!--/#wrapper-->
