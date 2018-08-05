@@ -33,10 +33,14 @@
       </div>
 
       <div class="curation_left">
-       <h1><%= @curation.cr_title %></h1>
         <img src="<%= @curation.cr_img %>">
-        
-        <ul class="curation_detail">
+      </div>
+
+      <div class="curation_right">
+        <h1><%= @curation.cr_title %></h1>
+        <h3>Quick Overview</h3>
+        <p><%= @curation.cr_intro %></p>
+         <ul class="curation_detail">
           <li><span>via Amazon</span></li>
           <li class="detail_01"><button><a target="_blank" href="https://goo.gl/S5ypXk">See Reivews</a></button></li>
           <li class="detail_01">
@@ -44,17 +48,45 @@
             <button><i class="fa fa-play"></i>Watch Video</button>
            </div>
           </li>
+          <li class="detail_01">
+           <div class="js-overlay-start start" data-url="https://www.youtube.com/embed/NEdhfdmoPnM?rel=0&amp;showinfo=0&amp;autoplay=1">
+            <button><i class="fa fa-play"></i>Watch Video</button>
+           </div>
+          </li>
         </ul>
-        <p><%= @curation.cr_intro %></p>
-        <a href="#"><div class="cr_buy">Check it Out</div></a>
+        <div class="price_detail">
+         <ul class="curation_detail">
+          <li class="curation_price_01">Price: </li>
+          <li class="curation_price_02">$<%= @curation.cr_aprice %></li>
+          <li class="curation_price_03">$<%= @curation.cr_bprice %></li>
+          </ul>
+       </div>
+       <a href="#" class="curation_btn"><spna>Check it Out</spna></a>
       </div>
 
-      <div class="curation_right">
-        <h3>Random Post</h3>
-        <%= link_to (image_tag @random_curation.cr_img), curation_path(@random_curation) %>
-        <h3><%= link_to @random_curation.cr_title, curation_path(@random_curation) %></h3>
-         
-        <% if can? :update, @curation %>
+      <div class="curation_banner">
+       <div class="curation_banner_01">
+        <a href="#"><img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2018/03/Marvel-Logo-with-Star-Lord-Jean-Grey-The-Wasp-and-Spider-Man.jpg"></a>
+       </div>
+       <div class="curation_banner_01">
+         <a href="#"><img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2018/03/Marvel-Logo-with-Star-Lord-Jean-Grey-The-Wasp-and-Spider-Man.jpg"></a>
+       </div>
+       <div class="curation_banner_01">
+        <a href="#"><img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2018/03/Marvel-Logo-with-Star-Lord-Jean-Grey-The-Wasp-and-Spider-Man.jpg"></a>
+       </div>   
+      </div>
+
+
+
+
+
+    <!--   <div class="random_post">
+
+       <h3>Random Post</h3>
+       <%= link_to (image_tag @random_curation.cr_img), curation_path(@random_curation) %>
+       <h3><%= link_to @random_curation.cr_title, curation_path(@random_curation) %></h3>
+
+         <% if can? :update, @curation %>
          <div class="admin_cration">
           <h3>Admin Controller</h3>
           <%= link_to "Home", curation_path %>
@@ -63,10 +95,11 @@
           <%= link_to "Delete", curation_path(@curation), method: :delete, data: {confirm: "Are you sure?"} %>
          </div>
         <% end %>
+
       </div>
   
      </div>
-
+ -->
        
   </div><!--/.inner_hotdeals-->
  </div><!--/#main-->
