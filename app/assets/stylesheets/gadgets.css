@@ -39,6 +39,7 @@
 /* ====== main(gadgets) page header ====== */
 .main_header_wrapper {
   width: 100%;
+  margin-top: 2em;
 }
 .left_banner, .right_banner {
   float: left;

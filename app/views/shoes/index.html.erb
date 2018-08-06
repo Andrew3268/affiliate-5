@@ -25,7 +25,6 @@
 
             <% @shoes.each do |shoe| %>
               <div class="grid-item <%= shoe.option_01 %> <%= shoe.option_02 %> <%= shoe.option_03 %> <%= shoe.option_04 %> <%= shoe.option_05 %>">
-     
                  <%= link_to (image_tag shoe.main_img), shoe, {:class =>"main_img"} %>
      
                 <div class="shop_sale">

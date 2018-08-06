@@ -1,9 +1,85 @@
-<h1>This is Index</h1>
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <!-- for play youtube video-->
+      <div class="overlay-video">
+        <div class="videoWrapperExt">
+          <div class="videoWrapper">
+            <div class="video_close"></div>
+              <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>        
+       </div>
 
-<% @curations.each do |curation| %>
- <h2><%= link_to curation.cr_title, curation %></h2>
- <p><%= "#{curation.unique_impression_count} views" %>
+       <div class="main_header_wrapper">
+        <div class="left_banner">
+          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
+        </div>
+        <div class="right_banner">
+          <a href="/blogs"><img src="<%=asset_path 'blog_main.png' %>" alt="the best shopping tip blog" title="the best shopping tip"></a>
+        </div>
+       </div>
+      
+      <section>
+        
+        <div class="gadgets_header">
+          <h2>Awesome Gadgets That Will Blow Your Mind.</h2>
+          <p>This is a collection that features all kinds of unique items that really cannot be classified in a single category. All you need to know is in this page, you are going to find a lot of cool & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet.:D</p>
+        </div>
+        <div class="gadgets_underline"></div>
 
-<% end %>
+        <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+        <div class="large-18" data-equalizer-watch>
+          <div class="grids">
 
-<%= link_to "New Post", new_curation_path %>
+            <% @curations.each do |curation| %>
+              <div class="grid-item <%= curation.cr_option_01 %> <%= curation.cr_option_02 %>">
+               <h3 class="curation_title"><%= link_to curation.cr_title, curation %></h3>
+               <div class="main_img">
+                <a href="<%= curation.cr_url %>"><img src="<%= curation.cr_img %>"></a> 
+               </div>
+                <p class="shop_product_title"><a href="<%= curation.cr_url %>"><%= curation.cr_intro %></a></p>
+                
+               
+                <ul class="curation_video">
+
+                  <% if curation.cr_youtube01.present? %>
+                   <li class="posted">
+                     <div class="js-overlay-start start" data-url="<%= curation.cr_youtube01 %>">
+                      <button><i class="fa fa-play"></i>Watch Video</button>
+                     </div>
+                   </li>
+                  <% end %>
+
+                  <% if curation.cr_youtube02.present? %>
+                    <li class="posted">
+                       <div class="js-overlay-start start" data-url="<%= curation.cr_youtube02 %>">
+                        <button><i class="fa fa-play"></i>Watch Video</button>
+                       </div>
+                    </li>
+                  <% end %>
+                </ul>
+
+                <ul class="shop_price_wrapper">
+                  <li><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
+                  <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li>
+                  <% if can? :manage, curation %>
+                   <li><p><%= "#{curation.unique_impression_count} views" %></p></li>
+                  <% end %>
+                </ul>
+                <a target="_blank" href="<%= curation.cr_url %>"><p class="shop_check">Check it Out</p></a>
+              </div>
+            <% end %>
+            <!--end grid-item-->
+                            
+          </div><!-- end grid-->
+        </div><!--end col-->
+       </div><!--end row-->
+      </section>
+        
+    </div><!--/.inner_hotdeals-->
+  </div><!--/#main-->
+  <%= render 'shared/sidebar_curation' %>  
+</div><!--/#wrapper-->

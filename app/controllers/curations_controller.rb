@@ -60,7 +60,9 @@ class CurationsController < ApplicationController
 
   def curation_params
     params.require(:curation).permit(:cr_title, :cr_url, :cr_img, :cr_youtube01, :cr_youtube02, :cr_bprice, :cr_aprice,
-                                     :cr_sales, :cr_intro)
+                                     :cr_sales, :cr_source, :cr_intro, :cr_option_01, :cr_option_02, :cr_option_03, :cr_option_04,
+                                     :cr_option_05, :cr_option_06, :cr_spare_01, :cr_spare_02, :cr_spare_03, :cr_spare_04,
+                                     :cr_spare_05, :cr_spare_06, :cr_spare_07, :cr_spare_08)
   end
-
 end
+

@@ -291,15 +291,15 @@ a.button_prodcuts:hover{
   overflow: hidden; 
   text-overflow: ellipsis; 
   display: -webkit-box;
-  -moz-line-clamp: 1; 
-  -webkit-line-clamp: 1; /* number of line */ 
-  -ms-line-clamp: 1;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
   -moz-box-orient: vertical;
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
   word-wrap:break-word;
   margin-bottom: 1em;
-  text-align: center;
+  text-align: left;
 }
 
 .shop_original_price {
@@ -369,6 +369,9 @@ ul.shop_price_wrapper li {
   float:left;
   margin:0;
 }
+.combo-filters {
+  margin-left: -2em;
+}
 .filter-wrap {
   height:1000px;
   color:#fff;
@@ -413,6 +416,11 @@ ul.shop_price_wrapper li {
   /*border: 2px solid #5bc995;*/
   border-radius: 0.5em;
   color: #252525;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  outline: none !important;
+  margin-bottom: 10px;
 }
 
 .ui-group .is-checked {
@@ -420,6 +428,11 @@ ul.shop_price_wrapper li {
   background-color: #5bc995;
   border:3px solid #5bc995;
   color: white;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  outline: none !important;
+  margin-bottom: 10px;
 }
 
 .ui-group h3 {
@@ -490,9 +503,9 @@ ul.shop_price_wrapper li {
 
 .grids > .grid-item > .main_img img {
   width: 100%;
-  height: 260px;
+  height: 190px;
   display:block;
-  object-fit: contain;
+  object-fit: cover;
   margin-top: -2em;
 }
 
@@ -609,8 +622,9 @@ ul.shop_price_wrapper li {
   font-size: 1.5em;
   font-family: serif;
   padding: 20px 0;
-  margin-bottom: -2em;
+  margin-bottom: 0em;
   /*text-align: center;*/
+  word-break: break-all;
 }
 .product--title h2 {
   display: inline-block;
@@ -628,6 +642,9 @@ ul.shop_price_wrapper li {
   width: 35%;
   padding-right: 2em;
 }
+.product--details h3 {
+  margin-bottom: -1em;
+}
 
 .random_shoe {
   float: left;
@@ -643,6 +660,7 @@ ul.shop_price_wrapper li {
 }
 .random_shoe a {
   color: #000;
+  word-break: break-all;
 }
 
 .product--image {
@@ -674,6 +692,7 @@ ul.shop_price_wrapper li {
 }
 .product--desc p {
   margin: 20px 0px;
+  word-break: break-all;
 }
 
 .show_home {
@@ -711,7 +730,7 @@ ul.shop_price_wrapper li {
     margin: 0 0 0.2em 0;
   }
   .grids > .grid-item > .main_img img {
-    height: 12em;
+    height: 7em;
   }
   .shop_check {
     margin-top: 1em;
@@ -726,6 +745,11 @@ ul.shop_price_wrapper li {
   }
   .via_where {
     top: 8.48em;
+  }
+  .social li a {
+    width: 46%;
+    font-size: 26px;
+    padding: -2px;
   }
 }
 
@@ -747,7 +771,7 @@ and (max-width : 1024px) {
     width: 6em;
   }
   .grids > .grid-item > .main_img img {
-    height: 12em;
+    height: 7em;
   }
   .random_shoe {
     float: none;
