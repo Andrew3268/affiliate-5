@@ -2,16 +2,22 @@
   <div id="main">
     <div class="inner">
       <%= render 'shared/header' %><br>
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-      
+      <div class="togoup"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button></div>
+
        <div class="blog_banner_wrap_eb">
         <div class="blog_banner_left">
          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
         </div>
         <div class="blog_banner_right">
-         <a href="/ecommerces/gadgets"><img src="<%=asset_path 'gadgets.png'%>" alt="Awesome gadgets" title="Awesome gadgets"></a>
+         <a href="/blogs"><img src="<%=asset_path 'blog_main.png'%>" alt="Awesome gadgets" title="Awesome gadgets"></a>
         </div>
-      </div>
+       </div>
+       <div class="fs_table">
+        <a href="/dis_category/electronics"><img src="<%=asset_path 'fs_table.png'%>" alt="free shipping on ebay" title="free shipping on ebay"></a>
+       </div>
+
+       <span class="free_title"><p>Free Shipping To Your House</p></span>
+       <span class="free_subtitle"><p>search free shipping items on eBay</p></span>
 
        <div class="ebay_wrap">
         <div class="ebay_search_warp">
@@ -35,7 +41,7 @@
         <div class="ebay_search_result">
           <% @discounts.each do |discount| %>
            <h2 class="result_01">Last Search :</h2><br>
-           <h2 class="result_01">"<%= discount.eb_title %>"</h2><br> 
+           <h2 class="result_02">"<%= discount.eb_title %>"</h2>
            <% if discount.eb_min_price.present? %>
             <p>[ $<%= discount.eb_min_price %>.00 ~ $<%= discount.eb_max_price %>.00 ]</p>
            <% else %>
@@ -67,7 +73,7 @@
            </ul>
           <% else %>
            <ul class="free_shipping_wrap">
-            <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><li>no option</li></a>
+            <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
             <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
            </ul>
           <% end %>
@@ -76,14 +82,15 @@
         
        </div><!-- /.ebay_search_result -->
      </div><!-- /.ebay_wrap -->
+
+     
     
-    <div class="search_header"> 
+    <!-- <div class="search_header"> 
      <h1>Real Time Free Shipping Search on eBay</h1>
     </div>
     <div class="eb_nav eb_main">
       <a href="#" class="menu-trigger">Menu</a>
       <ul>
-        <!--<li>< href="/discounts">Home</a></li>-->
         <li><a href="/dis_category/electronics" class="discount_active">Electronics</a></li>
         <li><a href="/dis_category/homeNgarden">Home & Garden</a></li>
         <li><a href="/dis_category/fashion">Fashion</a></li>
@@ -95,97 +102,231 @@
      </div>
      
      <input type="text" class="discount_input" id="myInput" onkeyup="myFunction()" placeholder="Search for items.." title="Type in a name">
-     <%= render 'shared/ebay_SE' %>
+     render 'shared/ebay_SE' -->
+    
+    <span class="eb_deal_title"><p>Hotdeals & Coupons on eBay</p></span>   
+ 
+    <div class='oh_container'>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>
+              Also check out the
+              <a href='https://codepen.io/abcretrograde/pen/NMQXav' target='_blank'>flexbox version</a>
+            </p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/1065711/pexels-photo-1065711.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/139248/pexels-photo-139248.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/6273/home-decoration-interior-decor.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/279618/pexels-photo-279618.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/5959/blue-table-wooden-design.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/970089/pexels-photo-970089.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/5870/purple-white-design-decoration.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/146788/pexels-photo-146788.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/945225/pexels-photo-945225.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/930390/pexels-photo-930390.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/930396/pexels-photo-930396.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/775414/pexels-photo-775414.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/373883/pexels-photo-373883.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/776940/pexels-photo-776940.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/1070872/pexels-photo-1070872.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/1056720/pexels-photo-1056720.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+      <div class='oh_card'>
+        <img src='https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        <div class='oh_card-body'>
+          <div class='oh_card-text'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <button>More...</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+     <a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a>
+    </div>
 
       
-      <div class="blogs_wrapper">    
-
-       <div class="blog_left_main">
-        
-          <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://icdn2.digitaltrends.com/image/amazon-prime-day-packages-3-720x720.jpg) center no-repeat; background-size: cover;" title=""></div>
-            <div class="description">
-              <h1 class="blog_home_post_h1"><a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fglobaldeals&campid=5338273158&toolid=20008">Global Daily Deals!</a></h1>
-              <p class="summary">Deals up to 90% OFF, Free shipping on lots of items, New deals every day, The item you ordered or your money back</p>
-              <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fglobaldeals&campid=5338273158&toolid=20008">Learn More</a>
-            </div>
-          </div>
-
-           <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/eb/19/50/eb19506d43bc49d673d7d14dcdf35513.jpg) center no-repeat; background-size: cover;" title=""></div>
-            <div class="description">
-              <h1 class="blog_home_post_h1"><a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Ftrending&campid=5338273158&toolid=20008">What`s Trending?</a></h1>
-              <p class="summary">Look out what is trending on eBay now!!</p>
-              <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Ftrending&campid=5338273158&toolid=20008">Learn More</a>
-            </div>
-          </div>
-
-          <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/4c/14/ae/4c14ae6547540a6dc4d51d5061c4d731.jpg) center no-repeat; background-size: cover;" title="Comfortable Travel Pillow"></div>
-            <ul class="details">
-              <li class="author"><a href="/blog_posts/post_03">Oh,i gotta buy this</a></li>
-              <li class="date">Jun. 11. 2018</li>
-            </ul>
-            <div class="description">
-              <h1 class="blog_home_post_h1">10 Comfortable Travel Pillow you can deep sleep.</h1>
-              <p class="summary">I`d like to share 10 Comfortable “Travel Pillow” that will make you have a sweet dream while you traveling today. Have you ever sat in an economy class seat, tossing and turning, deliriously trying to get to sleep? Knowing you need to be feeling rested when you arrive? Say goodbye to long restless airplane flights, train rides, car rides and bus rides. Now you can sleep as comfortably as you sleep in your own bed. It allows you to get deep sleep while traveling. And These are the first travel pillows that allow you to make sure you find the most comfortable position during your travels.</p>
-              <a href="/blog_posts/post_03">Read More</a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://3.bp.blogspot.com/-0Ov80MwVP0Q/WijjYA_NgdI/AAAAAAAACCM/OJpvy91JjoIa5AZirVuElHocK2lsxPYBwCLcBGAs/s1600/five%2B%25281%2529.png) center no-repeat; background-size: cover;" title="Awesome Smart Home Gadgets"></div>
-            <ul class="details">
-              <li class="author"><a href="/blog_posts/post_02">Oh,i gotta buy this</a></li>
-              <li class="date">May. 29. 2018</li>
-            </ul>
-            <div class="description">
-              <h1 class="blog_home_post_h1">10 Awesome Smart Home Gadgets You Need To See</h1>
-              <p class="summary">Looking to make your home just a little smarter? While still in its infancy, the number of smart home products—devices that let you control your lighting, thermostat, or even your crock pot from your smartphone—is rapidly growing. You can pick and choose your favorite gadgets to assemble an affordable intelligent abode on your own terms, or opt for an entire smart home system that does all the work for you. Here are some of smart home systems and individual gadgets.</p>
-              <a href="/blog_posts/post_02">Read More</a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="photo photo1" style="background: url(https://i.pinimg.com/564x/d7/b5/33/d7b5337801205257c9737143afab4197.jpg) center no-repeat; background-size: cover;" title="Awesome &amp; Useful BackPack"></div>
-            <ul class="details">
-              <li class="author"><a href="/blog_posts/post_01">Oh,i gotta buy this</a></li>
-              <li class="date">Apr. 20, 2018</li>
-            </ul>
-            <div class="description">
-              <h1 class="blog_home_post_h1">5 Awesome &amp; Useful BackPack</h1>
-              <p class="summary">Travel is a part of our daily life. We’ve lugged a lot of stuff, camera or something around with us, whether it’s just for the day, a weekend trip, or a weeklong vacation. And you may concern yourself with someone stealing your belongings, your phone running out of juice, or forgetting where you put certain must-have items within your bag.  If you’re the same way, you know how hard it is to find a practical bag to haul your gear when you’re on the go. This collection has found a way to solve that with these awesome & useful backpacks that will accompany you on your everyday adventures.</p>
-              <a href="/blog_posts/post_01">Read More</a>
-            </div>
-          </div>
-
-        </div><!--/.blog_left_main-->
-
-       <div class="blog_right_side">
-
-        <div class="blog_logo">
-         <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net" title="awesome gadgets and amazon shopping"></img></a>
-         <% if user_signed_in? %>
-           <ul class="blog_admin">  
-              <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
-            <% if can? :manage, @blog %>
-               <li><%= link_to "Add New Blog", new_blog_path(@blog) %></li>
-            <% end %>
-           </ul>
-          <% end %>
-        </div>
-
-        <div class="twitter-feed">
-         <a class="twitter-timeline" data-height="1000" href="https://twitter.com/OhIgottabuythis?ref_src=twsrc%5Etfw">Tweets by OhIgottabuythis</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-
-        <div class="twitter_bottom"></div>
-        
-        <div class="pinterest_widget">
-         <a data-pin-do="embedUser" data-pin-lang="ko" data-pin-board-width="300" data-pin-scale-height="500" data-pin-scale-width="150" href="https://www.pinterest.com.au/ohigottabuythis/"></a>
-        </div><br>
-        
-      </div><!--/.blog_right_side-->
-     </div><!--/.blog_wrapper-->
-
             
     </div><!--/.inner-->
   </div><!--/#main-->

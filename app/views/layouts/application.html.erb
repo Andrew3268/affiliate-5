@@ -447,35 +447,9 @@
     });
   </script>
 
+<!-- Sticky and Up & Donw on QuickSearch page -->
+<!--   <script>
 
-<!-- Show more Coupon on QuickSearch Page -->
-  <script>
-    $(document).ready(function () {
-      console.clear();
-      var target = '.coupon_list li',
-            size = $(target).length,
-               x = 8,  // Show on Start
-           addTo = 4,  // Number to increase by
-      loadButton = $('.load_coupon');
-      $(target).hide();
-      $(target + ':lt(' + x + ')').show();
-      loadButton.on("click", function () {
-        // if currently showing plus addTo is less than total, increment var x, otherwise set it to the total
-        x = (x + addTo <= size) ? x + addTo : size;
-        // Show the suckers
-        $(target + ':lt('+x+')').show();
-        // if showing is equal to total, hide button
-        if (x == size){
-            $(this).hide();
-        }
-        return false;
-      });
-    });
-  </script>
-
-  <!-- Sticky and Up & Donw on QuickSearch page -->
-  <script>
-    //Sticky menu
     var sticky = document.querySelector('.quick_stiky_menu');
     var origOffsetY = sticky.offsetTop;
     function onScroll(e) {
@@ -483,7 +457,7 @@
             sticky.classList.remove('fixed');
     }
     document.addEventListener('scroll', onScroll);
-    //Scroll to anchor
+
 
     $(function () {
       $('a[href*="#"]:not([href="#"])').click(function () {
@@ -499,7 +473,7 @@
         }
       });
     });
-  </script>
+  </script> -->
 
  
 
@@ -604,6 +578,100 @@ function myFunction() {
     }       
   }
 }
+</script>
+
+
+<!-- scroll on Amazon Quick Search Page -->
+<script>
+
+
+$(".-js-hottable").unbind().click(function(event){
+  event.preventDefault();
+  $('html, body').animate({
+     scrollTop: $("#section-hottable").offset().top
+  }, 1000);
+  
+});
+
+$(".-js-promodeal").unbind().click(function(event){
+  event.preventDefault();
+  $('html, body').animate({
+     scrollTop: $("#-js-id-promodeal").offset().top
+  }, 1000);
+  
+});
+
+$(".-js-promocode").unbind().click(function(event){
+  event.preventDefault();
+  $('html, body').animate({
+     scrollTop: $("#-js-id-promocode").offset().top
+  }, 1000);
+  
+});
+
+$(".-js-surprise").unbind().click(function(event){
+  event.preventDefault();
+  $("#-js-id-surprise").show();
+  $('html, body').animate({
+     scrollTop: $("#-js-id-surprise").offset().top
+  }, 1000);
+  
+});
+
+$(".-js-services").unbind().click(function(event){
+  event.preventDefault();
+  $('html, body').animate({
+     scrollTop: $("#-js-id-services").offset().top
+  }, 1000);
+  
+});
+
+$(".-js-resources").unbind().click(function(event){
+  event.preventDefault();
+  $('html, body').animate({
+     scrollTop: $("#-js-id-resources").offset().top
+  }, 1000);
+  
+});
+
+$(".-js-contact").unbind().click(function(event){
+  event.preventDefault();
+  $('html, body').animate({
+     scrollTop: $("#-js-id-contact").offset().top
+  }, 1000);
+  
+});
+
+
+$(document).ready(function() {
+        
+  /* When distance from top = 250px fade button in/out */
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 250) {
+      $('.-js-scroll-top').fadeIn(300);
+    } else {
+      $('.-js-scroll-top').fadeOut(300);
+    }
+  });
+
+  /* On click scroll to top of page t = 1000ms */
+  $('.-js-scroll-top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 750);
+    return false;
+  });
+});
+
+
+
+// menu
+$(document).ready(function() {
+    $('.mobile-nav').click(function() {
+     $('.mobile-nav__icon').toggleClass('active'); 
+        $('.menu').slideToggle();
+    });
+});
+
+
 </script>
 
  </body>

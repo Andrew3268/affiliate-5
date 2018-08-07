@@ -407,13 +407,9 @@ ul.shop_price_wrapper li {
   margin-bottom: 2em;
 }
 .ui-group button {
-  text-align:center;
-  position:relative;
-  outline:none !important;
-  margin-bottom:10px;
   background-color: white;
   padding: 0.5em;
-  /*border: 2px solid #5bc995;*/
+  border: 2px solid #5bc995;
   border-radius: 0.5em;
   color: #252525;
   width: 100%;
@@ -800,9 +796,6 @@ and (max-width : 1024px) {
 @media screen and (min-width: 1366px) {
   .via_where {
     top: 12.1em;
-    }
-  .shop_product_title {
-    margin-top: -1em;
   }
 }
 
