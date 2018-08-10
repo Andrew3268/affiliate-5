@@ -1,333 +1,212 @@
 <div id="wrapper">
   <div id="main">
-    <div class="inner">
-      <%= render 'shared/header' %><br>
+    <div class="eb_discount inner">
+      <%= render 'shared/header' %>      
       <div class="togoup"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button></div>
-
-       <div class="blog_banner_wrap_eb">
-        <div class="blog_banner_left">
-         <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
-        </div>
-        <div class="blog_banner_right">
-         <a href="/blogs"><img src="<%=asset_path 'blog_main.png'%>" alt="Awesome gadgets" title="Awesome gadgets"></a>
-        </div>
-       </div>
+        
+      <div class="blogs_wrapper">  
+       <div class="blog_left_main_post">
        <div class="fs_table">
         <a href="/dis_category/electronics"><img src="<%=asset_path 'fs_table.png'%>" alt="free shipping on ebay" title="free shipping on ebay"></a>
        </div>
+       <div class="dis_container"><h1>Free Shipping Door-To-Door</h1></div>
+         <div class="ebay_wrap">
+          <div class="ebay_search_finder">
+           <%= simple_form_for @discount do |f| %>
+             <%= f.input :eb_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
+             <h5>Select Shipping Condition</h5>
+             <%= f.select :eb_free_sh, options_for_select([["Nothing", ""], "Free International Shpping"])%>
+             <br>
+             <ul>
+              <li><%= f.input :eb_min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
+              <li><%= f.input :eb_max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
+             </ul>
+             <%= f.button :submit, :input_html => { :class => "ebay_button" } %>         
+            <% end %>
+            <% if can? :create, @discounts %>
+             <div class="admin_discount">
+              <%= link_to "Show KeyWords", new_discount_path %>
+             </div>
+            <% end %>
+          </div>
 
-       <span class="free_title"><p>Free Shipping To Your House</p></span>
-       <span class="free_subtitle"><p>search free shipping items on eBay</p></span>
-
-       <div class="ebay_wrap">
-        <div class="ebay_search_warp">
-         <%= simple_form_for @discount do |f| %>
-           <%= f.input :eb_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
-           <h5>Select Shipping Condition</h5>
-           <%= f.select :eb_free_sh, options_for_select([["Nothing", ""], "Free International Shpping"])%><br>
-           <ul>
-             <li><%= f.input :eb_min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
-             <li><%= f.input :eb_max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
-           </ul>
-           <%= f.button :submit, :input_html => { :class => "ebay_button" } %>         
-          <% end %>
-          <% if can? :create, @discounts %>
-           <div class="admin_discount">
-            <%= link_to "Show KeyWords", new_discount_path %>
-           </div>
-          <% end %>
-        </div>
-
-        <div class="ebay_search_result">
-          <% @discounts.each do |discount| %>
-           <h2 class="result_01">Last Search :</h2><br>
-           <h2 class="result_02">"<%= discount.eb_title %>"</h2>
-           <% if discount.eb_min_price.present? %>
-            <p>[ $<%= discount.eb_min_price %>.00 ~ $<%= discount.eb_max_price %>.00 ]</p>
-           <% else %>
-            <span>You haven`t input price :D</span>
+          <div class="ebay_search_result">
+            <% @discounts.each do |discount| %>   
+            <div class="dis_wrapper">
+              <div class="dis_table">
+               <div class="dis_row dis_header">
+                <div class="dis_cell">
+                  Item
+                </div>
+                <div class="dis_cell">
+                  Price Range
+                </div>
+                <div class="dis_cell">
+                  Free shipping
+                </div>
+              </div>
+              <div class="dis_row">
+                <div class="dis_cell" data-title="Item">
+                 <%= discount.eb_title %>
+                </div>
+                <% if discount.eb_min_price.present? %>
+                  <div class="dis_cell" data-title="Price Range">
+                    $<%= discount.eb_min_price %>.00 ~ $<%= discount.eb_max_price %>.00
+                  </div>
+                <% else %>
+                 <div class="dis_cell" data-title="Price Range">
+                   None
+                 </div>
+                <% end %>
+                <% if discount.eb_free_sh.present? %>
+                 <div class="dis_cell" data-title="Free Shipping">O</div>
+                <% else %>
+                 <div class="dis_cell" data-title="Free Shipping">X</div>
+                <% end %>
+              </div>
+            </div>
+            <% if discount.eb_free_sh.present? %>
+  <!-- Select Free Shipping Option -->
+            <% if discount.eb_min_price.present? %>
+              <ul class="free_shipping_wrap">
+               <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping</li></a>
+               <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
+               <li>Free International Shipping + Deals & Savings</li></a>
+              </ul>
+            <% else %>
+              <ul class="free_shipping_wrap">
+               <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping</li></a>
+               <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping + Deals & Savings</li></a>
+              </ul>
            <% end %>
-           <br>
 
-          <% if discount.eb_free_sh.present? %>
-<!-- Select Free Shipping Option -->
-          <% if discount.eb_min_price.present? %>
-            <ul class="free_shipping_wrap">
-             <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping</li></a>
-             <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
-             <li>Free International Shipping + Deals & Savings</li></a>
-            </ul>
-          <% else %>
-            <ul class="free_shipping_wrap">
-             <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping</li></a>
-             <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping + Deals & Savings</li></a>
-            </ul>
-         <% end %>
-
-         <% else %>
-<!-- Don`t Select Free Shipping Option -->
-          <% if discount.eb_min_price.present? %>
-           <ul class="free_shipping_wrap">
-            <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
-            <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
-           </ul>
-          <% else %>
-           <ul class="free_shipping_wrap">
-            <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
-            <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
-           </ul>
+           <% else %>
+  <!-- Don`t Select Free Shipping Option -->
+            <% if discount.eb_min_price.present? %>
+             <ul class="free_shipping_wrap">
+              <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
+              <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
+             </ul>
+            <% else %>
+             <ul class="free_shipping_wrap">
+              <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
+              <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
+             </ul>
+            <% end %>
+           <% end %>
           <% end %>
-         <% end %>
-        <% end %>
-        
-       </div><!-- /.ebay_search_result -->
-     </div><!-- /.ebay_wrap -->
-
+         </div><!-- /.ebay_search_result -->
+        </div><!-- /.ebay_wrap -->
      
-    
-    <!-- <div class="search_header"> 
-     <h1>Real Time Free Shipping Search on eBay</h1>
-    </div>
-    <div class="eb_nav eb_main">
-      <a href="#" class="menu-trigger">Menu</a>
-      <ul>
-        <li><a href="/dis_category/electronics" class="discount_active">Electronics</a></li>
-        <li><a href="/dis_category/homeNgarden">Home & Garden</a></li>
-        <li><a href="/dis_category/fashion">Fashion</a></li>
-        <li><a href="/dis_category/sportingGoods">Sporting Goods</a></li>
-        <li><a href="/dis_category/toyNhobbies">Toy & hobbies</a></li>
-        <li><a href="/dis_category/music">Music</a></li>
-        <li><a href="/dis_category/motor">Motor</a></li>
-      </ul>
-     </div>
-     
-     <input type="text" class="discount_input" id="myInput" onkeyup="myFunction()" placeholder="Search for items.." title="Type in a name">
-     render 'shared/ebay_SE' -->
-    
-    <span class="eb_deal_title"><p>Hotdeals & Coupons on eBay</p></span>   
- 
-    <div class='oh_container'>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>
-              Also check out the
-              <a href='https://codepen.io/abcretrograde/pen/NMQXav' target='_blank'>flexbox version</a>
-            </p>
-          </div>
-          <button>More...</button>
+        <div class="best_deal">
+         <ul>
+          <li><div class="dis_container"><h1>Best Featured Events</h1></div></li>
+         </ul>
+         <div class="bd_img"><img src="https://www.sideshowtoy.com/wp-content/uploads/2018/02/marvel-captain-america-premium-format-figure-sideshow-feature-300524-1.jpg"></div>
+         <div class="bd_img"><img src="https://i.ytimg.com/vi/R5arhEd2ddc/maxresdefault.jpg"></div>
+         <div class="bd_img"><img src="https://fsmedia.imgix.net/a3/95/70/29/ac0c/4e90/96cf/65480a3563bc/tumblrnqkc0ly2sz1rqkhyqo1540jpg.jpeg?rect=0%2C59%2C540%2C270&auto=format%2Ccompress&w=540"></div>
+         <a href="#"><p>View All</p></a>
         </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/1065711/pexels-photo-1065711.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/139248/pexels-photo-139248.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/6273/home-decoration-interior-decor.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/279618/pexels-photo-279618.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/5959/blue-table-wooden-design.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/970089/pexels-photo-970089.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/5870/purple-white-design-decoration.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/146788/pexels-photo-146788.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/945225/pexels-photo-945225.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/930390/pexels-photo-930390.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/930396/pexels-photo-930396.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/775414/pexels-photo-775414.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/373883/pexels-photo-373883.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/776940/pexels-photo-776940.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/1070872/pexels-photo-1070872.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/1056720/pexels-photo-1056720.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-      <div class='oh_card'>
-        <img src='https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
-        <div class='oh_card-body'>
-          <div class='oh_card-text'>
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button>More...</button>
-        </div>
-      </div>
-    </div>
-
-    <div>
-     <a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a>
-    </div>
-
       
-            
+         <div class="dis_container">
+          <h1>Hot Deals</h1>
+          <div class="dis_grid">
+            <div class="dis_card">
+              <div class="dis_card--image"><img src="https://i.ebayimg.com/images/g/H80AAOSw-5RZkfXg/s-l500.jpg"/></div>
+              <div class="dis_card--content">
+                <h3>dis_Card 1 Title</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
+                          <ul class="dis_price">
+                 <li>$100.00</li>
+                 <li>$100.00</li>
+                </ul>
+                <ul class="dis_btn">
+                 <li>50% Off</li>
+                 <li><a href="#">Check it out</a></li>
+                </ul>
+              </div>        
+              </div>
+              <div class="dis_card">
+                <div class="dis_card--image"><img src="https://i.ebayimg.com/images/g/n90AAOSwa3BbVCuF/s-l1600.jpg"/></div>
+                <div class="dis_card--content">
+                  <h3>dis_Card 2 Title</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
+                <ul class="dis_price">
+                 <li>$100.00</li>
+                 <li>$100.00</li>
+                </ul>
+                <ul class="dis_btn">
+                 <li>50% Off</li>
+                 <li><a href="#">Check it out</a></li>
+                </ul>              </div>
+              </div>
+              <div class="dis_card">
+                <div class="dis_card--image"><img src="https://i.ebayimg.com/images/g/59wAAOSw401aJxho/s-l1600.jpg"/></div>
+                <div class="dis_card--content">
+                  <h3>dis_Card 3 Title</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
+                <ul class="dis_price">
+                 <li>$100.00</li>
+                 <li>$100.00</li>
+                </ul>
+                <ul class="dis_btn">
+                 <li>50% Off</li>
+                 <li><a href="#">Check it out</a></li>
+                </ul>              </div>
+              </div>
+              <div class="dis_card">
+                <div class="dis_card--image"><img src="//source.unsplash.com/500x304"/></div>
+                <div class="dis_card--content">
+                  <h3>dis_Card 4 Title</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
+                <ul class="dis_price">
+                 <li>$100.00</li>
+                 <li>$100.00</li>
+                </ul>
+                <ul class="dis_btn">
+                 <li>50% Off</li>
+                 <li><a href="#">Check it out</a></li>
+                </ul>              </div>
+              </div>
+              <div class="dis_card">
+                <div class="dis_card--image"><img src="//source.unsplash.com/500x305"/></div>
+                <div class="dis_card--content">
+                  <h3>dis_Card 5 Title</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
+                <ul class="dis_price">
+                 <li>$100.00</li>
+                 <li>$100.00</li>
+                </ul>
+                <ul class="dis_btn">
+                 <li>50% Off</li>
+                 <li><a href="#">Check it out</a></li>
+                </ul>              </div>
+              </div>
+              <div class="dis_card">
+                <div class="dis_card--image"><img src="//source.unsplash.com/500x306"/></div>
+                <div class="dis_card--content">
+                  <h3>dis_Card 6 Title</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
+                <ul class="dis_price">
+                 <li>$100.00</li>
+                 <li>$100.00</li>
+                </ul>
+                <ul class="dis_btn">
+                 <li>50% Off</li>
+                 <li><a href="#">Check it out</a></li>
+                </ul>              </div>
+              </div>
+            </div><!-- /.dis_grid -->
+          </div><!-- /.dis_container -->
+          </div>
+          <div>
+           <a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a>
+          </div>        
+         </div><!--/.blog_left_main_post-->
+         <%= render '/shared/sidebar_discount' %>
+        </div><!--/.blog_right_side-->
+      </div><!--/.blog_wrapper-->
+    
     </div><!--/.inner-->
   </div><!--/#main-->
 </div><!--/#wrapper-->

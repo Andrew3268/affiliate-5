@@ -87,6 +87,20 @@
   padding: 15px;
   text-align: center;
 }
+.card__content ul {
+  margin-top: 0.5em;
+  margin-bottom: -1em;
+}
+.card__content ul li {
+  list-style: none;
+  display: inline-block;
+}
+.card__content ul li:nth-child(1) {
+  font-size: 1.5em;
+}
+.card__content ul li:nth-child(2) {
+  text-decoration: line-through;
+}
 
 .card__image {
   border-top-left-radius: 0.1em;

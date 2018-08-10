@@ -27,6 +27,8 @@
   <%= f.select :discount_spare_01, options_for_select([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones & Accessories", "clothing & Accessories", "electronics", "fashion", "furniture", "grocery", "computer", "health", "home", "kitchen", "miscellaneous", "office", "pets", "garden", "sports", "tools", "toy & games"])%>
   <%= f.input :discount_title %>
   <%= f.input :discount_code %>
+  <%= f.input :discount_spare_01, label: 'After Price' %>
+  <%= f.input :discount_spare_02, label: 'Bfter Price' %>
   <%= f.input :discount_date %>
   <%= f.input :discount_sale %>
   <%= f.input :discount_image %>

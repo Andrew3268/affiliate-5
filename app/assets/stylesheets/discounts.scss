@@ -24,25 +24,56 @@
   font-size: 2em;
   margin-top: -2.5em;
 }
+.best_deal {
+  width: 100%;
+  margin-bottom: 15em;
+}
+.best_deal ul {
+  margin-bottom: 0em;
+}
+.best_deal ul li {
+  display: inline-block;
+  list-style: none;
+}
+.best_deal p {
+  float: right;
+  font-size: 1.2em;
+  margin-right: 0.9em;
+}
+.best_deal .bd_img {
+  float: left;
+  width: 33%;
+  padding: 0.5%;
+  height: 150px;
+}
+.best_deal img {
+  width: 100%;
+  height: 100%;
+}
+
 .eb_deal_title p {
   text-align: center;
   font-size: 4em;
-  margin-top: 9em;
   margin-bottom: -1.5em;
 }
 .ebay_wrap {
-  margin-top: 3em;
+  margin-top: 1em;
 }
-.ebay_search_warp {
-  float: left;
-  width: 45%;
-  margin-right: 5%;
+.ebay_search_finder {
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid #08f;
+  border-radius: 0.5em;
+  padding: 0.5em 1em 0 1em;
+  margin-bottom: 0.5em;
 }
 .ebay_search_result {
-  float: left;
-  width: 50%;
-  border: 3px dotted black;
-  padding: 2em;
+  width: 100%;
+  margin: 0 auto;
+  border: 3px dotted #08f;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  margin-bottom: 3em;
 }
 .ebay_search_result img {
   width: 170;
@@ -66,7 +97,7 @@
   margin-top: 1.5em;
 }
 .free_shipping_wrap li {
-  background-color: #00a8e1;
+  background-color: #08f;
   padding: 0.5em;
   border-radius: 1em;
   color: white;
@@ -84,15 +115,14 @@
 .discount_active {
   background-color: #E65540;
 }
-.ebay_search_warp ul li{
+.ebay_search_finder ul li{
   display: inline-block;
 }
-
 .ebay_price {
   border: 1px solid #b3b3b3;
   border-radius: 0.5em;
 }
-.ebay_search_warp .btn,
+.ebay_search_finder .btn,
 .admin_discount {
   width: 100%;
   border: 1px solid #65a8a6;
@@ -108,13 +138,13 @@
 .admin_discount a {
   color: #F8ECC2;
 }
-.ebay_search_warp .btn:hover {
+.ebay_search_finder .btn:hover {
   background-color: #E65540;
   border: 1px solid #E65540;
   color:  white;
   pointer: cursor;
 }
-.ebay_search_warp h5 {
+.ebay_search_finder h5 {
    font-weight: 540;
    font-size: 11.7px;
    margin-bottom: 0.4em;
@@ -122,102 +152,140 @@
 
 /* =========== eBay deals Section ============= */
 
-
-* {
-  box-sizing: border-box;
-}
-
-.oh_container {
-  min-height: 100vh;
-  width: 100%;
-  margin: auto;
-  padding: 1.6em;
-  display: grid;
-  justify-content: center;
-  align-content: start;
-  grid-gap: 1.6em;
-  grid-template: auto/repeat(auto-fill, minmax(27em, 24em));
-  margin-top: 7em;
-}
-
-.oh_card {
-  margin: 0;
-  height: 15em;
-  display: flex;
-  background-color: white;
-  box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
-}
-.oh_card img {
-  height: 100%;
-  width: 50%;
-  max-width: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  flex: 1 1 auto;
-}
-
-.oh_card-body {
-  width: 12em;
-  max-height: 100%;
-  flex: 1 1 auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  padding: 1.6em;
-}
-.oh_card-body button {
-  min-width: 8.3em;
-  flex: none;
-  align-self: flex-start;
-  margin-top: auto;
-  padding: 0.6em 1.2em;
-  font-size: 0.92em;
-  color: #404646;
-  background: none;
-  border: 0.5px solid #777;
-  border-radius: 2px;
-}
-.oh_card-body button:hover {
-  border-color: #d099a0;
-}
-
-.oh_card-text {
+.dis_container h1 {
   position: relative;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0 0 0.8em 0;
-  padding: 0;
+  line-height: 2;
+  font-size: 1.7em;
 }
-.oh_card-text h3, .oh_card-text p {
-  margin-top: 0;
-}
-.oh_card-text:after {
+.dis_container h1:after {
   position: absolute;
-  bottom: 0;
-  content: "";
-  width: 100%;
-  height: 2.8em;
-  background: linear-gradient(rgba(255, 255, 255, 0), white);
+  display: block;
+  content: '';
+  height: 4px;
+  width: 80px;
+  background: #08f;
 }
-
-@media (max-width: 570px) {
-  .oh_container {
-    grid-template: auto / 1fr;
-    padding: 1.0666666667em;
-    margin-top: 5em;
-  }
-
-  .oh_card {
-    flex: 1 1 auto;
+.dis_container h3 {
+  color: #111;
+  margin-top: 0;
+  line-height: 2;
+  margin-bottom: .5rem;
+}
+.dis_container h3:after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 2px;
+  width: 40px;
+  background: #08f;
+}
+.dis_container p {
+  margin: .5rem 0;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+.dis_grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.8rem;
+}
+.dis_card {
+  width: calc(33.3% - 1.6rem);
+  margin: 0.8rem;
+  background: #fff;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 300ms;
+}
+@media screen and (max-width: 800px) {
+  .dis_card {
     display: flex;
-    background-color: white;
-    box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
-  }
-  .oh_card img {
-    max-width: 45%;
+    width: calc(100% - 1.6rem);
   }
 }
+.dis_card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.dis_card--image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+.dis_card--content {
+  padding: 0 1.5rem;
+}
+.dis_card--content ul li {
+  list-style: none;
+  display: inline-block;
+}
+.dis_card--content ul {
+  margin: 0em;
+  text-align: center;
+}
+.dis_price li:nth-child(1) {
+  font-size: 1.3em;
+}
+.dis_price li:nth-child(2) {
+  text-decoration: line-through;
+}
+.dis_btn li {
+  padding: 0 0.7em;
+  margin-bottom: 0.3em;
+}
+.dis_btn li:nth-child(1) {
+  border: 2px dotted #08f;
+  color: #08f;
+  padding: 0 -1em;
+} 
+.dis_btn li:nth-child(2) {
+  background-color: #08f;
+  padding: 0 1em;
+  border-radius: 0.7em;
+}
+.dis_btn a {
+  color: white;
+}
+.dis_card--category {
+  font-size: .8em;
+  letter-spacing: .1ch;
+  padding-top: 1em;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 800px) {
+.dis_card--image {
+    width: 25%;
+    min-width: 40%;
+    padding-bottom: 25%;
+  }
+}
+.dis_card--image img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 800px) {
+  .dis_card--image img {
+    height: 100%;
+    width: auto;
+  }
+  .dis_container h1 {
+    font-size: 14px;
+  }
+}
+
 
 
 /* =========== Shipping Conditions Navigation ============= */
@@ -311,9 +379,6 @@ body {
 }
 
 @media screen and (max-width:500px) {
-  .ebay_wrap {
-    margin-top: 5em;
-  }
   .search_header {
     margin-top: 40em;
   }
@@ -330,13 +395,13 @@ body {
   .eb_nav ul {
     display:none;
   }
-  .ebay_search_warp, 
+  .ebay_search_finder, 
   .ebay_search_result, 
   .goto_shipping {
    width: 100%;
  }
  .fs_table img {
-   margin-top: 4em;
+   margin-top: 0em;
  }
  .free_title p {
    font-size: 2em;
@@ -344,29 +409,31 @@ body {
  }
  .free_subtitle P {
    font-size: 1.3em;
-   margin: 2.5em 0 -3em 0;
+   margin: 2.5em 0 -25em 0;
+ }
+ .eb_deal_title p {
+   font-size: 2em;
+   margin-top: 17em;
+   margin-bottom: -2.5em;
+ }
+ .best_deal {
+   margin-bottom: 40em;
+ }
+ .best_deal .bd_img {
+   width: 100%;
+ }
+ .dis_btn li:nth-child(1), 
+ .dis_btn li:nth-child(2) {
+   padding: 0 0.5em;
  }
 }
-
-@media only screen
-and (min-width : 501px)  
-and (max-width : 1024px) {
- .free_title p {
-   font-size: 3em;
-   margin: 1em 0 -2em 0;
- }
- .free_subtitle P {
-   font-size: 1.7em;
-   margin: 3em 0 -1em 0;
- }
- .oh_container {
-  grid-template: auto/repeat(auto-fill, minmax(26em, 20em));
- }
-}
-
 
 @media (max-width: 680px) {
-  .js-responsive-table table, .js-responsive-table tbody, .js-responsive-table table tr, .js-responsive-table table td, .js-responsive-table table th {
+  .js-responsive-table table, 
+  .js-responsive-table tbody, 
+  .js-responsive-table table tr, 
+  .js-responsive-table table td, 
+  .js-responsive-table table th {
       display: block;
       width: 100%;
   }
@@ -391,3 +458,98 @@ and (max-width : 1024px) {
       display: block;
   }
 }
+
+@media only screen
+and (min-width : 501px)  
+and (max-width : 1024px) {
+ .free_title p {
+   font-size: 3em;
+   margin: 1em 0 -2em 0;
+ }
+ .free_subtitle P {
+   font-size: 1.7em;
+   margin: 3em 0 -1em 0;
+ }
+ .oh_container {
+  grid-template: auto/repeat(auto-fill, minmax(26em, 20em));
+ }
+}
+
+
+/* =====================  Free shipping result table  ===================== */
+
+.dis_table {
+  margin: 2em 0 0 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .dis_table {
+    display: block;
+  }
+}
+
+.dis_row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.dis_row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.dis_row.dis_header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #08f;
+}
+.dis_row.green {
+  background: #27ae60;
+}
+.dis_row.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .dis_row {
+    padding: 14px 0 7px;
+    display: block;
+  }
+  .dis_row.dis_header {
+    padding: 0;
+    height: 6px;
+  }
+  .dis_row.dis_header .dis_cell {
+    display: none;
+  }
+  .dis_row .dis_cell {
+    margin-bottom: 10px;
+  }
+  .dis_row .dis_cell:before {
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00a8e1;
+    display: block;
+  }
+}
+
+.dis_cell {
+  padding: 6px 12px;
+  display: table-cell;
+  text-align: center;
+}
+
+@media screen and (max-width: 580px) {
+  .dis_cell {
+    padding: 2px 16px;
+    display: block;
+  }
+}
+
+
+
+
+
