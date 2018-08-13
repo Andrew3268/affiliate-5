@@ -447,36 +447,6 @@
     });
   </script>
 
-<!-- Sticky and Up & Donw on QuickSearch page -->
-<!--   <script>
-
-    var sticky = document.querySelector('.quick_stiky_menu');
-    var origOffsetY = sticky.offsetTop;
-    function onScroll(e) {
-        window.scrollY >= origOffsetY ? sticky.classList.add('fixed') :
-            sticky.classList.remove('fixed');
-    }
-    document.addEventListener('scroll', onScroll);
-
-
-    $(function () {
-      $('a[href*="#"]:not([href="#"])').click(function () {
-      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-              $('html, body').animate({
-                  scrollTop: target.offset().top - 50
-              }, 500);
-              return false;
-          }
-        }
-      });
-    });
-  </script> -->
-
- 
-
  <!-- Image Gallery on Detail Page -->
   <script>
     var slideIndex = 1;

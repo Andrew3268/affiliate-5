@@ -6,6 +6,7 @@ class DiscountsController < ApplicationController
   def index
     @discount = Discount.new
     @discounts = Discount.all.order("created_at DESC").limit(1)
+    @accessories = Accessory.all.order("created_at DESC")
   end
 
   def show 

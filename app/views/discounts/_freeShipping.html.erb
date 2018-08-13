@@ -1,0 +1,87 @@
+<div class="ebay_wrap">
+  <div class="ebay_search_finder">
+   <%= simple_form_for @discount do |f| %>
+     <%= f.input :eb_title, label: 'Seach Items on eBay', placeholder: 'Search on eBay' %><br>
+     <h5>Select Shipping Condition</h5>
+     <%= f.select :eb_free_sh, options_for_select([["Nothing", ""], "Free International Shpping"])%>
+     <br>
+     <ul>
+      <li><%= f.input :eb_min_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Min Price $', placeholder: 'Min $' %></li>&nbsp;&nbsp;~ 
+      <li><%= f.input :eb_max_price, :input_html => { :type => "number", :class => "ebay_price" }, label: 'Max Price $', placeholder: 'Max $' %></li>
+     </ul>
+     <%= f.button :submit, :input_html => { :class => "ebay_button" } %>         
+    <% end %>
+    <% if can? :create, @discounts %>
+     <div class="admin_discount">
+      <%= link_to "Show KeyWords", new_discount_path %>
+     </div>
+    <% end %>
+  </div>
+
+  <div class="ebay_search_result">
+    <% @discounts.each do |discount| %>   
+    <div class="dis_wrapper">
+      <div class="dis_table">
+       <div class="dis_row dis_header">
+        <div class="dis_cell">
+          Item
+        </div>
+        <div class="dis_cell">
+          Price Range
+        </div>
+        <div class="dis_cell">
+          Free shipping
+        </div>
+      </div>
+      <div class="dis_row">
+        <div class="dis_cell" data-title="Item">
+         <%= discount.eb_title %>
+        </div>
+        <% if discount.eb_min_price.present? %>
+          <div class="dis_cell" data-title="Price Range">
+            $<%= discount.eb_min_price %>.00 ~ $<%= discount.eb_max_price %>.00
+          </div>
+        <% else %>
+         <div class="dis_cell" data-title="Price Range">
+           None
+         </div>
+        <% end %>
+        <% if discount.eb_free_sh.present? %>
+         <div class="dis_cell" data-title="Free Shipping">O</div>
+        <% else %>
+         <div class="dis_cell" data-title="Free Shipping">X</div>
+        <% end %>
+      </div>
+    </div>
+    <% if discount.eb_free_sh.present? %>
+<!-- Select Free Shipping Option -->
+    <% if discount.eb_min_price.present? %>
+      <ul class="free_shipping_wrap">
+       <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping</li></a>
+       <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
+       <li>Free International Shipping + Deals & Savings</li></a>
+      </ul>
+    <% else %>
+      <ul class="free_shipping_wrap">
+       <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping</li></a>
+       <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Free International Shipping + Deals & Savings</li></a>
+      </ul>
+   <% end %>
+
+   <% else %>
+<!-- Don`t Select Free Shipping Option -->
+    <% if discount.eb_min_price.present? %>
+     <ul class="free_shipping_wrap">
+      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
+      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
+     </ul>
+    <% else %>
+     <ul class="free_shipping_wrap">
+      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><li>No Free International Shipping</li></a>
+      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>Deals & Savings</li></a>
+     </ul>
+    <% end %>
+   <% end %>
+  <% end %>
+ </div><!-- /.ebay_search_result -->
+</div><!-- /.ebay_wrap -->

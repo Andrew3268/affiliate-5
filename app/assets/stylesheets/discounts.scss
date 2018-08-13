@@ -26,7 +26,7 @@
 }
 .best_deal {
   width: 100%;
-  margin-bottom: 15em;
+  margin-bottom: 27em;
 }
 .best_deal ul {
   margin-bottom: 0em;
@@ -62,16 +62,12 @@
 .ebay_search_finder {
   width: 100%;
   margin: 0 auto;
-  border: 2px solid #08f;
-  border-radius: 0.5em;
   padding: 0.5em 1em 0 1em;
   margin-bottom: 0.5em;
 }
 .ebay_search_result {
   width: 100%;
   margin: 0 auto;
-  border: 3px dotted #08f;
-  border-radius: 0.5em;
   padding: 0 1em;
   margin-bottom: 3em;
 }
@@ -165,22 +161,25 @@
   width: 80px;
   background: #08f;
 }
-.dis_container h3 {
+.dis_container h3, .dis_container h4  {
   color: #111;
   margin-top: 0;
-  line-height: 2;
+ /* line-height: 2; */
   margin-bottom: .5rem;
 }
-.dis_container h3:after {
+.dis_container h3:after, .dis_container h4:after  {
   position: absolute;
   display: block;
   content: '';
   height: 2px;
   width: 40px;
   background: #08f;
+  margin-top: 0em;
 }
 .dis_container p {
   margin: .5rem 0;
+}
+.dis_container h4, .dis_container p {
   overflow: hidden; 
   text-overflow: ellipsis; 
   display: -webkit-box;
@@ -191,6 +190,13 @@
   -webkit-box-orient: vertical;
   -ms-box-orient: vertical;
   word-wrap:break-word;
+}
+.dis_container ul li {
+  list-style: none;
+  display: inline-block;
+}
+.dis_container .admin_dis_add {
+  float: right;
 }
 .dis_grid {
   display: flex;
@@ -222,7 +228,7 @@
   overflow: hidden;
 }
 .dis_card--content {
-  padding: 0 1.5rem;
+  padding: 0 0.5rem;
 }
 .dis_card--content ul li {
   list-style: none;
@@ -417,7 +423,7 @@ body {
    margin-bottom: -2.5em;
  }
  .best_deal {
-   margin-bottom: 40em;
+   margin-bottom: 72em;
  }
  .best_deal .bd_img {
    width: 100%;

@@ -56,40 +56,6 @@
   margin-top: -2em;
 }
 
-/* ===== Skituy_menu ===== */
-.quick_stiky_menu {
-  z-index: 10;
-}
-.quick_stiky_menu a {
-  list-style: none;
-  text-align: center;
-  padding: 0.5em;
-  /*-webkit-box-shadow: 0px 0px 1px 0px #000000;*/
-  /*-moz-box-shadow: 0px 0px 1px 0px #000000;*/
-  /*box-shadow: 0px 0px 2px 0px #000000;*/
-  background-color: white;
-  color: rgba(1, 1, 1, 0.5);
-  text-decoration: none;
-}
-.quick_stiky_menu a {
-  color: black;
-  font-size: 1.4em;
-  font-weight: bold;
-  display: inline-block;
-  margin: 0 1em 0 1em;
-}
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 72%;
-}
-/* ===== Skituy_menu_End ===== */
-
-
-
-
-
-
 /* Style the tab */
 div.tab {
     overflow: hidden;
@@ -581,8 +547,8 @@ and (max-width : 1023px) {
     display: inline-block;
     float: right;
     postion: relative;
-    margin-top: 10em;
-    margin-right: 2em;
+    margin-top: 8em;
+    margin-right: 1.2em;
   }
 }
 @media (min-width: 878px) {
@@ -612,7 +578,7 @@ and (max-width : 1023px) {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  border: 2px solid #2D637F;
+  border: 2px solid #f56a6a;
   background-image: url("https://www.dropbox.com/s/2iqhzha8orisbmo/arrow-blue-up.png?dl=0&raw=1");
   background-position: 50% 50%;
   background-repeat: no-repeat;

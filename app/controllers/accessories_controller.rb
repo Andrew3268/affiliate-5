@@ -22,7 +22,7 @@ class AccessoriesController < ApplicationController
     @accessory = current_user.accessories.build(accessory_params)
 
      if @accessory.save
-       redirect_to @accessory
+       redirect_to '/discounts'
      else
       render 'new'
     end
@@ -33,7 +33,7 @@ class AccessoriesController < ApplicationController
 
   def update
     if @accessory.update(accessory_params)
-       redirect_to @accessory
+       redirect_to '/discounts'
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class AccessoriesController < ApplicationController
 
   def destroy
     @accessory.destroy
-    redirect_to root_path
+    redirect_to '/discounts'
   end
 
   private
