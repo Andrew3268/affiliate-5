@@ -16,10 +16,16 @@
          <div class="best_deal">
           <%= render 'discounts/bestDeal' %>
          </div>
+         
+         <div class="dis_container"><h3>The hottest Sales [Aug 15, 2018   -   Aug 15, 2018]</h3></div>
+         <%= render 'discounts/daily' %>
+
+         <div class="dis_container"><h3>Weekly Deals [Aug 9, 2018   -   Aug 15, 2018]</h3></div>
+         <%= render 'discounts/weekly' %>
       
          <div class="dis_container">
           <ul>
-            <li><h1>Hot Deals</h1></li>
+            <li><h1>Best Deals of Our Pick</h1></li>
             <% if can? :create, @discounts %>
             <li class="admin_dis_add"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
             <% end %>

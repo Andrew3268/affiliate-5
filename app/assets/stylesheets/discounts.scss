@@ -26,7 +26,7 @@
 }
 .best_deal {
   width: 100%;
-  margin-bottom: 27em;
+  margin-bottom: 20em;
 }
 .best_deal ul {
   margin-bottom: 0em;
@@ -39,12 +39,13 @@
   float: right;
   font-size: 1.2em;
   margin-right: 0.9em;
+  color: #08f;
 }
 .best_deal .bd_img {
   float: left;
-  width: 33%;
+  width: 50%;
   padding: 0.5%;
-  height: 150px;
+  height: 200px;
 }
 .best_deal img {
   width: 100%;
@@ -148,6 +149,9 @@
 
 /* =========== eBay deals Section ============= */
 
+.dis_container {
+  margin-top: 3em;
+}
 .dis_container h1 {
   position: relative;
   line-height: 2;
@@ -292,13 +296,77 @@
   }
 }
 
+/****** Product Slider *******/
+.dis_slider-wrapper {
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+  /* If we don't want horizontal scroll bars 
+  &::-webkit-scrollbar {
+      display: none;
+    }
+  --------- */
+}
 
+.dis_slider {
+  background-color: white;
+  border: 1px white;
+  min-width: 100%;
+  min-height: 200px;
+  display: flex;
+  overflow-x: auto;
+}
+.dis_slider--content {
+  min-width: 200px;
+  margin: 5px;
+  color: black;
+  -webkit-box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
+  -moz-box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
+  box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
+}
+.dis_slider--content img {
+  width: 100%;
+  height: 160px;
+  padding: 1em;
+}
+.dis_slider--content p {
+  margin: 0 0 0.5em 0;
+  padding: 0 1em;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+.dis_slider--content a {
+  color: black;
+}
+.dis_slider--content ul {
+  margin: 0em;
+  color: #08f;
+}
+.dis_slider--content ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 0 0 1em;
+}
+.dis_slider--content ul li:nth-child(2) {
+  text-decoration: line-through;
+}
+.dis_slider--content ul li:nth-child(3) {
+  margin: 0em;
+}
 
 /* =========== Shipping Conditions Navigation ============= */
-
-body {
-  font-family: Arial, sans-serif;
-}
 
 .eb_nav {
   width: 100%;
@@ -554,6 +622,12 @@ and (max-width : 1024px) {
     display: block;
   }
 }
+
+
+
+
+
+
 
 
 
