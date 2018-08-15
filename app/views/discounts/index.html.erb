@@ -5,7 +5,9 @@
       <div class="togoup"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button></div>
         
       <div class="blogs_wrapper">  
+
        <div class="blog_left_main_post">
+
          <div class="fs_table">
           <a href="/dis_category/electronics"><img src="<%=asset_path 'fs_table.png'%>" alt="free shipping on ebay" title="free shipping on ebay"></a>
          </div>
@@ -24,6 +26,7 @@
          <%= render 'discounts/weekly' %>
       
          <div class="dis_container">
+
           <ul>
             <li><h1>Best Deals of Our Pick</h1></li>
             <% if can? :create, @discounts %>
@@ -60,6 +63,9 @@
           </div>
 
          </div><!--/.blog_left_main_post-->
+         <div>
+          <a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a>
+         </div> 
 
          <div class="blog_right_side"> 
           <%= render 'discounts/sidebar' %>
@@ -70,6 +76,4 @@
   </div><!--/#main-->
 </div><!--/#wrapper-->
 
-<div>
- <a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a>
-</div>    
+   
