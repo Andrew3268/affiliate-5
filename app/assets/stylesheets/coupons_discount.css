@@ -100,7 +100,7 @@
   color: black;
 }
 .card__content ul li:nth-child(2) {
-  text-decoration: line-through;
+  /*text-decoration: line-through;*/
   color: red;
 }
 .am_card_price ul {
@@ -110,7 +110,6 @@
 .am_card_price ul li {
   font-size: 1.5em;
 }
-
 .card__image {
   border-top-left-radius: 0.1em;
   border-top-right-radius: 0.1em;
