@@ -423,29 +423,29 @@
   </script>
 
   <!-- Show more Discount Code on QuickSearch Page -->
-  <script>
+<!--   <script>
     $(document).ready(function () {
       console.clear();
       var target = '.discount_list li',
             size = $(target).length,
-               x = 8,  // Show on Start
-           addTo = 4,  // Number to increase by
+               x = 8, 
+           addTo = 4, 
       loadButton = $('.load-more');
       $(target).hide();
       $(target + ':lt(' + x + ')').show();
       loadButton.on("click", function () {
-        // if currently showing plus addTo is less than total, increment var x, otherwise set it to the total
+       
         x = (x + addTo <= size) ? x + addTo : size;
-        // Show the suckers
+       
         $(target + ':lt('+x+')').show();
-        // if showing is equal to total, hide button
+       
         if (x == size){
             $(this).hide();
         }
         return false;
       });
     });
-  </script>
+  </script> -->
 
  <!-- Image Gallery on Detail Page -->
   <script>

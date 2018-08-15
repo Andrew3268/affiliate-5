@@ -97,9 +97,18 @@
 }
 .card__content ul li:nth-child(1) {
   font-size: 1.5em;
+  color: black;
 }
 .card__content ul li:nth-child(2) {
   text-decoration: line-through;
+  color: red;
+}
+.am_card_price ul {
+  margin-bottom: 0.5em;
+  border: 2px dotted;
+}
+.am_card_price ul li {
+  font-size: 1.5em;
 }
 
 .card__image {

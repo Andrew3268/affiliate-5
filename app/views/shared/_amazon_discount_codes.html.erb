@@ -38,13 +38,16 @@
         <div class="card__image_code"><a href="<%= code.discount_link_01 %>"><img src="<%= code.discount_image %>" alt="<%= code.discount_title %>" title="<%= code.discount_title %>"></a></div>          
         <div class="masonry_sale_discount">
           <div class="masonry_sale_wrapper">
-            <div class="masonry_sale_howmuch"><%= code.discount_sale %></div>
-            <div class="masonry_sale_text">SALE</div>
+            <div class="masonry_sale_text">Discount Code</div>
+            <div class="masonry_sale_howmuch"><%= code.discount_code %></div>
           </div>
         </div>
-        <div class="card__content">
+        <div class="card__content am_card_price">
           <div class="card__title"><%= code.discount_title %></div>
-          <p class="discount_codes"><%= code.discount_code %></p>
+          <ul>
+            <li>$100.00</li> |
+            <li><%= code.discount_sale %> OFF</li>
+          </ul>          
           <p class="code_date">End Date: <%= code.discount_date %></p>
           <div class="discount_botton">
            <% if code.discount_link_01.present? %>
@@ -55,8 +58,10 @@
            <% end %>
           </div>
           <% if can? :update, code %>
-           <%= link_to "Edit", edit_code_path(code) %>
-           <%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %>
+           <ul>
+             <li><%= link_to "Edit", edit_code_path(code) %></li>
+             <li><%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %></li>
+           </ul>   
           <% end %>
         </div>
       </div>
@@ -83,19 +88,22 @@
         </div>
       </div>
     </li> -->
-
+<!-- 
     <li class="cards__item" rel="home">
       <div class="card">
         <div class="card__image_code"><a href="https://amzn.to/2IA0dJf"><img src="https://images-na.ssl-images-amazon.com/images/I/91zKLNPtWkL._SL1500_.jpg" alt="Cal King"></a></div>
         <div class="masonry_sale_discount">
           <div class="masonry_sale_wrapper">
-            <div class="masonry_sale_howmuch">10%</div>
-            <div class="masonry_sale_text">SALE</div>
+            <div class="masonry_sale_text">Discount</div>
+            <div class="masonry_sale_howmuch">10TACHE10</div>
           </div>
         </div>
-        <div class="card__content">
+        <div class="card__content am_card_price">
           <div class="card__title">Cal King 3 Piece Fall Damask Turquoise Reversible Bedspread Quilt Set</div>
-          <p class="discount_codes">10TACHE10</p>
+          <ul>
+            <li>$100.00</li> |
+            <li>50% OFF</li>
+          </ul>
           <p class="code_date">End Date: Aug 31 , 2018</p>
           <div class="discount_botton">
             <a href="https://amzn.to/2IA0dJf"><p class="use_code">Use This Code</p></a>
@@ -207,7 +215,7 @@
           </div>
         </div>
       </div>
-    </li>
+    </li> -->
 
   </ul>
 
