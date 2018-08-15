@@ -26,7 +26,7 @@
 }
 .best_deal {
   width: 100%;
-  margin-bottom: 20em;
+  margin-bottom: 5em;
 }
 .best_deal ul {
   margin-bottom: 0em;
@@ -180,6 +180,9 @@
   background: #08f;
   margin-top: 0em;
 }
+.daily_h3 {
+  margin-top: -13em;
+}
 .dis_container p {
   margin: .5rem 0;
 }
@@ -296,7 +299,7 @@
   }
 }
 
-/****** Product Slider *******/
+/* =========== Slider Section (without js) ============= */
 .dis_slider-wrapper {
   margin: 0;
   display: flex;
@@ -310,7 +313,6 @@
     }
   --------- */
 }
-
 .dis_slider {
   background-color: white;
   border: 1px white;
@@ -331,6 +333,19 @@
   width: 100%;
   height: 160px;
   padding: 1em;
+}
+.dis_slider--bestdeal {
+  min-width: 300px;
+  min-height: 250px;
+  margin: 5px;
+  color: black;
+  -webkit-box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
+  -moz-box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
+  box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
+}
+.dis_slider--bestdeal img {
+  width: 100%;
+  height: 100%;
 }
 .dis_slider--content p {
   margin: 0 0 0.5em 0;
@@ -491,7 +506,7 @@
    margin-bottom: -2.5em;
  }
  .best_deal {
-   margin-bottom: 72em;
+   margin-bottom: 5em;
  }
  .best_deal .bd_img {
    width: 100%;
@@ -620,5 +635,83 @@ and (max-width : 1024px) {
   .dis_cell {
     padding: 2px 16px;
     display: block;
+  }
+}
+
+/* ===================== More Result Modal ===================== */
+.dis_modal_wrap {
+  margin: -2em 1em 0 0;
+  float: right;
+}
+.cta{
+  background-color: white; 
+  border:1px solid lightgrey; 
+  border-radius:6px; 
+  color: tomato;
+  display:inline-block;
+  font-size: 1em;
+  font-weight: 700;
+  padding:.3em 1em; 
+  text-decoration:none; 
+  &:hover{
+    background-color:lightgrey;
+    color:slategrey;
+    text-decoration:none; 
+  } 
+}
+
+// Modal
+.modaloverlay{
+  background:rgba(0,0,0,0.8);
+  bottom:0;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  position:fixed;
+  right:0;
+  top:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  z-index:-1;
+  display: none;
+  &:target{
+    display: block;
+    opacity:1;
+    pointer-events:auto;
+    z-index:99999;
+  }
+  .modal{
+    background-color:white;
+    height: 100%;
+    position:relative;
+    margin:0 auto;
+    padding:3em;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    @media (min-width: 60em) {
+      height:75%;
+     margin:5% auto;
+     max-height: 57em;
+      max-width:66em;
+      width:85%;
+    }
+  > iframe, > div{
+    border:none;
+    width:100%;
+    height:100%;
+    }
+  }
+  .close{
+    background-color:turquoise;
+    color:white;
+    font-size:24px;
+    padding:8px 12px;
+    position:absolute;
+    right:0;
+    text-align:center;
+    text-decoration:none;
+    top:0;
+    z-index: 1;
   }
 }

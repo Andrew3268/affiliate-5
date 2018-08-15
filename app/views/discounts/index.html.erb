@@ -6,7 +6,6 @@
       <div><a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a></div> 
         
       <div class="blogs_wrapper">  
-
        <div class="blog_left_main_post">
 
          <div class="fs_table">
@@ -14,12 +13,25 @@
          </div>
 
          <div class="dis_container"><h1>Free Shipping Door-To-Door</h1></div>
-          <%= render 'discounts/freeShipping' %>
+         <%= render 'discounts/freeShipping' %>
+
+          <div class="dis_modal_wrap">
+           <p><a class="cta" href="#google">See More Result</a></p>
+           <div id="google" class="modaloverlay">
+            <div class="modal">
+             <a href="#close" class="close">&times;</a>
+             <div>
+              <h1>Here is some content inside the Modal.</h1>
+              <p>If the modal shrinks below the breakpoint then the modal goes full screen for mobile use.</p>
+             </div>
+            </div>
+           </div>
+          </div>
 
          <div class="best_deal">
           <%= render 'discounts/bestDeal' %>
          </div>
-         
+
          <div class="dis_container"><h3>The hottest Sales [Aug 15, 2018   -   Aug 15, 2018]</h3></div>
          <%= render 'discounts/daily' %>
 
@@ -62,8 +74,7 @@
            </div><!--/.dis_grid-->
           </div><!--/.dis_container-->
          </div><!--/.blog_left_main_post-->
-          
-         <%= render 'discounts/sidebar' %>  
+         <%= render 'discounts/sidebar' %>
       </div><!--/.blog_wrapper-->
     
     </div><!--/.inner-->
