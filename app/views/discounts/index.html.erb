@@ -3,6 +3,7 @@
     <div class="eb_discount inner">
       <%= render 'shared/header' %>      
       <div class="togoup"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button></div>
+      <div><a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a></div> 
         
       <div class="blogs_wrapper">  
 
@@ -55,17 +56,12 @@
                  <li> <%= link_to "Delete", accessory_path(acc), method: :delete, data: { confirm: "Are you sure?" } %></li>
                 </ul>
                 <% end %>
-              </div>        
-            </div>
+              </div><!--/.dis_card--content-->        
+            </div><!--/.dis_card-->
             <% end %>
-           </div>
-          </div>
-          </div>
-
+           </div><!--/.dis_grid-->
+          </div><!--/.dis_container-->
          </div><!--/.blog_left_main_post-->
-         <div>
-          <a class="scroll-up-btn -js-scroll-top" style="display: inline;">Scroll</a>
-         </div> 
 
          <%= render '/shared/sidebar_discount' %>
       </div><!--/.blog_wrapper-->
