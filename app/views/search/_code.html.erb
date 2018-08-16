@@ -1,0 +1,8 @@
+<section id="-js-id-promocode">     
+  <h1 class="codes_main_title" id="discountCode">Discount Codes August, 2018</h1>
+  <% if can? :create, @codes %>
+   <li><%= link_to "Add New Discount Code", new_code_path %></li>
+  <% end %>  
+  <%= render 'shared/amazon_discount_codes' %>
+  <!--   <a class="load-more" href="#0"><p class="discount_more">Show More<p></a> -->
+</section>

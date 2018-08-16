@@ -1,32 +1,27 @@
 .togoup {
   display: none;
 }
-
 .quicksearch_title {
-  font-size: 3.5em;
+  font-size: 3em;
   margin-bottom: 0.5em;
   text-align: center;
   font-family: 'Archivo', sans-serif;
 }
-
 .promo_main_title {
   text-align: center;
   margin-bottom: 1em;
   font-family: 'Archivo', sans-serif;
 }
-
 #main .inner_quicksearch .quicksearch_warpper {
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
 }
-
 #main .inner_quicksearch .quicksearch_warpper .search_footer {
   margin: 0 auto; 
   border: 1px solid black;
   border-radius: 0.5em;
   padding: 1em;
 }
-
 .left_banner_quicksearch, 
 .left_small_banner, 
 .left_left,
@@ -54,6 +49,10 @@
 .left_small_banner, 
 .right_small_banner {
   margin-top: -2em;
+}
+.showall_code {
+  margin: 1em 0 -1em 39em;
+  font-size: 1.2em;
 }
 
 /* Style the tab */
@@ -218,19 +217,34 @@ div.tab .discount .active {
   .right_small_banner {
     width: 100%;
   }
+  .showall_code {
+    margin: 1em 0 -1em 15em;
+  }
 }
 
 @media only screen
 and (min-width : 501px)  
 and (max-width : 750px) {
-
+  .showall_code {
+    margin: 1em 0 -1em 18em;
+  }
 }
 
 @media only screen
 and (min-width : 751px)  
 and (max-width : 1023px) {
-
+  .showall_code {
+    margin: 0.5em 0 -1.5em 17em;
+  }
 }  
+
+@media screen 
+and (min-width: 1024px)
+and (max-width : 1200px) {
+  .showall_code {
+    margin: 1em 0 -1em 28em;
+  }
+}
 
 /*** New(quick) Tab ***/
 .tabs {
@@ -306,7 +320,7 @@ and (max-width : 1023px) {
 .tab-content {
   position: absolute;
   top: -9999px;
-  padding: 10px; 
+  /*padding: 10px; */
 }
 
 .tab-content-wrapper{
@@ -608,6 +622,21 @@ and (max-width : 1023px) {
   }
 }
 
+/* =================== Side of Search =================== */
+.promotion_side {
+  width: 100%;
+}
+.promotion_side h3 {
+  margin-bottom: 0em;
+}
+.promo_card {
+  float: left;
+  width: 50%;
+  padding: 0.3em;
+}
+.promo_card img {
+  width: 100%;
+} 
 
 
 

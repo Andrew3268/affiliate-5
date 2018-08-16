@@ -1,0 +1,44 @@
+<h1 class="codes_main_title" id="quickSearch">Real Time HotDeal Table</h1>
+<p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your <a href="http://amzn.to/2G5rCxK">Amazon.com<a/>, <a href="http://amzn.to/2pwYBEN">Amazon.ca</a>, <a href="http://amzn.to/2GgHdxF">Amazon.co.uk</a> search results.</p>
+<section id="section-hottable">
+  <!-- Search on Amazon -->
+  <div> 
+    <script type="text/javascript">
+      amzn_assoc_placement = "adunit0";
+      amzn_assoc_search_bar = "true";
+      amzn_assoc_tracking_id = "3628-20";
+      amzn_assoc_search_bar_position = "top";
+      amzn_assoc_ad_mode = "search";
+      amzn_assoc_ad_type = "smart";
+      amzn_assoc_marketplace = "amazon";
+      amzn_assoc_region = "US";
+      amzn_assoc_title = "";
+      amzn_assoc_default_search_phrase = "";
+      amzn_assoc_default_category = "All";
+      amzn_assoc_linkid = "2a7ed4aa888f9ca495b934b8407e9e4d";
+      amzn_assoc_rows = "2";
+    </script>
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+  </div>
+ 
+  <div class="tabs">
+    <input type="radio" name="tab" id="tab1" checked="checked">
+    <label for="tab1">_Amazon.com</label>
+    <input type="radio" name="tab" id="tab2">
+    <label for="tab2">_Amazon.ca</label>
+    <input type="radio" name="tab" id="tab3">
+    <label for="tab3">_Amazon.co.uk</label>
+
+    <div class="tab-content-wrapper">
+      <div id="tab-content-1" class="tab-content">
+       <%= render 'shared/quicksearch_us' %>
+      </div>
+      <div id="tab-content-2" class="tab-content">
+        <%= render 'shared/quicksearch_ca' %>
+      </div>
+      <div id="tab-content-3" class="tab-content">
+        <%= render 'shared/quicksearch_uk' %>
+      </div>
+    </div>
+  </div>
+</section>
