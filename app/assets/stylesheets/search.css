@@ -54,6 +54,9 @@
   margin: 1em 0 -1em 39em;
   font-size: 1.2em;
 }
+#discount_page {
+  margin-top: -10em;
+}
 
 /* Style the tab */
 div.tab {
@@ -421,7 +424,7 @@ and (max-width : 1200px) {
 
 
 
-/* scroll menu on quicksearch page */
+/*/* scroll menu on quicksearch page */
 #desktopmenu {
   text-align: center;
   padding: 0 1em;
