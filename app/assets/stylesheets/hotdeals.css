@@ -605,7 +605,7 @@ ul.shop_price_wrapper li {
 
 .product_show img {
   max-width: 100%;
-  height: auto;
+  /*height: auto;*/
 }
 
 .icon-images {

@@ -16,6 +16,7 @@ class CurationsController < ApplicationController
   end
 
   def show
+    @curations = Curation.all.order("created_at DESC").limit(16)
     @random_curation = Curation.where.not(id: @curation).order("RANDOM()").first
   end
 

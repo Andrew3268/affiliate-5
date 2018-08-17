@@ -349,7 +349,7 @@
 }
 .dis_slider--content p {
   margin: 0 0 0.5em 0;
-  padding: 0 1em;
+  padding: 0 0.5em;
   height: 3em;
   overflow: hidden;
   text-overflow: ellipsis; 
@@ -372,13 +372,16 @@
 .dis_slider--content ul li {
   list-style: none;
   display: inline-block;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0.5em;
 }
-.dis_slider--content ul li:nth-child(2) {
+.dis_slider--content ul li:nth-child(1) {
   text-decoration: line-through;
 }
-.dis_slider--content ul li:nth-child(3) {
+.dis_slider--content ul li:nth-child(2) {
   margin: 0em;
+}
+.dis_daily {
+  margin-bottom: -2em;
 }
 
 /* =========== Shipping Conditions Navigation ============= */

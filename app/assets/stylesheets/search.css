@@ -54,6 +54,9 @@
   margin: 1em 0 -1em 39em;
   font-size: 1.2em;
 }
+.showall_code a {
+  color: #08f;
+}
 #discount_page {
   margin-top: -10em;
 }

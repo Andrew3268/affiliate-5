@@ -1,0 +1,40 @@
+<div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+  <div class="large-18" data-equalizer-watch>
+    <div class="grids">
+
+      <% @curations.each do |curation| %>
+        <div class="grid-item <%= curation.cr_option_01 %> <%= curation.cr_option_02 %>">
+         <h3 class="curation_title"><%= link_to curation.cr_title, curation %></h3>
+         <div class="main_img">
+          <a href="<%= curation.cr_url %>"><img src="<%= curation.cr_img %>"></a> 
+         </div>
+          <p class="shop_product_title"><a href="<%= curation.cr_url %>"><%= curation.cr_intro %></a></p>
+        
+
+          <ul class="shop_price_wrapper">
+            <li><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
+            <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li>
+            <% if can? :manage, curation %>
+             <li><p><%= "#{curation.unique_impression_count} views" %></p></li>
+            <% end %>
+          </ul>
+
+          <ul class="curation_video_index">
+            <% if curation.cr_youtube01.present? %>
+             <li class="posted">
+               <div class="js-overlay-start start" data-url="<%= curation.cr_youtube01 %>">
+                <button><i class="fa fa-play"></i>&nbsp;Watch Video</button>
+               </div>
+             </li>
+            <% else %>
+             <button><i class="fa fa-times"></i>&nbsp;No Video</button>
+            <% end %>
+          </ul>
+          <a target="_blank" href="<%= curation.cr_url %>"><p class="shop_check">Check it Out</p></a>
+        </div>
+      <% end %>
+      <!--end grid-item-->
+                      
+    </div><!-- end grid-->
+  </div><!--end col-->
+ </div><!--end row-->
