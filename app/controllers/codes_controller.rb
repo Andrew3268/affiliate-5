@@ -42,7 +42,8 @@ class CodesController < ApplicationController
   def destroy
     @code.destroy
      redirect_to '/search/discountCode'
-
+  end
+  
   private
 
   def find_code
@@ -56,5 +57,3 @@ class CodesController < ApplicationController
                                  :discount_spare_01, :discount_spare_02, :discount_spare_03, :discount_spare_04, :discount_spare_05,)
   end
 end
-
-
