@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  # root 'ecommerces#gadgets'
+  root 'ecommerces#gadgets'
   # root 'ecommerces#index'
 
   resources :curations
-  root 'curations#index'
+  # root 'curations#index'
   
   resources :shoes
   # root 'shoes#index'
