@@ -171,7 +171,7 @@
  /* line-height: 2; */
   margin-bottom: .5rem;
 }
-.dis_container h3:after, .dis_container h4:after  {
+.dis_container h4:after  {
   position: absolute;
   display: block;
   content: '';
@@ -186,7 +186,9 @@
 .dis_container p {
   margin: .5rem 0;
 }
-.dis_container h4, .dis_container p {
+.dis_container h4, 
+.dis_container p,
+.dis_card--content h3 {
   overflow: hidden; 
   text-overflow: ellipsis; 
   display: -webkit-box;
