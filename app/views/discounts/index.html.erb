@@ -65,7 +65,7 @@
                 </ul>
                 <ul class="dis_btn">
                  <li><%= acc.acc_sale %>%Off</li>
-                 <li><a target="_blank" href="eb_link">Check it out</a></li>
+                 <li><a target="_blank" href="<%= acc.acc_link %>">Check it out</a></li>
                 </ul>
                 <% if can? :create, acc %>
                 <ul>
