@@ -1,4 +1,4 @@
-// Place all the styles related to the Discounts controller here.
+dis_card// Place all the styles related to the Discounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -152,6 +152,9 @@
 .dis_container {
   margin-top: 3em;
 }
+.ourpick_warp {
+  margin-top: 0em;
+}
 .dis_container h1 {
   position: relative;
   line-height: 2;
@@ -205,7 +208,7 @@
   display: inline-block;
 }
 .dis_container .admin_dis_add {
-  float: right;
+  margin-left: 5em;
 }
 .dis_grid {
   display: flex;
@@ -221,13 +224,33 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: box-shadow 300ms;
 }
+.ourpick {
+  width: calc(25% - 1.6rem);
+  margin: 0.8rem;
+  background: #fff;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 300ms;
+}
+.dis_card_ourpick {
+  width: calc(25% - 1.6rem);
+  margin: 0.8rem;
+  background: #fff;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 300ms;
+}
 @media screen and (max-width: 800px) {
-  .dis_card {
+  .dis_card,
+  .dis_card_ourpick {
     display: flex;
     width: calc(100% - 1.6rem);
   }
 }
-.dis_card:hover {
+.dis_card:hover,
+.dis_card_ourpick:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 .dis_card--image {
@@ -252,6 +275,12 @@
 }
 .dis_price li:nth-child(2) {
   text-decoration: line-through;
+}
+.feedback {
+  text-align: center;
+}
+.feedback p {
+  margin: 0em;
 }
 .dis_btn li {
   padding: 0 0.7em;

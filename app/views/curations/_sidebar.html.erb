@@ -1,0 +1,52 @@
+<div id="sidebar">
+  <div class="inner">
+
+    <!-- Menu -->
+      <nav id="menu">
+       <div class="side_logo">
+        <a href="/"><img src="<%=asset_path 'logo.jpg'%>" alt="ohigottabuythis.net" title="awesome gadgets and amazon shopping"></a>
+       </div></br></br> 
+        <ul class="icons shoes_icons">
+          <% if user_signed_in? %>
+            <li><span class="hello">Hello,</span><br /> <%= current_user.name %></li><br /><br />
+            <li class="logout"><%= link_to "Log out, Are you sure?", destroy_user_session_path, method: :delete %></li></br>
+          <% end %>
+          <% if can? :manage, @curation %>
+             <li><%= link_to "Add New Gadgets", new_curation_path(@curation) %></li>
+          <% end %>
+        </ul>
+
+        <div class="expanded row" data-equalizer data-equalize-on="medium" id="test-eq">
+          <div class="large-6 medium-24 small-24 columns filter-wrap" data-equalizer-watch>
+            <div id="filters" class="combo-filters">
+
+              <div class="ui-group">
+                <h3>CATEGORY</h3>
+                <div class="button-group filter option-set" data-filter-group="category">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".Men">Men</button>
+                  <button class="button" data-filter=".Women">Women</button>
+                  <!-- <button class="button" data-filter=".Fiction">Fiction</button>
+                  <button class="button" data-filter=".Kids">Kids</button>
+                  <button class="button" data-filter=".Travel">Travel</button> -->
+                </div>
+              </div><!--end option-combo-->
+              <div class="ui-group">
+                <h3>PRICE RANGE</h3>
+                <div class="button-group filter option-set" data-filter-group="price">
+                  <button class="button is-checked allfilter" data-filter="">Everything</button>
+                  <button class="button" data-filter=".lee_than_25" title="Less than $25">Less than $25</button>
+                  <button class="button" data-filter=".25_to_50" title="$25 to $50">$25 to $50 </button>
+                  <button class="button" data-filter=".50_to_100" title="$50 to $100">$50 to $100</button>
+                  <button class="button" data-filter=".100_to_150" title="$100 to $150">$100 to $150</button>
+                  <button class="button" data-filter=".above_150" title="Above $150">Above $150</button>
+                </div>
+              </div><!--end option-combo-->
+              
+
+            </div><!--end filters-->
+          </div><!--end col-->
+        </div><!--row-->
+
+  </div><!-- class="inner" -->
+</div><!-- id="sidebar" -->

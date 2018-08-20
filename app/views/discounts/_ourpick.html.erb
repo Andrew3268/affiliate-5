@@ -1,0 +1,35 @@
+<ul>
+ <li><h1>Best Deals of Our Pick</h1></li>
+ <% if can? :create, @discounts %>
+  <li class="admin_dis_add"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
+ <% end %>
+</ul>
+
+<div class="dis_grid">
+  <% @accessories.each do |acc| %>
+  <div class="dis_card">
+    <div class="dis_card--image">
+      <a target="_blank" href="<%= acc.acc_link %>"><img src="<%= acc.acc_main_img %>"/></a>
+    </div>
+    <div class="dis_card--content">
+      <h3><a target="_blank" href="<%= acc.acc_link %>"><%= acc.acc_title %></a></h3>
+      <p><%= acc.acc_description %></p>
+      <ul class="dis_price">
+       <li>$<%= acc.acc_offer_price %></li>
+       <li>$<%= acc.acc_before_price %></li>
+      </ul>
+      <a target="_blank" href="<%=acc.acc_spare_02 %>" class="feedback"><p><%= acc.acc_spare_01 %>% positive feedback</p></a>
+      <ul class="dis_btn">
+       <li><%= acc.acc_sale %>%Off</li>
+       <li><a target="_blank" href="<%= acc.acc_link %>">Check it out</a></li>
+      </ul>
+      <% if can? :create, acc %>
+      <ul>
+       <li><%= link_to "Edit", edit_accessory_path(acc) %></li>
+       <li> <%= link_to "Delete", accessory_path(acc), method: :delete, data: { confirm: "Are you sure?" } %></li>
+      </ul>
+      <% end %>
+    </div><!--/.dis_card--content-->        
+  </div><!--/.dis_card-->
+  <% end %>
+ </div><!--/.dis_grid-->
