@@ -73,6 +73,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  color: black;
 }
 
 .card {
@@ -457,7 +458,6 @@ box styles as a container item
 }
 
 
-
 /*------------------------------
  media query for larger screens
 --------------------------------*/
@@ -474,48 +474,3 @@ box styles as a container item
   }
 }
 
-
-.coupon_left {
-  width: 30%;
-  float: left;
-}
-
-.coupon_left img{
-  width: 100%;
-}
-
-.coupon_right {
-  width: 69%;
-  float: left;
-  margin-left: 1%;
-  list-style: none;
-}
-
-.coupon_right_box {
-  padding: 1em;
-  border: 2px solid;
-  margin-bottom: 1em;
-}
-.coupon_right_box p {
-  margin-bottom: 1em;
-}
-.coupon_right_box a {
-  color: black;
-  float: right;
-  margin-top: -2.5em;
-  border: 1px solid;
-  padding: 0.5em 3em;
-}
-
-.coupon_link {
-  float: right;
-  width: 30%;
-}
-.coupon_content {
-  width: 69%;
-  margin-right: 1%;
-}
-.load_coupon {
-  border: 1px solid;
-  padding: 0.5em 1em;
-}

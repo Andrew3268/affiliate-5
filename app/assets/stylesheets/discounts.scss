@@ -294,7 +294,8 @@
 @media screen and (max-width: 800px) {
   .dis_card--image img {
     height: 100%;
-    width: auto;
+    width: 100%;
+    object-fit: cover;
   }
   .dis_container h1 {
     font-size: 14px;

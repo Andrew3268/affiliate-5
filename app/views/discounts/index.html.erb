@@ -55,9 +55,11 @@
           <div class="dis_grid">
             <% @accessories.each do |acc| %>
             <div class="dis_card">
-              <div class="dis_card--image"><a target="_blank" href="eb_link"><img src="<%= acc.acc_main_img %>"/></a></div>
+              <div class="dis_card--image">
+                <a target="_blank" href="<%= acc.acc_link %>"><img src="<%= acc.acc_main_img %>"/></a>
+              </div>
               <div class="dis_card--content">
-                <h3><a target="_blank" href="eb_link"><%= acc.acc_title %></a></h3>
+                <h3><a target="_blank" href="<%= acc.acc_link %>"><%= acc.acc_title %></a></h3>
                 <p><%= acc.acc_description %></p>
                 <ul class="dis_price">
                  <li>$<%= acc.acc_offer_price %></li>
