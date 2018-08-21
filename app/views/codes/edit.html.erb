@@ -11,18 +11,19 @@
 
       <%= simple_form_for @code do |f| %>
        <h3>Select Department</h3>
-        <%= f.select :discount_spare_01, ([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones & Accessories", "clothing & Accessories", "electronics", "fashion", "furniture", "grocery", "computer", "health", "home", "kitchen", "miscellaneous", "office", "pets", "garden", "sports", "tools", "toy & games"])%>
+        <%= f.select :discount_spare_01, ([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones", "clothing", "computer", "electronics", "fashion", "furniture", "grocery", "health", "home", "kitchen", "miscellaneous", "office", "pets", "patio", "outdoors", "tools", "toy"])%>
         <%= f.input :discount_title %>
         <%= f.input :discount_code %>
-        <%= f.input :discount_spare_02, label: 'Price' %>
-        <%= f.input :discount_date %>
         <%= f.input :discount_sale %>
+        <%= f.input :discount_spare_02, label: 'After Price' %>
+        <%= f.input :discount_date %>
         <%= f.input :discount_image %>
         <%= f.input :discount_link_01 %>
         <%= f.input :discount_link_02 %>
         </br>
         <%= f.button :submit %>
       <% end %>
+
 
    </div>
   </div>
