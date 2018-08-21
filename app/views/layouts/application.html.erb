@@ -150,7 +150,7 @@
     }
     </script>
 
-    <!-- Discount Departments Filler  -->
+    <!-- Discount Code Filler on Search Section -->
     <script>
     $(function() {
       FilterItems();
@@ -169,6 +169,29 @@
       $('li[rel='+x+']').delay(200).fadeIn();
       if(x=="all"){
         $('.discount_items li').fadeIn();
+      }
+      return false;
+    }
+    </script>
+
+    <script>
+    $(function() {
+      FilterItems();
+    });
+
+    function FilterItems(){
+      CatType=$('#wepick_filter');
+      CatType.change(function(){
+        selectValue=$(this).val();
+        previewSelected(selectValue); 
+      });
+    }
+
+    function previewSelected(x){
+      $('.wepick_items .dis_card').fadeOut();
+      $('.dis_card[rel='+x+']').delay(0).fadeIn();
+      if(x=="all"){
+        $('.wepick_items .dis_card').fadeIn();
       }
       return false;
     }

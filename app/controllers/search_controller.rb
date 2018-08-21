@@ -9,7 +9,7 @@ class SearchController < ApplicationController
    @discount_codes = Code.all.order("created_at DESC")
   end
 
-  def ourpick 
+  def bestDeal 
     @accessories = Accessory.all.order("created_at DESC")
   end
 
