@@ -1,5 +1,6 @@
 <%= simple_form_for @accessory do |f| %> 
-<%= f.select :acc_spare_03, options_for_select([["Department", ""], "Automotive", "Baby", "Beauty", "Books", "Business", "Cellphones & Accessories", "Clothing & Accessories", "Electronics", "Fashion", "Furniture", "Grocery", "computer", "Health & Personal Care", "Home", "Kitchen & Housewares", "Miscellaneous", "Fffice", "Pets", "Patio, Lawn & Garden", "Sports & Outdoors", "Tools & Home Improvement", "Toy & Games"])%>
+<%= f.select :acc_spare_03, options_for_select([["Department", ""], "Automotive", "Baby", "Beauty", "Books", "Business", "Cell phones & Accessories", "Clothing & Accessories", "Electronics", "Fashion", "Furniture", "Grocery", "Computer & Tablets", "Health & Personal Care", "Home", "Kitchen & Housewares", "Miscellaneous", "Office", "Pets", "Patio, Lawn & Garden", "Sports & Outdoors", "Travel", "Tools & Home Improvement", "Toy & Games"])%><br>
+
 <div class="form_border">
   <h2>Details(Title/Link/Description)</h2>
    <%= f.input :acc_title %>

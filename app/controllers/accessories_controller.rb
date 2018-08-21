@@ -33,7 +33,7 @@ class AccessoriesController < ApplicationController
 
   def update
     if @accessory.update(accessory_params)
-       redirect_to '/discounts'
+       redirect_to '/search/bestDeal'
     else
       render 'edit'
     end

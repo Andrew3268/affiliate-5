@@ -8,7 +8,30 @@
        <li><h1>Edit Gadget on eBay Information</h1></li>
        <li><%= link_to "Back", discounts_path %></li>
       </ul><br>
-      <%= render 'form' %>
+
+      <%= simple_form_for @accessory do |f| %> 
+        <%= f.select :acc_spare_03, options_for_select([["Department", ""], "Automotive", "Baby", "Beauty", "Books", "Business", "Cell phones & Accessories", "Clothing & Accessories", "Electronics", "Fashion", "Furniture", "Grocery", "Computer & Tablets", "Health & Personal Care", "Home", "Kitchen & Housewares", "Miscellaneous", "Office", "Pets", "Patio, Lawn & Garden", "Sports & Outdoors", "Travel", "Tools & Home Improvement", "Toy & Games"])%><br>
+
+        <div class="form_border">
+          <h2>Details(Title/Link/Description)</h2>
+           <%= f.input :acc_title %>
+           <%= f.input :acc_link %>
+         </div><br>
+        <div class="form_border">
+         <h2>Price Information</h2>
+          <%= f.input :acc_offer_price %>
+          <%= f.input :acc_before_price %>
+          <%= f.input :acc_sale %>
+         </div><br>
+        <div class="form_border">
+          <h2>Images</h2>
+          <%= f.input :acc_main_img %>
+          <%= f.input :acc_spare_01, label: 'Percentage of Feedback'  %>
+          <%= f.input :acc_spare_02, label: 'Feedback Link' %>
+        </div><br>
+         <%= f.button :submit%>
+         <%= link_to "Back", discounts_path(@accessory) %>
+      <% end %>
 
    </div>
   </div>
