@@ -39,7 +39,7 @@ dis_card// Place all the styles related to the Discounts controller here.
   float: right;
   font-size: 1.2em;
   margin-right: 0.9em;
-  color: #08f;
+  color: #3ed8c4;
 }
 .best_deal .bd_img {
   float: left;
@@ -145,6 +145,19 @@ dis_card// Place all the styles related to the Discounts controller here.
    font-weight: 540;
    font-size: 11.7px;
    margin-bottom: 0.4em;
+}
+.howitwork {
+  color: black;
+  border: 1px solid;
+  padding: 1em;
+}
+.howitwork span {
+  font-siez: 1.5em;
+  font-weight: bold;
+}
+.free_result {
+  margin-top: 0.5em;
+  margin-bottom: -1em;
 }
 
 /* =========== eBay deals Section ============= */
@@ -403,7 +416,7 @@ dis_card// Place all the styles related to the Discounts controller here.
 }
 .dis_slider--content ul {
   margin: 0em;
-  color: #08f;
+  color: #3ed8c4;
 }
 .dis_slider--content ul li {
   list-style: none;

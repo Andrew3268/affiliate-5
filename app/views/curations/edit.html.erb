@@ -8,7 +8,37 @@
        <li><h1>Edit Gadgets</h1></li>
        <li><%= link_to "Back", '/curations' %></li>
       </ul></br>
-      <%= render 'form' %>
+      <%= simple_form_for @curation do |f| %>
+        <div class="form_border">
+         <h2>Select Options</h2>
+         <p class="form_p">Option_01(Category)</p>
+         <%= f.select :cr_option_01, ([["Category", ""], "Geeky", "Gadget", "Home", "Kitchen", "Toy", "Travel"])%><br>
+         <p class="form_p">Option_04(Price)</p>
+         <%= f.select :cr_option_02,([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
+         <div class="form_border">
+          <h2>Price Information</h2>
+           <%= f.input :cr_aprice %>
+           <%= f.input :cr_bprice %>
+           <%= f.input :cr_sales %>
+         </div><br>
+        </div><br>
+        <div class="form_border">
+         <h2>Details(Title/Link/Description/Seller)</h2>
+           <%= f.input :cr_title %>
+           <%= f.input :cr_url %>
+           <%= f.input :cr_intro %>
+           <%= f.input :cr_source %>
+           <%= f.input :cr_youtube01 %>
+           <%= f.input :cr_youtube02 %>
+        </div><br>
+        <div class="form_border">
+         <h2>Images</h2>
+         <%= f.input :cr_img %>
+        </div><br>
+         <%= f.button :submit %>
+         <%= link_to "Back", curations_path(@curation) %>
+      <% end %>
+
 
    </div>
   </div>

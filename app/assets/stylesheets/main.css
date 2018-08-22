@@ -17,7 +17,7 @@
 		margin: 0;
 		font-size: 2em;
 		font-weight: 700;
-		color: #f56a6a;
+		color: #2ebfac;
 		letter-spacing: 1px;
 	}
 	
@@ -2127,12 +2127,12 @@
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		/*border-bottom: dotted 1px;*/
-		color: #f56a6a;
+		color: #2ebfac;
 		text-decoration: none;
 	}
 
 /*		a:hover {
-			border-bottom-color: #f56a6a;
+			border-bottom-color: #2ebfac;
 			color: #f56a6a !important;
 		}
 */
@@ -2302,7 +2302,7 @@
 	}
 
 	header.major > :last-child {
-		border-bottom: solid 3px #f56a6a;
+		border-bottom: solid 3px #2ebfac;
 		display: inline-block;
 		margin: 0 0 2em 0;
 		padding: 0 0.75em 0.5em 0;
@@ -2369,8 +2369,8 @@
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #f56a6a;
-			box-shadow: 0 0 0 1px #f56a6a;
+			border-color: #2ebfac;
+			box-shadow: 0 0 0 1px #2ebfac;
 		}
 
 	.select-wrapper {
@@ -2488,8 +2488,8 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f56a6a;
-			box-shadow: 0 0 0 1px #f56a6a;
+			border-color: #2ebfac;
+			box-shadow: 0 0 0 1px #2ebfac;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2724,7 +2724,7 @@
 				}
 
 				ul.contact li:before {
-					color: #f56a6a;
+					color: #2ebfac;
 					display: inline-block;
 					font-size: 1.5em;
 					height: 1.125em;
@@ -2848,7 +2848,7 @@
 				}
 
 					ul.pagination li > .page.active {
-						background-color: #f56a6a;
+						background-color: #2ebfac;
 						color: #ffffff !important;
 					}
 
@@ -2980,7 +2980,7 @@
 		background-color: transparent;
 		border-radius: 0.375em;
 		border: 0;
-		box-shadow: inset 0 0 0 2px #f56a6a;
+		box-shadow: inset 0 0 0 2px #2ebfac;
 		color: #f56a6a !important;
 		cursor: pointer;
 		display: inline-block;
@@ -3054,7 +3054,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #f56a6a;
+			background-color: #2ebfac;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -3148,7 +3148,7 @@
 	.mini-posts .yousave {
 		font-size: 2em;
     margin-top: -0.8em;
-    color: #f56a6a;
+    color: #2ebfac;
 	}
 	
 	.mini-posts .price {
@@ -3239,8 +3239,8 @@
 		  text-align: center;
 		  font-weight: bold;
 		  font-size: 2em;
-		  color: #f56a6a;
-		  border: 1px solid #f56a6a;
+		  color: #2ebfac;
+		  border: 1px solid #2ebfac;
       border-radius: 0.5em;
 		}*/
 		
@@ -3288,7 +3288,7 @@
 			/*}*/
 
 			/*	.features article .icon:before {*/
-			/*		color: #f56a6a;*/
+			/*		color: #2ebfac;*/
 			/*		font-size: 2.75rem;*/
 			/*		position: relative;*/
 			/*		top: 0.05em;*/
@@ -3542,17 +3542,17 @@
 	.posts .price_after {
 		margin-top: -1.7em;
     font-size: 2em;
-    border: 1px solid #f56a6a;
+    border: 1px solid #2ebfac;
     border-radius: 0.5em;
     padding: 0 0.3em;
-    color: #f56a6a;
+    color: #2ebfac;
 	}
 	
 	.posts .yousave {
 		font-size: 1.4em;
     margin-top: -1.6em;
     margin-left: 0.6em;
-    color: #f56a6a;
+    color: #2ebfac;
 	}
 
   .posts .yousave_gadgets {
@@ -3560,7 +3560,7 @@
     margin-top: -1.2em;
     margin-left: 0.3em;
     margin-bottom: 0.5em;
-    color: #f56a6a;
+    color: #2ebfac;
   }
 	
 	.posts .price {
@@ -4096,7 +4096,7 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		border-bottom: solid 5px #f56a6a;
+		border-bottom: solid 5px #2ebfac;
 		padding: 6em 0 1em 0;
 		position: relative;
 	}
@@ -4117,7 +4117,7 @@
 		}
 
     #header a:hover {
-      color: #f56a6a;
+      color: #2ebfac;
     }
 
 		#header .icons {
@@ -4130,7 +4130,7 @@
 		}
 		
 		.check_page span {
-			color: #f56a6a;
+			color: #2ebfac;
 		}
 
 		@media screen and (max-width: 1680px) {
@@ -4264,7 +4264,7 @@
 	}		
 	
 	#banner .content .detail_intription {
-		color: #f56a6a;
+		color: #2ebfac;
 		margin-bottom: -0.1em;
 	}
 
@@ -4300,7 +4300,7 @@
   #banner .content .yousave {
     font-size: 1.7em;
     margin: 0.3em 0 0 0.2em;
-    color: #f56a6a;
+    color: #2ebfac;
   }
   
   #banner .content .price {
@@ -4315,10 +4315,10 @@
   
   /* blog_left span highlight */
   #banner .content .blog_left .title_highlight {
-  	color: #f56a6a;
+  	color: #2ebfac;
   }
   #banner .blog_image .title_highlight {
-  	color: #f56a6a;
+  	color: #2ebfac;
   }
 
 /********* MainPage (new)Index Section ********/
@@ -4392,11 +4392,11 @@
 
   /* For Message Section */
   #banner .content .message_header h2 {
-  	color: #f56a6a;
+  	color: #2ebfac;
   }
   
    #banner span h2 {
-   	color: #f56a6a;
+   	color: #2ebfac;
    }
    /* End Message Section */
   
@@ -4563,7 +4563,7 @@
 		}
 
 			#menu ul a:hover, #menu ul span:hover {
-				color: #f56a6a;
+				color: #2ebfac;
 			}
 
 			#menu ul a.opener, #menu ul span.opener {
@@ -4597,7 +4597,7 @@
 				}
 
 				#menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
-					color: #f56a6a;
+					color: #2ebfac;
 				}
 
 				#menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
@@ -4665,7 +4665,7 @@
 		background-color: transparent;
 		border-radius: 0.375em;
 		border: 0;
-		box-shadow: inset 0 0 0 2px #f56a6a;
+		box-shadow: inset 0 0 0 2px #2ebfac;
 		color: #f56a6a !important;
 		cursor: pointer;
 		display: inline-block;
@@ -4695,7 +4695,7 @@
 		background-color: transparent;
 		border-radius: 0.375em;
 		border: 0;
-		box-shadow: inset 0 0 0 2px #f56a6a;
+		box-shadow: inset 0 0 0 2px #2ebfac;
 		color: #f56a6a !important;
 		cursor: pointer;
 		display: inline-block;
@@ -4752,7 +4752,7 @@
 }
 
 .actions_detail a:hover {
-  background-color: #f56a6a;
+  background-color: #2ebfac;
   color: white;
 }
 
@@ -4788,7 +4788,7 @@
 .see_more_review a {
   border-radius: 5px;
   padding: 5px;
-  background-color: #f56a6a;
+  background-color: #2ebfac;
   color: white;
 }
 .detail_postive_review {
@@ -4804,10 +4804,10 @@
 }
 
 .related_text_01 {
-  border: 1px solid #f56a6a;
+  border: 1px solid #2ebfac;
   border-radius: 0.5em;
   padding: 0.5em;
-  background-color: #f56a6a;
+  background-color: #2ebfac;
   color: white;
 }
 .amazon_prime {
@@ -5050,7 +5050,7 @@ and (max-width : 1200px) {
 }
 
 .accordion .item span {
-  color: #f56a6a;
+  color: #2ebfac;
 }
 
 .accordion .item .try_prime {

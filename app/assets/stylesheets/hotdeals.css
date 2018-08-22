@@ -728,9 +728,6 @@ ul.shop_price_wrapper li {
   .grids > .grid-item > .main_img img {
     height: 7em;
   }
-  .shop_check {
-    margin-top: 1em;
-  }
   .grids > .show_gadgets > a > .show_gadgets_img > img {
     object-fit: fill;
   }
@@ -746,6 +743,9 @@ ul.shop_price_wrapper li {
     width: 46%;
     font-size: 26px;
     padding: -2px;
+  }
+  .shop_price_wrapper {
+    margin-bottom: -1em;
   }
 }
 

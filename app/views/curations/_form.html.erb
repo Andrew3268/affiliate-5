@@ -1,16 +1,16 @@
 <%= simple_form_for @curation do |f| %>
 <div class="form_border">
  <h2>Select Options</h2>
-   <p class="form_p">Option_01(Category)</p>
-   <%= f.select :cr_option_01, options_for_select([["Category", ""], "Men", "Women"])%><br>
-   <p class="form_p">Option_04(Price)</p>
-   <%= f.select :cr_option_02, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
-   <div class="form_border">
-    <h2>Price Information</h2>
-     <%= f.input :cr_aprice %>
-     <%= f.input :cr_bprice %>
-     <%= f.input :cr_sales %>
-   </div><br>
+ <p class="form_p">Option_01(Category)</p>
+ <%= f.select :cr_option_01, options_for_select([["Category", ""], "Geeky", "Gadget", "Home", "Kitchen", "Toy", "Travel"])%><br>
+ <p class="form_p">Option_04(Price)</p>
+ <%= f.select :cr_option_02, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
+ <div class="form_border">
+  <h2>Price Information</h2>
+   <%= f.input :cr_aprice %>
+   <%= f.input :cr_bprice %>
+   <%= f.input :cr_sales %>
+ </div><br>
 </div><br>
 <div class="form_border">
  <h2>Details(Title/Link/Description/Seller)</h2>
