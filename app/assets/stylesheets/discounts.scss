@@ -122,18 +122,19 @@ dis_card// Place all the styles related to the Discounts controller here.
 .ebay_search_finder .btn,
 .admin_discount {
   width: 100%;
-  border: 1px solid #65a8a6;
+  border: 1px solid #2ebfac;
   border-radius: 0.5em;
   padding: 0.3em;
-  background-color: #65a8a6;
-  color: #F8ECC2;
+  background-color: #2ebfac;
+  color: white;
+  /* color: #F8ECC2; */
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
   margin-top: -1em;
 }
 .admin_discount a {
-  color: #F8ECC2;
+  color: white;
 }
 .ebay_search_finder .btn:hover {
   background-color: #E65540;
