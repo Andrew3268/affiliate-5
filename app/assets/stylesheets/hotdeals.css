@@ -409,7 +409,7 @@ ul.shop_price_wrapper li {
 .ui-group button {
   background-color: white;
   padding: 0.5em;
-  border: 2px solid #5bc995;
+  /*border: 2px solid #2ebfac;*/
   border-radius: 0.5em;
   color: #252525;
   width: 100%;
@@ -421,8 +421,8 @@ ul.shop_price_wrapper li {
 
 .ui-group .is-checked {
   border-radius: 1em;
-  background-color: #5bc995;
-  border:3px solid #5bc995;
+  background-color: #2ebfac;
+  border:3px solid #2ebfac;
   color: white;
   width: 100%;
   text-align: left;

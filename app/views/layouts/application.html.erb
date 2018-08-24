@@ -551,6 +551,30 @@ function myFunction() {
 </script>
 
 
+<script>
+
+      // Menu-toggle button
+
+      $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("#sticky_nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('#sticky_nav').addClass('black');
+            }
+
+            else {
+                  $('#sticky_nav').removeClass('black');
+            }
+      })
+
+
+      </script>
 
  </body>
 </html>

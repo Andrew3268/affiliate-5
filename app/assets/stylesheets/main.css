@@ -17,7 +17,7 @@
 		margin: 0;
 		font-size: 2em;
 		font-weight: 700;
-		color: #2ebfac;
+		color: #2ebfac; /* main color */
 		letter-spacing: 1px;
 	}
 	
@@ -3711,6 +3711,9 @@
 		flex-shrink: 1;
 		width: 100%;
 	}
+  .head_main {
+    margin-top: 8em;
+  }
 
 		#main > .inner {
 			/*padding: 0 6em 0.1em 6em ;*/
