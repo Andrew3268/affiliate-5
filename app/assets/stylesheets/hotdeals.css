@@ -588,7 +588,7 @@ ul.shop_price_wrapper li {
     margin-bottom: 3em;
   }
   .show_home a {
-    margin-left: 3em;
+    margin-left: 1em;
   }
 }
 
@@ -616,7 +616,7 @@ ul.shop_price_wrapper li {
   color: #5bc995;
   font-weight: bold;
   font-size: 1.5em;
-  font-family: serif;
+  /*font-family: serif;*/
   padding: 20px 0;
   margin-bottom: 0em;
   /*text-align: center;*/
@@ -683,12 +683,13 @@ ul.shop_price_wrapper li {
   font-size: .7em;
 }
 
-.product--desc {
+/*.product--desc {
   font-family: sans;
-}
+}*/
 .product--desc p {
   margin: 20px 0px;
   word-break: break-all;
+  font-size: 1.1em;
 }
 
 .show_home {

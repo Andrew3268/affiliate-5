@@ -36,7 +36,9 @@
              </div>
           </li>
         <% end %>
-        <li class="posted"><a href="#">See Review</a></li>
+        <% if @curation.cr_spare_01.present? %>
+         <li class="posted"><a href="<%= @curation.cr_spare_01 %>">See Review</a></li>
+        <% end %>
       </ul>
 
       <ul class="shop_price_wrapper">

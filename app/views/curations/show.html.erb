@@ -6,11 +6,31 @@
       
       <%= render 'curations/details' %>
 
+      <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script>
+
       <h2>The Hottest Deals on eBay</h2>
       <%= render 'discounts/daily' %>
       <div class="cu_show_more">
        <a target="_blank" href="Link" >Show More <i class="fa fa-arrow-right"></i></a>
       </div>
+
+      <div class="related_prodcut">
+        <script type="text/javascript">
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_tracking_id = "3628-20";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_ad_type = "smart";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+          amzn_assoc_default_search_phrase = "<%= @curation.cr_title %>";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+          amzn_assoc_search_bar = "true";
+          amzn_assoc_search_bar_position = "top";
+          amzn_assoc_title = "Shop Related Products";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+      </div><br>
       
       <div class="curation_show_wrapper">
        <h2>The Hottest Deals on Amazon</h2>
