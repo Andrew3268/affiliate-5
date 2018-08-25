@@ -13,7 +13,8 @@
 
           <ul class="shop_price_wrapper">
             <li><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
-           <!--  <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li> -->
+            <li>#<%= curation.cr_source %></li>
+            <!-- <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li> -->
             <% if can? :manage, curation %>
              <li><p><%= "#{curation.unique_impression_count} views" %></p></li>
             <% end %>

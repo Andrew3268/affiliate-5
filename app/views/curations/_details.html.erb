@@ -21,6 +21,15 @@
       <h3>Quick Overview</h3>
       <div class="product--desc"><p><%= @curation.cr_intro %></p></div>
 
+
+      <ul class="shop_price_wrapper">
+        <li><p class="shop_original_price">$<%= @curation.cr_aprice %></p></li>
+        <li><p class="shop_sale_price">$<%= @curation.cr_bprice %></p></li> |
+        <li><p class="shop_sale_percentage"><%= @curation.cr_sales %>% off</p></li>
+      </ul>
+
+      <div class="test_border"></div>
+
       <ul class="curation_video">
         <% if @curation.cr_youtube01.present? %>
          <li class="posted">
@@ -41,14 +50,10 @@
         <% end %>
       </ul>
 
+      
       <ul class="shop_price_wrapper">
-        <li><p class="shop_original_price">$<%= @curation.cr_aprice %></p></li>
-        <li><p class="shop_sale_price">$<%= @curation.cr_bprice %></p></li> |
-        <li><p class="shop_sale_percentage"><%= @curation.cr_sales %>% off</p></li>
-      </ul>
-      <ul class="shop_price_wrapper">
-       <li><a target="_blank" class="shop_link" href="<%= @curation.cr_url %>"><p class="shop_check">Check it Out via <%= @curation.cr_source %></p></a></li>
-       <li class="show_home"><a href="/curations">See more <i class="fa fa-arrow-right"></i></a></li>
+       <li><a target="_blank" class="shop_link" href="<%= @curation.cr_url %>"><p class="show_check shop_check">Check it Out</p></a></li>
+       <!-- <li class="show_home"><a href="/curations">See more <i class="fa fa-arrow-right"></i></a></li> -->
       </ul>
 
     </div>

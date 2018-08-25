@@ -358,6 +358,9 @@ ul.shop_price_wrapper li {
   color: white;
   text-align: center;
 }
+.show_check {
+  padding: 0.5em 10.2em;
+}
 
 .expanded {
   width: 100%;
@@ -561,9 +564,13 @@ ul.shop_price_wrapper li {
   ul.shop_price_wrapper li {
     display: inline-block;
     padding: 0em;
+    margin-top: -1em;
   }
   .shop_original_price, .shop_sale_price {
     margin-bottom: 1em;
+  }
+  .shop_check {
+    padding: 0.5em 6.7em;
   }
 }
 
@@ -755,6 +762,10 @@ ul.shop_price_wrapper li {
   .ebdeals {
     margin-top: -25em;
   }
+  .shop_check {
+    padding: 0.5em 8.6em;
+    margin-top: 1em;
+  }
 }
 
 @media only screen
@@ -798,6 +809,9 @@ and (max-width : 1024px) {
   }
   .via_where {
     top: 8.1em;
+  }
+  .shop_price_wrapper {
+    margin-bottom: -1em;
   }
 }
 
