@@ -316,7 +316,7 @@ a.button_prodcuts:hover{
 }
 
 .shop_price_wrapper {
-  margin-bottom: -2em;
+  margin-bottom: -2.5em;
   /*text-align: center;*/
 }
 
@@ -613,12 +613,12 @@ ul.shop_price_wrapper li {
 }
 
 .product--title {
-  color: #5bc995;
+  color: #000;
   font-weight: bold;
   font-size: 1.5em;
   /*font-family: serif;*/
   padding: 20px 0;
-  margin-bottom: 0em;
+  margin-bottom: -0.7em;
   /*text-align: center;*/
   word-break: break-all;
 }
@@ -631,6 +631,9 @@ ul.shop_price_wrapper li {
   float: left;
   width: 40%;
   margin-top: 2em;
+}
+.product--image p {
+  color: black;
 }
 
 .product--details {
@@ -690,6 +693,7 @@ ul.shop_price_wrapper li {
   margin: 20px 0px;
   word-break: break-all;
   font-size: 1.1em;
+  color: #000;
 }
 
 .show_home {
@@ -747,6 +751,9 @@ ul.shop_price_wrapper li {
   }
   .shop_price_wrapper {
     margin-bottom: -1em;
+  }
+  .ebdeals {
+    margin-top: -17em;
   }
 }
 

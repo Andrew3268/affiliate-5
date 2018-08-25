@@ -37,13 +37,13 @@
           </li>
         <% end %>
         <% if @curation.cr_spare_01.present? %>
-         <li class="posted"><a href="<%= @curation.cr_spare_01 %>">See Review</a></li>
+         <li class="posted"><a target="_blank" href="<%= @curation.cr_spare_01 %>">See Review</a></li>
         <% end %>
       </ul>
 
       <ul class="shop_price_wrapper">
         <li><p class="shop_original_price">$<%= @curation.cr_aprice %></p></li>
-        <li><p class="shop_sale_price">$<%= @curation.cr_bprice %></p></li>
+        <li><p class="shop_sale_price">$<%= @curation.cr_bprice %></p></li> |
         <li><p class="shop_sale_percentage"><%= @curation.cr_sales %>% off</p></li>
       </ul>
       <ul class="shop_price_wrapper">
