@@ -412,7 +412,7 @@ ul.shop_price_wrapper li {
 .ui-group button {
   background-color: white;
   padding: 0.5em;
-  /*border: 2px solid #2ebfac;*/
+  border: 1px solid #fff;
   border-radius: 0.5em;
   color: #252525;
   width: 100%;
@@ -569,7 +569,7 @@ ul.shop_price_wrapper li {
   .shop_original_price, .shop_sale_price {
     margin-bottom: 1em;
   }
-  .shop_check {
+  .show_check {
     padding: 0.5em 6.7em;
   }
 }
@@ -762,9 +762,12 @@ ul.shop_price_wrapper li {
   .ebdeals {
     margin-top: -25em;
   }
-  .shop_check {
+  .show_check {
     padding: 0.5em 8.6em;
     margin-top: 1em;
+  }
+  .shop_original_price {
+    font-size: 1.2em;
   }
 }
 
@@ -799,7 +802,7 @@ and (max-width : 1024px) {
   .show_home a {
     margin-left: 0em;
   }
-  .shop_check {
+  .show_check {
     margin-top: 1em;
   }
   .grids > .grid-item > .shop_sale > .shop_sale_wrapper > .shop_sale_howmuch,
