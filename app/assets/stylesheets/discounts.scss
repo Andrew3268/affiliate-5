@@ -335,7 +335,8 @@ dis_card// Place all the styles related to the Discounts controller here.
 .dis_card--image img {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 17em;
+  object-fit: contain;
 }
 @media screen and (max-width: 800px) {
   .dis_card--image img {

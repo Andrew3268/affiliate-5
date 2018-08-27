@@ -73,6 +73,8 @@
         <li><p><%= @curation.cr_option_02 %></p></li>
       </ul>
       <div class="admin_button">
+        <%= link_to "Home", root_path %>
+        <%= link_to "Add", new_curation_path(@curation) %>
         <%= link_to "Edit", edit_curation_path(@curation) %>
         <%= link_to "Delete", curation_path(@curation), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>

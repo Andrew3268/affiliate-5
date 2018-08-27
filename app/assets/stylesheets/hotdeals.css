@@ -322,7 +322,7 @@ a.button_prodcuts:hover{
 
 ul.shop_price_wrapper li {
   display: inline-block;
-  padding: 0 0.3em 0 0;
+  /*padding: 0 0.3em 0 0;*/
 }
 
 .via_where {
@@ -566,7 +566,8 @@ ul.shop_price_wrapper li {
     padding: 0em;
     margin-top: -1em;
   }
-  .shop_original_price, .shop_sale_price {
+  .shop_original_price, 
+  .shop_sale_price {
     margin-bottom: 1em;
   }
   .show_check {

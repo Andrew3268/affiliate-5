@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* ================= Index Page ================= */
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -34,6 +36,12 @@
   width: 100%;
 }
 .curation_video_index button {
+  width: 100%;
+}
+.cr_price_li {
+  width: 49%;
+}
+.cr_price_li p{
   width: 100%;
 }
 
@@ -80,4 +88,7 @@
 .test_border {
   border-bottom: 1px solid;
   margin-bottom:0.5em;
+}
+.cr_views {
+  margin-top: -2em;
 }

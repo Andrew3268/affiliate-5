@@ -12,12 +12,9 @@
         
 
           <ul class="shop_price_wrapper">
-            <li><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
+            <li class="cr_price_li"><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
             <!-- <li>#<%= curation.cr_source %></li> -->
             <!-- <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li> -->
-            <% if can? :manage, curation %>
-             <li><p><%= "#{curation.unique_impression_count} views" %></p></li>
-            <% end %>
           </ul>
 
           <ul class="curation_video_index">
@@ -32,6 +29,9 @@
             <% end %>
           </ul>
           <a target="_blank" href="<%= curation.cr_url %>"><p class="shop_check">Check it Out</p></a>
+          <% if can? :manage, curation %>
+           <p class="cr_views"><%= "#{curation.unique_impression_count} views" %></p>
+          <% end %>
         </div>
       <% end %>
       <!--end grid-item-->
