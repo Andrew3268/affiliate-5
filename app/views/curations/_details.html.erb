@@ -24,8 +24,10 @@
 
       <ul class="shop_price_wrapper">
         <li><p class="shop_original_price">$<%= @curation.cr_aprice %></p></li>
-        <li><p class="shop_sale_price">$<%= @curation.cr_bprice %></p></li> |
-        <li><p class="shop_sale_percentage"><%= @curation.cr_sales %>% off</p></li>
+        <% if @curation.cr_bprice.present? %>
+         <li><p class="shop_sale_price">$<%= @curation.cr_bprice %></p></li> |
+         <li><p class="shop_sale_percentage"><%= @curation.cr_sales %>% off</p></li>
+        <% end %>
       </ul>
 
       <div class="test_border"></div>

@@ -14,7 +14,9 @@
           <ul class="shop_price_wrapper">
             <li class="cr_price_li"><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
             <!-- <li>#<%= curation.cr_source %></li> -->
-            <!-- <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li> -->
+            <% if curation.cr_bprice.present? %>
+             <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li>
+            <% end %>
           </ul>
 
           <ul class="curation_video_index">
@@ -35,7 +37,7 @@
         </div>
       <% end %>
       <!--end grid-item-->
-                      
+                     
     </div><!-- end grid-->
   </div><!--end col-->
  </div><!--end row-->
