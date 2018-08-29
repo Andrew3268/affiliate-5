@@ -6,7 +6,7 @@ class SearchController < ApplicationController
   end
 
   def discountCode
-   @discount_codes = Code.all.order("created_at DESC")
+   @discount_codes = Code.all.order("created_at DESC").page(params[:page]).per(24)
   end
 
   def bestDeal 
