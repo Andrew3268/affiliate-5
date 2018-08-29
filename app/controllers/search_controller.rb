@@ -10,7 +10,7 @@ class SearchController < ApplicationController
   end
 
   def bestDeal 
-    @accessories = Accessory.all.order("created_at DESC")
+    @accessories = Accessory.all.order("created_at DESC").page(params[:page]).per(24)
   end
 
 end
