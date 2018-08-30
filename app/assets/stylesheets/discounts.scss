@@ -387,7 +387,7 @@ dis_card// Place all the styles related to the Discounts controller here.
 }
 .dis_slider--bestdeal {
   min-width: 300px;
-  min-height: 250px;
+  max-height: 250px;
   margin: 5px;
   color: black;
   -webkit-box-shadow: 0px 5px 20px -1px rgba(203,224,250,1);
