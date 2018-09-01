@@ -550,31 +550,15 @@ function myFunction() {
 }
 </script>
 
-
+<!-- Responsive Nave on amazon & ebay page -->
 <script>
-
-      // Menu-toggle button
-
-      $(document).ready(function() {
-            $(".menu-icon").on("click", function() {
-                  $("#sticky_nav ul").toggleClass("showing");
-            });
-      });
-
-      // Scrolling Effect
-
-      $(window).on("scroll", function() {
-            if($(window).scrollTop()) {
-                  $('#sticky_nav').addClass('black');
-            }
-
-            else {
-                  $('#sticky_nav').removeClass('black');
-            }
-      })
-
-
-      </script>
+  var navBar = document.querySelector('.nav--page-header');
+  var navBtn = document.querySelector('.nav-btn');
+  navBtn.addEventListener('click', function () {
+    this.classList.toggle('open');
+    navBar.classList.toggle('nav--open');
+  });
+</script>
 
  </body>
 </html>

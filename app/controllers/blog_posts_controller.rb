@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
 
-  before_action :post_side, only: [:post_01, :post_02, :post_03, :post_04, :post_05]
+  before_action :post_side, only: [:post_01, :post_02, :post_03, :post_04, :post_05, :post_06]
 
   # 5 Awesome & Useful "BackPack"
   def post_01

@@ -1,10 +1,12 @@
+<%= render 'shared/header_deals' %>
+
 <div id="wrapper">
  <div id="main">
    <div class="inner_quicksearch">
-    <%= render 'shared/header' %>
+    <!-- render 'shared/header' -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     
-    
+    <br/><br/>
     <section id="discount_page">     
       <h1 class="codes_main_title" id="discountCode">Discount Codes August, 2018</h1>
       <% if can? :create, @codes %>

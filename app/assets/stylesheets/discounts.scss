@@ -24,6 +24,10 @@ dis_card// Place all the styles related to the Discounts controller here.
   font-size: 2em;
   margin-top: -2.5em;
 }
+.discounts_title {
+  font-size: 2.7em;
+  text-align: center;
+}
 .best_deal {
   width: 100%;
   margin-bottom: 5em;
@@ -232,6 +236,9 @@ dis_card// Place all the styles related to the Discounts controller here.
   flex-wrap: wrap;
   margin: -0.8rem;
 }
+
+
+
 .dis_card {
   width: calc(33.3% - 1.6rem);
   margin: 0.8rem;
@@ -568,6 +575,9 @@ dis_card// Place all the styles related to the Discounts controller here.
  .dis_btn li:nth-child(1), 
  .dis_btn li:nth-child(2) {
    padding: 0 0.5em;
+ }
+ .discounts_title {
+   font-size: 2em;
  }
 }
 

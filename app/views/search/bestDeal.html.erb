@@ -1,7 +1,9 @@
+<%= render 'shared/header_deals' %>
+
 <div id="wrapper">
  <div id="main">
    <div class="inner_quicksearch">
-    <%= render 'shared/header' %>
+    <!-- render 'shared/header' -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     
      <div class="ourpick_warp dis_container">
@@ -39,7 +41,7 @@
             </div><!--/.dis_card--content-->        
           </div><!--/.dis_card-->
           <% end %>
-         </div><!--/.dis_grid-->
+         </div><!--/.dis_grid--><br/>
          <%= paginate @accessories %>
       </div><!--/.dis_container-->
 
