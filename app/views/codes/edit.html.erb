@@ -10,8 +10,10 @@
       </ul></br>
 
       <%= simple_form_for @code do |f| %>
-       <h3>Select Department</h3>
-        <%= f.select :discount_spare_01, ([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones", "clothing", "computer", "electronics", "fashion", "furniture", "grocery", "health", "home", "kitchen", "miscellaneous", "office", "pets", "patio", "outdoors", "tools", "toy"])%>
+       <span class="form_label">Promotion is end?</span>
+       <%= f.select :discount_spare_03, ([["Ongoing", ""], "End"]) %><br/>
+       <span class="form_label">Select Department</span>
+        <%= f.select :discount_spare_01, ([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones", "clothing", "computer", "electronics", "fashion", "furniture", "grocery", "health", "home", "kitchen", "miscellaneous", "office", "pets", "patio", "outdoors", "tools", "toy"])%><br/>
         <%= f.input :discount_title %>
         <%= f.input :discount_code %>
         <%= f.input :discount_sale %>

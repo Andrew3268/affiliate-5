@@ -144,12 +144,24 @@
   vertical-align: middle;
   object-fit: contain;
 }
-
 .card__image img {
   width:100%;
   height:100%;
 }
-
+.code_end {
+  display: flex;
+  /*position: absolute;*/
+  position: inline-block;
+  padding: 6px 8px;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background: red;
+  color: white;
+}
+.code_end_hidden {
+  display: none;
+}
 .card__image::before {
   content: "";
   display: block;

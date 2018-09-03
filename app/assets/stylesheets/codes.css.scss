@@ -541,20 +541,15 @@ discount_show_details h1 {
   }
 }
 
-@media handheld,only screen and (max-width:1080px) {
-
-}
-
-@media handheld,only screen and (max-width:1080px) {
-
-}
-
 
 
 /* ========= for form  ======== */
 .form_border {
   border: 3px solid;
   padding: 2em;
+}
+.form_label {
+  color: black;
 }
 
 

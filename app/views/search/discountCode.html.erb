@@ -95,13 +95,25 @@
             <% @discount_codes.each do |code| %>
               <li class="cards__item" rel="<%= code.discount_spare_01 %>">
               <div class="card">
-                <div class="card__image_code"><a href="<%= code.discount_link_01 %>"><img src="<%= code.discount_image %>" alt="<%= code.discount_title %>" title="<%= code.discount_title %>"></a></div>          
-                <div class="masonry_sale_discount">
+                <div class="card__image_code"><a href="<%= code.discount_link_01 %>"><img src="<%= code.discount_image %>" alt="<%= code.discount_title %>" title="<%= code.discount_title %>"></a></div>
+                
+                <% if code.discount_spare_03.present? %>
+                 <div class="code_end">
+                  <div class="masonry_sale_wrapper">
+                    <div class="code_end_hidden"><%= code.discount_spare_03 %></div>
+                    <div class="masonry_sale_text">This code has expired</div>
+                    <div class="masonry_sale_howmuch"><%= code.discount_code %></div>
+                  </div>
+                 </div>
+                <% else %>
+                 <div class="masonry_sale_discount">
                   <div class="masonry_sale_wrapper">
                     <div class="masonry_sale_text">Discount Code</div>
                     <div class="masonry_sale_howmuch"><%= code.discount_code %></div>
                   </div>
-                </div>
+                 </div>
+                <% end %>
+
                 <div class="card__content am_card_price">
                   <div class="card__title"><%= code.discount_title %></div>
                   <ul>
