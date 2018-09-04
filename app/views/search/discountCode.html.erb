@@ -95,6 +95,7 @@
                    <li><%= link_to "Edit", edit_code_path(code) %></li>
                    <li> <%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %></li>
                   </ul>
+                  <p style="text-align: center"><%= code.discount_date %></p>
                   <% end %>
 
                 </div><!--/.dis_card--content-->        
