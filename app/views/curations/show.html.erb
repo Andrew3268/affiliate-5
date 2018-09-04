@@ -4,17 +4,98 @@
     <%= render 'shared/header' %>
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       
-      <%= render 'curations/details' %>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <!-- for play youtube video-->
+      <div class="overlay-video">
+        <div class="videoWrapperExt">
+          <div class="videoWrapper">
+            <div class="video_close"></div>
+              <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>        
+       </div>
 
-      <h2 class="ebdeals">The Hottest Deals on eBay </h2>
-      <%= render 'discounts/daily' %>
-      <div class="cu_show_more">
-       <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fdeals&campid=5338273158&toolid=20008" >Show More <i class="fa fa-arrow-right"></i></a>
+       <div class="coshow_wrappder">
+
+        <div class="coshow_left">
+          <img src="<%= @curation.cr_img %>">
+        </div>
+
+        <div class="coshow_right">
+          <h3><%= @curation.cr_title %></h3>
+          <p class="coshow_price">$<%= @curation.cr_aprice %></p>
+          <hr>
+            <div class="coshow_code_wrap">
+              <ul>
+                <li>
+                 <div class="js-overlay-start start" data-url="<%= @curation.cr_youtube01 %>">
+                  <button class="cushow_btn"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
+                 </div>
+                </li>
+                <% if @curation.cr_youtube02.present? %>
+                  <li>
+                   <div class="js-overlay-start start" data-url="<%= @curation.cr_youtube02 %>">
+                    <button class="cushow_btn"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
+                   </div>
+                  </li>
+                <% end %>
+                <% if @curation.cr_spare_01.present? %>
+                  <li>
+                   <div>
+                    <button class="cushow_btn"><i class="fa fa-check-circle"></i><a href="<%= @curation.cr_spare_01 %>">&nbsp;See Reviews</a></button>
+                   </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <hr>
+
+          <div class="coshow_content">
+            <p>What's this?</p>
+            <p><%= @curation.cr_intro %></p>
+            <p class="cushow_des"><span><%= @curation.cr_title %></span> is now on sale for <span>$<%= @curation.cr_aprice %></span> at <span><%= @curation.cr_source %></span>. 
+            <% if @curation.cr_spare_02.present? %>
+             <div class="coshow_shipping"><%= @curation.cr_spare_02 %></div>
+             <p class="coshow_free_shipping"><span>Shipping is free</span> ( Prime or on $25+ orders.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
+            <% end %>
+            <% if @curation.cr_spare_03.present? %>
+             <div class="coshow_shipping"><%= @curation.cr_spare_03 %></div>
+             <p class="coshow_free_shipping"><span>Shipping is free</span></p>
+            <% end %>
+
+          </div>
+
+          <div class="coshow_control">
+            <ul>
+              <li><%= @curation.cr_source %></li>
+              <% if can? :update, @curation %>
+                <div class="admin_control">
+                  <li><a href="/curations">Home</a></li>
+                  <li><%= link_to "Edit", edit_curation_path(@curation) %></li>
+                  <li><%= link_to "Delete", curation_path(@curation), method: :delete, data: { confirm: "Are you sure?" } %></li>
+                  <li><%= "#{@curation.unique_impression_count} views" %></li>
+                </div>
+               <% end %>
+            </ul>
+          </div>
+
+          <hr>
+          <div class="coshow_btn">
+            <ul>
+              <li><a target="_blank" href="#">Use This Code</a></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
-      <div class="related_prodcut">
+       <div class="coshow_other">
+       <p class="coshow_hda">The Hottest Deals on Amazon</p>
+       <%= render 'search/hottest' %>
+       <div class="cu_show_more">
+        <a target="_blank" href="https://amzn.to/2MVbClc">Show More <i class="fa fa-arrow-right"></i></a>
+       </div>
+      
+       <div class="related_prodcut">
         <script type="text/javascript">
           amzn_assoc_placement = "adunit0";
           amzn_assoc_tracking_id = "3628-20";
@@ -30,16 +111,8 @@
           amzn_assoc_title = "Shop Related Products";
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-      </div><br>
+       </div><br>
 
-      <!-- <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4ae3b5c3-9d2e-40ae-988a-422eecdac6ed"></script> -->
-      
-      <div class="curation_show_wrapper">
-       <h2>The Hottest Deals on Amazon</h2>
-       <%= render 'search/hottest' %>
-       <div class="cu_show_more">
-        <a target="_blank" href="https://amzn.to/2MVbClc">Show More <i class="fa fa-arrow-right"></i></a>
-       </div>
       </div>
 
       

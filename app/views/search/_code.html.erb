@@ -3,10 +3,6 @@
 <li><%= link_to "Add New Discount Code", new_code_path %></li>
 <% end %>  
 
-<div class="showall_code">
- <a target="_blank" href="/search/discountCode"><p>See All <i class="fa fa-arrow-right"></i></p></a>
-</div>
-
 <div class="ourpick_warp dis_container">
   <ul>
    <li><h1>The Best Deals We Pick</h1></li>
@@ -24,7 +20,7 @@
       </div>
       <div class="dis_card--content">
         <p class="code_title"><%= link_to code.discount_title, code %></p>
-        <p class="code_title"><span>$<%= code.discount_spare_02 %></span></p>
+        <p class="code_price"><span>$<%= code.discount_spare_02 %></span></p>
         
         <% if code.discount_spare_03.present? %>
          <div class="code_end_hidden"><%= code.discount_spare_03 %></div>
@@ -51,3 +47,6 @@
    </div><!--/.dis_grid--><br/>
 </div><!--/.dis_container-->
 
+<div class="showall_code">
+ <a target="_blank" href="/search/discountCode"><p>See All <i class="fa fa-arrow-right"></i></p></a>
+</div>

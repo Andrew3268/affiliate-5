@@ -36,7 +36,7 @@
           <p><span><%= @code.discount_title %></span> is now on sale for <span>$<%= @code.discount_spare_02 %></span> at <span><%= @code.discount_source %></span>. If you use this discount code, you could save <span><%= @code.discount_sale %>% off</span> more. </p>
           <% if @code.discount_spare_04.present? %>
            <div class="coshow_shipping"><%= @code.discount_spare_04 %></div>
-           <p><span>Shipping is free</span> ( Prime or on $25+ orders.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
+           <p class="coshow_free_shipping"><span>Shipping is free</span> ( Prime or on $25+ orders.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
 
           <% end %>
         </div>
@@ -46,7 +46,7 @@
             <li><%= @code.discount_source %></li>
             <% if can? :update, @code %>
               <div class="admin_control">
-                <li><a href="/search/new_discount">Home</a></li>
+                <li><a href="/search/discountCode">Home</a></li>
                 <li><%= link_to "Edit", edit_code_path(@code) %></li>
                 <li><%= link_to "Delete", code_path(@code), method: :delete, data: { confirm: "Are you sure?" } %></li>
                 <li><%= "#{@code.unique_impression_count} views" %></li>
@@ -58,9 +58,9 @@
         <hr>
         <div class="coshow_btn">
           <ul>
-            <li><a href="<%= @code.discount_link_01 %>">Use This Code</a></li>
+            <li><a target="_blank" href="<%= @code.discount_link_01 %>">Use This Code</a></li>
             <% if @code.discount_link_02.present? %>
-             <li><a href="<%= @code.discount_link_02 %>">More Products</a></li>
+             <li><a target="_blank" href="<%= @code.discount_link_02 %>">More Products</a></li>
             <% end %>
           </ul>
         </div>

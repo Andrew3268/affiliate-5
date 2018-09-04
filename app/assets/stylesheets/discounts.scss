@@ -284,6 +284,7 @@ dis_card// Place all the styles related to the Discounts controller here.
   overflow: hidden;
 }
 .dis_card--content {
+  width: 100%;
   padding: 0 0.5rem;
 }
 .dis_card--content ul li {
@@ -615,6 +616,12 @@ dis_card// Place all the styles related to the Discounts controller here.
  }
  .discounts_title {
    font-size: 2em;
+ }
+ .get_code {
+   padding: 0.1em;
+ }
+ .code_title {
+   height: auto;
  }
 }
 

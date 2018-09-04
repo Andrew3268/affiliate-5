@@ -569,6 +569,9 @@ discount_show_details h1 {
 .coshow_code_wrap {
   margin: -2em 0 -5em 0;
 }
+.coshow_control {
+  margin-top: 3em;
+}
 .coshow_control ul,
 .coshow_code_wrap ul {
   margin-bottom: -2em;
@@ -605,6 +608,9 @@ discount_show_details h1 {
 }
 .coshow_shipping {
   display: none;
+}
+.coshow_free_shipping {
+  margin: 0em;
 }
 .coshow_content,
 .coshow_code_wrap {
