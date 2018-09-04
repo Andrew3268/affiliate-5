@@ -108,6 +108,7 @@ nav.header_nav ul {
 nav.header_nav ul li {
   float: left;
   position: relative;
+  z-index: 20;
 }
 nav.header_nav ul li a,
 nav.header_nav ul li a:visited {
