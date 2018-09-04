@@ -5,13 +5,14 @@
       <div class="ourpick_warp dis_container">
         <div class="dis_grid">
           <% @curations.each do |curation| %>
-          <div class="ourpick dis_card grid-item <%= curation.cr_option_01 %> <%= curation.cr_option_02 %>">
+          <div class="cuindex_dis_card grid-item <%= curation.cr_option_01 %> <%= curation.cr_option_02 %>">
            
-            <div class="dis_card--image">
+            <div class="cuindex_image">
               <%= link_to (image_tag curation.cr_img), curation %>
             </div>
             <div class="dis_card--content">
               <p class="code_title"><%= link_to curation.cr_title, curation %></p>
+              <p><%= curation.cr_intro %></p>
               <p class="code_price"><span>$<%= curation.cr_aprice %></span></p>
                       
               <div class="code_btn">

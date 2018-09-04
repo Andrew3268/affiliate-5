@@ -695,7 +695,7 @@ ul.shop_price_wrapper li {
 }
 
 /*.product--desc {
-  font-family: sans;
+  font-family: sans
 }*/
 .product--desc p {
   margin: 20px 0px;
@@ -716,6 +716,9 @@ ul.shop_price_wrapper li {
 }
 
 @media screen and (max-width: 500px) {
+  .inner_hotdeals {
+    width: 95%;
+  }
   .random_shoe {
     display: none;
   }
