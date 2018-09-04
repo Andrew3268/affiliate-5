@@ -50,7 +50,7 @@
           <hr>
 
           <div class="coshow_content">
-            <p>What's this?</p>
+            <p><span>What's this?</span></p>
             <p><%= @curation.cr_intro %></p>
             <p class="cushow_des"><span><%= @curation.cr_title %></span> is now on sale for <span>$<%= @curation.cr_aprice %></span> at <span><%= @curation.cr_source %></span>. 
             <% if @curation.cr_spare_02.present? %>
@@ -81,7 +81,7 @@
           <hr>
           <div class="coshow_btn">
             <ul>
-              <li><a target="_blank" href="#">Use This Code</a></li>
+              <li><a target="_blank" href="<%= @curation.cr_url %>">Check it Out</a></li>
             </ul>
           </div>
         </div>
