@@ -60,13 +60,7 @@
           </div></br>
         
           <div class="ourpick_warp dis_container">
-            <ul>
-             <li><h1>The Best Deals We Pick</h1></li>
-             <% if can? :create, @codes %>
-              <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
-             <% end %>
-            </ul>
-      
+            
             <div class="dis_grid">
               <% @discount_codes.each do |code| %>
               <div class="ourpick dis_card">
@@ -96,6 +90,7 @@
                    <li> <%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %></li>
                   </ul>
                   <p style="text-align: center"><%= code.discount_date %></p>
+                  <p style="text-align: center"><%= "#{code.unique_impression_count} views" %></p>
                   <% end %>
 
                 </div><!--/.dis_card--content-->        
