@@ -76,7 +76,7 @@
                 </div>
                 <div class="dis_card--content">
                   <p class="code_title"><%= link_to code.discount_title, code %></p>
-                  <p class="code_title"><span>$<%= code.discount_spare_02 %></span></p>
+                  <p class="code_price"><span>$<%= code.discount_spare_02 %></span></p>
                   
                   <% if code.discount_spare_03.present? %>
                    <div class="code_end_hidden"><%= code.discount_spare_03 %></div>

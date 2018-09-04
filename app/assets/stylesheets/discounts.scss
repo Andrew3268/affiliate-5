@@ -324,10 +324,14 @@ dis_card// Place all the styles related to the Discounts controller here.
   color: red;
   font-weight: bold;
 }
-.code_title a {
+.code_title {
+  height: 3.15em;
+}
+.code_title a,
+.code_price a {
   color: #000;
 }
-.code_title span {
+.code_price span {
   text-align: center;
   font-size: 1.5em;
   color: #000;

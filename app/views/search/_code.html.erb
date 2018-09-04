@@ -7,50 +7,47 @@
  <a target="_blank" href="/search/discountCode"><p>See All <i class="fa fa-arrow-right"></i></p></a>
 </div>
 
-<section class="discount_items">
-
-  <ul class="cards discount_list">
-
-    <% @discount_codes.each do |code| %>
-      <li class="cards__item_main" rel="<%= code.discount_spare_01 %>">
-      <div class="card">
-        <div class="card__image_code"><a href="<%= code.discount_link_01 %>"><img src="<%= code.discount_image %>" alt="<%= code.discount_title %>" title="<%= code.discount_title %>"></a></div>          
-        <div class="masonry_sale_discount">
-          <div class="masonry_sale_wrapper">
-            <div class="masonry_sale_text">Discount Code</div>
-            <div class="masonry_sale_howmuch"><%= code.discount_code %></div>
-          </div>
-        </div>
-        <div class="card__content am_card_price">
-          <div class="card__title"><%= link_to code.discount_title, code %></div>
-          <ul>
-            <li>$<%= code.discount_spare_02 %></li> |
-            <li><%= code.discount_sale %>% OFF</li>
-          </ul>          
-          <p class="code_date">End Date: <%= code.discount_date %></p>
-          <div class="discount_botton">
-           <% if code.discount_link_01.present? %>
-            <a href="<%= code.discount_link_01 %>"><p class="use_code">Use This Code</p></a>
-           <% end %>
-           <% if code.discount_link_02.present? %>
-            <a href="<%= code.discount_link_02 %>"><p class="use_code">More Products</p></a>
-           <% end %>
-          </div>
-          <% if can? :update, code %>
-           <ul>
-             <li><%= link_to "Edit", edit_code_path(code) %></li>
-             <li><%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %></li>
-           </ul>   
-          <% end %>
-        </div>
-      </div>
-    </li>
-    <% end %>
-    
-    <div class="showall_code">
-     <a target="_blank" href="/search/discountCode"><p>See All <i class="fa fa-arrow-right"></i></p></a>
-    </div>
-    
+<div class="ourpick_warp dis_container">
+  <ul>
+   <li><h1>The Best Deals We Pick</h1></li>
+   <% if can? :create, @codes %>
+    <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
+   <% end %>
   </ul>
 
-</section>
+  <div class="dis_grid">
+    <% @discount_codes.each do |code| %>
+    <div class="dis_card">
+      <div class="dis_card--image">
+        <%= link_to (image_tag code.discount_image), code %>
+        <!-- <a target="_blank" href="<%= code.discount_link_01 %>"><img src="<%= code.discount_image %>"  alt="<%= code.discount_title %>" title="<%= code.discount_title %>"></a> -->
+      </div>
+      <div class="dis_card--content">
+        <p class="code_title"><%= link_to code.discount_title, code %></p>
+        <p class="code_title"><span>$<%= code.discount_spare_02 %></span></p>
+        
+        <% if code.discount_spare_03.present? %>
+         <div class="code_end_hidden"><%= code.discount_spare_03 %></div>
+         <p class="code_ends">This code has expired.</p>
+        <% else %>
+         <p class="get_code">You can save <%= code.discount_sale %>% Off more</p>
+        <% end %>
+
+        
+        <div class="code_btn">
+         <a target="_blank" href="/codes/<%=code.id %>">Get Coupon Code</a> 
+        </div>
+
+        <% if can? :create, code %>
+        <ul>
+         <li><%= link_to "Edit", edit_code_path(code) %></li>
+         <li> <%= link_to "Delete", code_path(code), method: :delete, data: { confirm: "Are you sure?" } %></li>
+        </ul>
+        <% end %>
+
+      </div><!--/.dis_card--content-->        
+    </div><!--/.dis_card-->
+    <% end %>
+   </div><!--/.dis_grid--><br/>
+</div><!--/.dis_container-->
+
