@@ -2,97 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* ================= Index Page ================= */
-
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.curation_title {
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  display: -webkit-box;
-  -moz-line-clamp: 1; 
-  -webkit-line-clamp: 1; /* number of line */ 
-  -ms-line-clamp: 1;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  -ms-box-orient: vertical;
-  word-wrap:break-word;
-  margin-bottom: 2em;
-  text-align: center;
-}
-.curation_video, 
-.curation_video_index {
-  margin-bottom: 0.5em;
-}
-.curation_video a,
-.curation_video_index a {
-  font-size: 0.8em;
-}
-.curation_video_index .posted {
-  width: 100%;
-}
-.curation_video_index button {
-  width: 100%;
-}
-.cr_price_li {
-  width: 49%;
-}
-.cr_price_li p{
-  width: 100%;
-}
-
-
-/* ================= Show Page ================= */
-.curatnos_show_wrapper {
-  margin-top: 3em;
-}
-.show_left {
-  float: left;
-  width: 40%;
-  padding: 1%
-}
-.show_left img {
-  width: 100%;
-}
-.show_middle {
-  float: left;
-  width: 35%;
-  margin: 0 1em 0 1em;
-}
-.show_middle h2 {
-  margin-bottom: 0.5em;
-}
-.show_middle h3 {
-  margin: 0em;
-}
-.show_right {
-  float: left;
-  width: 22%;
-}
-.show_right img {
-  width: 100%;
-}
-.curation_show_wrapper {
-  margin-top: 2em;
-}
-.cu_show_more {
-  float: right;
-}
-.cu_show_more a {
-  color: #5bc995;
-}
-.test_border {
-  border-bottom: 1px solid;
-  margin-bottom:0.5em;
-}
-.cr_views {
-  margin-top: -2em;
-}
-
 
 /* ================= New Index Page ================= */
 .cuindex_image {
@@ -113,12 +22,15 @@
  }
  .cuindex_image img {
    height: 14em;
-   object-fit: contain;
+   object-fit: cover;
  }
  .cuindex_wide {
     display: flex;
     width: 100%;
     margin: 0em;
+ }
+ button.cushow_btn {
+   margin: 0.5em 0 2.9em 0;
  }
 }
 @media only screen
@@ -129,7 +41,7 @@ and (max-width : 1024px) {
    }
    .cuindex_image img {
      height: 14em;
-     object-fit: contain;
+     object-fit: cover;
    }
 }
 
