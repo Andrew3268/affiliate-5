@@ -3,7 +3,12 @@ class CodesController < ApplicationController
   before_action :find_code, only: [:show, :edit, :update, :destroy]
   before_action  :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
-
+  before_action :log_impression, :only=> [:show]
+ 
+  def log_impression
+    @code = Code.find(params[:id])
+    @code.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+  end
 
   def index
     @codes = Code.all.order("created_at DESC")

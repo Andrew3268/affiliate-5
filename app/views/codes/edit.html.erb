@@ -12,13 +12,19 @@
       <%= simple_form_for @code do |f| %>
        <span class="form_label">Promotion is end?</span>
        <%= f.select :discount_spare_03, ([["Ongoing", ""], "End"]) %><br/>
-       <span class="form_label">Select Department</span>
+
+       <span class="form_label">Is this Free shipping?</span>
+       <%= f.select :discount_spare_04, ([["No free shipping", ""], "Free shipping"]) %><br/>
+
+       <!-- <span class="form_label">Select Department</span>
         <%= f.select :discount_spare_01, ([["Department", ""], "automotive", "baby", "beauty", "books", "business", "cellphones", "clothing", "computer", "electronics", "fashion", "furniture", "grocery", "health", "home", "kitchen", "miscellaneous", "office", "pets", "patio", "outdoors", "tools", "toy"])%><br/>
+ -->
         <%= f.input :discount_title %>
         <%= f.input :discount_code %>
         <%= f.input :discount_sale %>
-        <%= f.input :discount_spare_02, label: 'After Price' %>
         <%= f.input :discount_date %>
+        <%= f.input :discount_spare_02, label: 'After Price' %>
+        <%= f.input :discount_source %>
         <%= f.input :discount_image %>
         <%= f.input :discount_link_01 %>
         <%= f.input :discount_link_02 %>

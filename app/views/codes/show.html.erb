@@ -1,0 +1,100 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="coshow_wrappder">
+
+      <div class="coshow_left">
+        <img src="<%= @code.discount_image %>">
+      </div>
+
+      <div class="coshow_right">
+        <h3><%= @code.discount_title %></h3>
+        <p class="coshow_price">$<%= @code.discount_spare_02 %></p>
+        <hr>
+        <% if @code.discount_spare_03.present? %>
+          <div class="code_end_hidden"><%= @code.discount_spare_03 %></div>
+          <div class="coshow_code_wrap">
+            <ul>
+              <li><p class="coshow_code_end">CODE: <%= @code.discount_code %></p></li> |
+              <li><p class="deat_end">This code has expired.</p></li>
+            </ul>
+          </div>
+        <% else %>
+          <div class="coshow_code_wrap">
+            <ul>
+              <li><p class="coshow_code">CODE: <%= @code.discount_code %></p></li> |
+              <li><p>Expiration Date: <%= @code.discount_date %></p></li>
+            </ul>
+          </div>
+        <% end %>
+        <hr>
+
+        <div class="coshow_content">
+          <p><span><%= @code.discount_title %></span> is now on sale for <span>$<%= @code.discount_spare_02 %></span> at <span><%= @code.discount_source %></span>. If you use this discount code, you could save <span><%= @code.discount_sale %>% off</span> more. </p>
+          <% if @code.discount_spare_04.present? %>
+           <div class="coshow_shipping"><%= @code.discount_spare_04 %></div>
+           <p><span>Shipping is free</span> ( Prime or on $25+ orders.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
+
+          <% end %>
+        </div>
+
+        <div class="coshow_control">
+          <ul>
+            <li><%= @code.discount_source %></li>
+            <% if can? :update, @code %>
+              <div class="admin_control">
+                <li><a href="/search/new_discount">Home</a></li>
+                <li><%= link_to "Edit", edit_code_path(@code) %></li>
+                <li><%= link_to "Delete", code_path(@code), method: :delete, data: { confirm: "Are you sure?" } %></li>
+                <li><%= "#{@code.unique_impression_count} views" %></li>
+              </div>
+             <% end %>
+          </ul>
+        </div>
+
+        <hr>
+        <div class="coshow_btn">
+          <ul>
+            <li><a href="<%= @code.discount_link_01 %>">Use This Code</a></li>
+            <% if @code.discount_link_02.present? %>
+             <li><a href="<%= @code.discount_link_02 %>">More Products</a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="coshow_other">
+     <p class="coshow_hda">The Hottest Deals on Amazon</p>
+     <%= render 'search/hottest' %>
+     <div class="cu_show_more">
+      <a target="_blank" href="https://amzn.to/2MVbClc">Show More <i class="fa fa-arrow-right"></i></a>
+     </div>
+    
+     <div class="related_prodcut">
+        <script type="text/javascript">
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_tracking_id = "3628-20";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_ad_type = "smart";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+          amzn_assoc_default_search_phrase = "<%= @code.discount_title %>";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+          amzn_assoc_search_bar = "true";
+          amzn_assoc_search_bar_position = "top";
+          amzn_assoc_title = "Shop Related Products";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+     </div><br>
+
+    </div>
+      
+    </div><!--/.inner_hotdeals-->
+  </div><!--/#main-->
+</div><!--/#wrapper-->

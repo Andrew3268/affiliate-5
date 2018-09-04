@@ -13,4 +13,8 @@ class SearchController < ApplicationController
     @accessories = Accessory.all.order("created_at DESC").page(params[:page]).per(24)
   end
 
+  def new_discount
+    @discount_codes = Code.all.order("created_at DESC").page(params[:page]).per(24)
+  end
+
 end

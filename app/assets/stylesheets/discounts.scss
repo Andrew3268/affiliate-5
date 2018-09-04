@@ -300,6 +300,38 @@ dis_card// Place all the styles related to the Discounts controller here.
 .dis_price li:nth-child(2) {
   text-decoration: line-through;
 }
+.code_btn {
+  border: 1px solid #08f;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5em;
+  background: #08f;
+}
+.get_code {
+  text-align: center;
+  border-radius: 5px;
+  border: 2px dotted #08f;
+  padding: 0.3em;
+  color: #08f;
+  font-weight: bold;
+}
+.code_ends {
+  text-align: center;
+  margin-top: 0em;
+  border: 2px dotted red;
+  border-radius: 5px;
+  padding: 0.3em;
+  color: red;
+  font-weight: bold;
+}
+.code_title a {
+  color: #000;
+}
+.code_title span {
+  text-align: center;
+  font-size: 1.5em;
+  color: #000;
+}
 .feedback {
   text-align: center;
 }
@@ -320,8 +352,9 @@ dis_card// Place all the styles related to the Discounts controller here.
   padding: 0 1em;
   border-radius: 0.7em;
 }
-.dis_btn a {
-  color: white;
+.dis_btn a,
+.code_btn a {
+  color: #fff;
 }
 .dis_card--category {
   font-size: .8em;
@@ -349,7 +382,7 @@ dis_card// Place all the styles related to the Discounts controller here.
   .dis_card--image img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   .dis_container h1 {
     font-size: 14px;
