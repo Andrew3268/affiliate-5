@@ -2,8 +2,8 @@ class CodesController < ApplicationController
 
   before_action :find_code, only: [:show, :edit, :update, :destroy]
   before_action  :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource
   before_action :log_impression, :only=> [:show]
+  load_and_authorize_resource
  
   def log_impression
     @code = Code.find(params[:id])
