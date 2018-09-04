@@ -395,9 +395,9 @@ ul.shop_price_wrapper li {
   padding: 0 0.5em;
 }
 
-.grid-item a {
+/*.grid-item a {
   color: black;
-}
+}*/
 
 .grid-item p.title {
   font-size:18px;
@@ -424,8 +424,8 @@ ul.shop_price_wrapper li {
 
 .ui-group .is-checked {
   border-radius: 1em;
-  background-color: #2ebfac;
-  border:3px solid #2ebfac;
+  background-color: #08f;
+  border:3px solid #08f;
   color: white;
   width: 100%;
   text-align: left;

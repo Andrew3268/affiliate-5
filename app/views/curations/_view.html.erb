@@ -2,42 +2,38 @@
   <div class="large-18" data-equalizer-watch>
     <div class="grids">
 
-      <% @curations.each do |curation| %>
-        <div class="grid-item <%= curation.cr_option_01 %> <%= curation.cr_option_02 %>">
-         <h3 class="curation_title"><%= link_to curation.cr_title, curation %></h3>
-         <div class="main_img">
-          <a target="_bannk" href="<%= curation.cr_url %>"><img src="<%= curation.cr_img %>"></a> 
-         </div>
-          <p class="shop_product_title"><a href="<%= curation.cr_url %>"><%= curation.cr_intro %></a></p>
-        
+      <div class="ourpick_warp dis_container">
+        <div class="dis_grid">
+          <% @curations.each do |curation| %>
+          <div class="ourpick dis_card grid-item <%= curation.cr_option_01 %> <%= curation.cr_option_02 %>">
+           
+            <div class="dis_card--image">
+              <%= link_to (image_tag curation.cr_img), curation %>
+            </div>
+            <div class="dis_card--content">
+              <p class="code_title"><%= link_to curation.cr_title, curation %></p>
+              <p class="code_price"><span>$<%= curation.cr_aprice %></span></p>
+                      
+              <div class="code_btn">
+               <a target="_blank" href="<%= curation.cr_url %>">Check it Out</a> 
+              </div>
 
-          <ul class="shop_price_wrapper">
-            <li class="cr_price_li"><p class="shop_original_price">$<%= curation.cr_aprice %></p></li>
-            <!-- <li>#<%= curation.cr_source %></li> -->
-            <% if curation.cr_bprice.present? %>
-             <li><p class="shop_sale_price">$<%= curation.cr_bprice %></p></li>
-            <% end %>
-          </ul>
+              <% if can? :create, curation %>
+              <ul>
+               <li><%= link_to "Edit", edit_curation_path(curation) %></li>
+               <li> <%= link_to "Delete", curation_path(curation), method: :delete, data: { confirm: "Are you sure?" } %></li>
+              </ul>
+              <% end %>
 
-          <ul class="curation_video_index">
-            <% if curation.cr_youtube01.present? %>
-             <li class="posted">
-               <div class="js-overlay-start start" data-url="<%= curation.cr_youtube01 %>">
-                <button><i class="fa fa-play"></i>&nbsp;Watch Video</button>
-               </div>
-             </li>
-            <% else %>
-             <button><i class="fa fa-times"></i>&nbsp;No Video</button>
-            <% end %>
-          </ul>
-          <a target="_blank" href="<%= curation.cr_url %>"><p class="shop_check">Check it Out</p></a>
-          <% if can? :manage, curation %>
-           <p class="cr_views"><%= "#{curation.unique_impression_count} views" %></p>
+            </div><!--/.dis_card--content-->        
+          </div><!--/.dis_card-->
           <% end %>
-        </div>
-      <% end %>
-      <!--end grid-item-->
+         </div><!--/.dis_grid--><br/>
+       </div><!--/.dis_container-->
                      
     </div><!-- end grid-->
   </div><!--end col-->
  </div><!--end row-->
+
+
+
