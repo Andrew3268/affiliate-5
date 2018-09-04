@@ -1,19 +1,32 @@
-<header class="page-header">
-  <div class="nav_container">
-    <div class="logo logo--page-header">
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
       <a href="/">Oh,i gotta buy this</a>
     </div>
-    <button class="nav-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="nav nav--page-header">
-      <a href="/" class="nav__link">Home</a>
-      <a href="/search/quicksearch" class="nav__link">Hot Deals by Amazon </a>
-      <a href="/discounts" class="nav__link">Hot Deals by eBay</a>
-      <a href="/blogs" class="nav__link">Blog</a>
+    <nav class="header_nav">
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li><a href="/">Home</a></li>
+        <!-- <li><a href="#!">Deals</a></li> -->
+        <li><a href="#!">Amazon</a>
+          <ul class="nav-dropdown">
+            <li><a href="/search/quicksearch">Deals of Amazon</a></li>
+            <li><a href="/search/discountCode">Discount Codes</a></li>
+            <!-- <li><a href="#!">Graphic Design</a></li> -->
+          </ul>
+        </li>
+        <!-- <li><a href="#!">Pricing</a></li> -->
+        <li>
+          <a href="#!">eBay</a>
+          <ul class="nav-dropdown">
+            <li><a href="/discounts">Deals of eBay</a></li>
+            <li><a href="/search/bestDeal">The Best Deals</a></li>
+            <li><a href="/dis_category/electronics">Free Shipping Table</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+        <!-- <li><a href="/message/contact_us">About Us</a></li> -->
+      </ul>
     </nav>
   </div>
-</header>
+</section>

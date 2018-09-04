@@ -119,7 +119,7 @@
     </script>
 
     <!-- For Angular Search on promotion page-->
-    <script>
+   <!--  <script>
     function myFunction() {
         var input, filter, ul, li, a, i;
         input = document.getElementById("myInput");
@@ -136,10 +136,10 @@
             }
         }
     }
-    </script>
+    </script> -->
 
     <!-- For QuickMenu -->
-    <script>
+  <!--   <script>
     function myQuickmenu() {
         var x = document.getElementById("myMenu");
         if (x.className === "topnav") {
@@ -148,10 +148,10 @@
             x.className = "topnav";
         }
     }
-    </script>
+    </script> -->
 
     <!-- Discount Code Filler on Search Section -->
-    <script>
+   <!--  <script>
     $(function() {
       FilterItems();
     });
@@ -172,7 +172,7 @@
       }
       return false;
     }
-    </script>
+    </script> -->
 
     <!-- 네비 메뉴 스크립트 -->
     <script>
@@ -221,7 +221,7 @@
       });
     </script>
 
-   <!-- For Shoes_Shop sorting using Isotope-->
+   <!-- *****For Main sorting using Isotope-->
     <script>
     $( function() {
       // init Isotope
@@ -289,87 +289,6 @@
       dp.attr("src", src);
     });
    </script>
-
-  <!-- For Show more & Show less for revies on details page -->
-  <script>
-    ;(function($) {
-
-    var dynamicMaxHeight = function(options) {
-    var heightControl = (function(selector){
-      $this = $(selector);
-      $this.each(function(i, selector) {
-        var maxItemHeight = $this.data('maxheight');
-        var itemHeight = $this.find('.dynamic-wrap').outerHeight(); // get item height
-
-        $this.attr("data-itemheight", itemHeight ); // store itemheight as attribute
-
-        if (itemHeight > maxItemHeight){
-           $this.addClass('height-active');
-           $this.find('.dynamic-wrap').css('max-height', maxItemHeight);
-           $this.find(options.trigger).css('display','inline-block'); // display "show more" button 
-        }
-      });
-    }); 
-
-    var showMoreShowLess = (function(selector, targetDiv){
-      $(selector).each(function() {
-        var $this = $(this); // clicked element
-        var $targetDiv = $this.closest(targetDiv); // target div 
-
-        var originalText = $this.attr( 'title' ); // get original button text
-        var replaceText;
-
-        if($this.data('replace-text')){
-            replaceText = $this.data('replace-text');
-            console.log(replaceText);
-        }
-        else{
-            replaceText = "show less";
-        }
-        $this.click(function(e){
-
-            var itemHeight = $targetDiv.data('itemheight');    // get original height
-            var maxItemHeight = $targetDiv.data('maxheight');  // get max height
-            
-            if ($targetDiv.hasClass('height-active')) {
-                // height control disabled
-                $this.html(replaceText);
-                $targetDiv.find('.dynamic-wrap').css('max-height', itemHeight);
-            }
-            else{
-                // height control enabled
-                $this.html(originalText);
-                $targetDiv.find('.dynamic-wrap').css('max-height', maxItemHeight);
-            }
-            $targetDiv.toggleClass('height-active');
-            e.preventDefault();
-        }); 
-      });
-    }); 
-    return{
-     heightControl: heightControl,
-     showMoreShowLess: showMoreShowLess
-     };
-    };
-    
-    $.fn.dynamicMaxHeight = function(options) {
-      var dynamic = dynamicMaxHeight(options);
-
-      return this.each(function() {
-       dynamic.heightControl($(this), options);
-       dynamic.showMoreShowLess(options.trigger, $(this));
-          
-      });
-    };
-    
-   })(window.jQuery);
-
-    $( document ).ready(function() {
-      $('.dynamic-max-height').dynamicMaxHeight(
-        { trigger : '.dynamic-show-more'}
-      );
-    });
-  </script>
 
 
   <!-- Isotope For Discount_codes Page -->
@@ -550,14 +469,31 @@ function myFunction() {
 }
 </script>
 
-<!-- Responsive Nave on amazon & ebay page -->
+<!-- Responsive Nav on Amazon & eBay Page -->
 <script>
-  var navBar = document.querySelector('.nav--page-header');
-  var navBtn = document.querySelector('.nav-btn');
-  navBtn.addEventListener('click', function () {
-    this.classList.toggle('open');
-    navBar.classList.toggle('nav--open');
-  });
+  (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
 </script>
 
  </body>

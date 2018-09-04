@@ -70,181 +70,161 @@
 
 
 /* This is for responsive nav on amazon & ebay page */
-.nav_container {
+
+/* @charset "UTF-8"; */
+.navigation {
+  height: 70px;
+  background: #262626;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.page-header {
-  min-height: 25px;
-  padding: 20px;
-  background: #2ebfac;
-}
-.page-header .nav_container {
+nav.header_nav {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
-
-.logo a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  z-index: 2;
+nav.header_nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.nav--page-header {
-  display: flex;
-  flex-flow: column nowrap;
-  flex: 100%;
-  transition: height, margin .3s ease;
-  z-index: 1;
-  height: 0px;
-  overflow: hidden;
-}
-.nav--open {
-  height: auto;
-  margin-top: 30px;
-  border-top: 3px solid white;
-}
-.nav__link {
-  margin: 20px 0 0;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  transition: color .5s ease;
-}
-.nav__link:hover {
-  color: #111;
-}
-
-/******
-Helpers 
-******/
-/* Navigation button icon */
-.nav-btn {
-  width: 40px;
-  height: 25px;
+nav.header_nav ul li {
+  float: left;
   position: relative;
-  margin-left: auto;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  transition: .5s ease-in-out;
-  background: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  z-index: 2;
 }
-
-.nav-btn span {
+nav.header_nav ul li a,
+nav.header_nav ul li a:visited {
   display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #262626;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav.header_nav ul li a:hover,
+nav.header_nav ul li a:visited:hover {
+  background: #08f;
+  color: #ffffff;
+}
+nav.header_nav ul li a:not(:only-child):after,
+nav.header_nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+nav.header_nav ul li ul li {
+  min-width: 190px;
+}
+nav.header_nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
   position: absolute;
-  height: 4px;
-  width: 100%;
-  background: #fff;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
-.nav-btn span:nth-child(1) {
-  top: 0px;
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #262626;
+  height: 70px;
+  width: 70px;
 }
 
-.nav-btn span:nth-child(2),
-.nav-btn span:nth-child(3) {
-  top: 10px;
-}
-
-.nav-btn span:nth-child(4) {
-  top: 20px;
-}
-
-.nav-btn.open span:nth-child(1) {
-  top: 10px;
-  width: 0%;
-  left: 50%;
-}
-
-.nav-btn.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.nav-btn.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.nav-btn.open span:nth-child(4) {
-  top: 10px;
-  width: 0%;
-  left: 50%;
-}
-
-/* End of Navigation button icon */
-@media only screen and (min-width: 768px) {
-  .nav_container {
-    width: 700px;
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
   }
 
-  .nav-btn {
+  nav.header_nav {
+    width: 100%;
+    padding: 70px 0 15px;
+    display: block;
+  }
+  nav.header_nav ul {
     display: none;
   }
-
-  .nav--page-header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    flex: 1;
-    height: 100%;
-    margin: auto;
-    transition: height, margin .3s ease;
-    z-index: 1;
+  nav.header_nav ul li {
+    float: none;
   }
-  .nav--open {
-    height: auto;
-    margin: auto;
-    border: none;
+  nav.header_nav ul li a {
+    padding: 15px;
+    line-height: 20px;
   }
-  .nav__link {
-    margin: 3px 10px;
+  nav.header_nav ul li ul li a {
+    padding-left: 30px;
   }
 
-  .page-header {
-    background: #2ebfac;
-    padding: 20px;
-  }
-  .page-header .nav_container {
-    height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+  .nav-dropdown {
+    position: static;
   }
 }
-@media only screen and (min-width: 992px) {
-  .nav_container {
-    width: 940px;
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
 
 
 

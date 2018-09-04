@@ -4,12 +4,6 @@
 <% end %>  
 
 <div class="ourpick_warp dis_container">
-  <ul>
-   <li><h1>The Best Deals We Pick</h1></li>
-   <% if can? :create, @codes %>
-    <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
-   <% end %>
-  </ul>
 
   <div class="dis_grid">
     <% @discount_codes.each do |code| %>
