@@ -1,17 +1,21 @@
+<%= render '/shared/header_deals' %>
+
 <div id="wrapper">
   <div id="main">
     <div class="inner">
-      <%= render 'shared/header' %><br>
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+     <header id="header">
+      <a href="/" class="logo main_header" title="ohigottabuythis"><strong>Oh,</strong> I Gotta Buy This - Blog</a>
+     </header><br>
+     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       
-      <div class="blog_banner_wrap">
+      <!-- <div class="blog_banner_wrap">
         <div class="blog_banner_left">
          <a href="/search/quicksearch"><img src="<%=asset_path 'amazon_banner.png'%>" alt="Planning a shopping on amazon?" title="Planning a shopping on amazon?"></a>
         </div>
         <div class="right_banner">
-          <a href="/discounts"><img src="<%=asset_path 'ebay_banner.png' %>" alt="the best shopping tip blog" title="the best shopping tip"></a>
+          <a href="/discounts"><img src="<%=asset_path 'amazon_banner.png' %>" alt="the best shopping tip blog" title="the best shopping tip"></a>
         </div>
-      </div>
+      </div> -->
 
       <div class="blogs_wrapper">    
 
@@ -151,6 +155,6 @@
 
             
     </div><!--/.inner-->
-    <%= render 'shared/footer' %> 
+    <!-- render 'shared/footer' -->
   </div><!--/#main-->
 </div><!--/#wrapper-->
