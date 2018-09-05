@@ -59,14 +59,14 @@
 <!-- Select Free Shipping Option -->
     <% if discount.eb_min_price.present? %>
       <ul class="free_shipping_wrap">
-       <a target="_blank" href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + Free International Shipping</li></a>
-       <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008">
+       <a target="_blank" href="Link"><li>"<%= discount.eb_title %>" + Free International Shipping</li></a>
+       <a target="_blank"  href="Link">
        <li>"<%= discount.eb_title %>" + Free International Shipping + Deals & Savings</li></a>
       </ul>
     <% else %>
       <ul class="free_shipping_wrap">
-       <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + Free International Shipping</li></a>
-       <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D%26_udhi%3D%26LH_FS%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + Free International Shipping + Deals & Savings</li></a>
+       <a target="_blank"  href="Link"><li>"<%= discount.eb_title %>" + Free International Shipping</li></a>
+       <a target="_blank"  href="Link"><li>"<%= discount.eb_title %>" + Free International Shipping + Deals & Savings</li></a>
       </ul>
    <% end %>
 
@@ -74,13 +74,13 @@
 <!-- Don`t Select Free Shipping Option -->
     <% if discount.eb_min_price.present? %>
      <ul class="free_shipping_wrap">
-      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + No Free International Shipping</li></a>
-      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26_udlo%3D<%= discount.eb_min_price %>%26_udhi%3D<%= discount.eb_max_price %>%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + Deals & Savings</li></a>
+      <a target="_blank"  href="Link"><li>"<%= discount.eb_title %>" + No Free International Shipping</li></a>
+      <a target="_blank"  href="Link"><li>"<%= discount.eb_title %>" + Deals & Savings</li></a>
      </ul>
     <% else %>
      <ul class="free_shipping_wrap">
-      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + No Free International Shipping</li></a>
-      <a target="_blank"  href="https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_nkw%3D<%= discount.eb_title %>%26_sacat%3D0%26LH_TitleDesc%3D0%26LH_TitleDesc%3D0%26_fsrp%3D1%26LH_Savings%3D1&campid=5338273158&toolid=20008"><li>"<%= discount.eb_title %>" + Deals & Savings</li></a>
+      <a target="_blank"  href="Link"><li>"<%= discount.eb_title %>" + No Free International Shipping</li></a>
+      <a target="_blank"  href="Link"><li>"<%= discount.eb_title %>" + Deals & Savings</li></a>
      </ul>
     <% end %>
    <% end %>
