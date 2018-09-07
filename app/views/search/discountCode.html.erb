@@ -7,11 +7,16 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     
     <br/><br/>
-    <section id="discount_page">     
-      <h1 class="codes_main_title" id="discountCode">Amazon Discount Codes 2018</h1>
-      <% if can? :create, @codes %>
-       <li><%= link_to "Add New Discount Code", new_code_path %></li>
+    <section id="discount_page">
+    <div class="code_top dis_container">     
+     <ul>
+      <li><h1>The Best Deals We Pick</h1></li>
+      <% if can? :create, @discounts %>
+       <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
       <% end %>
+     </ul>
+   </div>
+
       <div class="discount_shared_box">
         <p class="promocode_title">Amazon promotional codes are online coupons that can be used at checkout to save money on your Amazon purchase. Simply enter the alpha-numeric code on the checkout page at Amazon and the corresponding discount will be reflected in your total.</p>
 

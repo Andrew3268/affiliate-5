@@ -16,6 +16,15 @@
          <p class="form_p">Option_04(Price)</p>
          <%= f.select :cr_option_02,([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
 
+         <span class="form_label">Is this product of Amazon?</span>
+         <%= f.select :cr_spare_06, ([["No", ""], "Yes"]) %><br/>
+
+         <span class="form_label">Is is on sale in the UK?</span>
+         <%= f.select :cr_spare_04, ([["No", ""], "Yes"]) %><br/>
+
+         <span class="form_label">Is is on sale in the Canada?</span>
+         <%= f.select :cr_spare_05, ([["No", ""], "Yes"]) %><br/>
+
          <span class="form_label">Is this Free shipping on Amazon?</span>
          <%= f.select :cr_spare_02, ([["No free shipping", ""], "Free shipping"]) %><br/>
 
@@ -46,7 +55,6 @@
          <%= f.button :submit %>
          <%= link_to "Back", curations_path(@curation) %>
       <% end %>
-
 
    </div>
   </div>

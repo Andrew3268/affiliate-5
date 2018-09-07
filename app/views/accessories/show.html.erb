@@ -1,0 +1,66 @@
+<div id="wrapper">
+  <div id="main">
+    <div class="inner_hotdeals">
+    <%= render 'shared/header' %>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="coshow_wrappder">
+
+      <div class="coshow_left">
+        <img src="<%= @accessory.acc_main_img %>">
+      </div>
+
+      <div class="coshow_right">
+        <h3><%= @accessory.acc_title %></h3>
+        <div class="uk_price_show">
+          <ul>
+            <li><span>£<%= @accessory.acc_offer_price %></span></li> |
+            <li>£<%= @accessory.acc_before_price %></li>
+            <li><%= @accessory.acc_sale %>% OFF</li>
+          </ul>
+        </div>
+        <hr>
+
+        <div class="coshow_content">
+          <p><span><%= @accessory.acc_title %></span> is now on sale for <span>£<%= @accessory.acc_offer_price %></span> at <span>Amazon.co.uk</span>.</p>
+           <% if @accessory.acc_spare_01.present? %>
+           <div class="coshow_shipping"><%=  @accessory.acc_spare_01 %></div>
+           <p class="coshow_free_shipping"><span>Shipping is free</span> ( Prime or £20+ of all other eligible items.)<!--  <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p> -->
+          <% end %>
+        </div>
+
+        <div class="coshow_control">
+          <ul>
+            <li>Amazon.co.uk</li>
+            <% if can? :update, @accessory %>
+              <div class="admin_control">
+                <li><a href="/search/bestDeal">Home</a></li>
+                <li><%= link_to "Edit", edit_accessory_path(@accessory) %></li>
+                <li><%= link_to "Delete", accessory_path(@accessory), method: :delete, data: { confirm: "Are you sure?" } %></li>
+                <li><%= "#{@accessory.unique_impression_count} views" %></li>
+              </div>
+             <% end %>
+          </ul>
+        </div>
+
+        <hr>
+        <div class="coshow_btn">
+          <a target="_blank" href="<%= @accessory.acc_link %>">Check it Out</a>
+        </div>
+      </div>
+
+    </div>
+
+   <!--  <div class="coshow_other">
+     <p class="coshow_hda">The Hottest Deals on Amazon</p>
+     
+     <div class="cu_show_more">
+      <a target="_blank" href="https://amzn.to/2MVbClc">Show More <i class="fa fa-arrow-right"></i></a>
+     </div> -->
+    
+
+    </div>
+      
+    </div><!--/.inner_hotdeals-->
+  </div><!--/#main-->
+</div><!--/#wrapper-->

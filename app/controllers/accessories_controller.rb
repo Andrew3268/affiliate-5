@@ -2,7 +2,14 @@ class AccessoriesController < ApplicationController
 
   before_action :find_accessory, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
+ 
+  def log_impression
+      @accessory = Accessory.find(params[:id])
+      @accessory.impressions.create(ip_address: request.remote_ip)
+  end
+
 
   def index
     @accessories = Accessory.all.order("created_at DESC")

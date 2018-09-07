@@ -1,4 +1,7 @@
 <%= simple_form_for @accessory do |f| %> 
+<span class="form_label">Is this Free shipping?</span>
+ <%= f.select :acc_spare_01, options_for_select([["No free shipping", ""], "Free shipping"]) %><br/>
+
 <div class="form_border">
   <h2>Details(Title/Link/Description)</h2>
    <%= f.input :acc_title %>
@@ -13,8 +16,6 @@
 <div class="form_border">
   <h2>Images</h2>
   <%= f.input :acc_main_img %>
-  <%= f.input :acc_spare_01, label: 'Percentage of Feedback'  %>
-  <%= f.input :acc_spare_02, label: 'Feedback Link' %>
 </div><br>
  <%= f.button :submit%>
  <%= link_to "Back", discounts_path(@accessory) %>

@@ -6,43 +6,46 @@
     <!-- render 'shared/header' -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     
-     <div class="ourpick_warp dis_container">
-      <ul>
-       <li><h1>The Best Deals We Pick</h1></li>
-       <% if can? :create, @discounts %>
-        <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
-       <% end %>
-      </ul>
-  
-        <div class="dis_grid">
-          <% @accessories.each do |acc| %>
-          <div class="ourpick dis_card">
+    <div class="dis_container">
+     <ul>
+      <li><h1>The Best Deals We Pick</h1></li>
+      <% if can? :create, @discounts %>
+       <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
+      <% end %>
+     </ul>
+      
+      <div class="dis_grid">
+        <% @accessories.each do |acc| %>
+         <div class="ourpick dis_card">
             <div class="dis_card--image">
-              <a target="_blank" href="<%= acc.acc_link %>"><img src="<%= acc.acc_main_img %>"/></a>
+              <%= link_to (image_tag acc.acc_main_img), acc %>
             </div>
             <div class="dis_card--content">
-              <h3><a target="_blank" href="<%= acc.acc_link %>"><%= acc.acc_title %></a></h3>
-              <p><%= acc.acc_description %></p>
-              <ul class="dis_price">
-               <li>$<%= acc.acc_offer_price %></li>
-               <li>$<%= acc.acc_before_price %></li>
+            <p class="code_title"><%= link_to acc.acc_title, acc %></p>
+              
+            <div class="uk_price">
+              <ul>
+                <li><span>£<%= acc.acc_offer_price %></span></li> |
+                <li>£<%= acc.acc_before_price %></li>
               </ul>
-              <a href="<%=acc.acc_spare_02 %>" class="feedback"><p><%= acc.acc_spare_01 %>% positive feedback</p></a>
-              <ul class="dis_btn">
-               <li><%= acc.acc_sale %>%Off</li>
-               <li><a target="_blank" href="<%= acc.acc_link %>">Check it out</a></li>
-              </ul>
-              <% if can? :create, acc %>
+            </div>
+              
+            <div class="code_btn">
+             <a target="_blank" href="<%= acc.acc_link %>">Check it out</a>
+            </div>
+
+            <% if can? :create, acc %>
               <ul>
                <li><%= link_to "Edit", edit_accessory_path(acc) %></li>
                <li> <%= link_to "Delete", accessory_path(acc), method: :delete, data: { confirm: "Are you sure?" } %></li>
               </ul>
-              <% end %>
+            <% end %>
+
             </div><!--/.dis_card--content-->        
           </div><!--/.dis_card-->
-          <% end %>
-         </div><!--/.dis_grid--><br/>
-         <%= paginate @accessories %>
+        <% end %>
+       </div><!--/.dis_grid--><br/>
+       <%= paginate @accessories %>
       </div><!--/.dis_container-->
 
    </div>

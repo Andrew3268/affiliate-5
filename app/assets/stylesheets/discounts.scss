@@ -237,8 +237,7 @@ dis_card// Place all the styles related to the Discounts controller here.
   margin: -0.8rem;
 }
 
-
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .dis_card {
   width: calc(33.3% - 1.6rem);
   margin: 0.8rem;
@@ -275,6 +274,7 @@ dis_card// Place all the styles related to the Discounts controller here.
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: box-shadow 300ms;
 }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (max-width: 800px) {
   .dis_card,
   .dis_card_ourpick {
@@ -344,6 +344,19 @@ dis_card// Place all the styles related to the Discounts controller here.
 }
 .code_title a,
 .code_price a {
+  color: #000;
+  font-weight: bold;
+}
+.uk_price ul {
+  text-align: left;
+}
+.uk_price_show ul {
+  text-align: left;
+  margin-bottom: -2em;
+}
+.uk_price span,
+.uk_price_show span {
+  font-size: 1.5em;
   color: #000;
   font-weight: bold;
 }
@@ -481,12 +494,16 @@ dis_card// Place all the styles related to the Discounts controller here.
   margin: 0em;
   color: #08f;
 }
-.dis_slider--content ul li {
+.dis_slider--content ul li,
+.uk_price ul li,
+.uk_price_show ul li {
   list-style: none;
   display: inline-block;
   margin: 0 0 0 0.5em;
 }
-.dis_slider--content ul li:nth-child(1) {
+.dis_slider--content ul li:nth-child(1),
+.uk_price ul li:nth-child(2),
+.uk_price_show ul li:nth-child(2) {
   text-decoration: line-through;
 }
 .dis_slider--content ul li:nth-child(2) {

@@ -33,17 +33,16 @@
         <hr>
 
         <div class="coshow_content">
-          <p><span><%= @code.discount_title %></span> is now on sale for <span>$<%= @code.discount_spare_02 %></span> at <span><%= @code.discount_source %></span>. If you use this discount code, you could save <span><%= @code.discount_sale %>% off</span> more. </p>
+          <p><span><%= @code.discount_title %></span> is now on sale for <span>$<%= @code.discount_spare_02 %></span> at <span>Amazon</span>. If you use this promo code, you could save <span><%= @code.discount_sale %>% off</span> more. </p>
           <% if @code.discount_spare_04.present? %>
            <div class="coshow_shipping"><%= @code.discount_spare_04 %></div>
-           <p class="coshow_free_shipping"><span>Shipping is free</span> ( Prime or on $25+ orders.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
-
+           <p class="coshow_free_shipping"><span>Shipping is free</span> ( Prime or $25+ of all other eligible items.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
           <% end %>
         </div>
 
         <div class="coshow_control">
           <ul>
-            <li><%= @code.discount_source %></li>
+            <li>Amazon</li>
             <% if can? :update, @code %>
               <div class="admin_control">
                 <li><a href="/search/discountCode">Home</a></li>
@@ -70,7 +69,7 @@
 
     <div class="coshow_other">
      <p class="coshow_hda">The Hottest Deals on Amazon</p>
-     <%= render 'search/hottest' %>
+     <%= render 'search/hottest_us' %>
      <div class="cu_show_more">
       <a target="_blank" href="https://amzn.to/2MVbClc">Show More <i class="fa fa-arrow-right"></i></a>
      </div>

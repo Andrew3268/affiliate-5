@@ -1,0 +1,98 @@
+<%= render '/shared/header_deals' %>
+
+<div id="wrapper">
+ <div id="main">
+   <div class="inner_quicksearch">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- render 'shared/header' -->
+     <div class="blogs_wrapper">  
+      <div class="blog_left_main_post">
+
+        <div class="quicksearch_warpper">
+         
+         <!-- Header -->
+         <div class="ambanner">
+          <img src="<%=asset_path 'uk_banner.png'%>" alt="Amazon.co.uk" title="Amazon.co.uk">
+         </div>
+
+          <div class="big_banner_wrap">
+           <div class="left_banner_quicksearch">
+            <a target="_blank" href="https://amzn.to/2wJBUA0"><img src="<%=asset_path 'amazon_prime.png'%>" alt="Amazon Prime" title="Amazon Prime Day"></a>
+           </div>
+           <div class="right_banner_quicksearch">
+            <a target="_blank" href="https://amzn.to/2CFgBWH"><img src="<%=asset_path 'voucher.png'%>" alt="amazon coupons" title="amazon coupons"></a>
+           </div>
+          </div>
+
+          <div class="left_small_banner">
+            <a  target="_blank"href="https://amzn.to/2wNEhC1"><div class="left_left"><img src="<%=asset_path 'today.png'%>"></div></a>
+            <a target="_blank" href="https://amzn.to/2McANPa"><div class="left_right"><img src="<%=asset_path 'warehouse_uk.png'%>"></div></a>
+            </div>
+            <div class="right_small_banner">
+            <a target="_blank" href="https://amzn.to/2Q9jzoV"><div class="right_left"><img src="<%=asset_path 'subscribe.png'%>"></div></a>
+            <a target="_blank" href="https://amzn.to/2Qau8YF"><div class="right_right"><img src="<%=asset_path 'amazon_fresh.png'%>"></div></a>
+          </div>
+
+         <!-- Real Time HotDeals Talbe --> 
+         <%= render 'search/table_uk' %>
+         <SCRIPT charset="utf-8" type="text/javascript" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fgary3628-21%2F8009%2Fa1736946-13c1-459f-9287-3d8795b996b2&Operation=GetScriptTemplate"> </SCRIPT> <NOSCRIPT><A rel="nofollow" HREF="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fgary3628-21%2F8009%2Fa1736946-13c1-459f-9287-3d8795b996b2&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>
+
+
+        <div class="dis_container">
+          <ul>
+           <li><h1>The Best Deals We Pick</h1></li>
+           <% if can? :create, @discounts %>
+            <li class="admin_page_bestdeal"><a href="/accessories/new"><h1>Add New Gadgets</h1></a></li>
+           <% end %>
+          </ul>
+      
+            <div class="dis_grid">
+              <% @accessories.each do |acc| %>
+               <div class="dis_card">
+                  <div class="dis_card--image">
+                    <%= link_to (image_tag acc.acc_main_img), acc %>
+                  </div>
+                  <div class="dis_card--content">
+                    <p class="code_title"><%= link_to acc.acc_title, acc %></p>
+                    
+                    <div class="uk_price">
+                      <ul>
+                        <li><span>£<%= acc.acc_offer_price %></span></li> |
+                        <li>£<%= acc.acc_before_price %></li>
+                      </ul>
+                    </div>
+                    
+                    <div class="code_btn">
+                     <a target="_blank" href="<%= acc.acc_link %>">Check it out</a>
+                    </div>
+
+                    <% if can? :create, acc %>
+                      <ul>
+                       <li><%= link_to "Edit", edit_accessory_path(acc) %></li>
+                       <li> <%= link_to "Delete", accessory_path(acc), method: :delete, data: { confirm: "Are you sure?" } %></li>
+                      </ul>
+                    <% end %>
+
+                  </div><!--/.dis_card--content-->        
+                </div><!--/.dis_card-->
+              <% end %>
+             </div><!--/.dis_grid--><br/>
+             <%= paginate @accessories %>
+             <div class="showall_code">
+              <a target="_blank" href="/search/bestDeal"><p>See All <i class="fa fa-arrow-right"></i></p></a>
+             </div>
+          </div><!--/.dis_container-->
+             
+         
+      </div><br><br><!--<class="quicksearch_warpper">-->
+
+    </div><!--/.blog_left_main_post-->
+    <%= render 'search/sidebar_uk' %>
+   </div><!--/.blog_wrapper-->
+          
+  </div>
+ </div>
+  <!-- render 'shared/footer' -->
+</div>
+
+   

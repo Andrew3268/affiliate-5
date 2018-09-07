@@ -1,3 +1,9 @@
+.code_top {
+  margin-top: 6em;
+}
+.ambanner img {
+  width: 100%;
+}
 .togoup {
   display: none;
 }
@@ -435,95 +441,11 @@ and (max-width : 1200px) {
   width: 50%;
   padding: 0.3em;
 }
-.promo_card img {
+
+.promo_card img,
+.promo_card_uk img {
   width: 100%;
 } 
-
-/* =================== Responsive Sticky nav  =================== */
-.sticky_logo {
-  line-height: 40px;
-  position: fixed;
-  float: left;
-  margin: 16px 46px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 2px;
-}
-#sticky_nav {
-  position: fixed;
-  width: 100%;
-  line-height: 40px;
-  background: #2ebfac;
-  z-index: 10
-}
-#sticky_nav ul {
-  line-height: 40px;
-  list-style: none;
-  background: rgba(0, 0, 0, 0);
-  overflow: hidden;
-  color: #fff;
-  padding: 0;
-  text-align: right;
-  margin: 0;
-  /*padding-right: 40px;*/
-  transition: 1s;
-}
-#sticky_nav.black ul {
-  background: #3ed8c4;
-}
-#sticky_nav ul li {
-  display: inline-block;
-  padding: 16px 15px;;
-}
-#sticky_nav ul li:nth-child(4) {
-  margin-right: 3em;
-}
-#sticky_nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-}
-.menu-icon {
-  line-height: 26px;
-  width: 100%;
-  background: #2ebfac;
-  text-align: right;
-  box-sizing: border-box;
-  padding: 23px 24px;
-  cursor: pointer;
-  color: #fff;
-  display: none;
-}
-@media(max-width: 786px) {
-  .sticky_logo {
-    position: fixed;
-    top: 0;
-    margin-top: 16px;
-  }
-  #sticky_nav ul {
-    max-height: 0px;
-    background: #2ebfac;
-  }
-  #sticky_nav.black ul {
-    background: #2ebfac;
-  }
-  .showing {
-    max-height: 34em;
-  }
-  #sticky_nav ul li {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0em;
-    text-align: center;
-  }
-  .menu-icon {
-    display: block;
-    margin-bottom: -1em;
-  }
-}
-
-
 
 
 
