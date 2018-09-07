@@ -29,7 +29,7 @@ class AccessoriesController < ApplicationController
     @accessory = current_user.accessories.build(accessory_params)
 
      if @accessory.save
-       redirect_to '/discounts'
+       redirect_to '/search/bestDeal'
      else
       render 'new'
     end
@@ -48,7 +48,7 @@ class AccessoriesController < ApplicationController
 
   def destroy
     @accessory.destroy
-    redirect_to '/discounts'
+    redirect_to '/search/bestDeal'
   end
 
   private
