@@ -6,7 +6,15 @@
 
  <p class="form_p">Option_04(Price)</p>
  <%= f.select :cr_option_02, options_for_select([["Price", ""], "less_than_25", "25_to_50", "50_to_100", "100_to_150", "above_150"])%><br>
+</div><br>
  
+<div class="form_border">
+ <span class="form_label">It is available now?</span>
+ <%= f.select :cr_spare_07, options_for_select([["No", ""], "Yes"]) %><br/>
+</div><br>
+
+<div class="form_border">
+
  <span class="form_label">Is this product of Amazon?</span>
  <%= f.select :cr_spare_06, options_for_select([["No", ""], "Yes"]) %><br/>
 
@@ -22,14 +30,8 @@
  <span class="form_label">Is this Free shipping?</span>
  <%= f.select :cr_spare_03, options_for_select([["No free shipping", ""], "Free shipping"]) %><br/>
 
-
- <div class="form_border">
-  <h2>Price Information</h2>
-   <%= f.input :cr_aprice %>
-   <%= f.input :cr_bprice %>
-   <%= f.input :cr_sales %>
- </div><br>
 </div><br>
+
 <div class="form_border">
  <h2>Details(Title/Link/Description/Seller)</h2>
    <%= f.input :cr_title %>
@@ -40,10 +42,19 @@
    <%= f.input :cr_youtube02 %>
    <%= f.input :cr_spare_01, label: 'Sourece of review' %>
 </div><br>
+
+ <div class="form_border">
+  <h2>Price Information</h2>
+   <%= f.input :cr_aprice %>
+   <%= f.input :cr_bprice %>
+   <%= f.input :cr_sales %>
+ </div><br>
+
 <div class="form_border">
  <h2>Images</h2>
  <%= f.input :cr_img %>
 </div><br>
+
  <%= f.button :submit %>
  <%= link_to "Back", curations_path(@curation) %>
 <% end %>

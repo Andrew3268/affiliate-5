@@ -27,30 +27,3 @@
 .error_container h2 {
   text-align: center;
 }
-
-/*.error_container .line {
-  border-top: 1px solid #111;
-  display: block;
-  margin-top: 60px;
-  padding-top: 50px;
-  position: relative;
-}
-
-.error_container .line .read-more {
-  background: #111;
-  border-radius: 50%;
-  border: 10px solid #fdfdfd;
-  color: #fff;
-  display: block;
-  font-size: 30px;
-  font-weight: normal;
-  height: 70px;
-  width: 70px;
-  line-height: 70px;
-  margin: -40px 0 0 -40px;
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  text-align: center;
-  text-transform: uppercase;
-}*/

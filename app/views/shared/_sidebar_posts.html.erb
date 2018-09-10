@@ -72,14 +72,6 @@
       <a href="https://amzn.to/2L4WQKX"><img src="<%=asset_path 'prime_day.png'%>" alt="Amazon Prime Day" title="Amazon Prime Day"></a>
     </div><br>
  
-    <div class="random_post_blog">
-      <h2 class="gadget_title">Gadgets That Will Blow Your Mind</h2> 
-        <% @ecommerces.each do |gadget| %>
-         <a href="/ecommerces/detail/<%= gadget.id %>"><div class="blog_side_img"><img src="<%= gadget.image_main%>"></div></a>
-        <% end %><br><br><br>
-      <!-- <a href="/"><p class="see_more">See More Gadgets</p></a><br>       -->
-    </div>
-
     <div class="twitter_bottom"></div>
 
     <div class="twitter-feed">
@@ -91,25 +83,6 @@
     <div class="pinterest_widget">
      <a data-pin-do="embedUser" data-pin-lang="ko" data-pin-board-width="300" data-pin-scale-height="500" data-pin-scale-width="150" href="https://www.pinterest.com.au/ohigottabuythis/"></a>
     </div><br>
-    
-    <!-- <div class="random_post_blog">
-      <h2 class="shoes_title">Save Your Money Everyday (feat.shoes)</h2>
-      <% @random.each do |random| %>  
-        <%= link_to (image_tag random.main_img), random, {:class =>"blog_side"} %>
-        <p class="blog_show_shoe_title"><%= link_to random.title, random %></p>
-      <% end %>
-     <a href="/shoes"><p class="see_more">See More Shoes</p></a><br>  
-    </div>
 
-    <div class="random_post_blog">
-      <h2 class="bags_title">Save Your Money Everyday (feat.bags)</h2>
-      <% @random_bags.each do |bag| %>  
-        <%= link_to (image_tag bag.bag_main_img), bag, {:class =>"blog_side"} %>
-      <p class="blog_show_shoe_title"><%= link_to bag.bag_title, bag %></p>
-      <% end %>
-      <a href="/bags"><p class="see_more">See More Shoes</p></a><br>      
-    </div>
- -->
-    
      
  </div><!--/.blog_right_side-->

@@ -71,15 +71,24 @@
           <div class="coshow_content">
             <p><span>What's this?</span></p>
             <p><%= @curation.cr_intro %></p>
-            <p class="cushow_des"><span><%= @curation.cr_title %></span> is now on sale for <span>$<%= @curation.cr_aprice %></span> at <span><%= @curation.cr_source %></span>. 
+
+            <% if @curation.cr_spare_07.present? %>
+             <div class="coshow_shipping"><%= @curation.cr_spare_07 %></div>
+             <p class="cushow_des"><span><%= @curation.cr_title %></span> is now on sale for <span>$<%= @curation.cr_aprice %></span> at <span><%= @curation.cr_source %></span>. </p>
+            <% else %>
+              <p class="cushow_des">You can see more detail about the <span><%= @curation.cr_title %></span> at <span><%= @curation.cr_source %></span>.</p>
+            <% end %>
+
             <% if @curation.cr_spare_02.present? %>
              <div class="coshow_shipping"><%= @curation.cr_spare_02 %></div>
              <p class="coshow_free_shipping"><span>Shipping is free</span> ( Prime or on $25+ orders.) <a target="_blank" href="/blog_posts/post_05">What is the Amazon Prime?</a> </p>
             <% end %>
+
             <% if @curation.cr_spare_03.present? %>
              <div class="coshow_shipping"><%= @curation.cr_spare_03 %></div>
              <p class="coshow_free_shipping"><span>Shipping is free</span></p>
             <% end %>
+
           </div><br/>
           
           

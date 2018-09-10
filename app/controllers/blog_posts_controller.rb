@@ -27,8 +27,5 @@ class BlogPostsController < ApplicationController
 
   def post_side
     @recent_post = Blog.all.order("created_at DESC").limit(5)
-    @random = Shoe.all.sample(6)
-    @ecommerces = Ecommerce.all.sample(6)
-    @random_bags = Bag.all.sample(6)
   end
 end

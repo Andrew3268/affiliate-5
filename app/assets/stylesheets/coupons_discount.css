@@ -64,8 +64,6 @@
   display: flex;
   padding: 0.5em;
 }
-
-
 .cards__item a, 
 .cards__item_main a {
   width: 100%;
@@ -485,4 +483,16 @@ box styles as a container item
     display: inline-block;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
