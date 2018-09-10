@@ -6,7 +6,8 @@
       
       <ul class="shop_price_wrapper">
        <li><h1>Edit</h1></li> |
-       <li><%= link_to "Back", discounts_path %></li>
+       <li><a href="/search/bestDeal">Back</a></li>
+       <!-- <li><%= link_to "Back", accessories_path %></li> -->
       </ul><br>
       
      <%= simple_form_for @accessory do |f| %> 
@@ -29,7 +30,7 @@
         <%= f.input :acc_main_img %>
       </div><br>
        <%= f.button :submit%>
-       <%= link_to "Back", discounts_path(@accessory) %>
+       <li><a href="/search/bestDeal">Back</a></li>
       <% end %>
    </div>
   </div>
