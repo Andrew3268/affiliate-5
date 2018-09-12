@@ -8,6 +8,7 @@
 
       <div class="coshow_left">
         <img src="<%= @code.discount_image %>">
+        <%= render 'codes/sns' %>
       </div>
 
       <div class="coshow_right">
@@ -31,6 +32,10 @@
           </div>
         <% end %>
         <hr>
+        <div class="seemorecoupon">
+         <a href="https://amzn.to/2x56Ivb">See More Coupons</a>
+        </div>  
+
 
         <div class="coshow_content">
           <p><span><%= @code.discount_title %></span> is now on sale for <span>$<%= @code.discount_spare_02 %></span> at <span>Amazon</span>. If you use this promo code, you could save <span><%= @code.discount_sale %>% off</span> more. </p>
@@ -43,9 +48,10 @@
             <ol>
               <li>Click "Use This Coupon"</li>
               <li>Click "Buy Now or Add to Cart"</li>
-              <li>Proceed with payment.(The code is automatically applied.)</li>
+              <li>Proceed with payment then the code is automatically applied</li>
             </ol>
-         </div>
+          </div> 
+
         </div>
 
         <div class="coshow_control">
@@ -90,7 +96,7 @@
           amzn_assoc_ad_type = "smart";
           amzn_assoc_marketplace = "amazon";
           amzn_assoc_region = "US";
-          amzn_assoc_default_search_phrase = "<%= @code.discount_title %>";
+          amzn_assoc_default_search_phrase = "<%= @code.discount_spare_05 %>";
           amzn_assoc_default_category = "All";
           amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
           amzn_assoc_search_bar = "true";
