@@ -27,11 +27,13 @@
           <hr>
             <div class="coshow_code_wrap">
               <ul>
+               <% if @curation.cr_youtube01.present? %>
                 <li>
                  <div class="js-overlay-start start" data-url="<%= @curation.cr_youtube01 %>">
                   <button class="cushow_btn"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
                  </div>
                 </li>
+                <% end %>
                 <% if @curation.cr_youtube02.present? %>
                   <li>
                    <div class="js-overlay-start start" data-url="<%= @curation.cr_youtube02 %>">
@@ -129,7 +131,7 @@
           amzn_assoc_ad_type = "smart";
           amzn_assoc_marketplace = "amazon";
           amzn_assoc_region = "US";
-          amzn_assoc_default_search_phrase = "<%= @curation.cr_title %>";
+          amzn_assoc_default_search_phrase = "<%= @curation.cr_spare_08 %>";
           amzn_assoc_default_category = "All";
           amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
           amzn_assoc_search_bar = "true";

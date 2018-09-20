@@ -15,7 +15,7 @@
 
 <div class="form_border">
 
- <span class="form_label">Is this product of Amazon?</span>
+ <span class="form_label">Is this available in other country?</span>
  <%= f.select :cr_spare_06, options_for_select([["No", ""], "Yes"]) %><br/>
 
  <span class="form_label">Is is on sale in the UK?</span>
@@ -35,6 +35,7 @@
 <div class="form_border">
  <h2>Details(Title/Link/Description/Seller)</h2>
    <%= f.input :cr_title %>
+   <%= f.input :cr_spare_08, label: 'Category for related items on Amazon' %>
    <%= f.input :cr_url %>
    <%= f.input :cr_intro %>
    <%= f.input :cr_source %>
