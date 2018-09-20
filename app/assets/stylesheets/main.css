@@ -3697,6 +3697,8 @@
 		-ms-flex-direction: row-reverse;
 		flex-direction: row-reverse;
 		min-height: 100vh;
+    max-width: 1366px;
+    margin: 0 auto;
 	}
 
 /* Main */
