@@ -10,7 +10,7 @@ class SearchController < ApplicationController
   end
 
   def discountCode
-   @discount_codes = Code.all.order("created_at DESC").page(params[:page]).per(24)
+   @discount_codes = Code.all.order("created_at DESC").page(params[:page]).per(48)
   end
 
   def bestDeal 
